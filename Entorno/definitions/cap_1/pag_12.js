@@ -76,4 +76,5 @@ for (let i=1; i<=6;i++) {
   console.log(div);
 }
 
+//Aqui va el codigo
 window.onload = main();
