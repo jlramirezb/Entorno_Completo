@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+
+    <script type="text/javascript" src="../../../libraries/jspdf.min.js"></script>
+    <script type="text/javascript" src="../../../libraries/html2canvas.min.js"></script>
+    <script type="text/javascript" src="../../../libraries/mathLive.js"></script>
+    <script type="text/javascript" src="../../../libraries/jsxgraphcore.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="../../../libraries/jsxgraph.css" />
+    <link rel="stylesheet" type="text/css" href="../../../libraries/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../libraries/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../libraries/generalStylesFragata.css" />
+    <!--<link rel="stylesheet" href="prueba.css">-->
+    <script type="text/javascript" src="../../../engines/genericEngines/polyfillsAllUsed.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @media only screen and (max-width: 350px) {
+            .board-validation-curves {
+                width: 250px;
+            }
+        }
+    </style>
+    <div id="" class="containerNormal background-gray">
+        <h3>Examen Capítulo 1</h3>
+        <style>
+            /* Estilos para los inputs */
+            input {
+                display: block;
+                margin-bottom: 10px;
+            }
+        </style>
+        <form action="process.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required value="""">
+      
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" name="cedula" required value="""">
+      
+            <label for="seccion">Sección:</label>
+            <select id="seccion" name="seccion" required value="">
+                <option value="">--Seleccione su Sección --</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+            </select>    
+
+            <input type="button" id="btnguardar" disabled="disabled" value="Guardar Información"/>
+        </form>
+    </div>
+    <div class="note">
+        <p><b>Nota:</b> Los puntos suspensivos en los gráficos indican que la curva se prolonga "en la dirección que
+          ellos señalan". A veces para indicar que el
+          extremo de una curva no es parte de la curva se rematará la curva con un pequeño círculo del lado en que se
+          quiere no incluir el extremo.
+          (Ver el ejermplo 6, de la página que sigue).
+        </p>
+    </div>
+    <div>
+        <button id="btnPreg1" type="button" disabled="disabled">Pregunta 1</button>
+        <button id="btnPreg2" type="button" disabled="disabled">Pregunta 2</button>
+        <button id="btnPreg3" type="button" disabled="disabled">Finalizar Examen</button>
+    </div>
+    <script src="app.js">
+    /*window.addEventListener('beforeunload', function(event) {
+        event.preventDefault();
+        // Opcional: Mostrar un mensaje al usuario explicando por qué no se permite la recarga
+      });*/
+    /*document.onkeydown = function(event) {
+        if (event.keyCode === 116) { // Código de tecla F5
+            event.preventDefault();
+        }
+    };*/
+    </script>
+</body>
+</html>
