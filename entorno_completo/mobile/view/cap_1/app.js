@@ -9,8 +9,6 @@ let seccion = document.getElementById("seccion");
 
 function ActivaBotones(){
     
-    //console.log(btnGuardar)
-
     if (nombre.value!=="" && cedula.value!=="" && seccion.value!==""){
         //console.log("Enyr")
         btnGuardar.disabled = false;
@@ -20,8 +18,16 @@ function ActivaBotones(){
     }
 }
 
+function ActivarPreguntas(){
+    //Aqui se deberia verificar que la persona ingreso de manera correcta la información y en caso positivo activar las preguntas
+    if(btnGuardar.disabled===false){
+        btnPreg1.disabled = false;
+        btnPreg2.disabled = false;
+        btnPreg3.disabled = false;
+    }
+}
+
 nombre.addEventListener('input',ActivaBotones);
 cedula.addEventListener('input',ActivaBotones);
 seccion.addEventListener('change',ActivaBotones);
-
- //
+btnGuardar.addEventListener("click",ActivarPreguntas);
