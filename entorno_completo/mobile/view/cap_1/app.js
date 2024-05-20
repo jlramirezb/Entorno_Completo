@@ -27,7 +27,22 @@ function ActivarPreguntas(){
     }
 }
 
+function abrirPagina(idBoton) {
+    if(idBoton==="btnPreg1")
+        window.location.href = "pordesarrollar.html";
+    else if(idBoton==="btnPreg2")
+        window.location.href = "pordesarrollar2.html";
+}
+
 nombre.addEventListener('input',ActivaBotones);
 cedula.addEventListener('input',ActivaBotones);
 seccion.addEventListener('change',ActivaBotones);
 btnGuardar.addEventListener("click",ActivarPreguntas);
+
+btnPreg1.addEventListener("click", function(){
+    abrirPagina(this.id);
+});
+
+btnPreg2.addEventListener("click", function(){
+    abrirPagina(this.id);
+});
