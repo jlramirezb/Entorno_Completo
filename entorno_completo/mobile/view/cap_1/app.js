@@ -31,7 +31,7 @@ function abrirPagina(idBoton) {
     if(idBoton==="btnPreg1")
         window.location.href = "pordesarrollar.html";
     else if(idBoton==="btnPreg2")
-        window.location.href = "pordesarrollar2.html";
+        window.location.href = "pag_Ex_P2.html";
 }
 
 nombre.addEventListener('input',ActivaBotones);
