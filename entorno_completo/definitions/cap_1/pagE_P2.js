@@ -256,9 +256,20 @@ function seleccionarTresAleatorios(min, max) {
     // Devolver los números seleccionados
     return seleccionados;
 }
-  
-const seleccionados = seleccionarTresAleatorios(1, 18);
-console.log(seleccionados); // Ejemplo: [17, 8, 23]
+let seleccionados = [];
+
+if (localStorage.getItem('Seleccionados')===null){
+    seleccionados = seleccionarTresAleatorios(1, 18);
+    localStorage.setItem('Seleccionados',seleccionados);
+    //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
+}
+else{
+    seleccionados = localStorage.getItem('Seleccionados');
+    seleccionados = seleccionados.split(',').map(Number);
+    //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
+}
+
+//console.log(seleccionados)
   
 let i=1;
   
@@ -289,7 +300,17 @@ seleccionados.forEach(element => {
     divbottom.appendChild(span2);
     divbefore1.appendChild(divbottom);
   
-    console.log(divfather);
+    //console.log(divfather);
 });
+
+let btnBack = document.createElement("button");
+btnBack.textContent = "Regresar";
+divfather.parentNode.appendChild(btnBack);
+
+btnBack.addEventListener('click',()=>{
+    window.location.href = "Pag_Ex.html";
+})
+
+
    
 window.onload = main();
