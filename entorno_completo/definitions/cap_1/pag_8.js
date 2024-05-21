@@ -3,9 +3,6 @@
 var def = {
   artfefact_1: {
     datadefault: [
-
-
-
       {
         customKeyboard: 7,
 
