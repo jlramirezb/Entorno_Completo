@@ -32,7 +32,8 @@ var def = {
 
                 {
                   type: 0,
-                  text: ['Max.Abs', null],
+                  //text: ['Max.Abs', null],
+                  text: ['Dominio',null],
                   conditions: {
                     correctIndex: null
                   }
@@ -74,9 +75,11 @@ var def = {
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                oneToManyInput: true,
+                conditions: [
+                  //valueInputs: ['\\nexists']
+                  ['(1,5)'],['(2,5)']
+                ]
               }, {
                 type: 3,
                 // una pregunta. Varios inputs
@@ -177,14 +180,6 @@ var def = {
                   valueInputs: ['\\nexists']
                 }
               }],
-
-
-
-
-
-
-
-
             ]
           }
         }
