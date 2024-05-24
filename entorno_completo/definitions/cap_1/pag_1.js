@@ -59,8 +59,7 @@ let defBoards = {
  
 const rDef = {
   artifactHtml: {
-    datadefault: [
-         
+    datadefault: [         
       {
         type: 11, // switch case
         classGlobal: 'QA', //
@@ -72,19 +71,15 @@ const rDef = {
             questions: [
               {
                 type: 2,
-                question:
-                           '¿En cuáles la curva tiene altura mayor que 2? ',
+                question: '¿En cuáles la curva tiene altura mayor que 2? ',
                 answers_values: ['' ,'a,c', 'b,c' ,'a,b'],
                 conditions: {
                   correctIndex: 2,
                 },
               },
- 
-              ,
               {
                 type: 2,
-                question:
-                          ' ¿En cuáles la curva tiene altura menor que 2? ',
+                question: ' ¿En cuáles la curva tiene altura menor que 2? ',
                 answers_values: ['', 'a,b,c', 'a,d,e', 'a,c,e'],
                 conditions: {
                   correctIndex: 2,
