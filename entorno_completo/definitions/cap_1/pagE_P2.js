@@ -1,16 +1,16 @@
 const defBoards = {
     board_0: {
-      style: {
-        boundingbox:[-4,4,4,-4],
-        maxHeight: 300,
-        maxWidth: 300,
-      },
+        style: {
+            boundingbox:[-4,4,4,-4],
+            maxHeight: 300,
+            maxWidth: 300,
+},
     },
     board_1: {
         style: {
-          boundingbox:[-5,5,5,-5],
-          maxHeight: 300,
-          maxWidth: 300,
+            boundingbox:[-5,5,5,-5],
+            maxHeight: 300,
+            maxWidth: 300,
         },
     },
 };
@@ -230,10 +230,9 @@ const def = {
         },
     },
 };
-  
 
 seleccionados = localStorageSeleccionados()
 
 PintaSeleccionP2(seleccionados);
-   
+
 window.onload = main();

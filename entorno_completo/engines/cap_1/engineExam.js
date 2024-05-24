@@ -2,22 +2,22 @@ function seleccionarTresAleatorios(min, max) {
     // Crear un array con los números consecutivos
     const numeros = [];
     for (let i = min; i <= max; i++) {
-      numeros.push(i);
+        numeros.push(i);
     }
-  
+
     // Seleccionar 3 números aleatorios distintos
     const seleccionados = [];
     while (seleccionados.length < 3) {
-      const indiceAleatorio = Math.floor(Math.random() * numeros.length);
-      const numeroAleatorio = numeros[indiceAleatorio];
-  
-      // Verificar si el número ya está seleccionado
-      if (!seleccionados.includes(numeroAleatorio)) {
-        seleccionados.push(numeroAleatorio);
-        numeros.splice(indiceAleatorio, 1); // Eliminar el número del array
-      }
+        const indiceAleatorio = Math.floor(Math.random() * numeros.length);
+        const numeroAleatorio = numeros[indiceAleatorio];
+
+        // Verificar si el número ya está seleccionado
+        if (!seleccionados.includes(numeroAleatorio)) {
+            seleccionados.push(numeroAleatorio);
+            numeros.splice(indiceAleatorio, 1); // Eliminar el número del array
+        }
     }
-  
+
     // Devolver los números seleccionados
     return seleccionados;
 }
@@ -39,7 +39,7 @@ function localStorageSeleccionados(){
 
 function PintaSeleccionP2(seleccionados){
     let i=1;
-  
+
     let divfather = document.getElementById("container").firstChild.nextSibling;
     //console.log(divfather);
     seleccionados.forEach(element => {
