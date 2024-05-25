@@ -173,10 +173,9 @@ function defCreateHtml() {
     }
 
     $board.style = `width:  ${style.width ? style.width + 'px' : '100%'};
-         height:  ${style.height ? style.height + 'px' : '300px'};
-         max-height: ${style.maxHeight || ''}px;
-         max-width:  ${style.maxWidth || ''}px;
-      `;
+      height:  ${style.height ? style.height + 'px' : '300px'};
+      max-height: ${style.maxHeight || ''}px;
+      max-width:  ${style.maxWidth || ''}px;
 
     let board = JXG.JSXGraph.initBoard($board.id, {
       label: { visible: false },
@@ -622,8 +621,7 @@ function defReset(allDef, def, board, refArtifact) {
 
 function main() {
   const $templateDefaults = `<template id="templateCurvesInteraction">    
-            <div id="artifacts" class="d-flex flex-column borderDefault m-2 board-validation-curves"
-               ">
+            <div id="artifacts" class="d-flex flex-column borderDefault m-2 board-validation-curves">
                 <div class="statement-top borderDefault w-100 h-100 textCenter mt-1 mb-1 " style="height:100%; min-height: 30px;"></div>
                 <div id="board" class="jxgbox defBoard align-self-center"></div>
                 <div class="statement-bottom borderDefault w-100 h-100 textCenter mt-1 mb-1" style="height:100%; min-height: 30px; "></div>

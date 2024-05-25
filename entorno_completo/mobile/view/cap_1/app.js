@@ -3,9 +3,7 @@ let btnPreg2 = document.getElementById("btnPreg2");
 let btnPreg3 = document.getElementById("btnPreg3");
 let btnGuardar = document.getElementById("btnguardar");
 
-let nombre = document.getElementById("nombre");
-let cedula = document.getElementById("cedula");
-let seccion = document.getElementById("seccion");
+
 
 function ActivaBotones(){
     
@@ -20,10 +18,44 @@ function ActivaBotones(){
 
 function ActivarPreguntas(){
     //Aqui se deberia verificar que la persona ingreso de manera correcta la información y en caso positivo activar las preguntas
+    guardaData();
     if(btnGuardar.disabled===false){
         btnPreg1.disabled = false;
         btnPreg2.disabled = false;
         btnPreg3.disabled = false;
+    }
+}
+
+function guardaData(){
+    let nombre = document.getElementById("nombre");
+    let cedula = document.getElementById("cedula");
+    let seccion = document.getElementById("seccion");
+
+    localStorage.setItem("Personal", JSON.stringify({
+        nombre: nombre.value,
+        cedula: cedula.value,
+        seccion: seccion.value
+    }));
+    nombre.disabled = true;
+    cedula.disabled = true;
+    seccion.disabled = true;
+}
+
+function cargaData(){    
+    let nombre = document.getElementById("nombre");
+    let cedula = document.getElementById("cedula");
+    let seccion = document.getElementById("seccion");
+    const dtosPersonals = JSON.parse(localStorage.getItem("Personal"));
+    if(dtosPersonals){
+        nombre.value = dtosPersonals.nombre;
+        cedula.value = dtosPersonals.cedula;
+        seccion.value = dtosPersonals.seccion;
+        btnPreg1.disabled = false;
+        btnPreg2.disabled = false;
+        btnPreg3.disabled = false;
+        nombre.disabled = true;
+        cedula.disabled = true;
+        seccion.disabled = true;
     }
 }
 
@@ -45,4 +77,23 @@ btnPreg1.addEventListener("click", function(){
 
 btnPreg2.addEventListener("click", function(){
     abrirPagina(this.id);
+});
+
+window.onload = cargaData;
+
+btnPreg3.addEventListener("click", e=>{
+    let nombre = document.getElementById("nombre");
+    let cedula = document.getElementById("cedula");
+    let seccion = document.getElementById("seccion");
+    nombre.value = "";
+    cedula.value = "";
+    seccion.value = "";
+    btnGuardar.disabled = true;
+    nombre.disabled = false;
+    cedula.disabled = false;
+    seccion.disabled = false;
+    localStorage.removeItem("Personal");
+    btnPreg1.disabled = true;
+    btnPreg2.disabled = true;
+    btnPreg3.disabled = true;
 });

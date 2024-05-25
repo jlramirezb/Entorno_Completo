@@ -22,7 +22,7 @@ function seleccionarTresAleatorios(min, max) {
     return seleccionados;
 }
 
-function localStorageSeleccionados(){
+function localStorageSeleccionadosP2(){
     let seleccionados = [];
     if (localStorage.getItem('Seleccionados')===null){
         seleccionados = seleccionarTresAleatorios(1, 18);
