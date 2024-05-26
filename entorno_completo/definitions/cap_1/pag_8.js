@@ -72,14 +72,12 @@ var def = {
                   correctIndex: null
                 }
               }, {
-                type: 3,
+                type: 2,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: [
-                  //valueInputs: ['\\nexists']
-                  ['(1,5)'],['(2,5)']
-                ]
+                answers_values: ['','(1,5)', '(2,5)'],
+                conditions: {
+                  valueInputs:['(1,5)']
+                }
               }, {
                 type: 3,
                 // una pregunta. Varios inputs
