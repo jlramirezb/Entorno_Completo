@@ -1276,6 +1276,15 @@ var defBoards = {
   }
 };
 
+let position = seleccionarAleatorios(1, 8, 1);
+const newPropertyName = `board_${position}`;
+console.log(position);
+const desiredBoard = defBoards[newPropertyName];
+console.log(desiredBoard);
+const newObject = {[newPropertyName]: desiredBoard};
+console.log(newObject);
+defBoards = newObject;
+
 defBoardDefault();
 generator(def);
 

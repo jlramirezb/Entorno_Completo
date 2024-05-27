@@ -1,4 +1,4 @@
-function seleccionarTresAleatorios(min, max) {
+function seleccionarAleatorios(min, max,totalale) {
     // Crear un array con los números consecutivos
     const numeros = [];
     for (let i = min; i <= max; i++) {
@@ -7,7 +7,7 @@ function seleccionarTresAleatorios(min, max) {
 
     // Seleccionar 3 números aleatorios distintos
     const seleccionados = [];
-    while (seleccionados.length < 3) {
+    while (seleccionados.length < totalale) {
         const indiceAleatorio = Math.floor(Math.random() * numeros.length);
         const numeroAleatorio = numeros[indiceAleatorio];
 
@@ -22,12 +22,12 @@ function seleccionarTresAleatorios(min, max) {
     return seleccionados;
 }
 
-function localStorageSeleccionados(Pregunta,min,max){
+function localStorageSeleccionados(Pregunta,min,max,totalale){
     let seleccionados = [];
     if(Pregunta === "P2"){
         
         if (localStorage.getItem('SeleccionadosP2')===null){
-            seleccionados = seleccionarTresAleatorios(min, max);
+            seleccionados = seleccionarAleatorios(min, max, totalale);
             localStorage.setItem('SeleccionadosP2',seleccionados);
             //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
         }
