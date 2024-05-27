@@ -175,7 +175,7 @@ function defCreateHtml() {
     $board.style = `width:  ${style.width ? style.width + 'px' : '100%'};
       height:  ${style.height ? style.height + 'px' : '300px'};
       max-height: ${style.maxHeight || ''}px;
-      max-width:  ${style.maxWidth || ''}px;
+      max-width:  ${style.maxWidth || ''}px`;
 
     let board = JXG.JSXGraph.initBoard($board.id, {
       label: { visible: false },

@@ -23,8 +23,9 @@ function seleccionarTresAleatorios(min, max) {
 }
 
 function localStorageSeleccionados(Pregunta,min,max){
-    if(Pregunta === "P2"){
-        let seleccionados = [];
+    let seleccionados = [];
+    //if(Pregunta === "P2"){
+        
         if (localStorage.getItem('SeleccionadosP2')===null){
             seleccionados = seleccionarTresAleatorios(min, max);
             localStorage.setItem('SeleccionadosP2',seleccionados);
@@ -35,7 +36,7 @@ function localStorageSeleccionados(Pregunta,min,max){
             seleccionados = seleccionados.split(',').map(Number);
             //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
         }
-    }
+    //}
     return seleccionados;
 }
 
@@ -43,7 +44,7 @@ function PintaSeleccionP2(seleccionados){
     let i=1;
 
     let divfather = document.getElementById("container").firstChild.nextSibling;
-    //console.log(divfather);
+    console.log(seleccionados);
     seleccionados.forEach(element => {
         let divbefore1 = document.createElement("div");
         divbefore1.className = 'question-container';
@@ -56,7 +57,7 @@ function PintaSeleccionP2(seleccionados){
         let div = document.createElement("div");
         div.className = 'defBoard';
         let att = 'artifact_'+element.toString();
-        console.log(att)
+        //console.log(att)
         div.setAttribute('data-artifact',att);
         let divbottom = document.createElement("div");
         divbottom.className = 'oval-container';
