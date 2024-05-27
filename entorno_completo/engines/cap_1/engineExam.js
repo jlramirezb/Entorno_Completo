@@ -24,7 +24,7 @@ function seleccionarTresAleatorios(min, max) {
 
 function localStorageSeleccionados(Pregunta,min,max){
     let seleccionados = [];
-    //if(Pregunta === "P2"){
+    if(Pregunta === "P2"){
         
         if (localStorage.getItem('SeleccionadosP2')===null){
             seleccionados = seleccionarTresAleatorios(min, max);
@@ -36,7 +36,7 @@ function localStorageSeleccionados(Pregunta,min,max){
             seleccionados = seleccionados.split(',').map(Number);
             //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
         }
-    //}
+    }
     return seleccionados;
 }
 
