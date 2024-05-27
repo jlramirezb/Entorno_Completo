@@ -22,13 +22,13 @@ var def = {
             cells: [
               [
 
-                {
+                /*{
                   type: 0,
                   text: ['Ejemplos', null],
                   conditions: {
                     correctIndex: null
                   }
-                },
+                },*/
 
                 {
                   type: 0,
@@ -41,21 +41,21 @@ var def = {
 
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Rango', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Max. No Abs', null],
+                  text: ['Corte con eje X', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Corte con eje Y', null],
                   conditions: {
                     correctIndex: null
                   }
@@ -65,13 +65,13 @@ var def = {
 
 
 
-              [{
+              [/*{
                 type: 0,
                 text: ['1', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
+              },*/ {
                 type: 2,
                 // una pregunta. Varios inputs
                 answers_values: ['','(1,5)', '(2,5)'],
@@ -103,13 +103,13 @@ var def = {
 
               [
 
-                {
+                /*{
                   type: 0,
                   text: ['Ejemplos', null],
                   conditions: {
                     correctIndex: null
                   }
-                },
+                },*/
 
                 {
                   type: 0,
@@ -143,13 +143,13 @@ var def = {
 
               ],
 
-              [{
+              [/*{
                 type: 0,
                 text: ['1', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
+              },*/ {
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
