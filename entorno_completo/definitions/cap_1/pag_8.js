@@ -21,7 +21,6 @@ var def = {
             },
             cells: [
               [
-
                 /*{
                   type: 0,
                   text: ['Ejemplos', null],
@@ -32,7 +31,6 @@ var def = {
 
                 {
                   type: 0,
-                  //text: ['Max.Abs', null],
                   text: ['Dominio',null],
                   conditions: {
                     correctIndex: null
@@ -62,9 +60,6 @@ var def = {
                 },
 
               ],
-
-
-
               [/*{
                 type: 0,
                 text: ['1', null],
@@ -102,7 +97,6 @@ var def = {
               }],
 
               [
-
                 /*{
                   type: 0,
                   text: ['Ejemplos', null],
@@ -110,7 +104,185 @@ var def = {
                     correctIndex: null
                   }
                 },*/
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
 
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+              [/*{
+                type: 0,
+                text: ['1', null],
+                conditions: {
+                  correctIndex: null
+                }
+              },*/
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-1]
+                }
+              },
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [0]
+                }
+              },
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_2: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                /*{
+                  type: 0,
+                  text: ['Ejemplos', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },*/
+                {
+                  type: 0,
+                  text: ['Max.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                /*{
+                  type: 0,
+                  text: ['2', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },*/
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              
+              [
+                /*{
+                  type: 0,
+                  text: ['Ejemplos', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },*/
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -145,190 +317,12 @@ var def = {
 
               [/*{
                 type: 0,
-                text: ['1', null],
-                conditions: {
-                  correctIndex: null
-                }
-              },*/ {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [0]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }],
-            ]
-          }
-        }
-      },
-
-      {
-        customKeyboard: 7,
-
-        type: 13,
-        interactive: true,
-        classGlobal: 'QA',
-        parent: '#ejemplo2',
-        contents: {
-          artifact_2: {
-            allinputs: [],
-            header: [],
-            dataInteraction: {
-              incorrect: 0,
-              correct: 0,
-              forAnswer: 0
-            },
-            cells: [
-              [
-
-                {
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-
-                {
-                  type: 0,
-                  text: ['Max.Abs', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-
-                {
-                  type: 0,
-                  text: ['Alcanzado en', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-                {
-                  type: 0,
-                  text: ['Max. No Abs', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-                {
-                  type: 0,
-                  text: ['Alcanzado en', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-
-              ],
-
-
-
-              [{
-                type: 0,
                 text: ['2', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }],
-
-              [
-
-                {
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-
-                {
-                  type: 0,
-                  text: ['Min.Abs', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-
-                {
-                  type: 0,
-                  text: ['Alcanzado en', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-                {
-                  type: 0,
-                  text: ['Min. No Abs', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-                {
-                  type: 0,
-                  text: ['Alcanzado en', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-
-              ],
-
-              [{
-                type: 0,
-                text: ['2', null],
-                conditions: {
-                  correctIndex: null
-                }
-              }, {
+              },*/
+              {
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],

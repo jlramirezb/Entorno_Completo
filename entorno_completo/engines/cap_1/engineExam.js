@@ -22,17 +22,19 @@ function seleccionarTresAleatorios(min, max) {
     return seleccionados;
 }
 
-function localStorageSeleccionadosP2(){
-    let seleccionados = [];
-    if (localStorage.getItem('Seleccionados')===null){
-        seleccionados = seleccionarTresAleatorios(1, 18);
-        localStorage.setItem('Seleccionados',seleccionados);
-        //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
-    }
-    else{
-        seleccionados = localStorage.getItem('Seleccionados');
-        seleccionados = seleccionados.split(',').map(Number);
-        //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
+function localStorageSeleccionados(Pregunta,min,max){
+    if(Pregunta === "P2"){
+        let seleccionados = [];
+        if (localStorage.getItem('SeleccionadosP2')===null){
+            seleccionados = seleccionarTresAleatorios(min, max);
+            localStorage.setItem('SeleccionadosP2',seleccionados);
+            //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
+        }
+        else{
+            seleccionados = localStorage.getItem('SeleccionadosP2');
+            seleccionados = seleccionados.split(',').map(Number);
+            //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
+        }
     }
     return seleccionados;
 }

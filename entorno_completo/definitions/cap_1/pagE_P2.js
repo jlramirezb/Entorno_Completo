@@ -231,8 +231,7 @@ const def = {
     },
 };
 
-seleccionados = localStorageSeleccionadosP2()
-
+seleccionados = localStorageSeleccionados("P2",1,18)
 PintaSeleccionP2(seleccionados);
 
 window.onload = main();

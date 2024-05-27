@@ -24,7 +24,7 @@ function ActivarPreguntas(){
         btnPreg2.disabled = false;
         btnPreg3.disabled = false;
     }
-}
+} 
 
 function guardaData(){
     let nombre = document.getElementById("nombre");
