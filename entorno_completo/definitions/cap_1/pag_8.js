@@ -1,7 +1,7 @@
 'use strict';
 
 var def = {
-  artfefact_1: {
+  artefact_1: {
     datadefault: [
       {
         customKeyboard: 7,
@@ -1280,15 +1280,97 @@ let position = seleccionarAleatorios(1, 8, 1);
 const newPropertyName = `board_${position}`;
 console.log(position);
 const desiredBoard = defBoards[newPropertyName];
-//console.log(desiredBoard);
+console.log(desiredBoard);
 const newObject = {[newPropertyName]: desiredBoard};
-//console.log(newObject);
+console.log(newObject);
 defBoards = newObject;
-//def['artfefact_1']['datadefault'] = def['artfefact_1']['datadefault'][position-1]
-console.log(def);
+let artefact = [];
+let ejemplo = [];
+switch(newPropertyName){
+  case 'board_1':{
+    artefact = ['artifact_1','artifact_2'];
+    ejemplo = ['ejemplo1','ejemplo2'];
+    break;
+  }
+  case 'board_2':{
+    artefact = ['artifact_3','artifact_4'];
+    ejemplo = ['ejemplo3','ejemplo4'];
+    break;
+  }
+  case 'board_3':{
+    artefact = ['artifact_5','artifact_6'];
+    ejemplo = ['ejemplo5','ejemplo6'];
+    break;
+  }
+  case 'board_4':{
+    artefact = ['artifact_7','artifact_8'];
+    ejemplo = ['ejemplo7','ejemplo8'];
+    break;
+  }
+  case 'board_5':{
+    artefact = ['artifact_9','artifact_10'];
+    ejemplo = ['ejemplo9','ejemplo10'];
+    break;
+  }
+  case 'board_6':{
+    artefact = ['artifact_11','artifact_12'];
+    ejemplo = ['ejemplo11','ejemplo12'];
+    break;
+  }
+  case 'board_7':{
+    artefact = ['artifact_13','artifact_14'];
+    ejemplo = ['ejemplo13','ejemplo14'];
+    break;
+  }
+  case 'board_8':{
+    artefact = ['artifact_15','artifact_16'];
+    ejemplo = ['ejemplo15','ejemplo16'];
+    break;
+  }
+}
+
+console.log(artefact);
+
+const newObject2 = {};
+
+/*for (const artef of artefact) {
+  if (artef in artefact) {
+    newObject2[artef] = def['artefact_1']['datadefault'][artef];
+  } else {
+    console.error(`Property "${artef}" not found in dataObject`);
+  }
+}*/
+
+function verificarElementos(artefact, def) {
+  for (const artifact of artefact) {
+    //if (def.contents.hasOwnProperty(artifact)) {
+      // Recorrer el arreglo datadefault para buscar el elemento
+      for (const item in def.artefact_1.datadefault) {
+        console.log(item);
+        if (def.artefact_1.datadefault[item].contents.hasOwnProperty(artifact)) {
+          console.log(`El elemento "${artifact}" está presente en el objeto.`);
+          console.log('Encontrado');
+          continue;
+          //return true; // Detener la búsqueda si se encuentra el elemento          
+        }
+      }
+    //}
+  }
+  //console.log(`Ningún elemento de "${artifacts}" está presente en el objeto.`);
+  return false;
+}
+
+verificarElementos(artefact, def);
+
+
+console.log(newObject2);
+
 
 defBoardDefault();
 generator(def);
+
+let div = document.getElementsByClassName('containerCard');
+console.log(div);
 
 //
 
