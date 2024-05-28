@@ -1331,7 +1331,7 @@ switch(newPropertyName){
 
 console.log(artefact);
 
-const newObject2 = {};
+const newObject2 = def.artefact_1.datadefault[1];
 
 /*for (const artef of artefact) {
   if (artef in artefact) {
