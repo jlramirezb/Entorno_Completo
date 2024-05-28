@@ -24,8 +24,7 @@ function seleccionarAleatorios(min, max,totalale) {
 
 function localStorageSeleccionados(Pregunta,min,max,totalale){
     let seleccionados = [];
-    if(Pregunta === "P2"){
-        
+    if(Pregunta === "P2"){        
         if (localStorage.getItem('SeleccionadosP2')===null){
             seleccionados = seleccionarAleatorios(min, max, totalale);
             localStorage.setItem('SeleccionadosP2',seleccionados);
@@ -33,6 +32,17 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
         }
         else{
             seleccionados = localStorage.getItem('SeleccionadosP2');
+            seleccionados = seleccionados.split(',').map(Number);
+            //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
+        }
+    }else if(Pregunta === "P1"){
+        if (localStorage.getItem('SeleccionadosP1')===null){
+            seleccionados = seleccionarAleatorios(min, max, totalale);
+            localStorage.setItem('SeleccionadosP1',seleccionados);
+            //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
+        }
+        else{
+            seleccionados = localStorage.getItem('SeleccionadosP1');
             seleccionados = seleccionados.split(',').map(Number);
             //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
         }

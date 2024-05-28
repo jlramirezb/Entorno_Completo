@@ -1280,10 +1280,12 @@ let position = seleccionarAleatorios(1, 8, 1);
 const newPropertyName = `board_${position}`;
 console.log(position);
 const desiredBoard = defBoards[newPropertyName];
-console.log(desiredBoard);
+//console.log(desiredBoard);
 const newObject = {[newPropertyName]: desiredBoard};
-console.log(newObject);
+//console.log(newObject);
 defBoards = newObject;
+//def['artfefact_1']['datadefault'] = def['artfefact_1']['datadefault'][position-1]
+console.log(def);
 
 defBoardDefault();
 generator(def);
