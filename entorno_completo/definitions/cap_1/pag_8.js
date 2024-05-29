@@ -5,7 +5,6 @@ var def = {
     datadefault: [
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -28,7 +27,7 @@ var def = {
                     correctIndex: null
                   }
                 },*/
-
+                //Primera fila
                 {
                   type: 0,
                   text: ['Dominio',null],
@@ -58,8 +57,8 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
+              //2da fila soluciones
               [/*{
                 type: 0,
                 text: ['1', null],
@@ -95,7 +94,7 @@ var def = {
                   valueInputs: ['\\nexists']
                 }
               }],
-
+              //3ra fila caracteristicas
               [
                 /*{
                   type: 0,
@@ -134,7 +133,7 @@ var def = {
                   }
                 },
               ],
-
+              //4ta fila solucion
               [/*{
                 type: 0,
                 text: ['1', null],
@@ -377,13 +376,13 @@ var def = {
             cells: [
               [
 
-                {
+                /*{
                   type: 0,
                   text: ['Ejemplos', null],
                   conditions: {
                     correctIndex: null
                   }
-                },
+                },*/
 
                 {
                   type: 0,
@@ -418,13 +417,13 @@ var def = {
               ],
 
 
-              [{
+              [/*{
                 type: 0,
                 text: ['3', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
+              },*/ {
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
@@ -456,13 +455,13 @@ var def = {
 
               [
 
-                {
+                /*{
                   type: 0,
                   text: ['Ejemplos', null],
                   conditions: {
                     correctIndex: null
                   }
-                },
+                },*/
 
                 {
                   type: 0,
@@ -496,13 +495,13 @@ var def = {
 
               ],
 
-              [{
+              [/*{
                 type: 0,
                 text: ['3', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
+              },*/ {
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
@@ -556,13 +555,13 @@ var def = {
             cells: [
               [
 
-                {
+                /*{
                   type: 0,
                   text: ['Ejemplos', null],
                   conditions: {
                     correctIndex: null
                   }
-                },
+                },*/
 
                 {
                   type: 0,
@@ -597,13 +596,13 @@ var def = {
               ],
 
 
-              [{
+              [/*{
                 type: 0,
                 text: ['4', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
+              },*/ {
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
@@ -635,13 +634,13 @@ var def = {
 
               [
 
-                {
+                /*{
                   type: 0,
                   text: ['Ejemplos', null],
                   conditions: {
                     correctIndex: null
                   }
-                },
+                },*/
 
                 {
                   type: 0,
@@ -675,13 +674,13 @@ var def = {
 
               ],
 
-              [{
+              [/*{
                 type: 0,
                 text: ['4', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
+              },*/ {
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
@@ -735,13 +734,13 @@ var def = {
             cells: [
               [
 
-                {
+                /*{
                   type: 0,
                   text: ['Ejemplos', null],
                   conditions: {
                     correctIndex: null
                   }
-                },
+                },*/
 
                 {
                   type: 0,
@@ -776,13 +775,13 @@ var def = {
               ],
 
 
-              [{
+              [/*{
                 type: 0,
                 text: ['5', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
+              },*/ {
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
@@ -815,13 +814,13 @@ var def = {
 
               [
 
-                {
+                /*{
                   type: 0,
                   text: ['Ejemplos', null],
                   conditions: {
                     correctIndex: null
                   }
-                },
+                },*/
 
                 {
                   type: 0,
@@ -855,13 +854,13 @@ var def = {
 
               ],
 
-              [{
+              [/*{
                 type: 0,
                 text: ['5', null],
                 conditions: {
                   correctIndex: null
                 }
-              }, {
+              },*/{
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
@@ -1278,60 +1277,58 @@ var defBoards = {
 
 let position = seleccionarAleatorios(1, 8, 1);
 const newPropertyName = `board_${position}`;
-console.log(position);
+//console.log(position);
 const desiredBoard = defBoards[newPropertyName];
-console.log(desiredBoard);
+//console.log(desiredBoard);
 const newObject = {[newPropertyName]: desiredBoard};
-console.log(newObject);
+//console.log(newObject);
 defBoards = newObject;
 let artefact = [];
 let ejemplo = [];
 switch(newPropertyName){
   case 'board_1':{
-    artefact = ['artifact_1','artifact_2'];
-    ejemplo = ['ejemplo1','ejemplo2'];
+    artefact = 'artifact_1';
+    ejemplo = 'ejemplo1'
     break;
   }
   case 'board_2':{
-    artefact = ['artifact_3','artifact_4'];
-    ejemplo = ['ejemplo3','ejemplo4'];
+    artefact = 'artifact_2';
+    ejemplo = 'ejemplo2';
     break;
   }
   case 'board_3':{
-    artefact = ['artifact_5','artifact_6'];
-    ejemplo = ['ejemplo5','ejemplo6'];
+    artefact = 'artifact_3';
+    ejemplo = 'ejemplo3';
     break;
   }
   case 'board_4':{
-    artefact = ['artifact_7','artifact_8'];
-    ejemplo = ['ejemplo7','ejemplo8'];
+    artefact = 'artifact_4';
+    ejemplo = 'ejemplo4';
     break;
   }
   case 'board_5':{
-    artefact = ['artifact_9','artifact_10'];
-    ejemplo = ['ejemplo9','ejemplo10'];
+    artefact = 'artifact_5';
+    ejemplo = 'ejemplo5';
     break;
   }
   case 'board_6':{
-    artefact = ['artifact_11','artifact_12'];
-    ejemplo = ['ejemplo11','ejemplo12'];
+    artefact = 'artifact_6';
+    ejemplo = 'ejemplo6';
     break;
   }
   case 'board_7':{
-    artefact = ['artifact_13','artifact_14'];
-    ejemplo = ['ejemplo13','ejemplo14'];
+    artefact = 'artifact_7';
+    ejemplo = 'ejemplo7';
     break;
   }
   case 'board_8':{
-    artefact = ['artifact_15','artifact_16'];
-    ejemplo = ['ejemplo15','ejemplo16'];
+    artefact = 'artifact_8';
+    ejemplo = 'ejemplo8';
     break;
   }
 }
 
-console.log(artefact);
-
-const newObject2 = def.artefact_1.datadefault[1];
+//console.log(ejemplo);
 
 /*for (const artef of artefact) {
   if (artef in artefact) {
@@ -1341,36 +1338,64 @@ const newObject2 = def.artefact_1.datadefault[1];
   }
 }*/
 
-function verificarElementos(artefact, def) {
-  for (const artifact of artefact) {
+function verificarElementos(ejemplo, def) {
+  let pos = [];
+  let index = 0;
+  for (const ejem of ejemplo) {
+    //console.log(ejem);
     //if (def.contents.hasOwnProperty(artifact)) {
       // Recorrer el arreglo datadefault para buscar el elemento
       for (const item in def.artefact_1.datadefault) {
-        console.log(item);
-        if (def.artefact_1.datadefault[item].contents.hasOwnProperty(artifact)) {
-          console.log(`El elemento "${artifact}" está presente en el objeto.`);
-          console.log('Encontrado');
+        //console.log(item);
+        //console.log(def.artefact_1.datadefault[item].parent);
+        if (def.artefact_1.datadefault[item].parent === ejem) {
+          pos[index] = item;
+          index++;
+          //console.log(`El elemento "${ejem}" está presente en el objeto.`);
+          //console.log('Encontrado ' + position +' '+ item);
           continue;
           //return true; // Detener la búsqueda si se encuentra el elemento          
         }
       }
     //}
+    
+    //console.log(pos);
   }
+  return pos;
   //console.log(`Ningún elemento de "${artifacts}" está presente en el objeto.`);
   return false;
 }
 
-verificarElementos(artefact, def);
+let pos = verificarElementos(ejemplo, def);
 
+//def.artefact_1.datadefault = def.artefact_1.datadefault.slice(Number(pos[0]),Number(pos[1])+1);
+//console.log(pos)
 
-console.log(newObject2);
+let div = document.querySelectorAll('#artifact_1');
+div[0].id = artefact;
+div[1].id = artefact;
+//console.log(div);
+//div[0].parentElement.appendChild(div[0]);
+//div[1].parentElement.appendChild(div[1]);
 
+let div2 = document.querySelectorAll('[data-board="board_1"]');
+div2[0].setAttribute('data-board', `board_${position}`);
+div2[1].setAttribute('data-board', `board_${position}`);
+
+let div3 = document.querySelectorAll('.card-footer');
+console.log(div3[0].childNodes[1].id);
+div3[0].childNodes[1].id = ejemplo;
+div3[1].childNodes[1].id = ejemplo;
+//div3.id = ejemplo[Number(pos[0])];
+console.log(div3[0].childNodes[1].id);
 
 defBoardDefault();
 generator(def);
 
-let div = document.getElementsByClassName('containerCard');
-console.log(div);
+
+
+
+//console.log(child);
 
 //
 
