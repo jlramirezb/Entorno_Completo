@@ -68,30 +68,30 @@ var def = {
               },*/ {
                 type: 2,
                 // una pregunta. Varios inputs
-                answers_values: ['','(1,5)', '(2,5)'],
+                answers_values: ['P1','(1,5)', '(2,5)'],
                 conditions: {
                   valueInputs:['(1,5)']
                 }
               }, {
-                type: 3,
+                type: 2,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                inputsDefault: [['P1','(-1,1)','(-2,2)' ]],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  valueInputs: ['(-1,1)']
                 }
               }, {
                 type: 3,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                inputsDefault: [['P1', false]],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  valueInputs: [-3,0]
                 }
               }, {
                 type: 3,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                inputsDefault: [['P1', false]],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  valueInputs: [0]
                 }
               }],
               //3ra fila caracteristicas
@@ -142,35 +142,35 @@ var def = {
                 }
               },*/
               {
-                type: 3,
+                type: 2,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                inputsDefault: [['P1', '(0,1)','(1,2)']],
                 conditions: {
-                  valueInputs: [-1]
+                  valueInputs: ['(0,1)']
+                }
+              },
+              {
+                type: 2,
+                // una pregunta. Varios inputs
+                inputsDefault: [['P1', '(-2,-1)','(-1,0)']],
+                conditions: {
+                  valueInputs: ['(-2,-1)']
+                }
+              },
+              {
+                type: 2,
+                // una pregunta. Varios inputs
+                inputsDefault: [['P1', '(1,2)','(2,3)']],
+                conditions: {
+                  valueInputs: ['(2,3)']
                 }
               },
               {
                 type: 3,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                inputsDefault: [['P1', '(-3,-2)','(-4,-1)']],
                 conditions: {
-                  valueInputs: [0]
-                }
-              },
-              {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              },
-              {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
+                  valueInputs: ['(-4,-1)']
                 }
               }],
             ]
@@ -1368,7 +1368,9 @@ function verificarElementos(ejemplo, def) {
 
 let pos = verificarElementos(ejemplo, def);
 
-//def.artefact_1.datadefault = def.artefact_1.datadefault.slice(Number(pos[0]),Number(pos[1])+1);
+console.log(position);
+
+def.artefact_1.datadefault = def.artefact_1.datadefault.slice(position[0]-1,position[0]+1);
 //console.log(pos)
 
 let div = document.querySelectorAll('#artifact_1');
@@ -1383,11 +1385,12 @@ div2[0].setAttribute('data-board', `board_${position}`);
 div2[1].setAttribute('data-board', `board_${position}`);
 
 let div3 = document.querySelectorAll('.card-footer');
-console.log(div3[0].childNodes[1].id);
+//console.log(div3[0].childNodes[1].id);
 div3[0].childNodes[1].id = ejemplo;
 div3[1].childNodes[1].id = ejemplo;
 //div3.id = ejemplo[Number(pos[0])];
 console.log(div3[0].childNodes[1].id);
+console.log(div3[1].childNodes[1].id);
 
 defBoardDefault();
 generator(def);
