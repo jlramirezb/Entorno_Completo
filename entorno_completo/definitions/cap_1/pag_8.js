@@ -373,7 +373,7 @@ var def =
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: [['', '[-1.1,1]','[-1.5,1)','(-1.1,1)','(-1.5,1]']],
+                  answers_values: ['', '[-1.1,1]','[-1.5,1)','(-1.1,1)','(-1.5,1]'],
                   conditions: {
                     valueInputs: ['[-1.1,1]']
                   }
@@ -381,7 +381,7 @@ var def =
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: [['', '[-1.1,2]','[-1.1,1.8]'],'[-1,2]','(-1,1.8)'],
+                  answers_values: ['', '[-1.1,2]','[-1.1,1.8]','[-1,2]','(-1,1.8)'],
                   conditions: {
                     valueInputs: ['[-1.1,1.8]']
                   }
@@ -435,33 +435,33 @@ var def =
               ],
               [
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['','(-1,0)','[-1.1,1]','(-0.8,1]','\\newxists'],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: ['(-0.8,1]']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '[-1.1,-0.8)','(-1.1,0)','(-1.1,-0.8]','\\nexists'],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: ['[-1.1,-0.8)']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '(0,1)','[-1.1,1]','(-1.1,1)','(0,1]','\\nexists'],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: ['(-1.1,1)']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '(-1.1,0)', '(-1.1,1)', '(0,1)','\\nexists'],
                   conditions: {
                     valueInputs: ['\\nexists']
                   }
@@ -528,7 +528,7 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [1.8]
                   }
                 },
                 {
@@ -536,7 +536,7 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [1]
                   }
                 },
                 {
@@ -592,7 +592,7 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [-1.1]
                   }
                 },
                 {
@@ -600,7 +600,7 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [-1.1]
                   }
                 },
                 {
