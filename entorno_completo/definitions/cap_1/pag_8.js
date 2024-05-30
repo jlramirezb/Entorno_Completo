@@ -62,33 +62,34 @@ var def =
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: ['P1','(1,5)', '(2,5)'],
+                  answers_values: ['','[-3,3.5]', '(-3,4)','(-3,3.5)','[-3,4)'],
                   conditions:{
-                    valueInputs:['(1,5)']
+                    valueInputs:['[-3,3.5]']
                   }
                 },
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: ['P1','(-1,1)','(-2,2)'],
+                  answers_values: ['','(-1,2)','[-0.5,1.5]','(0,2)','[-0.5,2)'],
                   conditions: {
-                    valueInputs: ['(-1,1)']
+                    valueInputs: ['[-0.5,1.5]']
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['P1', false]],
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
                   conditions: {
-                    valueInputs: [-3,0]
+                    valueInputs: [-2.5,2,3.25]
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['P1', false]],
+                  inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: [0]
+                    valueInputs: [1.5]
                   }
                 }
               ],
@@ -128,7 +129,7 @@ var def =
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: ['P1', '(0,1)','(1,2)'],
+                  answers_values: ['', '(-2.5,2) U (3.25,3.5]','(-2.5,3.5)'],
                   conditions: {
                     valueInputs: ['(0,1)']
                   }
