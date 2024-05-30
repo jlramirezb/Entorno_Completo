@@ -437,7 +437,7 @@ var def =
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: ['','(-1,0)','[-1.1,1]','(-0.8,1]','\\newxists'],
+                  answers_values: ['','(-1,0)','[-1.1,1]','(-0.8,1]','∄'],
                   conditions: {
                     valueInputs: ['(-0.8,1]']
                   }
@@ -445,7 +445,7 @@ var def =
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: ['', '[-1.1,-0.8)','(-1.1,0)','(-1.1,-0.8]','\\nexists'],
+                  answers_values: ['', '[-1.1,-0.8)','(-1.1,0)','(-1.1,-0.8]','∄'],
                   conditions: {
                     valueInputs: ['[-1.1,-0.8)']
                   }
@@ -453,7 +453,7 @@ var def =
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: ['', '(0,1)','[-1.1,1]','(-1.1,1)','(0,1]','\\nexists'],
+                  answers_values: ['', '(0,1)','[-1.1,1]','(-1.1,1)','(0,1]','∄'],
                   conditions: {
                     valueInputs: ['(-1.1,1)']
                   }
@@ -461,9 +461,9 @@ var def =
                 {
                   type: 2,
                   // una pregunta. Varios inputs
-                  answers_values: ['', '(-1.1,0)', '(-1.1,1)', '(0,1)','\\nexists'],
+                  answers_values: ['', '(-1.1,0)', '(-1.1,1)', '(0,1)','∄'],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: ['∄']
                   }
                 }
               ]
