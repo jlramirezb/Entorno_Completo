@@ -1,33 +1,32 @@
 'use strict';
 
-var def = {
-  artefact_1: {
-    datadefault: [
+var def = 
+{
+  artefact_1: 
+  {
+    datadefault: 
+    [
       {
         customKeyboard: 7,
         type: 13,
         interactive: true,
         classGlobal: 'QA',
         parent: '#ejemplo1',
-        contents: {
-          artifact_1: {
+        contents: 
+        {
+          artifact_1: 
+          {
             allinputs: [],
             header: [],
-            dataInteraction: {
+            dataInteraction: 
+            {
               incorrect: 0,
               correct: 0,
               forAnswer: 0
             },
-            cells: [
-              [
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },*/
-                //Primera fila
+            cells: 
+            [
+              [//Primera fila
                 {
                   type: 0,
                   text: ['Dominio',null],
@@ -35,7 +34,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Rango', null],
@@ -59,50 +57,42 @@ var def = {
                 },
               ],
               //2da fila soluciones
-              [/*{
-                type: 0,
-                text: ['1', null],
-                conditions: {
-                  correctIndex: null
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['P1','(1,5)', '(2,5)'],
+                  conditions:{
+                    valueInputs:['(1,5)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['P1','(-1,1)','(-2,2)'],
+                  conditions: {
+                    valueInputs: ['(-1,1)']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['P1', false]],
+                  conditions: {
+                    valueInputs: [-3,0]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['P1', false]],
+                  conditions: {
+                    valueInputs: [0]
+                  }
                 }
-              },*/ {
-                type: 2,
-                // una pregunta. Varios inputs
-                answers_values: ['P1','(1,5)', '(2,5)'],
-                conditions: {
-                  valueInputs:['(1,5)']
-                }
-              }, {
-                type: 2,
-                // una pregunta. Varios inputs
-                inputsDefault: [['P1','(-1,1)','(-2,2)' ]],
-                conditions: {
-                  valueInputs: ['(-1,1)']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['P1', false]],
-                conditions: {
-                  valueInputs: [-3,0]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['P1', false]],
-                conditions: {
-                  valueInputs: [0]
-                }
-              }],
+              ],
               //3ra fila caracteristicas
               [
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },*/
                 {
                   type: 0,
                   text: ['Parte Positiva', null],
@@ -110,7 +100,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Parte Negativa', null],
@@ -134,79 +123,70 @@ var def = {
                 },
               ],
               //4ta fila solucion
-              [/*{
-                type: 0,
-                text: ['1', null],
-                conditions: {
-                  correctIndex: null
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['P1', '(0,1)','(1,2)'],
+                  conditions: {
+                    valueInputs: ['(0,1)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['P1', '(-2,-1)','(-1,0)'],
+                  conditions: {
+                    valueInputs: ['(-2,-1)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['P1', '(1,2)','(2,3)'],
+                  conditions: {
+                    valueInputs: ['(2,3)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['P1', '(-3,-2)','(-4,-1)'],
+                  conditions: {
+                    valueInputs: ['(-4,-1)']
+                  }
                 }
-              },*/
-              {
-                type: 2,
-                // una pregunta. Varios inputs
-                inputsDefault: [['P1', '(0,1)','(1,2)']],
-                conditions: {
-                  valueInputs: ['(0,1)']
-                }
-              },
-              {
-                type: 2,
-                // una pregunta. Varios inputs
-                inputsDefault: [['P1', '(-2,-1)','(-1,0)']],
-                conditions: {
-                  valueInputs: ['(-2,-1)']
-                }
-              },
-              {
-                type: 2,
-                // una pregunta. Varios inputs
-                inputsDefault: [['P1', '(1,2)','(2,3)']],
-                conditions: {
-                  valueInputs: ['(2,3)']
-                }
-              },
-              {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['P1', '(-3,-2)','(-4,-1)']],
-                conditions: {
-                  valueInputs: ['(-4,-1)']
-                }
-              }],
+              ],
             ]
           }
         }
       },
-
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
         parent: '#ejemplo2',
-        contents: {
-          artifact_2: {
+        contents: 
+        {
+          artifact_2: 
+          {
             allinputs: [],
             header: [],
-            dataInteraction: {
+            dataInteraction: 
+            {
               incorrect: 0,
               correct: 0,
               forAnswer: 0
             },
-            cells: [
+            cells:
+            [
               [
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },*/
                 {
                   type: 0,
                   text: ['Max.Abs', null],
-                  conditions: {
+                  conditions: 
+                  {
                     correctIndex: null
                   }
                 },
@@ -233,55 +213,40 @@ var def = {
                 },
               ],
               [
-                /*{
-                  type: 0,
-                  text: ['2', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },*/
                 {
                   type: 3,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  inputsDefault: [['P1', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [1]
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  inputsDefault: [['P1', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [2]
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  inputsDefault: [['P1', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [3]
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  inputsDefault: [['P1', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [4]
                   }
                 }
-              ],
-              
+              ],             
               [
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },*/
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -289,7 +254,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -311,61 +275,56 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-              [/*{
-                type: 0,
-                text: ['2', null],
-                conditions: {
-                  correctIndex: null
+              [
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['P1', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-0.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['P1', false]],
+                  conditions: {
+                    valueInputs: [3]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['P1', false]],
+                  conditions: {
+                    valueInputs: [-2]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['P1', false]],
+                  conditions: {
+                    valueInputs: [-3]
+                  }
                 }
-              },*/
-              {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-0.5]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [3]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }]
-
+              ]
             ]
           }
         }
       },
-
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
         parent: '#ejemplo3',
-        contents: {
-          artifact_3: {
+        contents: 
+        {
+          artifact_3: 
+          {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -373,17 +332,9 @@ var def = {
               correct: 0,
               forAnswer: 0
             },
-            cells: [
+            cells: 
+            [
               [
-
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },*/
-
                 {
                   type: 0,
                   text: ['Max.Abs', null],
@@ -391,7 +342,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -413,56 +363,42 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-
-              [/*{
-                type: 0,
-                text: ['3', null],
-                conditions: {
-                  correctIndex: null
-                }
-              },*/ {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }],
-
               [
-
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
                   conditions: {
-                    correctIndex: null
+                    valueInputs: ['\\nexists']
                   }
-                },*/
-
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -470,7 +406,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -492,77 +427,66 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-              [/*{
-                type: 0,
-                text: ['3', null],
-                conditions: {
-                  correctIndex: null
+              [
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
                 }
-              },*/ {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }]
-
+              ]
             ]
           }
         }
       },
-
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
         parent: '#ejemplo4',
-        contents: {
-          artifact_4: {
+        contents: 
+        {
+          artifact_4: 
+          {
             allinputs: [],
             header: [],
-            dataInteraction: {
+            dataInteraction:
+            {
               incorrect: 0,
               correct: 0,
               forAnswer: 0
             },
-            cells: [
+            cells:
+            [
               [
-
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },*/
-
                 {
                   type: 0,
                   text: ['Max.Abs', null],
@@ -570,7 +494,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -592,56 +515,42 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-
-              [/*{
-                type: 0,
-                text: ['4', null],
-                conditions: {
-                  correctIndex: null
-                }
-              },*/ {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }],
-
               [
-
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
                   conditions: {
-                    correctIndex: null
+                    valueInputs: ['\\nexists']
                   }
-                },*/
-
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -649,7 +558,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -671,77 +579,65 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-              [/*{
-                type: 0,
-                text: ['4', null],
-                conditions: {
-                  correctIndex: null
+              [
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
                 }
-              },*/ {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }],
-
+              ],
             ]
           }
         }
       },
-
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
         parent: '#ejemplo5',
         contents: {
-          artifact_5: {
+          artifact_5:
+          {
             allinputs: [],
             header: [],
-            dataInteraction: {
+            dataInteraction:
+            {
               incorrect: 0,
               correct: 0,
               forAnswer: 0
             },
-            cells: [
+            cells:
+            [
               [
-
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },*/
-
                 {
                   type: 0,
                   text: ['Max.Abs', null],
@@ -749,7 +645,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -771,57 +666,43 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-
-              [/*{
-                type: 0,
-                text: ['5', null],
-                conditions: {
-                  correctIndex: null
-                }
-              },*/ {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [1]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                //oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-1.5]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [0]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [3]
-                }
-              }],
-
               [
-
-                /*{
-                  type: 0,
-                  text: ['Ejemplos', null],
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
                   conditions: {
-                    correctIndex: null
+                    valueInputs: [1]
                   }
-                },*/
-
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [0]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [3]
+                  }
+                }
+              ],
+              [
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -829,7 +710,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -851,69 +731,67 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-              [/*{
-                type: 0,
-                text: ['5', null],
-                conditions: {
-                  correctIndex: null
+              [
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-1]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [0]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-3]
+                  }
                 }
-              },*/{
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [1.5]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [0]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-3]
-                }
-              }],
-
+              ],
             ]
           }
         }
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
         parent: '#ejemplo6',
-        contents: {
-          artifact_6: {
+        contents: 
+        {
+          artifact_6: 
+          {
             allinputs: [],
             header: [],
-            dataInteraction: {
+            dataInteraction:
+            {
               incorrect: 0,
               correct: 0,
               forAnswer: 0
             },
-            cells: [
+            cells:
+            [
               [
-
                 {
                   type: 0,
                   text: ['Ejemplos', null],
@@ -921,7 +799,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Max.Abs', null],
@@ -929,7 +806,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -951,51 +827,50 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-
-              [{
-                type: 0,
-                text: ['6', null],
-                conditions: {
-                  correctIndex: null
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-
-                conditions: {
-
-                  valueInputs: [1.5]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-2, 0.5]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }],
-
               [
-
+                {
+                  type: 0,
+                  text: ['6', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-2, 0.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [
                 {
                   type: 0,
                   text: ['Ejemplos', null],
@@ -1003,7 +878,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -1011,7 +885,6 @@ var def = {
                     correctIndex: null
                   }
                 },
-
                 {
                   type: 0,
                   text: ['Alcanzado en', null],
@@ -1033,95 +906,99 @@ var def = {
                     correctIndex: null
                   }
                 },
-
               ],
-
-              [{
-                type: 0,
-                text: ['6', null],
-                conditions: {
-                  correctIndex: null
+              [
+                {
+                  type: 0,
+                  text: ['6', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [2]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [1, -0.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-2.5, -1.5]
+                  }
                 }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1.5]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [2]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [1, -0.5]
-                }
-              }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-2.5, -1.5]
-                }
-              }]
-
+              ]
             ]
           }
         }
       },
-
       {
         type: 11,// tipo 
         //classGlobal: "QA",
         parent: '#preguntaFinal',
-        contents: {
-          artifact_7: {
+        contents:
+        {
+          artifact_7:
+          {
             allinputs: [],
             dataInteraction: { incorrect: 0, correct: 0, forAnswer: 0 },
-            questions: [
-
+            questions:
+            [
               {
                 type: 2,
                 question: '¿Por qué b no puede ser el máximo de la curva? ',
                 answers_values: ['', 'Porque b es un punto abierto.', 'Porque b es un punto cerrado.'],
-                conditions: {
+                conditions:
+                {
                   correctIndex: 1
                 }
               },
-              , {
+              {
                 type: 2,
                 question: '¿Por qué la curva del gráfico no tiene máximo?',
                 answers_values: ['', 'Porqué su punto mas bajo es vacio  por tal motivo no pertenece al rango de la curva.', 'Porqué su punto mas alto es vacio  por tal motivo no pertenece al rango de la curva.'],
-                conditions: {
+                conditions:
+                {
                   correctIndex: 2
                 }
               }
             ]
-
           },
-
-
-
         },
       },
-
-
     ]
   }
 };
-var defBoards = {
-  board_1: {
-    style: {
+
+var defBoards = 
+{
+  board_1:
+  {
+    style:
+    {
       axis: [false, true, true],
       valueAxis: {
         yd: [[0, 0], [0, 1]],
@@ -1133,9 +1010,11 @@ var defBoards = {
       maxHeight: 225
     },
     curves: [[[[-3, -0.5], [0, 1.5], [2, 0], [2.5, -0.5], [3.5, 0.5]]]]
-  },
-  board_2: {
-    style: {
+  },  
+  board_2:
+  {
+    style:
+    {
       axis: [false, true, true],
       valueAxis: {
         yd: [[0, 0], [0, 1]],
@@ -1148,8 +1027,10 @@ var defBoards = {
     },
     curves: [[[[-1.1, -1.2], [-0.8, 0], [0, 1.5], [1, 1.7]]]]
   },
-  board_3: {
-    style: {
+  board_3:
+  {
+    style:
+    {
       axis: [false, true, true],
       valueAxis: {
         yd: [[0, 0], [0, 1]],
@@ -1162,8 +1043,10 @@ var defBoards = {
     },
     curves: [[[[-3.5, -1], [-3, 0], [-2.5, 0.6], [-2.1, 0.8], [-1.2, 0.9]]], [[[-0.7, 0.9], [0, 1.1], [0.6, 1.6], [1, 2.6]]]]
   },
-  board_4: {
-    style: {
+  board_4:
+  {
+    style:
+    {
       axis: [false, true, true],
       grid: true,
       maxHeight: 250,
@@ -1177,8 +1060,10 @@ var defBoards = {
     points: [[-2.2, 2.2, true, null, null, '#2196f3'], [-2.4, 2.4, true, null, null, '#2196f3'], [-2.6, 2.6, true, null, null, '#2196f3'], [2.2, 2.2, true, null, null, '#2196f3'], [2.4, 2.4, true, null, null, '#2196f3'], [2.6, 2.6, true, null, null, '#2196f3']],
     curves: [[[[-2, 2], [-1, 0], [0, -1], [1, 0], [2, 2]]]]
   },
-  board_5: {
-    style: {
+  board_5:
+  {
+    style:
+    {
       axis: [false, true, true],
       grid: true,
       maxHeight: 250,
@@ -1191,8 +1076,10 @@ var defBoards = {
     points: [[-2.7, 2.3, true, null, null, '#2196f3'], [-3.05, 2.5, true, null, null, '#2196f3'], [-3.4, 2.7, true, null, null, '#2196f3']],
     lines: [[[[3, -0.5], [-2.5, 2.2]]]]
   },
-  board_6: {
-    style: {
+  board_6:
+  {
+    style:
+    {
       axis: [false, true, true],
       grid: true,
       maxHeight: 250,
@@ -1205,8 +1092,10 @@ var defBoards = {
     points: [[-2.3, -0.45, true, null, null, '#2196f3'], [-2.65, -0.38, true, null, null, '#2196f3'], [-3.1, -0.3, true, null, null, '#2196f3'], [-0.25, -2.7, true, null, null, '#2196f3'], [-0.2, -3.1, true, null, null, '#2196f3'], [3.3, 0.4, true, null, null, '#2196f3'], [3.6, 0.3, true, null, null, '#2196f3'], [0.25, 3.4, true, null, null, '#2196f3'], [0.2, 3.7, true, null, null, '#2196f3']],
     curves: [[[[-2.1, -0.5], [-1, -1], [-0.5, -1.8], [-0.3, -2.5]]], [[[0.3, 3.2], [0.7, 2], [2, 0.7], [1.2, 1.2], [3.1, 0.4]]]]
   },
-  board_7: {
-    style: {
+  board_7:
+  {
+    style:
+    {
       axis: [false, true, true],
       grid: true,
       maxHeight: 250,
@@ -1219,8 +1108,10 @@ var defBoards = {
     points: [[0.19, -3.2, true, null, null, '#2196f3'], [0.15, -3.5, true, null, null, '#2196f3'], [3.2, 1.4, true, null, null, '#2196f3'], [3.4, 1.6, true, null, null, '#2196f3'], [3.6, 1.8, true, null, null, '#2196f3']],
     curves: [[[[0.2, -3], [0.5, -1], [1, 0], [2, 0.5], [3, 1.2]]]]
   },
-  board_8: {
-    style: {
+  board_8:
+  {
+    style:
+    {
       axis: [false, true, true],
       grid: true,
       maxHeight: 200,
@@ -1232,8 +1123,10 @@ var defBoards = {
     },
     curves: [[[[-3, 0], [-1.5, 1], [0, 0], [1.5, -1], [3, 0]]]]
   },
-  board_9: {
-    style: {
+  board_9:
+  {
+    style:
+    {
       axis: [false, true, true],
       grid: true,
       maxHeight: 200,
@@ -1246,8 +1139,10 @@ var defBoards = {
     points: [[3, 1.5, true, '', 3, true]],
     lines: [[[[3, 1.5], [2, -1.5]]], [[[0.5, 1.5], [2, -1.5]]], [[[0.5, 1.5], [-1.5, -0.5]]], [[[-1.5, -0.5], [-2, 1.5]]], [[[-2, 1.5], [-2.5, 1]]]]
   },
-  board_11: {
-    style: {
+  board_11:
+  {
+    style:
+    {
       axis: [false, true, true],
       grid: false,
       maxHeight: 200,
@@ -1266,29 +1161,47 @@ var defBoards = {
     points: [
       //[x,y,visible,name,type]
       [2.2, 2.2, true, '', 2, true], [2.2, -0.3, false, 'a', false], [-0.2, 2, false, 'b']],
-    lines: [
+    lines: 
+    [
       //[[lista de puntos],dash,flecha primera,flecha segunda,color]
-      [[[2.2, 0], [2.2, 2.2]], 1, false, false], [[[0, 2.2], [2.2, 2.2]], 1, false, false]],
-    curves: [
+      [[[2.2, 0], [2.2, 2.2]], 1, false, false], [[[0, 2.2], [2.2, 2.2]], 1, false, false]
+    ],
+    curves:
+    [
       //[[lista de puntos],dash,flecha primera,flecha segunda,color]
-      [[[-0.2, 1], [0, 1], [1.5, 1.5], [2.2, 2.2]]]]
+      [[[-0.2, 1], [0, 1], [1.5, 1.5], [2.2, 2.2]]]
+    ]
   }
 };
 
 let position = seleccionarAleatorios(1, 8, 1);
+//position = 1;
 const newPropertyName = `board_${position}`;
+//const newPropertyName2 = `board_${position+1}`;
 //console.log(position);
-const desiredBoard = defBoards[newPropertyName];
+const desiredBoard = {};
+desiredBoard[newPropertyName]=defBoards[newPropertyName];
+//desiredBoard[newPropertyName2]=defBoards[newPropertyName2];
+
 //console.log(desiredBoard);
-const newObject = {[newPropertyName]: desiredBoard};
+//const newObject = {[newPropertyName]: desiredBoard.newPropertyName,[newPropertyName2]:desiredBoard.newPropertyName2};
 //console.log(newObject);
-defBoards = newObject;
-let artefact = [];
+defBoards = desiredBoard;
+console.log(defBoards)
+
+/*let artefact = [];
 let ejemplo = [];
+let artefact1;
+let artefact2;
+let ejemplo1;
+let ejemplo2;
+
 switch(newPropertyName){
   case 'board_1':{
-    artefact = 'artifact_1';
-    ejemplo = 'ejemplo1'
+    artefact1 = 'artifact_1';
+    artefact2 = 'artifact_2';
+    ejemplo1 = 'ejemplo1'
+    ejemplo2 = 'ejemplo2'
     break;
   }
   case 'board_2':{
@@ -1327,7 +1240,7 @@ switch(newPropertyName){
     break;
   }
 }
-
+*/
 //console.log(ejemplo);
 
 /*for (const artef of artefact) {
@@ -1338,7 +1251,7 @@ switch(newPropertyName){
   }
 }*/
 
-function verificarElementos(ejemplo, def) {
+/*function verificarElementos(ejemplo, def) {
   let pos = [];
   let index = 0;
   for (const ejem of ejemplo) {
@@ -1364,34 +1277,34 @@ function verificarElementos(ejemplo, def) {
   return pos;
   //console.log(`Ningún elemento de "${artifacts}" está presente en el objeto.`);
   return false;
-}
+}*/
 
-let pos = verificarElementos(ejemplo, def);
-
+/*let pos = verificarElementos(ejemplo, def);
+position = 1;*/
 console.log(position);
-
-def.artefact_1.datadefault = def.artefact_1.datadefault.slice(position[0]-1,position[0]+1);
-//console.log(pos)
-
+//console.log(def)
+def.artefact_1.datadefault = def.artefact_1.datadefault.slice(position-1,position+1);
+console.log(def)
+/*
 let div = document.querySelectorAll('#artifact_1');
-div[0].id = artefact;
-div[1].id = artefact;
-//console.log(div);
+div[0].id = artefact1;
+div[1].id = artefact2;
+console.log(div);
 //div[0].parentElement.appendChild(div[0]);
 //div[1].parentElement.appendChild(div[1]);
-
+*/
 let div2 = document.querySelectorAll('[data-board="board_1"]');
 div2[0].setAttribute('data-board', `board_${position}`);
 div2[1].setAttribute('data-board', `board_${position}`);
-
+/*
 let div3 = document.querySelectorAll('.card-footer');
 //console.log(div3[0].childNodes[1].id);
-div3[0].childNodes[1].id = ejemplo;
-div3[1].childNodes[1].id = ejemplo;
+div3[0].childNodes[1].id = ejemplo1;
+div3[1].childNodes[1].id = ejemplo2;
 //div3.id = ejemplo[Number(pos[0])];
 console.log(div3[0].childNodes[1].id);
 console.log(div3[1].childNodes[1].id);
-
+*/
 defBoardDefault();
 generator(def);
 
