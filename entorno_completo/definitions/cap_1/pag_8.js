@@ -6,6 +6,7 @@ var def =
   {
     datadefault: 
     [
+      //Primeras caracteristicas Board1
       {
         customKeyboard: 7,
         type: 13,
@@ -161,6 +162,7 @@ var def =
           }
         }
       },
+      //Segundas caracterisdticas Board1
       {
         customKeyboard: 7,
         type: 13,
@@ -315,6 +317,7 @@ var def =
           }
         }
       },
+      //Primeras caracteristicas Board2
       {
         customKeyboard: 7,
         type: 13,
@@ -337,28 +340,28 @@ var def =
               [
                 {
                   type: 0,
-                  text: ['Max.Abs', null],
+                  text: ['Dominio', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Rango', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Max. No Abs', null],
+                  text: ['Corte con eje X', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Corte con eje Y', null],
                   conditions: {
                     correctIndex: null
                   }
@@ -401,28 +404,28 @@ var def =
               [
                 {
                   type: 0,
-                  text: ['Min.Abs', null],
+                  text: ['Parte Positiva', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Parte Negativa', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Min. No Abs', null],
+                  text: ['Parte Creciente', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Parte Decreciente', null],
                   conditions: {
                     correctIndex: null
                   }
@@ -466,6 +469,7 @@ var def =
           }
         }
       },
+      //Segundas caracteristicas Board2
       {
         customKeyboard: 7,
         type: 13,
@@ -618,6 +622,7 @@ var def =
           }
         }
       },
+      //Primeras caracteristicas Board3
       {
         customKeyboard: 7,
         type: 13,
@@ -640,28 +645,28 @@ var def =
               [
                 {
                   type: 0,
-                  text: ['Max.Abs', null],
+                  text: ['Dominio', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Rango', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Max. No Abs', null],
+                  text: ['Corte con eje X', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Corte con eje Y', null],
                   conditions: {
                     correctIndex: null
                   }
@@ -705,28 +710,28 @@ var def =
               [
                 {
                   type: 0,
-                  text: ['Min.Abs', null],
+                  text: ['Parte Positiva', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Parte Negativa', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Min. No Abs', null],
+                  text: ['Parte Creciente', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
                   type: 0,
-                  text: ['Alcanzado en', null],
+                  text: ['Parte Decreciente', null],
                   conditions: {
                     correctIndex: null
                   }
@@ -771,6 +776,7 @@ var def =
           }
         }
       },
+      //Segundas  caracteristicas Board3
       {
         customKeyboard: 7,
         type: 13,
@@ -955,7 +961,7 @@ var def =
           }
         }
       },
-      {
+      /*{
         type: 11,// tipo 
         //classGlobal: "QA",
         parent: '#preguntaFinal',
@@ -988,7 +994,7 @@ var def =
             ]
           },
         },
-      },
+      },*/
     ]
   }
 };
@@ -1004,7 +1010,7 @@ var defBoards =
         yd: [[0, 0], [0, 1]],
         xd: [[0, 0], [1, 0]]
       },
-      grid: false,
+      grid: true,
       boundingbox: [-4, 4, 4, -4],
       maxWidth: 350,
       maxHeight: 225
