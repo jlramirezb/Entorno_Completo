@@ -630,7 +630,7 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo5',
+        parent: '#ejemplo1',
         contents: {
           artifact_5:
           {
@@ -784,10 +784,349 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo6',
+        parent: '#ejemplo2',
         contents: 
         {
           artifact_6: 
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [
+                {
+                  type: 0,
+                  text: ['Ejemplos', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 0,
+                  text: ['6', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-2, 0.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [
+                {
+                  type: 0,
+                  text: ['Ejemplos', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 0,
+                  text: ['6', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [2]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [1, -0.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-2.5, -1.5]
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      },
+      //Primeras caracteristicas Board4
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_7:
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [
+                {
+                  type: 0,
+                  text: ['Dominio', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Rango', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje X', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje Y', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [1]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [0]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [3]
+                  }
+                }
+              ],
+              [
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-1]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [0]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-3]
+                  }
+                }
+              ],
+            ]
+          }
+        }
+      },
+      //Segundas  caracteristicas Board4
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: 
+        {
+          artifact_8: 
           {
             allinputs: [],
             header: [],
@@ -1044,7 +1383,7 @@ var defBoards =
         yd: [[0, 0], [0, 1]],
         xd: [[0, 0], [1, 0]]
       },
-      grid: false,
+      grid: true,
       boundingbox: [-4, 4, 2, -2],
       maxWidth: 350,
       maxHeight: 225
@@ -1226,13 +1565,21 @@ switch(newPropertyName){
     break;
   }
   case 'board_3':{
-    artefact = 'artifact_3';
-    ejemplo = 'ejemplo3';
+    artefact1 = 'artifact_5';
+    artefact2 = 'artifact_6';
+    ejemplo1 = 'ejemplo1';
+    ejemplo2 = 'ejemplo2';
+    inicio = 4;
+    fin = 6;
     break;
   }
   case 'board_4':{
-    artefact = 'artifact_4';
-    ejemplo = 'ejemplo4';
+    artefact1 = 'artifact_7';
+    artefact2 = 'artifact_8';
+    ejemplo1 = 'ejemplo1';
+    ejemplo2 = 'ejemplo2';
+    inicio = 6;
+    fin = 8;
     break;
   }
   case 'board_5':{
