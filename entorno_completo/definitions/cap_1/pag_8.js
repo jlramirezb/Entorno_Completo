@@ -2730,13 +2730,13 @@ defBoards = desiredBoard;
 let artefact = [];
 artefact[0] = 'artifact_${position*2-1}';
 artefact[1] = 'artifact_${position*2}';
-let ejemplo = [];
+//let ejemplo = [];
 /*let artefact1;
 let artefact2;*/
 /*let ejemplo1;
 let ejemplo2;*/
-let inicio;
-let fin;
+/*let inicio;
+let fin;*/
 
 /*switch(newPropertyName){
   case 'board_1':{

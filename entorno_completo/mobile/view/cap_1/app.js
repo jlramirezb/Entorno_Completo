@@ -61,7 +61,7 @@ function cargaData(){
 
 function abrirPagina(idBoton) {
     if(idBoton==="btnPreg1")
-        window.location.href = "pordesarrollar.html";
+        window.location.href = "pag_Ex_P1.html";
     else if(idBoton==="btnPreg2")
         window.location.href = "pag_Ex_P2.html";
 }
@@ -96,4 +96,6 @@ btnPreg3.addEventListener("click", e=>{
     btnPreg1.disabled = true;
     btnPreg2.disabled = true;
     btnPreg3.disabled = true;
+    localStorage.removeItem("SeleccionadosP1");
+    localStorage.removeItem("SeleccionadosP2");
 });

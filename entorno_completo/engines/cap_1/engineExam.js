@@ -46,7 +46,7 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
             seleccionados = seleccionados.split(',').map(Number);
             //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
         }
-    }
+    }    
     return seleccionados;
 }
 
@@ -91,4 +91,37 @@ function PintaSeleccionP2(seleccionados){
     btnBack.addEventListener('click',()=>{
         window.location.href = "Pag_Ex.html";
     })
+}
+
+function PintaSeleccionP1(position, def, defBoard){
+    const newPropertyName = `board_${position}`;
+    const desiredBoard = {};
+    
+    desiredBoard[newPropertyName]=defBoards[newPropertyName];
+    defBoards = desiredBoard;
+    
+    let artefact = [];
+    artefact[0] = 'artifact_${position*2-1}';
+    artefact[1] = 'artifact_${position*2}';
+    def.artefact_1.datadefault = def.artefact_1.datadefault.slice((position-1)*2,(position-1)*2+2);
+    
+    let div = document.querySelectorAll('#artifact_1');
+    div.id = artefact[0];
+    div = document.querySelectorAll('#artifact_2');
+    div.id = artefact[1];
+    
+    let div2 = document.querySelectorAll('[data-board="board_1"]');
+    div2[0].setAttribute('data-board', `board_${position}`);
+    div2[1].setAttribute('data-board', `board_${position}`);    
+
+    div = document.querySelector('.containerNormal');
+    let btnBack = document.createElement("button");
+    btnBack.textContent = "Regresar";
+    div.appendChild(btnBack);
+
+    btnBack.addEventListener('click',()=>{
+        window.location.href = "Pag_Ex.html";
+    })
+    
+    return ([def, defBoard]);
 }
