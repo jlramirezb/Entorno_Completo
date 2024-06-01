@@ -676,20 +676,20 @@ var def =
               ],
               [
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '[-3.5,-1.2] U [-0.8,1]','(-3,-1.2) U (-0.8,1)','[-3.5,-1.2) U (-0.8,1]','(-3,-1.2] U [-0.8,1)'],
                   conditions: {
-                    valueInputs: [1]
+                    valueInputs: ['[-3.5,-1.2] U [-0.8,1]']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '[-1,2.5]', '(-1,2.5)', '[-1,3]', '[-1,3)'],
                   //oneToManyInput: true,
                   conditions: {
-                    valueInputs: [-1.5]
+                    valueInputs: ['[-1,2.5]']
                   }
                 },
                 {
@@ -697,7 +697,7 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: [0]
+                    valueInputs: [-3]
                   }
                 },
                 {
@@ -705,7 +705,7 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: [3]
+                    valueInputs: [1.1]
                   }
                 }
               ],
@@ -741,36 +741,36 @@ var def =
               ],
               [
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '[-3.5,-1.2] U [-0.8,1]','(-3,-1.2) U (-0.8,1)','[-3.5,-1.2) U (-0.8,1]','(-3,-1.2] U [-0.8,1]','∄'],
                   conditions: {
-                    valueInputs: [-1]
+                    valueInputs: ['(-3,-1.2] U [-0.8,1]']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  answers_values: ['', '[-3.5,-3)','(-3.5,-2.5)','[-3.5,3.1)','[-3.5.-3]','∄'],
+                  //oneToManyInput: true,
                   conditions: {
-                    valueInputs: [1.5]
+                    valueInputs: ['[-3.5,-3)']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['','[-3.5,-1.2) U [-0.8,1)','(-3.5,-1.2] U (-0.8,1]', '(-3.5,-1.2) U (-0.8,1)','∄'],
                   conditions: {
-                    valueInputs: [0]
+                    valueInputs: ['(-3.5,-1.2) U (-0.8,1)']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['','[-3.5,-1.2) U [-0.8,1)','(-3.5,-1.2] U (-0.8,1]', '(-3.5,-1.2) U (-0.8,1)','∄'],
                   conditions: {
-                    valueInputs: [-3]
+                    valueInputs: [,'∄']
                   }
                 }
               ],
@@ -799,14 +799,7 @@ var def =
             },
             cells:
             [
-              [
-                {
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
+              [                
                 {
                   type: 0,
                   text: ['Max.Abs', null],
@@ -838,10 +831,20 @@ var def =
               ],
               [
                 {
-                  type: 0,
-                  text: ['6', null],
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
                   conditions: {
-                    correctIndex: null
+                    valueInputs: [2.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [1]
                   }
                 },
                 {
@@ -849,16 +852,7 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: [1.5]
-                  }
-                },
-                {
-                  type: 3,
-                  // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
-                  conditions: {
-                    valueInputs: [-2, 0.5]
+                    valueInputs: [0.9]
                   }
                 },
                 {
@@ -866,26 +860,11 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: ['\\nexists']
-                  }
-                },
-                {
-                  type: 3,
-                  // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
-                  conditions: {
-                    valueInputs: ['\\nexists']
+                    valueInputs: [-1.2]
                   }
                 }
               ],
               [
-                {
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -917,18 +896,11 @@ var def =
               ],
               [
                 {
-                  type: 0,
-                  text: ['6', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
-                {
                   type: 3,
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: [-1.5]
+                    valueInputs: [-1]
                   }
                 },
                 {
@@ -937,25 +909,25 @@ var def =
                   inputsDefault: [['', false]],
                   oneToManyInput: true,
                   conditions: {
-                    valueInputs: [2]
+                    valueInputs: [-3.5]
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  //oneToManyInput: true,
                   conditions: {
-                    valueInputs: [1, -0.5]
+                    valueInputs: [0.9]
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  //oneToManyInput: true,
                   conditions: {
-                    valueInputs: [-2.5, -1.5]
+                    valueInputs: [-0.8]
                   }
                 }
               ]
@@ -1015,20 +987,29 @@ var def =
               ],
               [
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '[-∞,0) U (0,∞]','(-∞,∞)','[-5,-5]'],
                   conditions: {
-                    valueInputs: [1]
+                    valueInputs: ['(-∞,∞)']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '[-1,6]','(-1,∞)','[-1,∞)','[-1,∞]'],
                   //oneToManyInput: true,
                   conditions: {
-                    valueInputs: [-1.5]
+                    valueInputs: ['[-1,∞)']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput:true,
+                  conditions: {
+                    valueInputs: [-1,1]
                   }
                 },
                 {
@@ -1036,15 +1017,7 @@ var def =
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
                   conditions: {
-                    valueInputs: [0]
-                  }
-                },
-                {
-                  type: 3,
-                  // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
-                  conditions: {
-                    valueInputs: [3]
+                    valueInputs: [-1]
                   }
                 }
               ],
@@ -1080,36 +1053,36 @@ var def =
               ],
               [
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '(-∞,∞)','(-∞,-1) U (1,∞)','(0,∞)','∄'],
                   conditions: {
-                    valueInputs: [-1]
+                    valueInputs: ['(-∞,-1) U (1,∞)']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  answers_values: ['', '(0,∞)','(-∞,-1) U (1,∞)','(-1,1)','∄' ],
+                  //oneToManyInput: true,
                   conditions: {
-                    valueInputs: [1.5]
+                    valueInputs: ['(-1,1)']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['','(0,∞)','(-∞,-1) U (1,∞)','(-∞,∞)','∄'],
                   conditions: {
-                    valueInputs: [0]
+                    valueInputs: ['(0,∞)']
                   }
                 },
                 {
-                  type: 3,
+                  type: 2,
                   // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  answers_values: ['', '(0,∞)','(-∞,0)','(1,1)','∄'],
                   conditions: {
-                    valueInputs: [-3]
+                    valueInputs: ['(-∞,0)']
                   }
                 }
               ],
@@ -1138,14 +1111,7 @@ var def =
             },
             cells:
             [
-              [
-                {
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
+              [                
                 {
                   type: 0,
                   text: ['Max.Abs', null],
@@ -1175,29 +1141,22 @@ var def =
                   }
                 },
               ],
-              [
+              [                
                 {
-                  type: 0,
-                  text: ['6', null],
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
                   conditions: {
-                    correctIndex: null
+                    valueInputs: ['\\nexists']
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
+                  //oneToManyInput: true,
                   conditions: {
-                    valueInputs: [1.5]
-                  }
-                },
-                {
-                  type: 3,
-                  // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
-                  conditions: {
-                    valueInputs: [-2, 0.5]
+                    valueInputs: ['\\nexists']
                   }
                 },
                 {
@@ -1217,14 +1176,7 @@ var def =
                   }
                 }
               ],
-              [
-                {
-                  type: 0,
-                  text: ['Ejemplos', null],
-                  conditions: {
-                    correctIndex: null
-                  }
-                },
+              [                
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -1254,27 +1206,120 @@ var def =
                   }
                 },
               ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-1]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [0]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      },
+      //Primeras caracteristicas Board5
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_9:
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
               [
                 {
                   type: 0,
-                  text: ['6', null],
+                  text: ['Dominio', null],
                   conditions: {
                     correctIndex: null
                   }
                 },
                 {
-                  type: 3,
-                  // una pregunta. Varios inputs
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['Rango', null],
                   conditions: {
-                    valueInputs: [-1.5]
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje X', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje Y', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,3)','(-∞,3]','(-∞,∞)','(-∞,-3]'],
+                  conditions: {
+                    valueInputs: ['(-∞,3]']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '[-1,5]','(-1,∞)','[-0.5,∞)','[-1,∞)'],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['[-0.5,∞)']
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  //oneToManyInput:true,
                   conditions: {
                     valueInputs: [2]
                   }
@@ -1283,18 +1328,1166 @@ var def =
                   type: 3,
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
-                  oneToManyInput: true,
                   conditions: {
-                    valueInputs: [1, -0.5]
+                    valueInputs: [1]
+                  }
+                }
+              ],
+              [
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,2)','(-∞,0)','(0,3)','∄'],
+                  conditions: {
+                    valueInputs: ['(-∞,2)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(0,∞)','(-∞,2)','(2,3]','∄' ],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['(2,3]']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['','(0,∞)','(-∞,2)','(-∞,∞)','∄'],
+                  conditions: {
+                    valueInputs: ['∄']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(0,3)','(-∞,3)','(0,3)','∄'],
+                  conditions: {
+                    valueInputs: ['(-∞,3)']
+                  }
+                }
+              ],
+            ]
+          }
+        }
+      },
+      //Segundas  caracteristicas Board5
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: 
+        {
+          artifact_10: 
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [                
+                {
+                  type: 0,
+                  text: ['Max.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
                   }
                 },
                 {
                   type: 3,
                   // una pregunta. Varios inputs
                   inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  //oneToManyInput: true,
                   conditions: {
-                    valueInputs: [-2.5, -1.5]
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [                
+                {
+                  type: 0,
+                  text: ['Min.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-0.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [3]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      },
+      //Primeras caracteristicas Board6
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_11:
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [
+                {
+                  type: 0,
+                  text: ['Dominio', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Rango', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje X', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje Y', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,0) U (0,∞)','(-∞,0]','(-∞,∞)','(0,∞)'],
+                  conditions: {
+                    valueInputs: ['(-∞,0) U (0,∞)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,0) U (0,∞)','(-∞,0]','(-∞,∞)','(0,∞)'],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['(-∞,0) U (0,∞)']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput:true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,∞)','(-∞,0)','(0,∞)','∄'],
+                  conditions: {
+                    valueInputs: ['(0,∞)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,∞)','(-∞,0)','(0,∞)','∄'],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['(-∞,0)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['','(0,∞)','(-∞,0)','(-∞,∞)','∄'],
+                  conditions: {
+                    valueInputs: ['∄']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,0)','(-∞,0) U (0,∞)','(0,5)','∄'],
+                  conditions: {
+                    valueInputs: ['(-∞,0) U (0,∞)']
+                  }
+                }
+              ],
+            ]
+          }
+        }
+      },
+      //Segundas  caracteristicas Board6
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: 
+        {
+          artifact_12: 
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [                
+                {
+                  type: 0,
+                  text: ['Max.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [                
+                {
+                  type: 0,
+                  text: ['Min.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      },
+      //Primeras caracteristicas Board7
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_13:
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [
+                {
+                  type: 0,
+                  text: ['Dominio', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Rango', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje X', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje Y', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(1,∞)','(-∞,0]','(-∞,∞)','(0,∞)'],
+                  conditions: {
+                    valueInputs: ['(0,∞)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,0) U (0,∞)','(-∞,0]','(-∞,∞)','(0,∞)'],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['(-∞,∞)']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput:true,
+                  conditions: {
+                    valueInputs: [1]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(0,∞)','(0,3)','(1,∞)','∄'],
+                  conditions: {
+                    valueInputs: ['(1,∞)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(0,1)','(-∞,1)','(0,∞)','∄'],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['(0,1)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['','(0,∞)','(-∞,0)','(-∞,∞)','∄'],
+                  conditions: {
+                    valueInputs: ['(0,∞)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,0)','(-∞,0) U (0,∞)','(0,5)','∄'],
+                  conditions: {
+                    valueInputs: ['∄']
+                  }
+                }
+              ],
+            ]
+          }
+        }
+      },
+      //Segundas  caracteristicas Board7
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: 
+        {
+          artifact_14: 
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [                
+                {
+                  type: 0,
+                  text: ['Max.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ],
+              [                
+                {
+                  type: 0,
+                  text: ['Min.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }
+              ]
+            ]
+          }
+        }
+      },
+      //Primeras caracteristicas Board8
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_15:
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [
+                {
+                  type: 0,
+                  text: ['Dominio', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Rango', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje X', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje Y', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-3,3)','(-∞,3]','(-∞,∞)','[-3,3]'],
+                  conditions: {
+                    valueInputs: ['[-3,3]']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-∞,1)','[-1,1]','(-1,1)','(1,∞)'],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['[-1,1]']
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  oneToManyInput:true,
+                  conditions: {
+                    valueInputs: [-3,0,3]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [0]
+                  }
+                }
+              ],
+              [
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-3,0)','(0,3)','(-1,1)','∄'],
+                  conditions: {
+                    valueInputs: ['(-3,0)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-3,0)','(-∞,3)','(0,3)','∄'],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: ['(0,3)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['','(-3,-1.5) U (1.5,3)','(-1,1)','(0,3)','∄'],
+                  conditions: {
+                    valueInputs: ['(-3,-1.5) U (1.5,3)']
+                  }
+                },
+                {
+                  type: 2,
+                  // una pregunta. Varios inputs
+                  answers_values: ['', '(-1.5,1.5)','(-3,0) U (1.5,3)','(0,3)','∄'],
+                  conditions: {
+                    valueInputs: ['(-1.5,1.5)']
+                  }
+                }
+              ],
+            ]
+          }
+        }
+      },
+      //Segundas  caracteristicas Board8
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: 
+        {
+          artifact_16: 
+          {
+            allinputs: [],
+            header: [],
+            dataInteraction:
+            {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells:
+            [
+              [                
+                {
+                  type: 0,
+                  text: ['Max.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [1]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [0]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [3]
+                  }
+                }
+              ],
+              [                
+                {
+                  type: 0,
+                  text: ['Min.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [                
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-1]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [1.5]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [0]
+                  }
+                },
+                {
+                  type: 3,
+                  // una pregunta. Varios inputs
+                  inputsDefault: [['', false]],
+                  //oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-3]
                   }
                 }
               ]
@@ -1583,23 +2776,39 @@ switch(newPropertyName){
     break;
   }
   case 'board_5':{
-    artefact = 'artifact_5';
-    ejemplo = 'ejemplo5';
+    artefact1 = 'artifact_9';
+    artefact2 = 'artifact_10';
+    ejemplo1 = 'ejemplo1';
+    ejemplo2 = 'ejemplo2';
+    inicio = 8;
+    fin = 10;
     break;
   }
   case 'board_6':{
-    artefact = 'artifact_6';
-    ejemplo = 'ejemplo6';
+    artefact1 = 'artifact_11';
+    artefact2 = 'artifact_12';
+    ejemplo1 = 'ejemplo1';
+    ejemplo2 = 'ejemplo2';
+    inicio = 10;
+    fin = 12;
     break;
   }
   case 'board_7':{
-    artefact = 'artifact_7';
-    ejemplo = 'ejemplo7';
+    artefact1 = 'artifact_13';
+    artefact2 = 'artifact_14';
+    ejemplo1 = 'ejemplo1';
+    ejemplo2 = 'ejemplo2';
+    inicio = 12;
+    fin = 14;
     break;
   }
   case 'board_8':{
-    artefact = 'artifact_8';
-    ejemplo = 'ejemplo8';
+    artefact1 = 'artifact_15';
+    artefact2 = 'artifact_16';
+    ejemplo1 = 'ejemplo1';
+    ejemplo2 = 'ejemplo2';
+    inicio = 14;
+    fin = 16;
     break;
   }
 }
