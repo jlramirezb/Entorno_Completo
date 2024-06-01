@@ -1,7 +1,6 @@
 'use strict';
 
-var def = 
-{
+var def = {
   artefact_1: 
   {
     datadefault: 
@@ -2533,8 +2532,7 @@ var def =
   }
 };
 
-var defBoards = 
-{
+var defBoards = {
   board_1:
   {
     style:
@@ -2727,18 +2725,20 @@ desiredBoard[newPropertyName]=defBoards[newPropertyName];
 //const newObject = {[newPropertyName]: desiredBoard.newPropertyName,[newPropertyName2]:desiredBoard.newPropertyName2};
 //console.log(newObject);
 defBoards = desiredBoard;
-console.log(defBoards)
+//console.log(defBoards)
 
 let artefact = [];
+artefact[0] = 'artifact_${position*2-1}';
+artefact[1] = 'artifact_${position*2}';
 let ejemplo = [];
-let artefact1;
-let artefact2;
-let ejemplo1;
-let ejemplo2;
+/*let artefact1;
+let artefact2;*/
+/*let ejemplo1;
+let ejemplo2;*/
 let inicio;
 let fin;
 
-switch(newPropertyName){
+/*switch(newPropertyName){
   case 'board_1':{
     artefact1 = 'artifact_1';
     artefact2 = 'artifact_2';
@@ -2811,7 +2811,7 @@ switch(newPropertyName){
     fin = 16;
     break;
   }
-}
+}*/
 
 //console.log(ejemplo);
 
@@ -2853,16 +2853,16 @@ switch(newPropertyName){
 
 /*let pos = verificarElementos(ejemplo, def);
 position = 1;*/
-console.log(position);
+//console.log(position);
 //console.log(def)
-def.artefact_1.datadefault = def.artefact_1.datadefault.slice(inicio,fin);
-console.log(def)
+def.artefact_1.datadefault = def.artefact_1.datadefault.slice((position-1)*2,(position-1)*2+2);
+//console.log(def)
 
 let div = document.querySelectorAll('#artifact_1');
-div.id = artefact1;
+div.id = artefact[0];
 div = document.querySelectorAll('#artifact_2');
-div.id = artefact2;
-console.log(div);
+div.id = artefact[1];
+//console.log(div);
 //div[0].parentElement.appendChild(div[0]);
 //div[1].parentElement.appendChild(div[1]);
 
@@ -2870,14 +2870,14 @@ let div2 = document.querySelectorAll('[data-board="board_1"]');
 div2[0].setAttribute('data-board', `board_${position}`);
 div2[1].setAttribute('data-board', `board_${position}`);
 
-let div3 = document.querySelectorAll('#ejemplo1');
+/*let div3 = document.querySelectorAll('#ejemplo1');
 //console.log(div3);
 div3.id = ejemplo1;
 div3 = document.querySelectorAll('#ejemplo2');
 div3.id = ejemplo2;
 //div3[1].childNodes[1].id = ejemplo2;
 //div3.id = ejemplo[Number(pos[0])];
-console.log(div3);
+console.log(div3);*/
 //console.log(div3[1].childNodes[1].id);
 
 defBoardDefault();
