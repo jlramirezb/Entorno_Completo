@@ -93,7 +93,7 @@ function PintaSeleccionP2(seleccionados){
     })
 }
 
-function PintaSeleccionP1(position, def, defBoard){
+function PintaSeleccionP1(position, def, defBoard, Pregunta){
     const newPropertyName = `board_${position}`;
     const desiredBoard = {};
     
@@ -114,14 +114,26 @@ function PintaSeleccionP1(position, def, defBoard){
     div2[0].setAttribute('data-board', `board_${position}`);
     div2[1].setAttribute('data-board', `board_${position}`);    
 
-    div = document.querySelector('.containerNormal');
-    let btnBack = document.createElement("button");
-    btnBack.textContent = "Regresar";
-    div.appendChild(btnBack);
+    if(Pregunta==='P1_1'){
+        div = document.querySelector('.containerNormal');
+        let btnBack = document.createElement("button");
+        btnBack.textContent = "Regresar";
+        div.appendChild(btnBack);
 
-    btnBack.addEventListener('click',()=>{
-        window.location.href = "Pag_Ex.html";
-    })
+        btnBack.addEventListener('click',()=>{
+            window.location.href = "Pag_Ex.html";
+        })
+    }else if(Pregunta==='P1'){
+        btnBack = document.querySelector('.boton-izquierda');
+        btnForw = document.querySelector('.boton-derecha');
+        btnBack.addEventListener('click',()=>{
+            window.location.href = "Pag_Ex.html";
+        })
+        btnForw.addEventListener('click',()=>{
+            window.location.href = "pagEx_P1_1.html";
+        })
+
+    }
     
     return ([def, defBoard]);
 }

@@ -515,8 +515,7 @@ const rDef = {
             ],
             dataInteraction: { incorrect: 0, correct: 0, forAnswer: 0 },
             ///////tabla 1/////////////////////////////
-            cells: [
-                  
+            cells: [               
 
               [
                 {
@@ -602,6 +601,7 @@ const rDef = {
           },
         },
       },
+      
       ///////////tabla 2 /////////////////
       {
         type: 13,

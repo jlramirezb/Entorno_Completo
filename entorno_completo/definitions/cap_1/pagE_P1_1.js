@@ -192,30 +192,44 @@ var def = {
                     },
                     cells: [
                         [
-                            {
+                            /*{
                                 type: 0,
                                 text: ["Max.Abs", null],
                                 conditions: {
                                     correctIndex: null,
                                 },
-                            },
+                            },*/
                             {
                                 type: 0,
-                                text: ["Alcanzado en", null],
+                                text: ["f(-1) ≈ ", null],
                                 conditions: {
                                     correctIndex: null,
                                 },
                             },
                             {
                                 type: 0,
-                                text: ["Max. No Abs", null],
+                                text: ["f(0.5) ≈ ", null],
                                 conditions: {
                                     correctIndex: null,
                                 },
                             },
                             {
                                 type: 0,
-                                text: ["Alcanzado en", null],
+                                text: ["f(4) ≈ ", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 0,
+                                text: ["f( ) ≈ -1", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 0,
+                                text: ["f( ) ≈ 3", null],
                                 conditions: {
                                     correctIndex: null,
                                 },
@@ -227,7 +241,16 @@ var def = {
                                 // una pregunta. Varios inputs
                                 inputsDefault: [["", false]],
                                 conditions: {
-                                    valueInputs: [1.5],
+                                    valueInputs: [1.25],
+                                },
+                            },
+                            {
+                                type: 3,
+                                // una pregunta. Varios inputs
+                                inputsDefault: [["", false]],
+                                oneToManyInput:true,
+                                conditions: {
+                                    valueInputs: [1.25],
                                 },
                             },
                             {
@@ -235,7 +258,7 @@ var def = {
                                 // una pregunta. Varios inputs
                                 inputsDefault: [["", false]],
                                 conditions: {
-                                    valueInputs: [0],
+                                    valueInputs: ["\\nexists"],
                                 },
                             },
                             {
@@ -243,7 +266,7 @@ var def = {
                                 // una pregunta. Varios inputs
                                 inputsDefault: [["", false]],
                                 conditions: {
-                                    valueInputs: [0.5],
+                                    valueInputs: ["\\nexists"],
                                 },
                             },
                             {
@@ -251,11 +274,11 @@ var def = {
                                 // una pregunta. Varios inputs
                                 inputsDefault: [["", false]],
                                 conditions: {
-                                    valueInputs: [3.5],
+                                    valueInputs: ["\\nexists"],
                                 },
                             },
                         ],
-                        [
+                        /*[
                             {
                                 type: 0,
                                 text: ["Min.Abs", null],
@@ -284,8 +307,8 @@ var def = {
                                     correctIndex: null,
                                 },
                             },
-                        ],
-                        [
+                        ],*/
+                        /*[
                             {
                                 type: 3,
                                 // una pregunta. Varios inputs
@@ -320,7 +343,7 @@ var def = {
                                     valueInputs: ["\\nexists"],
                                 },
                             },
-                        ],
+                        ],*/
                     ],
                 },
             },
@@ -2982,7 +3005,7 @@ var defBoards = {
 
 //let position = seleccionarAleatorios(1, 8, 1);
 let position = localStorageSeleccionados("P1", 1, 8, 1);
-[def, defBoards] = PintaSeleccionP1(position, def, defBoards);
+[def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1_1');
 
 defBoardDefault();
 generator(def);

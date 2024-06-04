@@ -2965,7 +2965,7 @@ var defBoards = {
 
 //let position = seleccionarAleatorios(1, 8, 1);
 let position = localStorageSeleccionados("P1", 1, 8, 1);
-[def, defBoards] = PintaSeleccionP1(position, def, defBoards);
+[def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1');
 
 defBoardDefault();
 generator(def);
