@@ -130,38 +130,43 @@ var def = {
                         //4ta fila solucion
                         [
                             {
-                                type: 0
-                                text: [["0", false]],
+                                type: 0,
+                                text: ["Cota Inf.", null],
                                 conditions: {
-                                    valueInputs: ['\\leq0','0'],
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 3,
+                                // una pregunta. Varios inputs
+                                inputsDefault: [["0.5", false]],
+                                conditions: {
+                                    valueInputs: ['\\leq0.5','0.5'],
                                     evaluateCote:{
-                                        top: 0
+                                        bottom: 0.5
                                     }
                                 },
                             },
                             {
-                                inputsDefault: [["0", false]],
+                                type: 3,
+                                // una pregunta. Varios inputs
+                                inputsDefault: [["-0.5", false]],                                
                                 conditions: {
-                                    valueInputs: ['\\leq0','0'],
+                                    valueInputs: ['\\leq-0.5','-0.5'],
                                     evaluateCote:{
-                                        top: 0
+                                        bottom: -0.5
                                     }
                                 },
                             },
                             {
-                                type: 2,
+                                type: 3,
                                 // una pregunta. Varios inputs
-                                answers_values: ["","(-3,0)","(-3,0) U (2.5,3.5)","(0,4)","∄",],
+                                inputsDefault: [["-0.5", false]],                                
                                 conditions: {
-                                    valueInputs: ["(-3,0) U (2.5,3.5)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["","(-3,-1) U (0,3.5)","(0,2.5)","(-2.5,0) u (0.5,4)","∄",],
-                                conditions: {
-                                    valueInputs: ["(0,2.5)"],
+                                    valueInputs: ['\\leq-0.5','-0.5'],
+                                    evaluateCote:{
+                                        bottom: -0.5
+                                    }
                                 },
                             },
                         ],
