@@ -3354,3 +3354,22 @@ var countersTable2 = {
 
 //     return data
 // }
+
+let validar = document.querySelectorAll('.check');
+console.log(validar);
+
+for (let i = 0; i < validar.length; i++) {
+    // Add a click event listener to each element
+    validar[i].addEventListener('click', function() {
+        // Print a different message depending on the element
+        switch (this) {
+            case validar[0]:
+                console.log('Validar izquierdo');
+                break;
+            case validar[1]:
+                console.log('Validar Derecho');
+                break;        
+        }
+    });
+}
+
