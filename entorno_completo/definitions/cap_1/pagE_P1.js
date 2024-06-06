@@ -125,7 +125,7 @@ var def = {
                                 // una pregunta. Varios inputs
                                 answers_values: ["","(-2.5,2) U (3.25,3.5]","(-2.5,3.5)","(0,3.5]","∄",],
                                 conditions: {
-                                    valueInputs: ["(0,1)"],
+                                    valueInputs: ["(-2.5,2) U (3.25,3.5]"],
                                 },
                             },
                             {
@@ -3358,6 +3358,9 @@ var countersTable2 = {
 let validar = document.querySelectorAll('.check');
 console.log(validar);
 
+/*const selectElement;
+const selectedOption;
+const selectedValue;*/
 for (let i = 0; i < validar.length; i++) {
     // Add a click event listener to each element
     validar[i].addEventListener('click', function() {
@@ -3365,6 +3368,26 @@ for (let i = 0; i < validar.length; i++) {
         switch (this) {
             case validar[0]:
                 console.log('Validar izquierdo');
+                let tds = document.querySelectorAll('tbody');
+                //console.log(tds[0].childNodes[1].childNodes[1]);
+                const selectElement = tds[0].querySelectorAll('select');
+                const selectedValues = [];
+                for(let j=0;j<selectElement.length;j++){
+                    const selectedOption = selectElement[j].querySelector('option:checked');
+                    const selectedValue = selectedOption.value;
+                    selectedValues.push(selectedValue);
+                }
+                localStorage.setItem('selectedValues', JSON.stringify(selectedValues));
+                const inputElement = tds[0].querySelectorAll('math-field');
+                //console.log(inputElement);
+                for(let j=0;j<inputElement.length;j++){
+                    const inputValue = inputElement[j].value;
+                    // Store or use the value
+                    console.log(inputValue);
+                }
+                /*const tbodyElement = document.querySelectorAll('tbody');
+                const tbodyHTML = tbodyElement[0].outerHTML;
+                localStorage.setItem('tbodyContent', tbodyHTML);*/
                 break;
             case validar[1]:
                 console.log('Validar Derecho');
@@ -3373,3 +3396,16 @@ for (let i = 0; i < validar.length; i++) {
     });
 }
 
+window.addEventListener('load', function() {
+    const tbodyElement = document.querySelector('tbody');
+    const selectElements = tbodyElement.querySelectorAll('select');
+    const selectedValues = JSON.parse(localStorage.getItem('selectedValues'));
+    if (selectedValues) {
+      for (let i = 0; i < selectElements.length; i++) {
+        const selectedValue = selectedValues[i];
+        const selectedOption = selectElements[i].querySelector(`option[value="${selectedValue}"]`);
+        selectedOption.selected = true;
+      }
+    }
+  });
+  
