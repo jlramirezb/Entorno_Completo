@@ -3380,14 +3380,13 @@ for (let i = 0; i < validar.length; i++) {
                 localStorage.setItem('selectedValues', JSON.stringify(selectedValues));
                 const inputElement = tds[0].querySelectorAll('math-field');
                 //console.log(inputElement);
+                const mathvalues = [];
                 for(let j=0;j<inputElement.length;j++){
                     const inputValue = inputElement[j].value;
+                    mathvalues.push(inputValue);
                     // Store or use the value
-                    console.log(inputValue);
                 }
-                /*const tbodyElement = document.querySelectorAll('tbody');
-                const tbodyHTML = tbodyElement[0].outerHTML;
-                localStorage.setItem('tbodyContent', tbodyHTML);*/
+                localStorage.setItem('mathValues', JSON.stringify(mathvalues));                
                 break;
             case validar[1]:
                 console.log('Validar Derecho');
@@ -3401,11 +3400,17 @@ window.addEventListener('load', function() {
     const selectElements = tbodyElement.querySelectorAll('select');
     const selectedValues = JSON.parse(localStorage.getItem('selectedValues'));
     if (selectedValues) {
-      for (let i = 0; i < selectElements.length; i++) {
-        const selectedValue = selectedValues[i];
-        const selectedOption = selectElements[i].querySelector(`option[value="${selectedValue}"]`);
-        selectedOption.selected = true;
-      }
+        for (let i = 0; i < selectElements.length; i++) {
+            const selectedValue = selectedValues[i];
+            const selectedOption = selectElements[i].querySelector(`option[value="${selectedValue}"]`);
+            selectedOption.selected = true;
+        }
     }
-  });
-  
+    const mathFieldElements = tbodyElement.querySelectorAll('math-field');
+    const mathValues = JSON.parse(localStorage.getItem('mathValues'));
+    if (mathValues) {
+        for (let i = 0; i < mathFieldElements.length; i++) {
+            mathFieldElements[i].value = mathValues[i];
+        }
+    }
+});
