@@ -3361,7 +3361,7 @@ console.log(validar);
 /*const selectElement;
 const selectedOption;
 const selectedValue;*/
-let tds;
+let tds = document.querySelectorAll('tbody');;
 let inputElement;
 let mathvalues;
 for (let i = 0; i < validar.length; i++) {
@@ -3371,7 +3371,7 @@ for (let i = 0; i < validar.length; i++) {
         switch (this) {
             case validar[0]:
                 console.log('Validar izquierdo');
-                tds = document.querySelectorAll('tbody');
+                //tds = document.querySelectorAll('tbody');
                 //console.log(tds[0].childNodes[1].childNodes[1]);
                 const selectElement = tds[0].querySelectorAll('select');
                 const selectedValues = [];
@@ -3393,16 +3393,7 @@ for (let i = 0; i < validar.length; i++) {
                 break;
             case validar[1]:
                 console.log('Validar Derecho');
-                tds = document.querySelectorAll('tbody');
-                //console.log(tds[0].childNodes[1].childNodes[1]);
-                /*const selectElement = tds[0].querySelectorAll('select');
-                const selectedValues = [];
-                for(let j=0;j<selectElement.length;j++){
-                    const selectedOption = selectElement[j].querySelector('option:checked');
-                    const selectedValue = selectedOption.value;
-                    selectedValues.push(selectedValue);
-                }
-                localStorage.setItem('selectedValues', JSON.stringify(selectedValues));*/
+                //tds = document.querySelectorAll('tbody');
                 inputElement = tds[1].querySelectorAll('math-field');
                 //console.log(inputElement);
                 mathvalues = [];
@@ -3412,6 +3403,48 @@ for (let i = 0; i < validar.length; i++) {
                     // Store or use the value
                 }
                 localStorage.setItem('mathValuesB', JSON.stringify(mathvalues));
+                break;        
+        }
+    });
+}
+
+let resets = document.querySelectorAll('.reset');
+console.log(resets)
+for (let i = 0; i < resets.length; i++) {
+    // Add a click event listener to each element
+    resets[i].addEventListener('click', function() {
+        let mathFieldElements = null;       
+        switch (this) {
+            case resets[0]:
+                //mathFieldElements = tds[0].querySelectorAll('math-field');
+                //console.log(mathFieldElements.length)
+                //console.log('Reset izquierdo');
+                const selected = JSON.parse(localStorage.getItem('selectedValues'));
+                const mathValues = JSON.parse(localStorage.getItem('mathValuesA'));
+                if (mathValues) {
+                    localStorage.removeItem('mathValuesA');                    
+                    /*for (let i = 0; i < mathFieldElements.length; i++) {
+                        mathFieldElements[i].value = '';
+                    }*/
+                } 
+                if (selected) {
+                    localStorage.removeItem('selectedValues');                    
+                    /*for (let i = 0; i < mathFieldElements.length; i++) {
+                        mathFieldElements[i].value = '';
+                    }*/
+                }                
+                break;
+            case resets[1]:
+                //mathFieldElements = tds[1].querySelectorAll('math-field');
+                //console.log(mathFieldElements.length)
+                //console.log('Reset Derecho');
+                const mathValuesB = JSON.parse(localStorage.getItem('mathValuesB'));
+                if (mathValuesB) {
+                    localStorage.removeItem('mathValuesB')
+                    /*for (let i = 0; i < mathFieldElements.length; i++) {
+                        mathFieldElements[i].value = '';
+                    }*/
+                }
                 break;        
         }
     });

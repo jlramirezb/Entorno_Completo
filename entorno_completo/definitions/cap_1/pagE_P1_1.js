@@ -3395,42 +3395,28 @@ var countersTable2 = {
 //     return data
 // }
 let validar = document.querySelectorAll('.check');
-let tds;
+let tds = document.querySelectorAll('tbody');;
 let inputElement;
-let mathvalues;
+let mathvalues = [];
+
 for (let i = 0; i < validar.length; i++) {
     // Add a click event listener to each element
     validar[i].addEventListener('click', function() {
         // Print a different message depending on the element
         switch (this) {
             case validar[0]:
-                console.log('Validar izquierdo');
-                tds = document.querySelectorAll('tbody');
-                //console.log(tds[0].childNodes[1].childNodes[1]);                
+                console.log('Validar izquierdo');            
                 inputElement = tds[0].querySelectorAll('math-field');
-                //console.log(inputElement);
                 mathvalues = [];
                 for(let j=0;j<inputElement.length;j++){
                     const inputValue = inputElement[j].value;
                     mathvalues.push(inputValue);
-                    // Store or use the value
                 }
                 localStorage.setItem('mathValues2A', JSON.stringify(mathvalues));                
                 break;
             case validar[1]:
                 console.log('Validar Derecho');
-                tds = document.querySelectorAll('tbody');
-                //console.log(tds[0].childNodes[1].childNodes[1]);
-                /*const selectElement = tds[0].querySelectorAll('select');
-                const selectedValues = [];
-                for(let j=0;j<selectElement.length;j++){
-                    const selectedOption = selectElement[j].querySelector('option:checked');
-                    const selectedValue = selectedOption.value;
-                    selectedValues.push(selectedValue);
-                }
-                localStorage.setItem('selectedValues', JSON.stringify(selectedValues));*/
                 inputElement = tds[1].querySelectorAll('math-field');
-                //console.log(inputElement);
                 mathvalues = [];
                 for(let j=0;j<inputElement.length;j++){
                     const inputValue = inputElement[j].value;
@@ -3448,79 +3434,41 @@ console.log(resets)
 for (let i = 0; i < resets.length; i++) {
     // Add a click event listener to each element
     resets[i].addEventListener('click', function() {
-        // Print a different message depending on the element
-        let tbodyElement = document.querySelectorAll('tbody'); 
         let mathFieldElements = null;       
         switch (this) {
             case resets[0]:
-                mathFieldElements = tbodyElement[0].querySelectorAll('math-field');
-                console.log(mathFieldElements.length)
-                console.log('Reset izquierdo');
+                //mathFieldElements = tds[0].querySelectorAll('math-field');
+                //console.log(mathFieldElements.length)
+                //console.log('Reset izquierdo');
                 const mathValues = JSON.parse(localStorage.getItem('mathValues2A'));
                 if (mathValues) {
-                    
-                    for (let i = 0; i < mathFieldElements.length; i++) {
+                    localStorage.removeItem('mathValues2A');
+                    /*for (let i = 0; i < mathFieldElements.length; i++) {
                         mathFieldElements[i].value = '';
-                    }
-                }
-                localStorage.removeItem('mathValues2A')
-
-                /*tds = document.querySelectorAll('tbody');
-                //console.log(tds[0].childNodes[1].childNodes[1]);                
-                inputElement = tds[0].querySelectorAll('math-field');
-                //console.log(inputElement);
-                mathvalues = [];
-                for(let j=0;j<inputElement.length;j++){
-                    const inputValue = inputElement[j].value;
-                    mathvalues.push(inputValue);
-                    // Store or use the value
-                }
-                localStorage.setItem('mathValues2A', JSON.stringify(mathvalues));
-                if (mathValues) {
-                    for (let i = 0; i < mathFieldElements.length; i++) {
-                        mathFieldElements[i].value = mathValues[i];
-                    }
-                }*/
+                    }*/
+                }                
                 break;
             case resets[1]:
-                mathFieldElements = tbodyElement[1].querySelectorAll('math-field');
-                console.log(mathFieldElements.length)
-                console.log('Reset Derecho');
+                //mathFieldElements = tds[1].querySelectorAll('math-field');
+                //console.log(mathFieldElements.length)
+                //console.log('Reset Derecho');
                 const mathValuesB = JSON.parse(localStorage.getItem('mathValues2B'));
                 if (mathValuesB) {
                     localStorage.removeItem('mathValues2B')
-                    for (let i = 0; i < mathFieldElements.length; i++) {
+                    /*for (let i = 0; i < mathFieldElements.length; i++) {
                         mathFieldElements[i].value = '';
-                    }
+                    }*/
                 }
-                //console.log(tds[0].childNodes[1].childNodes[1]);
-                /*const selectElement = tds[0].querySelectorAll('select');
-                const selectedValues = [];
-                for(let j=0;j<selectElement.length;j++){
-                    const selectedOption = selectElement[j].querySelector('option:checked');
-                    const selectedValue = selectedOption.value;
-                    selectedValues.push(selectedValue);
-                }
-                localStorage.setItem('selectedValues', JSON.stringify(selectedValues));*/
-                //inputElement = tds[1].querySelectorAll('math-field');
-                //console.log(inputElement);
-                /*mathvalues = [];
-                for(let j=0;j<inputElement.length;j++){
-                    const inputValue = inputElement[j].value;
-                    mathvalues.push(inputValue);
-                    // Store or use the value
-                }
-                localStorage.setItem('mathValues2B', JSON.stringify(mathvalues));*/
                 break;        
         }
     });
 }
 
 window.addEventListener('load', function() {
-    const tbodyElement = document.querySelectorAll('tbody');
+    //const tbodyElement = document.querySelectorAll('tbody');
     
-    const mathFieldElements = tbodyElement[0].querySelectorAll('math-field');
-    const mathFieldElementsB = tbodyElement[1].querySelectorAll('math-field');
+    const mathFieldElements = tds[0].querySelectorAll('math-field');
+    const mathFieldElementsB = tds[1].querySelectorAll('math-field');
     const mathValues = JSON.parse(localStorage.getItem('mathValues2A'));
     const mathValuesB = JSON.parse(localStorage.getItem('mathValues2B'));
     console.log(mathFieldElements.length)
