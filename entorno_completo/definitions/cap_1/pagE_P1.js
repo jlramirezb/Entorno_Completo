@@ -3361,6 +3361,9 @@ console.log(validar);
 /*const selectElement;
 const selectedOption;
 const selectedValue;*/
+let tds;
+let inputElement;
+let mathvalues;
 for (let i = 0; i < validar.length; i++) {
     // Add a click event listener to each element
     validar[i].addEventListener('click', function() {
@@ -3368,7 +3371,7 @@ for (let i = 0; i < validar.length; i++) {
         switch (this) {
             case validar[0]:
                 console.log('Validar izquierdo');
-                let tds = document.querySelectorAll('tbody');
+                tds = document.querySelectorAll('tbody');
                 //console.log(tds[0].childNodes[1].childNodes[1]);
                 const selectElement = tds[0].querySelectorAll('select');
                 const selectedValues = [];
@@ -3378,26 +3381,45 @@ for (let i = 0; i < validar.length; i++) {
                     selectedValues.push(selectedValue);
                 }
                 localStorage.setItem('selectedValues', JSON.stringify(selectedValues));
-                const inputElement = tds[0].querySelectorAll('math-field');
+                inputElement = tds[0].querySelectorAll('math-field');
                 //console.log(inputElement);
-                const mathvalues = [];
+                mathvalues = [];
                 for(let j=0;j<inputElement.length;j++){
                     const inputValue = inputElement[j].value;
                     mathvalues.push(inputValue);
                     // Store or use the value
                 }
-                localStorage.setItem('mathValues', JSON.stringify(mathvalues));                
+                localStorage.setItem('mathValuesA', JSON.stringify(mathvalues));                
                 break;
             case validar[1]:
                 console.log('Validar Derecho');
+                tds = document.querySelectorAll('tbody');
+                //console.log(tds[0].childNodes[1].childNodes[1]);
+                /*const selectElement = tds[0].querySelectorAll('select');
+                const selectedValues = [];
+                for(let j=0;j<selectElement.length;j++){
+                    const selectedOption = selectElement[j].querySelector('option:checked');
+                    const selectedValue = selectedOption.value;
+                    selectedValues.push(selectedValue);
+                }
+                localStorage.setItem('selectedValues', JSON.stringify(selectedValues));*/
+                inputElement = tds[1].querySelectorAll('math-field');
+                //console.log(inputElement);
+                mathvalues = [];
+                for(let j=0;j<inputElement.length;j++){
+                    const inputValue = inputElement[j].value;
+                    mathvalues.push(inputValue);
+                    // Store or use the value
+                }
+                localStorage.setItem('mathValuesB', JSON.stringify(mathvalues));
                 break;        
         }
     });
 }
 
 window.addEventListener('load', function() {
-    const tbodyElement = document.querySelector('tbody');
-    const selectElements = tbodyElement.querySelectorAll('select');
+    const tbodyElement = document.querySelectorAll('tbody');
+    const selectElements = tbodyElement[0].querySelectorAll('select');
     const selectedValues = JSON.parse(localStorage.getItem('selectedValues'));
     if (selectedValues) {
         for (let i = 0; i < selectElements.length; i++) {
@@ -3406,11 +3428,20 @@ window.addEventListener('load', function() {
             selectedOption.selected = true;
         }
     }
-    const mathFieldElements = tbodyElement.querySelectorAll('math-field');
-    const mathValues = JSON.parse(localStorage.getItem('mathValues'));
+    const mathFieldElements = tbodyElement[0].querySelectorAll('math-field');
+    const mathFieldElementsB = tbodyElement[1].querySelectorAll('math-field');
+    const mathValues = JSON.parse(localStorage.getItem('mathValuesA'));
+    const mathValuesB = JSON.parse(localStorage.getItem('mathValuesB'));
+    console.log(mathFieldElements.length)
     if (mathValues) {
         for (let i = 0; i < mathFieldElements.length; i++) {
             mathFieldElements[i].value = mathValues[i];
+        }
+    }
+    console.log(mathFieldElementsB.length)
+    if (mathValues) {
+        for (let i = 0; i < mathFieldElementsB.length; i++) {
+            mathFieldElementsB[i].value = mathValuesB[i];
         }
     }
 });
