@@ -239,5 +239,33 @@ window.onload = main();
 let validar = document.querySelectorAll('.check');
 validar[2].addEventListener( 'click', function(){
     console.log('Pulsado 3')
+    const board3SVG = document.getElementById('board_3').querySelector('svg');
+    console.log(board3SVG);
+    const sixthGElement = board3SVG.querySelector('g:nth-child(7)');
+    const elevenElement = board3SVG.querySelector('g:nth-child(11)');
+    const sixthGContent = sixthGElement.innerHTML;
+    const elevenContent = elevenElement.innerHTML;
+    console.log(sixthGContent);
+    localStorage.setItem('sixthGElement', sixthGContent);
+    localStorage.setItem('ElevenGElement',elevenContent);
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    const savedSixthGElement = localStorage.getItem('sixthGElement');
+    const savedElevenGElement = localStorage.getItem('ElevenGElement');
+    let board3SVG =[];
+    if(savedSixthGElement){
+        board3SVG = document.getElementById('board_3').querySelector('svg').querySelector('g:nth-child(7)');
+        //const newGElement = document.createElement('g');
+        board3SVG.innerHTML = savedSixthGElement;
+        //const seventhGElement = board3SVG.querySelector('g:nth-child(7)');
+        //seventhGElement.insertBefore(newGElement, seventhGElement.firstChild);
+    }
+    if(savedElevenGElement){
+        board3SVG = document.getElementById('board_3').querySelector('svg').querySelector('g:nth-child(11)');
+        board3SVG.innerHTML = savedElevenGElement;
+        //const ElevenGElement = board3SVG.querySelector('g:nth-child(11)');
+        //ElevenGElement.insertBefore(newGElement, seventhGElement.firstChild);
+    }
 });
 
