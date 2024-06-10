@@ -235,3 +235,9 @@ seleccionados = localStorageSeleccionados("P2",1,18,3);
 PintaSeleccionP2(seleccionados);
 
 window.onload = main();
+
+let validar = document.querySelectorAll('.check');
+validar[2].addEventListener( 'click', function(){
+    console.log('Pulsado 3')
+});
+

@@ -98,4 +98,9 @@ btnPreg3.addEventListener("click", e=>{
     btnPreg3.disabled = true;
     localStorage.removeItem("SeleccionadosP1");
     localStorage.removeItem("SeleccionadosP2");
+    localStorage.removeItem('mathValuesA');
+    localStorage.removeItem('mathValuesB');
+    localStorage.removeItem('mathValues2A');
+    localStorage.removeItem('mathValues2B');
+    localStorage.removeItem('selectedValues');
 });

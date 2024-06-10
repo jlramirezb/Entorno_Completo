@@ -3356,11 +3356,6 @@ var countersTable2 = {
 // }
 
 let validar = document.querySelectorAll('.check');
-console.log(validar);
-
-/*const selectElement;
-const selectedOption;
-const selectedValue;*/
 let tds = document.querySelectorAll('tbody');;
 let inputElement;
 let mathvalues;
@@ -3370,9 +3365,6 @@ for (let i = 0; i < validar.length; i++) {
         // Print a different message depending on the element
         switch (this) {
             case validar[0]:
-                console.log('Validar izquierdo');
-                //tds = document.querySelectorAll('tbody');
-                //console.log(tds[0].childNodes[1].childNodes[1]);
                 const selectElement = tds[0].querySelectorAll('select');
                 const selectedValues = [];
                 for(let j=0;j<selectElement.length;j++){
@@ -3382,7 +3374,6 @@ for (let i = 0; i < validar.length; i++) {
                 }
                 localStorage.setItem('selectedValues', JSON.stringify(selectedValues));
                 inputElement = tds[0].querySelectorAll('math-field');
-                //console.log(inputElement);
                 mathvalues = [];
                 for(let j=0;j<inputElement.length;j++){
                     const inputValue = inputElement[j].value;
@@ -3392,10 +3383,7 @@ for (let i = 0; i < validar.length; i++) {
                 localStorage.setItem('mathValuesA', JSON.stringify(mathvalues));                
                 break;
             case validar[1]:
-                console.log('Validar Derecho');
-                //tds = document.querySelectorAll('tbody');
                 inputElement = tds[1].querySelectorAll('math-field');
-                //console.log(inputElement);
                 mathvalues = [];
                 for(let j=0;j<inputElement.length;j++){
                     const inputValue = inputElement[j].value;
@@ -3409,41 +3397,24 @@ for (let i = 0; i < validar.length; i++) {
 }
 
 let resets = document.querySelectorAll('.reset');
-console.log(resets)
 for (let i = 0; i < resets.length; i++) {
     // Add a click event listener to each element
     resets[i].addEventListener('click', function() {
-        let mathFieldElements = null;       
         switch (this) {
             case resets[0]:
-                //mathFieldElements = tds[0].querySelectorAll('math-field');
-                //console.log(mathFieldElements.length)
-                //console.log('Reset izquierdo');
                 const selected = JSON.parse(localStorage.getItem('selectedValues'));
                 const mathValues = JSON.parse(localStorage.getItem('mathValuesA'));
                 if (mathValues) {
                     localStorage.removeItem('mathValuesA');                    
-                    /*for (let i = 0; i < mathFieldElements.length; i++) {
-                        mathFieldElements[i].value = '';
-                    }*/
                 } 
                 if (selected) {
-                    localStorage.removeItem('selectedValues');                    
-                    /*for (let i = 0; i < mathFieldElements.length; i++) {
-                        mathFieldElements[i].value = '';
-                    }*/
+                    localStorage.removeItem('selectedValues');
                 }                
                 break;
             case resets[1]:
-                //mathFieldElements = tds[1].querySelectorAll('math-field');
-                //console.log(mathFieldElements.length)
-                //console.log('Reset Derecho');
                 const mathValuesB = JSON.parse(localStorage.getItem('mathValuesB'));
                 if (mathValuesB) {
                     localStorage.removeItem('mathValuesB')
-                    /*for (let i = 0; i < mathFieldElements.length; i++) {
-                        mathFieldElements[i].value = '';
-                    }*/
                 }
                 break;        
         }
@@ -3465,13 +3436,11 @@ window.addEventListener('load', function() {
     const mathFieldElementsB = tbodyElement[1].querySelectorAll('math-field');
     const mathValues = JSON.parse(localStorage.getItem('mathValuesA'));
     const mathValuesB = JSON.parse(localStorage.getItem('mathValuesB'));
-    console.log(mathFieldElements.length)
     if (mathValues) {
         for (let i = 0; i < mathFieldElements.length; i++) {
             mathFieldElements[i].value = mathValues[i];
         }
     }
-    console.log(mathFieldElementsB.length)
     if (mathValues) {
         for (let i = 0; i < mathFieldElementsB.length; i++) {
             mathFieldElementsB[i].value = mathValuesB[i];
