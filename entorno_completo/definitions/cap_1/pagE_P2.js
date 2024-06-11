@@ -238,8 +238,14 @@ window.onload = main();
 
 let validar = document.querySelectorAll('.check');
 validar[2].addEventListener( 'click', function(){
-    console.log('Pulsado 3')
-    const board3SVG = document.getElementById('board_3').querySelector('svg');
+    console.log('Pulsado 3');
+    let points = def.artifact_6.points;
+    console.log(points);
+    def.artifact_4.points = points;
+    points = JSON.stringify(points);
+    localStorage.setItem('puntos',points);
+});
+    /*const board3SVG = document.getElementById('board_3').querySelector('svg');
     console.log(board3SVG);
     const sixthGElement = board3SVG.querySelector('g:nth-child(7)');
     const elevenElement = board3SVG.querySelector('g:nth-child(11)');
@@ -248,9 +254,17 @@ validar[2].addEventListener( 'click', function(){
     console.log(sixthGContent);
     localStorage.setItem('sixthGElement', sixthGContent);
     localStorage.setItem('ElevenGElement',elevenContent);
-});
-
+});*/
+/*const storedString = localStorage.getItem('myObjects');
+const parsedArray = JSON.parse(storedString);*/
 window.addEventListener('DOMContentLoaded', function() {
+    const puntos = localStorage.getItem('puntos');
+    const puntos2 =JSON.parse(puntos);
+    console.log(puntos2);
+    if(puntos)
+        def.artifact_6.points = JSON.parse(puntos);
+});
+/*
     const savedSixthGElement = localStorage.getItem('sixthGElement');
     const savedElevenGElement = localStorage.getItem('ElevenGElement');
     let board3SVG =[];
@@ -267,5 +281,5 @@ window.addEventListener('DOMContentLoaded', function() {
         //const ElevenGElement = board3SVG.querySelector('g:nth-child(11)');
         //ElevenGElement.insertBefore(newGElement, seventhGElement.firstChild);
     }
-});
+});*/
 
