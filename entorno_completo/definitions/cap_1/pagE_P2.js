@@ -239,11 +239,12 @@ window.onload = main();
 let validar = document.querySelectorAll('.check');
 validar[2].addEventListener( 'click', function(){
     console.log('Pulsado 3');
-    let points = def.artifact_6.points;
+    let points = def.artifact_13.points[0];
     console.log(points);
-    def.artifact_4.points = points;
-    points = JSON.stringify(points);
-    localStorage.setItem('puntos',points);
+    //def.artifact_4.points = points;
+    let points2 = points;//JSON.stringify(points);
+    console.log(points2);    
+    localStorage.setItem('puntos',points2);
 });
     /*const board3SVG = document.getElementById('board_3').querySelector('svg');
     console.log(board3SVG);
@@ -259,10 +260,10 @@ validar[2].addEventListener( 'click', function(){
 const parsedArray = JSON.parse(storedString);*/
 window.addEventListener('DOMContentLoaded', function() {
     const puntos = localStorage.getItem('puntos');
-    const puntos2 =JSON.parse(puntos);
+    const puntos2 =puntos;//JSON.parse(puntos);
     console.log(puntos2);
     if(puntos)
-        def.artifact_6.points = JSON.parse(puntos);
+        def.artifact_13.points[0] = puntos2;//JSON.parse(puntos2);
 });
 /*
     const savedSixthGElement = localStorage.getItem('sixthGElement');
