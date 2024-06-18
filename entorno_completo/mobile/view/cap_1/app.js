@@ -3,7 +3,42 @@ let btnPreg2 = document.getElementById("btnPreg2");
 let btnPreg3 = document.getElementById("btnPreg3");
 let btnGuardar = document.getElementById("btnguardar");
 
+const dbName = "myDatabase";
+const dbVersion = 1;
 
+const request = indexedDB.open(dbName, dbVersion);
+
+request.onupgradeneeded = function(event) {
+    const db = event.target.result;
+    const objectStore = db.createObjectStore("myObjectStore", { keyPath: "id" }); // Replace "id" with your desired key path
+  };
+
+  request.onsuccess = function(event) {
+    const db = event.target.result;
+    // Now you can add data to the object store
+    addDataToStore(db);
+  };
+
+  function addDataToStore(db) {
+    const transaction = db.transaction("myObjectStore", "readwrite"); // Replace "myObjectStore" with your actual object store name
+    const objectStore = transaction.objectStore("myObjectStore");
+  
+    const data = {
+      id: 1, // Replace with your actual data structure
+      name: "John Doe",
+      age: 30
+    };
+  
+    const request = objectStore.add(data);
+  
+    request.onsuccess = function(event) {
+      console.log("Data added successfully!");
+    };
+  
+    request.onerror = function(event) {
+      console.error("Error adding data:", event.target.error);
+    };
+  }
 
 function ActivaBotones(){
     
@@ -25,6 +60,8 @@ function ActivarPreguntas(){
         btnPreg3.disabled = false;
     }
 } 
+
+
 
 function guardaData(){
     let nombre = document.getElementById("nombre");
