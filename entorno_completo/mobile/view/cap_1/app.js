@@ -33,40 +33,34 @@ function guardaData(){
 
     // Abrir una conexión a la base de datos
     let request = indexedDB.open('miBaseDeDatos', 1);
-
-    request.onerror = function(event) {
-        console.error('Error abriendo la base de datos:', event.target.errorCode);
+    console.log(request);
+    let usuario = {
+        nombre: nombre.value,
+        cedula: cedula.value,
+        seccion: seccion.value
     };
-    
     request.onsuccess = function(event) {
         let db = event.target.result;
-    
-        request.onerror = function(event) {
-            console.error('Error abriendo la base de datos:', event.target.errorCode);
+        console.log(db);           
+
+        request.onupgradeneeded = function(event) {
+            const db = event.target.result;
+            const objectStore = db.createObjectStore("myObjectStore", { keyPath: "cedula" }); // Replace "id" with your desired key path
+          };
+        
+        // ... (continúa en el siguiente paso)
+        let transaction = db.transaction('usuarios', 'readwrite');
+        console.log(transaction);
+        let objectStore = transaction.createObjectStore('usuarios',{keypath:"cedula"});
+
+        let requestGuardar = objectStore.add(usuario);
+
+        requestGuardar.onsuccess = function(event) {
+            console.log('Datos guardados en IndexedDB');
         };
-        
-        request.onsuccess = function(event) {
-            let db = event.target.result;
-        
-            // ... (continúa en el siguiente paso)
-            let transaction = db.transaction(['usuarios'], 'readwrite');
-            let objectStore = transaction.objectStore('usuarios');
 
-            let usuario = {
-                nombre: nombre.value,
-                cedula: cedula.value,
-                seccion: seccion.value
-            };
-
-            let requestGuardar = objectStore.add(usuario);
-
-            requestGuardar.onsuccess = function(event) {
-                console.log('Datos guardados en IndexedDB');
-            };
-
-            requestGuardar.onerror = function(event) {
-                console.error('Error guardando datos:', event.target.errorCode);
-            };
+        requestGuardar.onerror = function(event) {
+            console.error('Error guardando datos:', event.target.errorCode);
         };
     };
 
@@ -145,34 +139,28 @@ btnPreg3.addEventListener("click", e=>{
 
     let request = indexedDB.open('miBaseDeDatos', 1);
 
-       request.onsuccess = (event) => {
-           let db = event.target.result;
+    request.onsuccess = (event) => {
+        let db = event.target.result;
 
-           // 2. Obtener el almacén de objetos
-           let transaction = db.transaction('miBaseDeDatos', 'readonly');
-           let objectStore = transaction.objectStore('usuarios');
+        // 2. Obtener el almacén de objetos
+        let transaction = db.transaction('usuarios', 'readonly');
+        console.log(transaction);
+        let objectStore = transaction.objectStore('usuarios');
 
-           // 3. Recorrer los datos
-           let datos = [];
-           let cursorRequest = objectStore.openCursor();
+        const cursor = objectStore.openCursor();
 
-           cursorRequest.onsuccess = (event) => {
-               let cursor = event.target.result;
-               if (cursor) {
-                   datos.push(cursor.value);
-                   cursor.continue();
-               } else {
-                   // 4. Mostrar los datos en el elemento HTML
-                   document.getElementById('datos').innerHTML = JSON.stringify(datos, null, 2);
-               }
-           };
+        cursor.onerror = function(event) {
+            console.error("Error retrieving data:", event.target.error);
+        };
 
-           cursorRequest.onerror = (event) => {
-               console.error('Error leyendo datos:', event.target.errorCode);
-           };
-       };
-
-       request.onerror = (event) => {
-           console.error('Error abriendo la base de datos:', event.target.errorCode);
-       };
+        cursor.onsuccess = function(event) {
+            const cursorResult = event.target.result;
+            if (cursorResult) {
+                console.log("Data:", cursorResult.value); // This will log each object in the object store
+                cursorResult.continue(); // Move to the next object
+            } else {
+                console.log("No more data in the object store.");
+            }
+        };
+    };
 });
