@@ -3,43 +3,6 @@ let btnPreg2 = document.getElementById("btnPreg2");
 let btnPreg3 = document.getElementById("btnPreg3");
 let btnGuardar = document.getElementById("btnguardar");
 
-const dbName = "myDatabase";
-const dbVersion = 1;
-
-const request = indexedDB.open(dbName, dbVersion);
-
-request.onupgradeneeded = function(event) {
-    const db = event.target.result;
-    const objectStore = db.createObjectStore("myObjectStore", { keyPath: "id" }); // Replace "id" with your desired key path
-  };
-
-  request.onsuccess = function(event) {
-    const db = event.target.result;
-    // Now you can add data to the object store
-    addDataToStore(db);
-  };
-
-  function addDataToStore(db) {
-    const transaction = db.transaction("myObjectStore", "readwrite"); // Replace "myObjectStore" with your actual object store name
-    const objectStore = transaction.objectStore("myObjectStore");
-  
-    const data = {
-      id: 1, // Replace with your actual data structure
-      name: "John Doe",
-      age: 30
-    };
-  
-    const request = objectStore.add(data);
-  
-    request.onsuccess = function(event) {
-      console.log("Data added successfully!");
-    };
-  
-    request.onerror = function(event) {
-      console.error("Error adding data:", event.target.error);
-    };
-  }
-
 function ActivaBotones(){
     
     if (nombre.value!=="" && cedula.value!=="" && seccion.value!==""){
@@ -67,6 +30,45 @@ function guardaData(){
     let nombre = document.getElementById("nombre");
     let cedula = document.getElementById("cedula");
     let seccion = document.getElementById("seccion");
+
+    // Abrir una conexión a la base de datos
+    let request = indexedDB.open('miBaseDeDatos', 1);
+
+    request.onerror = function(event) {
+        console.error('Error abriendo la base de datos:', event.target.errorCode);
+    };
+    
+    request.onsuccess = function(event) {
+        let db = event.target.result;
+    
+        request.onerror = function(event) {
+            console.error('Error abriendo la base de datos:', event.target.errorCode);
+        };
+        
+        request.onsuccess = function(event) {
+            let db = event.target.result;
+        
+            // ... (continúa en el siguiente paso)
+            let transaction = db.transaction(['usuarios'], 'readwrite');
+            let objectStore = transaction.objectStore('usuarios');
+
+            let usuario = {
+                nombre: nombre.value,
+                cedula: cedula.value,
+                seccion: seccion.value
+            };
+
+            let requestGuardar = objectStore.add(usuario);
+
+            requestGuardar.onsuccess = function(event) {
+                console.log('Datos guardados en IndexedDB');
+            };
+
+            requestGuardar.onerror = function(event) {
+                console.error('Error guardando datos:', event.target.errorCode);
+            };
+        };
+    };
 
     localStorage.setItem("Personal", JSON.stringify({
         nombre: nombre.value,
@@ -140,4 +142,37 @@ btnPreg3.addEventListener("click", e=>{
     localStorage.removeItem('mathValues2A');
     localStorage.removeItem('mathValues2B');
     localStorage.removeItem('selectedValues');
+
+    let request = indexedDB.open('miBaseDeDatos', 1);
+
+       request.onsuccess = (event) => {
+           let db = event.target.result;
+
+           // 2. Obtener el almacén de objetos
+           let transaction = db.transaction('miBaseDeDatos', 'readonly');
+           let objectStore = transaction.objectStore('usuarios');
+
+           // 3. Recorrer los datos
+           let datos = [];
+           let cursorRequest = objectStore.openCursor();
+
+           cursorRequest.onsuccess = (event) => {
+               let cursor = event.target.result;
+               if (cursor) {
+                   datos.push(cursor.value);
+                   cursor.continue();
+               } else {
+                   // 4. Mostrar los datos en el elemento HTML
+                   document.getElementById('datos').innerHTML = JSON.stringify(datos, null, 2);
+               }
+           };
+
+           cursorRequest.onerror = (event) => {
+               console.error('Error leyendo datos:', event.target.errorCode);
+           };
+       };
+
+       request.onerror = (event) => {
+           console.error('Error abriendo la base de datos:', event.target.errorCode);
+       };
 });
