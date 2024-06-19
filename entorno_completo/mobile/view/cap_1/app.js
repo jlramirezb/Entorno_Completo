@@ -24,34 +24,38 @@ function ActivarPreguntas(){
     }
 } 
 
-
+let db = null;
 
 function guardaData(){
     let nombre = document.getElementById("nombre");
     let cedula = document.getElementById("cedula");
     let seccion = document.getElementById("seccion");
 
-    // Abrir una conexión a la base de datos
-    let request = indexedDB.open('miBaseDeDatos', 1);
-    console.log(request);
     let usuario = {
         nombre: nombre.value,
         cedula: cedula.value,
         seccion: seccion.value
     };
-    request.onsuccess = function(event) {
-        let db = event.target.result;
-        console.log(db);           
+    
+    // Abrir una conexión a la base de datos
+    let request = indexedDB.open('miBaseDeDatos', 1);
+    //console.log(request);
+    request.onerror = function (event) {
+        alert("Database error: " + event.target.error.name);
+    };             
 
-        request.onupgradeneeded = function(event) {
-            const db = event.target.result;
-            const objectStore = db.createObjectStore("myObjectStore", { keyPath: "cedula" }); // Replace "id" with your desired key path
-          };
+    request.onupgradeneeded = function(event) {
+        const db = event.target.result;
+        const objectStore = db.createObjectStore("usuarios", { keyPath: "cedula" }); // Replace "id" with your desired key path
+    };
         
-        // ... (continúa en el siguiente paso)
-        let transaction = db.transaction('usuarios', 'readwrite');
+    request.onsuccess = function(event) {
+        db = event.target.result;
+        console.log('Database created', db);     
+    
+        let transaction = db.transaction(['usuarios'], 'readwrite');
         console.log(transaction);
-        let objectStore = transaction.createObjectStore('usuarios',{keypath:"cedula"});
+        let objectStore = transaction.objectStore('usuarios');
 
         let requestGuardar = objectStore.add(usuario);
 
@@ -62,7 +66,7 @@ function guardaData(){
         requestGuardar.onerror = function(event) {
             console.error('Error guardando datos:', event.target.errorCode);
         };
-    };
+    }
 
     localStorage.setItem("Personal", JSON.stringify({
         nombre: nombre.value,
@@ -137,7 +141,7 @@ btnPreg3.addEventListener("click", e=>{
     localStorage.removeItem('mathValues2B');
     localStorage.removeItem('selectedValues');
 
-    let request = indexedDB.open('miBaseDeDatos', 1);
+    /*let request = indexedDB.open('miBaseDeDatos', 1);
 
     request.onsuccess = (event) => {
         let db = event.target.result;
@@ -162,5 +166,5 @@ btnPreg3.addEventListener("click", e=>{
                 console.log("No more data in the object store.");
             }
         };
-    };
+    };*/
 });
