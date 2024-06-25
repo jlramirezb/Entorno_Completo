@@ -236,16 +236,50 @@ PintaSeleccionP2(seleccionados);
 
 window.onload = main();
 
+let intentos1, intentos2, intentos3;
+let points, points2;
+
 let validar = document.querySelectorAll('.check');
-validar[2].addEventListener( 'click', function(){
-    console.log('Pulsado 3');
-    let points = def.artifact_13.points[0];
-    console.log(points);
-    //def.artifact_4.points = points;
-    let points2 = points;//JSON.stringify(points);
-    console.log(points2);    
-    localStorage.setItem('puntos',points2);
-});
+for (let i = 0; i < validar.length; i++) {
+    validar[i].addEventListener( 'click', function(){
+        switch(this){
+            case validar[0]:
+                intentos1++;
+                console.log('Pulsado 1');
+                points = def.artifact_13.points;
+                console.log(points);
+                //def.artifact_4.points = points;
+                points2 = points;//JSON.stringify(points);
+                console.log(points2);    
+                localStorage.setItem('puntos',points2);
+                console.log(intentos1);
+                localStorage.setItem('P3_Intentos1',intentos1);
+                break;
+            case validar[1]:
+                intentos2++;
+                console.log('Pulsado 2');
+                points = def.artifact_13.points;
+                console.log(points);
+                //def.artifact_4.points = points;
+                points2 = points;//JSON.stringify(points);
+                console.log(points2);    
+                localStorage.setItem('puntos',points2);
+                localStorage.setItem('P3_Intentos2',intentos2);
+                break;
+            case validar[2]:
+                intentos3++;
+                console.log('Pulsado 3');
+                points = def.artifact_13.points;
+                console.log(points);
+                //def.artifact_4.points = points;
+                points2 = points;//JSON.stringify(points);
+                console.log(points2);    
+                localStorage.setItem('puntos',points2);
+                localStorage.setItem('P3_Intentos3',intentos3);
+                break;
+        }
+    });
+}
     /*const board3SVG = document.getElementById('board_3').querySelector('svg');
     console.log(board3SVG);
     const sixthGElement = board3SVG.querySelector('g:nth-child(7)');
@@ -258,12 +292,29 @@ validar[2].addEventListener( 'click', function(){
 });*/
 /*const storedString = localStorage.getItem('myObjects');
 const parsedArray = JSON.parse(storedString);*/
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     const puntos = localStorage.getItem('puntos');
     const puntos2 =puntos;//JSON.parse(puntos);
     console.log(puntos2);
     if(puntos)
-        def.artifact_13.points[0] = puntos2;//JSON.parse(puntos2);
+        def.artifact_13.points = puntos2;//JSON.parse(puntos2);
+
+    const intentos1_LS = localStorage.getItem('P3_Intentos1');
+    console.log(intentos1_LS);
+    const intentos2_LS = localStorage.getItem('P3_Intentos2');
+    const intentos3_LS = localStorage.getItem('P3_Intentos3');
+    if (intentos1_LS)
+        intentos1 = intentos1_LS
+    else
+        intentos1 = 0;
+    if (intentos2_LS)
+        intentos2 = intentos2_LS
+    else
+        intentos2 = 0;
+    if (intentos3_LS)
+        intentos3 = intentos3_LS
+    else
+        intentos3 = 0;
 });
 /*
     const savedSixthGElement = localStorage.getItem('sixthGElement');

@@ -3356,6 +3356,7 @@ var countersTable2 = {
 // }
 
 let validar = document.querySelectorAll('.check');
+let intentos1, intentos2;
 let tds = document.querySelectorAll('tbody');;
 let inputElement;
 let mathvalues;
@@ -3365,6 +3366,7 @@ for (let i = 0; i < validar.length; i++) {
         // Print a different message depending on the element
         switch (this) {
             case validar[0]:
+                intentos1++;
                 const selectElement = tds[0].querySelectorAll('select');
                 const selectedValues = [];
                 for(let j=0;j<selectElement.length;j++){
@@ -3380,9 +3382,11 @@ for (let i = 0; i < validar.length; i++) {
                     mathvalues.push(inputValue);
                     // Store or use the value
                 }
-                localStorage.setItem('mathValuesA', JSON.stringify(mathvalues));                
+                localStorage.setItem('mathValuesA', JSON.stringify(mathvalues));
+                localStorage.setItem('P1_Intentos1',intentos1);                
                 break;
             case validar[1]:
+                intentos2++;
                 inputElement = tds[1].querySelectorAll('math-field');
                 mathvalues = [];
                 for(let j=0;j<inputElement.length;j++){
@@ -3391,6 +3395,7 @@ for (let i = 0; i < validar.length; i++) {
                     // Store or use the value
                 }
                 localStorage.setItem('mathValuesB', JSON.stringify(mathvalues));
+                localStorage.setItem('P1_Intentos2',intentos2);
                 break;        
         }
     });
@@ -3446,4 +3451,14 @@ window.addEventListener('load', function() {
             mathFieldElementsB[i].value = mathValuesB[i];
         }
     }
+    const intentos1_LS = localStorage.getItem('P1_Intentos1');
+    const intentos2_LS = localStorage.getItem('P1_Intentos2');
+    if (intentos1_LS)
+        intentos1 = intentos1_LS
+    else
+        intentos1 = 0;
+    if (intentos2_LS)
+        intentos2 = intentos2_LS
+    else
+        intentos2 = 0;
 });

@@ -3398,6 +3398,7 @@ let validar = document.querySelectorAll('.check');
 let tds = document.querySelectorAll('tbody');;
 let inputElement;
 let mathvalues = [];
+let intentos1, intentos2;
 
 for (let i = 0; i < validar.length; i++) {
     // Add a click event listener to each element
@@ -3405,6 +3406,7 @@ for (let i = 0; i < validar.length; i++) {
         // Print a different message depending on the element
         switch (this) {
             case validar[0]:
+                intentos1++;
                 console.log('Validar izquierdo');            
                 inputElement = tds[0].querySelectorAll('math-field');
                 mathvalues = [];
@@ -3412,9 +3414,11 @@ for (let i = 0; i < validar.length; i++) {
                     const inputValue = inputElement[j].value;
                     mathvalues.push(inputValue);
                 }
-                localStorage.setItem('mathValues2A', JSON.stringify(mathvalues));                
+                localStorage.setItem('mathValues2A', JSON.stringify(mathvalues));  
+                localStorage.setItem('P2_Intentos1',intentos1);              
                 break;
             case validar[1]:
+                intentos2++;
                 console.log('Validar Derecho');
                 inputElement = tds[1].querySelectorAll('math-field');
                 mathvalues = [];
@@ -3424,6 +3428,7 @@ for (let i = 0; i < validar.length; i++) {
                     // Store or use the value
                 }
                 localStorage.setItem('mathValues2B', JSON.stringify(mathvalues));
+                localStorage.setItem('P2_Intentos2',intentos2);
                 break;        
         }
     });
@@ -3483,4 +3488,14 @@ window.addEventListener('load', function() {
             mathFieldElementsB[i].value = mathValuesB[i];
         }
     }
+    const intentos1_LS = localStorage.getItem('P2_Intentos1');
+    const intentos2_LS = localStorage.getItem('P2_Intentos2');
+    if (intentos1_LS)
+        intentos1 = intentos1_LS
+    else
+        intentos1 = 0;
+    if (intentos2_LS)
+        intentos2 = intentos2_LS
+    else
+        intentos2 = 0;
 });
