@@ -2983,12 +2983,12 @@ var inputsTable2 = document.querySelectorAll(".input-table2");
 var inputActiveTable1 = null;
 var inputActiveTable2 = null;
 var countersTable1 = {
-  respCorrect: 0,
-  respIncorrect: 0,
+    respCorrect: 0,
+    respIncorrect: 0,
 };
 var countersTable2 = {
-  respCorrect: 0,
-  respIncorrect: 0,
+    respCorrect: 0,
+    respIncorrect: 0,
 };
 
 //***************/
