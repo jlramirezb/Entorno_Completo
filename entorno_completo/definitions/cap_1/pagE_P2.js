@@ -246,13 +246,12 @@ for (let i = 0; i < validar.length; i++) {
             case validar[0]:
                 intentos1++;
                 console.log('Pulsado 1');
-                points = def.artifact_13.points;
+                points = def.artifact_13.points[0].map((p)=>[Number(p[0].X().toFixed(2)),Number(p[0].Y().toFixed(2))])
                 console.log(points);
                 //def.artifact_4.points = points;
-                points2 = points;//JSON.stringify(points);
+                points2 = JSON.stringify(points);
                 console.log(points2);    
-                localStorage.setItem('puntos',points2);
-                console.log(intentos1);
+                localStorage.setItem('puntos',points2);                
                 localStorage.setItem('P3_Intentos1',intentos1);
                 break;
             case validar[1]:
@@ -294,15 +293,15 @@ for (let i = 0; i < validar.length; i++) {
 const parsedArray = JSON.parse(storedString);*/
 window.addEventListener('load', function() {
     const puntos = localStorage.getItem('puntos');
-    const puntos2 =puntos;//JSON.parse(puntos);
-    console.log(puntos2);
+    //const puntos2 = JSON.parse(puntos);
+    console.log(puntos);
     if(puntos)
-        def.artifact_13.points = puntos2;//JSON.parse(puntos2);
+        def.artifact_13.points = JSON.parse(puntos);
 
     const intentos1_LS = localStorage.getItem('P3_Intentos1');
-    console.log(intentos1_LS);
     const intentos2_LS = localStorage.getItem('P3_Intentos2');
     const intentos3_LS = localStorage.getItem('P3_Intentos3');
+    
     if (intentos1_LS)
         intentos1 = intentos1_LS
     else
