@@ -125,8 +125,7 @@ function PintaSeleccionP1(position, def, Pregunta){
     //let defBoard = []
     def = nuevoDef;
     
-    /*let div = document.querySelectorAll('#artifact_1');
-    div.id = artefact[0];
+    /*div.id = artefact[0];
     div = document.querySelectorAll('#artifact_2');
     div.id = artefact[1];
     
@@ -155,5 +154,5 @@ function PintaSeleccionP1(position, def, Pregunta){
 
     }*/
     
-    return (def);
+    return ([def,artefact]);
 }

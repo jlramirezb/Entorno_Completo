@@ -150,14 +150,19 @@ let def = {
   },
 
 }
-
+let artefact = [];
 let position = localStorageSeleccionados("P1", 1, 8, 3);
-def = PintaSeleccionP1(position, def, 'P1')
+[def,artefact] = PintaSeleccionP1(position, def, 'P1')
 
 //Funcion que inicializa los elementos del DOM con el template y el Fragmento
 function initMain() {
   generation(def);
 };
 
+
+
 //Funcion para iniciarlo cuando se cargue la pagina
 window.onload = initMain();
+
+let div = document.getElementById(artefact[0]);
+console.log(div);

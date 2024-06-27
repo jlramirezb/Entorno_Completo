@@ -1,6 +1,5 @@
 let btnPreg1 = document.getElementById("btnPreg1");
 let btnPreg2 = document.getElementById("btnPreg2");
-let btnPreg3 = document.getElementById("btnPreg3");
 let btnPreg4 = document.getElementById("btnPreg4");
 let btnGuardar = document.getElementById("btnguardar");
 
@@ -19,7 +18,6 @@ function ActivarPreguntas(){
     if(btnGuardar.disabled===false){
         btnPreg1.disabled = false;
         btnPreg2.disabled = false;
-        btnPreg3.disabled = false;
         btnPreg4.disabled = false;
     }
 } 
@@ -88,8 +86,7 @@ function cargaData(){
         cedula.value = dtosPersonals.cedula;
         seccion.value = dtosPersonals.seccion;
         btnPreg1.disabled = false;
-        btnPreg2.disabled = false;
-        btnPreg3.disabled = false;
+        btnPreg2.disabled = false;        
         btnPreg4.disabled = false;
         btnGuardar.disabled = true;
         nombre.disabled = true;
