@@ -5,6 +5,7 @@ var def = {
     datadefault: [
         //Primeras caracteristicas Board1
         {
+            Ye
             customKeyboard: 7,
             type: 13,
             interactive: true,
