@@ -171,6 +171,7 @@ let artifactDiv = document.getElementById('artifact_5');
 
 // Creamos un nuevo div contenedor
 let newDiv = document.createElement("div");
+newDiv.id = "newDiv"; // Asignamos el ID
 
 // Creamos un div para los encabezados
 let headersDiv = document.createElement("div");
@@ -179,10 +180,13 @@ headersDiv.style.justifyContent = "space-between"; // Alineamos elementos a los 
 
 // Creamos el encabezado "Pregunta"
 let questionHeader = document.createElement("div");
+questionHeader.className = "question-header"; // Asignamos la clase
 questionHeader.textContent = "Pregunta";
 headersDiv.appendChild(questionHeader);
 
 let scoreHeader = document.createElement("div");
+scoreHeader.className = "score-header"; // Asignamos la clase
+
 scoreHeader.textContent = "Puntaje";
 headersDiv.appendChild(scoreHeader);
 

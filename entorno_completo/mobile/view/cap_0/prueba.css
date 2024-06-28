@@ -1,0 +1,60 @@
+.question-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    background-color: #fff;
+    padding: 1px;    
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.question-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.question-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+.oval-container {
+    display: flex;
+    justify-content: center;
+    margin-left:80%;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    margin-top: 1px;
+    background-color: #000000; /* Black */
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para el contenedor principal */
+#newDiv {
+    border: 20px solid black; /* Marco del contenedor */
+    padding: 10px; 
+}
+/* Estilo para el encabezado "Pregunta" */
+.question-header {
+    font-weight: bold; /* Texto en negrita */
+}
+/* Estilo para el encabezado "Puntaje" */
+.score-header {
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados para el óvalo */
+}
