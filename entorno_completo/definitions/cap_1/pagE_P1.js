@@ -2,17 +2,18 @@
 
 var def = {
     artefact_1: {
+        
     datadefault: [
         //Primeras caracteristicas Board1
-        {
-            Ye
+        { 
             customKeyboard: 7,
             type: 13,
             interactive: true,
             classGlobal: "QA",
             parent: "#ejemplo1",
             contents: {
-                artifact_1: {
+                artifact_1: {  
+                    yellow:true,                  
                     allinputs: [],
                     header: [],
                     dataInteraction: {

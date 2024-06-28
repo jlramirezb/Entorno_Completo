@@ -165,4 +165,39 @@ function initMain() {
 window.onload = initMain();
 
 let div = document.getElementById(artefact[0]);
-console.log(div);
+
+// Obtenemos el div con id "artifact_1"
+let artifactDiv = document.getElementById('artifact_5');
+
+// Creamos un nuevo div contenedor
+let newDiv = document.createElement("div");
+
+// Creamos un div para los encabezados
+let headersDiv = document.createElement("div");
+headersDiv.style.display = "flex"; // Usamos flexbox para alinear los elementos horizontalmente
+headersDiv.style.justifyContent = "space-between"; // Alineamos elementos a los extremos
+
+// Creamos el encabezado "Pregunta"
+let questionHeader = document.createElement("div");
+questionHeader.textContent = "Pregunta";
+headersDiv.appendChild(questionHeader);
+
+let scoreHeader = document.createElement("div");
+scoreHeader.textContent = "Puntaje";
+headersDiv.appendChild(scoreHeader);
+
+// Agregamos el div de encabezados al nuevo contenedor
+newDiv.appendChild(headersDiv);
+
+// Agregamos el div original al nuevo contenedor
+newDiv.appendChild(artifactDiv);
+
+// Obtenemos el div con id "container-all"
+let containerAll = document.getElementById('container-all-artifact');
+containerAll.appendChild(newDiv);
+
+console.log(containerAll)
+// Reemplazamos el div original con el nuevo contenedor
+//containerAll.replaceChild(newDiv, artifactDiv);
+
+
