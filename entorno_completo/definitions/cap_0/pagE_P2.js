@@ -10,7 +10,7 @@ const c = {
   6: { x: 2.2, y: 1.2 },
 
 };
-const defBoards = {
+let defBoards = {
   board_0: {
     style: {
       grid: true,
@@ -107,7 +107,7 @@ const defBoards = {
 
 };
 //si se va a agregar algo al objeto tiene que declararce la propiedad por defecto en el mod.js
-const rDef = {
+let rDef = {
   artifactHtml: {
     datadefault: [
       {
@@ -310,7 +310,7 @@ const rDef = {
 console.log([c[4].x, c[4].y / 2]);
 
 let artefact = [];
-let position = localStorageSeleccionados("P2", 1, 6, 4);
+let position = localStorageSeleccionados("P2", 0, 5, 4);
 console.log(position);
 
 function filtrarDefBoards(defBoards, indices) {
@@ -323,9 +323,42 @@ function filtrarDefBoards(defBoards, indices) {
   }
   return nuevoDefBoards;
 }
-console.log(defBoards);
+//console.log(defBoards);
 const nuevoDefBoards = filtrarDefBoards(defBoards, position);
-console.log(nuevoDefBoards);
+//console.log(nuevoDefBoards);
+defBoards = nuevoDefBoards;
+function generarNuevoRdef(rdefOriginal, indices) {
+  // Verificar que el arreglo de índices tenga 4 elementos
+  /*if (indices.length !== 4) {
+    return "El arreglo de índices debe tener 4 elementos.";
+  }*/
+
+  // Crear un nuevo objeto rdef
+  const nuevoRdef = {
+    artifactHtml: rdefOriginal.artifactHtml 
+  };
+
+  // Agregar las propiedades artifact_ correspondientes a los índices
+  indices.forEach(indice => {
+    nuevoRdef[`artifact_${indice+1}`] = rdefOriginal[`artifact_${indice+1}`];
+  });
+
+  return nuevoRdef;
+}
+console.log(rDef); 
+const nuevoRdef = generarNuevoRdef(rDef, position);
+rDef = nuevoRdef;
+console.log(nuevoRdef); 
+// Salida: 
+// {
+//   artifactHTML: ["HTML existente"],
+//   artifact_2: "valor2",
+//   artifact_4: "valor4",
+//   artifact_1: "valor1",
+//   artifact_3: "valor3"
+// }
+
+
 
 //[def,artefact] = PintaSeleccionP1(position, def, 'P2)
 generator(rDef);
