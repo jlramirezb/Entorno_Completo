@@ -135,11 +135,11 @@ btnPreg4.addEventListener("click", e=>{
     btnPreg4.disabled = true;
     localStorage.removeItem("SeleccionadosP1");
     localStorage.removeItem("SeleccionadosP2");
-    localStorage.removeItem('mathValuesA');
+    /*localStorage.removeItem('mathValuesA');
     localStorage.removeItem('mathValuesB');
     localStorage.removeItem('mathValues2A');
     localStorage.removeItem('mathValues2B');
-    localStorage.removeItem('selectedValues');
+    localStorage.removeItem('selectedValues');*/
 
     /*let request = indexedDB.open('miBaseDeDatos', 1);
 
