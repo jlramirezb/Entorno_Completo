@@ -108,13 +108,7 @@ function filtrarObjeto(objetoDef, arregloPropiedades) {
     return nuevoObjeto;
 }
 
-function PintaSeleccionP1(position, def, Pregunta){
-    //const newPropertyName = `board_${position}`;
-    //const desiredBoard = {};
-    
-    //desiredBoard[newPropertyName]=defBoards[newPropertyName];
-    //defBoards = desiredBoard;
-    
+function PintaSeleccionP1(position, def, Pregunta){    
     let artefact = [];
     artefact[0] = 'artifact_'+position[0];
     artefact[1] = 'artifact_'+position[1];
@@ -124,35 +118,6 @@ function PintaSeleccionP1(position, def, Pregunta){
     console.log(nuevoDef);
     //let defBoard = []
     def = nuevoDef;
-    
-    /*div.id = artefact[0];
-    div = document.querySelectorAll('#artifact_2');
-    div.id = artefact[1];
-    
-    let div2 = document.querySelectorAll('[data-board="board_1"]');
-    div2[0].setAttribute('data-board', `board_${position}`);
-    div2[1].setAttribute('data-board', `board_${position}`);    
 
-    if(Pregunta==='P1_1'){
-        div = document.querySelector('.containerNormal');
-        let btnBack = document.createElement("button");
-        btnBack.textContent = "Regresar";
-        div.appendChild(btnBack);
-
-        btnBack.addEventListener('click',()=>{
-            window.location.href = "Pag_Ex.html";
-        })
-    }else if(Pregunta==='P1'){
-        btnBack = document.querySelector('.boton-izquierda');
-        btnForw = document.querySelector('.boton-derecha');
-        btnBack.addEventListener('click',()=>{
-            window.location.href = "Pag_Ex.html";
-        })
-        btnForw.addEventListener('click',()=>{
-            window.location.href = "pagEx_P1_1.html";
-        })
-
-    }*/
-    
     return ([def,artefact]);
 }

@@ -1,3 +1,25 @@
+/* Estilo para el contenedor principal */
+#newDiv{
+    border: 2px solid rgb(7, 7, 7); /* Marco del contenedor */
+    border-radius: 10px;
+    padding: 1px;
+    margin-bottom: 5%;
+}
+
+/* Estilo para el encabezado "Pregunta" */
+.question-header {
+    font-weight: bold; /* Texto en negrita */
+    font-size: 18px;
+}
+/* Estilo para el encabezado "Puntaje" */
+.score-header {
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados para el óvalo */
+    margin-bottom: 1%;
+}
+
 .question-container {
     display: flex;
     flex-direction: column;
@@ -42,19 +64,4 @@
     font-weight: bold;
 }
 
-/* Estilo para el contenedor principal */
-#newDiv {
-    border: 20px solid black; /* Marco del contenedor */
-    padding: 10px; 
-}
-/* Estilo para el encabezado "Pregunta" */
-.question-header {
-    font-weight: bold; /* Texto en negrita */
-}
-/* Estilo para el encabezado "Puntaje" */
-.score-header {
-    background-color: black; /* Fondo negro */
-    color: white; /* Texto blanco */
-    padding: 5px 10px; /* Espaciado interno */
-    border-radius: 20px; /* Bordes redondeados para el óvalo */
-}
+
