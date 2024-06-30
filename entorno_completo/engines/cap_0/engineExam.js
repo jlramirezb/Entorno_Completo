@@ -1,5 +1,5 @@
 function seleccionarAleatorios(min, max,totalale) {
-    // Crear un array con los números consecutivos
+    /*// Crear un array con los números consecutivos
     const numeros = [];
     for (let i = min; i <= max; i++) {
         numeros.push(i);
@@ -19,8 +19,46 @@ function seleccionarAleatorios(min, max,totalale) {
     }
 
     // Devolver los números seleccionados
-    return seleccionados;
+    return seleccionados;*/
+    if (totalale % 2 !== 0) {
+        return "El valor de N debe ser par para tener igual cantidad de pares e impares.";
+    }
+    const resultado = [];
+    const pares = [];
+    const impares = [];
+
+    for (let i = min; i <= max; i++) {
+        if (i % 2 === 0) {
+          pares.push(i);
+        } else {
+          impares.push(i);
+        }
+      }
+
+    // Generar números pares e impares dentro del rango
+    let quedanPares = totalale / 2;
+    let quedanImpares = totalale / 2;
+    while (resultado.length < totalale) {
+      const elegirPar = Math.random() < quedanPares / (quedanPares + quedanImpares); 
+      if (elegirPar && pares.length > 0) {
+        const indicePar = Math.floor(Math.random() * pares.length);
+        resultado.push(pares[indicePar]);
+        pares.splice(indicePar, 1);
+        quedanPares--;
+      } else if (impares.length > 0) {
+        const indiceImpar = Math.floor(Math.random() * impares.length);
+        resultado.push(impares[indiceImpar]);
+        impares.splice(indiceImpar, 1);
+        quedanImpares--;
+      }
+    }
+
+    // Seleccionar aleatoriamente N/2 pares y N/2 impares
+
+    // Mezclar el arreglo para que los pares e impares no estén ordenados
+    return resultado.sort();
 }
+
 
 function localStorageSeleccionados(Pregunta,min,max,totalale){
     let seleccionados = [];

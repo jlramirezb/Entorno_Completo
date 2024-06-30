@@ -456,6 +456,14 @@ divs.forEach(div => {
 
 // Selecciona todos los elementos div con la clase 'boardfault'
 
+let containerAll = document.querySelectorAll(".content_1");
+let btnBack = document.createElement("button");
+btnBack.textContent = "Regresar";
+containerAll[1].appendChild(btnBack);
+
+btnBack.addEventListener('click',()=>{
+  window.location.href = "Pag_Ex.html";
+})
 
 
 

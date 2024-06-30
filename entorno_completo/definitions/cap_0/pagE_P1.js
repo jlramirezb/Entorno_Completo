@@ -216,6 +216,37 @@ btnBack.addEventListener('click',()=>{
   window.location.href = "Pag_Ex.html";
 })
 
+
+//const btnBack = document.getElementById("miBoton");
+
+function centrarBoton() {
+  // Obtenemos el ancho y alto del botón
+  const anchoBoton = btnBack.offsetWidth;
+  //const altoBoton = btnBack.offsetHeight;
+
+  // Obtenemos el ancho y alto de la ventana
+  const anchoVentana = window.innerWidth;
+  //const altoVentana = window.innerHeight;
+
+  // Calculamos la posición para centrar el botón
+  const posicionX = (anchoVentana - anchoBoton) / 2;
+  //const posicionY = (altoVentana - altoBoton) / 2;
+
+  // Aplicamos la posición y el ancho al botón
+  btnBack.style.position = "absolute";
+  btnBack.style.left = posicionX + "px";
+  //btnBack.style.top = posicionY + "px";
+  btnBack.style.width = "10%"; // Ajusta este valor según sea necesario
+}
+
+// Centramos el botón al cargar la página
+window.addEventListener('load', centrarBoton);
+
+// Volvemos a centrar el botón si la ventana cambia de tamaño
+window.addEventListener('resize', centrarBoton);
+
+
+
 window.addEventListener('load', function() {
   //const tbodyElement = document.querySelectorAll('tbody');
   //const selectElements = tbodyElement[0].querySelectorAll('select');
