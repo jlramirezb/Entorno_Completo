@@ -435,3 +435,27 @@ for (let i = 0; i < validar.length; i++) {
         }
     });
 }
+
+// Selecciona todos los elementos div con la clase 'boardfault'
+const divs = document.querySelectorAll('.borderDefault');
+
+// Itera sobre cada div y agrega el texto "Pregunta" después de cada uno
+i = 4;
+divs.forEach(div => {
+  const spanPregunta = document.createElement('span');
+  const spanPuntaje = document.createElement('span');
+  spanPregunta.textContent =  "P"+i.toString(); 
+  let puntaje = (i===4 || i===6) ? '3 pts' : '4 pts';
+  spanPuntaje.textContent = puntaje;
+  spanPuntaje.classList.add("oval-container");
+  spanPregunta.classList.add('question-text');
+  div.insertBefore(spanPregunta, div.firstChild);
+  div.appendChild(spanPuntaje);
+  i++;
+});
+
+// Selecciona todos los elementos div con la clase 'boardfault'
+
+
+
+
