@@ -10,6 +10,7 @@ const c = {
   6: { x: 2.2, y: 1.2 },
 
 };
+
 let defBoards = {
   board_0: {
     style: {
@@ -36,7 +37,6 @@ let defBoards = {
         xd: [[0, 0], [1, 0]],
       },
     },
-
   },
   board_2: {
     style: {
@@ -51,7 +51,6 @@ let defBoards = {
       },
     },
   },
-
   //nuevos
   board_3: {
     style: {
@@ -104,7 +103,6 @@ let defBoards = {
       [1, 0, false, '1']
     ]
   },
-
 };
 //si se va a agregar algo al objeto tiene que declararce la propiedad por defecto en el mod.js
 let rDef = {
@@ -145,7 +143,6 @@ let rDef = {
   },
   artifact_1: {
     textBottom: '(x, -y), (-x, y), (-x, -y), (y, x)',
-
     defaultInputs: [
       {//1
         position: [c[1].x, c[1].y],
@@ -196,7 +193,6 @@ let rDef = {
         { p: [-c[2].y, -c[2].y], text: '-b,-b' }
       ],
     },
-
   },
   artifact_3: {
     // textTop: "Este es el de arriba",
@@ -208,9 +204,7 @@ let rDef = {
         value: '(x,y)',// si uqeiro agregar un valor
         // interactive: true
       },
-
     ],
-
     conditions: {
       texterror: {
         time: 4,
@@ -313,7 +307,7 @@ let artefact = [];
 let position = localStorageSeleccionados("P2", 0, 5, 4);
 console.log(position);
 
-function filtrarDefBoards(defBoards, indices) {
+/*function filtrarDefBoards(defBoards, indices) {
   const nuevoDefBoards = {};
   for (const indice of indices) {
     const nombreBoard = `board_${indice}`;
@@ -326,29 +320,59 @@ function filtrarDefBoards(defBoards, indices) {
 //console.log(defBoards);
 const nuevoDefBoards = filtrarDefBoards(defBoards, position);
 //console.log(nuevoDefBoards);
-defBoards = nuevoDefBoards;
-function generarNuevoRdef(rdefOriginal, indices) {
-  // Verificar que el arreglo de índices tenga 4 elementos
-  /*if (indices.length !== 4) {
-    return "El arreglo de índices debe tener 4 elementos.";
-  }*/
+defBoards = nuevoDefBoards;*/
 
-  // Crear un nuevo objeto rdef
-  const nuevoRdef = {
-    artifactHtml: rdefOriginal.artifactHtml 
-  };
+function filtrarRdef(rdef, indices) {
+  for(let i=0;i<indices.length;i++ )
+  {
+    indices[i]=indices[i]+1;
+  }  
+  
+  const nuevoRdef = {};
+  
+  // Copiar la propiedad artifactHtml
+  nuevoRdef.artifactHtml = rdef.artifactHtml;
 
-  // Agregar las propiedades artifact_ correspondientes a los índices
-  indices.forEach(indice => {
-    nuevoRdef[`artifact_${indice+1}`] = rdefOriginal[`artifact_${indice+1}`];
-  });
+  // Iterar sobre las propiedades de rdef
+  for (const propiedad in rdef) {
+    // Verificar si la propiedad comienza con "artifact_"
+    if (propiedad.startsWith("artifact_")) {
+      // Extraer el índice de la propiedad
+      const indice = parseInt(propiedad.split("_")[1]);
+      
+      // Si el índice no está en el arreglo de índices a eliminar, copiar la propiedad
+      if (indices.includes(indice)) {
+        nuevoRdef[propiedad] = rdef[propiedad];
+      }
+    }
+  }
 
   return nuevoRdef;
 }
-console.log(rDef); 
-const nuevoRdef = generarNuevoRdef(rDef, position);
+
+function filtrarContents(rdef, indices) {
+  // Verificar si las propiedades existen antes de acceder a ellas
+  if (rdef.artifactHtml && rdef.artifactHtml.datadefault && rdef.artifactHtml.datadefault[0] && rdef.artifactHtml.datadefault[0].contents) {
+    const nuevoContents = rdef.artifactHtml.datadefault[0].contents.filter((_, index) => indices.includes(index));
+    rdef.artifactHtml.datadefault[0].contents = nuevoContents;
+  }
+  return rdef;
+}
+
+let nuevoRdef = filtrarContents(rDef, position);
+
+//console.log(nuevoRdef.artifactHtml.datadefault[0].contents); 
+// Output: [ { dataSet: { artifact: 'artifact_2' } }, { dataSet: { artifact: 'artifact_4' } } ]
+
+
+nuevoRdef = filtrarRdef(nuevoRdef, position);
+
 rDef = nuevoRdef;
-console.log(nuevoRdef); 
+
+console.log(rDef); // Output: { artifactHtml: "...", artifact_1: "...", artifact_3: "..." }
+
+//console.log(rDef); 
+//console.log(nuevoRdef); 
 // Salida: 
 // {
 //   artifactHTML: ["HTML existente"],
@@ -358,8 +382,56 @@ console.log(nuevoRdef);
 //   artifact_3: "valor3"
 // }
 
+window.addEventListener('load', function() {  
+  const intentos1_LS = localStorage.getItem('P2_Intentos1');
+  const intentos2_LS = localStorage.getItem('P2_Intentos2');
+  const intentos3_LS = localStorage.getItem('P2_Intentos3');
+  const intentos4_LS = localStorage.getItem('P2_Intentos4');
+  if (intentos1_LS)
+      intentos1 = intentos1_LS
+  else
+      intentos1 = 0;
+  if (intentos2_LS)
+      intentos2 = intentos2_LS
+  else
+      intentos2 = 0;
+  if (intentos3_LS)
+      intentos3 = intentos3_LS
+  else
+      intentos3 = 0;
+  if (intentos4_LS)
+      intentos4 = intentos4_LS
+  else
+      intentos4 = 0;
+});
 
-
-//[def,artefact] = PintaSeleccionP1(position, def, 'P2)
+//[def,artefact] = PintaSeleccionP1(position, def, 'P2)*/
 generator(rDef);
 mainCartesian(defBoards, rDef);
+
+let validar = document.querySelectorAll('.check');
+let intentos1, intentos2, intentos3, intentos4;
+for (let i = 0; i < validar.length; i++) {
+    // Add a click event listener to each element
+    validar[i].addEventListener('click', function() {
+        // Print a different message depending on the element
+        switch (this) {
+            case validar[0]:
+                intentos1++;                
+                localStorage.setItem('P2_Intentos1',intentos1);                
+                break;
+            case validar[1]:
+                intentos2++;                
+                localStorage.setItem('P2_Intentos2',intentos2);
+                break;        
+            case validar[2]:
+                intentos3++;                
+                localStorage.setItem('P2_Intentos3',intentos3);
+                break;        
+            case validar[3]:
+                intentos4++;                
+                localStorage.setItem('P2_Intentos4',intentos4);
+                break;        
+        }
+    });
+}
