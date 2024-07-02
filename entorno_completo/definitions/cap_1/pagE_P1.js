@@ -3,2964 +3,687 @@
 var def = {
     artefact_1: {
     datadefault: [
-        //Primeras caracteristicas Board1
         {
             customKeyboard: 7,
+    
             type: 13,
             interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo1",
+            classGlobal: 'QA',
+            parent: '#ejemplo1',
             contents: {
-                artifact_1: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                    incorrect: 0,
-                    correct: 0,
-                    forAnswer: 0,
-                    },
-                    cells: [
-                        [
-                            //Primera fila
-                            {
-                                type: 0,
-                                text: ["Dominio", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Rango", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje X", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje Y", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        //2da fila soluciones
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["","[-3,3.5]","(-3,4)","(-3,3.5)","[-3,4)",],
-                                conditions: {
-                                    valueInputs: ["[-3,3.5]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["","(-1,2)","[-0.5,1.5]","(0,2)","[-0.5,2)",],
-                                conditions: {
-                                    valueInputs: ["[-0.5,1.5]"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-2.5, 2, 3.25],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [1.5],
-                                },
-                            },
-                        ],
-                        //3ra fila caracteristicas
-                        [
-                            {
-                                type: 0,
-                                text: ["Parte Positiva", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Negativa", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Creciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Decreciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        //4ta fila solucion
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["","(-2.5,2) U (3.25,3.5]","(-2.5,3.5)","(0,3.5]","∄",],
-                                conditions: {
-                                    valueInputs: ["(-2.5,2) U (3.25,3.5]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-2.5,0)", "[-3,-2.5) U (2,3.25)", "∄"],
-                                conditions: {
-                                    valueInputs: ["[-3,-2.5) U (2,3.25)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["","(-3,0)","(-3,0) U (2.5,3.5)","(0,4)","∄",],
-                                conditions: {
-                                    valueInputs: ["(-3,0) U (2.5,3.5)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["","(-3,-1) U (0,3.5)","(0,2.5)","(-2.5,0) u (0.5,4)","∄",],
-                                conditions: {
-                                    valueInputs: ["(0,2.5)"],
-                                },
-                            },
-                        ],
-                    ],
+              artifact_1: {
+                allinputs: [],
+                header: [],
+                dataInteraction: {
+                  incorrect: 0,
+                  correct: 0,
+                  forAnswer: 0
                 },
-            },
-        },
-        //Segundas caracterisdticas Board1
-        {
+                cells: [
+                  [
+    
+                    {
+                      type: 0,
+                      text: ['Dominio', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      //text: ['Max.Abs', null],
+                      text: ['Rango',null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      text: ['Parte Creciente', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+                    {
+                      type: 0,
+                      text: ['Parte Decreciente', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                  ],
+    
+    
+    
+                  [
+                    {
+                      type: 2,
+                      answers_values: ['', '(-∞, ∞)', '(-∞, 0) ∪ (0, ∞)', '(-∞, 0) ∪ (0, 2.5) ∪ (2.5, ∞)'],
+                      conditions: {
+                        correctIndex: 1
+                      }
+                    ,
+                  }, 
+                  {
+                    type: 2,
+                    answers_values: ['', '(-3, -1] ∪ [0, 2.5) ∪ (3, 3)', '(-3, -1] ∪ [0, 2.5) ∪ [3, 3]', '[-3, -1] ∪ (0, 3]', '(-3, -1] ∪ [0, 3]'],
+                    conditions: {
+                      correctIndex: 2
+                    }
+                  ,
+                  },  
+                  {
+                    type: 2,
+                    answers_values: ['', '(-∞, -1) ∪ [0, 2.5)', '(-∞, -1) ∪ (0, 2.5)', '(-∞, -1] ∪ [0, 2.5)'],
+                    conditions: {
+                      correctIndex: 2
+                    }
+                  ,
+                  },
+                  
+                  {
+                    type: 2,
+                    answers_values: ['', '(-1, 0) ∪ [2.5, ∞)', '(-1, 0) ∪ (2.5, ∞)', '(-1, 0)'],
+                    conditions: {
+                      correctIndex: 3
+                    }
+                  ,
+                  },
+                  ],
+    
+                  [
+    
+                    {
+                      type: 0,
+                      text: ['Parte Negativa', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      text: ['Parte Positiva', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      text: ['Cortes X', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+                    {
+                      type: 0,
+                      text: ['Cortes Y', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                  ],
+    
+                  [{
+                    type: 2,
+                    answers_values: ['', '(-∞, 0)', '(-∞, 0]', '(-∞, -1)'],
+                    conditions: {
+                      correctIndex: 1
+                    }
+                  ,
+                  },
+                  {
+                    type: 2,
+                    answers_values: ['', '(0, ∞)', '[0, ∞)', '(0, 2.5) ∪ [3, ∞)'],
+                    conditions: {
+                      correctIndex: 1
+                    }
+                  ,
+                  },
+                  {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [0]
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [0]
+                    }
+                  },],
+                ]
+              }
+            }
+          },
+    
+          {
             customKeyboard: 7,
+    
             type: 13,
             interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo2",
+            classGlobal: 'QA',
+            parent: '#ejemplo2',
             contents: {
-                artifact_2: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
-                    },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Max.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Max. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [1.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [0],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [0.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [3.5],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Min.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Min. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-0.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-3, 2.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                    ],
+              artifact_2: {
+                allinputs: [],
+                header: [],
+                dataInteraction: {
+                  incorrect: 0,
+                  correct: 0,
+                  forAnswer: 0
                 },
-            },
-        },
-        //Primeras caracteristicas Board2
-        {
+                cells: [
+                  [
+                    {
+                      type: 0,
+                      text: ['Max.Abs', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      text: ['Alcanzado en', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+                    {
+                      type: 0,
+                      text: ['Max. No Abs', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+                    {
+                      type: 0,
+                      text: ['Alcanzado en', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                  ],
+    
+    
+    
+                  [
+                  {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [3]
+                    }
+                  },
+                  {
+                    type: 2,
+                    answers_values: ['', '(2.5, ∞)', '[2.5, ∞)', '[0, 0] ∪ (2.5, ∞)'],
+                    conditions: {
+                      correctIndex: 1
+                    }
+                  ,
+                  },
+                  {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [-1]
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [-1]
+                    }
+                  }],
+    
+                  [
+                    {
+                      type: 0,
+                      text: ['Min.Abs', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      text: ['Alcanzado en', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+                    {
+                      type: 0,
+                      text: ['Min. No Abs', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+                    {
+                      type: 0,
+                      text: ['Alcanzado en', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                  ],
+    
+                  [{
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: ['\\nexists']
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: ['\\nexists']
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    oneToManyInput: true,
+                    conditions: {
+                      valueInputs: [0,  3]
+                    }
+                  }, 
+                  {
+                    type: 2,
+                    answers_values: ['', '[0, 0] ∪ [2.5, ∞)', '[0, ∞)', '[0, 2.5) ∪ (2.5, ∞)'],
+                    conditions: {
+                      correctIndex: 1
+                    }
+                  ,
+                  },
+                ]
+    
+                ]
+              }
+            }
+          },
+    
+          {
             customKeyboard: 7,
+    
             type: 13,
             interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo1",
+            classGlobal: 'QA',
+            parent: '#ejemplo3',
             contents: {
-                artifact_3: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
-                    },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Dominio", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Rango", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje X", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje Y", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-1.1,1]",
-                                    "[-1.5,1)",
-                                    "(-1.1,1)",
-                                    "(-1.5,1]",
-                                ],
-                                conditions: {
-                                    valueInputs: ["[-1.1,1]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-1.1,2]",
-                                    "[-1.1,1.8]",
-                                    "[-1,2]",
-                                    "(-1,1.8)",
-                                ],
-                                conditions: {
-                                    valueInputs: ["[-1.1,1.8]"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-0.8],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [1.5],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Parte Positiva", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Negativa", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Creciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Decreciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-1,0)", "[-1.1,1]", "(-0.8,1]", "∄"],
-                                conditions: {
-                                    valueInputs: ["(-0.8,1]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-1.1,-0.8)",
-                                    "(-1.1,0)",
-                                    "(-1.1,-0.8]",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["[-1.1,-0.8)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(0,1)",
-                                    "[-1.1,1]",
-                                    "(-1.1,1)",
-                                    "(0,1]",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(-1.1,1)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-1.1,0)", "(-1.1,1)", "(0,1)", "∄"],
-                                conditions: {
-                                    valueInputs: ["∄"],
-                                },
-                            },
-                        ],
-                    ],
+              artifact_3: {
+                allinputs: [],
+                header: [],
+                dataInteraction: {
+                  incorrect: 0,
+                  correct: 0,
+                  forAnswer: 0
                 },
-            },
-        },
-        //Segundas caracteristicas Board2
-        {
+                cells: [
+                  [
+    
+                    {
+                      type: 0,
+                      text: ['Dominio', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      //text: ['Max.Abs', null],
+                      text: ['Rango',null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      text: ['Parte Creciente', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+                    {
+                      type: 0,
+                      text: ['Parte Decreciente', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                  ],
+    
+    
+    
+                  [
+                    {
+                      type: 2,
+                      answers_values: ['', '(-∞, ∞)', '(-∞, -1) ∪ (-1, ∞)', '(-∞, -1) ∪ (-1, 0.5) ∪ (0.5, ∞)'],
+                      conditions: {
+                        correctIndex: 1
+                      }
+                    ,
+                  }, 
+                  {
+                    type: 2,
+                    answers_values: ['', '(-4, -1.5] ∪ [-1, 0.5) ∪ (1.5, 3]', '(-4, -1.5) ∪ [-1, 0.5) ∪ [1.5, 3]', '[-4, -1.5] U (-1, 3]', '(-4, -1.5) ∪ [-1, 0.5) ∪ (1, 3]'],
+                    conditions: {
+                      correctIndex: 4 
+                    }
+                  ,
+                  },  
+                  {
+                    type: 2,
+                    answers_values: ['', '(-∞, 2)', '(-∞, -1) ∪ (-1, 0.5) ∪ (0.5, 2)', '(-∞, 2]'],
+                    conditions: {
+                      correctIndex: 2
+                    }
+                  ,
+                  },
+                  
+                  {
+                    type: 2,
+                    answers_values: ['', '(2, ∞)', '[2, ∞)', '(0.5, ∞)'],
+                    conditions: {
+                      correctIndex: 1
+                    }
+                  ,
+                  },
+                  ],
+    
+                  [
+    
+                    {
+                      type: 0,
+                      text: ['Parte Negativa', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      text: ['Parte Positiva', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                    {
+                      type: 0,
+                      text: ['Cortes X', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+                    {
+                      type: 0,
+                      text: ['Cortes Y', null],
+                      conditions: {
+                        correctIndex: null
+                      }
+                    },
+    
+                  ],
+    
+                  [{
+                    type: 2,
+                    answers_values: ['', '(-∞, 0)', '(-∞, 0]', '(-∞, -1) ∪ (-1, 0)'],
+                    conditions: {
+                      correctIndex: 1
+                    }
+                  ,
+                  },
+                  {
+                    type: 2,
+                    answers_values: ['', '(0, ∞)', '[0, ∞)', '(0, 0.5) U (0.5, ∞)'],
+                    conditions: {
+                      correctIndex: 1
+                    }
+                  ,
+                  },
+                  {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [0]
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [0]
+                    }
+                  },],
+                ]
+              }
+            }
+          },
+    
+          {
             customKeyboard: 7,
+    
             type: 13,
             interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo2",
+            classGlobal: 'QA',
+            parent: '#ejemplo4',
             contents: {
-                artifact_4: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
-                    },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Max.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Max. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [1.8],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Min.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Min. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-1.1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-1.1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                    ],
+              artifact_4: {
+                allinputs: [],
+                header: [],
+                dataInteraction: {
+                  incorrect: 0,
+                  correct: 0,
+                  forAnswer: 0
                 },
-            },
-        },
-        //Primeras caracteristicas Board3
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo1",
-            contents: {
-                artifact_5: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
+                cells: [
+                  [
+    
+                    {
+                      type: 0,
+                      text: ['Max.Abs', null],
+                      conditions: {
+                        correctIndex: null
+                      }
                     },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Dominio", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Rango", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje X", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje Y", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-3.5,-1.2] U [-0.8,1]",
-                                    "(-3,-1.2) U (-0.8,1)",
-                                    "[-3.5,-1.2) U (-0.8,1]",
-                                    "(-3,-1.2] U [-0.8,1)",
-                                ],
-                                conditions: {
-                                    valueInputs: ["[-3.5,-1.2] U [-0.8,1]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-1,2.5]",
-                                    "(-1,2.5)",
-                                    "[-1,3]",
-                                    "[-1,3)",
-                                ],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["[-1,2.5]"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-3],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [1.1],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Parte Positiva", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Negativa", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Creciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Decreciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-3.5,-1.2] U [-0.8,1]",
-                                    "(-3,-1.2) U (-0.8,1)",
-                                    "[-3.5,-1.2) U (-0.8,1]",
-                                    "(-3,-1.2] U [-0.8,1]",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(-3,-1.2] U [-0.8,1]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-3.5,-3)",
-                                    "(-3.5,-2.5)",
-                                    "[-3.5,3.1)",
-                                    "[-3.5.-3]",
-                                    "∄",
-                                ],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["[-3.5,-3)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-3.5,-1.2) U [-0.8,1)",
-                                    "(-3.5,-1.2] U (-0.8,1]",
-                                    "(-3.5,-1.2) U (-0.8,1)",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(-3.5,-1.2) U (-0.8,1)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-3.5,-1.2) U [-0.8,1)",
-                                    "(-3.5,-1.2] U (-0.8,1]",
-                                    "(-3.5,-1.2) U (-0.8,1)",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: [, "∄"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Segundas  caracteristicas Board3
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo2",
-            contents: {
-                artifact_6: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
+    
+                    {
+                      type: 0,
+                      text: ['Alcanzado en', null],
+                      conditions: {
+                        correctIndex: null
+                      }
                     },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Max.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Max. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [2.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [0.9],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-1.2],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Min.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Min. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-3.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [0.9],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-0.8],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Primeras caracteristicas Board4
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo1",
-            contents: {
-                    artifact_7: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                    incorrect: 0,
-                    correct: 0,
-                    forAnswer: 0,
+                    {
+                      type: 0,
+                      text: ['Max. No Abs', null],
+                      conditions: {
+                        correctIndex: null
+                      }
                     },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Dominio", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Rango", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje X", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje Y", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "[-∞,0) U (0,∞]", "(-∞,∞)", "[-5,-5]"],
-                                conditions: {
-                                    valueInputs: ["(-∞,∞)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "[-1,6]", "(-1,∞)", "[-1,∞)", "[-1,∞]"],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["[-1,∞)"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-1, 1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-1],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Parte Positiva", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Negativa", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Creciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Decreciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(-∞,∞)",
-                                    "(-∞,-1) U (1,∞)",
-                                    "(0,∞)",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(-∞,-1) U (1,∞)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(0,∞)",
-                                    "(-∞,-1) U (1,∞)",
-                                    "(-1,1)",
-                                    "∄",
-                                ],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["(-1,1)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(0,∞)",
-                                    "(-∞,-1) U (1,∞)",
-                                    "(-∞,∞)",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(0,∞)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(0,∞)", "(-∞,0)", "(1,1)", "∄"],
-                                conditions: {
-                                    valueInputs: ["(-∞,0)"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Segundas  caracteristicas Board4
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo2",
-            contents: {
-                artifact_8: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
+                    {
+                      type: 0,
+                      text: ['Alcanzado en', null],
+                      conditions: {
+                        correctIndex: null
+                      }
                     },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Max.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Max. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Min.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Min. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [0],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Primeras caracteristicas Board5
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo1",
-            contents: {
-                artifact_9: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
+    
+                  ],
+    
+    
+                  [{
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [3]
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: [2]
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: ['\\nexists']
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: ['\\nexists']
+                    }
+                  }],
+    
+                  [ {
+                      type: 0,
+                      text: ['Min.Abs', null],
+                      conditions: {
+                        correctIndex: null
+                      }
                     },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Dominio", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Rango", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje X", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje Y", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-∞,3)", "(-∞,3]", "(-∞,∞)", "(-∞,-3]"],
-                                conditions: {
-                                    valueInputs: ["(-∞,3]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "[-1,5]",
-                                    "(-1,∞)",
-                                    "[-0.5,∞)",
-                                    "[-1,∞)",
-                                ],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["[-0.5,∞)"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput:true,
-                                conditions: {
-                                    valueInputs: [2],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [1],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Parte Positiva", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Negativa", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Creciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Decreciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-∞,2)", "(-∞,0)", "(0,3)", "∄"],
-                                conditions: {
-                                    valueInputs: ["(-∞,2)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(0,∞)", "(-∞,2)", "(2,3]", "∄"],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["(2,3]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(0,∞)", "(-∞,2)", "(-∞,∞)", "∄"],
-                                conditions: {
-                                    valueInputs: ["∄"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(0,3)", "(-∞,3)", "(0,3)", "∄"],
-                                conditions: {
-                                    valueInputs: ["(-∞,3)"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Segundas caracteristicas Board5
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo2",
-            contents: {
-                artifact_10: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
+    
+                    {
+                      type: 0,
+                      text: ['Alcanzado en', null],
+                      conditions: {
+                        correctIndex: null
+                      }
                     },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Max.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Max. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Min.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Min. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-0.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [3],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Primeras caracteristicas Board6
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo1",
-            contents: {
-                artifact_11: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
+                    {
+                      type: 0,
+                      text: ['Min. No Abs', null],
+                      conditions: {
+                        correctIndex: null
+                      }
                     },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Dominio", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Rango", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje X", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje Y", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(-∞,0) U (0,∞)",
-                                    "(-∞,0]",
-                                    "(-∞,∞)",
-                                    "(0,∞)",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(-∞,0) U (0,∞)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(-∞,0) U (0,∞)",
-                                    "(-∞,0]",
-                                    "(-∞,∞)",
-                                    "(0,∞)",
-                                ],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["(-∞,0) U (0,∞)"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput:true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Parte Positiva", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Negativa", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Creciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Decreciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-∞,∞)", "(-∞,0)", "(0,∞)", "∄"],
-                                conditions: {
-                                    valueInputs: ["(0,∞)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-∞,∞)", "(-∞,0)", "(0,∞)", "∄"],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["(-∞,0)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(0,∞)", "(-∞,0)", "(-∞,∞)", "∄"],
-                                conditions: {
-                                    valueInputs: ["∄"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(-∞,0)",
-                                    "(-∞,0) U (0,∞)",
-                                    "(0,5)",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(-∞,0) U (0,∞)"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Segundas  caracteristicas Board6
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo2",
-            contents: {
-                artifact_12: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
+                    {
+                      type: 0,
+                      text: ['Alcanzado en', null],
+                      conditions: {
+                        correctIndex: null
+                      }
                     },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Max.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Max. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Min.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Min. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Primeras caracteristicas Board7
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo1",
-            contents: {
-                artifact_13: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
-                    },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Dominio", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Rango", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje X", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje Y", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(1,∞)", "(-∞,0]", "(-∞,∞)", "(0,∞)"],
-                                conditions: {
-                                    valueInputs: ["(0,∞)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(-∞,0) U (0,∞)",
-                                    "(-∞,0]",
-                                    "(-∞,∞)",
-                                    "(0,∞)",
-                                ],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["(-∞,∞)"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput:true,
-                                conditions: {
-                                    valueInputs: [1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Parte Positiva", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Negativa", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Creciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Decreciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(0,∞)", "(0,3)", "(1,∞)", "∄"],
-                                conditions: {
-                                    valueInputs: ["(1,∞)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(0,1)", "(-∞,1)", "(0,∞)", "∄"],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["(0,1)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(0,∞)", "(-∞,0)", "(-∞,∞)", "∄"],
-                                conditions: {
-                                    valueInputs: ["(0,∞)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(-∞,0)",
-                                    "(-∞,0) U (0,∞)",
-                                    "(0,5)",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["∄"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Segundas  caracteristicas Board7
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo2",
-            contents: {
-                artifact_14: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
-                    },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Max.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Max. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Min.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Min. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["\\nexists"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Primeras caracteristicas Board8
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo1",
-            contents: {
-                artifact_15: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
-                    },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Dominio", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Rango", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje X", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Corte con eje Y", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-3,3)", "(-∞,3]", "(-∞,∞)", "[-3,3]"],
-                                conditions: {
-                                    valueInputs: ["[-3,3]"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-∞,1)", "[-1,1]", "(-1,1)", "(1,∞)"],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["[-1,1]"],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-3, 0, 3],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [0],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Parte Positiva", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Negativa", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Creciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Parte Decreciente", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-3,0)", "(0,3)", "(-1,1)", "∄"],
-                                conditions: {
-                                    valueInputs: ["(-3,0)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: ["", "(-3,0)", "(-∞,3)", "(0,3)", "∄"],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: ["(0,3)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(-3,-1.5) U (1.5,3)",
-                                    "(-1,1)",
-                                    "(0,3)",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(-3,-1.5) U (1.5,3)"],
-                                },
-                            },
-                            {
-                                type: 2,
-                                // una pregunta. Varios inputs
-                                answers_values: [
-                                    "",
-                                    "(-1.5,1.5)",
-                                    "(-3,0) U (1.5,3)",
-                                    "(0,3)",
-                                    "∄",
-                                ],
-                                conditions: {
-                                    valueInputs: ["(-1.5,1.5)"],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },
-        //Segundas  caracteristicas Board8
-        {
-            customKeyboard: 7,
-            type: 13,
-            interactive: true,
-            classGlobal: "QA",
-            parent: "#ejemplo2",
-            contents: {
-                artifact_16: {
-                    allinputs: [],
-                    header: [],
-                    dataInteraction: {
-                        incorrect: 0,
-                        correct: 0,
-                        forAnswer: 0,
-                    },
-                    cells: [
-                        [
-                            {
-                                type: 0,
-                                text: ["Max.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Max. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-1.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [0],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [3],
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 0,
-                                text: ["Min.Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Min. No Abs", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                            {
-                                type: 0,
-                                text: ["Alcanzado en", null],
-                                conditions: {
-                                    correctIndex: null,
-                                },
-                            },
-                        ],
-                        [
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                conditions: {
-                                    valueInputs: [-1],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [1.5],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [0],
-                                },
-                            },
-                            {
-                                type: 3,
-                                // una pregunta. Varios inputs
-                                inputsDefault: [["", false]],
-                                //oneToManyInput: true,
-                                conditions: {
-                                    valueInputs: [-3],
-                                },
-                            },
-                        ],
-                    ],
-                },
-            },
-        },      
+    
+                  ],
+    
+                  [{
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: ['\\nexists']
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    conditions: {
+                      valueInputs: ['\\nexists']
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    oneToManyInput: true,
+                    conditions: {
+                      valueInputs: [-1, 1.5]
+                    }
+                  }, {
+                    type: 3,
+                    // una pregunta. Varios inputs
+                    inputsDefault: [['', false]],
+                    oneToManyInput: true,
+                    conditions: {
+                      valueInputs: [-1, 0.5]
+                    }
+                  }],
+    
+                ]
+              }
+            }
+          }, 
     ],
   },
 };
 
 var defBoards = {
-    board_1: {
-        style: {
-            axis: [false, true, true],
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            grid: true,
-            boundingbox: [-4, 4, 4, -4],
-            maxWidth: 350,
-            maxHeight: 225,
-        },
-        curves: [
-            [
-                [
-                    [-3, -0.5],
-                    [0, 1.5],
-                    [2, 0],
-                    [2.5, -0.5],
-                    [3.5, 0.5],
-                ],
-            ],
-        ],
-    },
-    board_2: {
-        style: {
-            axis: [false, true, true],
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            grid: true,
-            boundingbox: [-2, 4, 2, -2],
-            maxWidth: 350,
-            maxHeight: 220,
-        },
-        curves: [
-            [
-                [
-                    [-1.1, -1.2],
-                    [-0.8, 0],
-                    [0, 1.5],
-                    [1, 1.7],
-                ],
-            ],
-        ],
-    },
-    board_3: {
-        style: {
-            axis: [false, true, true],
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            grid: true,
-            boundingbox: [-4, 4, 2, -2],
-            maxWidth: 350,
-            maxHeight: 225,
-        },
-        curves: [
-            [
-                [
-                    [-3.5, -1],
-                    [-3, 0],
-                    [-2.5, 0.6],
-                    [-2.1, 0.8],
-                    [-1.2, 0.9],
-                ],
-            ],
-            [
-                [
-                    [-0.7, 0.9],
-                    [0, 1.1],
-                    [0.6, 1.6],
-                    [1, 2.6],
-                ],
-            ],
-        ],
-    },
-    board_4: {
-        style: {
-            axis: [false, true, true],
-            grid: true,
-            maxHeight: 250,
-            maxWidth: 300,
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            boundingbox: [-4, 4, 4, -2],
-        },
-        points: [
-            [-2.2, 2.2, true, null, null, "#2196f3"],
-            [-2.4, 2.4, true, null, null, "#2196f3"],
-            [-2.6, 2.6, true, null, null, "#2196f3"],
-            [2.2, 2.2, true, null, null, "#2196f3"],
-            [2.4, 2.4, true, null, null, "#2196f3"],
-            [2.6, 2.6, true, null, null, "#2196f3"],
-        ],
-        curves: [
-            [
-                [
-                    [-2, 2],
-                    [-1, 0],
-                    [0, -1],
-                    [1, 0],
-                    [2, 2],
-                ],
-            ],
-        ],
-    },
     board_5: {
         style: {
-            axis: [false, true, true],
-            grid: true,
-            maxHeight: 250,
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            boundingbox: [-4, 4, 4, -2],
+          axis: [false, true, true],
+          grid: true,
+          maxHeight: 250,
+          maxWidth: 300,
+          valueAxis: {
+            yd: [[0, 0], [0, 1]],
+            xd: [[0, 0], [1, 0]]
+          },
+          boundingbox: [-5, 4, 5, -4]
         },
-        points: [
-            [-2.7, 2.3, true, null, null, "#2196f3"],
-            [-3.05, 2.5, true, null, null, "#2196f3"],
-            [-3.4, 2.7, true, null, null, "#2196f3"],
-        ],
-        lines: [
-            [
-                [
-                    [3, -0.5],
-                    [-2.5, 2.2],
-                ],
-            ],
-        ],
-    },
-    board_6: {
-        style: {
-            axis: [false, true, true],
-            grid: true,
-            maxHeight: 250,
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            boundingbox: [-4, 4, 4, -4],
-        },
-        points: [
-            [-2.3, -0.45, true, null, null, "#2196f3"],
-            [-2.65, -0.38, true, null, null, "#2196f3"],
-            [-3.1, -0.3, true, null, null, "#2196f3"],
-            [-0.25, -2.7, true, null, null, "#2196f3"],
-            [-0.2, -3.1, true, null, null, "#2196f3"],
-            [3.3, 0.4, true, null, null, "#2196f3"],
-            [3.6, 0.3, true, null, null, "#2196f3"],
-            [0.25, 3.4, true, null, null, "#2196f3"],
-            [0.2, 3.7, true, null, null, "#2196f3"],
-        ],
+    
         curves: [
-            [
-                [
-                    [-2.1, -0.5],
-                    [-1, -1],
-                    [-0.5, -1.8],
-                    [-0.3, -2.5],
+                  [[[ -3.63, -2.8 ], [ -2.71, -2.48 ],[ -2, -2], [ -1.01, -0.97 ], [ -0.05, -1.95 ]]],
+                  [[[ 0, 0 ], [ 2.45, 2.45 ]]],
+                  [[[ 2.5, 3 ], [ 4, 3 ]]],
                 ],
-            ],
-            [
-                [
-                    [0.3, 3.2],
-                    [0.7, 2],
-                    [2, 0.7],
-                    [1.2, 1.2],
-                    [3.1, 0.4],
-                ],
-            ],
-        ],
-    },
-    board_7: {
+    
+        points: [[0, 0, true], [0, -2, true, '', 2, true], [2.5, 2.5, true, '', 2, true], [2.5, 3, true], [4,3, true], 
+                [4.4, 3, true], [-3.63, -2.8, true], [-4, -2.85, true], [-4.4, -2.87, true]]
+              
+        
+      },
+      board_6: {
         style: {
-            axis: [false, true, true],
-            grid: true,
-            maxHeight: 250,
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            boundingbox: [-4, 4, 4, -4],
+          axis: [false, true, true],
+          grid: true,
+          maxHeight: 250,
+          valueAxis: {
+            yd: [[0, 0], [0, 1]],
+            xd: [[0, 0], [1, 0]]
+          },
+          boundingbox: [-5, 4, 5, -4]
         },
-        points: [
-            [0.19, -3.2, true, null, null, "#2196f3"],
-            [0.15, -3.5, true, null, null, "#2196f3"],
-            [3.2, 1.4, true, null, null, "#2196f3"],
-            [3.4, 1.6, true, null, null, "#2196f3"],
-            [3.6, 1.8, true, null, null, "#2196f3"],
-        ],
+    
+        
+    
         curves: [
-            [
-                [
-                    [0.2, -3],
-                    [0.5, -1],
-                    [1, 0],
-                    [2, 0.5],
-                    [3, 1.2],
+                  [[[ -3.5, -3.7 ],[ -2, -3.5 ], [ -1.5, -3 ],[ -1, -1.55]]],
+                  [[[ 0.5, 1.5 ],[ 1.5, 2.2 ],[ 2, 3 ],[ 2.5, 2.2 ],[ 3.5, 1.4 ]]],
+                  [[[-1,-1],[0.45,0.45]]]
                 ],
-            ],
-        ],
-    },
-    board_8: {
-        style: {
-            axis: [false, true, true],
-            grid: true,
-            maxHeight: 200,
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            boundingbox: [-4, 2, 4, -2],
-        },
-        curves: [
-            [
-                [
-                    [-3, 0],
-                    [-1.5, 1],
-                    [0, 0],
-                    [1.5, -1],
-                    [3, 0],
-                ],
-            ],
-        ],
-    },
-    board_9: {
-        style: {
-            axis: [false, true, true],
-            grid: true,
-            maxHeight: 200,
-            valueAxis: {
-                yd: [
-                [0, 0],
-                [0, 1],
-                ],
-                xd: [
-                [0, 0],
-                [1, 0],
-                ],
-            },
-            boundingbox: [-4, 2, 4, -2],
-        },
-        points: [[3, 1.5, true, "", 3, true]],
-        lines: [
-            [
-                [
-                    [3, 1.5],
-                    [2, -1.5],
-                ],
-            ],
-            [
-                [
-                    [0.5, 1.5],
-                    [2, -1.5],
-                ],
-            ],
-            [
-                [
-                    [0.5, 1.5],
-                    [-1.5, -0.5],
-                ],
-            ],
-            [
-                [
-                    [-1.5, -0.5],
-                    [-2, 1.5],
-                ],
-            ],
-            [
-                [
-                    [-2, 1.5],
-                    [-2.5, 1],
-                ],
-            ],
-        ],
-    },
-    board_11: {
-        style: {
-            axis: [false, true, true],
-            grid: false,
-            maxHeight: 200,
-            maxWidth: 400,
-            valueAxis: {
-                yd: [
-                    [0, 0],
-                    [0, 1],
-                ],
-                xd: [
-                    [0, 0],
-                    [1, 0],
-                ],
-            },
-            boundingbox: [-0.5, 2.5, 2.5, -0.5],
-            pan: {
-                needTwoFingers: true,
-                enabled: false,
-                needShift: true,
-            },
-        },
-        points: [
-            //[x,y,visible,name,type]
-            [2.2, 2.2, true, "", 2, true],
-            [2.2, -0.3, false, "a", false],
-            [-0.2, 2, false, "b"],
-        ],
-        lines: [
-            //[[lista de puntos],dash,flecha primera,flecha segunda,color]
-            [
-                [
-                    [2.2, 0],
-                    [2.2, 2.2],
-                ],
-                1,
-                false,
-                false,
-            ],
-            [
-                [
-                    [0, 2.2],
-                    [2.2, 2.2],
-                ],
-                1,
-                false,
-                false,
-            ],
-        ],
-        curves: [
-            //[[lista de puntos],dash,flecha primera,flecha segunda,color]
-            [
-                [
-                    [-0.2, 1],
-                    [0, 1],
-                    [1.5, 1.5],
-                    [2.2, 2.2],
-                ],
-            ],
-        ],
-    },
+        points: [[0.5, 0.5, true, '', 2, true], [-1, -1.5, true, '', 2, true], [-1,-1, true], [0.5, 1.5, true], [3.5, 1.4, true],[3.9, 1.28, true], [4.3, 1.18, true], [4.7, 1.15, true]
+                ,[-3.5, -3.7, true], [-3.9, -3.7, true], [-4.3, -3.7, true]]
+      },
 };
 
 //let position = seleccionarAleatorios(1, 8, 1);
