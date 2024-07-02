@@ -1,5 +1,7 @@
-function seleccionarAleatorios(min, max,totalale) {
-    /*// Crear un array con los números consecutivos
+function seleccionarAleatorios(Pregunta, min, max,totalale) {
+    if(Pregunta==='P1'){
+    console.log(min,max,totalale)
+    // Crear un array con los números consecutivos    
     const numeros = [];
     for (let i = min; i <= max; i++) {
         numeros.push(i);
@@ -19,7 +21,10 @@ function seleccionarAleatorios(min, max,totalale) {
     }
 
     // Devolver los números seleccionados
-    return seleccionados;*/
+    return seleccionados;
+}
+else if (Pregunta==='P2'){
+        console.log(min,max,totalale)
     if (totalale % 2 !== 0) {
         return "El valor de N debe ser par para tener igual cantidad de pares e impares.";
     }
@@ -29,34 +34,32 @@ function seleccionarAleatorios(min, max,totalale) {
 
     for (let i = min; i <= max; i++) {
         if (i % 2 === 0) {
-          pares.push(i);
+            pares.push(i);
         } else {
-          impares.push(i);
+            impares.push(i);
         }
-      }
+    }
 
     // Generar números pares e impares dentro del rango
     let quedanPares = totalale / 2;
     let quedanImpares = totalale / 2;
     while (resultado.length < totalale) {
-      const elegirPar = Math.random() < quedanPares / (quedanPares + quedanImpares); 
-      if (elegirPar && pares.length > 0) {
-        const indicePar = Math.floor(Math.random() * pares.length);
-        resultado.push(pares[indicePar]);
-        pares.splice(indicePar, 1);
-        quedanPares--;
-      } else if (impares.length > 0) {
-        const indiceImpar = Math.floor(Math.random() * impares.length);
-        resultado.push(impares[indiceImpar]);
-        impares.splice(indiceImpar, 1);
-        quedanImpares--;
-      }
+        const elegirPar = Math.random() < quedanPares / (quedanPares + quedanImpares); 
+        if (elegirPar && pares.length > 0) {
+            const indicePar = Math.floor(Math.random() * pares.length);
+            resultado.push(pares[indicePar]);
+            pares.splice(indicePar, 1);
+            quedanPares--;
+        } else if (impares.length > 0) {
+            const indiceImpar = Math.floor(Math.random() * impares.length);
+            resultado.push(impares[indiceImpar]);
+            impares.splice(indiceImpar, 1);
+            quedanImpares--;
+        }
     }
-
-    // Seleccionar aleatoriamente N/2 pares y N/2 impares
-
     // Mezclar el arreglo para que los pares e impares no estén ordenados
     return resultado.sort();
+}
 }
 
 
@@ -65,7 +68,7 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
     switch (Pregunta) {
         case 'P1':
             if (localStorage.getItem('SeleccionadosP1')===null){
-                seleccionados = seleccionarAleatorios(min, max, totalale);
+                seleccionados = seleccionarAleatorios('P1',min, max, totalale);
                 localStorage.setItem('SeleccionadosP1',seleccionados);
                 //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
             }
@@ -77,7 +80,7 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
             break;
         case 'P2':
             if (localStorage.getItem('SeleccionadosP2')===null){
-                seleccionados = seleccionarAleatorios(min, max, totalale);
+                seleccionados = seleccionarAleatorios('P2', min, max, totalale);
                 localStorage.setItem('SeleccionadosP2',seleccionados);
                 //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
             }
@@ -148,6 +151,7 @@ function filtrarObjeto(objetoDef, arregloPropiedades) {
 
 function PintaSeleccionP1(position, def, Pregunta){    
     let artefact = [];
+    
     artefact[0] = 'artifact_'+position[0];
     artefact[1] = 'artifact_'+position[1];
     artefact[2] = 'artifact_'+position[2];
