@@ -2,8 +2,14 @@
 
 var def = {
     artefact_1: {
+        
     datadefault: [
+<<<<<<< HEAD
         {
+=======
+        //Primeras caracteristicas Board1
+        { 
+>>>>>>> cc82f93da7065b39898a148e24162ff638adefbe
             customKeyboard: 7,
     
             type: 13,
@@ -11,6 +17,7 @@ var def = {
             classGlobal: 'QA',
             parent: '#ejemplo1',
             contents: {
+<<<<<<< HEAD
               artifact_1: {
                 allinputs: [],
                 header: [],
@@ -18,6 +25,152 @@ var def = {
                   incorrect: 0,
                   correct: 0,
                   forAnswer: 0
+=======
+                artifact_1: {  
+                    yellow:true,                  
+                    allinputs: [],
+                    header: [],
+                    dataInteraction: {
+                    incorrect: 0,
+                    correct: 0,
+                    forAnswer: 0,
+                    },
+                    cells: [
+                        [
+                            //Primera fila
+                            {
+                                type: 0,
+                                text: ["Dominio", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 0,
+                                text: ["Rango", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 0,
+                                text: ["Corte con eje X", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 0,
+                                text: ["Corte con eje Y", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                        ],
+                        //2da fila soluciones
+                        [
+                            {
+                                type: 2,
+                                // una pregunta. Varios inputs
+                                answers_values: ["","[-3,3.5]","(-3,4)","(-3,3.5)","[-3,4)",],
+                                conditions: {
+                                    valueInputs: ["[-3,3.5]"],
+                                },
+                            },
+                            {
+                                type: 2,
+                                // una pregunta. Varios inputs
+                                answers_values: ["","(-1,2)","[-0.5,1.5]","(0,2)","[-0.5,2)",],
+                                conditions: {
+                                    valueInputs: ["[-0.5,1.5]"],
+                                },
+                            },
+                            {
+                                type: 3,
+                                // una pregunta. Varios inputs
+                                inputsDefault: [["", false]],
+                                oneToManyInput: true,
+                                conditions: {
+                                    valueInputs: [-2.5, 2, 3.25],
+                                },
+                            },
+                            {
+                                type: 3,
+                                // una pregunta. Varios inputs
+                                inputsDefault: [["", false]],
+                                conditions: {
+                                    valueInputs: [1.5],
+                                },
+                            },
+                        ],
+                        //3ra fila caracteristicas
+                        [
+                            {
+                                type: 0,
+                                text: ["Parte Positiva", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 0,
+                                text: ["Parte Negativa", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 0,
+                                text: ["Parte Creciente", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                            {
+                                type: 0,
+                                text: ["Parte Decreciente", null],
+                                conditions: {
+                                    correctIndex: null,
+                                },
+                            },
+                        ],
+                        //4ta fila solucion
+                        [
+                            {
+                                type: 2,
+                                // una pregunta. Varios inputs
+                                answers_values: ["","(-2.5,2) U (3.25,3.5]","(-2.5,3.5)","(0,3.5]","∄",],
+                                conditions: {
+                                    valueInputs: ["(-2.5,2) U (3.25,3.5]"],
+                                },
+                            },
+                            {
+                                type: 2,
+                                // una pregunta. Varios inputs
+                                answers_values: ["", "(-2.5,0)", "[-3,-2.5) U (2,3.25)", "∄"],
+                                conditions: {
+                                    valueInputs: ["[-3,-2.5) U (2,3.25)"],
+                                },
+                            },
+                            {
+                                type: 2,
+                                // una pregunta. Varios inputs
+                                answers_values: ["","(-3,0)","(-3,0) U (2.5,3.5)","(0,4)","∄",],
+                                conditions: {
+                                    valueInputs: ["(-3,0) U (2.5,3.5)"],
+                                },
+                            },
+                            {
+                                type: 2,
+                                // una pregunta. Varios inputs
+                                answers_values: ["","(-3,-1) U (0,3.5)","(0,2.5)","(-2.5,0) u (0.5,4)","∄",],
+                                conditions: {
+                                    valueInputs: ["(0,2.5)"],
+                                },
+                            },
+                        ],
+                    ],
+>>>>>>> cc82f93da7065b39898a148e24162ff638adefbe
                 },
                 cells: [
                   [

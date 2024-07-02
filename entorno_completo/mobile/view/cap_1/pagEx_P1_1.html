@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="../../../libraries/ownerStyles.css" />
   <link rel="stylesheet" type="text/css" href="../../../libraries/generalStylesFragata.css" />
   <link rel="stylesheet" type="text/css" href="../../../libraries/styles.css" />
+  <link rel="stylesheet" href="prueba.css">
   <script type="text/javascript" src="../../../dist/engines/genericEngines/polyfillsAllUsed.min.js"></script>
   
   <title>Página 8</title>
@@ -38,6 +39,49 @@
       width: 100%;
       box-sizing: border-box;
       border-radius: 10px;
+    }
+
+    @media only screen and (max-width: 900px) {
+      .boardElement {
+        width: 300px;
+      }
+
+      .containerCard {
+        width: 90%;
+        font-size: 16px;
+      }
+
+      .containerNormal {
+        justify-content: center;
+      }
+
+      .toValidate {
+        margin: 0;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      label {
+        font-size: 10px;
+      }
+
+      .boardElement {
+        width: 200px;
+      }
+
+      .containerCard {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 50px;
+        text-align: left;
+      }
+
+      td {
+        width: fit-content;
+        text-align: left;
+
+      }
     }
   </style>
     <!--<template id="globalTemplate">
@@ -116,6 +160,8 @@
         <div class="flexElement">
             <div class="containerCard ">
                 <div class="card" id="artifact_1">
+                    <span class="question-text">P3</span>
+                    <hr>
                     <div class="card-body">
                         <div class="d-flex justify-content-center ">
                             <div class="defBoard test short-board margen-5 " data-board="board_1" id="boardDefault_0"></div>
@@ -125,12 +171,16 @@
                     <div class="card-footer">    
                         <div id="ejemplo1" class="d-flex justify-content-center "></div>
                     </div>
+                    <hr>
+          <span class="oval-container">6pts</span>
                 </div>    
             </div>    
 
             <div class="containerCard">
                 <div class="card" id="artifact_2">
                     <div class="card-body">
+                        <span class="question-text">P4</span>
+                        <hr>
                         <div class="d-flex justify-content-center ">
                             <div class="defBoard test short-board margen-5 " data-board="board_1" id="boardDefault_0"></div>
                         </div>
@@ -139,6 +189,8 @@
                     <div class="card-footer">
                         <div id="ejemplo2" class="d-flex justify-content-center"></div>
                     </div>
+                    <hr>
+          <span class="oval-container">5pts</span>
                 </div>
         
             </div>
