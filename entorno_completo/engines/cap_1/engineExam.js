@@ -62,7 +62,7 @@ function PintaSeleccionP2(seleccionados){
         divbefore2.className = 'question-box';
         let span1 = document.createElement("span");
         span1.className = 'question-text';
-        span1.textContent = 'P'+i.toString();
+        span1.textContent = 'P'+(i+4).toString();
         i++;
         let div = document.createElement("div");
         div.className = 'defBoard';
