@@ -48,21 +48,41 @@ function guardaData(){
     };
         
     request.onsuccess = function(event) {
-        db = event.target.result;
-        console.log('Database created', db);     
-    
-        let transaction = db.transaction(['usuarios'], 'readwrite');
-        console.log(transaction);
+        let db = event.target.result;
+        // Verificar si el usuario ya existe
+        let transaction = db.transaction(['usuarios'], 'readonly');
         let objectStore = transaction.objectStore('usuarios');
-
-        let requestGuardar = objectStore.add(usuario);
-
-        requestGuardar.onsuccess = function(event) {
-            console.log('Datos guardados en IndexedDB');
+        console.log(Number(usuario.cedula));
+        let getRequest = objectStore.get(usuario.cedula);
+        getRequest.onsuccess = function(event) {
+            if (event.target.result) {                
+                alert('El usuario con cédula ' + cedula + ' ya existe.22');
+                btnPreg1.disabled = true;
+                btnPreg2.disabled = true;
+                btnPreg4.disabled = true;
+                btnGuardar.disabled = true;
+                nombre.disabled = false;
+                cedula.disabled = false;
+                seccion.disabled = false;
+                nombre.value = "";
+                cedula.value = "";
+                seccion.value = "";
+            } else {
+                // El usuario no existe, proceder a guardarlo
+                let transactionGuardar = db.transaction(['usuarios'], 'readwrite');
+                let objectStoreGuardar = transactionGuardar.objectStore('usuarios');
+                let requestGuardar = objectStoreGuardar.add(usuario);
+                requestGuardar.onsuccess = function(event) {
+                    alert('Usuario guardado exitosamente.');
+                    // Limpiar el formulario u otras acciones después de guardar
+                };
+                requestGuardar.onerror = function(event) {
+                    alert('Error al guardar usuario: ' + event.target.error);
+                };
+            }
         };
-
-        requestGuardar.onerror = function(event) {
-            console.error('Error guardando datos:', event.target.errorCode);
+        getRequest.onerror = function(event) {
+            alert('Error al verificar usuario: ' + event.target.error);
         };
     }
 
@@ -121,6 +141,7 @@ btnPreg4.addEventListener("click", e=>{
     let nombre = document.getElementById("nombre");
     let cedula = document.getElementById("cedula");
     let seccion = document.getElementById("seccion");
+    let cedulaDB = cedula.value;
     nombre.value = "";
     cedula.value = "";
     seccion.value = "";
@@ -131,10 +152,37 @@ btnPreg4.addEventListener("click", e=>{
     localStorage.removeItem("Personal");
     btnPreg1.disabled = true;
     btnPreg2.disabled = true;
-    btnPreg3.disabled = true;
+    //btnPreg3.disabled = true;
     btnPreg4.disabled = true;
     localStorage.removeItem("SeleccionadosP1");
     localStorage.removeItem("SeleccionadosP2");
+
+    let intentosTotales = 0;
+    let P1intentos1 = localStorage.getItem("P1_Intentos1") || 0;
+    localStorage.removeItem("P1_Intentos1");
+    let P1intentos2 = localStorage.getItem("P1_Intentos2") || 0;
+    localStorage.removeItem("P1_Intentos2");
+    let P1intentos3 = localStorage.getItem("P1_Intentos3") || 0;
+    localStorage.removeItem("P1_Intentos3");
+    let P2intentos1 = localStorage.getItem("P2_Intentos1") || 0;
+    localStorage.removeItem("P2_Intentos1");
+    let P2intentos2 = localStorage.getItem("P2_Intentos2") || 0;
+    localStorage.removeItem("P2_Intentos2");
+    let P2intentos3 = localStorage.getItem("P2_Intentos3") || 0;
+    localStorage.removeItem("P2_Intentos3");
+    let P2intentos4 = localStorage.getItem("P2_Intentos4") || 0;
+    localStorage.removeItem("P2_Intentos4");
+
+    localStorage.removeItem("P1_Intentos1");
+    localStorage.removeItem("P1_Intentos2");
+    localStorage.removeItem("P1_Intentos3");
+    localStorage.removeItem("P2_Intentos1");
+    localStorage.removeItem("P2_Intentos2");
+    localStorage.removeItem("P2_Intentos3");
+    localStorage.removeItem("P2_Intentos4");    
+    
+    intentosTotales += Number(P1intentos1)+Number(P1intentos2)+Number(P1intentos3)+Number(P2intentos1)+Number(P2intentos2)+Number(P2intentos3)+Number(P2intentos4);    
+    
     /*localStorage.removeItem('mathValuesA');
     localStorage.removeItem('mathValuesB');
     localStorage.removeItem('mathValues2A');
@@ -167,4 +215,55 @@ btnPreg4.addEventListener("click", e=>{
             }
         };
     };*/
+    let request = indexedDB.open('miBaseDeDatos', 1);
+
+    request.onerror = (event) => {
+        console.error('Error abriendo la base de datos:', event.target.error);
+    };
+
+    request.onsuccess = (event) => {
+        let db = event.target.result;
+        //console.log(db);
+        // ... continuar con el siguiente paso
+        let transaction = db.transaction(['usuarios'], 'readwrite');
+        let objectStore = transaction.objectStore('usuarios');
+
+        // Obtener el registro del usuario (asumiendo que tienes la cédula del usuario)        
+        let cedulaUsuario = cedulaDB;// ... obtener la cédula del usuario        
+        let getRequest = objectStore.get(cedulaUsuario);
+        //console.log(getRequest);
+
+        getRequest.onsuccess = (event) => {
+            let usuario = event.target.result;
+
+            // Agregar los nuevos campos al objeto usuario
+            usuario.P1intentos1 = Number(P1intentos1);
+            usuario.P1intentos2 = Number(P1intentos2);
+            usuario.P1intentos3 = Number(P1intentos3);
+            usuario.P2intentos1 = Number(P2intentos1);
+            usuario.P2intentos2 = Number(P2intentos2);
+            usuario.P2intentos3 = Number(P2intentos3);
+            usuario.P2intentos4 = Number(P2intentos4);
+            usuario.totalIntentos = intentosTotales;
+
+            // Actualizar el registro en la base de datos
+            let updateRequest = objectStore.put(usuario);
+
+            updateRequest.onsuccess = (event) => {
+                console.log('Registro actualizado exitosamente.');
+            };
+
+            updateRequest.onerror = (event) => {
+                console.error('Error actualizando el registro:', event.target.error);
+            };
+        };
+
+        getRequest.onerror = (event) => {
+            console.error('Error obteniendo el registro:', event.target.error);
+        }; 
+    };
+
+    request.onerror = (event) => {
+        console.error('Error abriendo la base de datos:', event.target.error);
+    }    
 });
