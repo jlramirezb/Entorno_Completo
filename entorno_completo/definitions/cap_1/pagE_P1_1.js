@@ -2,7 +2,7 @@
 
 var def = 
 {
-  artfefact_1: 
+  artefact_1: 
   {
     datadefault: [
       {
@@ -267,7 +267,7 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo3',
+        parent: '#ejemplo1',
         contents: {
           artifact_3: {
             allinputs: [],
@@ -424,7 +424,7 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo4',
+        parent: '#ejemplo2',
         contents: {
           artifact_4: {
             allinputs: [],
@@ -523,9 +523,9 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo5',
+        parent: '#ejemplo1',
         contents: {
-          artifact_1: {
+          artifact_5: {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -685,9 +685,9 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo6',
+        parent: '#ejemplo2',
         contents: {
-          artifact_2: {
+          artifact_6: {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -786,9 +786,9 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo7',
+        parent: '#ejemplo1',
         contents: {
-          artifact_1: {
+          artifact_7: {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -946,9 +946,9 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo8',
+        parent: '#ejemplo2',
         contents: {
-          artifact_2: {
+          artifact_8: {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -1132,7 +1132,7 @@ var defBoards = {
   };
 
 //let position = seleccionarAleatorios(1, 8, 1);
-let position = localStorageSeleccionados("P1", 1, 8, 1);
+let position = localStorageSeleccionados("P1", 1, 4, 1);
 [def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1_1');
 
 defBoardDefault();
