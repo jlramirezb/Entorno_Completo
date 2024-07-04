@@ -5,6 +5,7 @@ var def =
   artefact_1: 
   {
     datadefault: [
+      //Inicio de los artefactos de Annely 1 -- 8
       {
         customKeyboard: 7,
 
@@ -1038,12 +1039,19 @@ var def =
           }
         }
       },
+      //Fin Artefactos Annely
+      //Inicio Artefactos de Luis 9-- 12
+
+      //Fin Artefactos de Luis
+      //Inicio Artefactos de Manuel 13-- 16
+
+      //Fin Artefactos de Manuel
     ]
   }
 };
 
 var defBoards = {
-  
+  //Inicio Boards de Annely 1 -- 4  
     //Examen 1.
     board_1: {
       style: {
@@ -1129,7 +1137,14 @@ var defBoards = {
       [[[ -2, -1 ,true],[ -0.26, -0.3 ],[ 0.31, 1],[ 0.63, 2.6 ]]],
       [[[2,-2],[3,1],[4,-2],[4.8,-3.3],[5.1,-2.9]]]],
     },
-  };
+    //Fin Boards Annely
+    //Inicio Boards Luis 5 -- 6
+
+    //Fin Boards Luis
+    //Inicio Boards Manuenl 7 -- 8
+
+    //Fin Boards Manuel
+};
 
 //let position = seleccionarAleatorios(1, 8, 1);
 let position = localStorageSeleccionados("P1", 1, 4, 1);
