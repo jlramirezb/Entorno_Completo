@@ -141,3 +141,7 @@ function PintaSeleccionP1(position, def, defBoard, Pregunta){
     
     return ([def, defBoard]);
 }
+
+function sendData(data) {
+    console.log('>>', data)
+}
