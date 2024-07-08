@@ -1,6 +1,6 @@
 //cordenadas por cada plano
 const c = {
-
+  //Puntos a utilizar de Annely: 1 -- 12
   1: { x: 0.5, y: 2.5 },
   2: { x: -2, y: -1 },
   3: { x: 1.2, y: 2.2 },
@@ -8,10 +8,17 @@ const c = {
   4: { x: 2.2, y: 0.8 },
   5: { x: 2.2, y: 1.2 },
   6: { x: 2.2, y: 1.2 },
+  //Fin Puntos de Annely
+  //Puntos a utilizar de Luis: 13 -- 24
 
+  //Fin Puntos de Luis
+  //Puntos a utilizar de Manuel: 25 -- 32
+
+  //Fin Puntos de Manuel
 };
 
 let defBoards = {
+  //Boards a definir por Annely: 0 -- 11
   board_0: {
     style: {
       grid: true,
@@ -103,6 +110,13 @@ let defBoards = {
       [1, 0, false, '1']
     ]
   },
+  //Fin Boards Annely
+  //Boards a definir por Luis: 12 -- 23
+
+  //Fin Boards Luis
+  //Boards a definir por Manuel: 24 -- 31
+
+  //Fin Boards Manuel
 };
 //si se va a agregar algo al objeto tiene que declararce la propiedad por defecto en el mod.js
 let rDef = {
@@ -116,31 +130,167 @@ let rDef = {
             dataSet: {
               artifact: 'artifact_1',
             }
-          }, {
+          },
+          {
             dataSet: {
               artifact: 'artifact_2',
             }
-          }, {
+          },
+          {
             dataSet: {
               artifact: 'artifact_3',
             },
-          }, {
+          },
+          {
             dataSet: {
               artifact: 'artifact_4',
             }
-          }, {
+          },
+          {
             dataSet: {
               artifact: 'artifact_5',
             }
-          }, {
+          },
+          {
             dataSet: {
               artifact: 'artifact_6',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_7',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_8',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_9',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_10',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_11',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_12',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_13',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_14',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_15',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_16',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_17',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_18',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_19',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_20',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_21',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_22',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_23',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_24',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_25',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_26',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_27',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_28',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_29',
+            },
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_30',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_31',
+            }
+          },
+          {
+            dataSet: {
+              artifact: 'artifact_32',
             },
           },
         ],
       },
     ]
   },
+  //Inicio de Artefactos Annely: 1 -- 12
   artifact_1: {
     textBottom: '(x, -y), (-x, y), (-x, -y), (y, x)',
     defaultInputs: [
@@ -300,6 +450,13 @@ let rDef = {
       ],
     },
   },
+  //Fin Artefactos Annely
+  //Inicio de Artefactos Luis: 13 -- 24
+
+  //Fin Artefactos Luis
+  //Inicio de Artefactos Manuel: 25 -- 32
+
+  //Fin Artefactos Manuel
 };
 console.log([c[4].x, c[4].y / 2]);
 

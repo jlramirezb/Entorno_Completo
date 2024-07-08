@@ -5,7 +5,7 @@ var def =
   artefact_1: 
   {
     datadefault: [
-      //Inicio rtefactos de Annelys 1 -- 4 
+      //Inicio artefactos de Annelys 1 -- 4 
       {
         customKeyboard: 7,
         type: 13,
