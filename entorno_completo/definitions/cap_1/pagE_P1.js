@@ -1090,10 +1090,11 @@ var def =
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","-3","-3,1","1","∄"],
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
                   conditions: {
-                    valueInputs: ["-3,1"]
+                    valueInputs: [1,-3]
                   }
                 },
                 {
@@ -1152,15 +1153,16 @@ var def =
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","-3.3,-2,-1","-2,-1","-3.3,-3,-2,-1","-3,-2,-1"],
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
                   conditions: {
-                    valueInputs: ["-3,-2,-1"]
+                    valueInputs: [-1,-2,-3]
                   }
-                }, 
+                },
                 {
                   type: 2,
-                  answers_values:["","","","(-∞,-2),2,-2",""],
+                  answers_values:["","-2","2,-2","(-∞,-2),2,-2","(-∞,-2),-2"],
                   conditions: {
                     valueInputs: ["(-∞,-2),2,-2"]
                   },
