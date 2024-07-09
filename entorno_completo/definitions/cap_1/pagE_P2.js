@@ -246,34 +246,34 @@ for (let i = 0; i < validar.length; i++) {
             case validar[0]:
                 intentos1++;
                 console.log('Pulsado 1');
-                //points = def.artifact_13.points[0].map((p)=>[Number(p[0].X().toFixed(2)),Number(p[0].Y().toFixed(2))])
-                //console.log(points);
+                points = def.artifact_13.points[0].map((p)=>[Number(p[0].X().toFixed(2)),Number(p[0].Y().toFixed(2))])
+                console.log(points);
                 //def.artifact_4.points = points;
-                //points2 = JSON.stringify(points);
-                //console.log(points2);    
-                //localStorage.setItem('puntos',points2);                
+                points2 = JSON.stringify(points);
+                console.log(points2);    
+                localStorage.setItem('puntos',points2);                
                 localStorage.setItem('P3_Intentos1',intentos1);
                 break;
             case validar[1]:
                 intentos2++;
                 console.log('Pulsado 2');
-                //points = def.artifact_13.points;
-                //console.log(points);
+                points = def.artifact_13.points;
+                console.log(points);
                 //def.artifact_4.points = points;
-                //points2 = points;//JSON.stringify(points);
-                //console.log(points2);    
-                //localStorage.setItem('puntos',points2);
+                points2 = points;//JSON.stringify(points);
+                console.log(points2);    
+                localStorage.setItem('puntos',points2);
                 localStorage.setItem('P3_Intentos2',intentos2);
                 break;
             case validar[2]:
                 intentos3++;
                 console.log('Pulsado 3');
-                //points = def.artifact_13.points;
-                //console.log(points);
+                points = def.artifact_13.points;
+                console.log(points);
                 //def.artifact_4.points = points;
-                //points2 = points;//JSON.stringify(points);
-                //console.log(points2);    
-                //localStorage.setItem('puntos',points2);
+                points2 = points;//JSON.stringify(points);
+                console.log(points2);    
+                localStorage.setItem('puntos',points2);
                 localStorage.setItem('P3_Intentos3',intentos3);
                 break;
         }
@@ -292,11 +292,11 @@ for (let i = 0; i < validar.length; i++) {
 /*const storedString = localStorage.getItem('myObjects');
 const parsedArray = JSON.parse(storedString);*/
 window.addEventListener('load', function() {
-    //const puntos = localStorage.getItem('puntos');
+    const puntos = localStorage.getItem('puntos');
     //const puntos2 = JSON.parse(puntos);
-    /*console.log(puntos);
+    console.log(puntos);
     if(puntos)
-        def.artifact_13.points = JSON.parse(puntos);*/
+        def.artifact_13.points = JSON.parse(puntos);
 
     const intentos1_LS = localStorage.getItem('P3_Intentos1');
     const intentos2_LS = localStorage.getItem('P3_Intentos2');

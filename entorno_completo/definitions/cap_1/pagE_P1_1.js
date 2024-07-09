@@ -1,624 +1,1153 @@
 "use strict";
 
-var def = {
-    artefact_1: {
+var def = 
+{
+  artefact_1: 
+  {
     datadefault: [
-        {
-            customKeyboard: 7,
-    
-            type: 13,
-            interactive: true,
-            classGlobal: 'QA',
-            parent: '#ejemplo1',
-            contents: {
-              artifact_1: {
-                allinputs: [],
-                header: [],
-                dataInteraction: {
-                  incorrect: 0,
-                  correct: 0,
-                  forAnswer: 0
+      //Inicio de los artefactos de Annely 1 -- 8
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_1: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Primeras caracteristicas, Examen 1
+                {
+                  type: 0,
+                  text: ['Intervalo',null],
+                  conditions: {
+                    correctIndex: null
+                  }
                 },
-                cells: [
-                  [
-    
-                    {
-                      type: 0,
-                      text: ['Intervalo', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      //text: ['Max.Abs', null],
-                      text: ['(-∞, 0)',null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      text: ['(-1,1)', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['(0,∞)', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                  ],
-    
-    
-    
-                  [
-                    {
-                      type: 0,
-                      text: ['Cota Sup', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    ,
-                  }, 
-                  {
-                    type: 3,
-                    inputsDefault: [["-1", false]],
-                    conditions: {
-                      valueInputs: ['\\geq-1', '-1'],
-                      evaluateCote:{
-                        top: -1,
-                      }
-                    }
-                  ,
-                  },  
-                  {
-                    type: 3,
-                    inputsDefault: [["1", false]],
-                    conditions: {
-                      valueInputs: ['\\geq1', '1'],
-                      evaluateCote:{
-                        top: 1,
-                      }
-                    }
-                  ,
-                  },
-                  
-                  {
-                    type: 3,
-                    inputsDefault: [["3", false]],
-                    conditions: {
-                      valueInputs: ['\\geq3', '3'],
-                      evaluateCote:{
-                        top: 3,
-                      }
-                    }
-                  ,
-                  },
-                  ],
-    
-                  [
-    
-                    {
-                      type: 0,
-                      text: ['Intervalo', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      text: ['(2,4)', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      text: ['(0, ∞)', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['R', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                  ],
-    
-                  [{
-                    type: 0,
-                    text: ['Cota Inf'],
-                    conditions: {
-                      correctIndex: null
-                    }
-                  ,
-                  },
-                  {
-                      type: 3,
-                      inputsDefault: [["2", false]],
-                      conditions: {
-                        valueInputs: ['\\leq2', '2'],
-                        evaluateCote:{
-                          bottom: 2,
-                        }
-                      }
-                  ,
-                  },
-                  {
-                    type: 3,
-                      inputsDefault: [["0", false]],
-                      conditions: {
-                        valueInputs: ['\\leq0', '0'],
-                        evaluateCote:{
-                          bottom: 0,
-                        }
-                      }
-                  }, {
-                    type: 3,
-                      inputsDefault: [["-3", false]],
-                      conditions: {
-                        valueInputs: ['\\leq-3', '-3'],
-                        evaluateCote:{
-                          bottom: -3,
-                        }
-                      }
-                  },],
-                ]
-              }
-            }
-          },
-    
-          {
-            customKeyboard: 7,
-    
-            type: 13,
-            interactive: true,
-            classGlobal: 'QA',
-            parent: '#ejemplo2',
-            contents: {
-              artifact_2: {
-                allinputs: [],
-                header: [],
-                dataInteraction: {
-                  incorrect: 0,
-                  correct: 0,
-                  forAnswer: 0
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
                 },
-                cells: [
-                  [
-                    {
-                      type: 0,
-                      text: ['f(2.5) ≈', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      text: ['f(-2) ≈', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['f(0) ≈', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['f( ) ≈ -2.8', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['f( ) ≈ -1', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                  ],
-    
-    
-    
-                  [
-                  {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    conditions: {
-                      valueInputs: [3]
-                    }
-                  }, {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    conditions: {
-                      valueInputs: [-2]
-                    }
-                  }, {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    conditions: {
-                      valueInputs: [0]
-                    }
-                  }, {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['-4', false]],
-                    onetoManyInputs: true,
-                    conditions: {
-                      valueInputs: [-3.2, -3, -3.1, -3.5],
-                    }
-                  },
-                  {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    conditions: {
-                      valueInputs: [-1]
-                    }
-                  },]
-    
-                ]
-              }
-            }
-          },
-    
-          {
-            customKeyboard: 7,
-    
-            type: 13,
-            interactive: true,
-            classGlobal: 'QA',
-            parent: '#ejemplo3',
-            contents: {
-              artifact_3: {
-                allinputs: [],
-                header: [],
-                dataInteraction: {
-                  incorrect: 0,
-                  correct: 0,
-                  forAnswer: 0
+                {
+                  type: 0,
+                  text: ['(-∞,-1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
                 },
-                cells: [
-                  [
-    
-                    {
-                      type: 0,
-                      text: ['Intervalo', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      //text: ['Max.Abs', null],
-                      text: ['(0, ∞)',null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      text: ['(-1,2)', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['(3,∞)', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                  ],
-    
-    
-    
-                  [
-                    {
-                      type: 0,
-                      text: ['Cota Sup', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    ,
-                  }, 
-                  {
-                    type: 3,
-                      inputsDefault: [["3", false]],
-                      conditions: {
-                        valueInputs: ['\\geq3', '3'],
-                        evaluateCote:{
-                          top: 3,
-                        }
-                      }
-                  }, 
-                  {
-                    type: 3,
-                      inputsDefault: [["3", false]],
-                      conditions: {
-                        valueInputs: ['\\geq3', '3'],
-                        evaluateCote:{
-                          top: 3,
-                        }
-                      }
-                  }, 
-                  
-                  {
-                    type: 3,
-                      inputsDefault: [["3", false]],
-                      conditions: {
-                        valueInputs: ['\\geq3', '3'],
-                        evaluateCote:{
-                          top: 3,
-                        }
-                      }
-                  }, 
-                  ],
-    
-                  [
-    
-                    {
-                      type: 0,
-                      text: ['Intervalo', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      text: ['(-1, 0)', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      text: ['R', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['(-∞,1)', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                  ],
-    
-                  [{
-                    type: 0,
-                    text: ['Cota Inf'],
-                    conditions: {
-                      correctIndex: null
-                    }
-                  ,
-                  },
-                  {
-                    type: 3,
-                      inputsDefault: [["-1", false]],
-                      conditions: {
-                        valueInputs: ['\\leq-1', '-1'],
-                        evaluateCote:{
-                          bottom: -1,
-                        }
-                      }
-                  },
-                  {
-                    type: 3,
-                      inputsDefault: [["-4", false]],
-                      conditions: {
-                        valueInputs: ['\\leq-4', '-4'],
-                        evaluateCote:{
-                          bottom: -4,
-                        }
-                      }
-                  },
-                  {
-                    type: 3,
-                      inputsDefault: [["-4", false]],
-                      conditions: {
-                        valueInputs: ['\\leq-4', '-4'],
-                        evaluateCote:{
-                          bottom: -4,
-                        }
-                      }
-                  },],
-                ]
-              }
-            }
-          },
-    
-          {
-            customKeyboard: 7,
-    
-            type: 13,
-            interactive: true,
-            classGlobal: 'QA',
-            parent: '#ejemplo4',
-            contents: {
-              artifact_4: {
-                allinputs: [],
-                header: [],
-                dataInteraction: {
-                  incorrect: 0,
-                  correct: 0,
-                  forAnswer: 0
+                {
+                  type: 0,
+                  text: ['(0,4)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
                 },
-                cells: [
-                  [
-                    {
-                      type: 0,
-                      text: ['f(0.5) ≈', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                    {
-                      type: 0,
-                      text: ['f(-1) ≈', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['f(2) ≈', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['f( ) ≈ -3', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-                    {
-                      type: 0,
-                      text: ['f( ) ≈ 1.5', null],
-                      conditions: {
-                        correctIndex: null
-                      }
-                    },
-    
-                  ],
-    
-    
-    
-                  [
-                  {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    conditions: {
-                      valueInputs: [1.5]
-                    }
-                  }, {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    conditions: {
-                      valueInputs: [-1]
-                    }
-                  }, {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    conditions: {
-                      valueInputs: [3]
-                    }
-                  }, {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    oneToManyInput: true,
-                    conditions: {
-                      valueInputs: [-2.5, -2.6, -2.4]
-                    }
-                  },
-                  {
-                    type: 3,
-                    // una pregunta. Varios inputs
-                    inputsDefault: [['', false]],
-                    oneToManyInput: true,
-                    conditions: {
-                      valueInputs: [0.5, 3]
-                    }
-                  },]
-    
-                ]
-              }
-            }
-          },
-    ],
-  },
+
+              ],
+              [
+              {
+                //Validacion primeras caracteristicas
+                type: 0,
+                text: ['Cota Sup.', null],
+                conditions: {
+                  correctIndex: null
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["4",false]],
+                conditions: {
+                  valueInputs: ['\\geq4','4'],
+                  evaluateCote:{
+                    top: 4
+                  }
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["1.8",false]],
+                conditions: {
+                  valueInputs: ['\\geq1.8','1,8'],
+                  evaluateCote:{
+                    top: 1.8
+                  }
+                }
+              }, ],
+
+              //Segundas caracteristicas, Examen 1
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-2,0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['R', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+              //Validacion segundas caracteristicas, Examen 1
+              [
+              {
+                type: 0,
+                  text: ['Cota Inf.', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },
+              {
+                type: 3,
+                inputsDefault:[["0",false]],
+                conditions: {
+                  valueInputs: ['\\leq0','0'],
+                  evaluateCote:{
+                    bottom: 0
+                  }
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              } ,],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_2: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Terceras caracteristicas, Examen 1
+                {
+                  type: 0,
+                  text: ['f(-1)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(0.5)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(4)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈-1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈1.8', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+
+              //Validacion terceras caracteristicas, Examen 1
+              [{
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [0.2]
+                }
+              },
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-1.8]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [3]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [0.7,3.3]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [2]
+                }
+              }],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_3: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Primeras caracteristicas, Examen 2
+                {
+                  type: 0,
+                  text: ['Intervalo',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞,-1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,4)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+              [
+              {
+                //Validacion primeras caracteristicas
+                type: 0,
+                text: ['Cota Sup.', null],
+                conditions: {
+                  correctIndex: null
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["3",false]],
+                conditions: {
+                  valueInputs: ['\\geq3','3'],
+                  evaluateCote:{
+                    top: 3
+                  }
+                }
+              },
+              {
+                type: 3,
+                inputsDefault:[["1.5",false]],
+                conditions: {
+                  valueInputs: ['\\geq1.5','1.5'],
+                  evaluateCote:{
+                    top: 1.5
+                  }
+                }
+              }, ],
+
+              //Segundas caracteristicas, Examen 2
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-2,0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['R', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+              //Validacion segundas caracteristicas, Examen 2
+              [
+              {
+                type: 0,
+                  text: ['Cota Inf.', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },
+              {
+                type: 3,
+                inputsDefault:[["1",false]],
+                conditions: {
+                  valueInputs: ['\\leq1','1'],
+                  evaluateCote:{
+                    bottom: 1
+                  }
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              } ,],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_4: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Terceras caracteristicas, Examen 1
+                {
+                  type: 0,
+                  text: ['f(-2)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(0.5)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(3.5)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈-0.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+
+              //Validacion terceras caracteristicas, Examen 1
+              [{
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [3]
+                }
+              },
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-2]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [1.5]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-1,-3]
+                }
+              }],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_5: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Primeras caracteristicas, Examen 3
+                {
+                  type: 0,
+                  text: ['Intervalo',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞,0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞,-1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(3,6)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+              [
+              {
+                //Validacion primeras caracteristicas Examen 3
+                type: 0,
+                text: ['Cota Sup.', null],
+                conditions: {
+                  correctIndex: null
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["2.3",false]],
+                conditions: {
+                  valueInputs: ['\\geq2.3','2.3'],
+                  evaluateCote:{
+                    top: 2.3
+                  }
+                }
+              }, 
+              {
+                //La misma que la anterior, cierto?
+                type: 3,
+                inputsDefault:[["2.3",false]],
+                conditions: {
+                  valueInputs: ['\\geq2.3','2.3'],
+                  evaluateCote:{
+                    top: 2.3
+                  }
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["1.3",false]],
+                conditions: {
+                  valueInputs: ['\\geq1.3','1,3'],
+                  evaluateCote:{
+                    top: 1.3
+                  }
+                }
+              }, ],
+
+              //Segundas caracteristicas, Examen 1
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-3,0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['R', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+              //Validacion segundas caracteristicas, Examen 3
+              [
+              {
+                type: 0,
+                  text: ['Cota Inf.', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },
+              {
+                //Confirmar con el profe.
+                type: 3,
+                inputsDefault:[["-3",false]],
+                conditions: {
+                  valueInputs: ['\\leq-3','-3'],
+                  evaluateCote:{
+                    bottom: -3
+                  }
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              } ,],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_6: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Terceras caracteristicas, Examen 3
+                {
+                  type: 0,
+                  text: ['f(-2)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(-2.5)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈0', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈0.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈-3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+
+              //Validacion terceras caracteristicas, Examen 3
+              [{
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [2.3]
+                }
+              },
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-1]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [0,3.8]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [1.2,3.7]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-3.2,1.8,3.4]
+                }
+              }],
+            ]
+          }
+        }
+      },
+      
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_7: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Primeras caracteristicas, Examen 4
+                {
+                  type: 0,
+                  text: ['Intervalo',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(1,4)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+              [
+              {
+                //Validacion primeras caracteristicas Examen 4
+                type: 0,
+                text: ['Cota Sup.', null],
+                conditions: {
+                  correctIndex: null
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["1",false]],
+                conditions: {
+                  valueInputs: ['\\geq1','1'],
+                  evaluateCote:{
+                    top: 1
+                  }
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, ],
+
+              //Segundas caracteristicas, Examen 4
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞,0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-3,1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['R', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+              //Validacion segundas caracteristicas, Examen 4
+              [
+              {
+                type: 0,
+                  text: ['Cota Inf.', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["-3",false]],
+                conditions: {
+                  valueInputs: ['\\leq-3','-3'],
+                  evaluateCote:{
+                    bottom: -3
+                  }
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["-3",false]],
+                conditions: {
+                  valueInputs: ['\\leq-3','-3'],
+                  evaluateCote:{
+                    bottom: -3
+                  }
+                }
+              },  
+              {
+                type: 3,
+                inputsDefault:[["-3.3",false]],
+                conditions: {
+                  valueInputs: ['\\leq-3.3','-3.3'],
+                  evaluateCote:{
+                    bottom: -3.3
+                  }
+                }
+              } ,],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_8: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Terceras caracteristicas, Examen 4
+                {
+                  type: 0,
+                  text: ['f(-2)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(-2.5)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(3)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈-0.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈-3.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+
+              //Validacion terceras caracteristicas, Examen 4
+              [{
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-1]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-3]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [1]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-0.4,2.3,3.7]
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },],
+            ]
+          }
+        }
+      },
+      //Fin Artefactos Annely
+      //Inicio Artefactos de Luis 9-- 12
+
+      //Fin Artefactos de Luis
+      //Inicio Artefactos de Manuel 13-- 16
+
+      //Fin Artefactos de Manuel
+    ]
+  }
 };
 
 var defBoards = {
-    board_5: {
-        style: {
-          axis: [false, true, true],
-          grid: true,
-          maxHeight: 250,
-          maxWidth: 300,
-          valueAxis: {
-            yd: [[0, 0], [0, 1]],
-            xd: [[0, 0], [1, 0]]
-          },
-          boundingbox: [-5, 4, 5, -4]
+  //Inicio Boards de Annely 1 -- 4  
+    //Examen 1.
+    board_1: {
+      style: {
+        axis: [false, true, true],
+        grid: true,
+        maxHeight: 250,
+        maxWidth: 350,
+        //CurveType:1,
+        valueAxis: {
+          yd: [[0, 0], [0, 1]],
+          xd: [[0, 0], [1, 0]]
         },
-    
-        curves: [
-                  [[[ -3.63, -2.8 ], [ -2.71, -2.48 ],[ -2, -2], [ -1.01, -0.97 ], [ -0.05, -1.95 ]]],
-                  [[[ 0, 0 ], [ 2.45, 2.45 ]]],
-                  [[[ 2.5, 3 ], [ 4, 3 ]]],
-                ],
-    
-        points: [[0, 0, true], [0, -2, true, '', 2, true], [2.5, 2.5, true, '', 2, true], [2.5, 3, true], [4,3, true], 
-                [4.4, 3, true], [-3.63, -2.8, true], [-4, -2.85, true], [-4.4, -2.87, true]]
-              
-        
+        boundingbox: [-5, 4.5, 6, -4]
       },
-      board_6: {
-        style: {
-          axis: [false, true, true],
-          grid: true,
-          maxHeight: 250,
-          valueAxis: {
-            yd: [[0, 0], [0, 1]],
-            xd: [[0, 0], [1, 0]]
-          },
-          boundingbox: [-5, 4, 5, -4]
+      points: [[0.5, -2, true, null, null, '#2196f3'], [0.42, -2.28, true, null, null, '#2196f3'], [0.37, -2.58, true, null, null, '#2196f3'], 
+      [3.55, -2, true, null, null, '#2196f3'], [3.63, -2.28, true, null, null, '#2196f3'], [3.69, -2.58, true, null, null, '#2196f3'],
+      [-2.58, 3, true, null, null, '#2196f3'], [-2.65, 3.3, true, null, null, '#2196f3'], [-2.7, 3.6, true, null, null, '#2196f3'],
+      [5.7, 2.6, true, null, null, '#2196f3']],
+      curves: [[[[ -2.51, 2.76 ],[ -1.99, 1.07 ],[ -1.34, 0.33 ],[ 0, 0 ]]],[[[ 0.5, -1.8 ],[ 2, 1.8 ],[ 3.5, -1.8 ]]],
+      [[[ 4, 3.01 ],[ 4.81, 3.97 ],[ 5.08, 3.95 ],[ 5.29, 3.36 ],[ 5.54, 2.79 ]]]]
+    },
+    
+    //Examen 2.
+    board_2: {
+      style: {
+        axis: [false, true, true],
+        grid: true,
+        maxHeight: 250,
+        CurveType:2,
+        valueAxis: {
+          yd: [[0, 0], [0, 1]],
+          xd: [[0, 0], [1, 0]]
         },
-    
-        
-    
-        curves: [
-                  [[[ -3.5, -3.7 ],[ -2, -3.5 ], [ -1.5, -3 ],[ -1, -1.55]]],
-                  [[[ 0.5, 1.5 ],[ 1.5, 2.2 ],[ 2, 3 ],[ 2.5, 2.2 ],[ 3.5, 1.4 ]]],
-                  [[[-1,-1],[0.45,0.45]]]
-                ],
-        points: [[0.5, 0.5, true, '', 2, true], [-1, -1.5, true, '', 2, true], [-1,-1, true], [0.5, 1.5, true], [3.5, 1.4, true],[3.9, 1.28, true], [4.3, 1.18, true], [4.7, 1.15, true]
-                ,[-3.5, -3.7, true], [-3.9, -3.7, true], [-4.3, -3.7, true]]
+        boundingbox: [-5, 4, 6, -4]
       },
+      points: [[-3.6, 0.42, true, null, null, '#2196f3'], [-4, 0.25, true, null, null, '#2196f3'], [-4.4, 0.2, true, null, null, '#2196f3'], 
+      [0.39, -2.58, true, null, null, '#2196f3'], [0.33, -2.9, true, null, null, '#2196f3'], [0.3, -3.2, true, null, null, '#2196f3'], 
+      [5.25, 2.3, true, null, null, '#2196f3'], [ 3.5, -0.5,true,'',2,true ],[5.45, 2.6, true, null, null, '#2196f3'], [5.6, 2.9, true, null, null, '#2196f3']],
+      curves: [[[[ -3.4, 0.53 ],[ -3, 1 ],[ -2, 3 ],[ -1.02, 1.01 ,true]]],
+    [[[ 0.41, -2.34 ],[ 0.71, -1.24 ],[ 1.1, -0.78 ], [2.25, -0.57 ],[ 3.43, -0.5]]],
+    [[[3.47,1.5,true],[4.35,1.6],[5.1,2.1]]]], 
+      
+    },
+    
+    //Examen 3.
+    board_3: {
+      style: {
+        axis: [false, true, true],
+        grid: true,
+        maxHeight: 200,
+        CurveType:2,
+        valueAxis: {
+          yd: [[0, 0], [0, 1]],
+          xd: [[0, 0], [1, 0]]
+        },
+        boundingbox: [-5, 4, 6, -4],
+      },
+      points: [[ -2.02, -2.93,true,'',2,true ],[-3.3, -3.3, true, null, null, '#2196f3'], [-3.4, -3.6, true, null, null, '#2196f3'], [5.57, 1.3, true, null, null, '#2196f3'], 
+      [1.76, -2.75, true, null, null, '#2196f3'], [1.80, -3.05, true, null, null, '#2196f3'], [1.83, -3.35, true, null, null, '#2196f3'], 
+      [3.43, -2.95, true, null, null, '#2196f3'], [3.39, -3.23, true, null, null, '#2196f3'], [3.35, -3.51, true, null, null, '#2196f3']],
+      curves: [[[[ -2, 2.3,true],[ -1.51, 0.8 ],[ -0.8, 0.1],[ 0, 0 ],[ 0.8, -0.1 ],[ 1.28, -0.8],[ 1.73, -2.53]]],
+    [[[ 3.44, -2.74 ],[ 3.95, 0.67],[ 4.3, 1.2],[ 5.36, 1.31 ]]],
+    [[[ -3.24, -3.12 ],[ -2.55, -1 ],[ -2.04, -2.85,]]]],
+    },
+  
+    //Examen 4.
+    board_4: {
+      style: {
+        axis: [false, true, true],
+        grid: true,
+        maxHeight: 200,
+        CurveType:2,
+        valueAxis: {
+          yd: [[0, 0], [0, 1]],
+          xd: [[0, 0], [1, 0]]
+        },
+        boundingbox: [-5, 4, 6, -4]
+      },
+      points: [[ -2,-3,true,'',2,true],[-4.25, -3, true, null, null, '#2196f3'], [-4.6, -3, true, null, null, '#2196f3'], 
+      [0.65, 2.85, true, null, null, '#2196f3'], [0.7, 3.15, true, null, null, '#2196f3'], [0.73, 3.45, true, null, null, '#2196f3'], 
+      [5.2, -2.7, true, null, null, '#2196f3'], [5.4, -2.5, true, null, null, '#2196f3'],[5.7, -2.41, true, null, null, '#2196f3']],
+      curves: [[[[ -4, -3],[ -2.1,-3],]],
+      [[[ -2, -1 ,true],[ -0.26, -0.3 ],[ 0.31, 1],[ 0.63, 2.6 ]]],
+      [[[2,-2],[3,1],[4,-2],[4.8,-3.3],[5.1,-2.9]]]],
+    },
+    //Fin Boards Annely
+    //Inicio Boards Luis 5 -- 6
+
+    //Fin Boards Luis
+    //Inicio Boards Manuenl 7 -- 8
+
+    //Fin Boards Manuel
 };
 
 //let position = seleccionarAleatorios(1, 8, 1);
-let position = localStorageSeleccionados("P1", 1, 8, 1);
+let position = localStorageSeleccionados("P1", 1, 4, 1);
 [def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1_1');
 
 defBoardDefault();

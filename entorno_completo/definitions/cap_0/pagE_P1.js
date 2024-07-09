@@ -1,5 +1,6 @@
 //comentario
 let def = {
+  //Inicio Artefactos Annelys: 1 --  9
   artifact_1: {
     representation: '1<x<2 ⠀ y ⠀ x>3',
     preDefPoint: [[56, 0, 0, 't']],
@@ -148,7 +149,13 @@ let def = {
     preDefPar: [[[2, 0, 1, 'r'], [4, 0, 0, 's']]],
     preDefPoint: [[5, 0, 0, 't']]
   },
+  //Fin Artefactos Annelys
+  //Inicio Artefactos Luis: 10 -- 18
 
+  //Fin Artefactos Luis
+  //Inicio Artefactos Manuel: 19 -- 24
+
+  //Fin Artefactos Manuel  
 }
 let artefact = [];
 let position = localStorageSeleccionados("P1", 1, 8, 3);
@@ -298,7 +305,7 @@ for (let i = 0; i < validar.length; i++) {
         switch (this) {
             case validar[0]:
                 intentos1++;                
-                localStorage.setItem('P1_Intentos1',intentos1);                
+                localStorage.setItem('P1_Intentos1',intentos1);
                 break;
             case validar[1]:
                 intentos2++;                

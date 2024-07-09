@@ -101,8 +101,12 @@ function PintaSeleccionP1(position, def, defBoard, Pregunta){
     defBoards = desiredBoard;
     
     let artefact = [];
-    artefact[0] = 'artifact_${position*2-1}';
-    artefact[1] = 'artifact_${position*2}';
+    let kk = position*2-1
+    artefact[0] = 'artifact_'+ kk;
+    artefact[1] = 'artifact_'+position*2;
+    console.log(position)
+    console.log(artefact)
+    console.log(def)
     def.artefact_1.datadefault = def.artefact_1.datadefault.slice((position-1)*2,(position-1)*2+2);
     
     let div = document.querySelectorAll('#artifact_1');
@@ -136,4 +140,8 @@ function PintaSeleccionP1(position, def, defBoard, Pregunta){
     }
     
     return ([def, defBoard]);
+}
+
+function sendData(data) {
+    console.log('>>', data)
 }
