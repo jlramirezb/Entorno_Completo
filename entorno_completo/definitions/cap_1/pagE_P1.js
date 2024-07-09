@@ -1171,9 +1171,640 @@ var def =
         },
       },
       //Fin Artefactos de Annelys
-      //Inicio Artefactos de Luis 5 -- 6
 
+      //Inicio Artefactos de Luis 5 -- 6
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_1: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+
+                {
+                  type: 0,
+                  text: ['Dominio', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  //text: ['Max.Abs', null],
+                  text: ['Rango',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+
+
+              [
+                {
+                  type: 2,
+                  answers_values: ['', '(-∞, ∞)', '(-∞, 0) ∪ (0, ∞)', '(-∞, 0) ∪ (0, 2.5) ∪ (2.5, ∞)'],
+                  conditions: {
+                    correctIndex: 1
+                  }
+                ,
+              }, 
+              {
+                type: 2,
+                answers_values: ['', '(-3, -1] ∪ [0, 2.5) ∪ (3, 3)', '(-3, -1] ∪ [0, 2.5) ∪ [3, 3]', '[-3, -1] ∪ (0, 3]', '(-3, -1] ∪ [0, 3]'],
+                conditions: {
+                  correctIndex: 2
+                }
+              ,
+              },  
+              {
+                type: 2,
+                answers_values: ['', '(-∞, -1) ∪ [0, 2.5)', '(-∞, -1) ∪ (0, 2.5)', '(-∞, -1] ∪ [0, 2.5)'],
+                conditions: {
+                  correctIndex: 2
+                }
+              ,
+              },
+              
+              {
+                type: 2,
+                answers_values: ['', '(-1, 0) ∪ [2.5, ∞)', '(-1, 0) ∪ (2.5, ∞)', '(-1, 0)'],
+                conditions: {
+                  correctIndex: 3
+                }
+              ,
+              },
+              ],
+
+              [
+
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Cortes X', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Cortes Y', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+              [{
+                type: 2,
+                answers_values: ['', '(-∞, 0)', '(-∞, 0]', '(-∞, -1)'],
+                conditions: {
+                  correctIndex: 1
+                }
+              ,
+              },
+              {
+                type: 2,
+                answers_values: ['', '(0, ∞)', '[0, ∞)', '(0, 2.5) ∪ [3, ∞)'],
+                conditions: {
+                  correctIndex: 1
+                }
+              ,
+              },
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [0]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [0]
+                }
+              },],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_2: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                {
+                  type: 0,
+                  text: ['Max.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+
+
+              [
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [3]
+                }
+              },
+              {
+                type: 2,
+                answers_values: ['', '(2.5, ∞)', '[2.5, ∞)', '[0, 0] ∪ (2.5, ∞)'],
+                conditions: {
+                  correctIndex: 1
+                }
+              ,
+              },
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-1]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-1]
+                }
+              }],
+
+              [
+                {
+                  type: 0,
+                  text: ['Min.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+              [{
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [0,  3]
+                }
+              }, 
+              {
+                type: 2,
+                answers_values: ['', '[0, 0] ∪ [2.5, ∞)', '[0, ∞)', '[0, 2.5) ∪ (2.5, ∞)'],
+                conditions: {
+                  correctIndex: 1
+                }
+              ,
+              },
+            ]
+
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo3',
+        contents: {
+          artifact_3: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+
+                {
+                  type: 0,
+                  text: ['Dominio', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  //text: ['Max.Abs', null],
+                  text: ['Rango',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+
+
+              [
+                {
+                  type: 2,
+                  answers_values: ['', '(-∞, ∞)', '(-∞, -1) ∪ (-1, ∞)', '(-∞, -1) ∪ (-1, 0.5) ∪ (0.5, ∞)'],
+                  conditions: {
+                    correctIndex: 1
+                  }
+                ,
+              }, 
+              {
+                type: 2,
+                answers_values: ['', '(-4, -1.5] ∪ [-1, 0.5) ∪ (1.5, 3]', '(-4, -1.5) ∪ [-1, 0.5) ∪ [1.5, 3]', '[-4, -1.5] U (-1, 3]', '(-4, -1.5) ∪ [-1, 0.5) ∪ (1, 3]'],
+                conditions: {
+                  correctIndex: 4 
+                }
+              ,
+              },  
+              {
+                type: 2,
+                answers_values: ['', '(-∞, 2)', '(-∞, -1) ∪ (-1, 0.5) ∪ (0.5, 2)', '(-∞, 2]'],
+                conditions: {
+                  correctIndex: 2
+                }
+              ,
+              },
+              
+              {
+                type: 2,
+                answers_values: ['', '(2, ∞)', '[2, ∞)', '(0.5, ∞)'],
+                conditions: {
+                  correctIndex: 1
+                }
+              ,
+              },
+              ],
+
+              [
+
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Cortes X', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Cortes Y', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+              [{
+                type: 2,
+                answers_values: ['', '(-∞, 0)', '(-∞, 0]', '(-∞, -1) ∪ (-1, 0)'],
+                conditions: {
+                  correctIndex: 1
+                }
+              ,
+              },
+              {
+                type: 2,
+                answers_values: ['', '(0, ∞)', '[0, ∞)', '(0, 0.5) U (0.5, ∞)'],
+                conditions: {
+                  correctIndex: 1
+                }
+              ,
+              },
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [0]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [0]
+                }
+              },],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo4',
+        contents: {
+          artifact_4: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+
+                {
+                  type: 0,
+                  text: ['Max.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Max. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+
+              [{
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [3]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [2]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }],
+
+              [ {
+                  type: 0,
+                  text: ['Min.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+              [{
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-1, 1.5]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-1, 0.5]
+                }
+              }],
+
+            ]
+          }
+        }
+      },
       //Fin Artefactos de Lui
+
       //Inicio Artefactos de Manuel 7 -- 8
 
       //Fin Artefactos de Manuel
@@ -1264,8 +1895,54 @@ var defBoards = {
     [[[2,-2],[3,1],[4,-2],[4.8,-3.3],[5.1,-2.9]]]],
   },
   //Fin Boards de Annely
+  
   //Inicio Boards de Luis 5 --6
+  board_5: {
+    style: {
+      axis: [false, true, true],
+      grid: true,
+      maxHeight: 250,
+      maxWidth: 300,
+      valueAxis: {
+        yd: [[0, 0], [0, 1]],
+        xd: [[0, 0], [1, 0]]
+      },
+      boundingbox: [-5, 4, 5, -4]
+    },
 
+    curves: [
+              [[[ -3.63, -2.8 ], [ -2.71, -2.48 ],[ -2, -2], [ -1.01, -0.97 ], [ -0.05, -1.95 ]]],
+              [[[ 0, 0 ], [ 2.45, 2.45 ]]],
+              [[[ 2.5, 3 ], [ 4, 3 ]]],
+            ],
+
+    points: [[0, 0, true], [0, -2, true, '', 2, true], [2.5, 2.5, true, '', 2, true], [2.5, 3, true], [4,3, true], 
+            [4.4, 3, true], [-3.63, -2.8, true], [-4, -2.85, true], [-4.4, -2.87, true]]
+          
+    
+  },
+  board_6: {
+    style: {
+      axis: [false, true, true],
+      grid: true,
+      maxHeight: 250,
+      valueAxis: {
+        yd: [[0, 0], [0, 1]],
+        xd: [[0, 0], [1, 0]]
+      },
+      boundingbox: [-5, 4, 5, -4]
+    },
+
+    
+
+    curves: [
+              [[[ -3.5, -3.7 ],[ -2, -3.5 ], [ -1.5, -3 ],[ -1, -1.55]]],
+              [[[ 0.5, 1.5 ],[ 1.5, 2.2 ],[ 2, 3 ],[ 2.5, 2.2 ],[ 3.5, 1.4 ]]],
+              [[[-1,-1],[0.45,0.45]]]
+            ],
+    points: [[0.5, 0.5, true, '', 2, true], [-1, -1.5, true, '', 2, true], [-1,-1, true], [0.5, 1.5, true], [3.5, 1.4, true],[3.9, 1.28, true], [4.3, 1.18, true], [4.7, 1.15, true]
+            ,[-3.5, -3.7, true], [-3.9, -3.7, true], [-4.3, -3.7, true]]
+  },
   //Fin Boards de Luis
   //Inicio Boards de Manuel 7 --8
 
