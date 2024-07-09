@@ -1041,7 +1041,567 @@ var def =
       },
       //Fin Artefactos Annely
       //Inicio Artefactos de Luis 9-- 12
+      {
+        customKeyboard: 7,
 
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_1: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  //text: ['Max.Abs', null],
+                  text: ['(-∞, 0)',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['(-1,1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+
+
+              [
+                {
+                  type: 0,
+                  text: ['Cota Sup', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                ,
+              }, 
+              {
+                type: 3,
+                inputsDefault: [["-1", false]],
+                conditions: {
+                  valueInputs: ['\\geq-1', '-1'],
+                  evaluateCote:{
+                    top: -1,
+                  }
+                }
+              ,
+              },  
+              {
+                type: 3,
+                inputsDefault: [["1", false]],
+                conditions: {
+                  valueInputs: ['\\geq1', '1'],
+                  evaluateCote:{
+                    top: 1,
+                  }
+                }
+              ,
+              },
+              
+              {
+                type: 3,
+                inputsDefault: [["3", false]],
+                conditions: {
+                  valueInputs: ['\\geq3', '3'],
+                  evaluateCote:{
+                    top: 3,
+                  }
+                }
+              ,
+              },
+              ],
+
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['(2,4)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['(0, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['R', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+              [{
+                type: 0,
+                text: ['Cota Inf'],
+                conditions: {
+                  correctIndex: null
+                }
+              ,
+              },
+              {
+                  type: 3,
+                  inputsDefault: [["2", false]],
+                  conditions: {
+                    valueInputs: ['\\leq2', '2'],
+                    evaluateCote:{
+                      bottom: 2,
+                    }
+                  }
+              ,
+              },
+              {
+                type: 3,
+                  inputsDefault: [["0", false]],
+                  conditions: {
+                    valueInputs: ['\\leq0', '0'],
+                    evaluateCote:{
+                      bottom: 0,
+                    }
+                  }
+              }, {
+                type: 3,
+                  inputsDefault: [["-3", false]],
+                  conditions: {
+                    valueInputs: ['\\leq-3', '-3'],
+                    evaluateCote:{
+                      bottom: -3,
+                    }
+                  }
+              },],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_2: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                {
+                  type: 0,
+                  text: ['f(2.5) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['f(-2) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(0) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( ) ≈ -2.8', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( ) ≈ -1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+
+
+              [
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [3]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-2]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [0]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['-4', false]],
+                onetoManyInputs: true,
+                conditions: {
+                  valueInputs: [-3.2, -3, -3.1, -3.5],
+                }
+              },
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-1]
+                }
+              },]
+
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo3',
+        contents: {
+          artifact_3: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  //text: ['Max.Abs', null],
+                  text: ['(0, ∞)',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['(-1,2)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(3,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+
+
+              [
+                {
+                  type: 0,
+                  text: ['Cota Sup', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                ,
+              }, 
+              {
+                type: 3,
+                  inputsDefault: [["3", false]],
+                  conditions: {
+                    valueInputs: ['\\geq3', '3'],
+                    evaluateCote:{
+                      top: 3,
+                    }
+                  }
+              }, 
+              {
+                type: 3,
+                  inputsDefault: [["3", false]],
+                  conditions: {
+                    valueInputs: ['\\geq3', '3'],
+                    evaluateCote:{
+                      top: 3,
+                    }
+                  }
+              }, 
+              
+              {
+                type: 3,
+                  inputsDefault: [["3", false]],
+                  conditions: {
+                    valueInputs: ['\\geq3', '3'],
+                    evaluateCote:{
+                      top: 3,
+                    }
+                  }
+              }, 
+              ],
+
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['(-1, 0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['R', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞,1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+              [{
+                type: 0,
+                text: ['Cota Inf'],
+                conditions: {
+                  correctIndex: null
+                }
+              ,
+              },
+              {
+                type: 3,
+                  inputsDefault: [["-1", false]],
+                  conditions: {
+                    valueInputs: ['\\leq-1', '-1'],
+                    evaluateCote:{
+                      bottom: -1,
+                    }
+                  }
+              },
+              {
+                type: 3,
+                  inputsDefault: [["-4", false]],
+                  conditions: {
+                    valueInputs: ['\\leq-4', '-4'],
+                    evaluateCote:{
+                      bottom: -4,
+                    }
+                  }
+              },
+              {
+                type: 3,
+                  inputsDefault: [["-4", false]],
+                  conditions: {
+                    valueInputs: ['\\leq-4', '-4'],
+                    evaluateCote:{
+                      bottom: -4,
+                    }
+                  }
+              },],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo4',
+        contents: {
+          artifact_4: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                {
+                  type: 0,
+                  text: ['f(0.5) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['f(-1) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(2) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( ) ≈ -3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( ) ≈ 1.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+
+
+
+              [
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [1.5]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [-1]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: [3]
+                }
+              }, {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-2.5, -2.6, -2.4]
+                }
+              },
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [0.5, 3]
+                }
+              },]
+
+            ]
+          }
+        }
+      },
       //Fin Artefactos de Luis
       //Inicio Artefactos de Manuel 13-- 16
 
@@ -1139,7 +1699,52 @@ var defBoards = {
     },
     //Fin Boards Annely
     //Inicio Boards Luis 5 -- 6
-
+    board_5: {
+      style: {
+        axis: [false, true, true],
+        grid: true,
+        maxHeight: 250,
+        maxWidth: 300,
+        valueAxis: {
+          yd: [[0, 0], [0, 1]],
+          xd: [[0, 0], [1, 0]]
+        },
+        boundingbox: [-5, 4, 5, -4]
+      },
+  
+      curves: [
+                [[[ -3.63, -2.8 ], [ -2.71, -2.48 ],[ -2, -2], [ -1.01, -0.97 ], [ -0.05, -1.95 ]]],
+                [[[ 0, 0 ], [ 2.45, 2.45 ]]],
+                [[[ 2.5, 3 ], [ 4, 3 ]]],
+              ],
+  
+      points: [[0, 0, true], [0, -2, true, '', 2, true], [2.5, 2.5, true, '', 2, true], [2.5, 3, true], [4,3, true], 
+              [4.4, 3, true], [-3.63, -2.8, true], [-4, -2.85, true], [-4.4, -2.87, true]]
+            
+      
+    },
+    board_6: {
+      style: {
+        axis: [false, true, true],
+        grid: true,
+        maxHeight: 250,
+        valueAxis: {
+          yd: [[0, 0], [0, 1]],
+          xd: [[0, 0], [1, 0]]
+        },
+        boundingbox: [-5, 4, 5, -4]
+      },
+  
+      
+  
+      curves: [
+                [[[ -3.5, -3.7 ],[ -2, -3.5 ], [ -1.5, -3 ],[ -1, -1.55]]],
+                [[[ 0.5, 1.5 ],[ 1.5, 2.2 ],[ 2, 3 ],[ 2.5, 2.2 ],[ 3.5, 1.4 ]]],
+                [[[-1,-1],[0.45,0.45]]]
+              ],
+      points: [[0.5, 0.5, true, '', 2, true], [-1, -1.5, true, '', 2, true], [-1,-1, true], [0.5, 1.5, true], [3.5, 1.4, true],[3.9, 1.28, true], [4.3, 1.18, true], [4.7, 1.15, true]
+              ,[-3.5, -3.7, true], [-3.9, -3.7, true], [-4.3, -3.7, true]]
+    },
     //Fin Boards Luis
     //Inicio Boards Manuenl 7 -- 8
 
