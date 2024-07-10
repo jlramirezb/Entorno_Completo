@@ -5,7 +5,7 @@ var def =
   artefact_1: 
   {
     datadefault: [
-      //Inicio artefactos de Annelys 1 -- 4 
+      //Inicio artefactos de Annelys 1 -- 8 
       {
         customKeyboard: 7,
         type: 13,
@@ -588,9 +588,9 @@ var def =
                   },
                 },
               ],
-          ],
+            ],
+          },
         },
-      },
       },
       {
         customKeyboard: 7,
@@ -1174,7 +1174,7 @@ var def =
       },
       //Fin Artefactos de Annelys
 
-      //Inicio Artefactos de Luis 5 -- 6
+      //Inicio Artefactos de Luis 9 -- 12
       {
         customKeyboard: 7,
 
@@ -1183,7 +1183,7 @@ var def =
         classGlobal: 'QA',
         parent: '#ejemplo1',
         contents: {
-          artifact_1: {
+          artifact_9: {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -1345,7 +1345,7 @@ var def =
         classGlobal: 'QA',
         parent: '#ejemplo2',
         contents: {
-          artifact_2: {
+          artifact_10: {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -1499,9 +1499,9 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo3',
+        parent: '#ejemplo1',
         contents: {
-          artifact_3: {
+          artifact_11: {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -1661,9 +1661,9 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo4',
+        parent: '#ejemplo2',
         contents: {
-          artifact_4: {
+          artifact_12: {
             allinputs: [],
             header: [],
             dataInteraction: {
@@ -1951,7 +1951,7 @@ var defBoards = {
   //Fin Boards de Manuel
 };
 
-let position = localStorageSeleccionados("P1", 1, 4, 1);
+let position = localStorageSeleccionados("P1", 1, 6, 1);
 [def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1');
 
 defBoardDefault();
