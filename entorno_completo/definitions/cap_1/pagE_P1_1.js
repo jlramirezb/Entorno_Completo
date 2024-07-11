@@ -253,10 +253,11 @@ var def =
               {
                 type: 3,
                 inputsDefault: [['', false]],
+                oneToManyInput: true,
                 conditions: {
-                  valueInputs: [2]
+                  valueInputs: [2,-2.2]
                 }
-              }],
+              } ],
             ]
           }
         }
@@ -437,7 +438,7 @@ var def =
             },
             cells: [
               [
-                //Terceras caracteristicas, Examen 1
+                //Terceras caracteristicas, Examen 2
                 {
                   type: 0,
                   text: ['f(-2)≈', null],
@@ -476,7 +477,7 @@ var def =
               ],
 
 
-              //Validacion terceras caracteristicas, Examen 1
+              //Validacion terceras caracteristicas, Examen 2
               [{
                 type: 3,
                 inputsDefault: [['', false]],
@@ -765,7 +766,7 @@ var def =
                 inputsDefault: [['', false]],
                 oneToManyInput: true,
                 conditions: {
-                  valueInputs: [1.2,3.7]
+                  valueInputs: [-1.3,3.7]
                 }
               }, 
               {
@@ -1406,11 +1407,11 @@ var def =
               
               {
                 type: 3,
-                  inputsDefault: [["3", false]],
+                  inputsDefault: [["1.5", false]],
                   conditions: {
-                    valueInputs: ['\\geq3', '3'],
+                    valueInputs: ['\\geq3', '1.5'],
                     evaluateCote:{
-                      top: 3,
+                      top: 1.5,
                     }
                   }
               }, 
@@ -1575,9 +1576,8 @@ var def =
                 type: 3,
                 // una pregunta. Varios inputs
                 inputsDefault: [['', false]],
-                oneToManyInput: true,
                 conditions: {
-                  valueInputs: [-2.5, -2.6, -2.4]
+                  valueInputs: [-1.5]
                 }
               },
               {
@@ -1687,7 +1687,7 @@ var defBoards = {
       [5.2, -2.7, true, null, null, '#2196f3'], [5.4, -2.5, true, null, null, '#2196f3'],[5.7, -2.41, true, null, null, '#2196f3']],
       curves: [[[[ -4, -3],[ -2.1,-3],]],
       [[[ -2, -1 ,true],[ -0.26, -0.3 ],[ 0.31, 1],[ 0.63, 2.6 ]]],
-      [[[2,-2],[3,1],[4,-2],[4.8,-3.3],[5.1,-2.9]]]],
+      [[[2,-2,true],[3,1],[4,-2],[4.8,-3.3],[5.1,-2.9]]]],
     },
     //Fin Boards Annely
     //Inicio Boards Luis 5 -- 6
