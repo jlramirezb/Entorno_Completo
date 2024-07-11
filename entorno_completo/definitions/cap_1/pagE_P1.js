@@ -413,7 +413,7 @@ var def =
                 [
                 {
                   type: 2,       
-                  answers_values:["","(-∞,-1)∪(3.5,∞)","","","(-∞,-1]∪[3.5,∞)"],
+                  answers_values:["","(-∞,-1)∪(3.5,∞)","(-∞,-1]∪[3,∞)","(-∞,-1)∪(3,∞)","(-∞,-1]∪[3.5,∞)"],
                   conditions: {
                     valueInputs: ["(-∞,-1]∪[3.5,∞)"]
                   }
@@ -650,9 +650,9 @@ var def =
                 }, 
                 {
                   type: 2,
-                  answers_values:["","(-∞,1.3)∪(1.3,2.3)","(-∞,-3)∪(-3,2.3)","(-∞,-3)∪(-3,1.3)∪(1.3,2.3)","(-∞,2.3)"],
+                  answers_values:["","(-∞,1.3)∪(1.3,2.3)","(-∞,-3)∪(-3,2.3)","(-∞,-3)∪(-3,1.3)∪(1.3,2.3)","(-∞,2.3]"],
                   conditions: {
-                    valueInputs: ['(-∞,2.3)']
+                    valueInputs: ['(-∞,2.3]']
                   }
                 }, 
                 {
@@ -816,7 +816,7 @@ var def =
                 }
               ],
               [
-                //Cuartas caracteristicas, Examen 1
+                //Cuartas caracteristicas, Examen 3
                 {
                   type: 0,
                   text: ['Min.Abs', null],
@@ -846,7 +846,7 @@ var def =
                   }
                 },
               ],
-              //Validacion cuartas caracteristicas
+              //Validacion cuartas caracteristicas examen 3
               [
                 {
                   type: 3,
@@ -932,16 +932,16 @@ var def =
                 {
                   //Validacion primeras caracteristicas Examen 4
                   type: 2,
-                  answers_values:["","(-∞,-2)∪(-2,1)∪(2,∞)","(-∞,-2)∪(-2,1)∪[2,∞)","(-∞,1)∪[2,∞)","(-∞,2)∪(2,∞)"],
+                  answers_values:["","(-∞,-2)∪(-2,1)∪(2,∞)","(-∞,-2)∪(-2,1)∪[2,∞)","(-∞,1)∪[2,∞)","(-∞,1)∪(2,∞)"],
                   conditions: {
                     valueInputs:["(-∞,1)∪[2,∞)"]
                   }
                 }, 
                 {
                   type: 2,
-                  answers_values:["","(-3.3,∞)","(-∞,∞)","(-∞,-3)∪(-2,∞)","(-3.3,-3)∪(-2,∞)"],
+                  answers_values:["","[-3.3,∞)","(-∞,∞)","(-∞,-3)∪(-2,∞)","(-3.3,-3)∪(-2,∞)"],
                   conditions: {
-                    valueInputs: ['(-3.3,∞)']
+                    valueInputs: ['[-3.3,∞)']
                   }
                 }, 
                 {
@@ -1402,7 +1402,7 @@ var def =
                 type: 2,
                 answers_values: ['', '(2.5, ∞)', '[2.5, ∞)', '[0, 0] ∪ (2.5, ∞)'],
                 conditions: {
-                  correctIndex: 1
+                  correctIndex: 2
                 }
               ,
               },
@@ -1894,7 +1894,7 @@ var defBoards = {
     [5.2, -2.7, true, null, null, '#2196f3'], [5.4, -2.5, true, null, null, '#2196f3'],[5.7, -2.41, true, null, null, '#2196f3']],
     curves: [[[[ -4, -3],[ -2.1,-3],]],
     [[[ -2, -1 ,true],[ -0.26, -0.3 ],[ 0.31, 1],[ 0.63, 2.6 ]]],
-    [[[2,-2],[3,1],[4,-2],[4.8,-3.3],[5.1,-2.9]]]],
+    [[[2,-2,true],[3,1],[4,-2],[4.8,-3.3],[5.1,-2.9]]]],
   },
   //Fin Boards de Annely
   
