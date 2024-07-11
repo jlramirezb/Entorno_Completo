@@ -71,6 +71,16 @@ function guardaData(){
                 // El usuario no existe, proceder a guardarlo
                 let transactionGuardar = db.transaction(['usuarios'], 'readwrite');
                 let objectStoreGuardar = transactionGuardar.objectStore('usuarios');
+                let fecha = new Date();
+                usuario.Year_start = fecha.getFullYear();
+                usuario.Month_start = fecha.getMonth() + 1; // Months are zero-based
+                usuario.Day_start = fecha.getDate();
+                usuario.Hora_start = fecha.getHours()
+                usuario.Minutes_start = fecha.getMinutes();
+                usuario.Seconds_start = fecha.getSeconds();
+
+            // Actualizar el registro en la base de datos
+            //let updateRequest = objectStore.put(usuario);
                 let requestGuardar = objectStoreGuardar.add(usuario);
                 requestGuardar.onsuccess = function(event) {
                     alert('Usuario guardado exitosamente.');
@@ -245,6 +255,14 @@ btnPreg4.addEventListener("click", e=>{
             usuario.P2intentos3 = Number(P2intentos3);
             usuario.P2intentos4 = Number(P2intentos4);
             usuario.totalIntentos = intentosTotales;
+
+            let fecha = new Date();
+            usuario.Year_end = fecha.getFullYear();
+            usuario.Month_end = fecha.getMonth() + 1; // Months are zero-based
+            usuario.Day_end = fecha.getDate();
+            usuario.Hora_end = fecha.getHours()
+            usuario.Minutes_end = fecha.getMinutes();
+            usuario.Seconds_end = fecha.getSeconds();
 
             // Actualizar el registro en la base de datos
             let updateRequest = objectStore.put(usuario);
