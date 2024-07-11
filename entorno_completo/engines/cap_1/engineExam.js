@@ -137,8 +137,7 @@ function PintaSeleccionP1(position, def, defBoard, Pregunta){
             window.location.href = "pagEx_P1_1.html";
         })
 
-    }
-    
+    }    
     return ([def, defBoard]);
 }
 
