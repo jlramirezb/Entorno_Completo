@@ -361,17 +361,21 @@ let points, points2;
 let validar = document.querySelectorAll('.check');
 for (let i = 0; i < validar.length; i++) {
     validar[i].addEventListener( 'click', function(){
+        let art;
         switch(this){
             case validar[0]:
                 intentos1++;
                 console.log('Pulsado 1');
-                points = def.artifact_13.points[0].map((p)=>[Number(p[0].X().toFixed(2)),Number(p[0].Y().toFixed(2))])
-                console.log(points);
+                //points = def.artifact_13.points[0].map((p)=>[Number(p[0].X().toFixed(2)),Number(p[0].Y().toFixed(2))])
+                //console.log(points);
                 //def.artifact_4.points = points;
-                points2 = JSON.stringify(points);
-                console.log(points2);    
-                localStorage.setItem('puntos',points2);                
+                //points2 = JSON.stringify(points);
+                //console.log(points2);    
+                //localStorage.setItem('puntos',points2);                
                 localStorage.setItem('P3_Intentos1',intentos1);
+                art = 'artifact_'+seleccionados[0];
+                console.log(art)
+                saveArtifactToIndexedDB(def, art);
                 break;
             case validar[1]:
                 intentos2++;
@@ -387,13 +391,15 @@ for (let i = 0; i < validar.length; i++) {
             case validar[2]:
                 intentos3++;
                 console.log('Pulsado 3');
-                points = def.artifact_13.points;
-                console.log(points);
+                //points = def.artifact_13.points;
+                //console.log(points);
                 //def.artifact_4.points = points;
-                points2 = points;//JSON.stringify(points);
-                console.log(points2);    
-                localStorage.setItem('puntos',points2);
+                //points2 = points;//JSON.stringify(points);
+                //console.log(points2);    
+                //localStorage.setItem('puntos',points2);
                 localStorage.setItem('P3_Intentos3',intentos3);
+                art = 'artifact_'+seleccionados[2];
+                saveArtifactToIndexedDB(def, art);
                 break;
         }
     });
@@ -413,9 +419,19 @@ const parsedArray = JSON.parse(storedString);*/
 window.addEventListener('load', function() {
     const puntos = localStorage.getItem('puntos');
     //const puntos2 = JSON.parse(puntos);
-    console.log(puntos);
+
+    /*console.log(puntos);
     if(puntos)
-        def.artifact_13.points = JSON.parse(puntos);
+        def.artifact_13.points = JSON.parse(puntos);*/
+
+    // Recuperar un artifact específico desde IndexedDB cuando la página se recargue
+    loadArtifactFromIndexedDB('artifact_16', function(data) {
+      if (data) {
+        console.log('Artifact loaded:', data);
+      } else {
+        console.log('Artifact not found');
+      }
+    });
 
     const intentos1_LS = localStorage.getItem('P3_Intentos1');
     const intentos2_LS = localStorage.getItem('P3_Intentos2');
@@ -452,4 +468,143 @@ window.addEventListener('load', function() {
         //ElevenGElement.insertBefore(newGElement, seventhGElement.firstChild);
     }
 });*/
+
+function decycle(obj, stack = []) {
+  if (!obj || typeof obj !== 'object') {
+      return obj;
+  }
+
+  if (stack.includes(obj)) {
+      return null;
+  }
+
+  let s = stack.concat([obj]);
+
+  return Array.isArray(obj)
+      ? obj.map(x => decycle(x, s))
+      : Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, decycle(v, s)]));
+}
+
+// Función para limpiar objetos no serializables
+function cleanObject(obj, seenObjects = new WeakMap()) {
+  if (obj === null || typeof obj !== 'object') {
+      return obj;
+  }
+
+  if (seenObjects.has(obj)) {
+      return seenObjects.get(obj);
+  }
+
+  if (obj instanceof HTMLDocument || typeof obj === 'function') {
+      return null;
+  }
+
+  let newObj = Array.isArray(obj) ? [] : {};
+  seenObjects.set(obj, newObj);
+
+  for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+          newObj[key] = cleanObject(obj[key], seenObjects);
+      }
+  }
+
+  return newObj;
+}
+
+// Función para guardar la variable 'def' en localStorage
+function saveArtifactToLocalStorage(def, artifactKey) {
+  const maxLength = 1024 * 1024; // 1MB por fragmento (ajusta según sea necesario)
+  if (def[artifactKey]) {
+      const artifactString = JSON.stringify(decycle(def[artifactKey])); // Eliminar referencias cíclicas y serializar
+
+      // Limpiar cualquier parte anterior
+      let partIndex = 0;
+      while (localStorage.getItem(`${artifactKey}_part_${partIndex}`) !== null) {
+          localStorage.removeItem(`${artifactKey}_part_${partIndex}`);
+          partIndex++;
+      }
+
+      // Dividir el string en fragmentos más pequeños
+      for (let i = 0; i < artifactString.length; i += maxLength) {
+          localStorage.setItem(`${artifactKey}_part_${i / maxLength}`, artifactString.substring(i, i + maxLength));
+      }
+  }
+}
+
+/*function saveDefToLocalStorage(def) {
+  for (const key in def) {
+      if (key.startsWith('artifact')) {
+          console.log(key);
+          const artifactString = JSON.stringify(def[key]);
+          localStorage.setItem(key, artifactString);
+      }
+  }
+}*/
+
+function openDatabase(callback) {
+  const request = indexedDB.open("ArtifactsDB", 1);
+
+  request.onupgradeneeded = function(event) {
+      const db = event.target.result;
+      if (!db.objectStoreNames.contains("artifacts")) {
+          db.createObjectStore("artifacts", { keyPath: "id" });
+      }
+  };
+
+  request.onsuccess = function(event) {
+      const db = event.target.result;
+      callback(db);
+  };
+
+  request.onerror = function(event) {
+      console.error("Error opening IndexedDB:", event.target.error);
+  };
+}
+
+function saveArtifactToIndexedDB(def, artifactKey) {
+  openDatabase(function(db) {
+      const transaction = db.transaction(["artifacts"], "readwrite");
+      const store = transaction.objectStore("artifacts");
+
+      const artifactData = {
+          id: artifactKey,
+          data: cleanObject(def[artifactKey])
+      };
+
+      const putRequest = store.put(artifactData);
+
+      putRequest.onsuccess = function() {
+          console.log(`Artifact ${artifactKey} saved successfully`);
+      };
+
+      putRequest.onerror = function(event) {
+          console.error("Error saving artifact:", event.target.error);
+      };
+  });
+}
+
+function loadArtifactFromIndexedDB(artifactKey, callback) {
+  openDatabase(function(db) {
+      const transaction = db.transaction(["artifacts"], "readonly");
+      const store = transaction.objectStore("artifacts");
+
+      const getRequest = store.get(artifactKey);
+
+      getRequest.onsuccess = function(event) {
+          const artifactData = event.target.result;
+          if (artifactData) {
+              callback(artifactData.data);
+          } else {
+              console.log(`Artifact ${artifactKey} not found`);
+              callback(null);
+          }
+      };
+
+      getRequest.onerror = function(event) {
+          console.error("Error loading artifact:", event.target.error);
+          callback(null);
+      };
+  });
+}
+
 
