@@ -1597,6 +1597,538 @@ var def =
       //Fin Artefactos de Luis
       //Inicio Artefactos de Manuel 13-- 16
 
+      //Examen 7
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_13: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Primeras caracteristicas, Examen 7
+                {
+                  type: 0,
+                  text: ['Intervalo',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞, -1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-3, 0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+              [
+              {
+                //Validacion primeras caracteristicas
+                type: 0,
+                text: ['Cota Sup.', null],
+                conditions: {
+                  correctIndex: null
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[['',false]],
+                conditions: {
+                  valueInputs: ['\\nexists'],
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["0.5",false]],
+                conditions: {
+                  valueInputs: ['\\geq0.5','0.5'],
+                  evaluateCote:{
+                    top: 0.5
+                  }
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },  ],
+
+              //Segundas caracteristicas, Examen 7
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-1.5, 1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+              //Validacion segundas caracteristicas, Examen 7
+              [
+              {
+                type: 0,
+                  text: ['Cota Inf.', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },
+              {
+                type: 3,
+                inputsDefault:[["-1",false]],
+                conditions: {
+                  valueInputs: ['\\leq-1','-1'],
+                  evaluateCote:{
+                    bottom: -1
+                  }
+                }
+              },],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_14: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Terceras caracteristicas, Examen 7
+                {
+                  type: 0,
+                  text: ['ƒ(1.3) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  //text: ['Max.Abs', null],
+                  text: ['ƒ(-3) ≈',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['ƒ(3) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['ƒ( ) ≈ -2', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+
+                {
+                  type: 0,
+                  text: ['ƒ( ) ≈ -2.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+              //Validacion terceras caracteristicas, Examen 7
+              [{
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [1],
+                }
+              }, 
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [0.5],
+                }
+              }, 
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-2],
+                }
+              }, 
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [3],
+                }
+              }, 
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [4],
+                }
+              },],
+            ]
+          }
+        }
+      },
+
+      //Examen 8
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_15: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Primeras caracteristicas, Examen 8
+                {
+                  type: 0,
+                  text: ['Intervalo',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-2, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+              [
+              {
+                //Validacion primeras caracteristicas
+                type: 0,
+                text: ['Cota Sup.', null],
+                conditions: {
+                  correctIndex: null
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[['',false]],
+                conditions: {
+                  valueInputs: ['\\nexists'],
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },  ],
+
+              //Segundas caracteristicas, Examen 8
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-4, 0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-2, 2)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+              //Validacion segundas caracteristicas, Examen 8
+              [
+              {
+                type: 0,
+                  text: ['Cota Inf.', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              },
+              {
+                type: 3,
+                inputsDefault:[["-1",false]],
+                conditions: {
+                  valueInputs: ['\\leq-1','-1'],
+                  evaluateCote:{
+                    bottom: -1
+                  }
+                }
+              },],
+            ]
+          }
+        }
+      },
+
+      {
+        customKeyboard: 7,
+
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_16: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Terceras caracteristicas, Examen 8
+                {
+                  type: 0,
+                  text: ['ƒ(1.5) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  //text: ['Max.Abs', null],
+                  text: ['ƒ(-4) ≈',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+                {
+                  type: 0,
+                  text: ['ƒ(-1) ≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['ƒ( ) ≈ -3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+
+                {
+                  type: 0,
+                  text: ['ƒ( ) ≈ -1.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+
+
+              //Validacion terceras caracteristicas, Examen 8
+              [
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [1],
+                }
+              }, 
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists'],
+                }
+              }, 
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [0],
+                }
+              }, 
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-3.5,-2.5,3],
+                }
+              }, 
+              {
+                type: 3,
+                // una pregunta. Varios inputs
+                inputsDefault: [['', false]],
+                oneToManyInput: true,
+                conditions: {
+                  valueInputs: [-3,4],
+                }
+              },
+              ],
+            ]
+          }
+        }
+      },
       //Fin Artefactos de Manuel
     ]
   }
