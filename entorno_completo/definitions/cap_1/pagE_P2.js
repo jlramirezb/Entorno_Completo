@@ -353,7 +353,7 @@ const def = {
     statementBottom: 'Un mínimo absoluto alcanzado en 3 y -3, No tiene máximos.',
     conditions: {
       max: { global: 0, localcount: 0,},
-      min: { global: [-3,3], noise: 0.12  },
+      min: { global: [-3,3], noise: 0.05  },
       //conexa: { type: 2 },
       //dom: { range: [[-1, 2, 1, false, false]] },
       //countsX: { value: 2 },*/
@@ -362,8 +362,8 @@ const def = {
   artifact_23: { //tiene problemas al limitarlo para reconocer maximo y dominio a la vez, por ejemplo que el maximo venga luego de un salto finito y luego la funcion baje
     statementBottom: 'Máximo absoluto alcanzado en un punto. Mínimo absoluto de f es –2,5 alcanzado en 2. Dominio R',
     conditions: {
-      max: { global: 1, noise: 0.5},
-      min: { global: [2], minTotal: -2.5, noise: 0.12  },
+      max: { global: 1, noise: 0.05},
+      min: { global: [2], minTotal: -2.5, noise: 0.05  },
       conexa: { type: 3 },
       dom: { range: [[[1,8,2], [4,5,6], 1, false, false]] },
       //dom: { range: [[[1],[5], 3, false, false]] },
@@ -371,7 +371,7 @@ const def = {
     },
   },
    artifact_24: {
-    statementBottom: ' Dominio [–3,4], f decreciente en [0,2) y Creciente en (-2,-1)',
+    statementBottom: ' Dominio [–3,3], f decreciente en [0,2) y Creciente en (-2,-1)',
     conditions: {
       /*rang: { mulIntervals:[
           [[[2,3,4], -2,false, false]]
