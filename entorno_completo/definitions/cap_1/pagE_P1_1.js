@@ -162,7 +162,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -262,7 +261,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -419,7 +417,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -518,7 +515,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -680,7 +676,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -780,8 +775,7 @@ var def =
             ]
           }
         }
-      },
-      
+      },      
       {
         customKeyboard: 7,
 
@@ -941,7 +935,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -1751,7 +1744,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -1863,7 +1855,6 @@ var def =
           }
         }
       },
-
       //Examen 8
       {
         customKeyboard: 7,
@@ -2015,7 +2006,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -2276,7 +2266,7 @@ var defBoards = {
 };
 
 //let position = seleccionarAleatorios(1, 6, 1);
-let position = localStorageSeleccionados("P1", 1, 6, 1);
+let position = localStorageSeleccionados("P1", 1, 8, 1);
 [def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1_1');
 
 defBoardDefault();

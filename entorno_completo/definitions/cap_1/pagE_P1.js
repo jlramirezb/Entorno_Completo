@@ -1336,7 +1336,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -1492,7 +1491,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -1654,7 +1652,6 @@ var def =
           }
         }
       },
-
       {
         customKeyboard: 7,
 
@@ -1972,8 +1969,6 @@ var def =
           }
         }
       },
-
-
       {
         customKeyboard: 7,
 
@@ -2132,7 +2127,6 @@ var def =
           }
         }
       },
-
       //Examen 8
       {
         customKeyboard: 7,
@@ -2140,7 +2134,7 @@ var def =
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo3',
+        parent: '#ejemplo1',
         contents: {
           artifact_15: {
             allinputs: [],
@@ -2297,15 +2291,13 @@ var def =
           }
         }
       },
-
-
       {
         customKeyboard: 7,
 
         type: 13,
         interactive: true,
         classGlobal: 'QA',
-        parent: '#ejemplo4',
+        parent: '#ejemplo2',
         contents: {
           artifact_16: {
             allinputs: [],
@@ -2449,7 +2441,6 @@ var def =
           }
         }
       },
-
       //Fin Artefactos de Manuel
     ],
   },
