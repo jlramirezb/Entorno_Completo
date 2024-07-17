@@ -1,0 +1,283 @@
+[33mcommit 787067115f4d795dd37f534fcf439962ceccab77[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Mon Jul 15 21:33:56 2024 -0400
+
+    P2 Cap1 chack IndexedDB
+
+[33mcommit 3a976a7db80837cb003c1f16e215be24391ed356[m
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Sat Jul 13 14:55:35 2024 -0400
+
+    Primer commit del repositorio
+
+[33mcommit 2d0082f76640abed9d23fe28fb8cfc617c7d2289[m
+Author: Jose Ramirez <jlramirezb@gmail.com>
+Date:   Thu Jul 11 12:57:35 2024 -0400
+
+    fila eliminada
+
+[33mcommit c2279a50096b074cc0eb7dc13bdfaf2711b30313[m
+Author: Jose Ramirez <jlramirezb@gmail.com>
+Date:   Thu Jul 11 12:20:28 2024 -0400
+
+    added time capture
+
+[33mcommit 8bccea07aecccf908a25a22931d012a966477ed3[m
+Merge: 1f2f38f fdce1c4
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Thu Jul 11 11:53:04 2024 -0400
+
+    Merge pull request #6 from adzerpa/main
+    
+    Errores corregidos de Luis y Annely cap 1
+
+[33mcommit fdce1c4c78b79a3f1bc33c04eda7f83f46861975[m
+Author: Annely Zerpa <annelyzerpa@gmail.com>
+Date:   Thu Jul 11 11:13:46 2024 -0400
+
+    Errores corregidos de Luis y Annely cap 1
+
+[33mcommit 1f2f38febf686b15ca94cd0846d2b75fc8240fa3[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Wed Jul 10 01:35:00 2024 +0000
+
+    Fixed Luis Artifact Numbering
+
+[33mcommit 675fce71ec9b50ae2cbfc4bb54ca02afb2e77ee6[m
+Merge: 520e67e e9a710d
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Tue Jul 9 13:26:03 2024 -0400
+
+    Merge pull request #5 from adzerpa/main
+    
+    Artefactos de P2
+
+[33mcommit e9a710db1198a6aebf84896ce32e29c5972f3078[m
+Merge: 5362a09 520e67e
+Author: Annely Zerpa <annelyzerpa@gmail.com>
+Date:   Tue Jul 9 13:21:23 2024 -0400
+
+    Agregue los artefactos de P2 listo
+
+[33mcommit 5362a09d4b8e55f04d98a39f2478f9da1da92e7e[m
+Author: Annely Zerpa <annelyzerpa@gmail.com>
+Date:   Tue Jul 9 13:03:50 2024 -0400
+
+    Agregue los artefactos de P2 revisados y arregle un problema en P1
+
+[33mcommit 520e67e09119d3fbf84d1841266ae15528b7cbbd[m
+Merge: a20e3cf a1275f6
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Tue Jul 9 12:22:39 2024 -0400
+
+    Merge pull request #4 from LuisGP1316/main
+    
+    artefactos
+
+[33mcommit a1275f69ad5541ab13bd6ec483ed6299de322f76[m
+Author: Luis Patino <luispatino663@gmail.com>
+Date:   Tue Jul 9 11:31:41 2024 -0400
+
+    Agregar todos los artefactos
+
+[33mcommit 9617faccc9c30dd65d549ddf39b01b54c6623761[m
+Author: Luis Patino <luispatino663@gmail.com>
+Date:   Tue Jul 9 09:58:49 2024 -0400
+
+    Arreglandoe sto por tercera vez
+
+[33mcommit 96f0c36e3bee1b1b49c695995ff355eb090465ad[m
+Merge: f75dfcd a20e3cf
+Author: Luis Patino <luispatino663@gmail.com>
+Date:   Tue Jul 9 09:54:25 2024 -0400
+
+    arreglando esto por segunda vez
+
+[33mcommit a20e3cf99aab5e96ace252d46bbf899732c5a869[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Mon Jul 8 15:46:03 2024 +0000
+
+    Definicion para creacion artefactos Cap0
+
+[33mcommit ba1c8cfc2866030774d458214f5cf59f270c8817[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Fri Jul 5 17:36:40 2024 +0000
+
+    senData to check
+
+[33mcommit 19f72f19e42bdc584d94be5735d4d5157a986194[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Thu Jul 4 21:55:37 2024 +0000
+
+    Definion escribir artefactos y Boards en orden
+
+[33mcommit 1727e94f2526964b30bdcab6a5e54a4c88ae884b[m
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Tue Jul 2 23:30:25 2024 -0400
+
+    cambios
+
+[33mcommit c1ae91c2db971d84eb8a5a88a7d3a827bb68b2db[m
+Merge: 6fe6ea5 b57ab73
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Tue Jul 2 23:17:13 2024 -0400
+
+    Merge branch 'main' of https://github.com/jlramirezb/Entorno_Completo
+
+[33mcommit 6fe6ea5c5834104d536f33830ea0f25fcae49c36[m
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Tue Jul 2 23:12:26 2024 -0400
+
+    saved
+
+[33mcommit b57ab739b07e8812f77b3bc26a0428a4ab306c48[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Wed Jul 3 02:51:35 2024 +0000
+
+    Curvas Pregunta 1 de Annely agregadas para Examen Cap1
+
+[33mcommit ba97f763589110c77b0bc344f5a02a25bd1f8f6b[m
+Merge: cc82f93 89763d0
+Author: Jose Luis <jlramirezb@gmail.com>
+Date:   Tue Jul 2 14:48:13 2024 -0400
+
+    Merge pull request #2 from adzerpa/main
+    
+    Revisar pag. cap 1
+
+[33mcommit 89763d0c3cc97a33f05fb6a45a4f62def58aef5f[m
+Author: Annely Zerpa <annelyzerpa@gmail.com>
+Date:   Tue Jul 2 14:09:58 2024 -0400
+
+    Recuperando 2
+
+[33mcommit 89ae9f89770e0ff5e633d7b501f8a6da790a16d4[m
+Author: Annely Zerpa <annelyzerpa@gmail.com>
+Date:   Tue Jul 2 13:57:51 2024 -0400
+
+    Recuperando
+
+[33mcommit 20c07b27f58779e91fc259d3d11048da2dbf0153[m
+Merge: 07c843e cc82f93
+Author: Annely Zerpa <annelyzerpa@gmail.com>
+Date:   Tue Jul 2 13:52:09 2024 -0400
+
+    Algo paso
+
+[33mcommit f75dfcd0ff7d8224cf9d74ac255c76bf72da04fe[m
+Author: Luis Patino <luispatino663@gmail.com>
+Date:   Tue Jul 2 13:44:46 2024 -0400
+
+    Arregle lo que nhice
+
+[33mcommit 07c843ec8f850f9a3b6c66e5a1becaa418c4970e[m
+Author: Annely Zerpa <annelyzerpa@gmail.com>
+Date:   Tue Jul 2 13:38:41 2024 -0400
+
+    Agregue los modelos de quizes desde el 1 al 4.(Preguntas de caracterisrticas de la curva, dominio, cotas, etc.)
+
+[33mcommit 33ada9f5675c6baa1028104e9a2fc8fdbd4b189b[m
+Merge: 2dacb06 cc82f93
+Author: Luis Patino <luispatino663@gmail.com>
+Date:   Tue Jul 2 13:38:41 2024 -0400
+
+    NOSe que hice
+
+[33mcommit 2dacb0605f50f33239c7a7de2b9da518311999c1[m
+Author: Luis Patino <luispatino663@gmail.com>
+Date:   Tue Jul 2 13:04:18 2024 -0400
+
+    Quizes del capitulo 1
+
+[33mcommit cc82f93da7065b39898a148e24162ff638adefbe[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Tue Jul 2 02:19:22 2024 +0000
+
+    Agregando funcionalidad de IndexedDB
+
+[33mcommit 7c951ab15e284e11894e9019a0ef8a48208283e6[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Sun Jun 30 23:11:29 2024 +0000
+
+    Cambioes en aleatrio Prg2 Cap0
+
+[33mcommit 6318efa6059cd88745e3858799837a5157b16c80[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Sun Jun 30 16:26:31 2024 +0000
+
+    Agregado Preguntas y puntaje
+
+[33mcommit e5a8f02751def5fc92ec0ecee78e2abd2c8a761d[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Sun Jun 30 01:17:59 2024 +0000
+
+    Agregado contadores de intentos
+
+[33mcommit 417fec96967221f0acbf4661b3e8c10627ef0b91[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Sat Jun 29 15:21:20 2024 +0000
+
+    cambiuos
+
+[33mcommit 1db748885a8da1be6a85caf7dfd35144bcbf4d8a[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Sat Jun 29 12:29:23 2024 +0000
+
+    Adelantando la Pregunta 2 Cap0
+
+[33mcommit 2ab9b72b2717293e7def8bd7eb5d44d97e0d7d07[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Sat Jun 29 00:58:59 2024 +0000
+
+    Listo Preg 1 cap0, gusrada intentos y con estilo
+
+[33mcommit 856f2a1e2190be54e1ac53a9695f31e339d239a6[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Fri Jun 28 22:03:28 2024 +0000
+
+    Continuan cambios en Cap0
+
+[33mcommit e11e1521e845fa6e5299cf1adbaab4da0cf40862[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Fri Jun 28 21:44:13 2024 +0000
+
+    Agregando puntajes acap0
+
+[33mcommit 9f4d4f63b8bd6d36f0f15c237598691f0f0a3e75[m
+Author: Jose Ramirez <jlramirezb@gmail.com>
+Date:   Fri Jun 28 12:43:56 2024 -0400
+
+    actualizado
+
+[33mcommit 8b79a99370e3dba6abc44ee6b57436b5d3796a87[m
+Author: Jose Ramirez <jlramirezb@gmail.com>
+Date:   Fri Jun 28 10:53:26 2024 -0400
+
+    cambios en html P1 y P1_1 Exam1
+
+[33mcommit 6aef994fa4d8a7613e56f5d30eb54c681d9db89c[m
+Merge: cddbfd9 0e20b3c
+Author: Jose Ramirez <jlramirezb@gmail.com>
+Date:   Fri Jun 28 09:17:50 2024 -0400
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit 0e20b3c006016c5667641c7b10f41e3dfede25be[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Fri Jun 28 02:23:40 2024 +0000
+
+    cambios
+
+[33mcommit cddbfd98272ccd8228fc500e1d4a656c39d215ed[m
+Author: Jose Ramirez <jlramirezb@gmail.com>
+Date:   Thu Jun 27 11:06:29 2024 -0400
+
+    cambios nuervos
+
+[33mcommit 7412342338cdd688428e9c11a7df91e9fe6b4327[m
+Author: jlramirezb <jlramirezb@gmail.com>
+Date:   Tue Jun 25 23:53:58 2024 +0000
+
+    Iniciando Examen Capitulo 0
+
+[33mcommit 6baba66ea3cd
