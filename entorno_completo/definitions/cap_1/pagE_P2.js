@@ -388,7 +388,7 @@ const def = {
    //Fin artefactos Manuel 
 };
 
-seleccionados = localStorageSeleccionados("P2",1,18,3);
+seleccionados = localStorageSeleccionados("P2",1,24,3);
 PintaSeleccionP2(seleccionados);
 
 window.onload = main();
