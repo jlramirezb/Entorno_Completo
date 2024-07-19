@@ -2,153 +2,114 @@
 let def = {
   //Inicio Artefactos Annelys: 1 --  9
   artifact_1: {
-    representation: '1<x<2 ⠀ y ⠀ x>3',
-    preDefPoint: [[56, 0, 0, 't']],
+    interval: '[−2,1]',
     conditions: {
-      valInterval: ['(1,2)∩(3,∞)', '∅'],
-    }
+      valRepre: ['−2≤x≤1', '1≥x≥−2'],
+      board: [
+        {
+          pares: [['−2', '1']],
+          points: [['−2', false], ['1', false]],
+        },
+      ],
+    },
   },
   artifact_2: {
-    representation: '1<x<2 ⠀ o ⠀ x>3',
+    interval: '(−∞,3]',
     conditions: {
-      valInterval: ['(1,2)∪(3,∞)'],
-      board: [{
-        pares: [['1', '2'], ['3', '+∞']],
-        points: [['1', true], ['2', true], ['3', true]],
-      }],
-    }
+      valRepre: ['−∞<x≤3', '3≥x>−∞', 'x≤3', '3≥x'],
+      board: [
+        {
+          pares: [['-∞', '3']],
+          points: [['3', false]],
+        },
+      ],
+    },
   },
   artifact_3: {
-    representation: 'x<3 ⠀ o ⠀ x>3',
+    representation: 'x≥−2',
     conditions: {
-      valInterval: ['(−∞,3)∪(3,∞)', '(−∞,∞)−[3,3]', '(−∞,∞)−{3}'],
-      points: ['3, true'],
-      board: [{
-        pares: [['-∞', '3'], ['3', '+∞']],
-        points: [['3', true]],
-      },
-      {
-        pares: [['-∞', '+∞']],
-        points: [['3', true]],
-      }],
-    }
+      valInterval: ['[−2,∞)'],
+      board: [
+        {
+          pares: [['−2', '+∞']],
+          points: [['−2', false]],
+        },
+      ],
+    },
   },
   artifact_4: {
-    representation: 'x≠3',
+    interval: '(−1,1]',
     conditions: {
-      valInterval: ['(−∞,3)∪(3,∞)', '(−∞,∞)−[3,3]', '(−∞,∞)−{3}'],
-      board: [{
-        pares: [['-∞', '3'], ['3', '+∞']],
-        points: [['3', true]],
-      },
-      {
-        pares: [['-∞', '+∞']],
-        points: [['3', true]],
-      }]
-    }
+      valRepre: ['−1<x≤1', '1≥x>−1'],
+      board: [
+        {
+          pares: [['−1', '1']],
+          points: [['−1', true], ['1', false]],
+        },
+      ],
+    },
   },
   artifact_5: {
-    representation: 'x≠1 y x≠2 y x≠3',
+    interval: '(3,∞)',
     conditions: {
-      valInterval: ['(−∞,∞)−{1,2,3}','(−∞,1)∪(1,2)∪(2,3)∪(3,∞)','(−∞,∞)−[1,1]∪[2,2]∪[3,3]'],
-
-      board: [{
-        pares: [['-∞', '1'], ['1', '2'], ['2', '3'], ['3', '+∞']],
-        points: [['1', true], ['2', true], ['3', true]],
-      },
-      {
-        pares: [['-∞', '+∞']],
-        points: [['1', true], ['2', true], ['3', true]],
-      }]
-    }
+      valRepre: ['3<x<∞', '∞>x>3','x>3','3<x'],
+      board: [
+        {
+          pares: [['3', '+∞']],
+          points: [['3', true]],
+        },
+      ],
+    },
   },
   artifact_6: {
-    representation: 'x≠1 ⠀ o ⠀ x≠2',
-    //preDefPoint: [[56, 0, 0, 't']],
+    representation: 'x≤3',
     conditions: {
-      valInterval: ['(−∞,∞)', 'r','r−{1}∪r−{2}','(−∞,∞)-{1}∪(−∞,∞)−{2}','(-∞,∞)−[1,1]∪(−∞,∞)−[2,2]','r−[1,1]∪r−[2,2]'],
-        
+      valInterval: ['(−∞,3]'],
       board: [
-
         {
-          pares: [['-∞', '+∞']],
-        }]
-        
-    }
+          pares: [['-∞', '3']],
+          points: [['3', false]],
+        },
+      ],
+    },
   },
   artifact_7: {
-    representation: 'x≤3 ⠀ y ⠀ x≥3',
+    interval: '[3,5)',
     conditions: {
-      valInterval: ['(−∞,3]∩[3,∞)', '[3,3]'],
-      board: [{
-        pares: [['−∞', '3'], ['3', '+∞']],
-        points: [['3', false]],
-      },
-      {
-
-        points: [['3', false]],
-      }]
-    }
+      valRepre: ['3≤x<5', '5>x≥3'],
+      board: [
+        {
+          pares: [['3', '5']],
+          points: [['3', false], ['5', true]],
+        },
+      ],
+    },
   },
   artifact_8: {
-    representation: 'R−\\{1,2\\}',
+    interval: '(−∞,−1)',
     conditions: {
-      valInterval: ['r−{1,2}','(−∞,∞)−{1,2}','(−∞,1)∪(1,2)∪(2,∞)','(−∞,∞)−[1,1]∪[2,2]'],
-      board: [{
-        pares: [['-∞', '1'], ['1', '2'], ['2', '+∞']],
-        points: [['1', true], ['2', true]],
-      },
-      {
-        pares: [['-∞', '+∞']],
-        points: [['1', true], ['2', true]],
-      }]
-    }
+      valRepre: ['−∞<x<−1', '−1>x>−∞', 'x<−1', '−1>x'],
+      board: [
+        {
+          pares: [['-∞', '−1']],
+          points: [['−1', true]],
+        },
+      ],
+    },
   },
   artifact_9: {
-    representation: 'R−\\{−1,2\\}',
+    representation: 'x≥4',
     conditions: {
-      valInterval: ['(−∞,∞)−{−1,2}','(−∞,−1)∪(−1,2)∪(2,∞)','(−∞,∞)−[−1,−1]∪[2,2]'],
-      board: [{
-        pares: [['-∞', '−1'], ['−1', '2'], ['2', '+∞']],
-        points: [['−1', true], ['2', true]],
-      },
-      {
-        pares: [['-∞', '+∞']],
-        points: [['−1', true], ['2', true]],
-      }]
-    }
-  },
-  artifact_10: {
-    representation: 'R−(−1,1)',
-    conditions: {
-      valInterval: ['(−∞,∞)−(−1,1)', '(−∞,−1]∪[1,∞)','r−(−1,1)'],
-
-      board: [{
-        pares: [['-∞', '−1'], ['1', '+∞']],
-        points: [['−1', false], ['1', false]],
-      },
-      {
-        pares: [['−∞', '+∞'], ['−1', '1']],
-        points: [['−1', true], ['1', true]],
-      }]
-    }
-  },
-  artifact_11: {
-    conditions: {
-      valInterval: ['(x0,x1]'],
-      valRepre: ['x0<x≤x1', 'x1≥x>x0'],
+      valInterval: ['[4,∞)'],
+      board: [
+        {
+          pares: [['4', '+∞']],
+          points: [['4', false]],
+        },
+      ],
     },
-    preDefPar: [[[2, 0, 0, 'x0'], [4, 0, 1, 'x1']]],
-    preDefPoint: [[2, 0, 0, 'x0'], [4, 0, 1, 'x1']]
   },
-  artifact_12: {
-    conditions: {
-      valInterval: ['[r,s)∪[t,t]','[r,s)∪{t}'], //≥
-      valRepre: ['r≤x<sox=t', 's>x≥rox=t','r≤x<sot≤x≤t','s>x≥rot≥x≥t'],
-    },
-    preDefPar: [[[2, 0, 1, 'r'], [4, 0, 0, 's']]],
-    preDefPoint: [[5, 0, 0, 't']]
-  },
+  
   //Fin Artefactos Annelys
   //Inicio Artefactos Luis: 10 -- 18
 
@@ -158,7 +119,7 @@ let def = {
   //Fin Artefactos Manuel  
 }
 let artefact = [];
-let position = localStorageSeleccionados("P1", 1, 8, 3);
+let position = localStorageSeleccionados("P1", 1, 9, 3);
 [def,artefact] = PintaSeleccionP1(position, def, 'P1')
 
 //Funcion que inicializa los elementos del DOM con el template y el Fragmento
