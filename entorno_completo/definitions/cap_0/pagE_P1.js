@@ -231,7 +231,7 @@ let def = {
   //Fin Artefactos Manuel  
 }
 let artefact = [];
-let position = localStorageSeleccionados("P1", 1, 9, 3);
+let position = localStorageSeleccionados("P1", 1, 18, 3);
 [def,artefact] = PintaSeleccionP1(position, def, 'P1')
 
 //Funcion que inicializa los elementos del DOM con el template y el Fragmento

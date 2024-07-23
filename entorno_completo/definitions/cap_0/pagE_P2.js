@@ -31,7 +31,7 @@ const c = {
   21: { x: 0.5, y: -0.5 },
   22: { x: -2, y: -1 },
   23: { x: 3, y: 2 },
-  24: { x: 1, y: 2 },
+  24: { x: 1, y: 2 }
   //Fin Puntos de Luis
   //Puntos a utilizar de Manuel: 25 -- 32
 
@@ -1141,7 +1141,7 @@ let rDef = {
 console.log([c[4].x, c[4].y / 2]);
 
 let artefact = [];
-let position = localStorageSeleccionados("P2", 0, 11, 4);
+let position = localStorageSeleccionados("P2", 0, 23, 4);
 console.log(position);
 
 /*function filtrarDefBoards(defBoards, indices) {
