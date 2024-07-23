@@ -112,7 +112,119 @@ let def = {
   
   //Fin Artefactos Annelys
   //Inicio Artefactos Luis: 10 -- 18
-
+  artifact_10: {
+    interval: '(−3,−1]',
+    conditions: {
+      valRepre: ['−3<x≤−1', '−1≥x>−3'],
+      board: [
+        {
+          pares: [['−3', '−1']],
+          points: [['−3', true], ['−1', false]],
+        },
+      ],
+    },
+  },
+  artifact_11: {
+    interval: '[5,∞)',
+    conditions: {
+      valRepre: ['∞>x≥5', '5≤x<∞', '5≤x', 'x≥5'],
+      board: [
+        {
+          pares: [['5','+∞']],
+          points: [['5', false]],
+        },
+      ],
+    },
+  },
+  artifact_12: {
+    representation: 'x≤−1',
+    conditions: {
+      valInterval: ['(−∞,−1]'],
+      board: [
+        {
+          pares: [['-∞', '−1']],
+          points: [['−1', false]],
+        },
+      ],
+    },
+  },
+  artifact_13: {
+    interval: '[1,3)',
+    conditions: {
+      valRepre: ['1≤x<3', '3>x≥1'],
+      board: [
+        {
+          pares: [['1', '3']],
+          points: [['1', false], ['3', true]],
+        },
+      ],
+    },
+  },
+  artifact_14: {
+    interval: '(−∞,4]',
+    conditions: {
+      valRepre: ['4≥x>−∞', '−∞<x≤4', 'x≤4', '4≥x'],
+      board: [
+        {
+          pares: [['-∞','4']],
+          points: [['4', false]],
+        },
+      ],
+    },
+  },
+  artifact_15: {
+    representation: 'x≥3',
+    conditions: {
+      valInterval: ['[3,∞)'],
+      board: [
+        {
+          pares: [['3', '+∞']],
+          points: [['3', false]],
+        },
+      ],
+    },
+  },
+  artifact_16: {
+    interval: '(2,6)',
+    conditions: {
+      valRepre: ['2<x<6', '6>x>2'],
+      board: [
+        {
+          pares: [['2', '6']],
+          points: [
+            ['2', true],
+            ['6', true],
+          ],
+        },
+      ],
+    },
+  },
+  artifact_17: {
+    interval: '(−3,∞)',
+    conditions: {
+      valRepre: ['−3<x<∞', '∞>x>−3', '−3≤x', 'x≥−3'],
+      board: [
+        {
+          pares: [['−3', '+∞']],
+          points: [
+            ['−3', true]
+          ]
+        },
+      ],
+    },
+  },
+  artifact_18: {
+    representation: 'x≤4',
+    conditions: {
+      valInterval: ['(−∞,4]'],
+      board: [
+        {
+          pares: [['-∞', '4']],
+          points: [['4', false]],
+        },
+      ],
+    },
+  },
   //Fin Artefactos Luis
   //Inicio Artefactos Manuel: 19 -- 24
 
