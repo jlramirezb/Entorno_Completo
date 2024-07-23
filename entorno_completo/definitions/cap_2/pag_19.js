@@ -35,17 +35,27 @@ const defBoards = {
       {
         strokeColor: 'darkorange',
         points: [
-          [-1.5, 2],
-          [-0.8, 0.5],
+          [-1.5, 1],
+          [1.5, 1]/*,
           [0, 0],
           [0.8, 0.5],
-          [1.5, 2]
+          [1.5, 2]*/
         ],
       }, {
         strokeColor: 'purple',
         flex: 0,
         points: [[-2.2, -2.2], [2.2, 2.2]],
       }
+      /*{
+        strokeColor: 'darkorange',
+        points: [
+          [1.5, 1],
+          [-0.8, 1]/*,
+          [0, 0],
+          [0.8, 0.5],
+          [1.5, 2]
+        ],
+      }*/ 
     ],
   },
 
@@ -64,16 +74,13 @@ const defBoards = {
       {
         strokeColor: 'darkorange',
         points: [
-          [-1.5, -2],
-          [-0.8, -0.5],
-          [0, 0],
-          [0.8, 0.5],
-          [1.5, 2]
+          [-3, 1],
+          [3, 1]
         ],
       }, {
         strokeColor: 'purple',
         flex: 0,
-        points: [[-2.2, -2.2], [2.2, 2.2]],
+        points: [[-2,-2],[0,2], [2, -2]],
       }
     ],
 
