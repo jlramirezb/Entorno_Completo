@@ -18,7 +18,20 @@ const c = {
   12: { x: -2, y: 1.4 },
   //Fin Puntos de Annely
   //Puntos a utilizar de Luis: 13 -- 24
+  13: { x: -2, y: 1.5 },
+  14: { x: -1, y: -2 },
+  15: { x: 2, y: 2 },
+  16: { x: 3, y: 2 },
 
+  17: { x: 0.5, y: 0.5 },
+  18: { x: 3, y: -1 },
+  19: { x: 2.8, y: 2.8 },
+  20: { x: 2.5, y: 2.5 },
+
+  21: { x: 0.5, y: -0.5 },
+  22: { x: -2, y: -1 },
+  23: { x: 3, y: 2 },
+  24: { x: 1, y: 2 },
   //Fin Puntos de Luis
   //Puntos a utilizar de Manuel: 25 -- 32
 
@@ -197,7 +210,181 @@ let defBoards = {
   },
   //Fin Boards Annely
   //Boards a definir por Luis: 12 -- 23
+  board_12: {
+    style: {
+      grid: false,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-3.5, 3.5, 3.5, -3.5],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
+  board_13: {
+    style: {
+      grid: false,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-3, 3, 3, -3],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
 
+  },
+  board_14: {
+    style: {
+      grid: true,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-2, 5, 6, -2],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+      points: [
+        [0, 1, false, '1'],
+        [1, 0, false, '1']
+      ]
+    },
+  },
+
+  //nuevos
+  board_15: {
+    style: {
+      grid: true,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-6.5, 4, 6.5, -4],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+    points: [
+      [0, 1, false, '1'],
+      [1, 0, false, '1']
+    ]
+  },
+  board_16: {
+    style: {
+      grid: false,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-2, 2, 2, -2],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
+  board_17: {
+    style: {
+      grid: false,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-4, 4, 4, -4],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
+
+  board_18: {
+    style: {
+      grid: true,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-1, 5, 6, -1],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
+
+  board_19: {
+    style: {
+      grid: true,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-6, 4, 4, -6],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
+
+  board_20: {
+    style: {
+      grid: false,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-3, 3, 3, -3],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
+
+  board_21: {
+    style: {
+      grid: false,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-3, 3, 3, -3],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
+
+
+  board_22: {
+    style: {
+      grid: true,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-2, 5, 6, -2],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
+
+
+  board_23: {
+    style: {
+      grid: true,
+      maxHeight: 300,
+      maxWidth: 300,
+      boundingbox: [-4, 5, 4, -4],
+      axis: [false, true, true],
+      valueAxis: {
+        yd: [[0, 0], [0, 1]], /*dirección del eje y*/
+        xd: [[0, 0], [1, 0]],
+      },
+    },
+  },
   //Fin Boards Luis
   //Boards a definir por Manuel: 24 -- 31
 
@@ -648,7 +835,304 @@ let rDef = {
   },
   //Fin Artefactos Annely
   //Inicio de Artefactos Luis: 13 -- 24
+  artifact_13: {
+    defBoard: 'board_12',
+    textBottom: '(x, -y), (-x, y), (y, x)',
 
+    defaultInputs: [
+      {
+        position: [c[13].x, c[13].y],
+        value: '(x,y)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 6,
+      },
+      points: [
+
+        { p: [c[13].x, -c[13].y], text: 'x,-y' },
+        { p: [-c[13].x, c[13].y], text: '-x,y' },
+        { p: [c[13].y, c[13].x], text: 'y,x' }
+
+      ],
+    },
+  },
+  artifact_14: {
+    defBoard: 'board_13',
+    textBottom: '(-b,0), (-a, -b), (a, -a), (b, -a)',
+
+
+    defaultInputs: [
+      {
+        position: [0, c[14].y],
+        value: '(0,b)',
+      },
+      {
+        position: [c[14].x, 0],
+        value: '(a,0)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 6,
+      },
+      points: [
+        { p: [-c[14].y, 0], text: '-b,0' },
+        { p: [-c[14].x, -c[14].y], text: '-a,-b' },
+        { p: [c[14].x, -c[14].x], text: 'a,-a' },
+        { p: [c[14].y, -c[14].x], text: 'b,-a' },
+      ],
+    },
+
+  },
+  artifact_15: {
+    defBoard: 'board_14',
+    textBottom: '(x-2.5, y), (x+2.5, y), (x, y-1)',
+    defaultInputs: [
+      {//1
+        position: [c[15].x, c[15].y],
+        value: '(x,y)',
+      },
+
+    ],
+
+    conditions: {
+      texterror: {
+        time: 4,
+      },
+      points: [
+        { p: [c[15].x - 2.5, c[15].y], text: 'x-2.5,y' },
+        { p: [c[15].x + 2.5, c[15].y], text: 'x+2.5,y' },
+        { p: [c[15].x, c[15].y - 1], text: 'x,y-1' },
+      ],
+    },
+  },
+  artifact_16: {
+    defBoard: 'board_15',
+    textBottom: '(2x, -y), (-x, y), (-2x, y), (x/2, y/2)',
+
+
+
+    defaultInputs: [
+      {//11
+        position: [c[16].x, c[16].y],
+        value: '(x,y)',
+      }
+    ],
+    conditions: {
+      texterror: {
+        time: 4,
+      },
+      points: [
+
+        { p: [2 * c[16].x, -c[16].y], text: '2x,-y' },
+        { p: [-c[16].x, c[16].y], text: '-x, y' },
+        { p: [-2 * c[16].x, c[16].y], text: '-2x, y' },
+        { p: [c[16].x / 2, c[16].y / 2], text: 'x/2, y/2' },
+      ],
+    },
+
+  },
+  artifact_17: {
+    defBoard: 'board_16',
+    textBottom: '(-x, -y), (-x, y), (2y, x)',
+    //cambie esta pregunta se superponian dos puntso  
+
+
+    defaultInputs: [
+      {
+        position: [c[17].x, c[17].y],
+        value: '(x,y)',
+      }
+    ],
+    conditions: {
+      texterror: {
+        time: 4,
+      },
+      points: [
+        { p: [-c[17].x, -c[17].y], text: '-x,-y' },
+        { p: [-c[17].x, c[17].y], text: '-x,y' },
+        { p: [2*c[17].y, c[17].x], text: '2y,x' }
+
+      ],
+    },
+
+  },
+  artifact_18: {
+    defBoard: 'board_17',
+    textBottom: '(b,0), (a,a), (-a, -b), (-a, a)',
+
+
+    defaultInputs: [
+      {
+        position: [0, c[18].y],
+        value: '(0,b)',
+      },
+      {
+        position: [c[18].x, 0],
+        value: '(a,0)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 4,
+      },
+      points: [
+
+        { p: [c[18].y, 0], text: 'b,0' },
+        { p: [c[18].x, c[18].x], text: 'a,a' },
+        { p: [-c[18].x, -c[18].y], text: '-a,-b' },
+        { p: [-c[18].x, c[18].x], text: '-a,a' },
+
+      ],
+    },
+  },
+
+  artifact_19: {
+    defBoard: 'board_18',
+    textBottom: '(x-1, y), (x+1, y), (x, y-2)',
+
+    defaultInputs: [
+      {
+        position: [c[19].x, c[19].y],
+        value: '(x,y)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 6,
+      },
+      points: [
+
+        { p: [c[19].x-1, c[19].y], text: 'x-1,y' },
+        { p: [c[19].x+1, c[19].y], text: 'x+1,y' },
+        { p: [c[19].x, c[19].y-2], text: 'x,y-2' }
+
+      ],
+    },
+  },
+  artifact_20: {
+    defBoard: 'board_19',
+    textBottom: '(-2x, y), (x, -2y), (-x, -y), (x/2, y/2)',
+
+    defaultInputs: [
+      {
+        position: [c[20].x, c[20].y],
+        value: '(x,y)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 6,
+      },
+      points: [
+        { p: [-2 * c[20].x, c[20].y], text: '-2x, y' },
+        { p: [c[20].x, -2 * c[20].y], text: 'x, -2y' },
+        { p: [- c[20].x, - c[20].y], text: '-x, -y' },
+        { p: [c[20].x / 2, c[20].y / 2], text: 'x/2, y/2' },
+      ],
+    },
+  },
+  artifact_21: {
+    defBoard: 'board_20',
+    textBottom: '(x, -y), (-x, y), (y, x)',
+
+    defaultInputs: [
+      {
+        position: [c[21].x, c[21].y],
+        value: '(x,y)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 6,
+      },
+      points: [
+
+        { p: [c[21].x, -c[21].y], text: 'x,-y' },
+        { p: [-c[21].x, c[21].y], text: '-x,y' },
+        { p: [c[21].y, c[21].x], text: 'y,x' }
+
+      ],
+    },
+  },
+  artifact_22: {
+    defBoard: 'board_21',
+    textBottom: '(0,a), (a,-a), (a, -b), (-a, b)',
+
+
+    defaultInputs: [
+      {
+        position: [0, c[22].y],
+        value: '(0,b)',
+      },
+      {
+        position: [c[22].x, 0],
+        value: '(a,0)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 4,
+      },
+      points: [
+
+        { p: [0, c[22].x], text: '0,a' },
+        { p: [c[22].x, -c[22].x], text: 'a,-a' },
+        { p: [c[22].x, -c[22].y], text: 'a,-b' },
+        { p: [-c[22].x, c[22].y], text: '-a,b' },
+
+      ],
+    },
+  },
+  artifact_23: {
+    defBoard: 'board_22',
+    textBottom: '(x-2, y), (x+2, y), (x, y-2.5)',
+
+    defaultInputs: [
+      {
+        position: [c[23].x, c[23].y],
+        value: '(x,y)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 6,
+      },
+      points: [
+
+        { p: [c[23].x-2, c[23].y], text: 'x-2,y' },
+        { p: [c[23].x+2, c[23].y], text: 'x+2,y' },
+        { p: [c[23].x, c[23].y-2.5], text: 'x,y-2.5' }
+
+      ],
+    },
+  },
+  artifact_24: {
+    defBoard: 'board_23',
+    textBottom: '(3x, y), (x, 2y), (-3x, -y), (x/2, y/2)',
+
+    defaultInputs: [
+      {
+        position: [c[24].x, c[24].y],
+        value: '(x,y)',
+      },
+    ],
+    conditions: {
+      texterror: {
+        time: 6,
+      },
+      points: [
+
+        { p: [3*c[24].x, c[24].y], text: '3x,y' },
+        { p: [c[24].x, 2*c[24].y], text: 'x,2y' },
+        { p: [-3*c[24].x, -c[24].y], text: '-3x,-y' },
+        { p: [c[24].x/2, c[24].y/2], text: 'x/2,y/2' }
+
+      ],
+    },
+  },
   //Fin Artefactos Luis
   //Inicio de Artefactos Manuel: 25 -- 32
 
