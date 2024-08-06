@@ -8,7 +8,6 @@ let btnPreg7 = document.getElementById("btnPreg7");
 let btnGuardar = document.getElementById("btnguardar");
 
 function ActivaBotones(){
-    
     if (nombre.value!=="" && cedula.value!=="" && seccion.value!==""){
         //console.log("Enyr")
         btnGuardar.disabled = false;
@@ -29,7 +28,7 @@ function ActivarPreguntas(){
         btnPreg5.disabled = false;
         btnPreg6.disabled = false;
         btnPreg7.disabled = false;
-        btnGuardar.disabled = false;
+        btnGuardar.disabled = true;
     }
 } 
 
@@ -109,11 +108,27 @@ function cargaData(){
     }
 }
 
+/*function abrirPagina(idBoton) {
+    if(idBoton==="btnPreg1")
+        window.location.href = "pag_Ex_P1.html";
+    else if(idBoton==="btnPreg2")
+        window.location.href = "pag_Ex_P2.html";
+}**/
 function abrirPagina(idBoton) {
     if(idBoton==="btnPreg1")
         window.location.href = "pag_Ex_P1.html";
     else if(idBoton==="btnPreg2")
         window.location.href = "pag_Ex_P2.html";
+    else if(idBoton==="btnPreg3")
+        window.location.href = "pag_Ex_P3.html";
+    else if(idBoton==="btnPreg4")
+        window.location.href = "pag_Ex_P4.html";
+    else if(idBoton==="btnPreg5")
+        window.location.href = "pag_Ex_P5.html";
+    else if(idBoton==="btnPreg6")
+        window.location.href = "pag_Ex_P6.html";
+    else if(idBoton==="btnPreg7")
+        window.location.href = "pag_Ex_P7.html";
 }
 
 nombre.addEventListener('input',ActivaBotones);
@@ -129,9 +144,25 @@ btnPreg2.addEventListener("click", function(){
     abrirPagina(this.id);
 });
 
+btnPreg3.addEventListener("click", function(){
+    abrirPagina(this.id);
+});
+
+btnPreg4.addEventListener("click", function(){
+    abrirPagina(this.id);
+});
+
+btnPreg5.addEventListener("click", function(){
+    abrirPagina(this.id);
+});
+
+btnPreg6.addEventListener("click", function(){
+    abrirPagina(this.id);
+});
+
 window.onload = cargaData;
 
-btnPreg3.addEventListener("click", e=>{
+btnPreg7.addEventListener("click", e=>{
     let nombre = document.getElementById("nombre");
     let cedula = document.getElementById("cedula");
     let seccion = document.getElementById("seccion");
@@ -146,6 +177,10 @@ btnPreg3.addEventListener("click", e=>{
     btnPreg1.disabled = true;
     btnPreg2.disabled = true;
     btnPreg3.disabled = true;
+    btnPreg4.disabled = true;
+    btnPreg5.disabled = true;
+    btnPreg6.disabled = true;
+    btnPreg7.disabled = true;
     localStorage.removeItem("SeleccionadosP1");
     localStorage.removeItem("SeleccionadosP2");
     localStorage.removeItem('mathValuesA');
@@ -189,3 +224,5 @@ btnPreg3.addEventListener("click", e=>{
         };
     };*/
 });
+
+

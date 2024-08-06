@@ -21,6 +21,7 @@ function ActivarPreguntas(){
         btnPreg1.disabled = false;
         btnPreg2.disabled = false;
         btnPreg3.disabled = false;
+        btnGuardar.disabled = true;
     }
 } 
 

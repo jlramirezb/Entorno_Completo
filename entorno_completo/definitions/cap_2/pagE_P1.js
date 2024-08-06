@@ -9,24 +9,25 @@ Nota: El valor que se debe colocar el VALUEINPUTS debe estar en formato LATEX
 
 */
 let colorLinePointFinish = '#00FFFF';
-const genericStyleBoard = {
-  grid: false,
-  minWidth: 100,
-  boundingbox: [-1, 4, 4, -2],
-  axis: [false, true, true],
-  valueAxis: {
-    yd: [[0, 0], [0, 1]] /*dirección del eje y*/,
-    xd: [[0, 0], [1, 0]],
-    colory: '#000000',
-    colorx: '#000000'
-  },
-  reflectionAxie: { B: true }
-
+/*No modificar este Board, en caso de necesitar cambiar
+el tamaño del Board, agregar un boundingbox en el board correspondiente*/
+let genericStyleBoard = {
+    grid: false,
+    minWidth: 100,
+    boundingbox: [-1, 4, 4, -2],
+    axis: [false, true, true],
+    valueAxis: {
+        yd: [[0, 0], [0, 1]] /*dirección del eje y*/,
+        xd: [[0, 0], [1, 0]],
+        colory: '#000000',
+        colorx: '#000000'
+    },
+    reflectionAxie: { B: true }
 };
 
-const etwDefBoards = {
+let etwDefBoards = {
+    //Boards a definir por Annely: 1 --- 3
   board_0: {
-    //artifact: "artifact_2",
     style: { ...genericStyleBoard, boundingbox: [-2, 4, 4, -1] },
     lines: [
       {
@@ -84,7 +85,6 @@ const etwDefBoards = {
     ],
   },
   board_1: {
-    //artifact: "artifact_2",
     style: genericStyleBoard,
     lines: [
       {
@@ -94,7 +94,7 @@ const etwDefBoards = {
       },
       {
         points: [[1.8, 1.8], [3, 1.8]],
-        dash: 1,
+        dash: 2,
         firstArrow: true,
       },
       {
@@ -125,9 +125,7 @@ const etwDefBoards = {
       {
         strokeColor: 'purple',
         points: [
-
           [-0.63, -0.11], [0.13, -0.11], [1.77, 0.2], [2.5, 0.6], [3, 1.2], [3.5, 2.5]
-
         ]
       },
       {
@@ -138,8 +136,8 @@ const etwDefBoards = {
     ],
     points: [
       [2, 2.8, false, 'ƒ', null, null, null, 18],
-      [2.1, 0.4, false, 'g', null, null, null, 18, null, null, 18],
-      /* [3, 0.2, true, '', 2.5, null, 'green', 18] */
+      [2.1, 0.4, false, 'g', null, null, null, 18],
+      //[3, -0.2, true, 'h', 2.5, null, 'green', 18], 
       { x: 3, y: 0.2, fixed: true, visible: true, color: 'green', fontSize: 18 }
     ],
   },
@@ -201,8 +199,9 @@ const etwDefBoards = {
       { x: 1, y: 1.7, fixed: true, visible: true, color: 'green' }
     ],
   },
+  //Fin de los Boards de Annely
+  //Inicio de los Boarda de Luis: 4 -- 6
   board_3: {
-    //artifact: "artifact_2",
     style: {
       ...genericStyleBoard,
       boundingbox: [-2, 4, 4, -2],
@@ -256,7 +255,6 @@ const etwDefBoards = {
     ],
   },
   board_4: {
-    //artifact: "artifact_2",
     style: genericStyleBoard,
     lines: [
       {
@@ -309,7 +307,6 @@ const etwDefBoards = {
     ],
   },
   board_5: {
-    //artifact: "artifact_2",
     style: { ...genericStyleBoard, boundingbox: [-1, 4, 4, -2], },
     lines: [
       {
@@ -370,11 +367,14 @@ const etwDefBoards = {
       { x: 1, y: 2.8, fixed: true, visible: true, color: 'green', fontSize: 18 }
     ],
   },
+  //Fin de los Boards de Luis
+  //Inicio de los Boards de Manuel: 7 -- 8
+  //Fin de los Boards de Manuel
 };
 
 //si se va a agregar algo al objeto tiene que declararce la propiedad por defecto en el mod.js
-const etwDef = {
-  example_1: {
+let etwDef = {
+  /*example_1: {
     buttonsActive: { validate: false },
     showTitle: false,
     artifactTitle: 'Ida',
@@ -393,7 +393,8 @@ const etwDef = {
       valueWayName: [
         'g\\left(f\\left(x\\right)\\right)'],
     }
-  },
+  },*/
+  //Inicio de los artefactos de Annely: 1 -- 3
   artifact_1: {
     debug: false,
     buttonsActive: { points: true },
@@ -407,7 +408,7 @@ const etwDef = {
       info: ''
     },
     inputsDefault: [
-      [[3, -0.2], false, 'x', 1],
+      [[3, -0.2], false, 'c', 1],
       [[1.8, -0.2], true, '', 2],
       [[-0.3, 1.9], true, '', 3],
       [[-0.3, 0.3], true, '', 4]],
@@ -432,7 +433,7 @@ const etwDef = {
     },
     inputsDefault: [
       [[3.1, -0.2], true, '', 1],
-      [[1, -0.2], false, '', 2],
+      [[1, -0.2], false, 'x', 2],
       [[-0.3, 1.7], true, '', 3],
       [[-0.3, 1], true, '', 4]],
     conditions: {
@@ -458,7 +459,7 @@ const etwDef = {
     },
     inputsDefault: [
       [[2.1, -0.25], true, '', 1],
-      [[1, -0.25], false, 'x', 2],
+      [[1, -0.25], false, '32', 2],
       [[-0.3, 2.3], true, '', 3],
       [[-0.3, 1], true, '', 4]
     ],
@@ -471,6 +472,8 @@ const etwDef = {
       ],
     }
   },
+  //Fin de los artefactos de Annely
+  //Inicio de los artefactos de Luis: 4 -- 6
   artifact_4: {
     debug: false,
     buttonsActive: { points: true },
@@ -485,7 +488,7 @@ const etwDef = {
     },
     inputsDefault: [
       [[2, -0.2], true, '', 1],
-      [[1, -0.2], false, 'x', 2],
+      [[1, -0.2], false, '3x', 2],
       [[-0.3, 3.3], true, '', 3],
       [[-0.3, 2], true, '', 4]
     ],
@@ -511,7 +514,7 @@ const etwDef = {
     inputsDefault: [
       [[2.8, -0.2], true, '', 1],
       [[1.9, -0.2], true, '', 2],
-      [[1, -0.2], false, 'x', 3],
+      [[1, -0.2], false, '3x', 3],
       [[-0.3, 2.8], true, '', 4],
       [[-0.3, 2], true, '', 5],
       [[-0.3, 1], true, '', 6]
@@ -527,6 +530,45 @@ const etwDef = {
       ],
     }
   },
+  artifact_6: {
+    debug: false,
+    buttonsActive: { points: true },
+    showTitle: false,
+    artifactTitle: 'Ida',
+    showText: false,
+    showWayNameInput: true,
+    textOfHelp: '',
+    textOfExample: {
+      title: '',
+      info: ''
+    },
+    inputsDefault: [
+      [[2.8, -0.2], true, '', 1],
+      [[1.9, -0.2], true, '', 2],
+      [[1, -0.2], false, '3x', 3],
+      [[-0.3, 2.8], true, '', 4],
+      [[-0.3, 2], true, '', 5],
+      [[-0.3, 1], true, '', 6]
+    ],
+    conditions: {
+      valueWayName: 'f^{-1}\\left(f^{-1}\\left(x\\right)\\right)',
+      valueInputs: [
+        [1, 'f^{-1}\\left(f^{-1}\\left(x\\right)\\right)'],
+        [2, 'f^{-1}\\left(x\\right)'],
+        [4, 'f^{-1}\\left(f^{-1}\\left(x\\right)\\right)'],
+        [5, 'f^{-1}\\left(x\\right)'],
+        [6, 'x']
+      ],
+    }
+  }
+  //Fin de los artefactos de Luis
+  //Inicio de los artefactos de Manuel: 7 -- 8
+  //Fin de los artefactos de Manuel
 };
+
+let position = localStorageSeleccionados("P1", 1, 5, 1);
+//console.log(position);
+[etwDef, etwDefBoards] = PintaSeleccionP1(position, etwDef, etwDefBoards,'P1');
+//console.log(position);
 
 etwMain(etwDef, etwDefBoards);

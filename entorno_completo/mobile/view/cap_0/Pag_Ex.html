@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../../../libraries/styles.css" />
     <link rel="stylesheet" type="text/css" href="../../../libraries/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../libraries/generalStylesFragata.css" />
-    <!--<link rel="stylesheet" href="prueba.css">-->
+    <link rel="stylesheet" href="prueba.css">
     <script type="text/javascript" src="../../../engines/genericEngines/polyfillsAllUsed.js"></script>
     <title>Examen Capìtulo 0</title>
 </head>
@@ -26,15 +26,8 @@
             }
         }
     </style>
-    <div id="" class="containerNormal background-gray">
-        <h3>Examen Capítulo 0</h3>
-        <style>
-            /* Estilos para los inputs */
-            input {
-                display: block;
-                margin-bottom: 10px;
-            }
-        </style>
+    <div class="containerNormal background-gray">
+        <h3>Examen Capítulo 0</h3>        
         <form action="process.php" method="post">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required value="""">
@@ -53,7 +46,7 @@
                 <option value="06">06</option>
             </select>    
 
-            <input type="button" id="btnguardar" disabled="disabled" value="Guardar Información"/>
+            <input type="button" class="button" id="btnguardar" disabled="disabled" value="Guardar Información"/>
         </form>
     </div>
     <div class="note">
@@ -65,9 +58,9 @@
         </p>
     </div>
     <div>
-        <button id="btnPreg1" type="button" disabled="disabled">Pregunta 1</button>
-        <button id="btnPreg2" type="button" disabled="disabled">Pregunta 2</button>        
-        <button id="btnPreg4" type="button" disabled="disabled">Finalizar Examen</button>
+        <button id="btnPreg1" class="button" type="button" disabled="disabled">Pregunta 1</button>
+        <button id="btnPreg2" class="button" type="button" disabled="disabled">Pregunta 2</button>        
+        <button id="btnPreg4" class="button" type="button" disabled="disabled">Finalizar Examen</button>
     </div>
     <script src="app.js"></script>
 </body>
