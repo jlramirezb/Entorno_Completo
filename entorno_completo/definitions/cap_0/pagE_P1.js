@@ -108,8 +108,7 @@ let def = {
         },
       ],
     },
-  },
-  
+  },  
   //Fin Artefactos Annelys
   //Inicio Artefactos Luis: 10 -- 18
   artifact_10: {
@@ -227,12 +226,85 @@ let def = {
   },
   //Fin Artefactos Luis
   //Inicio Artefactos Manuel: 19 -- 24
-
+  artifact_19: {
+    interval: '[−1,2]',
+    conditions: {
+      valRepre: ['−1≤x≤2', '2≥x≥−1'],
+      board: [
+        {
+          pares: [['−1', '2']],
+          points: [['−1', false], ['2', false]],
+        },
+      ],
+    },
+  },
+  artifact_20: {
+    interval: '(−∞,−4]',
+    conditions: {
+      valRepre: ['−∞<x≤−4', '−4≥x>−∞', 'x≤−4', '−4≥x'],
+      board: [
+        {
+          pares: [['-∞', '−4']],
+          points: [['−4', false]],
+        },
+      ],
+    },
+  },
+  artifact_21: {
+    representation: 'x≥−6',
+    conditions: {
+      valInterval: ['[−6,∞)'],
+      board: [
+        {
+          pares: [['−6', '+∞']],
+          points: [['−6', false]],
+        },
+      ],
+    },
+  },
+  artifact_22: {
+    interval: '[−7,−5)',
+    conditions: {
+      valRepre: ['−7≤x<−5', '−5>x≥−7'],
+      board: [
+        {
+          pares: [['−7', '−5']],
+          points: [['−7', false], ['−5', true]],
+        },
+      ],
+    },
+  },
+  artifact_23: {
+    interval: '[−1,∞)',
+    conditions: {
+      valRepre: ['−1≤x<∞', '∞>x≥−1','x≥−1','−1≤x'],
+      board: [
+        {
+          pares: [['−1', '+∞']],
+          points: [['−1', false]],
+        },
+      ],
+    },
+  },
+  artifact_24: {
+    representation: 'x≤−2',
+    conditions: {
+      valInterval: ['(−∞,−2]'],
+      board: [
+        {
+          pares: [['-∞', '−2']],
+          points: [['−2', false]],
+        },
+      ],
+    },
+  },
   //Fin Artefactos Manuel  
 }
 let artefact = [];
-let position = localStorageSeleccionados("P1", 1, 18, 3);
-[def,artefact] = PintaSeleccionP1(position, def, 'P1')
+let position = localStorageSeleccionados("P1", 1, 24, 3);
+[def,artefact] = PintaSeleccionP1(position, def, 'P1');
+//console.log('AQUIIIIIIIIII ',artefact);
+
 
 //Funcion que inicializa los elementos del DOM con el template y el Fragmento
 function initMain() {
@@ -280,78 +352,12 @@ artefact.forEach((element) => {
 
   // Obtenemos el div con id "container-all"
   let containerAll = document.getElementById("container-all-artifact");
-  containerAll.appendChild(newDiv);
-
-  console.log(containerAll);
-  // Reemplazamos el div original con el nuevo contenedor
-  //containerAll.replaceChild(newDiv, artifactDiv);
+  containerAll.appendChild(newDiv);  
 });
 
 let containerAll = document.getElementById("container-all-artifact");
-let btnBack = document.createElement("button");
-btnBack.textContent = "Regresar";
-containerAll.appendChild(btnBack);
-
-btnBack.addEventListener('click',()=>{
-  window.location.href = "Pag_Ex.html";
-})
-
-
-//const btnBack = document.getElementById("miBoton");
-
-function centrarBoton() {
-  // Obtenemos el ancho y alto del botón
-  const anchoBoton = btnBack.offsetWidth;
-  //const altoBoton = btnBack.offsetHeight;
-
-  // Obtenemos el ancho y alto de la ventana
-  const anchoVentana = window.innerWidth;
-  //const altoVentana = window.innerHeight;
-
-  // Calculamos la posición para centrar el botón
-  const posicionX = (anchoVentana - anchoBoton) / 2;
-  //const posicionY = (altoVentana - altoBoton) / 2;
-
-  // Aplicamos la posición y el ancho al botón
-  btnBack.style.position = "absolute";
-  btnBack.style.left = posicionX + "px";
-  //btnBack.style.top = posicionY + "px";
-  btnBack.style.width = "10%"; // Ajusta este valor según sea necesario
-}
-
-// Centramos el botón al cargar la página
-window.addEventListener('load', centrarBoton);
-
-// Volvemos a centrar el botón si la ventana cambia de tamaño
-window.addEventListener('resize', centrarBoton);
-
-
 
 window.addEventListener('load', function() {
-  //const tbodyElement = document.querySelectorAll('tbody');
-  //const selectElements = tbodyElement[0].querySelectorAll('select');
-  //const selectedValues = JSON.parse(localStorage.getItem('selectedValues'));
-  /*if (selectedValues) {
-      for (let i = 0; i < selectElements.length; i++) {
-          const selectedValue = selectedValues[i];
-          const selectedOption = selectElements[i].querySelector(`option[value="${selectedValue}"]`);
-          selectedOption.selected = true;
-      }
-  }*/
-  /*const mathFieldElements = tbodyElement[0].querySelectorAll('math-field');
-  const mathFieldElementsB = tbodyElement[1].querySelectorAll('math-field');
-  const mathValues = JSON.parse(localStorage.getItem('mathValuesA'));
-  const mathValuesB = JSON.parse(localStorage.getItem('mathValuesB'));
-  if (mathValues) {
-      for (let i = 0; i < mathFieldElements.length; i++) {
-          mathFieldElements[i].value = mathValues[i];
-      }
-  }
-  if (mathValues) {
-      for (let i = 0; i < mathFieldElementsB.length; i++) {
-          mathFieldElementsB[i].value = mathValuesB[i];
-      }
-  }*/
   const intentos1_LS = localStorage.getItem('P1_Intentos1');
   const intentos2_LS = localStorage.getItem('P1_Intentos2');
   const intentos3_LS = localStorage.getItem('P1_Intentos3');
@@ -372,24 +378,24 @@ window.addEventListener('load', function() {
 let validar = document.querySelectorAll('.check');
 let intentos1, intentos2, intentos3;
 for (let i = 0; i < validar.length; i++) {
-    // Add a click event listener to each element
-    validar[i].addEventListener('click', function() {
-        // Print a different message depending on the element
-        switch (this) {
-            case validar[0]:
-                intentos1++;                
-                localStorage.setItem('P1_Intentos1',intentos1);
-                break;
-            case validar[1]:
-                intentos2++;                
-                localStorage.setItem('P1_Intentos2',intentos2);
-                break;        
-            case validar[2]:
-                intentos3++;                
-                localStorage.setItem('P1_Intentos3',intentos3);
-                break;        
-        }
-    });
+  // Add a click event listener to each element
+  validar[i].addEventListener('click', function() {
+    // Print a different message depending on the element
+    switch (this) {
+      case validar[0]:
+          intentos1++;                
+          localStorage.setItem('P1_Intentos1',intentos1);
+          break;
+      case validar[1]:
+          intentos2++;                
+          localStorage.setItem('P1_Intentos2',intentos2);
+          break;        
+      case validar[2]:
+          intentos3++;                
+          localStorage.setItem('P1_Intentos3',intentos3);
+          break;        
+    }
+  });
 }
 
 
