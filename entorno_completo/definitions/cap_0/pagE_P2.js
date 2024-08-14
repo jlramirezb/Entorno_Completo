@@ -1531,15 +1531,39 @@ i = 4;
 //Itera a partir del cuarto div 
 for (let i = 3; i < divs.length; i++) {
   //Itera a partir del cuarto div con la clase 'boardfault' para agregar el texto "Pregunta"  
+  const divPregunta = document.createElement('div');
+  divPregunta.style.display = 'flex';
+  //divPregunta.style.alignItems = 'center';
   const spanPregunta = document.createElement('span');
+  spanPregunta.style.float = 'left';
   const spanPuntaje = document.createElement('span');
+  spanPuntaje.style.float = 'right';
   spanPregunta.textContent =  "P"+(i+1).toString(); 
-  let puntaje = (i===4 || i===6) ? '4 pts' : '3 pts';
+  let puntaje = (i===4 || i===6) ? '4 pts' : '3 pts'; 
   spanPuntaje.textContent = puntaje;
-  spanPuntaje.classList.add("oval-container");
+  //spanPuntaje.style.marginLeft = '10px';
+  //spanPuntaje.style.marginRight = '10px';
+  spanPregunta.classList.add('question-header2');
+  spanPuntaje.classList.add("oval-container");  
+  divPregunta.appendChild(spanPregunta);
+  divPregunta.appendChild(spanPuntaje);
+  divs[i].insertBefore(divPregunta, divs[i].firstChild); 
+
+  /*const divPregunta = document.createElement('div');
+  
+  
+   
+  //const spanPuntaje = document.createElement('span');
+  spanPuntaje.textContent = puntaje;  
   spanPregunta.classList.add('question-header');
+  spanPuntaje.classList.add("oval-container");   
+  divPregunta.appendChild(spanPregunta);
+  divPregunta.appendChild(spanPuntaje);
+  divs[i].appendChild(divPregunta);
+  spanPuntaje.classList.add("oval-container");  
   divs[i].insertBefore(spanPregunta, divs[i].firstChild);
-  divs[i].appendChild(spanPuntaje);
+  divs[i].insertBefore(spanPuntaje, divs[i].firstChild);  
+  //divs[i].appendChild(spanPuntaje);*/
 };
 
 

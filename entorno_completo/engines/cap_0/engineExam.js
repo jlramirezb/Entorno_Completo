@@ -1,65 +1,60 @@
 function seleccionarAleatorios(Pregunta, min, max,totalale) {
     if(Pregunta==='P1'){
-    console.log(min,max,totalale)
-    // Crear un array con los números consecutivos    
-    const numeros = [];
-    for (let i = min; i <= max; i++) {
-        numeros.push(i);
-    }
-
-    // Seleccionar 3 números aleatorios distintos
-    const seleccionados = [];
-    while (seleccionados.length < totalale) {
-        const indiceAleatorio = Math.floor(Math.random() * numeros.length);
-        const numeroAleatorio = numeros[indiceAleatorio];
-
-        // Verificar si el número ya está seleccionado
-        if (!seleccionados.includes(numeroAleatorio)) {
-            seleccionados.push(numeroAleatorio);
-            numeros.splice(indiceAleatorio, 1); // Eliminar el número del array
-        }
-    }
-
-    // Devolver los números seleccionados
-    return seleccionados;
-}
-else if (Pregunta==='P2'){
         console.log(min,max,totalale)
-    if (totalale % 2 !== 0) {
-        return "El valor de N debe ser par para tener igual cantidad de pares e impares.";
-    }
-    const resultado = [];
-    const pares = [];
-    const impares = [];
-
-    for (let i = min; i <= max; i++) {
-        if (i % 2 === 0) {
-            pares.push(i);
-        } else {
-            impares.push(i);
+        // Crear un array con los números consecutivos    
+        const numeros = [];
+        for (let i = min; i <= max; i++) {
+            numeros.push(i);
         }
-    }
-
-    // Generar números pares e impares dentro del rango
-    let quedanPares = totalale / 2;
-    let quedanImpares = totalale / 2;
-    while (resultado.length < totalale) {
-        const elegirPar = Math.random() < quedanPares / (quedanPares + quedanImpares); 
-        if (elegirPar && pares.length > 0) {
-            const indicePar = Math.floor(Math.random() * pares.length);
-            resultado.push(pares[indicePar]);
-            pares.splice(indicePar, 1);
-            quedanPares--;
-        } else if (impares.length > 0) {
-            const indiceImpar = Math.floor(Math.random() * impares.length);
-            resultado.push(impares[indiceImpar]);
-            impares.splice(indiceImpar, 1);
-            quedanImpares--;
+        // Seleccionar 3 números aleatorios distintos
+        const seleccionados = [];
+        while (seleccionados.length < totalale) {
+            const indiceAleatorio = Math.floor(Math.random() * numeros.length);
+            const numeroAleatorio = numeros[indiceAleatorio];
+            // Verificar si el número ya está seleccionado
+            if (!seleccionados.includes(numeroAleatorio)) {
+                seleccionados.push(numeroAleatorio);
+                numeros.splice(indiceAleatorio, 1); // Eliminar el número del array
+            }
         }
+        // Devolver los números seleccionados
+        return seleccionados;
     }
-    // Mezclar el arreglo para que los pares e impares no estén ordenados
-    return resultado.sort();
-}
+    else if (Pregunta==='P2'){
+        console.log(min,max,totalale)
+        if (totalale % 2 !== 0) {
+            return "El valor de N debe ser par para tener igual cantidad de pares e impares.";
+        }
+        const resultado = [];
+        const pares = [];
+        const impares = [];
+        for (let i = min; i <= max; i++) {
+            if (i % 2 === 0) {
+                pares.push(i);
+            } else {
+                impares.push(i);
+            }
+        }
+        // Generar números pares e impares dentro del rango
+        let quedanPares = totalale / 2;
+        let quedanImpares = totalale / 2;
+        while (resultado.length < totalale) {
+            const elegirPar = Math.random() < quedanPares / (quedanPares + quedanImpares); 
+            if (elegirPar && pares.length > 0) {
+                const indicePar = Math.floor(Math.random() * pares.length);
+                resultado.push(pares[indicePar]);
+                pares.splice(indicePar, 1);
+                quedanPares--;
+            } else if (impares.length > 0) {
+                const indiceImpar = Math.floor(Math.random() * impares.length);
+                resultado.push(impares[indiceImpar]);
+                impares.splice(indiceImpar, 1);
+                quedanImpares--;
+            }
+        }
+        // Mezclar el arreglo para que los pares e impares no estén ordenados
+        return resultado.sort();
+    }
 }
 
 
