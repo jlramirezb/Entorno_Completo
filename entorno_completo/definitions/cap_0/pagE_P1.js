@@ -201,7 +201,7 @@ let def = {
   artifact_17: {
     interval: '(−3,∞)',
     conditions: {
-      valRepre: ['−3<x<∞', '∞>x>−3', '−3≤x', 'x≥−3'],
+      valRepre: ['−3<x<∞', '∞>x>−3', '−3<x', 'x>−3'],
       board: [
         {
           pares: [['−3', '+∞']],
@@ -377,6 +377,10 @@ window.addEventListener('load', function() {
 
 let validar = document.querySelectorAll('.check');
 let intentos1, intentos2, intentos3;
+let mathfieldDiv1 = document.querySelectorAll('.divEngInt1');//Notacion de intervalo
+let mathfieldDiv2 = document.querySelectorAll('.BoardEngInt');//Representacion Recta Real
+let mathfieldDiv3 = document.querySelectorAll('.divEngInt2');//Notacion algebraica
+let mm1, mm3;
 for (let i = 0; i < validar.length; i++) {
   // Add a click event listener to each element
   validar[i].addEventListener('click', function() {
@@ -385,14 +389,205 @@ for (let i = 0; i < validar.length; i++) {
       case validar[0]:
           intentos1++;                
           localStorage.setItem('P1_Intentos1',intentos1);
+          mm1 = mathfieldDiv1[1].querySelectorAll('math-field');          
+          mm3 = mathfieldDiv3[1].querySelectorAll('math-field');
+          //Validando Notacion Intervalo
+          if(mm1[0]._internals.willValidate === true)
+          {
+            console.log('1 habilitado');
+            setTimeout(() => {
+              let clases = Array.from(mm1[0].classList);
+              //console.log(clases);
+              if(clases.includes('failed'))
+              {
+                console.log('Intervalo 1 fallo');
+                mm1[0].classList.remove('failed');
+              }
+              else if(clases.includes('pass'))
+              {
+                console.log('Intervalo 1 paso');
+                mm1[0].classList.remove('pass');
+              }
+            }, 10);
+          }
+          else
+          {
+            console.log('Intervalo 1 deshabilitado');
+          }
+          //Validando Recta Real
+          setTimeout(() => {
+              let clases = Array.from(mathfieldDiv2[1].classList);
+              console.log(clases);
+              if(clases.includes('pass'))
+              {
+                console.log('Recta Real 1 paso');
+                mathfieldDiv2[1].classList.remove('pass');
+              }
+              else if(clases.includes('failed'))
+              {
+                console.log('Recta Real 1 fallo');
+                mathfieldDiv2[1].classList.remove('failed');
+              }
+          }, 0);     
+          //Validando Notacion Algebraica
+          if(mm3[0]._internals.willValidate === true)
+            {
+              console.log('1 habilitado');
+              setTimeout(() => {
+                let clases = Array.from(mm3[0].classList);
+                console.log(clases);
+                if(clases.includes('failed'))
+                {
+                  console.log('Algebraico 1 fallo');
+                  mm3[0].classList.remove('failed');
+                }
+                else if(clases.includes('pass'))
+                  {
+                    console.log('Algebraico 1 paso');
+                    mm3[0].classList.remove('pass');
+                  }
+              }, 10);
+            }
+            else
+            {
+              console.log('Algebraico 1 deshabilitado');
+            }         
           break;
       case validar[1]:
           intentos2++;                
           localStorage.setItem('P1_Intentos2',intentos2);
+          mm1 = mathfieldDiv1[2].querySelectorAll('math-field');
+          mm3 = mathfieldDiv3[2].querySelectorAll('math-field');
+          console.log(mm3[0]);
+          //Validando Notacion Intervalo
+          if(mm1[0]._internals.willValidate === true)
+          {
+            console.log('2 habilitado');
+            setTimeout(() => {
+              let clases = Array.from(mm1[0].classList);
+              console.log(clases);
+              if(clases.includes('failed'))
+              {
+                console.log('Intervalo 2 fallo');
+                mm1[0].classList.remove('failed');
+              }
+              else if(clases.includes('pass'))
+                {
+                  console.log('Intervalo 2 paso');
+                  mm1[0].classList.remove('pass');
+                }
+            }, 10);
+          }
+          else
+          {
+            console.log('Intervalo 2 deshabilitado');
+          }
+          //Validando Recta Real
+          setTimeout(() => {
+            let clases = Array.from(mathfieldDiv2[2].classList);
+            console.log(clases);
+            if(clases.includes('pass'))
+            {
+              console.log('Recta Real 1 paso');
+              mathfieldDiv2[2].classList.remove('pass');
+            }
+            else if(clases.includes('failed'))
+            {
+              console.log('Recta Real 1 fallo');
+              mathfieldDiv2[2].classList.remove('failed');
+            }
+        }, 0);
+          //Validando Notacion Algebraica
+          if(mm3[0]._internals.willValidate === true)
+            {
+              console.log('2 habilitado');
+              setTimeout(() => {
+                let clases = Array.from(mm3[0].classList);
+                console.log(clases);
+                if(clases.includes('failed'))
+                {
+                  console.log('Algebraico 2 fallo');
+                  mm3[0].classList.remove('failed');
+                }
+                else if(clases.includes('pass'))
+                  {
+                    console.log('Algebraico 2 paso');
+                    mm3[0].classList.remove('pass');
+                  }
+              }, 10);
+            }
+            else
+            {
+              console.log('Algebraico 2 deshabilitado');
+            }         
           break;        
       case validar[2]:
           intentos3++;                
           localStorage.setItem('P1_Intentos3',intentos3);
+          mm1 = mathfieldDiv1[3].querySelectorAll('math-field');
+          mm3 = mathfieldDiv3[3].querySelectorAll('math-field');
+          console.log(mm1[0]);
+          //Validando Notacion Intervalo
+          if(mm1[0]._internals.willValidate === true)
+          {
+            console.log('1 habilitado');
+            setTimeout(() => {
+              let clases = Array.from(mm1[0].classList);
+              console.log(clases);
+              if(clases.includes('failed'))
+              {
+                console.log('Intervalo 3 fallo');
+                mm1[0].classList.remove('failed');
+              }
+              else if(clases.includes('pass'))
+                {
+                  console.log('Intervalo 3 paso');
+                  mm1[0].classList.remove('pass');
+                }
+            }, 10);
+          }
+          else
+          {
+            console.log('Intervalo 3 deshabilitado');
+          }          
+          //Validando Recta Real
+          setTimeout(() => {
+            let clases = Array.from(mathfieldDiv2[3].classList);
+            console.log(clases);
+            if(clases.includes('pass'))
+            {
+              console.log('Recta Real 1 paso');
+              mathfieldDiv2[3].classList.remove('pass');
+            }
+            else if(clases.includes('failed'))
+            {
+              console.log('Recta Real 1 fallo');
+              mathfieldDiv2[3].classList.remove('failed');
+            }
+          }, 0);
+          //Validando Notacion Algebraica
+          if(mm3[0]._internals.willValidate === true)
+            {
+              console.log('1 habilitado');
+              setTimeout(() => {
+                let clases = Array.from(mm3[0].classList);
+                console.log(clases);
+                if(clases.includes('failed'))
+                {
+                  console.log('Algebraico 3 fallo');
+                  mm3[0].classList.remove('failed');
+                }
+                else if(clases.includes('pass'))
+                  {
+                    console.log('Algebraico 3 paso');
+                    mm3[0].classList.remove('pass');
+                  }
+              }, 10);
+            }
+            else
+            {
+              console.log('Algebraico 3 deshabilitado');
+            }         
           break;        
     }
   });
