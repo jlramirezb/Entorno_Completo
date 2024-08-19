@@ -1798,3 +1798,13 @@ calcularResultadoTotal(evaluacion);
 
 // Mostrar el arreglo actualizado
 console.log(evaluacion);
+
+Datos = JSON.parse(localStorage.getItem('Datos'));
+console.log(Datos)
+
+document.getElementById('institucion').innerHTML = Datos.Instituto;
+document.getElementById('materia').innerHTML = Datos.Materia;
+document.getElementById('seccion').innerHTML = Datos.Seccion;
+document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
+document.getElementById('cedulaEstudiante').innerHTML = Datos.Estudiante.Cedula;
+document.getElementById('capitulo').innerHTML = Datos.Capitulo;
