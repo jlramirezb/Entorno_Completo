@@ -357,6 +357,7 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
 
 let programar = document.querySelector('.submit-btn');
 programar.addEventListener("click", e =>{
+    e.preventDefault();
     let position = localStorageSeleccionados("P1", 1, 24, 3);
     console.log(position);
     let position2 = localStorageSeleccionados("P2", 0, 31, 4);    
