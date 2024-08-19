@@ -516,6 +516,7 @@ function cDefReset(def, board, mode = 1) {
 };
 
 function cDefValidation(def, refKey, board) {
+  console.log(refKey);
 
   const conditions = def.conditions;
   let textError = conditions.texterror.text ?? 'Revisa tus respuestas \n ';
@@ -645,7 +646,7 @@ function cDefValidation(def, refKey, board) {
     if (typeof Android !== 'undefined' && typeof Android.sendData === 'function') {
       Android.sendData(JSON.stringify(cleanData(def, refKey)));
     } else {
-      sendData(cleanData(def, refKey));
+      //sendData(cleanData(def, refKey));
 
     };
 

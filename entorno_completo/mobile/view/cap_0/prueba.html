@@ -16,6 +16,7 @@
         <title>Examen Capítulo 0</title>
     </head>
     <body>
+        <div id="paginaExamen">
     <!--Pregunta 1-->
     <div class="containerNormal background-gray">
         <h1>Intervalos y puntos en el plano cartesiano</h1>
@@ -133,16 +134,38 @@
         </div>    
     </template>
 
+    <section class="center">
+        <button class="finalizar button">Botón Centrado</button>
+    </section>   
+        </div>
+
+    
+        <div id="resultadoPagina" style="display:none;">
+            <h2>Resultados del Examen</h2>
+            <table id="resultadoTabla" border="1">
+                <thead>
+                    <tr id="headerRow">
+                        <th>Pregunta</th>
+                        <!-- Las cabeceras de items se añadirán dinámicamente -->
+                    </tr>
+                </thead>
+                <tbody id="resultadoBody">
+                    <!-- Aquí se insertarán los resultados -->
+                </tbody>
+            </table>
+            <h3>Total: <span id="resultadoTotal"></span></h3>
+        </div>
+
     <!--Scripts-->
     <script src="../../../engines/genericEngines/mod_G.js"></script>
     <script src="../../../engines/genericEngines/progressEngine.js"></script>
     <script src="../../../engines/cap_0/engineInterval.js"></script>
     <script src="../../../libraries/mathLive.js"></script>
     <script src="../../../engines/cap_0/engineExam.js"></script>
-    <script src="../../../definitions/cap_0/pagE_P1.js"></script>
+    <!--<script src="../../../definitions/cap_0/pagE_P1.js"></script>-->
     <script src="../../../dist/engines/genericEngines/mathKeyboard.min.js"></script>
     <script src="../../../dist/engines/genericEngines/engineOwner.min.js"></script>
-    <script src="../../../dist/engines/cap_0/engineCartesian.min.js"></script>
-    <script src="../../../definitions/cap_0/pagE_P2.js"></script>
+    <script src="../../../engines/cap_0/engineCartesian.js"></script>
+    <script src="../../../definitions/cap_0/pagE.js"></script>
     </body> 
 </html>

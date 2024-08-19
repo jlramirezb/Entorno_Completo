@@ -2537,18 +2537,18 @@ button:active {
 /* Clase para cuando los artefactos se resuelven de manera correcta */
 .pass {
   /* background-color: rgba(73, 225, 94, 0.4) !important; */
-  background-color: var(--verdeLibro);
+  /* background-color: var(--verdeLibro);*/
   accent-color: var(--verdeLibro);
 }
 
 .passInLibrary {
   border: solid #000000 1px;
-  background-color: var(--passInLibrary);
+  /*background-color: var(--passInLibrary);*/
 }
 
 .failedInLibrary {
   border: solid #000000 1px;
-  background-color: var(--failedInLibrary);
+  /*background-color: var(--failedInLibrary);*/
 }
 
 .warnInLibrary {
@@ -2558,16 +2558,16 @@ button:active {
 
 .failed {
   /* background-color: rgba(203, 78, 31, 0.4) ; */
-  background-color: var(--failedColor);
+  /*background-color: var(--failedColor);*/
   accent-color: var(--failedColor);
 }
 
 .pass:hover {
-  background-color: var(--passInLibrary);
+  /*background-color: var(--passInLibrary);*/
 }
 
 .failed:hover {
-  background-color: var(--failedColor);
+  /*background-color: var(--failedColor);*/
   accent-color: var(--failedColor);
 }
 
