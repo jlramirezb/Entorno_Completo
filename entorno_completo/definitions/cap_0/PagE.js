@@ -1702,10 +1702,13 @@ let rDef={
 }
 
 let artefact = [];
-let position = localStorageSeleccionados("P1", 1, 24, 3);
+//let position = localStorageSeleccionados("P1", 1, 24, 3);
+[position, position2] = localStoragePreguntasExamen();
+console.log(position);
+console.log(position2);
 [def,artefact] = PintaSeleccionP1(position, def, 'P1');
 
-let position2 = localStorageSeleccionados("P2", 0, 31, 4);
+//let position2 = localStorageSeleccionados("P2", 0, 31, 4);
 let nuevoRdef = filtrarContents(rDef, position2);
 nuevoRdef = filtrarRdef(nuevoRdef, position2);
 rDef = nuevoRdef;
@@ -1756,7 +1759,49 @@ artefact.forEach((element) => {
 
     // Obtenemos el div con id "container-all"
     let containerAll = document.getElementById("container-all-artifact");
-    containerAll.appendChild(newDiv);  
+    containerAll.appendChild(newDiv);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const paginaExamen = document.getElementById('paginaExamen');
+    const notaprevia = document.getElementById('previous');
+    const notaafter = document.getElementById('after');
+    // Recupera los datos almacenados en localStorage
+    const Datos = JSON.parse(localStorage.getItem('Datos'));
+    console.log(Datos);
+
+    // Pinta los datos en el DOM
+    document.getElementById('institucion').innerHTML = Datos.Instituto;
+    document.getElementById('materia').innerHTML = Datos.Materia;
+    document.getElementById('seccion').innerHTML = Datos.Seccion;
+    document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
+    document.getElementById('cedulaEstudiante').innerHTML = Datos.Estudiante.Cedula;
+    document.getElementById('capitulo').innerHTML = Datos.Capitulo;
+
+    // Verifica y compara fechas
+    let fechaHoraInicio = Datos.fechaHoraInicio;
+    let fechaHoraCierre = Datos.fechaHoraCierre;
+
+    if (fechaHoraInicio && fechaHoraCierre) {
+        const fechaHoraInicioDate = new Date(fechaHoraInicio);
+        const fechaHoraCierreDate = new Date(fechaHoraCierre);
+        const currentDate = new Date();
+        
+        if (fechaHoraInicioDate > currentDate) {
+            console.log("La evaluación aún no ha comenzado.");
+            paginaExamen.style.display = 'none';
+            notaprevia.style.display = 'block';
+        } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
+            console.log("La evaluación ya ha comenzado o debería haber comenzado.");
+            paginaExamen.style.display = 'block';
+        } else {
+            console.log("La evaluación ya ha finalizado o debería haber finalizado.");
+            paginaExamen.style.display = 'none';
+            notaafter.style.display = 'block';
+        }
+    } else {
+        console.log("No hay una fecha de inicio almacenada.");
+    }
 });
 
 // Selecciona todos los elementos div con la clase 'boardfault'
@@ -1799,12 +1844,4 @@ calcularResultadoTotal(evaluacion);
 // Mostrar el arreglo actualizado
 console.log(evaluacion);
 
-Datos = JSON.parse(localStorage.getItem('Datos'));
-console.log(Datos)
 
-document.getElementById('institucion').innerHTML = Datos.Instituto;
-document.getElementById('materia').innerHTML = Datos.Materia;
-document.getElementById('seccion').innerHTML = Datos.Seccion;
-document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
-document.getElementById('cedulaEstudiante').innerHTML = Datos.Estudiante.Cedula;
-document.getElementById('capitulo').innerHTML = Datos.Capitulo;
