@@ -355,25 +355,42 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
     return seleccionados;
 }
 
-let programar = document.querySelector('.submit-btn');
-programar.addEventListener("click", e =>{
-    e.preventDefault();
+//let programar = document.querySelector('.submit-btn');
+document.getElementById('evaluacionForm').addEventListener('submit', function(event) {
+//programar.addEventListener("click", e =>{
+    event.preventDefault();
+    // Capturar los valores del formulario
+    const titulo = document.getElementById('titulo').value;
+    const capitulo = document.getElementById('capitulo').value;
+    const fechaInicio = document.getElementById('fecha-inicio').value;
+    const horaInicio = document.getElementById('hora-inicio').value;
+    const fechaCierre = document.getElementById('fecha-cierre').value;
+    const horaCierre = document.getElementById('hora-cierre').value;
+    const nota = document.getElementById('nota').value;
+
     let position = localStorageSeleccionados("P1", 1, 24, 3);
     console.log(position);
     let position2 = localStorageSeleccionados("P2", 0, 31, 4);    
     console.log(position2);
+
+    const Datos = {
+        Instituto: "Nombre del Instituto",
+        Materia: "Nombre de la Materia",
+        Seccion: "Sección del Curso",
+        Estudiante: {
+            Nombre: "Nombre del Estudiante",
+            Cedula: "Cedula del Estudiante"
+        },
+        Capitulo: "Capítulo que se está evaluando",
+        fechaHoraInicio: `${fechaInicio} ${horaInicio}`, // Combina fecha y hora de inicio
+        fechaHoraCierre: `${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
+        SeleccionadosP1: position,
+        SeleccionadosP2: position2
+    }
+
+    // Almacenar el objeto en localStorage
+    localStorage.setItem('Datos', JSON.stringify(Datos));    
 })
 
-const Datos = {
-    Instituto: "Nombre del Instituto",
-    Materia: "Nombre de la Materia",
-    Seccion: "Sección del Curso",
-    Estudiante: {
-        Nombre: "Nombre del Estudiante",
-        Cedula: "Cedula del Estudiante"
-    },
-    Capitulo: "Capítulo que se está evaluando"
-};
 
-// Almacenar el objeto en localStorage
-localStorage.setItem('Datos', JSON.stringify(Datos));
+

@@ -1002,7 +1002,7 @@ let rDef={
         ]
     },
     artifact_1: {
-        textBottom: '(x, -y), (-x, y), (y, x)',
+        textBottom: '(x, -y),(-x, y),(y, x)',
         defBoard: 'board_0',
         defaultInputs: [
             {
@@ -1023,7 +1023,7 @@ let rDef={
     },
     artifact_2: {
         defBoard: 'board_4',
-        textBottom: '(-x,-y), (x,-y), (y,x)',
+        textBottom: '(-x,-y),(x,-y),(y,x)',
         defaultInputs: [
             {
                 position: [c[5].x, c[5].y],
@@ -1043,7 +1043,7 @@ let rDef={
     },
     artifact_3: {
         defBoard: 'board_8',
-        textBottom: '(-x,y), (x,-y), (y,x)',
+        textBottom: '(-x,y),(x,-y),(y,x)',
         defaultInputs: [
             {
                 position: [c[9].x, c[9].y],
@@ -1063,7 +1063,7 @@ let rDef={
     },
     artifact_4: {
         defBoard: 'board_12',
-        textBottom: '(x, -y), (-x, y), (y, x)',    
+        textBottom: '(x, -y),(-x, y),(y, x)',    
         defaultInputs: [
             {
                 position: [c[13].x, c[13].y],
@@ -1083,7 +1083,7 @@ let rDef={
     },
     artifact_5: {
         defBoard: 'board_16',
-        textBottom: '(-x, -y), (-x, y), (2y, x)',
+        textBottom: '(-x, -y),(-x, y),(2y, x)',
         //cambie esta pregunta se superponian dos puntos
         defaultInputs: [
             {
@@ -1104,7 +1104,7 @@ let rDef={
     },
     artifact_6: {
         defBoard: 'board_20',
-        textBottom: '(x, -y), (-x, y), (y, x)',    
+        textBottom: '(x, -y),(-x, y),(y, x)',    
         defaultInputs: [
             {
                 position: [c[21].x, c[21].y],
@@ -1125,7 +1125,7 @@ let rDef={
     artifact_7: {
         // textTop: "Este es el de arriba",
         defBoard: 'board_24',
-        textBottom: '(x, -y), (-x, y), (y, x)',
+        textBottom: '(x, -y),(-x, y),(y, x)',
         defaultInputs: [
             {
                 position: [c[25].x, c[25].y],
@@ -1146,7 +1146,7 @@ let rDef={
     artifact_8: {
       // textTop: "Este es el de arriba",
         defBoard: 'board_28',
-        textBottom: '(-x, y), (x, -y), (y, x)',  
+        textBottom: '(-x, y),(x, -y),(y, x)',  
         defaultInputs: [
             {
                 position: [c[29].x, c[29].y],
@@ -1166,7 +1166,7 @@ let rDef={
     },
     //Fin tipo 1
     artifact_9: {
-        textBottom: '(b,0), (a, a), (-a, -b), (a, -a)',
+        textBottom: '(b,0),(a, a),(-a, -b),(a, -a)',
         defBoard: 'board_1',
         defaultInputs: [
             {
@@ -1193,7 +1193,7 @@ let rDef={
     artifact_10: {
         //La pregunta (a,-a) fue modificada por coincidencia con el punto (b,b) [Pregunta original (-a,-a)]
         defBoard: 'board_5',
-        textBottom: '(b,0), (b, b), (-a, -b), (a, -a)',
+        textBottom: '(b,0),(b, b),(-a, -b),(a, -a)',
         defaultInputs: [
             {
                 position: [0, c[6].y],
@@ -1217,7 +1217,7 @@ let rDef={
         },
     },  
     artifact_11: {
-        textBottom: '(-a,0), (a,b), (-a,b), (b,-b)',
+        textBottom: '(-a,0),(a,b),(-a,b),(b,-b)',
         defBoard: 'board_9',
         defaultInputs: [
             {
@@ -1243,7 +1243,7 @@ let rDef={
     },
     artifact_12: {
         defBoard: 'board_13',
-        textBottom: '(-b,0), (-a, -b), (a, -a), (b, -a)',
+        textBottom: '(-b,0),(-a, -b),(a, -a),(b, -a)',
         defaultInputs: [
             {
                 position: [0, c[14].y],
@@ -1268,7 +1268,7 @@ let rDef={
     },
     artifact_13: {
         defBoard: 'board_17',
-        textBottom: '(b,0), (a,a), (-a, -b), (-a, a)',
+        textBottom: '(b,0),(a,a),(-a, -b),(-a, a)',
         defaultInputs: [
             {
                 position: [0, c[18].y],
@@ -1293,7 +1293,7 @@ let rDef={
     },
     artifact_14: {
         defBoard: 'board_21',
-        textBottom: '(0,a), (a,-a), (a, -b), (-a, b)',
+        textBottom: '(0,a),(a,-a),(a, -b),(-a, b)',
         defaultInputs: [
             {
                 position: [0, c[22].y],
@@ -1318,7 +1318,7 @@ let rDef={
     },
     artifact_15: {
         defBoard: 'board_25',
-        textBottom: '(b,0), (a, a), (-a, -b), (b, -b)',
+        textBottom: '(b,0),(a, a),(-a, -b),(b, -b)',
         defaultInputs: [
             {
                 position: [0, c[26].y],
@@ -1343,7 +1343,7 @@ let rDef={
     },
     artifact_16: {
         defBoard: 'board_29',
-        textBottom: '(0,a), (b, b), (-a, -b), (a, -a)',
+        textBottom: '(0,a),(b, b),(-a, -b),(a, -a)',
         defaultInputs: [
             {
                 position: [0, c[30].y],
@@ -1429,7 +1429,7 @@ let rDef={
     },
     artifact_20: {
         defBoard: 'board_14',
-        textBottom: '(x-2.5, y), (x+2.5, y), (x, y-1)',
+        textBottom: '(x-2.5, y),(x+2.5, y),(x, y-1)',
         defaultInputs: [
             {//1
                 position: [c[15].x, c[15].y],
@@ -1451,7 +1451,7 @@ let rDef={
     },
     artifact_21: {
         defBoard: 'board_18',
-        textBottom: '(x-1, y), (x+1, y), (x, y-2)',    
+        textBottom: '(x-1, y),(x+1, y),(x, y-2)',    
         defaultInputs: [
             {
                 position: [c[19].x, c[19].y],
@@ -1471,7 +1471,7 @@ let rDef={
     },
     artifact_22: {
         defBoard: 'board_22',
-        textBottom: '(x-2, y), (x+2, y), (x, y-2.5)',    
+        textBottom: '(x-2, y),(x+2, y),(x, y-2.5)',    
         defaultInputs: [
             {
                 position: [c[23].x, c[23].y],
@@ -1491,7 +1491,7 @@ let rDef={
     },
     artifact_23: {
         defBoard: 'board_26',
-        textBottom: '(x-2, y), (x+2, y), (x, y-0.75)',
+        textBottom: '(x-2, y),(x+2, y),(x, y-0.75)',
         defaultInputs: [
             {//1
                 position: [c[27].x, c[27].y],
@@ -1511,7 +1511,7 @@ let rDef={
     },
     artifact_24: {
         defBoard: 'board_30',
-        textBottom: '(x-2, y), (x, y+1), (x, y-1)',
+        textBottom: '(x-2, y),(x, y+1),(x, y-1)',
         defaultInputs: [
             {//1
                 position: [c[31].x, c[31].y],
@@ -1595,7 +1595,7 @@ let rDef={
     }, 
     artifact_28: {
         defBoard: 'board_15',
-        textBottom: '(2x, -y), (-x, y), (-2x, y), (x/2, y/2)',
+        textBottom: '(2x, -y),(-x, y),(-2x, y),(x/2, y/2)',
         defaultInputs: [
             {//11
                 position: [c[16].x, c[16].y],
@@ -1616,7 +1616,7 @@ let rDef={
     },
     artifact_29: {
         defBoard: 'board_19',
-        textBottom: '(-2x, y), (x, -2y), (-x, -y), (x/2, y/2)',    
+        textBottom: '(-2x, y),(x, -2y),(-x, -y),(x/2, y/2)',    
         defaultInputs: [
             {
                 position: [c[20].x, c[20].y],
@@ -1637,7 +1637,7 @@ let rDef={
     },
     artifact_30: {
         defBoard: 'board_23',
-        textBottom: '(3x, y), (x, 2y), (-3x, -y), (x/2, y/2)',
+        textBottom: '(3x, y),(x, 2y),(-3x, -y),(x/2, y/2)',
         defaultInputs: [
             {
                 position: [c[24].x, c[24].y],
@@ -1658,7 +1658,7 @@ let rDef={
     },
     artifact_31: {
         defBoard: 'board_27',
-        textBottom: '(-x, -y), (x, 2y), (2x, y), (x/2, y/2)',
+        textBottom: '(-x, -y),(x, 2y),(2x, y),(x/2, y/2)',
         defaultInputs: [
             {//11
                 position: [c[28].x, c[28].y],
@@ -1679,7 +1679,7 @@ let rDef={
     },
     artifact_32: {
         defBoard: 'board_31',
-        textBottom: '(-2x, -y), (x, 3y), (2x, y), (x/2, y/2)',
+        textBottom: '(-2x, -y),(x, 3y),(2x, y),(x/2, y/2)',
         defaultInputs: [
             {//11
                 position: [c[32].x, c[32].y],

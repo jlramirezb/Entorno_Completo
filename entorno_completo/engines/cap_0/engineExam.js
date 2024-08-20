@@ -43,29 +43,32 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
             if (localStorage.getItem('SeleccionadosP1')===null){
                 seleccionados = seleccionarAleatorios('P1',min, max, totalale);
                 localStorage.setItem('SeleccionadosP1',seleccionados);
-                //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
             }
             else{
                 seleccionados = localStorage.getItem('SeleccionadosP1');
                 seleccionados = seleccionados.split(',').map(Number);
-                //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
             }
             break;
         case 'P2':
             if (localStorage.getItem('SeleccionadosP2')===null){
                 seleccionados = seleccionarAleatorios('P2', min, max, totalale);
                 localStorage.setItem('SeleccionadosP2',seleccionados);
-                //console.log(1,seleccionados); // Ejemplo: [17, 8, 23]
             }
             else{
                 seleccionados = localStorage.getItem('SeleccionadosP2');
                 seleccionados = seleccionados.split(',').map(Number);
-                //console.log(2,seleccionados); // Ejemplo: [17, 8, 23]
             }
             break;
     }        
     return seleccionados;
 }
+
+function localStoragePreguntasExamen(){
+    Datos = JSON.parse(localStorage.getItem('Datos'));
+    let position = Datos.SeleccionadosP1;
+    let position2 = Datos.SeleccionadosP2;
+    return [position,position2];
+}    
 
 function filtrarObjeto(objetoDef, arregloPropiedades) {
     const nuevoObjeto = {};
@@ -266,7 +269,25 @@ function valida(validar) {
         const Previousmathfield = document.querySelectorAll('.BoardEngInt math-field.colorInput').length; //previousMathfield        
         indx = 0;
         let kk = startIndex+Previousmathfield;
-        setTimeout(() => {                
+        let aux = Array(rDef[propiedadesRdef].textBottom)[0];
+        aux = aux.split('),(');
+        aux = aux.map((elem, index) => {
+            if (index === 0) {
+                return elem + ")";
+            } else if (index === aux.length - 1) {
+                return "(" + elem;
+            } else {
+                return "(" + elem + ")";
+            }
+        });
+        let numpunts = aux.length;
+        setTimeout(() => {        
+            if(endIndex > numpunts)
+            {
+                console.log('Hay mas respuestas que puntos');
+                endIndex = numpunts;
+                console.log('Puntos:', endIndex);
+            }
             for(i=0;i<endIndex;i++){              
                 const classList = colorInputs[i+kk].classList;            
                 if(classList.contains('passInLibrary'))
@@ -299,22 +320,22 @@ function valida(validar) {
                     handleValidation(3, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,2);                    
                     break;
                 case validar[3]:
-                    handleColorInputs(1, rDef[propiedadesRdef[0]].points.length, propiedadesRdef, resultadoExamen,3);                    
+                    handleColorInputs(1, rDef[propiedadesRdef[0]].points.length, propiedadesRdef[0], resultadoExamen,3);                    
                     //intentos12++;
                     //localStorage.setItem('P2_Intentos12', intentos12);
                     break;
                 case validar[4]:
-                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + 3, rDef[propiedadesRdef[1]].points.length, propiedadesRdef, resultadoExamen,4);                    
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + 3, rDef[propiedadesRdef[1]].points.length, propiedadesRdef[1], resultadoExamen,4);                    
                     //intentos22++;
                     //localStorage.setItem('P2_Intentos22', intentos22);
                     break;
                 case validar[5]:
-                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + 4, rDef[propiedadesRdef[2]].points.length, propiedadesRdef, resultadoExamen,5);                    
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + 4, rDef[propiedadesRdef[2]].points.length, propiedadesRdef[2], resultadoExamen,5);                    
                     //intentos32++;
                     //localStorage.setItem('P2_Intentos32', intentos32);
                     break;
                 case validar[6]:
-                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + rDef[propiedadesRdef[2]].points.length + 5, rDef[propiedadesRdef[3]].points.length, propiedadesRdef, resultadoExamen,6);                    
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + rDef[propiedadesRdef[2]].points.length + 5, rDef[propiedadesRdef[3]].points.length, propiedadesRdef[3], resultadoExamen,6);                    
                     //intentos42++;
                     //localStorage.setItem('P2_Intentos42', intentos42);
                     break;
