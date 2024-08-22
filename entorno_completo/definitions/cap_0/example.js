@@ -1793,6 +1793,12 @@ document.addEventListener('DOMContentLoaded', function() {
             notaprevia.style.display = 'block';
         } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
             console.log("La evaluación ya ha comenzado o debería haber comenzado.");
+            fechaInicioEst = localStorage.getItem('fechaInicioEst');
+            if(fechaInicioEst === null)
+            {
+                fechaInicioEst = currentDate;
+                localStorage.setItem('fechaInicioEst',fechaInicioEst);
+            }
             paginaExamen.style.display = 'block';
         } else {
             console.log("La evaluación ya ha finalizado o debería haber finalizado.");

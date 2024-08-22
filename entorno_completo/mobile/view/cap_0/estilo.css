@@ -95,7 +95,7 @@
 }
 
 .finalizar{
-    background-color: #007bff;
+    background-color: var(--azulMedio);
     color: #fff;
     border: none;
     border-radius: 5px;

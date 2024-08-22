@@ -154,13 +154,13 @@ function inicializarExamen() {
         console.log("No se encontraron puntuaciones previas. Iniciando nuevo examen.");      
         // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas
         const nuevoResultado = [];
-        nuevoResultado.push({id:'P1',items:[0,0]});
-        nuevoResultado.push({id:'P2',items:[0,0]});
-        nuevoResultado.push({id:'P3',items:[0,0]});
-        nuevoResultado.push({id:'P4',items:[0,0,0]});
-        nuevoResultado.push({id:'P5',items:[0,0,0,0]});
-        nuevoResultado.push({id:'P6',items:[0,0,0]});
-        nuevoResultado.push({id:'P7',items:[0,0,0,0]});
+        nuevoResultado.push({id:'P1',items:[0,0],tiempo:0});
+        nuevoResultado.push({id:'P2',items:[0,0],tiempo:0});
+        nuevoResultado.push({id:'P3',items:[0,0],tiempo:0});
+        nuevoResultado.push({id:'P4',items:[0,0,0],tiempo:0});
+        nuevoResultado.push({id:'P5',items:[0,0,0,0],tiempo:0});
+        nuevoResultado.push({id:'P6',items:[0,0,0],tiempo:0});
+        nuevoResultado.push({id:'P7',items:[0,0,0,0],tiempo:0});
         nuevoResultado.push({id:'NF',resultado:0});
         return nuevoResultado; // Devolver el nuevo objeto inicializado
     }
@@ -172,10 +172,16 @@ function valida(validar) {
     /*let intentos1 = 0, intentos2 = 0, intentos3 = 0;
     let intentos12 = 0, intentos22 = 0, intentos32 = 0, intentos42 = 0;*/
 
-    const handleValidation = (index, mathfieldDiv1, mathfieldDiv2, mathfieldDiv3, resultadoExamen, idx) => 
+    const handleValidation = (index, mathfieldDiv1, mathfieldDiv2, mathfieldDiv3, resultadoExamen,artefact, idx) => 
     {
         const mm1 = mathfieldDiv1[index].querySelectorAll('math-field');
         const mm3 = mathfieldDiv3[index].querySelectorAll('math-field');
+
+        /*console.log(def[artefact[0]].timeInteraction);
+        console.log(def[artefact[1]].timeInteraction);
+        console.log(def[artefact[2]].timeInteraction);*/
+        resultadoExamen[idx].tiempo = def[artefact[idx]].timeInteraction
+        console.log(resultadoExamen[idx].tiempo)
 
         // Validating Notacion Intervalo
         if (mm1[0]._internals.willValidate) 
@@ -267,6 +273,12 @@ function valida(validar) {
     const handleColorInputs = (startIndex, endIndex, propiedadesRdef, resultadoExamen,idx) => {
         const colorInputs = document.querySelectorAll('math-field.colorInput');
         const Previousmathfield = document.querySelectorAll('.BoardEngInt math-field.colorInput').length; //previousMathfield        
+
+        resultadoExamen[idx].tiempo+=rDef[propiedadesRdef].timeInteraction;
+
+        console.log(idx ,'===', resultadoExamen[idx].tiempo);
+        
+        
         indx = 0;
         let kk = startIndex+Previousmathfield;
         let aux = Array(rDef[propiedadesRdef].textBottom)[0];
@@ -311,13 +323,13 @@ function valida(validar) {
         validar[i].addEventListener('click', function() {
             switch (this) {
                 case validar[0]:
-                    handleValidation(1, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,0);                    
+                    handleValidation(1, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen, artefact,0);                    
                     break;
                 case validar[1]:
-                    handleValidation(2, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,1);                    
+                    handleValidation(2, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,artefact,1);                    
                     break;
                 case validar[2]:
-                    handleValidation(3, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,2);                    
+                    handleValidation(3, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,artefact,2);                    
                     break;
                 case validar[3]:
                     handleColorInputs(1, rDef[propiedadesRdef[0]].points.length, propiedadesRdef[0], resultadoExamen,3);                    
@@ -409,6 +421,11 @@ function mostrarResultados() {
     thTotal.textContent = 'Total';
     headerRow.appendChild(thTotal);
 
+    //Agrega una columna para el tiempo por fila
+    const thTiempo = document.createElement('th');
+    thTiempo.textContent = 'Tiempo';
+    headerRow.appendChild(thTiempo);
+
     // Generar las filas de resultados
     examData.forEach(pregunta => {
         if (pregunta.items && Array.isArray(pregunta.items)) {
@@ -440,6 +457,11 @@ function mostrarResultados() {
             celdaTotal.textContent = totalFila;
             fila.appendChild(celdaTotal);
 
+            //Agrega celda para el tiempo de la fila
+            const celdaTiempo = document.createElement('td');
+            celdaTiempo.textContent = pregunta.tiempo;
+            fila.appendChild(celdaTiempo);
+
             resultadoBody.appendChild(fila);
         }
     });
@@ -459,9 +481,19 @@ function mostrarResultados() {
 }
 // Evento de click para el botón 'Finalizar'
 document.querySelector('.finalizar').addEventListener('click', () => {
+    //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
+    const spanTime = document.getElementById('totalTime');
+    const startDate = new Date(localStorage.getItem('fechaInicioEst'));
+    const endDate = new Date();
+    let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
+    timeElapsed = timeElapsed.toFixed(2);
+    spanTime.textContent = timeElapsed + ' min';
+    console.log(startDate);
+    console.log(endDate);
+    console.log(timeElapsed);
     mostrarResultados();
     localStorage.removeItem(LOCAL_STORAGE_KEY);
     localStorage.removeItem('SeleccionadosP1');
     localStorage.removeItem('SeleccionadosP2');
-    // Aquí podrías ocultar la página original o realizar otras acciones
 });
+
