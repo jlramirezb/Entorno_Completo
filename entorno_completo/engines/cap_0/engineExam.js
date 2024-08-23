@@ -423,7 +423,7 @@ function mostrarResultados() {
 
     //Agrega una columna para el tiempo por fila
     const thTiempo = document.createElement('th');
-    thTiempo.textContent = 'Tiempo';
+    thTiempo.textContent = 'Tiempo (seg)';
     headerRow.appendChild(thTiempo);
 
     // Generar las filas de resultados
@@ -495,5 +495,6 @@ document.querySelector('.finalizar').addEventListener('click', () => {
     localStorage.removeItem(LOCAL_STORAGE_KEY);
     localStorage.removeItem('SeleccionadosP1');
     localStorage.removeItem('SeleccionadosP2');
+    localStorage.removeItem('fechaInicioEst');
 });
 
