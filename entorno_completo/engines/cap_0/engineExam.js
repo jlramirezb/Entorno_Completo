@@ -166,16 +166,18 @@ function inicializarExamen() {
     }
 }
 
-const resultadoExamen = inicializarExamen();
+//const resultadoExamen = inicializarExamen();
 
-function valida(validar) {
+function valida(validar,resultadoExamen,def,artefact) {
     /*let intentos1 = 0, intentos2 = 0, intentos3 = 0;
     let intentos12 = 0, intentos22 = 0, intentos32 = 0, intentos42 = 0;*/
 
-    const handleValidation = (index, mathfieldDiv1, mathfieldDiv2, mathfieldDiv3, resultadoExamen,artefact, idx) => 
+    const handleValidation = (index, mathfieldDiv1, mathfieldDiv2, mathfieldDiv3, resultadoExamen,artefact,def, idx) => 
     {
         const mm1 = mathfieldDiv1[index].querySelectorAll('math-field');
         const mm3 = mathfieldDiv3[index].querySelectorAll('math-field');
+        const newDiv = document.querySelectorAll('#newDiv');
+        newDiv[idx].style.borderColor = 'yellow';
 
         /*console.log(def[artefact[0]].timeInteraction);
         console.log(def[artefact[1]].timeInteraction);
@@ -185,26 +187,25 @@ function valida(validar) {
 
         // Validating Notacion Intervalo
         if (mm1[0]._internals.willValidate) 
-        {            
-            console.log('1 habilitado');
+        {   
             setTimeout(() => 
             {
                 clases = Array.from(mm1[0].classList);              
                 if(clases.includes('failed'))
                 {
-                    console.log('Intervalo 1 fallo');
+                    console.log('Intervalo ',idx+1,' fallo');
                     resultadoExamen[idx].items[0] = 0;
                     mm1[0].classList.remove('failed');
                 }
                 else if(clases.includes('pass'))
                 {
-                    console.log('Intervalo 1 paso');
+                    console.log('Intervalo ',idx+1,' paso');
                     resultadoExamen[idx].items[0] = 1;                    
                     mm1[0].classList.remove('pass');
                 }
                 else
                 {
-                    console.log('Intervalo 1 no respondio');
+                    console.log('Intervalo ',idx+1,' no respondio');
                     resultadoExamen[idx].items[0] = 0;                     
                 }
                 guardarResultados(resultadoExamen);                    
@@ -212,7 +213,7 @@ function valida(validar) {
         }
         else
         {
-            console.log('Intervalo 1 deshabilitado');
+            console.log('Intervalo ',idx+1,' deshabilitado');
         }
 
         // Validating Recta Real
@@ -220,19 +221,19 @@ function valida(validar) {
             clases = Array.from(mathfieldDiv2[index].classList);            
             if(clases.includes('pass'))
             {
-                console.log('Recta Real 1 paso');
+                console.log('Recta Real ',idx+1,' paso');
                 resultadoExamen[idx].items[1] = 1;
                 mathfieldDiv2[index].classList.remove('pass');                
             }
             else if(clases.includes('failed'))
             {
-                console.log('Recta Real 1 fallo');
+                console.log('Recta Real ',idx+1,' fallo');
                 resultadoExamen[idx].items[1] = 0;
                 mathfieldDiv2[index].classList.remove('failed');                
             }
             else
             {
-                console.log('Recta Real 1 no respondio');
+                console.log('Recta Real ',idx+1,' no respondio');
                 resultadoExamen[idx].items[1] = 0;
             }
             guardarResultados(resultadoExamen);               
@@ -240,25 +241,24 @@ function valida(validar) {
 
         // Validating Notacion Algebraica
         if (mm3[0]._internals.willValidate) {
-            // Validation logic
-            console.log('2 habilitado');
+            // Validation logic            
             setTimeout(() => {
                 clases = Array.from(mm3[0].classList);
                 //console.log(clases);
                 if(clases.includes('failed'))
                 {
-                    console.log('Algebraico 2 fallo');
+                    console.log('Algebraico ',idx+1,' fallo');
                     resultadoExamen[idx].items[0] = 0;                
                     mm3[0].classList.remove('failed');
                 }
                 else if(clases.includes('pass'))
                 {
-                    console.log('Algebraico 2 paso');
+                    console.log('Algebraico ',idx+1,' paso');
                     resultadoExamen[idx].items[0] = 1;                    
                     mm3[0].classList.remove('pass');
                 }
                 else{
-                    console.log('Algebraico 2 no respondio');
+                    console.log('Algebraico ',idx+1,' no respondio');
                     resultadoExamen[idx].items[0] = 0;                    
                 }
                 guardarResultados(resultadoExamen);
@@ -266,13 +266,16 @@ function valida(validar) {
         }
         else
         {
-            console.log('Algebraico 2 deshabilitado');
+            console.log('Algebraico ',idx+1,' deshabilitado');
         }         
     };
 
     const handleColorInputs = (startIndex, endIndex, propiedadesRdef, resultadoExamen,idx) => {
         const colorInputs = document.querySelectorAll('math-field.colorInput');
         const Previousmathfield = document.querySelectorAll('.BoardEngInt math-field.colorInput').length; //previousMathfield        
+
+        borderDefault = document.querySelectorAll('.borderDefault');
+        borderDefault[idx].style.borderColor = 'yellow';
 
         resultadoExamen[idx].tiempo+=rDef[propiedadesRdef].timeInteraction;
 
@@ -323,13 +326,13 @@ function valida(validar) {
         validar[i].addEventListener('click', function() {
             switch (this) {
                 case validar[0]:
-                    handleValidation(1, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen, artefact,0);                    
+                    handleValidation(1, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen, artefact,def,0);                    
                     break;
                 case validar[1]:
-                    handleValidation(2, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,artefact,1);                    
+                    handleValidation(2, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,artefact,def,1);                    
                     break;
                 case validar[2]:
-                    handleValidation(3, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,artefact,2);                    
+                    handleValidation(3, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,artefact,def,2);                    
                     break;
                 case validar[3]:
                     handleColorInputs(1, rDef[propiedadesRdef[0]].points.length, propiedadesRdef[0], resultadoExamen,3);                    
@@ -357,7 +360,50 @@ function valida(validar) {
     return resultadoExamen;
 }
 
-console.log('Puntuaciones:', resultadoExamen);
+function cleanArt(resets,resultadoExamen){
+    const newDiv = document.querySelectorAll('#newDiv');
+    borderDefault = document.querySelectorAll('.borderDefault');
+    for (let i = 0; i < resets.length; i++) {
+        resets[i].addEventListener('click', function() {
+            switch (this) {
+                case resets[0]:
+                    newDiv[i].style.borderColor = 'black';
+                    resultadoExamen[i].items = [0,0];
+                    break;
+                case resets[1]:                    
+                    newDiv[i].style.borderColor = 'black';
+                    resultadoExamen[i].items = [0,0];
+                    break;
+                case resets[2]:
+                    newDiv[i].style.borderColor = 'black';
+                    resultadoExamen[i].items = [0,0];
+                    break;
+                case resets[3]:
+                    borderDefault[i].style.borderColor = '#217e9d';
+                    resultadoExamen[i].items = [0,0,0];
+                    break;
+                case resets[4]:
+                    borderDefault[i].style.borderColor = '#217e9d';
+                    resultadoExamen[i].items = [0,0,0,0];
+                    break;
+                case resets[5]:
+                    borderDefault[i].style.borderColor = '#217e9d';
+                    resultadoExamen[i].items = [0,0,0];
+                    break;
+                case resets[6]:
+                    borderDefault[i].style.borderColor = '#217e9d';
+                    resultadoExamen[i].items = [0,0,0,0];
+                    break;
+            }
+            setTimeout(() => {
+                guardarResultados(resultadoExamen);
+            }, 0);
+        });
+    }    
+    return resultadoExamen;
+}
+
+//console.log('Puntuaciones:', resultadoExamen);
 
 // Función asíncrona para guardar los resultados en Local Storage
 async function guardarResultados(resultados) {
@@ -389,9 +435,9 @@ function calcularResultadoTotal(data) {
     return data; // Devolver el arreglo actualizado (opcional)
 }
 
-let examData = resultadoExamen;
+//let examData = resultadoExamen;
 // Función que calcula el resultado total y muestra los resultados
-function mostrarResultados() {
+function mostrarResultados(examData) {
     const paginaExamen = document.getElementById('paginaExamen');
     const resultadoPagina = document.getElementById('resultadoPagina');
     const resultadoTabla = document.getElementById('resultadoTabla');
@@ -482,6 +528,7 @@ function mostrarResultados() {
 // Evento de click para el botón 'Finalizar'
 document.querySelector('.finalizar').addEventListener('click', () => {
     //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
+    let examData = inicializarExamen();
     const spanTime = document.getElementById('totalTime');
     const startDate = new Date(localStorage.getItem('fechaInicioEst'));
     const endDate = new Date();
@@ -491,7 +538,7 @@ document.querySelector('.finalizar').addEventListener('click', () => {
     console.log(startDate);
     console.log(endDate);
     console.log(timeElapsed);
-    mostrarResultados();
+    mostrarResultados(examData);
     localStorage.removeItem(LOCAL_STORAGE_KEY);
     localStorage.removeItem('SeleccionadosP1');
     localStorage.removeItem('SeleccionadosP2');

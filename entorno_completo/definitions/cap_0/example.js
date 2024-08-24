@@ -1708,16 +1708,35 @@ console.log(position);
 console.log(position2);
 [def,artefact] = PintaSeleccionP1(position, def, 'P1');
 
+// Obtener las claves, ordenarlas y luego renombrarlas
+let keys = Object.keys(def).sort((a, b) => {
+    return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]);
+});
+
+let newObj = {};
+keys.forEach((key, index) => {
+    let newKey = `artifact_${index + 1}`;
+    newObj[newKey] = def[key];
+});
+let defaux= newObj;
+
+console.log(defaux);
+let artefactaux=['artifact_1','artifact_2','artifact_3'];
+
+
 //let position2 = localStorageSeleccionados("P2", 0, 31, 4);
 let nuevoRdef = filtrarContents(rDef, position2);
 nuevoRdef = filtrarRdef(nuevoRdef, position2);
 rDef = nuevoRdef;
+
+let evaluacion = [];
 
 //Funcion que inicializa los elementos del DOM con el template y el Fragmento
 function initMain() {
     generation(def);
     generator(rDef);
     mainCartesian(defBoards, rDef);
+    evaluacion = inicializarExamen();
 };
 
 //Funcion para iniciarlo cuando se cargue la pagina
@@ -1725,7 +1744,7 @@ window.onload = initMain();
 let i = 0;
 artefact.forEach((element) => {
     i++;
-    let div = document.getElementById(artefact[0]);
+    let div = document.getElementById(artefactaux[0]);
 
     // Obtenemos el div con id "artifact_1"
     let artifactDiv = document.getElementById(element);
@@ -1840,9 +1859,12 @@ for (let i = 3; i < divs.length; i++) {
 //crear un arreglo que contenga las propiedades del objeto rDef a partir de la segunda
 let propiedadesRdef = Object.keys(rDef).slice(1);
 
-let evaluacion;
+//let evaluacion;
 let validar = document.querySelectorAll('.check');
-evaluacion = valida(validar);
+evaluacion = valida(validar,evaluacion,def,artefact);
+
+let resets = document.querySelectorAll('.reset');
+evaluacion = cleanArt(resets,evaluacion);
 
 // Ejecutar la función y actualizar el resultado
 calcularResultadoTotal(evaluacion);
