@@ -154,13 +154,13 @@ function inicializarExamen() {
         console.log("No se encontraron puntuaciones previas. Iniciando nuevo examen.");      
         // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas
         const nuevoResultado = [];
-        nuevoResultado.push({id:'P1',items:[0,0],tiempo:0});
-        nuevoResultado.push({id:'P2',items:[0,0],tiempo:0});
-        nuevoResultado.push({id:'P3',items:[0,0],tiempo:0});
-        nuevoResultado.push({id:'P4',items:[0,0,0],tiempo:0});
-        nuevoResultado.push({id:'P5',items:[0,0,0,0],tiempo:0});
-        nuevoResultado.push({id:'P6',items:[0,0,0],tiempo:0});
-        nuevoResultado.push({id:'P7',items:[0,0,0,0],tiempo:0});
+        nuevoResultado.push({id:'P1',items:[0,0],tiempo:0,intentos:0});
+        nuevoResultado.push({id:'P2',items:[0,0],tiempo:0,intentos:0});
+        nuevoResultado.push({id:'P3',items:[0,0],tiempo:0,intentos:0});
+        nuevoResultado.push({id:'P4',items:[0,0,0],tiempo:0,intentos:0});
+        nuevoResultado.push({id:'P5',items:[0,0,0,0],tiempo:0,intentos:0});
+        nuevoResultado.push({id:'P6',items:[0,0,0],tiempo:0,intentos:0});
+        nuevoResultado.push({id:'P7',items:[0,0,0,0],tiempo:0,intentos:0});
         nuevoResultado.push({id:'NF',resultado:0});
         return nuevoResultado; // Devolver el nuevo objeto inicializado
     }
@@ -176,6 +176,7 @@ function valida(validar,resultadoExamen,def,artefact) {
     {
         const mm1 = mathfieldDiv1[index].querySelectorAll('math-field');
         const mm3 = mathfieldDiv3[index].querySelectorAll('math-field');
+        //console.log(mm1, mm3);
         const newDiv = document.querySelectorAll('#newDiv');
         newDiv[idx].style.borderColor = 'yellow';
 
@@ -183,14 +184,16 @@ function valida(validar,resultadoExamen,def,artefact) {
         console.log(def[artefact[1]].timeInteraction);
         console.log(def[artefact[2]].timeInteraction);*/
         resultadoExamen[idx].tiempo = def[artefact[idx]].timeInteraction
-        console.log(resultadoExamen[idx].tiempo)
+        resultadoExamen[idx].intentos += 1;
+        //console.log(resultadoExamen[idx].tiempo)
 
         // Validating Notacion Intervalo
         if (mm1[0]._internals.willValidate) 
         {   
             setTimeout(() => 
             {
-                clases = Array.from(mm1[0].classList);              
+                clases = Array.from(mm1[0].classList);    
+                //console.log(clases);          
                 if(clases.includes('failed'))
                 {
                     console.log('Intervalo ',idx+1,' fallo');
@@ -218,7 +221,8 @@ function valida(validar,resultadoExamen,def,artefact) {
 
         // Validating Recta Real
         setTimeout(() => {
-            clases = Array.from(mathfieldDiv2[index].classList);            
+            clases = Array.from(mathfieldDiv2[index].classList);     
+            //console.log(clases);       
             if(clases.includes('pass'))
             {
                 console.log('Recta Real ',idx+1,' paso');
@@ -278,6 +282,7 @@ function valida(validar,resultadoExamen,def,artefact) {
         borderDefault[idx].style.borderColor = 'yellow';
 
         resultadoExamen[idx].tiempo+=rDef[propiedadesRdef].timeInteraction;
+        resultadoExamen[idx].intentos += 1;
 
         console.log(idx ,'===', resultadoExamen[idx].tiempo);
         
@@ -472,6 +477,11 @@ function mostrarResultados(examData) {
     thTiempo.textContent = 'Tiempo (seg)';
     headerRow.appendChild(thTiempo);
 
+    //Agrega una columna para los intentos por fila
+    const thIntentos = document.createElement('th');
+    thIntentos.textContent = 'Intentos';
+    headerRow.appendChild(thIntentos);
+
     // Generar las filas de resultados
     examData.forEach(pregunta => {
         if (pregunta.items && Array.isArray(pregunta.items)) {
@@ -508,6 +518,11 @@ function mostrarResultados(examData) {
             celdaTiempo.textContent = pregunta.tiempo;
             fila.appendChild(celdaTiempo);
 
+            //Agrega celda para los intentos de la fila
+            const celdaIntentos = document.createElement('td');
+            celdaIntentos.textContent = pregunta.intentos;
+            fila.appendChild(celdaIntentos);
+
             resultadoBody.appendChild(fila);
         }
     });
@@ -525,6 +540,7 @@ function mostrarResultados(examData) {
     paginaExamen.style.display = 'none';       // Oculta la página original
     resultadoPagina.style.display = 'block';   // Muestra la página de resultados
 }
+
 // Evento de click para el botón 'Finalizar'
 document.querySelector('.finalizar').addEventListener('click', () => {
     //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)

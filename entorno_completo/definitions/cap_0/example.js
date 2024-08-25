@@ -1002,8 +1002,8 @@ let rDef={
         ]
     },
     artifact_1: {
-        textBottom: '(x, -y),(-x, y),(y, x)',
         defBoard: 'board_0',
+        textBottom: '(x, -y),(-x, y),(y, x)',        
         defaultInputs: [
             {
                 position: [c[1].x, c[1].y],
@@ -1166,8 +1166,8 @@ let rDef={
     },
     //Fin tipo 1
     artifact_9: {
-        textBottom: '(b,0),(a, a),(-a, -b),(a, -a)',
         defBoard: 'board_1',
+        textBottom: '(b,0),(a, a),(-a, -b),(a, -a)',        
         defaultInputs: [
             {
                 position: [0, c[2].y],
@@ -1718,9 +1718,9 @@ keys.forEach((key, index) => {
     let newKey = `artifact_${index + 1}`;
     newObj[newKey] = def[key];
 });
-let defaux= newObj;
+def= newObj;
 
-console.log(defaux);
+//console.log(defaux);
 let artefactaux=['artifact_1','artifact_2','artifact_3'];
 
 
@@ -1728,6 +1728,26 @@ let artefactaux=['artifact_1','artifact_2','artifact_3'];
 let nuevoRdef = filtrarContents(rDef, position2);
 nuevoRdef = filtrarRdef(nuevoRdef, position2);
 rDef = nuevoRdef;
+
+// Obtener las claves, ordenarlas y luego renombrarlas
+/*keys = Object.keys(rDef).sort((a, b) => {
+    return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]);
+});
+
+newObj = {};
+keys.forEach((key, index) => {
+    console.log(key,index);
+    let newKey;
+    if(index===0)
+    {
+        newKey = `artifactHtml`;
+    }
+    else{
+        newKey = `artifact_${index}`;
+    }
+    newObj[newKey] = rDef[key];
+});
+rDef= newObj;*/
 
 let evaluacion = [];
 
@@ -1742,7 +1762,7 @@ function initMain() {
 //Funcion para iniciarlo cuando se cargue la pagina
 window.onload = initMain();
 let i = 0;
-artefact.forEach((element) => {
+artefactaux.forEach((element) => {
     i++;
     let div = document.getElementById(artefactaux[0]);
 
@@ -1861,7 +1881,7 @@ let propiedadesRdef = Object.keys(rDef).slice(1);
 
 //let evaluacion;
 let validar = document.querySelectorAll('.check');
-evaluacion = valida(validar,evaluacion,def,artefact);
+evaluacion = valida(validar,evaluacion,def,artefactaux);
 
 let resets = document.querySelectorAll('.reset');
 evaluacion = cleanArt(resets,evaluacion);

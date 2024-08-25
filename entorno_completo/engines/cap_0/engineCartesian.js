@@ -133,16 +133,17 @@ function mainCartesian(defBoards, allDef) {
   };
   const tmp = document.querySelector('#tmp-cartesian');
   const divs = document.querySelectorAll('.defCartesian');
+  
   divs.forEach((div, i) => {
-
+    
     const iconst = i;
     const clone = tmp.content.firstElementChild.cloneNode(true);
     const $board = clone.querySelector('.defBoard');
     const btnAll = clone.querySelector('.btn-all');
-    const id = 'defCartesianBoard_' + i;
+    const id = 'defCartesianBoard_' + i;    
     $board.setAttribute('id', id);
-    // Por defecto apunta a un artifact_0 y defBoard_0
-    const boardSelect = div.dataset.board || allDef[div.dataset?.artifact || 'artifact_0'].defBoard || 'board_0';
+    // Por defecto apunta a un artifact_0 y defBoard_0    
+    const boardSelect = div.dataset.board || allDef[div.dataset?.artifact || 'artifact_0'].defBoard || 'board_0';     
     const refArtifact = div.dataset.artifact || defBoards[boardSelect || 'board_0']?.artifact || 'artifact_0';
 
     clone.setAttribute('id', refArtifact);
