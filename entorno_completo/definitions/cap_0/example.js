@@ -1701,6 +1701,10 @@ let rDef={
     //Fin tipo 4
 }
 
+// Clave en Local Storage
+//const LOCAL_STORAGE_KEY = 'resultadoExamen';
+//const LOCAL_COLORS_KEY = 'colorsExamen';
+
 let artefact = [];
 //let position = localStorageSeleccionados("P1", 1, 24, 3);
 [position, position2] = localStoragePreguntasExamen();
@@ -1750,13 +1754,17 @@ keys.forEach((key, index) => {
 rDef= newObj;*/
 
 let evaluacion = [];
+let colorBorders = {};
 
 //Funcion que inicializa los elementos del DOM con el template y el Fragmento
 function initMain() {
     generation(def);
     generator(rDef);
     mainCartesian(defBoards, rDef);
-    evaluacion = inicializarExamen();
+    evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
+    console.log(evaluacion);
+    colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
+    console.log(colorBorders);
 };
 
 //Funcion para iniciarlo cuando se cargue la pagina
@@ -1833,11 +1841,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
             console.log("La evaluación ya ha comenzado o debería haber comenzado.");
             fechaInicioEst = localStorage.getItem('fechaInicioEst');
+            PintaBordes(colorBorders);
             if(fechaInicioEst === null)
             {
                 fechaInicioEst = currentDate;
                 localStorage.setItem('fechaInicioEst',fechaInicioEst);
+                
             }
+            
             paginaExamen.style.display = 'block';
         } else {
             console.log("La evaluación ya ha finalizado o debería haber finalizado.");
@@ -1881,10 +1892,10 @@ let propiedadesRdef = Object.keys(rDef).slice(1);
 
 //let evaluacion;
 let validar = document.querySelectorAll('.check');
-evaluacion = valida(validar,evaluacion,def,artefactaux);
+evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders);
 
 let resets = document.querySelectorAll('.reset');
-evaluacion = cleanArt(resets,evaluacion);
+evaluacion = cleanArt(resets,evaluacion,colorBorders);
 
 // Ejecutar la función y actualizar el resultado
 calcularResultadoTotal(evaluacion);

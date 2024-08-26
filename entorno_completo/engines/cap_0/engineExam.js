@@ -1,3 +1,7 @@
+// Clave en Local Storage
+const LOCAL_STORAGE_KEY = 'resultadoExamen';
+const LOCAL_COLORS_KEY = 'colorsExamen';
+
 function seleccionarAleatorios(Pregunta, min, max,totalale) {
     if(Pregunta==='P1'){
         console.log(min,max,totalale)
@@ -130,45 +134,70 @@ function filtrarContents(rdef, indices) {
     return rdef;
 }
 
-// Clave en Local Storage
-const LOCAL_STORAGE_KEY = 'resultadoExamen';
+
 
 // Función para cargar los resultados desde Local Storage
-function cargarResultados() {
-    const resultadosGuardados = localStorage.getItem(LOCAL_STORAGE_KEY);
+function cargarResultados(key) {
+    let resultadosGuardados = localStorage.getItem(key);
+    
     if (resultadosGuardados) {
-        return JSON.parse(resultadosGuardados);
+        return resultadosGuardados = JSON.parse(resultadosGuardados);
     }
+    
     return null; // Si no hay datos guardados
 }
 
 // Función para cargar o inicializar el objeto de resultados
-function inicializarExamen() {
-    const resultadosGuardados = cargarResultados();
-    
-    if (resultadosGuardados) {
-        console.log("Puntuaciones cargadas:", resultadosGuardados);
-        return resultadosGuardados; // Usar los datos cargados para continuar
-    } 
-    else {
-        console.log("No se encontraron puntuaciones previas. Iniciando nuevo examen.");      
-        // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas
-        const nuevoResultado = [];
-        nuevoResultado.push({id:'P1',items:[0,0],tiempo:0,intentos:0});
-        nuevoResultado.push({id:'P2',items:[0,0],tiempo:0,intentos:0});
-        nuevoResultado.push({id:'P3',items:[0,0],tiempo:0,intentos:0});
-        nuevoResultado.push({id:'P4',items:[0,0,0],tiempo:0,intentos:0});
-        nuevoResultado.push({id:'P5',items:[0,0,0,0],tiempo:0,intentos:0});
-        nuevoResultado.push({id:'P6',items:[0,0,0],tiempo:0,intentos:0});
-        nuevoResultado.push({id:'P7',items:[0,0,0,0],tiempo:0,intentos:0});
-        nuevoResultado.push({id:'NF',resultado:0});
-        return nuevoResultado; // Devolver el nuevo objeto inicializado
+function inicializarExamen(key) {
+    let resultadosGuardados, colorsBorders;
+    if (key===LOCAL_STORAGE_KEY) {
+        resultadosGuardados = cargarResultados(key);
+        if (resultadosGuardados) {
+            return resultadosGuardados; // Usar los datos cargados para continuar
+        } 
+        else {
+            console.log("No se encontraron puntuaciones previas. Iniciando nuevo examen.");      
+            // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas
+            //const RE = [];
+            resultadosGuardados = [];
+            resultadosGuardados.push({id:'P1',items:[0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P2',items:[0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P3',items:[0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P4',items:[0,0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P5',items:[0,0,0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P6',items:[0,0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P7',items:[0,0,0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'NF',resultado:0});
+            localStorage.setItem(key, JSON.stringify(resultadosGuardados));            
+            return resultadosGuardados; // Devolver el nuevo objeto inicializado
+        }
+    }
+    else if(key===LOCAL_COLORS_KEY)
+    {
+        colorsBorders = cargarResultados(key);
+        if (colorsBorders) {
+            return colorsBorders; // Usar los datos cargados para continuar      
+        }   
+        else {
+            console.log("No se encontraron colores previos. Iniciando nuevo examen.");
+            // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas  
+            const colorsBorders = {};            
+            for (let i = 0; i <= 6; i++) {
+                if(i<3)
+                    colorsBorders[i] = "black";
+                else
+                    colorsBorders[i] = "#217e9d";
+            }
+            localStorage.setItem(key, JSON.stringify(colorsBorders));
+            return colorsBorders;
+        }        
     }
 }
 
-//const resultadoExamen = inicializarExamen();
+//const resultadoExamen = inicializarExamen('LOCAL_STORAGE_KEY');
+//const colorsBorders = inicializarExamen('LOCAL_COLORS_KEY');
 
-function valida(validar,resultadoExamen,def,artefact) {
+function valida(validar,resultadoExamen,def,artefact,borderColor) {
     /*let intentos1 = 0, intentos2 = 0, intentos3 = 0;
     let intentos12 = 0, intentos22 = 0, intentos32 = 0, intentos42 = 0;*/
 
@@ -179,10 +208,14 @@ function valida(validar,resultadoExamen,def,artefact) {
         //console.log(mm1, mm3);
         const newDiv = document.querySelectorAll('#newDiv');
         newDiv[idx].style.borderColor = 'yellow';
+        borderColor[idx] = 'yellow';
+        console.log(borderColor);
+        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
 
         /*console.log(def[artefact[0]].timeInteraction);
         console.log(def[artefact[1]].timeInteraction);
         console.log(def[artefact[2]].timeInteraction);*/
+        console.log(resultadoExamen);
         resultadoExamen[idx].tiempo = def[artefact[idx]].timeInteraction
         resultadoExamen[idx].intentos += 1;
         //console.log(resultadoExamen[idx].tiempo)
@@ -280,6 +313,11 @@ function valida(validar,resultadoExamen,def,artefact) {
 
         borderDefault = document.querySelectorAll('.borderDefault');
         borderDefault[idx].style.borderColor = 'yellow';
+        borderColor[idx] = 'yellow';
+        console.log(borderColor);
+        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+
+        
 
         resultadoExamen[idx].tiempo+=rDef[propiedadesRdef].timeInteraction;
         resultadoExamen[idx].intentos += 1;
@@ -288,7 +326,7 @@ function valida(validar,resultadoExamen,def,artefact) {
         
         
         indx = 0;
-        let kk = startIndex+Previousmathfield;
+        let kk = startIndex + Previousmathfield;
         let aux = Array(rDef[propiedadesRdef].textBottom)[0];
         aux = aux.split('),(');
         aux = aux.map((elem, index) => {
@@ -365,7 +403,7 @@ function valida(validar,resultadoExamen,def,artefact) {
     return resultadoExamen;
 }
 
-function cleanArt(resets,resultadoExamen){
+function cleanArt(resets,resultadoExamen,borderColor){
     const newDiv = document.querySelectorAll('#newDiv');
     borderDefault = document.querySelectorAll('.borderDefault');
     for (let i = 0; i < resets.length; i++) {
@@ -373,30 +411,51 @@ function cleanArt(resets,resultadoExamen){
             switch (this) {
                 case resets[0]:
                     newDiv[i].style.borderColor = 'black';
+                    borderColor[i] = 'black';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0];
                     break;
                 case resets[1]:                    
                     newDiv[i].style.borderColor = 'black';
+                    borderColor[i] = 'black';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0];
                     break;
                 case resets[2]:
                     newDiv[i].style.borderColor = 'black';
+                    borderColor[i] = 'black';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0];
                     break;
                 case resets[3]:
                     borderDefault[i].style.borderColor = '#217e9d';
+                    borderColor[i] = '#217e9d';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0,0];
                     break;
                 case resets[4]:
                     borderDefault[i].style.borderColor = '#217e9d';
+                    borderColor[i] = '#217e9d';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0,0,0];
                     break;
                 case resets[5]:
                     borderDefault[i].style.borderColor = '#217e9d';
+                    borderColor[i] = '#217e9d';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0,0];
                     break;
                 case resets[6]:
                     borderDefault[i].style.borderColor = '#217e9d';
+                    borderColor[i] = '#217e9d';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0,0,0];
                     break;
             }
@@ -544,7 +603,7 @@ function mostrarResultados(examData) {
 // Evento de click para el botón 'Finalizar'
 document.querySelector('.finalizar').addEventListener('click', () => {
     //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
-    let examData = inicializarExamen();
+    let examData = inicializarExamen('resultadoExamen');
     const spanTime = document.getElementById('totalTime');
     const startDate = new Date(localStorage.getItem('fechaInicioEst'));
     const endDate = new Date();
@@ -561,3 +620,14 @@ document.querySelector('.finalizar').addEventListener('click', () => {
     localStorage.removeItem('fechaInicioEst');
 });
 
+function PintaBordes (borderColor){
+    let newDiv = document.querySelectorAll('#newDiv');
+    borderDefault = document.querySelectorAll('.borderDefault');
+    for (let i = 0; i < newDiv.length; i++) {
+        //console.log(borderColor[i]);
+        newDiv[i].style.borderColor = borderColor[i];
+    }
+    for (let i = 3; i < borderDefault.length; i++) {
+        borderDefault[i].style.borderColor = borderColor[i];
+    }
+}

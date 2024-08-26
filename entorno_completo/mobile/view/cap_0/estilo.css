@@ -105,6 +105,9 @@
 }
 
 #resultadoPagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     max-width: 800px;
     background: #fff;
