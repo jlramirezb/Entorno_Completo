@@ -472,7 +472,7 @@ const c = {
     //Puntos a utilizar de Annely: 1 -- 12
     1: { x: 1, y: 2.5 },
     2: { x: -1, y: -1.5 },  
-    3: { x: 1, y: 1 },
+    3: { x: 3, y: 3 },
     4: { x: 2.2, y: 0.8 },  
     5: { x: 2, y: 1 },  
     6: { x: 1.5, y: -1.5 },  
@@ -1274,8 +1274,20 @@ let rDef={
                 position: [c[13].x, c[13].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[13].x, -c[13].y],
+                value: '(x,-y)',
+            },
+            {
+                position: [-c[13].x, c[13].y],
+                value: '(-x,y)',
+            },
+            {
+                position: [c[13].y, c[13].x],
+                value: '(y,x)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1284,7 +1296,7 @@ let rDef={
                 { p: [-c[13].x, c[13].y], text: '-x,y' },
                 { p: [c[13].y, c[13].x], text: 'y,x' }    
             ],
-        },
+        },*/
     },
     artifact_5: {
         defBoard: 'board_16',
@@ -1294,9 +1306,21 @@ let rDef={
             {
                 position: [c[17].x, c[17].y],
                 value: '(x,y)',
-            }
+            },
+            {
+                position: [-c[17].x, -c[17].y],
+                value: '(-x,-y)',
+            },
+            {
+                position: [-c[17].x, c[17].y],
+                value: '(-x,y)',
+            },
+            {
+                position: [2*c[17].y, c[17].x],
+                value: '(2y,x)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1305,7 +1329,7 @@ let rDef={
                 { p: [-c[17].x, c[17].y], text: '-x,y' },
                 { p: [2*c[17].y, c[17].x], text: '2y,x' }
             ],
-        },
+        },*/
     },
     artifact_6: {
         defBoard: 'board_20',
@@ -1315,8 +1339,20 @@ let rDef={
                 position: [c[21].x, c[21].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[21].x, -c[21].y],
+                value: '(x,-y)',
+            },
+            {
+                position: [-c[21].x, c[21].y],
+                value: '(-x,y)',
+            },
+            {
+                position: [c[21].y, c[21].x],
+                value: '(y,x)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1325,7 +1361,7 @@ let rDef={
                 { p: [-c[21].x, c[21].y], text: '-x,y' },
                 { p: [c[21].y, c[21].x], text: 'y,x' }    
             ],
-        },
+        },*/
     },
     artifact_7: {
         // textTop: "Este es el de arriba",
@@ -1406,8 +1442,24 @@ let rDef={
                 position: [c[2].x, 0],
                 value: '(a,0)',
             },
+            {
+                position: [c[2].y, 0],
+                value: '(b,0)',
+            },
+            {
+                position: [-c[2].x, -c[2].y],
+                value: '(-a,-b)',
+            },
+            {
+                position: [c[2].x, -c[2].x],
+                value: '(a,-a)',
+            },
+            {
+                position: [c[2].x, c[2].x],
+                value: '(a,a)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1417,7 +1469,7 @@ let rDef={
                 { p: [-c[2].x, -c[2].y], text: '-a,-b' },
                 { p: [c[2].x, -c[2].x], text: 'a,-a' },
             ],
-        },
+        },*/
     },
     artifact_10: {
         //La pregunta (a,-a) fue modificada por coincidencia con el punto (b,b) [Pregunta original (-a,-a)]
@@ -1432,8 +1484,24 @@ let rDef={
                 position: [c[6].x, 0],
                 value: '(a,0)',
             },
+            {
+                position: [c[6].y, 0],
+                value: '(b,0)',
+            },
+            {
+                position: [-c[6].x, -c[6].y],
+                value: '(-a,-b)',
+            },
+            {
+                position: [c[6].x, -c[6].x],
+                value: '(a,-a)',
+            },
+            {
+                position: [c[6].y, c[6].y],
+                value: '(b,b)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1443,7 +1511,7 @@ let rDef={
                 { p: [-c[6].x, -c[6].y], text: '-a,-b' },
                 { p: [c[6].x, -c[6].x], text: 'a,-a' },
             ],
-        },
+        },*/
     },  
     artifact_11: {
         textBottom: '(-a,0),(a,b),(-a,b),(b,-b)',
@@ -1457,8 +1525,24 @@ let rDef={
                 position: [c[10].x, 0],
                 value: '(a,0)',
             },
+            {
+                position: [-c[10].x, 0],
+                value: '(-a,0)',
+            },
+            {
+                position: [c[10].x, c[10].y],
+                value: '(a,b)',
+            },
+            {
+                position: [-c[10].x, c[10].y],
+                value: '(-a,b)',
+            },
+            {
+                position: [c[10].y, -c[10].y],
+                value: '(b,-b)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1468,7 +1552,7 @@ let rDef={
                 { p: [-c[10].x, c[10].y], text: '-a,b' },
                 { p: [c[10].y, -c[10].y], text: 'b,-b' },
             ],
-        },
+        },*/
     },
     artifact_12: {
         defBoard: 'board_13',
@@ -1481,6 +1565,22 @@ let rDef={
             {
                 position: [c[14].x, 0],
                 value: '(a,0)',
+            },
+            {
+                position: [-c[14].y, 0],
+                value: '(-b,0)',
+            },
+            {
+                position: [-c[14].x, -c[14].y],
+                value: '(-a,-b)',
+            },
+            {
+                position: [c[14].x, -c[14].x],
+                value: '(a,-a)',
+            },
+            {
+                position: [c[14].y, -c[14].x],
+                value: '(b,-a)',
             },
         ],
         conditions: {
@@ -1507,8 +1607,24 @@ let rDef={
                 position: [c[18].x, 0],
                 value: '(a,0)',
             },
+            {
+                position: [c[18].y, 0],
+                value: '(b,0)',
+            },
+            {
+                position: [-c[18].x, -c[18].y],
+                value: '(-a,-b)',
+            },
+            {
+                position: [-c[18].x, c[18].x],
+                value: '(-a,a)',
+            },
+            {
+                position: [c[18].x, c[18].x],
+                value: '(a,a)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1518,7 +1634,7 @@ let rDef={
                 { p: [-c[18].x, -c[18].y], text: '-a,-b' },
                 { p: [-c[18].x, c[18].x], text: '-a,a' },    
             ],
-        },
+        },*/
     },
     artifact_14: {
         defBoard: 'board_21',
@@ -1532,8 +1648,24 @@ let rDef={
                 position: [c[22].x, 0],
                 value: '(a,0)',
             },
+            {
+                position: [0, c[22].x],
+                value: '(0,a)',
+            },
+            {
+                position: [c[22].x, -c[22].x],
+                value: '(a,-a)',
+            },
+            {
+                position: [c[22].x, -c[22].y],
+                value: '(a,-b)',
+            },
+            {
+                position: [-c[22].x, c[22].y],
+                value: '(-a,b)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1543,7 +1675,7 @@ let rDef={
                 { p: [c[22].x, -c[22].y], text: 'a,-b' },
                 { p: [-c[22].x, c[22].y], text: '-a,b' },    
             ],
-        },
+        },*/
     },
     artifact_15: {
         defBoard: 'board_25',
@@ -1557,8 +1689,24 @@ let rDef={
                 position: [c[26].x, 0],
                 value: '(a,0)',
             },
+            {
+                position: [c[26].y, 0],
+                value: '(b,0)',
+            },
+            {
+                position: [c[26].x, c[26].x],
+                value: '(a,a)',
+            },
+            {
+                position: [-c[26].x, -c[26].y],
+                value: '(-a,-b)',
+            },
+            {
+                position: [c[26].y, -c[26].y],
+                value: '(b,-b)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1568,7 +1716,7 @@ let rDef={
                 { p: [-c[26].x, -c[26].y], text: '-a,-b' },
                 { p: [c[26].y, -c[26].y], text: 'b,-b' },
             ],
-        },
+        },*/
     },
     artifact_16: {
         defBoard: 'board_29',
@@ -1582,8 +1730,24 @@ let rDef={
                 position: [c[30].x, 0],
                 value: '(a,0)',
             },
+            {
+                position: [0,c[30].x],
+                value: '(0,a)',
+            },
+            {
+                position: [-c[30].x, -c[30].y],
+                value: '(-a,-b)',
+            },
+            {
+                position: [c[30].x, -c[30].x],
+                value: '(a,-a)',
+            },
+            {
+                position: [c[30].y, c[30].y],
+                value: '(b,b)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1593,13 +1757,31 @@ let rDef={
                 { p: [-c[30].x, -c[30].y], text: '-a,-b' },
                 { p: [c[30].x, -c[30].x], text: 'a,-a' },
             ],
-        },
+        },*/
     },
     //Fin tipo 2
     artifact_17: {
         defBoard: 'board_2',
         textBottom: '(x-1,y),(x,y+2),(x,y-2)',
-        conditions: {
+        defaultInputs: [
+            {
+                position: [c[3].x , c[3].y ],
+                value: '(x,y)',
+            },
+            {
+                position: [c[3].x-1, c[3].y],
+                value: '(x-1,y)',
+            },
+            {
+                position: [c[3].x, c[3].y+2],
+                value: '(x,y+2)',
+            },
+            {
+                position: [c[3].x, c[3].y-2 ],
+                value: '(x,y-2)',
+            },
+        ],
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1608,18 +1790,30 @@ let rDef={
                 { p: [c[3].x * 3, c[3].y * 4], text: '(x,y+2)' },
                 { p: [c[3].x * 3, 0], text: '(x,y-2)' }
             ],
-        },
-        defaultInputs: [
-            {
-                position: [c[3].x * 3, c[3].y * 2],
-                value: '(x,y)',
-            }
-        ],
+        },*/        
     },
     artifact_18: {
         defBoard: 'board_6',
         textBottom: '(x-1.5,y),(x+1.5,y),(x,y-1)',
-        conditions: {
+        defaultInputs: [
+            {
+                position: [c[7].x , c[7].y],
+                value: '(x,y)',
+            },
+            {
+                position: [c[7].x-1.5, c[7].y],
+                value: '(x-1.5,y)',
+            },
+            {
+                position: [c[7].x+1.5, c[7].y],
+                value: '(x+1.5,y)',
+            },
+            {
+                position: [c[7].x, c[7].y-1],
+                value: '(x,y-1)',
+            },
+        ],
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1628,18 +1822,30 @@ let rDef={
                 { p: [c[7].x + 1.5, c[7].y ], text: '(x+1.5,y)' },
                 { p: [c[7].x, c[7].y -1 ], text: '(x,y-1)' }
             ],
-        },
-        defaultInputs: [
-            {
-                position: [c[7].x , c[7].y],
-                value: '(x,y)',
-            }
-        ],
+        },*/        
     },
     artifact_19: {
         defBoard: 'board_10',
         textBottom: '(x+2,y),(x,y+1),(x,y-1)',
-        conditions: {
+        defaultInputs: [
+            {
+                position: [c[11].x , c[11].y],
+                value: '(x,y)',
+            },
+            {
+                position: [c[11].x+2, c[11].y],
+                value: '(x+2,y)',
+            },
+            {
+                position: [c[11].x, c[11].y+1],
+                value: '(x,y+1)',
+            },
+            {
+                position: [c[11].x, c[11].y-1 ],
+                value: '(x,y-1)',
+            },
+        ],
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1648,26 +1854,30 @@ let rDef={
                 { p: [c[11].x, c[11].y + 1 ], text: '(x,y+1)' },
                 { p: [c[11].x, c[11].y - 1 ], text: '(x,y-1)' }
             ],
-        },
-        defaultInputs: [
-            {
-                position: [c[11].x , c[11].y],
-                value: '(x,y)',
-            }
-        ],
+        },*/        
     },
     artifact_20: {
         defBoard: 'board_14',
         textBottom: '(x-2.5, y),(x+2.5, y),(x, y-1)',
         defaultInputs: [
-            {//1
+            {
                 position: [c[15].x, c[15].y],
                 value: '(x,y)',
             },
-    
-        ],
-    
-        conditions: {
+            {
+                position: [c[15].x-2.5, c[15].y],
+                value: '(x-2.5,y)',
+            },
+            {
+                position: [c[15].x+2.5, c[15].y],
+                value: '(x+2.5,y)',
+            },
+            {
+                position: [c[15].x, c[15].y-1],
+                value: '(x,y-1)',
+            },
+        ],    
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1676,7 +1886,7 @@ let rDef={
                 { p: [c[15].x + 2.5, c[15].y], text: 'x+2.5,y' },
                 { p: [c[15].x, c[15].y - 1], text: 'x,y-1' },
             ],
-        },
+        },*/
     },
     artifact_21: {
         defBoard: 'board_18',
@@ -1686,8 +1896,20 @@ let rDef={
                 position: [c[19].x, c[19].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[19].x-1, c[19].y],
+                value: '(x-1,y)',
+            },
+            {
+                position: [c[19].x+1, c[19].y],
+                value: '(x+1,y)',
+            },
+            {
+                position: [c[19].x, c[19].y-2],
+                value: '(x,y-2)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1696,7 +1918,7 @@ let rDef={
                 { p: [c[19].x+1, c[19].y], text: 'x+1,y' },
                 { p: [c[19].x, c[19].y-2], text: 'x,y-2' }    
             ],
-        },
+        },*/
     },
     artifact_22: {
         defBoard: 'board_22',
@@ -1706,8 +1928,20 @@ let rDef={
                 position: [c[23].x, c[23].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[23].x-2, c[23].y],
+                value: '(x-2,y)',
+            },
+            {
+                position: [c[23].x+2, c[23].y],
+                value: '(x+2,y)',
+            },
+            {
+                position: [c[23].x, c[23].y-2.5],
+                value: '(x,y-2.5)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1716,18 +1950,30 @@ let rDef={
                 { p: [c[23].x+2, c[23].y], text: 'x+2,y' },
                 { p: [c[23].x, c[23].y-2.5], text: 'x,y-2.5' }    
             ],
-        },
+        },*/
     },
     artifact_23: {
         defBoard: 'board_26',
         textBottom: '(x-2, y),(x+2, y),(x, y-0.75)',
         defaultInputs: [
-            {//1
+            {
                 position: [c[27].x, c[27].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[27].x-2, c[27].y],
+                value: '(x-2,y)',
+            },
+            {
+                position: [c[27].x+2, c[27].y],
+                value: '(x+2,y)',
+            },
+            {
+                position: [c[27].x, c[27].y-0.75],
+                value: '(x,y-0.75)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1736,18 +1982,30 @@ let rDef={
                 { p: [c[27].x + 2, c[27].y], text: 'x+2,y' },
                 { p: [c[27].x, c[27].y - 0.75], text: 'x,y-0.75' },
             ],
-        },
+        },*/
     },
     artifact_24: {
         defBoard: 'board_30',
         textBottom: '(x-2, y),(x, y+1),(x, y-1)',
         defaultInputs: [
-            {//1
+            {
                 position: [c[31].x, c[31].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[31].x-2, c[31].y],
+                value: '(x-2,y)',
+            },
+            {
+                position: [c[31].x, c[31].y+1],
+                value: '(x,y+1)',
+            },
+            {
+                position: [c[31].x, c[31].y-1],
+                value: '(x,y-1)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1756,13 +2014,35 @@ let rDef={
                 { p: [c[31].x, c[31].y+1], text: 'x,y+1' },
                 { p: [c[31].x, c[31].y - 1], text: 'x,y-1' },
             ],
-        },
+        },*/
     },
     //Fin tipo 3
     artifact_25: {
         defBoard: 'board_3',
         textBottom: '(-2x,y),(x,2y),(2x,-y),(x/2,y/2)',
-        conditions: {
+        defaultInputs: [
+            {
+                position: [c[4].x , c[4].y],
+                value: '(x,y)',
+            },
+            {
+                position: [c[4].x * -2, c[4].y],
+                value: '(-2x,y)',
+            },
+            {
+                position: [c[4].x, c[4].y * 2],
+                value: '(x,2y)',
+            },
+            {
+                position: [c[4].x * 2, c[4].y * -1],
+                value: '(2x,-y)',
+            },
+            {
+                position: [c[4].x / 2.0, c[4].y /2.0],
+                value: '(x/2,y/2)',
+            },
+        ],
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1772,18 +2052,34 @@ let rDef={
                 { p: [c[4].x * 2, c[4].y * -1], text: '(2x,-y)' },
                 { p: [c[4].x / 2, c[4].y /2], text: '(x/2,y/2)' }
             ],
-        },
-        defaultInputs: [
-            {
-                position: [c[4].x , c[4].y],
-                value: '(x,y)',
-            }
-        ],
+        },*/        
     }, 
     artifact_26: {
         defBoard: 'board_7',
         textBottom: '(x,3y),(x,-3y),(-2x,y),(x/2,y/2)',
-        conditions: {
+        defaultInputs: [
+            {
+                position: [c[8].x , c[8].y],
+                value: '(x,y)',
+            },
+            {
+                position: [c[8].x, c[8].y * 3],
+                value: '(x,3y)',
+            },
+            {
+                position: [c[8].x, c[8].y * -3],
+                value: '(x,-3y)',
+            },
+            {
+                position: [c[8].x * -2, c[8].y],
+                value: '(-2x,y)',
+            },
+            {
+                position: [c[8].x / 2.0, c[8].y /2.0],
+                value: '(x/2,y/2)',
+            },
+        ],
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1793,18 +2089,34 @@ let rDef={
                 { p: [c[8].x * -2, c[8].y], text: '(-2x,y)' },
                 { p: [c[8].x / 2, c[8].y /2], text: '(x/2,y/2)' }
             ],
-        },
-        defaultInputs: [
-            {
-                position: [c[8].x , c[8].y],
-                value: '(x,y)',
-            }
-        ],
+        },*/        
     },
     artifact_27: {
         defBoard: 'board_11',
         textBottom: '(-x,y),(x,2y),(x,-2y),(x/2,y/2)',
-        conditions: {
+        defaultInputs: [
+            {
+                position: [c[12].x , c[12].y],
+                value: '(x,y)',
+            },
+            {
+                position: [c[12].x * -1, c[12].y],
+                value: '(-x,y)',
+            },
+            {
+                position: [c[12].x, c[12].y * 2],
+                value: '(x,2y)',
+            },
+            {
+                position: [c[12].x, c[12].y * -2],
+                value: '(x,-2y)',
+            },
+            {
+                position: [c[12].x / 2.0, c[12].y /2.0],
+                value: '(x/2,y/2)',
+            },
+        ],
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1814,24 +2126,34 @@ let rDef={
                 { p: [c[12].x, c[12].y * -2], text: '(x,-2y)' },
                 { p: [c[12].x / 2, c[12].y /2], text: '(x/2,y/2)' }
             ],
-        },
-        defaultInputs: [
-            {
-                position: [c[12].x , c[12].y],
-                value: '(x,y)',
-            }
-        ],
+        },*/        
     }, 
     artifact_28: {
         defBoard: 'board_15',
         textBottom: '(2x, -y),(-x, y),(-2x, y),(x/2, y/2)',
         defaultInputs: [
-            {//11
+            {
                 position: [c[16].x, c[16].y],
                 value: '(x,y)',
-            }
+            },
+            {
+                position: [c[16].x * 2, c[16].y * -1],
+                value: '(2x,-y)',
+            },
+            {
+                position: [c[16].x * -1, c[16].y],
+                value: '(-x, y)',
+            },
+            {
+                position: [c[16].x * -2, c[16].y],
+                value: '(-2x, y)',
+            },
+            {
+                position: [c[16].x / 2.0, c[16].y / 2.0],
+                value: '(x/2, y/2)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1841,7 +2163,7 @@ let rDef={
                 { p: [-2 * c[16].x, c[16].y], text: '-2x, y' },
                 { p: [c[16].x / 2, c[16].y / 2], text: 'x/2, y/2' },
             ],
-        },
+        },*/
     },
     artifact_29: {
         defBoard: 'board_19',
@@ -1851,8 +2173,24 @@ let rDef={
                 position: [c[20].x, c[20].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[20].x * -2, c[20].y],
+                value: '(-2x, y)',
+            },
+            {
+                position: [c[20].x * -1, c[20].y * -1],
+                value: '(-x, -y)',
+            },
+            {
+                position: [c[20].x, c[20].y * -2],
+                value: '(x, -2y)',
+            },
+            {
+                position: [c[20].x / 2.0, c[20].y / 2.0],
+                value: '(x/2, y/2)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1862,7 +2200,7 @@ let rDef={
                 { p: [- c[20].x, - c[20].y], text: '-x, -y' },
                 { p: [c[20].x / 2, c[20].y / 2], text: 'x/2, y/2' },
             ],
-        },
+        },*/
     },
     artifact_30: {
         defBoard: 'board_23',
@@ -1872,8 +2210,24 @@ let rDef={
                 position: [c[24].x, c[24].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[24].x * 3, c[24].y],
+                value: '(3x, y)',
+            },
+            {
+                position: [c[24].x, c[24].y * 2],
+                value: '(x, 2y)',
+            },
+            {
+                position: [c[24].x * -3, c[24].y * -1],
+                value: '(-3x, -y)',
+            },
+            {
+                position: [c[24].x / 2.0, c[24].y / 2.0],
+                value: '(x/2, y/2)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1883,18 +2237,34 @@ let rDef={
                 { p: [-3*c[24].x, -c[24].y], text: '-3x,-y' },
                 { p: [c[24].x/2, c[24].y/2], text: 'x/2,y/2' }
             ],
-        },
+        },*/
     },
     artifact_31: {
         defBoard: 'board_27',
         textBottom: '(-x, -y),(x, 2y),(2x, y),(x/2, y/2)',
         defaultInputs: [
-            {//11
+            {
                 position: [c[28].x, c[28].y],
                 value: '(x,y)',
-            }
+            },
+            {
+                position: [c[28].x * -1, c[28].y * -1],
+                value: '(-x, -y)',
+            },
+            {
+                position: [c[28].x, c[28].y * 2],
+                value: '(x, 2y)',
+            },
+            {
+                position: [c[28].x * 2, c[28].y],
+                value: '(2x, y)',
+            },
+            {
+                position: [c[28].x / 2.0, c[28].y / 2.0],
+                value: '(x/2, y/2)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1904,18 +2274,34 @@ let rDef={
                 { p: [2 * c[28].x, c[28].y], text: '2x,y' },
                 { p: [c[28].x/2, c[28].y/2], text: 'x/2,y/2' },
             ],
-        },
+        },*/
     },
     artifact_32: {
         defBoard: 'board_31',
         textBottom: '(-2x, -y),(x, 3y),(2x, y),(x/2, y/2)',
         defaultInputs: [
-            {//11
+            {
                 position: [c[32].x, c[32].y],
                 value: '(x,y)',
-            }
+            },
+            {
+                position: [c[32].x * -2, c[32].y * -1],
+                value: '(-2x, -y)',
+            },
+            {
+                position: [c[32].x, c[32].y * 3],
+                value: '(x, 3y)',
+            },
+            {
+                position: [c[32].x * 2, c[32].y],
+                value: '(2x, y)',
+            },
+            {
+                position: [c[32].x / 2.0, c[32].y / 2.0],
+                value: '(x/2, y/2)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1925,7 +2311,7 @@ let rDef={
                 { p: [2 * c[32].x, c[32].y], text: '2x,y' },
                 { p: [c[32].x/2, c[32].y/2], text: 'x/2,y/2' },
             ],
-        },
+        },*/
     }
     //Fin tipo 4
 }
@@ -1995,6 +2381,23 @@ function initMain() {
     colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
     console.log(colorBorders);
 };
+
+function ocultaButtons()
+{
+    let check = document.querySelectorAll('.check');
+    let reset = document.querySelectorAll('.reset');
+    let pointClose = document.querySelectorAll('.pointClose');
+    let back = document.querySelectorAll('.back');
+
+    for (let i = 0; i < check.length; i++) {
+        check[i].style.display = 'none';
+        reset[i].style.display = 'none';
+        pointClose[i].style.display = 'none';
+        back[i].style.display = 'none';
+    }
+}
+
+
 
 //Funcion para iniciarlo cuando se cargue la pagina
 window.onload = initMain();
@@ -2094,9 +2497,9 @@ document.addEventListener('DOMContentLoaded', function() {
 const divs = document.querySelectorAll('.borderDefault');
 
 // Itera sobre cada div y agrega el texto "Pregunta" después de cada uno
-i = 4;
+i = 0;
 //Itera a partir del cuarto div 
-for (let i = 3; i < divs.length; i++) {
+for (let i = 0; i < divs.length; i++) {
     //Itera a partir del cuarto div con la clase 'boardfault' para agregar el texto "Pregunta"  
     const divPregunta = document.createElement('div');
     divPregunta.style.display = 'flex';
@@ -2105,8 +2508,8 @@ for (let i = 3; i < divs.length; i++) {
     spanPregunta.style.float = 'left';
     const spanPuntaje = document.createElement('span');
     spanPuntaje.style.float = 'right';
-    spanPregunta.textContent =  "P"+(i+1).toString(); 
-    let puntaje = (i===4 || i===6) ? '4 pts' : '3 pts'; 
+    spanPregunta.textContent =  "P"+(i+4).toString(); 
+    let puntaje = (i===1 || i===3) ? '4 pts' : '3 pts'; 
     spanPuntaje.textContent = puntaje;
     //spanPuntaje.style.marginLeft = '10px';
     //spanPuntaje.style.marginRight = '10px';
@@ -2121,16 +2524,40 @@ for (let i = 3; i < divs.length; i++) {
 let propiedadesRdef = Object.keys(rDef).slice(1);
 
 //let evaluacion;
-let validar = document.querySelectorAll('.check');
-evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders);
+//let validar = document.querySelectorAll('.check');
+//evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders);
 
-let resets = document.querySelectorAll('.reset');
-evaluacion = cleanArt(resets,evaluacion,colorBorders);
+//let resets = document.querySelectorAll('.reset');
+//evaluacion = cleanArt(resets,evaluacion,colorBorders);
 
 // Ejecutar la función y actualizar el resultado
-calcularResultadoTotal(evaluacion);
+//calcularResultadoTotal(evaluacion);
 
 // Mostrar el arreglo actualizado
-console.log(evaluacion);
+//console.log(evaluacion);
 
 
+ocultaButtons();
+
+document.getElementById('download-pdf').addEventListener('click', function () {
+    // Target the whole body of the webpage to convert it to PDF
+    const element = document.getElementById('paginaExamen');
+    
+    // Configure options for the PDF
+    /*const options = {
+        margin: 0,
+        filename: 'webpage.pdf',
+        image: { type: 'jpeg', quality: 4 },
+        html2canvas: { scale: 8},
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+    };*/
+
+    // Convert and download the PDF
+    html2pdf().from(element).set({
+        margin: 0,
+        filename: 'webpage_with_coordinates.pdf',
+        image: { type: 'jpeg', quality: 2 },
+        html2canvas: { scale: 1 },  // Aumentar la escala a 3 o incluso más si es necesario
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    }).save();
+});

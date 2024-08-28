@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="../../../libraries/generalStylesFragata.css" />
         <script type="text/javascript" src="../../../dist/engines/genericEngines/polyfillsAllUsed.min.js"></script>
         <script type="text/javascript" src="../../../libraries/jsxgraphcore.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
         <link rel="stylesheet" type="text/css" href="estilo.css" />
         <title>Examen Capítulo 0</title>
     </head>
@@ -47,27 +48,25 @@
                 </div>
             </div>
         </div>  
-        <div id="previous" class="note" style="display:none;">
+        <!--<div id="previous" class="note" style="display:none;">
             <p>El examen no ha iniciado. Por favor espere a que inicie.</small>
             </p>
         </div>
         <div id="after" class="note" style="display:none;">
             <p>El examen no puede ser habilitado en la fecha actual.</small>
             </p>
-        </div>
-
-
+        </div>-->
 
         <div id="paginaExamen" style="display:none;">
             <!--Pregunta 1-->
             <div class="containerNormal background-gray">
                 <h1>Intervalos</h1>
                 <hr>
-                <div class="note">
+                <!--<div class="note">
                     <p>Para facilitar la usabilidad de los artefactos debe dejar un margen prudente
                         entre los puntos que desee graficar en la recta, de lo contrario estos no se graficarán.</small>
                     </p>
-                </div>    
+                </div>-->    
                 <div class="d-flex w-100 justify-content-center">
                     <div class="divFather  w-100 mb-1">
                         <div class="artifacts d-flex flex-column ">
@@ -121,13 +120,13 @@
             <div id="mainOwner" class="containerNormal background-gray">
                 <h1>Plano Cartesiano</h1>
                 <hr>
-                <p>Sitúe, como puntos, los pares ordenados y escriba al lado de cada punto el par correspondiente. Debe hacerlo respetando las escalas</p>
+                <!--<p>Sitúe, como puntos, los pares ordenados y escriba al lado de cada punto el par correspondiente. Debe hacerlo respetando las escalas</p>
                 <div class="note">
                     <p>Las entradas de cada punto se ocultan cuando pulsas o desplazas los puntos si vuelves a presionar el punto aparecera de nuevo </p>
                     <div class="d-flex justify-content-center">
                         <img src="../../../assets/cap_0/notaInput.svg" alt="hello" style="width:3rem;">
                     </div>
-                </div>
+                </div>-->
             </div>
 
             <template id="globalTemplate">
@@ -178,6 +177,7 @@
 
             <section class="center">
                 <button class="finalizar button">Entregar Examen</button>
+                <button id="download-pdf" class="finalizar button">Download as PDF</button>
             </section>   
         </div>
     
