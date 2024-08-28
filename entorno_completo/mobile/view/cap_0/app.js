@@ -373,6 +373,11 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
     let position2 = localStorageSeleccionados("P2", 0, 31, 4);    
     console.log(position2);
 
+    let combinedArray = position.concat(position2.map(num => num + 1));
+    // Map each element to a string with leading zero if necessary and then join them into a single string
+    let resultString = combinedArray.map(num => num < 10 ? '0' + num : num.toString()).join('');
+    console.log(resultString); // Output: "01210900121523"
+
     const Datos = {
         Instituto: "Nombre del Instituto",
         Materia: "Nombre de la Materia",
@@ -385,7 +390,8 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
         fechaHoraInicio: `${fechaInicio} ${horaInicio}`, // Combina fecha y hora de inicio
         fechaHoraCierre: `${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
         SeleccionadosP1: position,
-        SeleccionadosP2: position2
+        SeleccionadosP2: position2,
+        CodExam : resultString
     }
 
     // Almacenar el objeto en localStorage

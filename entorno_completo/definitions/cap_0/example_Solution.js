@@ -171,8 +171,16 @@ let def = {
         },
     },
     artifact_15: {
+        interval: '[3,∞)',
         representation: 'x≥3',
-        conditions: {
+        preDefPar: [
+            [
+              [3, 0, true, '3'],
+              [7, 0,false,false],
+            ],
+          ]
+          //preDefPoint: [[5, 0, 0, '']]
+        /*conditions: {
             valInterval: ['[3,∞)'],
             board: [
                 {
@@ -180,7 +188,7 @@ let def = {
                     points: [['3', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_16: {
         interval: '(2,6)',
@@ -1821,8 +1829,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('institucion').innerHTML = Datos.Instituto;
     document.getElementById('materia').innerHTML = Datos.Materia;
     document.getElementById('seccion').innerHTML = Datos.Seccion;
-    document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
-    document.getElementById('cedulaEstudiante').innerHTML = Datos.Estudiante.Cedula;
+    /*document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
+    document.getElementById('cedulaEstudiante').innerHTML = Datos.Estudiante.Cedula;*/
     document.getElementById('capitulo').innerHTML = Datos.Capitulo;
     document.getElementById('codExam').innerHTML = Datos.CodExam;
 

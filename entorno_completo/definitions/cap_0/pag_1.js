@@ -8,10 +8,10 @@ const def = {
     preDefPar: [
       [
         [2, 0, true, '2'],
-        [5, 0, true, '3'],
+        [5, 0, true, '+∞'],
       ],
     ],
-    preDefPoint: [[-2, 0, 0, '']],
+    //preDefPoint: [[-2, 0, 0, '']],
   },
   artifact_1: {
     interval: '(2,3)',
