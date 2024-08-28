@@ -2,7 +2,14 @@ let def = {
     //Inicio Artefactos Annelys: 1 --  9
     artifact_1: {
         interval: '[−2,1]',
-        conditions: {
+        representation: '−2≤x≤1',
+        preDefPar: [
+            [
+                [2, 0, true, '-2'],
+                [5, 0,true,'1'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−2≤x≤1', '1≥x≥−2'],
             board: [
                 {
@@ -10,23 +17,37 @@ let def = {
                     points: [['−2', false], ['1', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_2: {
         interval: '(−∞,3]',
-        conditions: {
+        representation: 'x≤3',
+        preDefPar: [
+            [
+                [-10, 0, false, ''],//sale fuera del board
+                [5, 0, true, '3'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−∞<x≤3', '3≥x>−∞', 'x≤3', '3≥x'],
             board: [
                 {
-                    pares: [['-∞', '3']],
+                    pares: [['-1', '3']],
                     points: [['3', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_3: {
         representation: 'x≥−2',
-        conditions: {
+        interval: '[−2,∞)',
+        preDefPar: [
+            [
+                [3, 0, true, '-2'],
+                [10, 0, false, ''],//sale fuera del board
+            ],
+        ]
+        /*conditions: {
             valInterval: ['[−2,∞)'],
             board: [
                 {
@@ -34,11 +55,18 @@ let def = {
                     points: [['−2', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_4: {
         interval: '(−1,1]',
-        conditions: {
+        representation: '−1<x≤1',
+        preDefPar: [
+            [
+                [2, 0, false, '-1'],
+                [5, 0,true,'1'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−1<x≤1', '1≥x>−1'],
             board: [
                 {
@@ -46,11 +74,18 @@ let def = {
                     points: [['−1', true], ['1', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_5: {
         interval: '(3,∞)',
-        conditions: {
+        representation: 'x>3',
+        preDefPar: [
+            [
+                [4, 0, false, '3'],
+                [10, 0, false, ''],//sale fuera del board
+            ],
+        ]
+        /*conditions: {
             valRepre: ['3<x<∞', '∞>x>3','x>3','3<x'],
             board: [
                 {
@@ -58,11 +93,18 @@ let def = {
                     points: [['3', true]],
                 },
             ],
-        },
+        },*/
     },
     artifact_6: {
         representation: 'x≤3',
-        conditions: {
+        interval: '(−∞,3]',
+        preDefPar: [
+            [
+                [-10, 0, false, ''],//sale fuera del board
+                [4, 0, true, '3'],
+            ],
+        ]
+        /*conditions: {
             valInterval: ['(−∞,3]'],
             board: [
                 {
@@ -70,11 +112,18 @@ let def = {
                     points: [['3', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_7: {
         interval: '[3,5)',
-        conditions: {
+        representation: '3≤x<5',
+        preDefPar: [
+            [
+                [2,0,true,'3'],
+                [5,0,false,'5'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['3≤x<5', '5>x≥3'],
             board: [
                 {
@@ -82,11 +131,18 @@ let def = {
                     points: [['3', false], ['5', true]],
                 },
             ],
-        },
+        },*/
     },
     artifact_8: {
         interval: '(−∞,−1)',
-        conditions: {
+        representation: 'x<−1',
+        preDefPar: [
+            [
+                [-2, 0, false, ''],//sale fuera del board
+                [3, 0, false, '−1'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−∞<x<−1', '−1>x>−∞', 'x<−1', '−1>x'],
             board: [
                 {
@@ -94,11 +150,18 @@ let def = {
                     points: [['−1', true]],
                 },
             ],
-        },
+        },*/
     },
     artifact_9: {
         representation: 'x≥4',
-        conditions: {
+        interval: '[4,∞)',
+        preDefPar: [
+            [
+                [4, 0, true, '4'],
+                [10, 0, false, ''],//sale fuera del board
+            ],
+        ]
+        /*conditions: {
             valInterval: ['[4,∞)'],
             board: [
                 {
@@ -106,13 +169,20 @@ let def = {
                     points: [['4', false]],
                 },
             ],
-        },
+        },*/
     },  
     //Fin Artefactos Annelys
     //Inicio Artefactos Luis: 10 -- 18
     artifact_10: {
         interval: '(−3,−1]',
-        conditions: {
+        representation: '−3<x≤−1',
+        preDefPar: [
+            [
+                [2,0,false,'−3'],
+                [5,0,true,'−1'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−3<x≤−1', '−1≥x>−3'],
             board: [
                 {
@@ -120,11 +190,18 @@ let def = {
                     points: [['−3', true], ['−1', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_11: {
         interval: '[5,∞)',
-        conditions: {
+        representation: 'x≥5',
+        preDefPar: [
+            [
+                [4, 0, true, '5'],
+                [10, 0, false, ''],//sale fuera del board
+            ],
+        ]
+        /*conditions: {
             valRepre: ['∞>x≥5', '5≤x<∞', '5≤x', 'x≥5'],
             board: [
                 {
@@ -132,11 +209,18 @@ let def = {
                     points: [['5', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_12: {
         representation: 'x≤−1',
-        conditions: {
+        interval: '(-∞,−1]',
+        preDefPar: [
+            [
+                [-2, 0, false, ''],
+                [3, 0, true, '-1'],//sale fuera del board
+            ],
+        ]
+        /*conditions: {
             valInterval: ['(−∞,−1]'],
             board: [
                 {
@@ -144,11 +228,18 @@ let def = {
                     points: [['−1', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_13: {
         interval: '[1,3)',
-        conditions: {
+        representation: '1≤x<3',
+        preDefPar: [
+            [
+                [2,0,true,'1'],
+                [5,0,false,'3'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['1≤x<3', '3>x≥1'],
             board: [
                 {
@@ -156,11 +247,18 @@ let def = {
                     points: [['1', false], ['3', true]],
                 },
             ],
-        },
+        },*/
     },
     artifact_14: {
         interval: '(−∞,4]',
-        conditions: {
+        representation: 'x≤4',
+        preDefPar: [
+            [
+                [-2,0,false,''],//Sale fuero del board
+                [4,0,true,'4'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['4≥x>−∞', '−∞<x≤4', 'x≤4', '4≥x'],
             board: [
                 {
@@ -168,17 +266,17 @@ let def = {
                     points: [['4', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_15: {
         interval: '[3,∞)',
         representation: 'x≥3',
         preDefPar: [
             [
-              [3, 0, true, '3'],
-              [7, 0,false,false],
+                [4, 0, true, '3'],
+                [10, 0, false, ''],//sale fuera del board
             ],
-          ]
+        ]
           //preDefPoint: [[5, 0, 0, '']]
         /*conditions: {
             valInterval: ['[3,∞)'],
@@ -192,7 +290,14 @@ let def = {
     },
     artifact_16: {
         interval: '(2,6)',
-        conditions: {
+        representation: '2<x<6',
+        preDefPar: [
+            [
+                [2,0,false,'2'],
+                [5,0,false,'6'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['2<x<6', '6>x>2'],
             board: [
                 {
@@ -203,11 +308,18 @@ let def = {
                     ],
                 },
             ],
-        },
+        },*/
     },
     artifact_17: {
         interval: '(−3,∞)',
-        conditions: {
+        representation: 'x>−3',
+        preDefPar: [
+            [
+                [3, 0, false, '-3'],
+                [10, 0, false, ''],//sale fuera del board
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−3<x<∞', '∞>x>−3', '−3<x', 'x>−3'],
             board: [
                 {
@@ -215,11 +327,18 @@ let def = {
                     points: [['−3', true]]
                 },
             ],
-        },
+        },*/
     },
     artifact_18: {
         representation: 'x≤4',
-        conditions: {
+        interval: '(−∞,4]',
+        preDefPar: [
+            [
+                [-2,0,false,''],//Sale fuero del board
+                [4,0,true,'4'],
+            ],
+        ]
+        /*conditions: {
             valInterval: ['(−∞,4]'],
             board: [
                 {
@@ -227,13 +346,20 @@ let def = {
                     points: [['4', false]],
                 },
             ],
-        },
+        },*/
     },
     //Fin Artefactos Luis
     //Inicio Artefactos Manuel: 19 -- 24
     artifact_19: {
         interval: '[−1,2]',
-        conditions: {
+        representation: '−1≤x≤2',
+        preDefPar: [
+            [
+                [2,0,true,'−1'],
+                [5,0,true,'2'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−1≤x≤2', '2≥x≥−1'],
             board: [
                 {
@@ -241,11 +367,18 @@ let def = {
                     points: [['−1', false], ['2', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_20: {
         interval: '(−∞,−4]',
-        conditions: {
+        representation: 'x≤−4',
+        preDefPar: [
+            [
+                [-2,0,false,''],//Sale fuero del board
+                [3,0,true,'−4'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−∞<x≤−4', '−4≥x>−∞', 'x≤−4', '−4≥x'],
             board: [
                 {
@@ -253,11 +386,18 @@ let def = {
                     points: [['−4', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_21: {
         representation: 'x≥−6',
-        conditions: {
+        interval: '[−6,∞)',
+        preDefPar: [
+            [
+                [3, 0, true, '−6'],
+                [10, 0, false, ''],//sale fuera del board
+            ],
+        ]
+        /*conditions: {
             valInterval: ['[−6,∞)'],
             board: [
                 {
@@ -265,11 +405,18 @@ let def = {
                     points: [['−6', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_22: {
         interval: '[−7,−5)',
-        conditions: {
+        representation: '−7≤x<−5',
+        preDefPar: [
+            [
+                [2,0,true,'−7'],
+                [5,0,false,'−5'],
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−7≤x<−5', '−5>x≥−7'],
             board: [
                 {
@@ -277,11 +424,18 @@ let def = {
                     points: [['−7', false], ['−5', true]],
                 },
             ],
-        },
+        },*/
     },
     artifact_23: {
         interval: '[−1,∞)',
-        conditions: {
+        representation: 'x≥−1',
+        preDefPar: [
+            [
+                [3, 0, true, '−1'],
+                [10, 0, false, ''],//sale fuera del board
+            ],
+        ]
+        /*conditions: {
             valRepre: ['−1≤x<∞', '∞>x≥−1','x≥−1','−1≤x'],
             board: [
                 {
@@ -289,11 +443,18 @@ let def = {
                     points: [['−1', false]],
                 },
             ],
-        },
+        },*/
     },
     artifact_24: {
         representation: 'x≤−2',
-        conditions: {
+        interval: '(−∞,−2]',
+        preDefPar: [
+            [
+                [-2,0,false,''],//Sale fuero del board
+                [3,0,true,'−2'],
+            ],
+        ]
+        /*conditions: {
             valInterval: ['(−∞,−2]'],
             board: [
                 {
@@ -301,7 +462,7 @@ let def = {
                     points: [['−2', false]],
                 },
             ],
-        },
+        },*/
     },
     //Fin Artefactos Manuel  
 }
@@ -1017,8 +1178,20 @@ let rDef={
                 position: [c[1].x, c[1].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[1].x, -c[1].y],
+                value: '(x,-y)',
+            },
+            {
+                position: [-c[1].x, c[1].y],
+                value: '(-x,y)',
+            },
+            {
+                position: [c[1].y, c[1].x],
+                value: '(y,x)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1027,7 +1200,7 @@ let rDef={
                 { p: [-c[1].x, c[1].y], text: '-x,y' },
                 { p: [c[1].y, c[1].x], text: 'y,x' }
             ],
-        },
+        },*/
     },
     artifact_2: {
         defBoard: 'board_4',
@@ -1037,8 +1210,20 @@ let rDef={
                 position: [c[5].x, c[5].y],
                 value: '(x,y)', 
             },
+            {
+                position: [-c[5].x, -c[5].y],
+                value: '(-x,-y)',
+            },
+            {
+                position: [c[5].x, -c[5].y],
+                value: '(x,-y)',
+            },
+            {
+                position: [c[5].y, c[5].x],
+                value: '(y,x)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1047,7 +1232,7 @@ let rDef={
                 { p: [c[5].x, -c[5].y], text: 'x,-y' },
                 { p: [c[5].y, c[5].x], text: 'y,x' }
             ],
-        },
+        },*/
     },
     artifact_3: {
         defBoard: 'board_8',
@@ -1057,8 +1242,20 @@ let rDef={
                 position: [c[9].x, c[9].y],
                 value: '(x,y)', 
             },
+            {
+                position: [-c[9].x, -c[9].y],
+                value: '(-x,y)',
+            },
+            {
+                position: [c[9].x, -c[9].y],
+                value: '(x,-y)',
+            },
+            {
+                position: [c[9].y, c[9].x],
+                value: '(y,x)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 4,
             },
@@ -1067,7 +1264,7 @@ let rDef={
                 { p: [c[9].x, -c[9].y], text: 'x,-y' },
                 { p: [c[9].y, c[9].x], text: 'y,x' }
             ],
-        },
+        },*/
     },
     artifact_4: {
         defBoard: 'board_12',
@@ -1139,8 +1336,20 @@ let rDef={
                 position: [c[25].x, c[25].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[25].x, -c[25].y],
+                value: '(x,-y)',
+            },
+            {
+                position: [-c[25].x, c[25].y],
+                value: '(-x,y)',
+            },
+            {
+                position: [c[25].y, c[25].x],
+                value: '(y,x)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1149,7 +1358,7 @@ let rDef={
                 { p: [-c[25].x, c[25].y], text: '-x,y' },
                 { p: [c[25].y, c[25].x], text: 'y,x' }
             ],
-        },
+        },*/
     },
     artifact_8: {
       // textTop: "Este es el de arriba",
@@ -1160,8 +1369,20 @@ let rDef={
                 position: [c[29].x, c[29].y],
                 value: '(x,y)',
             },
+            {
+                position: [c[29].x, -c[29].y],
+                value: '(x,-y)',
+            },
+            {
+                position: [-c[29].x, c[29].y],
+                value: '(-x,y)',
+            },
+            {
+                position: [c[29].y, c[29].x],
+                value: '(y,x)',
+            },
         ],
-        conditions: {
+        /*conditions: {
             texterror: {
                 time: 6,
             },
@@ -1170,7 +1391,7 @@ let rDef={
                 { p: [c[29].x, -c[29].y], text: 'x,-y' },
                 { p: [c[29].y,c[29].x], text: 'y,x' }
             ],
-        },  
+        },*/  
     },
     //Fin tipo 1
     artifact_9: {
