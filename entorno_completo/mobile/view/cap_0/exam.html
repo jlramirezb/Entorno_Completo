@@ -14,6 +14,72 @@
         <script type="text/javascript" src="../../../libraries/jsxgraphcore.js"></script>
         <link rel="stylesheet" type="text/css" href="estilo.css" />
         <title>Examen Capítulo 0</title>
+
+        <style>
+            /* Estilos para el fondo del modal */
+            .modal {
+                display: none; /* Oculto por defecto */
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro */
+            }
+    
+            /* Estilos para el contenido del modal */
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 400px;
+                border-radius: 10px;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+    
+            /* Estilos para el texto del modal */
+            .modal-header {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+    
+            .modal-body {
+                font-size: 14px;
+                color: #666;
+                margin-bottom: 20px;
+            }
+    
+            /* Estilos para los botones */
+            .modal-footer {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+    
+            .modal-footer button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+    
+            .btn-confirm {
+                background-color: #007b8a; /* Azul oscuro */
+                color: white;
+            }
+    
+            .btn-cancel {
+                background-color: #e0e0e0; /* Gris claro */
+                color: #007b8a; /* Azul oscuro */
+            }
+        </style>
     </head>
     <body>
         <div id="cabeceraExamen" class="cabecera-container">
@@ -178,7 +244,22 @@
 
             <section class="center">
                 <button class="finalizar button">Entregar Examen</button>
+                <!-- Botón para abrir el modal -->
+    <button id="openModalBtn">Mostrar Advertencia</button>
             </section>   
+            <!-- Estructura del Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">¿Deseas enviar la evaluación?</div>
+            <div class="modal-body">
+                Una vez enviada la evaluación, no podrás realizar cambios.
+            </div>
+            <div class="modal-footer">
+                <button id="confirmBtn" class="btn-confirm">Sí</button>
+                <button id="cancelBtn" class="btn-cancel">No</button>
+            </div>
+        </div>
+    </div>
         </div>
     
         <div id="resultadoPagina" style="display:none;">
