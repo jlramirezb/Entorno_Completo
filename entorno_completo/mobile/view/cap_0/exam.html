@@ -12,6 +12,10 @@
         <link rel="stylesheet" type="text/css" href="../../../libraries/generalStylesFragata.css" />
         <script type="text/javascript" src="../../../dist/engines/genericEngines/polyfillsAllUsed.min.js"></script>
         <script type="text/javascript" src="../../../libraries/jsxgraphcore.js"></script>
+
+        <!-- Importa la fuente Raleway desde Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    
         <link rel="stylesheet" type="text/css" href="estilo.css" />
         <title>Examen Capítulo 0</title>
 
@@ -39,7 +43,7 @@
                 max-width: 400px;
                 border-radius: 10px;
                 text-align: center;
-                font-family: Arial, sans-serif;
+                font-family: Raleway;
             }
     
             /* Estilos para el texto del modal */
@@ -53,6 +57,7 @@
                 font-size: 14px;
                 color: #666;
                 margin-bottom: 20px;
+                font-weight: bold;
             }
     
             /* Estilos para los botones */
@@ -60,24 +65,33 @@
                 display: flex;
                 justify-content: center;
                 gap: 10px;
+                font-family: Raleway;
+                font-size: 13px; 
+                font-weight: bold;
             }
     
             .modal-footer button {
                 padding: 10px 20px;
                 border: none;
-                border-radius: 5px;
-                font-size: 16px;
+                border-radius: 10px;
+                font-size: 13px;
+                width: 81px;
+                height: 21px; 
                 cursor: pointer;
+                font-family: Raleway;
+                line-height: 1px;
             }
     
             .btn-confirm {
-                background-color: #007b8a; /* Azul oscuro */
-                color: white;
+                background-color: #076382; /* Azul oscuro */
+                color: white;  
+                font-weight: bold;                    
             }
     
             .btn-cancel {
-                background-color: #e0e0e0; /* Gris claro */
-                color: #007b8a; /* Azul oscuro */
+                background-color: #D9D9D9; /* Gris claro */
+                color: #076382; /* Azul oscuro */
+                font-weight: bold;
             }
         </style>
     </head>
