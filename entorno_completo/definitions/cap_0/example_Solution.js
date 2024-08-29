@@ -2442,9 +2442,9 @@ artefactaux.forEach((element) => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const paginaExamen = document.getElementById('paginaExamen');
-    const notaprevia = document.getElementById('previous');
-    const notaafter = document.getElementById('after');
+    //const paginaExamen = document.getElementById('paginaExamen');
+    //const notaprevia = document.getElementById('previous');
+    //const notaafter = document.getElementById('after');
     // Recupera los datos almacenados en localStorage
     const Datos = JSON.parse(localStorage.getItem('Datos'));
     console.log(Datos);
@@ -2459,10 +2459,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('codExam').innerHTML = Datos.CodExam;
 
     // Verifica y compara fechas
-    let fechaHoraInicio = Datos.fechaHoraInicio;
-    let fechaHoraCierre = Datos.fechaHoraCierre;
+    //let fechaHoraInicio = Datos.fechaHoraInicio;
+    //let fechaHoraCierre = Datos.fechaHoraCierre;
 
-    if (fechaHoraInicio && fechaHoraCierre) {
+    /*if (fechaHoraInicio && fechaHoraCierre) {
         const fechaHoraInicioDate = new Date(fechaHoraInicio);
         const fechaHoraCierreDate = new Date(fechaHoraCierre);
         const currentDate = new Date();
@@ -2490,7 +2490,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     } else {
         console.log("No hay una fecha de inicio almacenada.");
-    }
+    }*/
 });
 
 // Selecciona todos los elementos div con la clase 'boardfault'
@@ -2539,25 +2539,21 @@ let propiedadesRdef = Object.keys(rDef).slice(1);
 
 ocultaButtons();
 
-document.getElementById('download-pdf').addEventListener('click', function () {
-    // Target the whole body of the webpage to convert it to PDF
-    const element = document.getElementById('paginaExamen');
-    
-    // Configure options for the PDF
-    /*const options = {
-        margin: 0,
-        filename: 'webpage.pdf',
-        image: { type: 'jpeg', quality: 4 },
-        html2canvas: { scale: 8},
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
-    };*/
 
-    // Convert and download the PDF
-    html2pdf().from(element).set({
+
+document.getElementById('pdf').addEventListener('click', function () {
+    // Selecciona el elemento que deseas convertir a PDF
+    const elementoParaConvertir = document.body;  // Aquí puedes especificar un contenedor en particular
+
+    // Configuración del PDF
+    const opciones = {
         margin: 0,
-        filename: 'webpage_with_coordinates.pdf',
-        image: { type: 'jpeg', quality: 2 },
-        html2canvas: { scale: 1 },  // Aumentar la escala a 3 o incluso más si es necesario
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    }).save();
+        filename: 'mi-pagina.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 3, logging: true, dpi: 192, letterRendering: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+    };
+
+    // Generar el PDF
+    html2pdf().from(elementoParaConvertir).set(opciones).save();
 });
