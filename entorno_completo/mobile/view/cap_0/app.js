@@ -289,31 +289,24 @@ btnPreg4.addEventListener("click", e=>{
 function seleccionarAleatorios(Pregunta, min, max,totalale) {
     if(Pregunta==='P1'){
         console.log(min,max,totalale)
-        // Crear un array con los números consecutivos    
-        const numeros = [];
-        for (let i = min; i <= max; i++) {
-            numeros.push(i);
-        }
-        // Seleccionar 3 números aleatorios distintos
-        const seleccionados = [];
-        while (seleccionados.length < totalale) {
-            const indiceAleatorio = Math.floor(Math.random() * numeros.length);
-            const numeroAleatorio = numeros[indiceAleatorio];
-            // Verificar si el número ya está seleccionado
-            if (!seleccionados.includes(numeroAleatorio)) {
-                seleccionados.push(numeroAleatorio);
-                numeros.splice(indiceAleatorio, 1); // Eliminar el número del array
-            }
-        }
-        // Devolver los números seleccionados
-        return seleccionados;
+        let P1 = [1,2,3,4,5,6,7,8];
+        let P2 = [9,10,11,12,13,14,15,16];
+        let P3 = [17,18,19,20,21,22,23,24];
+
+        const seleccionadosP1 = [];
+        seleccionadosP1.push(P1[Math.floor(Math.random()*P1.length)]);
+        seleccionadosP1.push(P2[Math.floor(Math.random()*P2.length)]);
+        seleccionadosP1.push(P3[Math.floor(Math.random()*P3.length)]);
+        console.log(seleccionadosP1);
+        
+        return seleccionadosP1;
     }
     else if (Pregunta==='P2'){
         console.log(min,max,totalale)
-        let P4 = [0,1,2,3,4,5,6,7];
-        let P5 = [8,9,10,11,12,13,14,15];
-        let P6 = [16,17,18,19,20,21,22,23];
-        let P7 = [24,25,26,27,28,29,30,31];
+        let P4 = [1,2,3,4,5,6,7,8];
+        let P5 = [9,10,11,12,13,14,15,16];
+        let P6 = [17,18,19,20,21,22,23,24];
+        let P7 = [25,26,27,28,29,30,31,32];
         const seleccionadosP2 = [];
         seleccionadosP2.push(P4[Math.floor(Math.random()*P4.length)]);
         seleccionadosP2.push(P5[Math.floor(Math.random()*P5.length)]);
@@ -373,7 +366,7 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
     let position2 = localStorageSeleccionados("P2", 0, 31, 4);    
     console.log(position2);
 
-    let combinedArray = position.concat(position2.map(num => num + 1));
+    let combinedArray = position.concat(position2);
     // Map each element to a string with leading zero if necessary and then join them into a single string
     let resultString = combinedArray.map(num => num < 10 ? '0' + num : num.toString()).join('');
     console.log(resultString); // Output: "01210900121523"
@@ -399,4 +392,70 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
 })
 
 
+function generarPrimeras20CombinacionesConUnElementoDeCadaArreglo(arreglos) {
+    const resultados = [];
 
+    function backtrack(combinacion, indiceArreglo) {
+        if (indiceArreglo === arreglos.length) {
+            resultados.push([...combinacion]);
+            // Si ya tenemos 20 combinaciones, detenemos la búsqueda
+            if (resultados.length === 20) {
+                return;
+            }
+        }
+        // Resto del código es igual al anterior
+        // ...
+        const arregloActual = arreglos[indiceArreglo];
+        for (let i = 0; i < arregloActual.length; i++) {
+            combinacion.push(arregloActual[i]);
+            backtrack(combinacion, indiceArreglo + 1);
+            combinacion.pop();
+        }
+    }
+    backtrack([], 0);
+    return resultados;
+}
+
+/*let P1 = [1,2,3,4,5,6,7,8];
+let P2 = [9,10,11,12,13,14,15,16];
+let P3 = [17,18,19,20,21,22,23,24];
+let P4 = [1,2,3,4,5,6,7,8];
+let P5 = [9,10,11,12,13,14,15,16];
+let P6 = [17,18,19,20,21,22,23,24];
+let P7 = [25,26,27,28,29,30,31,32];
+let combinaciones = [];
+
+// Bucle para generar combinaciones
+for (let i1 = 0; i1 < P1.length; i1++) {
+    for (let i2 = 0; i2 < P2.length; i2++) {
+        for (let i3 = 0; i3 < P3.length; i3++) {
+            for (let i4 = 0; i4 < P4.length; i4++) {
+                for (let i5 = 0; i5 < P5.length; i5++) {
+                    for (let i6 = 0; i6 < P6.length; i6++) {
+                        for (let i7 = 0; i7 < P7.length; i7++) {
+                            let combinacion = [
+                                P1[i1], P2[i2], P3[i3], 
+                                P4[i4], P5[i5], P6[i6], P7[i7]
+                            ];
+                            combinaciones.push(combinacion);
+                            // Limita a 20 combinaciones
+                            if (combinaciones.length === 20) {
+                                break;
+                            }
+                        }
+                        if (combinaciones.length === 20) break;
+                    }
+                    if (combinaciones.length === 20) break;
+                }
+                if (combinaciones.length === 20) break;
+            }
+            if (combinaciones.length === 20) break;
+        }
+        if (combinaciones.length === 20) break;
+    }
+}
+
+// Imprimir las primeras 20 combinaciones
+combinaciones.forEach((combinacion, index) => {
+    console.log(`Combinación ${index + 1}: ${combinacion.join(', ')}`);
+});*/

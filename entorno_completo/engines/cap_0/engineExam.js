@@ -5,24 +5,17 @@ const LOCAL_COLORS_KEY = 'colorsExamen';
 function seleccionarAleatorios(Pregunta, min, max,totalale) {
     if(Pregunta==='P1'){
         console.log(min,max,totalale)
-        // Crear un array con los números consecutivos    
-        const numeros = [];
-        for (let i = min; i <= max; i++) {
-            numeros.push(i);
-        }
-        // Seleccionar 3 números aleatorios distintos
-        const seleccionados = [];
-        while (seleccionados.length < totalale) {
-            const indiceAleatorio = Math.floor(Math.random() * numeros.length);
-            const numeroAleatorio = numeros[indiceAleatorio];
-            // Verificar si el número ya está seleccionado
-            if (!seleccionados.includes(numeroAleatorio)) {
-                seleccionados.push(numeroAleatorio);
-                numeros.splice(indiceAleatorio, 1); // Eliminar el número del array
-            }
-        }
-        // Devolver los números seleccionados
-        return seleccionados;
+        let P1 = [1,2,3,4,5,6,7,8];
+        let P2 = [9,10,11,12,13,14,15,16];
+        let P3 = [17,18,19,20,21,22,23,24];
+
+        const seleccionadosP1 = [];
+        seleccionadosP1.push(P1[Math.floor(Math.random()*P1.length)]);
+        seleccionadosP1.push(P2[Math.floor(Math.random()*P2.length)]);
+        seleccionadosP1.push(P3[Math.floor(Math.random()*P3.length)]);
+        console.log(seleccionadosP1);
+        
+        return seleccionadosP1;
     }
     else if (Pregunta==='P2'){
         console.log(min,max,totalale)
