@@ -594,7 +594,7 @@ function mostrarResultados(examData) {
 }
 
 // Evento de click para el botón 'Finalizar'
-document.querySelector('.finalizar').addEventListener('click', () => {
+document.querySelector('#confirmBtn').addEventListener('click', () => {
     //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
     let examData = inicializarExamen('resultadoExamen');
     const spanTime = document.getElementById('totalTime');
