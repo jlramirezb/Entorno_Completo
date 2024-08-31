@@ -494,10 +494,18 @@ function calcularResultadoTotal(data) {
 
 //let examData = resultadoExamen;
 // Función que calcula el resultado total y muestra los resultados
-function mostrarResultados(examData) {
+function mostrarResultados(data) {
     const paginaExamen = document.getElementById('paginaExamen');
     const resultadoPagina = document.getElementById('resultadoPagina');
-    const resultadoTabla = document.getElementById('resultadoTabla');
+    const notafinal = document.getElementById('notafinal');
+    const sumaItems = data.reduce((sum, current) => {
+        if (current.items && Array.isArray(current.items)) {
+            return sum + current.items.reduce((sum2, current2) => sum2 + current2, 0);
+        }
+        return sum;
+    }, 0);
+    //notafinal.textContent = `Tu nota final es de ${sumaItems} puntos.`;
+    /*const resultadoTabla = document.getElementById('resultadoTabla');
     const headerRow = document.getElementById('headerRow');
     const resultadoBody = document.getElementById('resultadoBody');
     const resultadoTotalSpan = document.getElementById('resultadoTotal');
@@ -588,16 +596,96 @@ function mostrarResultados(examData) {
     // Mostrar el resultado total
     resultadoTotalSpan.textContent = total;
 
-    // Ocultar la página original y mostrar la página de resultados
+    // Ocultar la página original y mostrar la página de resultados*/
     paginaExamen.style.display = 'none';       // Oculta la página original
-    resultadoPagina.style.display = 'block';   // Muestra la página de resultados
+    resultadoPagina.style.display = 'block';   // Muestra la página de resultados*/
+    notafinal.style.display = 'block';
+    const spannota=document.getElementById("nota");
+    spannota.textContent = sumaItems;
+    let currentIndex = 0;
+        let visibleArtefactos = 1;
+
+        function createArtefactoElement(artefacto, index) {
+            const element = document.createElement('div');
+            element.className = 'artefacto';
+            
+            if (artefacto.id === "NF") {
+                element.innerHTML = `
+                    <h2>Artefacto ${index + 1}</h2>
+                    <div class="info">Resultado: ${artefacto.resultado}</div>
+                `;
+            } else {
+                let itemsHtml = artefacto.items.map((item, idx) => `
+                    <tr>
+                        <td>${idx + 1}</td>
+                        <td>${item}</td>
+                    </tr>
+                `).join('');
+
+                element.innerHTML = `
+                    <h2>Artefacto ${index + 1}</h2>
+                    <table>
+                        <tr>
+                            <th>Items</th>
+                            <th>Puntos</th>
+                        </tr>
+                        ${itemsHtml}
+                    </table>
+                    <div class="info">
+                        <strong>Total puntos: </strong>${artefacto.items.reduce((a, b) => a + b, 0)}<br>
+                        <strong>Intentos: </strong>${artefacto.intentos}<br>
+                        <strong>Tiempo/Seg: </strong>${artefacto.tiempo}
+                    </div>
+                `;
+            }
+            return element;
+        }
+
+        function updateSlider() {
+            const slider = document.getElementById('slider');
+            slider.innerHTML = '';
+            for (let i = 0; i < data.length-1; i++) {
+                slider.appendChild(createArtefactoElement(data[i], i));
+            }
+            updateVisibleArtefactos();
+        }
+
+        function updateVisibleArtefactos() {
+            const containerWidth = document.querySelector('.slider-container').offsetWidth;
+            const artefactoWidth = 270; // 250px width + 20px margin
+            visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));
+            document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
+            
+            // Actualizar estado de los botones
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex >= data.length - visibleArtefactos;
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateVisibleArtefactos();
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentIndex < data.length - visibleArtefactos) {
+                currentIndex++;
+                updateVisibleArtefactos();
+            }
+        });
+
+        window.addEventListener('resize', updateVisibleArtefactos);
+
+        // Inicializar el slider
+        updateSlider();
 }
 
 // Evento de click para el botón 'Finalizar'
 document.querySelector('#confirmBtn').addEventListener('click', () => {
     //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
     let examData = inicializarExamen('resultadoExamen');
-    const spanTime = document.getElementById('totalTime');
+    const spanTime = document.getElementById('tiempo');
     const startDate = new Date(localStorage.getItem('fechaInicioEst'));
     const endDate = new Date();
     let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
@@ -608,6 +696,7 @@ document.querySelector('#confirmBtn').addEventListener('click', () => {
     console.log(timeElapsed);
     mostrarResultados(examData);
     localStorage.removeItem(LOCAL_STORAGE_KEY);
+    localStorage.removeItem(LOCAL_COLORS_KEY);
     localStorage.removeItem('SeleccionadosP1');
     localStorage.removeItem('SeleccionadosP2');
     localStorage.removeItem('fechaInicioEst');

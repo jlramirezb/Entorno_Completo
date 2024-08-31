@@ -1919,8 +1919,12 @@ openModalBtn.onclick = function() {
 
 // Cuando el usuario haga clic en "Sí", se puede manejar la lógica para enviar la evaluación
 confirmBtn.onclick = function() {
-    alert("Evaluación enviada");
+    //alert("Evaluación enviada");
     modal.style.display = "none";
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 // Cuando el usuario haga clic en "No", cerrar el modal

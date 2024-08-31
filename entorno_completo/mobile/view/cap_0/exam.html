@@ -55,18 +55,23 @@
             <div class="header-title">
                 📝 Evaluación
             </div>
-            <div class="header-content">
-                <div class="header-section">
-                    <p><strong>Nombre y apellido: </strong><span id="nombreEstudiante"></span></p>
-                    <p><strong>Correo: </strong><span id ="correoEstudiante"></span></p>
-                    <p><strong>Capítulo: </strong><span id ="capExam"></span></p>
-                    <p><strong>Modelo de evaluación: </strong><span id ="codExam"></span></p>
+            <div class="card-content">
+                <div id="notafinal" class="center" style="display:none;">
+                    <p><strong>Nota: <span id="nota"></span>  |  Tiempo: <span id="tiempo"></span></strong></p>
                 </div>
-                <div class="header-section">
-                    <p><strong>Categoría: </strong></s><span id="Categoria"></span></p>
-                    <p><strong>Curso: </strong><span id="materia"></span></p>
-                    <p><strong>Institución: </strong><span id="institucion"></span></p>
-                    <p><strong>Sección: </strong><span id ="seccion"></span></p>
+                <div class="header-content">
+                    <div class="header-section">
+                        <p><strong>Nombre y apellido: </strong><span id="nombreEstudiante"></span></p>
+                        <p><strong>Correo: </strong><span id ="correoEstudiante"></span></p>
+                        <p><strong>Capítulo: </strong><span id ="capExam"></span></p>
+                        <p><strong>Modelo de evaluación: </strong><span id ="codExam"></span></p>
+                    </div>
+                    <div class="header-section">
+                        <p><strong>Categoría: </strong></s><span id="Categoria"></span></p>
+                        <p><strong>Curso: </strong><span id="materia"></span></p>
+                        <p><strong>Institución: </strong><span id="institucion"></span></p>
+                        <p><strong>Sección: </strong><span id ="seccion"></span></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,8 +84,6 @@
             <p>El examen no puede ser habilitado en la fecha actual.</small>
             </p>
         </div>
-
-
 
         <div id="paginaExamen" style="display:none;">
             <!--Pregunta 1-->
@@ -221,20 +224,13 @@
         </div>
     
         <div id="resultadoPagina" style="display:none;">
-            <h2>Resultados del Examen</h2>
-            <h3>Nota Examen: <span id="resultadoTotal"></span></h3>
-            <h3>Tiempo Examen: <span id="totalTime"></span></h3>
-            <table id="resultadoTabla" border="1">
-                <thead>
-                    <tr id="headerRow">
-                        <th>Pregunta</th>
-                        <!-- Las cabeceras de items se añadirán dinámicamente -->
-                    </tr>
-                </thead>
-                <tbody id="resultadoBody">
-                    <!-- Aquí se insertarán los resultados -->
-                </tbody>
-            </table>            
+            <div class="container">
+                <button id="prevBtn">&lt;</button>
+                <div class="slider-container">
+                    <div class="slider" id="slider"></div>
+                </div>
+                <button id="nextBtn">&gt;</button>
+            </div>
         </div>
 
     <!--Scripts-->
