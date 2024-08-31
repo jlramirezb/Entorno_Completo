@@ -372,14 +372,15 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
     console.log(resultString); // Output: "01210900121523"
 
     const Datos = {
-        Instituto: "Nombre del Instituto",
-        Materia: "Nombre de la Materia",
-        Seccion: "Sección del Curso",
+        Instituto: "Universidad de Carabobo",
+        Categoria: "Educación Superior",
+        Curso: "Fragata",
+        Seccion: "02",
         Estudiante: {
-            Nombre: "Nombre del Estudiante",
-            Cedula: "Cedula del Estudiante"
+            Nombre: "Estudiante U",
+            Correo: "estudiante@gmail.com"
         },
-        Capitulo: "Capítulo que se está evaluando",
+        Capitulo: "0",
         fechaHoraInicio: `${fechaInicio} ${horaInicio}`, // Combina fecha y hora de inicio
         fechaHoraCierre: `${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
         SeleccionadosP1: position,

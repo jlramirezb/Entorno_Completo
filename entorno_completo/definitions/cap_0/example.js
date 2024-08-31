@@ -1790,7 +1790,7 @@ artefactaux.forEach((element) => {
     // Creamos el encabezado "Pregunta"
     let questionHeader = document.createElement("div");
     questionHeader.className = "question-header"; // Asignamos la clase
-    questionHeader.textContent = "Artef." + i.toString();
+    questionHeader.textContent = "Artef. " + i.toString();
     headersDiv.appendChild(questionHeader);
 
     let scoreHeader = document.createElement("div");
@@ -1820,11 +1820,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Pinta los datos en el DOM
     document.getElementById('institucion').innerHTML = Datos.Instituto;
-    document.getElementById('materia').innerHTML = Datos.Materia;
+    document.getElementById('Categoria').innerHTML = Datos.Categoria;
+    document.getElementById('materia').innerHTML = Datos.Curso;
     document.getElementById('seccion').innerHTML = Datos.Seccion;
     document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
-    document.getElementById('cedulaEstudiante').innerHTML = Datos.Estudiante.Cedula;
-    document.getElementById('capitulo').innerHTML = Datos.Capitulo;
+    document.getElementById('correoEstudiante').innerHTML = Datos.Estudiante.Correo;
+    document.getElementById('capExam').innerHTML = Datos.Capitulo;
     document.getElementById('codExam').innerHTML = Datos.CodExam;
 
     // Verifica y compara fechas
@@ -1877,12 +1878,12 @@ for (let i = 3; i < divs.length; i++) {
     spanPregunta.style.float = 'left';
     const spanPuntaje = document.createElement('span');
     spanPuntaje.style.float = 'right';
-    spanPregunta.textContent =  "P"+(i+1).toString(); 
-    let puntaje = (i===4 || i===6) ? '4 pts' : '3 pts'; 
+    spanPregunta.textContent =  "Artef. "+(i+1).toString(); 
+    let puntaje = (i===4 || i===6) ? '4 Pts' : '3 Pts'; 
     spanPuntaje.textContent = puntaje;
     //spanPuntaje.style.marginLeft = '10px';
     //spanPuntaje.style.marginRight = '10px';
-    spanPregunta.classList.add('question-header2');
+    spanPregunta.classList.add('question-header');
     spanPuntaje.classList.add("oval-container");  
     divPregunta.appendChild(spanPregunta);
     divPregunta.appendChild(spanPuntaje);
