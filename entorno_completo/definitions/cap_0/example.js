@@ -1790,11 +1790,11 @@ artefactaux.forEach((element) => {
     // Creamos el encabezado "Pregunta"
     let questionHeader = document.createElement("div");
     questionHeader.className = "question-header"; // Asignamos la clase
-    questionHeader.textContent = "P" + i.toString();
+    questionHeader.textContent = "Artef." + i.toString();
     headersDiv.appendChild(questionHeader);
 
     let scoreHeader = document.createElement("div");
-    scoreHeader.className = "score-header"; // Asignamos la clase
+    scoreHeader.className = "oval-container"; // Asignamos la clase
 
     scoreHeader.textContent = "2 Pts";
     headersDiv.appendChild(scoreHeader);

@@ -176,10 +176,10 @@ function inicializarExamen(key) {
             // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas  
             const colorsBorders = {};            
             for (let i = 0; i <= 6; i++) {
-                if(i<3)
-                    colorsBorders[i] = "black";
-                else
-                    colorsBorders[i] = "#217e9d";
+                //if(i<3)
+                    colorsBorders[i] = "#217E9D";
+                /*else
+                    colorsBorders[i] = "#217E9D";-*/
             }
             localStorage.setItem(key, JSON.stringify(colorsBorders));
             return colorsBorders;
@@ -403,50 +403,50 @@ function cleanArt(resets,resultadoExamen,borderColor){
         resets[i].addEventListener('click', function() {
             switch (this) {
                 case resets[0]:
-                    newDiv[i].style.borderColor = 'black';
-                    borderColor[i] = 'black';
+                    newDiv[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
                     console.log(borderColor);
                     localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0];
                     break;
                 case resets[1]:                    
-                    newDiv[i].style.borderColor = 'black';
-                    borderColor[i] = 'black';
+                    newDiv[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
                     console.log(borderColor);
                     localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0];
                     break;
                 case resets[2]:
-                    newDiv[i].style.borderColor = 'black';
-                    borderColor[i] = 'black';
+                    newDiv[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
                     console.log(borderColor);
                     localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0];
                     break;
                 case resets[3]:
-                    borderDefault[i].style.borderColor = '#217e9d';
-                    borderColor[i] = '#217e9d';
+                    borderDefault[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
                     console.log(borderColor);
                     localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0,0];
                     break;
                 case resets[4]:
-                    borderDefault[i].style.borderColor = '#217e9d';
-                    borderColor[i] = '#217e9d';
+                    borderDefault[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
                     console.log(borderColor);
                     localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0,0,0];
                     break;
                 case resets[5]:
-                    borderDefault[i].style.borderColor = '#217e9d';
-                    borderColor[i] = '#217e9d';
+                    borderDefault[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
                     console.log(borderColor);
                     localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0,0];
                     break;
                 case resets[6]:
-                    borderDefault[i].style.borderColor = '#217e9d';
-                    borderColor[i] = '#217e9d';
+                    borderDefault[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
                     console.log(borderColor);
                     localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0,0,0];
