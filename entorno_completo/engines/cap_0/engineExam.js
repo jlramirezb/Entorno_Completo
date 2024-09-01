@@ -504,104 +504,14 @@ function mostrarResultados(data) {
         }
         return sum;
     }, 0);
-    //notafinal.textContent = `Tu nota final es de ${sumaItems} puntos.`;
-    /*const resultadoTabla = document.getElementById('resultadoTabla');
-    const headerRow = document.getElementById('headerRow');
-    const resultadoBody = document.getElementById('resultadoBody');
-    const resultadoTotalSpan = document.getElementById('resultadoTotal');
     
-    let total = 0;
-    let maxItems = 0;
-
-    // Determinar el máximo número de ítems en las preguntas para definir el header
-    examData.forEach(pregunta => {
-        if (pregunta.items && Array.isArray(pregunta.items)) {
-            maxItems = Math.max(maxItems, pregunta.items.length);
-        }
-    });
-
-    // Generar las cabeceras de los items
-    for (let i = 1; i <= maxItems; i++) {
-        const th = document.createElement('th');
-        th.textContent = `Item ${i}`;
-        headerRow.appendChild(th);
-    }
-    
-    // Añadir una columna para el resultado total por fila
-    const thTotal = document.createElement('th');
-    thTotal.textContent = 'Total';
-    headerRow.appendChild(thTotal);
-
-    //Agrega una columna para el tiempo por fila
-    const thTiempo = document.createElement('th');
-    thTiempo.textContent = 'Tiempo (seg)';
-    headerRow.appendChild(thTiempo);
-
-    //Agrega una columna para los intentos por fila
-    const thIntentos = document.createElement('th');
-    thIntentos.textContent = 'Intentos';
-    headerRow.appendChild(thIntentos);
-
-    // Generar las filas de resultados
-    examData.forEach(pregunta => {
-        if (pregunta.items && Array.isArray(pregunta.items)) {
-            const fila = document.createElement('tr');
-            const celdaPregunta = document.createElement('td');
-            celdaPregunta.textContent = pregunta.id;
-            fila.appendChild(celdaPregunta);
-
-            let totalFila = 0;
-
-            // Añadir cada item a la fila
-            pregunta.items.forEach(itemScore => {
-                const celdaItem = document.createElement('td');
-                celdaItem.textContent = itemScore;
-                fila.appendChild(celdaItem);
-                totalFila += itemScore;
-                total += itemScore;
-            });
-
-            // Rellenar celdas vacías si faltan items para completar la fila
-            for (let i = pregunta.items.length; i < maxItems; i++) {
-                const celdaVacia = document.createElement('td');
-                celdaVacia.textContent = '-';
-                fila.appendChild(celdaVacia);
-            }
-
-            // Añadir celda con el total de la fila
-            const celdaTotal = document.createElement('td');
-            celdaTotal.textContent = totalFila;
-            fila.appendChild(celdaTotal);
-
-            //Agrega celda para el tiempo de la fila
-            const celdaTiempo = document.createElement('td');
-            celdaTiempo.textContent = pregunta.tiempo;
-            fila.appendChild(celdaTiempo);
-
-            //Agrega celda para los intentos de la fila
-            const celdaIntentos = document.createElement('td');
-            celdaIntentos.textContent = pregunta.intentos;
-            fila.appendChild(celdaIntentos);
-
-            resultadoBody.appendChild(fila);
-        }
-    });
-
-    // Guardar el resultado total en el objeto 'NF'
-    const nfObject = examData.find(obj => obj.id === 'NF');
-    if (nfObject) {
-        nfObject.resultado = total;
-    }
-
-    // Mostrar el resultado total
-    resultadoTotalSpan.textContent = total;
-
-    // Ocultar la página original y mostrar la página de resultados*/
     paginaExamen.style.display = 'none';       // Oculta la página original
-    resultadoPagina.style.display = 'block';   // Muestra la página de resultados*/
+    resultadoPagina.style.display = 'block';   // Muestra la página de resultados
     notafinal.style.display = 'block';
     const spannota=document.getElementById("nota");
     spannota.textContent = sumaItems;
+
+    
     let currentIndex = 0;
         let visibleArtefactos = 1;
 
@@ -651,8 +561,9 @@ function mostrarResultados(data) {
         }
 
         function updateVisibleArtefactos() {
-            const containerWidth = document.querySelector('.slider-container').offsetWidth;
-            const artefactoWidth = 270; // 250px width + 20px margin
+            const containerWidth = document.querySelector('.slider-container').offsetWidth;            
+            let artefactoWidth = 250; // 250px width + 20px margin
+            artefactoWidth = window.innerWidth < 768 ? 150 : 250; //si se ve desde un telefono ancho de 150px, de lo contrario 250px
             visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));
             document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
             
@@ -680,6 +591,7 @@ function mostrarResultados(data) {
         // Inicializar el slider
         updateSlider();
 }
+
 
 // Evento de click para el botón 'Finalizar'
 document.querySelector('#confirmBtn').addEventListener('click', () => {
