@@ -16,42 +16,38 @@
         <script type="text/javascript" src="../../../libraries/jspdf.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="estilo.css" />
         <title>Examen Capítulo 0</title>        
     </head>
     <body>
         <div id="content">
-        <div id="cabeceraExamen" class="cabecera-container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p><strong>Institución:</strong> <span id="institucion"></span></p>
+            <div class="header-container">
+                <div class="header-title">
+                    📝 Evaluación
+                </div>
+                <div class="card-content">
+                    <div id="notafinal" class="center" style="display:none;">
+                        <p><strong>Nota: <span id="nota"></span>  |  Tiempo: <span id="tiempo"></span></strong></p>
+                    </div>
+                    <div class="header-content">
+                        <div class="header-section">
+                            <!--<p><strong>Nombre y apellido: </strong><span id="nombreEstudiante"></span></p>
+                            <p><strong>Correo: </strong><span id ="correoEstudiante"></span></p>-->
+                            <p><strong>Capítulo: </strong><span id ="capExam"></span></p>
+                            <p><strong>Modelo de evaluación: </strong><span id ="codExam"></span></p>
+                        </div>
+                        <div class="header-section">
+                            <p><strong>Categoría: </strong></s><span id="Categoria"></span></p>
+                            <p><strong>Curso: </strong><span id="materia"></span></p>
+                            <p><strong>Institución: </strong><span id="institucion"></span></p>
+                            <p><strong>Sección: </strong><span id ="seccion"></span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><strong>Materia:</strong> <span id="materia"></span></p>
-                </div>
-                <div class="col-sm-6">
-                    <p><strong>Sección:</strong> <span id="seccion"></span></p>
-                </div>
-            </div>
-            <!--<div class="row">
-                <div class="col-sm-6">
-                    <p><strong>Nombre:</strong> <span id="nombreEstudiante"></span></p>
-                </div>
-                <div class="col-sm-6">
-                    <p><strong>Cédula:</strong> <span id="cedulaEstudiante"></span></p>
-                </div>
-            </div>-->
-            <div class="row">
-                <div class="col-sm-6">
-                    <p><strong>Capítulo:</strong> <span id="capitulo"></span></p>
-                </div>
-                <div class="col-sm-6">
-                    <p><strong>Código Examen:</strong> <span id="codExam"></span></p>
-                </div>
-            </div>
-        </div>  
         <div id="paginaExamen" style="display:block;">
             <!--Pregunta 1-->
             <div class="containerNormal background-gray">
@@ -171,15 +167,15 @@
             </template>
 
             <section class="center">
-                <button class="finalizar button">Entregar Examen</button>
-                <button id="pdf" class="finalizar button"">Download as PDF</button>
+                <!--<button class="finalizar button">Entregar Examen</button>-->
+                <button id="pdf" class="finalizar button">Download as PDF</button>
                 
             </section> 
         </div>
 
         
     </div>
-        <div id="resultadoPagina" style="display:none;">
+        <!--<div id="resultadoPagina" style="display:none;">
             <h2>Resultados del Examen</h2>
             <h3>Nota Examen: <span id="resultadoTotal"></span></h3>
             <h3>Tiempo Examen: <span id="totalTime"></span></h3>
@@ -187,14 +183,14 @@
                 <thead>
                     <tr id="headerRow">
                         <th>Pregunta</th>
-                        <!-- Las cabeceras de items se añadirán dinámicamente -->
+                         Las cabeceras de items se añadirán dinámicamente 
                     </tr>
                 </thead>
                 <tbody id="resultadoBody">
-                    <!-- Aquí se insertarán los resultados -->
+                    Aquí se insertarán los resultados 
                 </tbody>
             </table>            
-        </div>
+        </div>-->
 
     <!--Scripts-->
     <script src="../../../engines/genericEngines/mod_G.js"></script>

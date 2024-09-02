@@ -2395,8 +2395,6 @@ function ocultaButtons()
     }
 }
 
-
-
 //Funcion para iniciarlo cuando se cargue la pagina
 window.onload = initMain();
 let i = 0;
@@ -2419,11 +2417,11 @@ artefactaux.forEach((element) => {
     // Creamos el encabezado "Pregunta"
     let questionHeader = document.createElement("div");
     questionHeader.className = "question-header"; // Asignamos la clase
-    questionHeader.textContent = "P" + i.toString();
+    questionHeader.textContent = "Artef. " + i.toString();
     headersDiv.appendChild(questionHeader);
 
     let scoreHeader = document.createElement("div");
-    scoreHeader.className = "score-header"; // Asignamos la clase
+    scoreHeader.className = "oval-container"; // Asignamos la clase
 
     scoreHeader.textContent = "2 Pts";
     headersDiv.appendChild(scoreHeader);
@@ -2439,56 +2437,17 @@ artefactaux.forEach((element) => {
     containerAll.appendChild(newDiv);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    //const paginaExamen = document.getElementById('paginaExamen');
-    //const notaprevia = document.getElementById('previous');
-    //const notaafter = document.getElementById('after');
-    // Recupera los datos almacenados en localStorage
+document.addEventListener('DOMContentLoaded', function() {    
     const Datos = JSON.parse(localStorage.getItem('Datos'));
     console.log(Datos);
 
     // Pinta los datos en el DOM
     document.getElementById('institucion').innerHTML = Datos.Instituto;
-    document.getElementById('materia').innerHTML = Datos.Materia;
-    document.getElementById('seccion').innerHTML = Datos.Seccion;
-    /*document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
-    document.getElementById('cedulaEstudiante').innerHTML = Datos.Estudiante.Cedula;*/
-    document.getElementById('capitulo').innerHTML = Datos.Capitulo;
-    document.getElementById('codExam').innerHTML = Datos.CodExam;
-
-    // Verifica y compara fechas
-    //let fechaHoraInicio = Datos.fechaHoraInicio;
-    //let fechaHoraCierre = Datos.fechaHoraCierre;
-
-    /*if (fechaHoraInicio && fechaHoraCierre) {
-        const fechaHoraInicioDate = new Date(fechaHoraInicio);
-        const fechaHoraCierreDate = new Date(fechaHoraCierre);
-        const currentDate = new Date();
-        
-        if (fechaHoraInicioDate > currentDate) {
-            console.log("La evaluación aún no ha comenzado.");
-            paginaExamen.style.display = 'none';
-            notaprevia.style.display = 'block';
-        } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
-            console.log("La evaluación ya ha comenzado o debería haber comenzado.");
-            fechaInicioEst = localStorage.getItem('fechaInicioEst');
-            PintaBordes(colorBorders);
-            if(fechaInicioEst === null)
-            {
-                fechaInicioEst = currentDate;
-                localStorage.setItem('fechaInicioEst',fechaInicioEst);
-                
-            }
-            
-            paginaExamen.style.display = 'block';
-        } else {
-            console.log("La evaluación ya ha finalizado o debería haber finalizado.");
-            paginaExamen.style.display = 'none';
-            notaafter.style.display = 'block';
-        }
-    } else {
-        console.log("No hay una fecha de inicio almacenada.");
-    }*/
+    document.getElementById('Categoria').innerHTML = Datos.Categoria;
+    document.getElementById('materia').innerHTML = Datos.Curso;
+    document.getElementById('seccion').innerHTML = Datos.Seccion;    
+    document.getElementById('capExam').innerHTML = Datos.Capitulo;
+    document.getElementById('codExam').innerHTML = Datos.CodExam;    
 });
 
 // Selecciona todos los elementos div con la clase 'boardfault'
@@ -2501,17 +2460,14 @@ for (let i = 0; i < divs.length; i++) {
     //Itera a partir del cuarto div con la clase 'boardfault' para agregar el texto "Pregunta"  
     const divPregunta = document.createElement('div');
     divPregunta.style.display = 'flex';
-    //divPregunta.style.alignItems = 'center';
     const spanPregunta = document.createElement('span');
     spanPregunta.style.float = 'left';
     const spanPuntaje = document.createElement('span');
     spanPuntaje.style.float = 'right';
-    spanPregunta.textContent =  "P"+(i+4).toString(); 
+    spanPregunta.textContent =  "Artef. "+(i+4).toString(); 
     let puntaje = (i===1 || i===3) ? '4 pts' : '3 pts'; 
-    spanPuntaje.textContent = puntaje;
-    //spanPuntaje.style.marginLeft = '10px';
-    //spanPuntaje.style.marginRight = '10px';
-    spanPregunta.classList.add('question-header2');
+    spanPuntaje.textContent = puntaje;    
+    spanPregunta.classList.add('question-header');
     spanPuntaje.classList.add("oval-container");  
     divPregunta.appendChild(spanPregunta);
     divPregunta.appendChild(spanPuntaje);
@@ -2521,23 +2477,7 @@ for (let i = 0; i < divs.length; i++) {
 //crear un arreglo que contenga las propiedades del objeto rDef a partir de la segunda
 let propiedadesRdef = Object.keys(rDef).slice(1);
 
-//let evaluacion;
-//let validar = document.querySelectorAll('.check');
-//evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders);
-
-//let resets = document.querySelectorAll('.reset');
-//evaluacion = cleanArt(resets,evaluacion,colorBorders);
-
-// Ejecutar la función y actualizar el resultado
-//calcularResultadoTotal(evaluacion);
-
-// Mostrar el arreglo actualizado
-//console.log(evaluacion);
-
-
 ocultaButtons();
-
-
 
 document.getElementById('pdf').addEventListener('click', function () {
     // Selecciona el elemento que deseas convertir a PDF
@@ -2555,3 +2495,5 @@ document.getElementById('pdf').addEventListener('click', function () {
     // Generar el PDF
     html2pdf().from(elementoParaConvertir).set(opciones).save();
 });
+
+
