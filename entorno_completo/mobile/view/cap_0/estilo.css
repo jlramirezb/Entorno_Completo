@@ -411,5 +411,57 @@ th {
     margin-top: 80px;
 }
 
+@media print {
+/* Estilos específicos para impresión */
+body {
+    font-size: 12pt;
+    color: black;
+}
+.no-print {
+    display: none;
+}
+@page {
+    margin: 1cm;
+}
+}
 
+@page {
+size: letter portrait;
+margin: 1cm;
+}
+
+.page-break {
+page-break-before: always;
+}
+
+@media print {
+@page {
+    @top-center {
+    content: "Encabezado de página";
+    }
+    @bottom-center {
+    content: "Pie de página - Página " counter(page);
+    }
+}
+}
+
+@media print {
+    .section {
+      page-break-after: always;
+    }
+  
+    #section2 {
+      page-break-before: always;
+    }
+  
+    /* Asegúrate de que la última sección no tenga un salto de página después */
+    .section:last-child {
+      page-break-after: auto;
+    }
+  
+    /* Oculta el botón de impresión */
+    #pdf {
+      display: none;
+    }
+  }
 

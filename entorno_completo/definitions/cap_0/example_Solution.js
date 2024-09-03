@@ -2479,9 +2479,22 @@ let propiedadesRdef = Object.keys(rDef).slice(1);
 
 ocultaButtons();
 
+
+function prepareForPrint() {
+    // Ocultar elementos no deseados
+    document.querySelectorAll('.no-print').forEach(el => el.style.display = 'none');
+    
+    // Expandir secciones colapsadas
+    document.querySelectorAll('.collapsible').forEach(el => el.style.display = 'block');
+    
+    // Otras modificaciones...
+  }
+
 document.getElementById('pdf').addEventListener('click', function () {
+    //prepareForPrint();
+    window.print();
     // Selecciona el elemento que deseas convertir a PDF
-    const elementoParaConvertir = document.body;  // Aquí puedes especificar un contenedor en particular
+    /*const elementoParaConvertir = document.body;  // Aquí puedes especificar un contenedor en particular
 
     // Configuración del PDF
     const opciones = {
@@ -2493,7 +2506,7 @@ document.getElementById('pdf').addEventListener('click', function () {
     };
 
     // Generar el PDF
-    html2pdf().from(elementoParaConvertir).set(opciones).save();
+    html2pdf().from(elementoParaConvertir).set(opciones).save();*/
 });
 
 
