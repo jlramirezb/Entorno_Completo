@@ -151,7 +151,6 @@ function inicializarExamen(key) {
         else {
             console.log("No se encontraron puntuaciones previas. Iniciando nuevo examen.");      
             // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas
-            //const RE = [];
             resultadosGuardados = [];
             resultadosGuardados.push({id:'P1',items:[0,0],tiempo:0,intentos:0});
             resultadosGuardados.push({id:'P2',items:[0,0],tiempo:0,intentos:0});
@@ -176,10 +175,7 @@ function inicializarExamen(key) {
             // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas  
             const colorsBorders = {};            
             for (let i = 0; i <= 6; i++) {
-                //if(i<3)
                     colorsBorders[i] = "#217E9D";
-                /*else
-                    colorsBorders[i] = "#217E9D";-*/
             }
             localStorage.setItem(key, JSON.stringify(colorsBorders));
             return colorsBorders;
@@ -187,12 +183,7 @@ function inicializarExamen(key) {
     }
 }
 
-//const resultadoExamen = inicializarExamen('LOCAL_STORAGE_KEY');
-//const colorsBorders = inicializarExamen('LOCAL_COLORS_KEY');
-
-function valida(validar,resultadoExamen,def,artefact,borderColor) {
-    /*let intentos1 = 0, intentos2 = 0, intentos3 = 0;
-    let intentos12 = 0, intentos22 = 0, intentos32 = 0, intentos42 = 0;*/
+function valida(validar,resultadoExamen,def,artefact,borderColor) {    
 
     const handleValidation = (index, mathfieldDiv1, mathfieldDiv2, mathfieldDiv3, resultadoExamen,artefact,def, idx) => 
     {
@@ -302,21 +293,18 @@ function valida(validar,resultadoExamen,def,artefact,borderColor) {
 
     const handleColorInputs = (startIndex, endIndex, propiedadesRdef, resultadoExamen,idx) => {
         const colorInputs = document.querySelectorAll('math-field.colorInput');
-        const Previousmathfield = document.querySelectorAll('.BoardEngInt math-field.colorInput').length; //previousMathfield        
+        const Previousmathfield = document.querySelectorAll('.BoardEngInt math-field.colorInput').length; 
 
         borderDefault = document.querySelectorAll('.borderDefault');
         borderDefault[idx].style.borderColor = 'yellow';
         borderColor[idx] = 'yellow';
         console.log(borderColor);
-        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
-
-        
+        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));        
 
         resultadoExamen[idx].tiempo+=rDef[propiedadesRdef].timeInteraction;
         resultadoExamen[idx].intentos += 1;
 
-        console.log(idx ,'===', resultadoExamen[idx].tiempo);
-        
+        console.log(idx ,'===', resultadoExamen[idx].tiempo);        
         
         indx = 0;
         let kk = startIndex + Previousmathfield;
@@ -372,23 +360,15 @@ function valida(validar,resultadoExamen,def,artefact,borderColor) {
                     break;
                 case validar[3]:
                     handleColorInputs(1, rDef[propiedadesRdef[0]].points.length, propiedadesRdef[0], resultadoExamen,3);                    
-                    //intentos12++;
-                    //localStorage.setItem('P2_Intentos12', intentos12);
                     break;
                 case validar[4]:
-                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + 3, rDef[propiedadesRdef[1]].points.length, propiedadesRdef[1], resultadoExamen,4);                    
-                    //intentos22++;
-                    //localStorage.setItem('P2_Intentos22', intentos22);
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + 3, rDef[propiedadesRdef[1]].points.length, propiedadesRdef[1], resultadoExamen,4);
                     break;
                 case validar[5]:
-                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + 4, rDef[propiedadesRdef[2]].points.length, propiedadesRdef[2], resultadoExamen,5);                    
-                    //intentos32++;
-                    //localStorage.setItem('P2_Intentos32', intentos32);
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + 4, rDef[propiedadesRdef[2]].points.length, propiedadesRdef[2], resultadoExamen,5);
                     break;
                 case validar[6]:
-                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + rDef[propiedadesRdef[2]].points.length + 5, rDef[propiedadesRdef[3]].points.length, propiedadesRdef[3], resultadoExamen,6);                    
-                    //intentos42++;
-                    //localStorage.setItem('P2_Intentos42', intentos42);
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + rDef[propiedadesRdef[2]].points.length + 5, rDef[propiedadesRdef[3]].points.length, propiedadesRdef[3], resultadoExamen,6);
                     break;
             }
         });
@@ -460,8 +440,6 @@ function cleanArt(resets,resultadoExamen,borderColor){
     return resultadoExamen;
 }
 
-//console.log('Puntuaciones:', resultadoExamen);
-
 // Función asíncrona para guardar los resultados en Local Storage
 async function guardarResultados(resultados) {
     await new Promise((resolve, reject) => {
@@ -492,12 +470,19 @@ function calcularResultadoTotal(data) {
     return data; // Devolver el arreglo actualizado (opcional)
 }
 
-//let examData = resultadoExamen;
 // Función que calcula el resultado total y muestra los resultados
 function mostrarResultados(data) {
     const paginaExamen = document.getElementById('paginaExamen');
     const resultadoPagina = document.getElementById('resultadoPagina');
     const notafinal = document.getElementById('notafinal');
+
+    const cantidadItems = data.reduce((count, current) => {
+        if (current.items && Array.isArray(current.items)) {
+            return count + current.items.length;
+        }
+        return count;
+    }, 0);
+    console.log('Items:', cantidadItems);
     const sumaItems = data.reduce((sum, current) => {
         if (current.items && Array.isArray(current.items)) {
             return sum + current.items.reduce((sum2, current2) => sum2 + current2, 0);
@@ -509,8 +494,7 @@ function mostrarResultados(data) {
     resultadoPagina.style.display = 'block';   // Muestra la página de resultados
     notafinal.style.display = 'block';
     const spannota=document.getElementById("nota");
-    spannota.textContent = sumaItems;
-
+    spannota.textContent = (sumaItems/cantidadItems)*20.0;
     
     let currentIndex = 0;
         let visibleArtefactos = 1;
@@ -618,7 +602,6 @@ function PintaBordes (borderColor){
     let newDiv = document.querySelectorAll('#newDiv');
     borderDefault = document.querySelectorAll('.borderDefault');
     for (let i = 0; i < newDiv.length; i++) {
-        //console.log(borderColor[i]);
         newDiv[i].style.borderColor = borderColor[i];
     }
     for (let i = 3; i < borderDefault.length; i++) {
