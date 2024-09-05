@@ -414,6 +414,7 @@ th {
 /* Estilos para pantallas grandes */
 @media (min-width: 769px) {
     .slider-wrapper {
+        display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -421,63 +422,80 @@ th {
     }
 
     .slider-container {
-        margin-bottom: 0;
         margin: 0 20px;
-    }
-    .container {
-        flex-direction: row; /* Mantiene los botones a los lados del slider */
-        justify-content: center;
+        width: calc(100% - 140px); /* Ajustado para dar espacio a los botones */
     }
 
     .button-container {
-        flex-direction: column; /* Coloca los botones uno encima del otro en pantallas grandes */
+        display: flex;
         justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 10px;
     }
-    /*#prevBtn{
+
+    #prevBtn {
         order: 1;
-    }*/
-    .slider-container {
-        /*order: 2; /* Slider en el centro */
-        width: calc(100% - 100px); /* Ajusta el tamaño del slider para dejar espacio para los botones */
     }
 
-    /*#nextBtn {
-        order: 2;
-    }*/
+    #nextBtn {
+        order: 3;
+    }
 
-    #nextBtn, #prevBtn {
-        font-size: 24px;
-        padding: 10px 20px;
+    .slider-container {
+        order: 2;
     }
 }
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
     .container {
-        flex-direction: row; 
-        justify-content: center;       
+        flex-direction: column;
+        align-items: center;
     }
 
     .slider-wrapper {
-        flex-direction: row;
+        flex-direction: column;
+        width: 100%;
     }
     
-    #nextBtn {
-        order: 2;
-        font-size: 20px;
-        padding: 8px 16px;        
-    }
-
-    #prevBtn {
-        order: 2;        
-        margin-right: 10px;
-        font-size: 20px;
-        padding: 8px 16px;
-    }
     .slider-container {
         order: 1;
-        width: 100%; /* El slider ocupa todo el ancho en pantallas pequeñas */
+        width: 100%;
+        margin-bottom: 20px;
     }
+
+    .button-container {
+        order: 2;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #prevBtn, #nextBtn {
+        font-size: 20px;
+        padding: 8px 16px;
+        margin: 0 10px;
+    }
+}
+
+/* Estilos comunes */
+.slider-wrapper {
+    position: relative;
+}
+
+#prevBtn, #nextBtn {
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #076382;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    z-index: 10;
 }
 
 #previous, #after {

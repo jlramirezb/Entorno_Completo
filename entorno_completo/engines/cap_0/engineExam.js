@@ -547,7 +547,7 @@ function mostrarResultados(data) {
         function updateVisibleArtefactos() {
             const containerWidth = document.querySelector('.slider-container').offsetWidth;            
             let artefactoWidth = 250; // 250px width + 20px margin
-            artefactoWidth = window.innerWidth < 768 ? 150 : 250; //si se ve desde un telefono ancho de 150px, de lo contrario 250px
+            //artefactoWidth = window.innerWidth < 768 ? 250 : 250; //si se ve desde un telefono ancho de 150px, de lo contrario 250px
             visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));
             document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
             
