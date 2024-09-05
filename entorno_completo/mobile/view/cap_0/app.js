@@ -1,8 +1,3 @@
-//let btnPreg1 = document.getElementById("btnPreg1");
-//let btnPreg2 = document.getElementById("btnPreg2");
-//let btnPreg4 = document.getElementById("btnPreg4");
-//let btnGuardar = document.getElementById("btnguardar");
-
 function ActivaBotones(){    
     if (nombre.value!=="" && cedula.value!=="" && seccion.value!==""){
         btnGuardar.disabled = false;
@@ -132,163 +127,10 @@ function abrirPagina(idBoton) {
         window.location.href = "pag_Ex_P2.html";
 }
 
-//nombre.addEventListener('input',ActivaBotones);
-//cedula.addEventListener('input',ActivaBotones);
-//seccion.addEventListener('change',ActivaBotones);
-//btnGuardar.addEventListener("click",ActivarPreguntas);
-
-/*btnPreg1.addEventListener("click", function(){
-    abrirPagina(this.id);
-});
-
-btnPreg2.addEventListener("click", function(){
-    abrirPagina(this.id);
-});
-
-window.onload = cargaData;
-
-btnPreg4.addEventListener("click", e=>{
-    let nombre = document.getElementById("nombre");
-    let cedula = document.getElementById("cedula");
-    let seccion = document.getElementById("seccion");
-    let cedulaDB = cedula.value;
-    nombre.value = "";
-    cedula.value = "";
-    seccion.value = "";
-    btnGuardar.disabled = true;
-    nombre.disabled = false;
-    cedula.disabled = false;
-    seccion.disabled = false;
-    localStorage.removeItem("Personal");
-    btnPreg1.disabled = true;
-    btnPreg2.disabled = true;
-    //btnPreg3.disabled = true;
-    btnPreg4.disabled = true;
-    localStorage.removeItem("SeleccionadosP1");
-    localStorage.removeItem("SeleccionadosP2");
-
-    let intentosTotales = 0;
-    let P1intentos1 = localStorage.getItem("P1_Intentos1") || 0;
-    localStorage.removeItem("P1_Intentos1");
-    let P1intentos2 = localStorage.getItem("P1_Intentos2") || 0;
-    localStorage.removeItem("P1_Intentos2");
-    let P1intentos3 = localStorage.getItem("P1_Intentos3") || 0;
-    localStorage.removeItem("P1_Intentos3");
-    let P2intentos1 = localStorage.getItem("P2_Intentos1") || 0;
-    localStorage.removeItem("P2_Intentos1");
-    let P2intentos2 = localStorage.getItem("P2_Intentos2") || 0;
-    localStorage.removeItem("P2_Intentos2");
-    let P2intentos3 = localStorage.getItem("P2_Intentos3") || 0;
-    localStorage.removeItem("P2_Intentos3");
-    let P2intentos4 = localStorage.getItem("P2_Intentos4") || 0;
-    localStorage.removeItem("P2_Intentos4");
-
-    localStorage.removeItem("P1_Intentos1");
-    localStorage.removeItem("P1_Intentos2");
-    localStorage.removeItem("P1_Intentos3");
-    localStorage.removeItem("P2_Intentos1");
-    localStorage.removeItem("P2_Intentos2");
-    localStorage.removeItem("P2_Intentos3");
-    localStorage.removeItem("P2_Intentos4");    
-    
-    intentosTotales += Number(P1intentos1)+Number(P1intentos2)+Number(P1intentos3)+Number(P2intentos1)+Number(P2intentos2)+Number(P2intentos3)+Number(P2intentos4);  */  
-    
-    /*localStorage.removeItem('mathValuesA');
-    localStorage.removeItem('mathValuesB');
-    localStorage.removeItem('mathValues2A');
-    localStorage.removeItem('mathValues2B');
-    localStorage.removeItem('selectedValues');*/
-
-    /*let request = indexedDB.open('miBaseDeDatos', 1);
-
-    request.onsuccess = (event) => {
-        let db = event.target.result;
-
-        // 2. Obtener el almacén de objetos
-        let transaction = db.transaction('usuarios', 'readonly');
-        console.log(transaction);
-        let objectStore = transaction.objectStore('usuarios');
-
-        const cursor = objectStore.openCursor();
-
-        cursor.onerror = function(event) {
-            console.error("Error retrieving data:", event.target.error);
-        };
-
-        cursor.onsuccess = function(event) {
-            const cursorResult = event.target.result;
-            if (cursorResult) {
-                console.log("Data:", cursorResult.value); // This will log each object in the object store
-                cursorResult.continue(); // Move to the next object
-            } else {
-                console.log("No more data in the object store.");
-            }
-        };
-    };*/
-    /**let request = indexedDB.open('miBaseDeDatos', 1);
-
-    request.onerror = (event) => {
-        console.error('Error abriendo la base de datos:', event.target.error);
-    };
-
-    request.onsuccess = (event) => {
-        let db = event.target.result;
-        //console.log(db);
-        // ... continuar con el siguiente paso
-        let transaction = db.transaction(['usuarios'], 'readwrite');
-        let objectStore = transaction.objectStore('usuarios');
-
-        // Obtener el registro del usuario (asumiendo que tienes la cédula del usuario)        
-        let cedulaUsuario = cedulaDB;// ... obtener la cédula del usuario        
-        let getRequest = objectStore.get(cedulaUsuario);
-        //console.log(getRequest);
-
-        getRequest.onsuccess = (event) => {
-            let usuario = event.target.result;
-
-            // Agregar los nuevos campos al objeto usuario
-            usuario.P1intentos1 = Number(P1intentos1);
-            usuario.P1intentos2 = Number(P1intentos2);
-            usuario.P1intentos3 = Number(P1intentos3);
-            usuario.P2intentos1 = Number(P2intentos1);
-            usuario.P2intentos2 = Number(P2intentos2);
-            usuario.P2intentos3 = Number(P2intentos3);
-            usuario.P2intentos4 = Number(P2intentos4);
-            usuario.totalIntentos = intentosTotales;
-
-            let fecha = new Date();
-            usuario.Year_end = fecha.getFullYear();
-            usuario.Month_end = fecha.getMonth() + 1; // Months are zero-based
-            usuario.Day_end = fecha.getDate();
-            usuario.Hora_end = fecha.getHours()
-            usuario.Minutes_end = fecha.getMinutes();
-            usuario.Seconds_end = fecha.getSeconds();
-
-            // Actualizar el registro en la base de datos
-            let updateRequest = objectStore.put(usuario);
-
-            updateRequest.onsuccess = (event) => {
-                console.log('Registro actualizado exitosamente.');
-            };
-
-            updateRequest.onerror = (event) => {
-                console.error('Error actualizando el registro:', event.target.error);
-            };
-        };
-
-        getRequest.onerror = (event) => {
-            console.error('Error obteniendo el registro:', event.target.error);
-        }; 
-    };
-
-    request.onerror = (event) => {
-        console.error('Error abriendo la base de datos:', event.target.error);
-    }    
-});*/
 
 function seleccionarAleatorios(Pregunta, min, max,totalale) {
     if(Pregunta==='P1'){
-        console.log(min,max,totalale)
+        //console.log(min,max,totalale)
         let P1 = [1,2,3,4,5,6,7,8];
         let P2 = [9,10,11,12,13,14,15,16];
         let P3 = [17,18,19,20,21,22,23,24];
@@ -297,12 +139,12 @@ function seleccionarAleatorios(Pregunta, min, max,totalale) {
         seleccionadosP1.push(P1[Math.floor(Math.random()*P1.length)]);
         seleccionadosP1.push(P2[Math.floor(Math.random()*P2.length)]);
         seleccionadosP1.push(P3[Math.floor(Math.random()*P3.length)]);
-        console.log(seleccionadosP1);
+        //console.log(seleccionadosP1);
         
         return seleccionadosP1;
     }
     else if (Pregunta==='P2'){
-        console.log(min,max,totalale)
+        //console.log(min,max,totalale)
         let P4 = [1,2,3,4,5,6,7,8];
         let P5 = [9,10,11,12,13,14,15,16];
         let P6 = [17,18,19,20,21,22,23,24];
@@ -314,6 +156,29 @@ function seleccionarAleatorios(Pregunta, min, max,totalale) {
         seleccionadosP2.push(P7[Math.floor(Math.random()*P7.length)]);
         return seleccionadosP2;
     }
+}
+
+const exams ={
+    exam_1:[[1,9,17],[1,9,17,25]],
+    exam_2:[[2,10,18],[2,10,18,26]],
+    exam_3:[[3,11,19],[3,11,19,27]],
+    exam_4:[[4,12,20],[4,12,20,28]],
+    exam_5:[[5,13,21],[5,13,21,29]],
+    exam_6:[[6,14,22],[6,14,22,30]],
+    exam_7:[[7,15,23],[7,15,23,31]],
+    exam_8:[[8,16,24],[8,16,24,32]],
+    exam_9:[[5,9,21],[7,12,20,31]],
+    exam_10:[[2,12,21],[6,13,24,27]],
+    exam_11:[[5,16,19],[5,14,20,32]],
+    exam_12:[[8,9,24],[6,13,17,29]],
+    exam_13:[[1,12,24],[7,12,22,25]],
+    exam_14:[[7,14,19],[4,10,24,30]],
+    exam_15:[[4,16,18],[8,10,21,28]],
+    exam_16:[[2,9,20],[5,11,23,32]],
+    exam_17:[[4,15,24],[8,16,22,28]],
+    exam_18:[[6,14,17],[5,12,19,29]],
+    exam_19:[[7,11,20],[7,13,18,26]],
+    exam_20:[[6,16,19],[1,10,18,29]]
 }
 
 
@@ -360,10 +225,99 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
     const fechaCierre = document.getElementById('fecha-cierre').value;
     const horaCierre = document.getElementById('hora-cierre').value;
     const nota = document.getElementById('nota').value;
-
-    let position = localStorageSeleccionados("P1", 1, 24, 3);
+    const examen = document.getElementById('Tipo-Examen').value;
+    
+    let position = [];// = localStorageSeleccionados("P1", 1, 24, 3);
+    let position2 = []; //localStorageSeleccionados("P2", 0, 31, 4);  
+    console.log(examen);
+    switch (examen) {
+        case 'Modelo 1':
+            position = exams.exam_1[0];
+            position2 = exams.exam_1[1];
+            break;
+        case 'Modelo 2':
+            position = exams.exam_2[0];
+            position2 = exams.exam_2[1];
+            break;
+        case 'Modelo 3':
+            position = exams.exam_3[0];
+            position2 = exams.exam_3[1];
+            break;
+        case 'Modelo 4':
+            position = exams.exam_4[0];
+            position2 = exams.exam_4[1];
+            break;
+        case 'Modelo 5':
+            position = exams.exam_5[0];
+            position2 = exams.exam_5[1];
+            break;
+        case 'Modelo 6':
+            position = exams.exam_6[0];
+            position2 = exams.exam_6[1];
+            break;
+        case 'Modelo 7':
+            position = exams.exam_7[0];
+            position2 = exams.exam_7[1];
+            break;
+        case 'Modelo 8':
+            position = exams.exam_8[0];
+            position2 = exams.exam_8[1];
+            break;
+        case 'Modelo 9':
+            position = exams.exam_9[0];
+            position2 = exams.exam_9[1];
+            break;
+        case 'Modelo 10':
+            position = exams.exam_10[0];
+            position2 = exams.exam_10[1];
+            break;
+        case 'Modelo 11':
+            position = exams.exam_11[0];
+            position2 = exams.exam_11[1];
+            break;
+        case 'Modelo 12':
+            position = exams.exam_12[0];
+            position2 = exams.exam_12[1];
+            break;
+        case 'Modelo 13':
+            position = exams.exam_13[0];
+            position2 = exams.exam_13[1];
+            break;
+        case 'Modelo 14':
+            position = exams.exam_14[0];
+            position2 = exams.exam_14[1];
+            break;
+        case 'Modelo 15':
+            position = exams.exam_15[0];
+            position2 = exams.exam_15[1];
+            break;
+        case 'Modelo 16':
+            position = exams.exam_16[0];
+            position2 = exams.exam_16[1];
+            break;
+        case 'Modelo 17':
+            position = exams.exam_17[0];
+            position2 = exams.exam_17[1];
+            break;
+        case 'Modelo 18':
+            position = exams.exam_18[0];
+            position2 = exams.exam_18[1];
+            break;
+        case 'Modelo 19':
+            position = exams.exam_19[0];
+            position2 = exams.exam_19[1];
+            break;
+        case 'Modelo 20':
+            position = exams.exam_20[0];
+            position2 = exams.exam_20[1];
+            break;
+        default:
+            alert('Modelo no encontrado');
+            break;
+    }   
+    
     console.log(position);
-    let position2 = localStorageSeleccionados("P2", 0, 31, 4);    
+      
     console.log(position2);
 
     let combinedArray = position.concat(position2);
@@ -391,31 +345,6 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
     // Almacenar el objeto en localStorage
     localStorage.setItem('Datos', JSON.stringify(Datos));    
 })
-
-
-function generarPrimeras20CombinacionesConUnElementoDeCadaArreglo(arreglos) {
-    const resultados = [];
-
-    function backtrack(combinacion, indiceArreglo) {
-        if (indiceArreglo === arreglos.length) {
-            resultados.push([...combinacion]);
-            // Si ya tenemos 20 combinaciones, detenemos la búsqueda
-            if (resultados.length === 20) {
-                return;
-            }
-        }
-        // Resto del código es igual al anterior
-        // ...
-        const arregloActual = arreglos[indiceArreglo];
-        for (let i = 0; i < arregloActual.length; i++) {
-            combinacion.push(arregloActual[i]);
-            backtrack(combinacion, indiceArreglo + 1);
-            combinacion.pop();
-        }
-    }
-    backtrack([], 0);
-    return resultados;
-}
 
 /*let P1 = [1,2,3,4,5,6,7,8];
 let P2 = [9,10,11,12,13,14,15,16];

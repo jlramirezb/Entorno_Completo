@@ -609,23 +609,23 @@ function cDefValidation(def, refKey, board) {
     });
 
     if (resp) {
-      gAlerts({
+      /*gAlerts({
         def,
         id: refKey,
         text: 'Excelente',
         size: 20,
-      });
+      });*/
 
     } else {
 
-      gAlerts({
+      /*gAlerts({
         def,
         id: refKey,
         type: 2,
         text: textError,
         size: 20,
         timer: conditions.texterror.time ?? 4
-      });
+      });*/
       setTimeout(() => { cDefReset(def, board, 2); }, (conditions.texterror.time ?? 4) * 1000);
     };
     if (def.debug) {

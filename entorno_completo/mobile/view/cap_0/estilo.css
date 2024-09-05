@@ -314,13 +314,23 @@
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    max-width: 100%;
-    overflow: hidden;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*gap: 10px;*/
+    max-width: 1200px;
+    /*overflow: hidden;*/
+    /*flex-direction: column;*/
+    margin: 0 auto;
+    padding: 20px;
 }
+.slider-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
 .slider-container {
     overflow: hidden;
     width: calc(100% - 100px); /* Ajuste para los botones */
@@ -399,15 +409,81 @@ th {
     }
 }
 
-@media (max-width: 768px) {
+
+
+/* Estilos para pantallas grandes */
+@media (min-width: 769px) {
+    .slider-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .slider-container {
+        margin-bottom: 0;
+        margin: 0 20px;
+    }
+    .container {
+        flex-direction: row; /* Mantiene los botones a los lados del slider */
+        justify-content: center;
+    }
+
+    .button-container {
+        flex-direction: column; /* Coloca los botones uno encima del otro en pantallas grandes */
+        justify-content: space-between;
+    }
+    /*#prevBtn{
+        order: 1;
+    }*/
+    .slider-container {
+        /*order: 2; /* Slider en el centro */
+        width: calc(100% - 100px); /* Ajusta el tamaño del slider para dejar espacio para los botones */
+    }
+
+    /*#nextBtn {
+        order: 2;
+    }*/
+
     #nextBtn, #prevBtn {
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: row; 
+        justify-content: center;       
+    }
+
+    .slider-wrapper {
+        flex-direction: row;
+    }
+    
+    #nextBtn {
+        order: 2;
+        font-size: 20px;
+        padding: 8px 16px;        
+    }
+
+    #prevBtn {
+        order: 2;        
+        margin-right: 10px;
         font-size: 20px;
         padding: 8px 16px;
+    }
+    .slider-container {
+        order: 1;
+        width: 100%; /* El slider ocupa todo el ancho en pantallas pequeñas */
     }
 }
 
 #previous, #after {
-    display: none;
+    /*display: flex;*/
+    /*align-items: center;*/
+    justify-content:center;
     margin-top: 80px;
 }
 

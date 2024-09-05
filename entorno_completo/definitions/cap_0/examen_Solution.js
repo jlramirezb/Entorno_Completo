@@ -470,7 +470,7 @@ const c = {
     //Puntos a utilizar de Annely: 1 -- 12
     1: { x: 1, y: 2.5 },
     2: { x: -1, y: -1.5 },  
-    3: { x: 3, y: 3 },
+    3: { x: 3, y: 2 },
     4: { x: 2.2, y: 0.8 },  
     5: { x: 2, y: 1 },  
     6: { x: 1.5, y: -1.5 },  
@@ -2337,6 +2337,7 @@ let artefactaux=['artifact_1','artifact_2','artifact_3'];
 
 
 //let position2 = localStorageSeleccionados("P2", 0, 31, 4);
+position2 = position2.map(x => x - 1);
 let nuevoRdef = filtrarContents(rDef, position2);
 nuevoRdef = filtrarRdef(nuevoRdef, position2);
 rDef = nuevoRdef;

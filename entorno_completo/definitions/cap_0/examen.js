@@ -301,7 +301,7 @@ const c = {
     //Puntos a utilizar de Annely: 1 -- 12
     1: { x: 1, y: 2.5 },
     2: { x: -1, y: -1.5 },  
-    3: { x: 1, y: 1 },
+    3: { x: 3, y: 2 },
     4: { x: 2.2, y: 0.8 },  
     5: { x: 2, y: 1 },  
     6: { x: 1.5, y: -1.5 },  
@@ -1373,14 +1373,14 @@ let rDef={
                 time: 6,
             },
             points: [
-                { p: [c[3].x * 2, c[3].y * 2], text: '(x-1,y)' },
-                { p: [c[3].x * 3, c[3].y * 4], text: '(x,y+2)' },
-                { p: [c[3].x * 3, 0], text: '(x,y-2)' }
+                { p: [c[3].x-1 , c[3].y], text: '(x-1,y)' },
+                { p: [c[3].x , c[3].y+2], text: '(x,y+2)' },
+                { p: [c[3].x , c[3].y-2], text: '(x,y-2)' }
             ],
         },
         defaultInputs: [
             {
-                position: [c[3].x * 3, c[3].y * 2],
+                position: [c[3].x, c[3].y],
                 value: '(x,y)',
             }
         ],
