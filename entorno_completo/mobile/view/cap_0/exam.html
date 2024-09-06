@@ -13,19 +13,27 @@
         <script type="text/javascript" src="../../../dist/engines/genericEngines/polyfillsAllUsed.min.js"></script>
         <script type="text/javascript" src="../../../libraries/jsxgraphcore.js"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
         <!-- Importa la fuente Raleway desde Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     
         <link rel="stylesheet" type="text/css" href="estilo.css" />
         <title>Examen Capítulo 0</title>
     </head>
-    <body>        
-        <div class="header-container">
-            <div class="header-title">
-                📝 Evaluación
-            </div>
-            <div class="card-content">
-                <div id="notafinal" class="center" style="display:none;">
+    <body>
+        <div id="section1" class="section">
+            <div class="header-container">
+                <div class="header-title">
+                    📝 Evaluación
+                </div>
+                <div class="card-content">
+                    <div id="notafinal" class="center" style="display:none;">
                     <p><strong>Nota: <span id="nota"></span>  |  Tiempo: <span id="tiempo"></span></strong></p>
                 </div>
                 <div class="header-content">
@@ -113,6 +121,7 @@
                     </div>
                 </div>
             </div>
+            <div id="section2" class="section">
             <!--Pregunta 2-->
             <div id="mainOwner" class="containerNormal background-gray">
                 <h1>Plano Cartesiano</h1>
@@ -171,7 +180,7 @@
                     </div>
                 </div>     
             </template>
-
+            </div>
             <section class="center">
                 <button id="openModalBtn" class="finalizar button"> ✓ Entregar Examen</button>
                 <!-- Botón para abrir el modal -->
@@ -185,6 +194,7 @@
                 Una vez enviada la evaluación, no podrás realizar cambios.
             </div>
             <div class="modal-footer">
+                <button id="pdf" class="btn-pdf">PDF</button>
                 <button id="confirmBtn" class="btn-confirm">Sí</button>
                 <button id="cancelBtn" class="btn-cancel">No</button>
             </div>

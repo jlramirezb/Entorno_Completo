@@ -595,7 +595,7 @@ document.querySelector('#confirmBtn').addEventListener('click', () => {
     localStorage.removeItem(LOCAL_COLORS_KEY);
     localStorage.removeItem('SeleccionadosP1');
     localStorage.removeItem('SeleccionadosP2');
-    localStorage.removeItem('fechaInicioEst');
+    localStorage.removeItem('fechaInicioEst');    
 });
 
 function PintaBordes (borderColor){

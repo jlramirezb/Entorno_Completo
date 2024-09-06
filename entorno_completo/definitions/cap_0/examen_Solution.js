@@ -2420,6 +2420,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Pinta los datos en el DOM
     document.getElementById('institucion').innerHTML = Datos.Instituto;
     document.getElementById('Categoria').innerHTML = Datos.Categoria;
+    document.getElementById('nombreEstudiante').innerHTML = Datos.Nombre;
+    document.getElementById('correoEstudiante').innerHTML = Datos.Correo;
     document.getElementById('materia').innerHTML = Datos.Curso;
     document.getElementById('seccion').innerHTML = Datos.Seccion;    
     document.getElementById('capExam').innerHTML = Datos.Capitulo;
@@ -2466,9 +2468,181 @@ function prepareForPrint() {
     // Otras modificaciones...
   }
 
-document.getElementById('pdf').addEventListener('click', function () {
+/*document.getElementById('pdf').addEventListener('click', function () {
     //prepareForPrint();
     window.print();    
-});
+});*/
 
+/*function inspectSection(section, depth = 0) {
+    const indent = '  '.repeat(depth);
+    console.log(`${indent}${section.tagName}#${section.id || 'sin-id'} .${section.className}`);
+    for (let child of section.children) {
+        inspectSection(child, depth + 1);
+    }
+}*/
+
+document.getElementById('pdf').addEventListener('click', async function () {
+    const { jsPDF } = window.jspdf;
+    const section1 = document.getElementById('section1');
+    const section2 = document.getElementById('section2');
+
+    if (!section1 || !section2) {
+        console.error('No se encontraron las secciones necesarias');
+        return;
+    }
+
+    console.log('Iniciando proceso de generación de PDF');
+
+    async function processMathFields(section, additionalSelector = '', isSection1 = false) {
+        const mathFields = section.querySelectorAll(`math-field.inpEngInt1, math-field.inpEngInt2${additionalSelector}`);
+        console.log(`Encontrados ${mathFields.length} math-fields en la sección`);
+        for (let i = 0; i < mathFields.length; i++) {
+            const field = mathFields[i];
+            console.log(`Procesando math-field ${i + 1} de ${mathFields.length} con clase: ${field.className}`);
+            if (field.shadowRoot) {
+                const mathContent = field.shadowRoot.querySelector('.ML__mathlive');
+                if (mathContent) {
+                    const canvas = await html2canvas(mathContent, {
+                        backgroundColor: null,
+                        scale: 2,
+                        logging: true
+                    });
+                    const img = document.createElement('img');
+                    img.src = canvas.toDataURL('image/png');
+                    
+                    // Calculamos el tamaño adecuado para la imagen
+                    const originalWidth = field.offsetWidth;
+                    const originalHeight = field.offsetHeight;
+                    const aspectRatio = canvas.width / canvas.height;
+                    
+                    let newWidth, newHeight;
+                    if (isSection1) {
+                        // Reducimos el tamaño para la sección 1
+                        newWidth = originalWidth * 0.4; // Ajustado a 0.4 como solicitaste
+                        newHeight = newWidth / aspectRatio;
+                    } else {
+                        newWidth = originalWidth;
+                        newHeight = newWidth / aspectRatio;
+                    }
+                    
+                    if (newHeight > originalHeight) {
+                        newHeight = originalHeight;
+                        newWidth = newHeight * aspectRatio;
+                    }
+                    
+                    img.style.width = `${newWidth}px`;
+                    img.style.height = `${newHeight}px`;
+                    img.style.verticalAlign = 'middle';
+                    
+                    // Creamos un contenedor para mantener el tamaño original
+                    const container = document.createElement('div');
+                    container.style.width = `${originalWidth}px`;
+                    container.style.height = `${originalHeight}px`;
+                    container.style.display = 'flex';
+                    container.style.alignItems = 'center';
+                    container.style.justifyContent = 'center';
+                    container.appendChild(img);
+                    
+                    // Reemplazamos el math-field original con el contenedor
+                    field.parentNode.replaceChild(container, field);
+                    console.log(`Math-field ${i + 1} procesado con éxito`);
+                } else {
+                    console.log(`No se encontró el contenido .ML__mathlive en el math-field ${i + 1}`);
+                }
+            } else {
+                console.log(`El math-field ${i + 1} no tiene shadowRoot`);
+            }
+        }
+    }
+
+    async function processSection(section, isSection2 = false) {
+        if (isSection2) {
+            await processMathFields(section, ', math-field.textBottom', false);
+        } else {
+            await processMathFields(section, '', true);
+        }
+        return section;
+    }
+
+    try {
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = pdf.internal.pageSize.getHeight();
+
+        // Procesar sección 1
+        console.log('Procesando sección 1');
+        await processSection(section1);
+        const canvas1 = await html2canvas(section1, {
+            allowTaint: true,
+            useCORS: true,
+            scale: 2,
+            logging: true
+        });
+
+        const imgData1 = canvas1.toDataURL('image/png');
+        const imgWidth1 = canvas1.width;
+        const imgHeight1 = canvas1.height;
+        const ratio1 = Math.min(pdfWidth / imgWidth1, pdfHeight / imgHeight1);
+        console.log('Añadiendo sección 1 al PDF');
+        pdf.addImage(imgData1, 'PNG', 0, 0, imgWidth1 * ratio1, imgHeight1 * ratio1);
+
+        // Añadir una nueva página para la sección 2
+        console.log('Añadiendo nueva página para la sección 2');
+        pdf.addPage();
+
+        // Procesar sección 2
+        console.log('Procesando sección 2');
+        await processSection(section2, true);
+        const canvas2 = await html2canvas(section2, {
+            allowTaint: true,
+            useCORS: true,
+            scale: 2,
+            logging: true
+        });
+
+        const imgData2 = canvas2.toDataURL('image/png');
+        const imgWidth2 = canvas2.width;
+        const imgHeight2 = canvas2.height;
+        const ratio2 = Math.min(pdfWidth / imgWidth2, pdfHeight / imgHeight2);
+        console.log('Añadiendo sección 2 al PDF');
+        pdf.addImage(imgData2, 'PNG', 0, 0, imgWidth2 * ratio2, imgHeight2 * ratio2);
+
+        console.log('PDF generado con 2 páginas');
+        
+        // Intentar guardar el PDF directamente
+        const pdfBlob = pdf.output('blob');
+        const fileName = 'download.pdf';
+
+        if ('showSaveFilePicker' in window) {
+            try {
+                const handle = await window.showSaveFilePicker({
+                    suggestedName: fileName,
+                    types: [{
+                        description: 'PDF File',
+                        accept: {'application/pdf': ['.pdf']},
+                    }],
+                });
+                const writable = await handle.createWritable();
+                await writable.write(pdfBlob);
+                await writable.close();
+                console.log('PDF guardado exitosamente');
+            } catch (err) {
+                console.error('Error al guardar el PDF:', err);
+                // Si falla, volvemos al método de descarga
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(pdfBlob);
+                link.download = fileName;
+                link.click();
+            }
+        } else {
+            // Si la API File System Access no está disponible, usamos el método de descarga
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(pdfBlob);
+            link.download = fileName;
+            link.click();
+        }
+    } catch (error) {
+        console.error("Error al generar el PDF:", error);
+    }
+});
 
