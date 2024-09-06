@@ -452,7 +452,7 @@ let defBoards = {
             axis: [false, true, true],
             valueAxis: {
                 yd: [[0, 0], [0, 1]],
-             xd: [[0, 0], [1, 0]],
+                xd: [[0, 0], [1, 0]],
             },
         },
         points: [
@@ -1823,16 +1823,24 @@ document.addEventListener('DOMContentLoaded', function() {
             notaprevia.style.display = 'block';
         } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
             console.log("La evaluación ya ha comenzado o debería haber comenzado.");
-            fechaInicioEst = localStorage.getItem('fechaInicioEst');
-            PintaBordes(colorBorders);
-            if(fechaInicioEst === null)
-            {
-                fechaInicioEst = currentDate;
-                localStorage.setItem('fechaInicioEst',fechaInicioEst);
+            let rules=document.getElementById('rules');
+            rules.style.display='block';
+            let rulesBtn = document.getElementById('buttonRule');
+            rulesBtn.addEventListener('click',()=>{
+                rules.style.display = 'none',
+                fechaInicioEst = localStorage.getItem('fechaInicioEst');
+                PintaBordes(colorBorders);
+                if(fechaInicioEst === null)
+                {
+                    fechaInicioEst = currentDate;
+                    localStorage.setItem('fechaInicioEst',fechaInicioEst);
+                    
+                }
                 
-            }
+                paginaExamen.style.display = 'block';
+            })
             
-            paginaExamen.style.display = 'block';
+            
         } else {
             console.log("La evaluación ya ha finalizado o debería haber finalizado.");
             paginaExamen.style.display = 'none';

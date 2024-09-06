@@ -541,21 +541,43 @@ page-break-before: always;
 
 @media print {
     .section {
-      page-break-after: always;
-    }
-  
-    #section2 {
-      page-break-before: always;
-    }
-  
-    /* Asegúrate de que la última sección no tenga un salto de página después */
-    .section:last-child {
-      page-break-after: auto;
-    }
-  
-    /* Oculta el botón de impresión */
-    #pdf {
-      display: none;
-    }
-  }
+    page-break-after: always;
+}
 
+#section2 {
+    page-break-before: always;
+}
+
+/* Asegúrate de que la última sección no tenga un salto de página después */
+.section:last-child {
+    page-break-after: auto;
+}
+
+/* Oculta el botón de impresión */
+#pdf {
+    display: none;
+}
+}
+
+/*Stylo para las reglas*/
+#rules{
+    margin-top: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul {
+    list-style-type: disc; /* Estilo de viñetas */
+    margin: 0;
+    padding: 0;
+}
+#buttonRule {
+    margin-left: 80%; /* Espacio entre la lista y el botón */
+}
+h2 {
+    text-align: center; /* Centrar el título */
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
+}
