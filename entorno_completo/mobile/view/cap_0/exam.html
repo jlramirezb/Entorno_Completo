@@ -65,13 +65,18 @@
             <h2>Consideraciones del Examen</h2>
             <div class="container">
                 <ul>
-                    <li>Elemento 1</li>
-                    <li>Elemento 2</li>
-                    <li>Elemento 3</li>
+                    <li>Leer las siguientes consideraciones antes de iniciar el examen.</li>
+                    <li>Al responder una pregunta con el boton <button id="btn-validation" class="buttonPrimary check" disabled></button> se registrará la puntuación obtenida y el borde se colocará en color amarillo.</li>
+                    <li>Puedes responder una pregunta cuantas veces necesites hasta que consideres que la respuesta es la correcta, pero solo se registrará la puntuación de la última respuesta.</li>
+                    <li>Cada respuesta que realices cuenta como un intento de la pregunta.</li>
+                    <li>Para borrar una respuesta, debes presionar el boton <button id="btn-reset" class="buttonSecundary reset" data-tooltip="tooltip" data-placement="top" title="Reiniciar" disabled></button> y luego volver a responder la pregunta.</li>
+                    <li>Al borrar una respuesta, se registrará la puntuación de la pregunta como 0.</li>
+                    <li>Al finalizar el examen, se registrará la puntuación final y se mostrará al presionar el boton de <strong>Entregar Examen</strong>.</li>
+                    <li>Para iniciar el examen, debes aceptar las reglas del examen  haciendo click en el boton <strong>He leido las reglas</strong>.</li>
                 </ul>
                 
             </div>
-            <button id="buttonRule">He leido las reglas</button>
+            <button id="buttonRule" class="finalizar button center">He leido las reglas</button>
         </div>
 
         <div id="paginaExamen" style="display:none">

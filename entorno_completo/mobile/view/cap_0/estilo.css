@@ -575,9 +575,16 @@ ul {
     padding: 0;
 }
 #buttonRule {
-    margin-left: 80%; /* Espacio entre la lista y el botón */
+    /*margin-left: 80%; /* Espacio entre la lista y el botón */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 h2 {
     text-align: center; /* Centrar el título */
     width: 100%; /* Asegura que el título ocupe todo el ancho */
+    font-weight: bold;
 }
