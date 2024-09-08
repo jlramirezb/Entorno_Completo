@@ -1881,9 +1881,14 @@ let propiedadesRdef = Object.keys(rDef).slice(1);
 
 //let evaluacion;
 let validar = document.querySelectorAll('.check');
+// Eliminar el primer elemento del NodeList 'validar'
+validar = Array.from(validar).slice(1);
+
 evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders);
 
 let resets = document.querySelectorAll('.reset');
+// Eliminar el primer elemento del NodeList 'resets'
+resets = Array.from(resets).slice(1);
 evaluacion = cleanArt(resets,evaluacion,colorBorders);
 
 // Ejecutar la función y actualizar el resultado
@@ -1924,235 +1929,152 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementById('pdf').addEventListener('click', async function () {
+//Generar PDF para el estudiante
+document.getElementById("pdf").addEventListener("click", function() {
     document.getElementById('myModal').style.display = 'none';
-    const { jsPDF } = window.jspdf;
-    const [section1, section2] = ['section1', 'section2'].map(id => document.getElementById(id));
-
-    if (!section1 || !section2) {
-        console.error('No se encontraron las secciones necesarias');
-        return;
-    }
-
-    console.log('Iniciando proceso de generación de PDF');
-
-
-    async function processMathFields(section, isSection1) {
-        const selector = isSection1 ? 'math-field.inpEngInt1, math-field.inpEngInt2' : 'math-field.textBottom';
-        const mathFields = section.querySelectorAll(selector);
-        console.log(`Procesando ${mathFields.length} math-fields en la sección ${isSection1 ? '1' : '2'}`);
-
-        const processPromises = Array.from(mathFields).map(async (field, index) => {
-            if (!field.shadowRoot) {
-                console.log(`El math-field ${index + 1} no tiene shadowRoot`);
-                return;
-            }
-
-            const mathContent = field.shadowRoot.querySelector('.ML__mathlive');
-            if (!mathContent) {
-                console.log(`No se encontró el contenido .ML__mathlive en el math-field ${index + 1}`);
-                return;
-            }
-
-            console.log(`Dimensiones del math-field ${index + 1}: ${mathContent.offsetWidth}x${mathContent.offsetHeight}`);
-
-            const canvas = await html2canvas(mathContent, {
-                backgroundColor: null,
-                scale: 2,
-                logging: false
-            });
-
-            console.log(`Dimensiones del canvas generado para math-field ${index + 1}: ${canvas.width}x${canvas.height}`);
-
-            if (canvas.width === 0 || canvas.height === 0) {
-                console.error(`Canvas generado para math-field ${index + 1} tiene dimensiones inválidas`);
-                return;
-            }
-
-            // Crear un nuevo canvas con fondo blanco
-            const newCanvas = document.createElement('canvas');
-            newCanvas.width = canvas.width;
-            newCanvas.height = canvas.height;
-            const ctx = newCanvas.getContext('2d');
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, newCanvas.width, newCanvas.height);
-            ctx.drawImage(canvas, 0, 0);
-
-            const img = new Image();
-            img.src = newCanvas.toDataURL('image/png');
-
-            const aspectRatio = newCanvas.width / newCanvas.height;
-            const originalWidth = field.offsetWidth;
-            const originalHeight = field.offsetHeight;
-
-            let newWidth = isSection1 ? originalWidth * 0.4 : originalWidth;
-            let newHeight = newWidth / aspectRatio;
-
-            if (newHeight > originalHeight) {
-                newHeight = originalHeight;
-                newWidth = newHeight * aspectRatio;
-            }
-
-            Object.assign(img.style, {
-                width: `${newWidth}px`,
-                height: `${newHeight}px`,
-                verticalAlign: 'middle'
-            });
-
-            const container = document.createElement('div');
-            Object.assign(container.style, {
-                width: `${originalWidth}px`,
-                height: `${originalHeight}px`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-            });
-            container.appendChild(img);
-
-            field.parentNode.replaceChild(container, field);
-            console.log(`Math-field ${index + 1} procesado con éxito`);
-        });
-
-        await Promise.all(processPromises);
-    }
-
-    async function captureElement(element) {
-        console.log(`Capturando elemento: ${element.tagName}, ID: ${element.id}, Clase: ${element.className}`);
-        console.log(`Dimensiones del elemento: ${element.offsetWidth}x${element.offsetHeight}`);
-        
-        if (element.offsetWidth === 0 || element.offsetHeight === 0) {
-            console.error(`El elemento tiene dimensiones de cero. Contenido:`, element.innerHTML);
-            return null;
+    // Función para renderizar LaTeX a SVG
+    function latexToSVG(latex) {
+        try {
+            const svg = MathJax.tex2svg(latex, {display: false});
+            return svg.outerHTML;
+        } catch (error) {
+            console.error('Error al renderizar LaTeX:', error);
+            return '';
         }
+    }
 
-        return await html2canvas(element, {
-            allowTaint: true,
+    // Función para procesar los elementos math-field
+    function processMathFields(section, classes, isQuestion2 = false) {
+        const fields = section.querySelectorAll(classes.map(c => `math-field.${c}`).join(', '));
+        let inpEngInt1Count = 0;
+        let inpEngInt2Count = 0;
+
+        fields.forEach((field) => {
+            if (!field.parentNode) {
+                console.warn('Elemento math-field sin padre encontrado, saltando...');
+                return;
+            }
+
+            let mathContent = field.getValue();
+            let svgContent = '';
+
+            if (field.classList.contains('colorInput') || (isQuestion2 && field.classList.contains('textBottom'))) {
+                svgContent = latexToSVG(mathContent);
+            } else {
+                // Para otros elementos, mantener el contenido original
+                if (field.shadowRoot && field.shadowRoot.querySelector('.ML__mathlive')) {
+                    svgContent = field.shadowRoot.querySelector('.ML__mathlive').innerHTML;
+                } else {
+                    svgContent = mathContent;
+                }
+            }
+
+            const mathDiv = document.createElement('div');
+            mathDiv.className = field.className;
+            mathDiv.style.cssText = field.style.cssText;
+            mathDiv.innerHTML = svgContent;
+
+            mathDiv.style.display = 'inline-block';
+            mathDiv.style.width = field.offsetWidth + 'px';
+            mathDiv.style.height = field.offsetHeight + 'px';
+
+            // Manejar elementos colorInput e inputColor
+            if (field.classList.contains('colorInput') || field.classList.contains('inputColor')) {
+                const backgroundColor = window.getComputedStyle(field).backgroundColor;
+                mathDiv.style.backgroundColor = backgroundColor;
+                mathDiv.style.visibility = 'visible';
+                mathDiv.style.opacity = '1';
+                
+                // Asegurarse de que el contenido sea visible
+                if (backgroundColor !== 'rgba(0, 0, 0, 0)' && backgroundColor !== 'transparent') {
+                    mathDiv.style.color = 'black'; // o 'white' dependiendo del color de fondo
+                }
+                
+                // Si el contenido está vacío, mostrar un espacio para que el color de fondo sea visible
+                if (!mathDiv.textContent.trim()) {
+                    mathDiv.innerHTML = '&nbsp;';
+                }
+            }
+
+            // Forzar la visibilidad para los tres primeros inpEngInt1
+            if (field.classList.contains('inpEngInt1') && inpEngInt1Count < 3) {
+                mathDiv.style.visibility = 'visible';
+                mathDiv.style.opacity = '1';
+                inpEngInt1Count++;
+            }
+
+            // Forzar la visibilidad para los dos primeros inpEngInt2
+            if (field.classList.contains('inpEngInt2') && inpEngInt2Count < 2) {
+                mathDiv.style.visibility = 'visible';
+                mathDiv.style.opacity = '1';
+                inpEngInt2Count++;
+            }
+
+            field.parentNode.replaceChild(mathDiv, field);
+        });
+    }
+
+    // Obtener section1, pregunta1 y pregunta2
+    const section1 = document.getElementById('section1');
+    const pregunta1 = document.getElementById('pregunta1');
+    const pregunta2 = document.getElementById('pregunta2');
+
+    // Crear un contenedor para todas las secciones
+    const container = document.createElement('div');
+
+    // Agregar section1 sin procesar
+    if (section1) {
+        container.appendChild(section1.cloneNode(true));
+    } else {
+        console.error('No se encontró el elemento section1');
+    }
+
+    // Procesar y agregar pregunta1
+    if (pregunta1) {
+        processMathFields(pregunta1, ['inpEngInt1', 'inpEngInt2', 'textBottom', 'inputColor', 'colorInput']);
+        container.appendChild(pregunta1.cloneNode(true));
+    } else {
+        console.error('No se encontró el elemento pregunta1');
+    }
+
+    // Agregar un salto de página antes de pregunta2
+    const pageBreak = document.createElement('div');
+    pageBreak.style.pageBreakAfter = 'always';
+    container.appendChild(pageBreak);
+
+    // Procesar y agregar pregunta2
+    if (pregunta2) {
+        processMathFields(pregunta2, ['colorInput', 'textBottom'], true);
+        container.appendChild(pregunta2.cloneNode(true));
+    } else {
+        console.error('No se encontró el elemento pregunta2');
+    }
+
+    // Obtener el ancho de pregunta1
+    const pregunta1Width = pregunta1 ? pregunta1.offsetWidth : 0;
+
+    // Convertir el ancho de píxeles a puntos (1 punto = 1/72 pulgada)
+    const widthInPoints = pregunta1Width * (72 / 96); // Asumiendo 96 DPI
+
+    // Configuraciones para generar el PDF
+    var opt = {
+        margin: 10,
+        filename: 'examen.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { 
+            scale: 1, // Reducir la escala para evitar que los elementos sean demasiado grandes
             useCORS: true,
-            scale: 2,
-            logging: true
-        });
-    }
+            letterRendering: true
+        },
+        jsPDF: { 
+            unit: 'pt', 
 
-    async function captureSection(section, isSection1) {
-        await processMathFields(section, isSection1);
-        
-        const elements = Array.from(section.children);
-        const canvases = [];
-        let totalHeight = 0;
-        let maxWidth = 0;
-
-        for (const element of elements) {
-            const canvas = await captureElement(element);
-            if (canvas) {
-                canvases.push(canvas);
-                totalHeight += canvas.height;
-                maxWidth = Math.max(maxWidth, canvas.width);
-            }
+            format: [widthInPoints + 20, 2000], // Ancho de pregunta1 + 20 puntos de margen, altura fija de 11 pulgadas (792 puntos)
+            orientation: 'portrait' 
         }
+    };
 
-        if (canvases.length === 0) {
-            throw new Error(`No se pudo capturar ningún elemento de la sección ${isSection1 ? '1' : '2'}`);
-        }
-
-        const combinedCanvas = document.createElement('canvas');
-        combinedCanvas.width = maxWidth;
-        combinedCanvas.height = totalHeight;
-        const ctx = combinedCanvas.getContext('2d');
-
-        let yOffset = 0;
-        for (const canvas of canvases) {
-            ctx.drawImage(canvas, 0, yOffset);
-            yOffset += canvas.height;
-        }
-
-        console.log(`Dimensiones del canvas combinado para la sección ${isSection1 ? '1' : '2'}: ${combinedCanvas.width}x${combinedCanvas.height}`);
-        return combinedCanvas;
-    }
-
-    try {
-        const pdf = new jsPDF('p', 'mm', 'a4');
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = pdf.internal.pageSize.getHeight();
-
-        // Guardar los estilos originales
-        const originalStyle1 = section1.style.cssText;
-        const originalStyle2 = section2.style.cssText;
-
-        // Función para preparar una sección
-        function prepareSection(section) {
-            section.style.display = 'block';
-            section.style.position = 'static';
-            section.style.width = '100%';
-            section.style.height = 'auto';
-            section.style.visibility = 'visible';
-            section.style.opacity = '1';
-            section.style.overflow = 'visible';
-        }
-
-        // Procesar sección 1
-        prepareSection(section1);
-        //section2.style.display = 'none';
-        
-        console.log('Procesando sección 1');
-        const canvas1 = await captureSection(section1, true);
-
-        // Añadir sección 1 al PDF
-        const imgData1 = canvas1.toDataURL('image/png');
-        const ratio1 = Math.min(pdfWidth / canvas1.width, pdfHeight / canvas1.height);
-        pdf.addImage(imgData1, 'PNG', 0, 0, canvas1.width * ratio1, canvas1.height * ratio1);
-
-        // Añadir nueva página para la sección 2
-        pdf.addPage();
-
-        // Procesar sección 2
-        //section1.style.display = 'none';
-        //section2.style.display = 'block';
-        prepareSection(section2);
-        
-        console.log('Procesando sección 2');
-        const canvas2 = await captureSection(section2, false);
-
-        // Añadir sección 2 al PDF
-        const imgData2 = canvas2.toDataURL('image/png');
-        const ratio2 = Math.min(pdfWidth / canvas2.width, pdfHeight / canvas2.height);
-        pdf.addImage(imgData2, 'PNG', 0, 0, canvas2.width * ratio2, canvas2.height * ratio2);
-
-        console.log('PDF generado con 2 páginas');
-
-        // Restaurar los estilos originales
-        section1.style.cssText = originalStyle1;
-        section2.style.cssText = originalStyle2;
-
-        const pdfBlob = pdf.output('blob');
-        const fileName = 'examen_completo.pdf';
-
-        if ('showSaveFilePicker' in window) {
-            try {
-                const handle = await window.showSaveFilePicker({
-                    suggestedName: fileName,
-                    types: [{ description: 'PDF File', accept: {'application/pdf': ['.pdf']} }],
-                });
-                const writable = await handle.createWritable();
-                await writable.write(pdfBlob);
-                await writable.close();
-                console.log('PDF guardado exitosamente');
-            } catch (err) {
-                console.error('Error al guardar el PDF:', err);
-                downloadPDF(pdfBlob, fileName);
-            }
-        } else {
-            downloadPDF(pdfBlob, fileName);
-        }
-    } catch (error) {
-        console.error("Error al generar el PDF:", error);
-    }
-
+    // Generar el PDF
+    html2pdf().from(container).set(opt).save();
     document.getElementById('confirmBtn').click();
 });
-
-function downloadPDF(blob, fileName) {
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = fileName;
-    link.click();
-}

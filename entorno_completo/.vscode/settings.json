@@ -1,5 +1,5 @@
 {
-    "CodeGPT.apiKey": "Groq",
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
     "CodeGPT.Autocomplete.enabled": false,
     "CodeGPT.Autocomplete.provider": "CodeGPT Plus - Plus"
 }
