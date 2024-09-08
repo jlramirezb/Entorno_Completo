@@ -577,26 +577,7 @@ function mostrarResultados(data) {
 }
 
 
-// Evento de click para el botón 'Finalizar'
-document.querySelector('#confirmBtn').addEventListener('click', () => {
-    //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
-    let examData = inicializarExamen('resultadoExamen');
-    const spanTime = document.getElementById('tiempo');
-    const startDate = new Date(localStorage.getItem('fechaInicioEst'));
-    const endDate = new Date();
-    let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
-    timeElapsed = timeElapsed.toFixed(2);
-    spanTime.textContent = timeElapsed + ' min';
-    console.log(startDate);
-    console.log(endDate);
-    console.log(timeElapsed);
-    mostrarResultados(examData);
-    localStorage.removeItem(LOCAL_STORAGE_KEY);
-    localStorage.removeItem(LOCAL_COLORS_KEY);
-    localStorage.removeItem('SeleccionadosP1');
-    localStorage.removeItem('SeleccionadosP2');
-    localStorage.removeItem('fechaInicioEst');    
-});
+
 
 function PintaBordes (borderColor){
     let newDiv = document.querySelectorAll('#newDiv');

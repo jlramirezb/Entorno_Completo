@@ -1978,6 +1978,11 @@ document.getElementById("pdf").addEventListener("click", function() {
             mathDiv.style.width = field.offsetWidth + 'px';
             mathDiv.style.height = field.offsetHeight + 'px';
 
+            // Centrar el contenido del mathDiv
+            mathDiv.style.display = 'flex';
+            mathDiv.style.justifyContent = 'center';
+            mathDiv.style.alignItems = 'center';
+
             // Manejar elementos colorInput e inputColor
             if (field.classList.contains('colorInput') || field.classList.contains('inputColor')) {
                 const backgroundColor = window.getComputedStyle(field).backgroundColor;
@@ -2077,4 +2082,25 @@ document.getElementById("pdf").addEventListener("click", function() {
     // Generar el PDF
     html2pdf().from(container).set(opt).save();
     document.getElementById('confirmBtn').click();
+});
+
+// Evento de click para el botón 'Finalizar'
+document.querySelector('#confirmBtn').addEventListener('click', () => {
+    //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
+    let examData = inicializarExamen('resultadoExamen');
+    const spanTime = document.getElementById('tiempo');
+    const startDate = new Date(localStorage.getItem('fechaInicioEst'));
+    const endDate = new Date();
+    let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
+    timeElapsed = timeElapsed.toFixed(2);
+    spanTime.textContent = timeElapsed + ' min';
+    console.log(startDate);
+    console.log(endDate);
+    console.log(timeElapsed);
+    mostrarResultados(examData);
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+    localStorage.removeItem(LOCAL_COLORS_KEY);
+    localStorage.removeItem('SeleccionadosP1');
+    localStorage.removeItem('SeleccionadosP2');
+    localStorage.removeItem('fechaInicioEst');    
 });
