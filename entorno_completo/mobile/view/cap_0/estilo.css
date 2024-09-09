@@ -506,8 +506,7 @@ th {
     margin-top: 80px;
 }
 
-@media print {
-/* Estilos específicos para impresión */
+/*@media print {
 body {
     font-size: 12pt;
     color: black;
@@ -549,16 +548,14 @@ page-break-before: always;
     page-break-before: always;
 }
 
-/* Asegúrate de que la última sección no tenga un salto de página después */
 .section:last-child {
     page-break-after: auto;
 }
 
-/* Oculta el botón de impresión */
 #pdf {
     display: none;
 }
-}
+}*/
 
 /*Stylo para las reglas*/
 #rules{
@@ -588,4 +585,8 @@ h2 {
     text-align: center; /* Centrar el título */
     width: 100%; /* Asegura que el título ocupe todo el ancho */
     font-weight: bold;
+}
+
+#pdf {
+    background-color: #04c263;
 }
