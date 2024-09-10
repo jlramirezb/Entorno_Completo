@@ -773,3 +773,37 @@ function imprimirExamen(tipo){
     });    
 }
 
+function mostrarModal(){
+    // Obtener elementos
+    const modal = document.getElementById("myModal");
+    const openModalBtn = document.getElementById("openModalBtn");
+    const confirmBtn = document.getElementById("confirmBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+
+    // Cuando el usuario haga clic en el botón "Enviar Evaluación", abrir el modal
+    openModalBtn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Cuando el usuario haga clic en "Sí", se puede manejar la lógica para enviar la evaluación
+    confirmBtn.onclick = function() {    
+        modal.style.display = "none";
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Cuando el usuario haga clic en "No", cerrar el modal
+    cancelBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Cuando el usuario haga clic fuera del modal, cerrarlo
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
