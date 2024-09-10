@@ -352,7 +352,7 @@
 }
 .artefacto h2 {
     background-color: #E8F9FD;
-    margin: -10px -10px 10px -10px;
+    /*margin: -10px -10px 10px -10px;*/
     padding: 10px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -587,6 +587,6 @@ h2 {
     font-weight: bold;
 }
 
-#pdf {
+.btn-pdf {
     background-color: #04c263;
 }
