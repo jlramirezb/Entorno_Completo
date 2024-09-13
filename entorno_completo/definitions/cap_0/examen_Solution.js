@@ -557,7 +557,7 @@ let defBoards = {
             grid: true,
             maxHeight: 300,
             maxWidth: 300,
-            boundingbox: [-5, 3, 5, -3],
+            boundingbox: [-6, 3, 6, -3],
             axis: [false, true, true],
             valueAxis: {
                 yd: [[0, 0], [0, 1]],
@@ -739,7 +739,7 @@ let defBoards = {
             grid: true,
             maxHeight: 300,
             maxWidth: 300,
-            boundingbox: [-6.5, 4, 6.5, -4],
+            boundingbox: [-8, 4, 8, -4],
             axis: [false, true, true],
             valueAxis: {
                 yd: [[0, 0], [0, 1]], /*dirección del eje y*/
@@ -921,7 +921,7 @@ let defBoards = {
             grid: true,
             maxHeight: 300,
             maxWidth: 300,
-            boundingbox: [-4, 6, 6, -4],
+            boundingbox: [-4, 6.5, 6.5, -4],
             axis: [false, true, true],
             valueAxis: {
                 yd: [[0, 0], [0, 1]], /*dirección del eje y*/
@@ -981,7 +981,7 @@ let defBoards = {
             grid: true,
             maxHeight: 300,
             maxWidth: 300,
-            boundingbox: [-7, 7, 7, -3],
+            boundingbox: [-8, 7, 8, -3],
             axis: [false, true, true],
             valueAxis: {
                 yd: [[0, 0], [0, 1]], /*dirección del eje y*/
