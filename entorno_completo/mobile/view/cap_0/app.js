@@ -182,7 +182,7 @@ const exams ={
 }
 
 
-function localStorageSeleccionados(Pregunta,min,max,totalale){
+/*function localStorageSeleccionados(Pregunta,min,max,totalale){
     let seleccionados = [];
     switch (Pregunta) {
         case 'P1':
@@ -211,7 +211,7 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
             break;
     }        
     return seleccionados;
-}
+}*/
 
 //let programar = document.querySelector('.submit-btn');
 document.getElementById('evaluacionForm').addEventListener('submit', function(event) {
@@ -345,47 +345,3 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
     // Almacenar el objeto en localStorage
     localStorage.setItem('Datos', JSON.stringify(Datos));    
 })
-
-/*let P1 = [1,2,3,4,5,6,7,8];
-let P2 = [9,10,11,12,13,14,15,16];
-let P3 = [17,18,19,20,21,22,23,24];
-let P4 = [1,2,3,4,5,6,7,8];
-let P5 = [9,10,11,12,13,14,15,16];
-let P6 = [17,18,19,20,21,22,23,24];
-let P7 = [25,26,27,28,29,30,31,32];
-let combinaciones = [];
-
-// Bucle para generar combinaciones
-for (let i1 = 0; i1 < P1.length; i1++) {
-    for (let i2 = 0; i2 < P2.length; i2++) {
-        for (let i3 = 0; i3 < P3.length; i3++) {
-            for (let i4 = 0; i4 < P4.length; i4++) {
-                for (let i5 = 0; i5 < P5.length; i5++) {
-                    for (let i6 = 0; i6 < P6.length; i6++) {
-                        for (let i7 = 0; i7 < P7.length; i7++) {
-                            let combinacion = [
-                                P1[i1], P2[i2], P3[i3], 
-                                P4[i4], P5[i5], P6[i6], P7[i7]
-                            ];
-                            combinaciones.push(combinacion);
-                            // Limita a 20 combinaciones
-                            if (combinaciones.length === 20) {
-                                break;
-                            }
-                        }
-                        if (combinaciones.length === 20) break;
-                    }
-                    if (combinaciones.length === 20) break;
-                }
-                if (combinaciones.length === 20) break;
-            }
-            if (combinaciones.length === 20) break;
-        }
-        if (combinaciones.length === 20) break;
-    }
-}
-
-// Imprimir las primeras 20 combinaciones
-combinaciones.forEach((combinacion, index) => {
-    console.log(`Combinación ${index + 1}: ${combinacion.join(', ')}`);
-});*/
