@@ -826,3 +826,27 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("No hay una fecha de inicio almacenada.");
     }
 });
+
+function toggleOptions() {
+  // Obtener todos los radio buttons
+  var radios = document.getElementsByName('opcion');
+  
+  // Obtener todos los divs de opciones
+  var optDivs = ['optOne', 'optTwo', 'optThree', 'optFour'];
+  
+  // Añadir un event listener a cada radio button
+  radios.forEach(function(radio, index) {
+    radio.addEventListener('change', function() {
+      // Ocultar todos los divs
+      optDivs.forEach(function(divId) {
+        document.getElementById(divId).style.display = 'none';
+      });
+      
+      // Mostrar el div correspondiente al radio button seleccionado
+      document.getElementById(optDivs[index]).style.display = 'block';
+    });
+  });
+}
+
+// Llamar a la función cuando se carga la página
+window.onload = toggleOptions;

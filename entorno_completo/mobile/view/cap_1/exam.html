@@ -6,12 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="../../../libraries/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../libraries/jsxgraph.css" />
-    <link rel="stylesheet" type="text/css" href="../../../libraries/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../../../libraries/generalStylesFragata.css" />
-    <script type="text/javascript" src="../../../dist/engines/genericEngines/polyfillsAllUsed.min.js"></script>
+    <script type="text/javascript" src="../../../libraries/jspdf.min.js"></script>
+    <script type="text/javascript" src="../../../libraries/html2canvas.min.js"></script>
+    <script type="text/javascript" src="../../../libraries/mathLive.js"></script>
     <script type="text/javascript" src="../../../libraries/jsxgraphcore.js"></script>
+    <script type="text/javascript" src="../../../libraries/computeEngine.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../../libraries/jsxgraph.css" />
+    <link rel="stylesheet" type="text/css" href="../../../libraries/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../libraries/ownerStyles.css" />
+    <link rel="stylesheet" type="text/css" href="../../../libraries/generalStylesFragata.css" />
+    <link rel="stylesheet" type="text/css" href="../../../libraries/styles.css" />
     <link rel="stylesheet" type="text/css" href="/mobile/view/cap_1/estilo.css" />
     <title>Examen Capítulo 1</title>
 </head>
@@ -75,10 +80,10 @@
         </div>
     </div> <!--Fin de seccion 1-->
 
-    <div id="paginaExamen" style="display:block;">
+    <div id="paginaExamen" style="display:block">
         <!--Pregunta 1-->
         <div class="containerNormal background-gray">
-            <h1>Intervalos</h1>
+            <h3>Estudio de Curvas</h3>
             <hr>
             <div class="note">
                 <p>Para facilitar la usabilidad de los artefactos debe dejar un margen prudente
@@ -87,8 +92,25 @@
             </div>
             <div id="mainOwner" style='margin: 0;'>
             </div>
-          
-            <!--<template id="globalTemplate">
+            <div class="radio-container">
+                <label class="radio-label">
+                    <input type="radio" name="opcion" value="1" id="radio1" checked>
+                    <span>Artef. 1</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="opcion" id="radio2" value="2">
+                    <span>Artef. 2</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="opcion" id="radio3" value="3">
+                    <span>Artef. 3</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="opcion" id="radio4" value="4">
+                    <span>Artef. 4</span>
+                </label>
+            </div>          
+            <template id="globalTemplate">
                 <div id="artifact-container" class="d-flex w-100 flex-wrap justify-content-center rounded btn-all artifact-container question">
                     <div id="content" class="question__content">
                     </div>
@@ -100,50 +122,39 @@
                         </div>
                     </div>          
                 </div>
-            </template>-->
-            <div class="containerNormal background-gray ">
-                <h3>Estudio de Curvas</h3>
-                <hr>
-                <div class="flexElement">
-                    <div class="containerCard ">
-                        <div class="card" id="artifact_1">
-                            <span class="question-text">P1</span>
-                            <hr>
-                            <div class="card-body">
-                                <div class="d-flex justify-content-center ">
-                                    <div class="defBoard test short-board margen-5 " data-board="board_1" id="boardDefault_0"></div>
-                                </div>
-                            </div>          
-                            <div class="card-footer">          
-                                <div id="ejemplo1" class="d-flex justify-content-center "></div>
-                            </div>
-                            <hr>
-                            <span class="oval-container">8pts</span>
-                        </div>
-                    </div>          
-                </div>
-                <div class="containerCard">
-                    <div class="card" id="artifact_2">
-                        <span class="question-text">P2</span>
+            </template>
+            <hr>
+            <div class="flexElement center">
+                <div class="containerCard ">
+                    <div class="card" id="artifact_1">
+                        <span class="question-text">P1</span>
                         <hr>
                         <div class="card-body">
                             <div class="d-flex justify-content-center ">
                                 <div class="defBoard test short-board margen-5 " data-board="board_1" id="boardDefault_0"></div>
                             </div>
-                        </div>                    
-                        <div class="card-footer">
-                            <div id="ejemplo2" class="d-flex justify-content-center"></div>
+                        </div>          
+                        <div id="optOne" class="card-footer" style="display: block;">          
+                            <div id="ejemplo1" class="d-flex justify-content-center "></div>                            
+                            <span class="oval-container">8pts</span>
                         </div>
-                        <hr>
-                        <span class="oval-container">4pts</span>
+                        <div id="optTwo" class="card-footer" style="display: none;">
+                            <div id="ejemplo2" class="d-flex justify-content-center"></div>
+                            <span class="oval-container">4pts</span>
+                        </div>
+                        <div id="optThree"  class="card-footer" style="display: none;">
+                            <div id="ejemplo3" class="d-flex justify-content-center"></div>
+                            <span class="oval-container">4pts</span>
+                        </div>
+                        <div id="optFour"  class="card-footer" style="display: none;">
+                            <div id="ejemplo4" class="d-flex justify-content-center"></div>
+                            <span class="oval-container">4pts</span>
+                        </div>
+                        <hr>                        
                     </div>
                 </div>          
-            </div>          
+            </div>
         </div>
-        <div class="contenedor-botones">
-            <button class="boton-izquierda">Regresar</button>
-            <button class="boton-derecha">Pregunta 1_1</button>
-        </div>          
     </div>
             <!--Pregunta 2-->
             <div id="mainOwner" class="containerNormal background-gray">
@@ -237,8 +248,8 @@
         <script src="../../../dist/engines/genericEngines/progressEngine.min.js"></script>
 
         <script src="../../../dist/engines/genericEngines/engineOwner.min.js"></script>
-  <script src="../../../dist/engines/cap_1/boardDefault.min.js"></script>
-  <script src="../../../dist/engines/genericEngines/mathKeyboard.min.js"></script>
+        <script src="../../../dist/engines/cap_1/boardDefault.min.js"></script>
+        <script src="../../../dist/engines/genericEngines/mathKeyboard.min.js"></script>
         <script src="../../../engines/cap_1/engineExam.js"></script>
         <!--<script src="../../../definitions/cap_0/pagE_P1.js"></script>-->
         
