@@ -1,3 +1,4 @@
+
 let btnPreg1 = document.getElementById("btnPreg1");
 let btnPreg2 = document.getElementById("btnPreg2");
 let btnPreg3 = document.getElementById("btnPreg3");

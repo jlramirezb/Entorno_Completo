@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programar Evaluación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .header {
+            background-color: #1C819E;
+            padding: 10px 20px;
+            color: white;
+            text-align: right;
+        }
+
+        .header img {
+            height: 40px;
+            float: left;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: #444;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input, select, textarea {
+            width: calc(50% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="date"], input[type="time"] {
+            width: calc(50% - 20px);
+        }
+
+        .form-group.note textarea {
+            width: calc(100% - 20px);
+            height: 80px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .buttons .cancel-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .buttons .submit-btn {
+            background-color: #1C819E;
+            color: white;
+        }
+
+        .buttons .submit-btn:hover {
+            background-color: #16687b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="Logo">
+        ADMIN
+    </div>
+
+    <div class="container">
+        <h1>Programar Evaluación</h1>
+        <form id="evaluacionForm">
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Primera evaluación">
+            </div>
+            
+            <div class="form-group">
+                <label for="capitulo">Capítulo a evaluar</label>
+                <select id="capitulo" name="capitulo">
+                    <option>Capítulo 0</option>
+                    <option>Capítulo 1</option>
+                    <!-- Más opciones aquí -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha-inicio">Fecha de inicio</label>
+                <input type="date" id="fecha-inicio" name="fecha-inicio">
+            </div>
+
+            <div class="form-group">
+                <label for="hora-inicio">Hora de inicio</label>
+                <input type="time" id="hora-inicio" name="hora-inicio">
+            </div>
+
+            <div class="form-group">
+                <label for="fecha-cierre">Fecha de cierre</label>
+                <input type="date" id="fecha-cierre" name="fecha-cierre">
+            </div>
+
+            <div class="form-group">
+                <label for="hora-cierre">Hora de cierre</label>
+                <input type="time" id="hora-cierre" name="hora-cierre">
+            </div>
+
+            <div class="form-group">
+                <label for="tipo-examen">Modelo Examen</label>
+                <select id="Tipo-Examen" name="Tipo Examen" required>
+                    <option>Modelo 1</option>
+                    <option>Modelo 2</option>
+                    <option>Modelo 3</option>
+                    <option>Modelo 4</option>
+                    <option>Modelo 5</option>
+                    <option>Modelo 6</option>
+                    <option>Modelo 7</option>
+                    <option>Modelo 8</option>
+                    <option>Modelo 9</option>
+                    <option>Modelo 10</option>
+                    <option>Modelo 11</option>
+                    <option>Modelo 12</option>
+                    <option>Modelo 13</option>
+                    <option>Modelo 14</option>
+                    <option>Modelo 15</option>
+                    <option>Modelo 16</option>
+                    <option>Modelo 17</option>
+                    <option>Modelo 18</option>
+                    <option>Modelo 19</option>
+                    <option>Modelo 20</option>
+                </select>     
+            </div>
+
+            <div class="form-group note">
+                <label for="nota">NOTA</label>
+                <textarea id="nota" name="nota" placeholder="Esta evaluación será tomada por 15%"></textarea>
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="cancel-btn">Cancelar</button>
+                <button type="submit" class="submit-btn">Programar</button>
+            </div>
+        </form>
+    </div>
+    <!--<script src="../../../engines/cap_0/engineExam.js"></script>-->
+    <script src="app.js"></script>
+</body>
+</html>

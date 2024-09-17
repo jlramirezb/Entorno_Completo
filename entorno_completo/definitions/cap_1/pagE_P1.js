@@ -59,14 +59,14 @@ var def =
                   type: 2,
                   answers_values:["","(-3,∞)","R-{0,4}","(-∞,0)∪(0,4)∪(4,∞)","(-∞,∞)"],
                   conditions: {
-                      valueInputs:["(-∞,∞)"]
+                    valueInputs:["(-∞,∞)"]
                   }
                 }, 
                 {
                   type: 2,
                   answers_values:["","(-∞,4)","(-∞,∞)","(-∞,1.8)∪(3,∞)","R-{0,1.8,3}"],
                   conditions: {
-                      valueInputs: ['(-∞,∞)']
+                    valueInputs: ['(-∞,∞)']
                   }
                 }, 
                 {
@@ -74,14 +74,14 @@ var def =
                   inputsDefault: [['', false]],
                   oneToManyInput: true,
                   conditions: {
-                      valueInputs: [0,1,3]
+                    valueInputs: [0,1,3]
                   }
                 }, 
                 {
                   type: 3,
                   inputsDefault: [['', false]],
                   conditions: {
-                      valueInputs: [0]
+                    valueInputs: [0]
                   }
                 }
               ],
