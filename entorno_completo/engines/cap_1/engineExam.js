@@ -4,6 +4,7 @@ function seleccionarAleatorios(min, max,totalale) {
     for (let i = min; i <= max; i++) {
         numeros.push(i);
     }
+    console.log(numeros);
 
     // Seleccionar 3 números aleatorios distintos
     const seleccionados = [];
@@ -95,30 +96,42 @@ function PintaSeleccionP2(seleccionados){
 
 function PintaSeleccionP1(position, def, defBoard, Pregunta){
     const newPropertyName = `board_${position}`;
+    console.log(newPropertyName);
     const desiredBoard = {};
-    
+
+    console.log(defBoards);
     desiredBoard[newPropertyName]=defBoards[newPropertyName];
     defBoards = desiredBoard;
+    console.log(defBoards);
     
     let artefact = [];
-    let kk = position*2-1
-    artefact[0] = 'artifact_'+ kk;
-    artefact[1] = 'artifact_'+position*2;
+    let kk = 4*(position-1)
+    artefact[0] = 'artifact_'+ (kk+1);
+    artefact[1] = 'artifact_'+ (kk+2);
+    artefact[2] = 'artifact_'+ (kk+3);
+    artefact[3] = 'artifact_'+ (kk+4);
     console.log(position)
     console.log(artefact)
     console.log(def)
-    def.artefact_1.datadefault = def.artefact_1.datadefault.slice((position-1)*2,(position-1)*2+2);
+
+    def.artefact_1.datadefault = def.artefact_1.datadefault.slice((position-1)*4,(position-1)*4+5);
     
     let div = document.querySelectorAll('#artifact_1');
     div.id = artefact[0];
     div = document.querySelectorAll('#artifact_2');
     div.id = artefact[1];
+    div = document.querySelectorAll('#artifact_3');
+    div.id = artefact[2];
+    div = document.querySelectorAll('#artifact_4');
+    div.id = artefact[3];
     
     let div2 = document.querySelectorAll('[data-board="board_1"]');
     div2[0].setAttribute('data-board', `board_${position}`);
     div2[1].setAttribute('data-board', `board_${position}`);    
+    div2[2].setAttribute('data-board', `board_${position}`);    
+    div2[3].setAttribute('data-board', `board_${position}`);    
 
-    if(Pregunta==='P1_1'){
+    /*if(Pregunta==='P1_1'){
         div = document.querySelector('.containerNormal');
         let btnBack = document.createElement("button");
         btnBack.textContent = "Regresar";
@@ -137,7 +150,7 @@ function PintaSeleccionP1(position, def, defBoard, Pregunta){
             window.location.href = "pagEx_P1_1.html";
         })
 
-    }    
+    }*/    
     return ([def, defBoard]);
 }
 

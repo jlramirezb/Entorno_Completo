@@ -575,11 +575,553 @@ var def =
           }
         }
       },
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo1',
+        contents: {
+          artifact_5: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Primeras caracteristicas, Examen 2
+                {
+                  type: 0,
+                  text: ['Dominio',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Rango', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje X', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Corte con eje Y', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              [
+                {
+                  //Validacion primeras caracteristicas, Examen 2
+                  type: 2,
+                  answers_values:["","(-∞,-1)∪(0,3.5)∪(3.5,∞)","(-∞,∞)","(-∞,-1]∪(0,∞)","(-∞,-1)∪(0,∞)"],
+                  conditions: {
+                    valueInputs:["(-∞,-1]∪(0,∞)"]
+                  }
+                }, 
+                {
+                  type: 2,
+                  answers_values:["","(-∞,-0.5)∪(0,∞)","(-∞,0)∪(1,∞)","(-∞,-0.5)∪(0,3]","(-∞,-0.5)∪(1,∞)"],
+                  conditions: {
+                    valueInputs: ['(-∞,-0.5)∪(0,∞)']
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+              ],
+              //Segundas caracteristicas, Examen 2
+              [
+                {
+                  type: 0,
+                  text: ['Parte Positiva', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Negativa', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Creciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Parte Decreciente', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              //Validacion segundas caracteristicas, Examen 2
+              [
+                {
+                  type: 2,       
+                  answers_values:["","(-∞,-1)∪(3.5,∞)","(-∞,-1]∪[3,∞)","(-∞,-1)∪(3,∞)","(-∞,-1]∪[3.5,∞)"],
+                  conditions: {
+                    valueInputs: ["(-∞,-1]∪[3.5,∞)"]
+                  }
+                }, 
+                {
+                  type: 2,
+                  answers_values:["","(0,3.5]","(0,3.5)","(-1,3.5]","[-1,3.5)"],
+                  conditions: {
+                    valueInputs: ["(0,3.5)"]
+                  }
+                }, 
+                {
+                  type: 2,
+                  answers_values:["","(-∞,-2)∪(0,∞)","(-∞,-2]∪(0,∞)","(-∞,-2)∪(0,3.5)∪(3.5,∞)","(0,3.5)∪(3.5,∞)"],
+                  conditions: {
+                    valueInputs: ["(-∞,-2)∪(0,3.5)∪(3.5,∞)"]
+                  }
+                }, 
+                {
+                  type: 2,
+                  answers_values:["","[-2,-1]","(-2,-1)","(-2,-1]","[-2,-1)"],
+                  conditions: {
+                    valueInputs: ["(-2,-1)"]
+                  },
+                },
+              ],
+            ],
+          },
+        },
+      },
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo2',
+        contents: {
+          artifact_6: {
+              allinputs: [],
+              header: [],
+              dataInteraction: {
+                incorrect: 0,
+                correct: 0,
+                forAnswer: 0
+              },
+              cells: [
+                [
+                  //Terceras caracteristicas, Examen 2
+                  {
+                    type: 0,
+                    text: ['Max.Abs', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                  },
+                  {
+                    type: 0,
+                    text: ['Alcanzado en', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                  },
+                  {
+                    type: 0,
+                    text: ['Max. No Abs', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                  },
+                  {
+                    type: 0,
+                    text: ['Alcanzado en', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                  },
+                ],
+                //Validacion terceras caracteristicas, Examen 2
+              [
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [3]
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-2]
+                  }
+                }
+              ],
+              [
+                //Cuartas caracteristicas, Examen 2
+                {
+                  type: 0,
+                  text: ['Min.Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Min. No Abs', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['Alcanzado en', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              //Validacion cuartas caracteristicas Examen 2
+              [
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [1,1.5]
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-1,3.5]
+                  },
+                },
+              ],
+            ],
+          },
+        },
+      },
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo3',
+        contents: {
+          artifact_7: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Primeras caracteristicas, Examen 2
+                {
+                  type: 0,
+                  text: ['Intervalo',null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-∞,-1)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,4)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+
+              ],
+              [
+              {
+                //Validacion primeras caracteristicas
+                type: 0,
+                text: ['Cota Sup.', null],
+                conditions: {
+                  correctIndex: null
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault: [['', false]],
+                conditions: {
+                  valueInputs: ['\\nexists']
+                }
+              }, 
+              {
+                type: 3,
+                inputsDefault:[["3",false]],
+                conditions: {
+                  valueInputs: ['\\geq3','3'],
+                  evaluateCote:{
+                    top: 3
+                  }
+                }
+              },
+              {
+                type: 3,
+                inputsDefault:[["1.5",false]],
+                conditions: {
+                  valueInputs: ['\\geq1.5','1.5'],
+                  evaluateCote:{
+                    top: 1.5
+                  }
+                }
+              }, ],
+
+              //Segundas caracteristicas, Examen 2
+              [
+
+                {
+                  type: 0,
+                  text: ['Intervalo', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['(-2,0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['R', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              //Validacion segundas caracteristicas, Examen 2
+              [
+                {
+                  type: 0,
+                    text: ['Cota Inf.', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+                {
+                  type: 3,
+                  inputsDefault:[["1",false]],
+                  conditions: {
+                    valueInputs: ['\\leq1','1'],
+                    evaluateCote:{
+                      bottom: 1
+                    }
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                },
+              ],
+            ]
+          }
+        }
+      },
+      {
+        customKeyboard: 7,
+        type: 13,
+        interactive: true,
+        classGlobal: 'QA',
+        parent: '#ejemplo4',
+        contents: {
+          artifact_8: {
+            allinputs: [],
+            header: [],
+            dataInteraction: {
+              incorrect: 0,
+              correct: 0,
+              forAnswer: 0
+            },
+            cells: [
+              [
+                //Terceras caracteristicas, Examen 2
+                {
+                  type: 0,
+                  text: ['f(-2)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(0.5)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f(3.5)≈', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈-0.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+                {
+                  type: 0,
+                  text: ['f( )≈1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+                },
+              ],
+              //Validacion terceras caracteristicas, Examen 2
+              [
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [3]
+                  }
+                },
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [-2]
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: [1.5]
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  conditions: {
+                    valueInputs: ['\\nexists']
+                  }
+                }, 
+                {
+                  type: 3,
+                  inputsDefault: [['', false]],
+                  oneToManyInput: true,
+                  conditions: {
+                    valueInputs: [-1,-3]
+                  }
+                }
+              ],
+            ]
+          }
+        }
+      },
     ],
   },
 }
-
-
 var defBoards = {
   //Inicio Boards de Annely 1 -- 4  
   //Examen 1.
@@ -760,6 +1302,14 @@ var defBoards = {
   },
 };
 
+let position = localStorageSeleccionados("P1", 1, 2, 1);
+console.log(position);
+[def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1');
+
+
+
+
+
 defBoardDefault();
 generator(def);
 
@@ -827,26 +1377,62 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-function toggleOptions() {
-  // Obtener todos los radio buttons
-  var radios = document.getElementsByName('opcion');
-  
-  // Obtener todos los divs de opciones
-  var optDivs = ['optOne', 'optTwo', 'optThree', 'optFour'];
-  
-  // Añadir un event listener a cada radio button
-  radios.forEach(function(radio, index) {
-    radio.addEventListener('change', function() {
-      // Ocultar todos los divs
-      optDivs.forEach(function(divId) {
-        document.getElementById(divId).style.display = 'none';
+function ocultarDivPorRadio() {
+  const radios = document.querySelectorAll('input[type="radio"][name="opcion"]');
+  const divs = {
+      '1': document.getElementById('optOne'),
+      '2': document.getElementById('optTwo'),
+      '3': document.getElementById('optThree'),
+      '4': document.getElementById('optFour')
+  };
+
+  console.log('Radios encontrados:', radios.length);
+  console.log('Divs encontrados:', Object.values(divs).filter(div => div !== null).length);
+
+  // Ocultar todos los divs inicialmente
+  Object.values(divs).forEach(div => {
+      if (div) {
+          div.style.display = 'none';
+          console.log(`Ocultando inicialmente: ${div.id}`);
+      }
+  });
+
+  // Mostrar el div correspondiente al radio seleccionado inicialmente
+  const checkedRadio = document.querySelector('input[type="radio"][name="opcion"]:checked');
+  if (checkedRadio) {
+      const selectedDiv = divs[checkedRadio.value];
+      if (selectedDiv) {
+          selectedDiv.style.display = 'block';
+          console.log(`Mostrando inicialmente: ${selectedDiv.id}`);
+      }
+  }
+
+  radios.forEach(radio => {
+      radio.addEventListener('change', function() {
+          console.log(`Radio seleccionado: ${this.value}`);
+
+          // Ocultar todos los divs
+          Object.values(divs).forEach(div => {
+              if (div) {
+                  div.style.display = 'none';
+                  console.log(`Ocultando: ${div.id}`);
+              }
+          });
+
+          // Mostrar solo el div correspondiente al radio seleccionado
+          const selectedDiv = divs[this.value];
+          if (selectedDiv) {
+              selectedDiv.style.display = 'block';
+              console.log(`Mostrando: ${selectedDiv.id}`);
+          } else {
+              console.log(`Div no encontrado para el valor: ${this.value}`);
+          }
       });
-      
-      // Mostrar el div correspondiente al radio button seleccionado
-      document.getElementById(optDivs[index]).style.display = 'block';
-    });
   });
 }
 
-// Llamar a la función cuando se carga la página
-window.onload = toggleOptions;
+// Llamar a la función cuando se cargue el documento
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM cargado, ejecutando ocultarDivPorRadio');
+  ocultarDivPorRadio();
+});

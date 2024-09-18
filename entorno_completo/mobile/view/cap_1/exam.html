@@ -71,9 +71,11 @@
                             disabled></button> y luego volver a responder la pregunta.</li>
                     <li>Al borrar una respuesta, se registrará la puntuación de la pregunta como 0.</li>
                     <li>Al finalizar el examen, se registrará la puntuación final y se mostrará al presionar el boton de
-                        <strong>Entregar Examen</strong>.</li>
+                        <strong>Entregar Examen</strong>.
+                    </li>
                     <li>Para iniciar el examen, debes aceptar las reglas del examen haciendo click en el boton
-                        <strong>He leido las reglas</strong>.</li>
+                        <strong>He leido las reglas</strong>.
+                    </li>
                 </ul>
             </div>
             <button id="buttonRule" class="finalizar button center">He leido las reglas</button>
@@ -109,151 +111,214 @@
                     <input type="radio" name="opcion" id="radio4" value="4">
                     <span>Artef. 4</span>
                 </label>
-            </div>          
+            </div>
             <template id="globalTemplate">
-                <div id="artifact-container" class="d-flex w-100 flex-wrap justify-content-center rounded btn-all artifact-container question">
+                <div id="artifact-container"
+                    class="d-flex w-100 flex-wrap justify-content-center rounded btn-all artifact-container question">
                     <div id="content" class="question__content">
                     </div>
                     <div class="d-flex w-100 flex-wrap justify-content-center  rounded btn-all question__footer">
                         <div class="d-flex flex-row">
                             <div class="d-flex flex-wrap justify-content-start "></div>
-                            <button class="reset button-marg buttonSecundary buttonKey question__footer__reset" title="Reiniciar"></button>
-                            <button class="check button-marg buttonPrimary buttonKey question__footer__check" title="Validar"></button>          
+                            <button class="reset button-marg buttonSecundary buttonKey question__footer__reset"
+                                title="Reiniciar"></button>
+                            <button class="check button-marg buttonPrimary buttonKey question__footer__check"
+                                title="Validar"></button>
                         </div>
-                    </div>          
+                    </div>
                 </div>
             </template>
             <hr>
             <div class="flexElement center">
-                <div class="containerCard ">
+
+                <div id="optOne" class="containerCard " style="display: block;" >
                     <div class="card" id="artifact_1">
                         <span class="question-text">P1</span>
                         <hr>
                         <div class="card-body">
                             <div class="d-flex justify-content-center ">
-                                <div class="defBoard test short-board margen-5 " data-board="board_1" id="boardDefault_0"></div>
+                                <div class="defBoard test short-board margen-5 " data-board="board_1"
+                                    id="boardDefault_0"></div>
                             </div>
-                        </div>          
-                        <div id="optOne" class="card-footer" style="display: block;">          
-                            <div id="ejemplo1" class="d-flex justify-content-center "></div>                            
-                            <span class="oval-container">8pts</span>
                         </div>
-                        <div id="optTwo" class="card-footer" style="display: none;">
-                            <div id="ejemplo2" class="d-flex justify-content-center"></div>
-                            <span class="oval-container">4pts</span>
+                        <div class="card-footer">
+                            <div id="ejemplo1" class="d-flex justify-content-center "></div>
                         </div>
-                        <div id="optThree"  class="card-footer" style="display: none;">
-                            <div id="ejemplo3" class="d-flex justify-content-center"></div>
-                            <span class="oval-container">4pts</span>
-                        </div>
-                        <div id="optFour"  class="card-footer" style="display: none;">
-                            <div id="ejemplo4" class="d-flex justify-content-center"></div>
-                            <span class="oval-container">4pts</span>
-                        </div>
-                        <hr>                        
+                        <hr>
+                        <span class="oval-container">8pts</span>
                     </div>
-                </div>          
+                </div>
+                <div id="optTwo" class="containerCard" style="display: none;">
+                    <div class="card" id="artifact_2">
+                        <span class="question-text">P2</span>
+                        <hr>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center ">
+                                <div class="defBoard test short-board margen-5 " data-board="board_1"
+                                    id="boardDefault_0"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div id="ejemplo2" class="d-flex justify-content-center"></div>
+                        </div>
+                        <hr>
+                        <span class="oval-container">4pts</span>
+                    </div>
+                </div>
+                <div id="optThree" class="containerCard" style="display: none;">
+                    <div class="card" id="artifact_3">
+                        <span class="question-text">P3</span>
+                        <hr>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center ">
+                                <div class="defBoard test short-board margen-5 " data-board="board_1"
+                                    id="boardDefault_0"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div id="ejemplo3" class="d-flex justify-content-center"></div>
+                        </div>
+                        <hr>
+                        <span class="oval-container">6pts</span>
+                    </div>
+                </div>
+                <div id="optFour" class="containerCard" style="display: none;">
+                    <div class="card" id="artifact_4">
+                        <span class="question-text">P4</span>
+                        <hr>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center ">
+                                <div class="defBoard test short-board margen-5 " data-board="board_1"
+                                    id="boardDefault_0"></div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div id="ejemplo4" class="d-flex justify-content-center"></div>
+                        </div>
+                        <hr>
+                        <span class="oval-container">5pts</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-            <!--Pregunta 2-->
-            <div id="mainOwner" class="containerNormal background-gray">
-                <h1>Plano Cartesiano</h1>
-                <hr>
-                <p>Sitúe, como puntos, los pares ordenados y escriba al lado de cada punto el par correspondiente. Debe
-                    hacerlo respetando las escalas</p>
-                <div class="note">
-                    <p>Las entradas de cada punto se ocultan cuando pulsas o desplazas los puntos si vuelves a presionar
-                        el punto aparecera de nuevo </p>
-                    <div class="d-flex justify-content-center">
-                        <img src="../../../assets/cap_0/notaInput.svg" alt="hello" style="width:3rem;">
-                    </div>
+    <template id="templateSelect">
+    <div class='row flex-wrap mt-2 ' id="selectq">
+      <div class=" col-lg-12 col-md-12 col-sm-12">
+        <label for="opciones"></label>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12  d-flex justify-content-start" id="content">
+        <select class="form-select form-control" name="opciones" id="opciones" style="width:100%;max-width:90%;">
+      </div>
+      </select>
+    </div>
+  </template>
+
+
+
+
+  <template id="template">
+    <div class="content_1">
+      <div class="content_2">
+      </div>
+    </div>
+  </template>
+    <!--Pregunta 2-->
+    <div id="mainOwner" class="containerNormal background-gray">
+        <h1>Plano Cartesiano</h1>
+        <hr>
+        <p>Sitúe, como puntos, los pares ordenados y escriba al lado de cada punto el par correspondiente. Debe
+            hacerlo respetando las escalas</p>
+        <div class="note">
+            <p>Las entradas de cada punto se ocultan cuando pulsas o desplazas los puntos si vuelves a presionar
+                el punto aparecera de nuevo </p>
+            <div class="d-flex justify-content-center">
+                <img src="../../../assets/cap_0/notaInput.svg" alt="hello" style="width:3rem;">
+            </div>
+        </div>
+    </div>
+
+    <template id="globalTemplate">
+        <div id="artifact-container" class="  flex-wrap justify-content rounded btn-all artifact-container">
+            <div id="content" class="">
+            </div>
+            <div class="d-flex w-100 flex-wrap justify-content-center  rounded btn-all mb-3">
+                <div class="d-flex flex-row">
+                    <div class="d-flex flex-wrap justify-content-start"></div>
+                    <button class="reset button-marg buttonSecundary buttonKey" title="Reiniciar"></button>
+                    <button class="check button-marg buttonPrimary buttonKey" title="Validar"></button>
                 </div>
             </div>
+        </div>
+    </template>
 
-            <template id="globalTemplate">
-                <div id="artifact-container" class="  flex-wrap justify-content rounded btn-all artifact-container">
-                    <div id="content" class="">
-                    </div>
-                    <div class="d-flex w-100 flex-wrap justify-content-center  rounded btn-all mb-3">
-                        <div class="d-flex flex-row">
-                            <div class="d-flex flex-wrap justify-content-start"></div>
-                            <button class="reset button-marg buttonSecundary buttonKey" title="Reiniciar"></button>
-                            <button class="check button-marg buttonPrimary buttonKey" title="Validar"></button>
-                        </div>
-                    </div>
-                </div>
-            </template>
+    <div id="grid" class="d-flex  flex-wrap justify-content-center">
+    </div>
 
-            <div id="grid" class="d-flex  flex-wrap justify-content-center">
+    <template id="template">
+        <div class="content_1">
+            <div class="content_2">
             </div>
-
-            <template id="template">
-                <div class="content_1">
-                    <div class="content_2">
-                    </div>
-                </div>
-            </template>
-
-            <!-- template -->
-            <template id="tmp-cartesian">
-                <div id="artifacts" class="d-flex flex-column border-board-dark m-2 squares-div">
-                    <math-field virtual-keyboard-mode='onfocus' class='textTop w-100 border-board-dark'
-                        disabled></math-field>
-                    <math-field virtual-keyboard-mode='onfocus' class='textTop w-100 border-board-dark'
-                        disabled></math-field>
-                    <div class="defBoard jxgbox mb-1 boardResp" data-board="board_0" data-artifact="artifact_1"> </div>
-                    <math-field virtual-keyboard-mode='onfocus' class='textBottom w-100 border-board-dark'
-                        disabled></math-field>
-                    <math-field virtual-keyboard-mode='onfocus' class='textBottom w-100 border-board-dark'
-                        disabled></math-field>
-                    <div class="d-flex w-100 flex-wrap justify-content-center border border-dark rounded btn-all">
-                        <div class="d-flex flex-row">
-                            <div class="d-flex flex-wrap justify-content-center"></div>
-                            <button class="pointClose buttonAux button-marg buttonTertiary buttonKey"
-                                title="Punto para la curva"></button>
-                            <!--   button-marg buttonKey buttonTool -->
-                            <button class="help buttonSecundary button-marg  buttonKey" title="Ayuda"></button>
-                            <button class="back buttonSecundary button-marg  buttonKey" title="Retornar"></button>
-                            <button class="reset button-marg buttonSecundary buttonKey" title="Reiniciar"></button>
-                            <button class="check button-marg buttonPrimary buttonKey" title="Validar"></button>
-                        </div>
-                    </div>
-                </div>
-            </template>
-
-            <section class="center">
-                <button class="finalizar button">Entregar Examen</button>
-            </section>
         </div>
+    </template>
 
-        <div id="resultadoPagina" style="display:none;">
-            <h2>Resultados del Examen</h2>
-            <table id="resultadoTabla" border="1">
-                <thead>
-                    <tr id="headerRow">
-                        <th>Pregunta</th>
-                        <!-- Las cabeceras de items se añadirán dinámicamente -->
-                    </tr>
-                </thead>
-                <tbody id="resultadoBody">
-                    <!-- Aquí se insertarán los resultados -->
-                </tbody>
-            </table>
-            <h3>Total: <span id="resultadoTotal"></span></h3>
+    <!-- template -->
+    <template id="tmp-cartesian">
+        <div id="artifacts" class="d-flex flex-column border-board-dark m-2 squares-div">
+            <math-field virtual-keyboard-mode='onfocus' class='textTop w-100 border-board-dark' disabled></math-field>
+            <math-field virtual-keyboard-mode='onfocus' class='textTop w-100 border-board-dark' disabled></math-field>
+            <div class="defBoard jxgbox mb-1 boardResp" data-board="board_0" data-artifact="artifact_1"> </div>
+            <math-field virtual-keyboard-mode='onfocus' class='textBottom w-100 border-board-dark'
+                disabled></math-field>
+            <math-field virtual-keyboard-mode='onfocus' class='textBottom w-100 border-board-dark'
+                disabled></math-field>
+            <div class="d-flex w-100 flex-wrap justify-content-center border border-dark rounded btn-all">
+                <div class="d-flex flex-row">
+                    <div class="d-flex flex-wrap justify-content-center"></div>
+                    <button class="pointClose buttonAux button-marg buttonTertiary buttonKey"
+                        title="Punto para la curva"></button>
+                    <!--   button-marg buttonKey buttonTool -->
+                    <button class="help buttonSecundary button-marg  buttonKey" title="Ayuda"></button>
+                    <button class="back buttonSecundary button-marg  buttonKey" title="Retornar"></button>
+                    <button class="reset button-marg buttonSecundary buttonKey" title="Reiniciar"></button>
+                    <button class="check button-marg buttonPrimary buttonKey" title="Validar"></button>
+                </div>
+            </div>
         </div>
+    </template>
 
-        <!--Scripts-->
-        <script src="../../../dist/engines/genericEngines/mod_G.min.js"></script>
-        <script src="../../../dist/engines/genericEngines/progressEngine.min.js"></script>
+    <section class="center">
+        <button class="finalizar button">Entregar Examen</button>
+    </section>
+    </div>
 
-        <script src="../../../dist/engines/genericEngines/engineOwner.min.js"></script>
-        <script src="../../../dist/engines/cap_1/boardDefault.min.js"></script>
-        <script src="../../../dist/engines/genericEngines/mathKeyboard.min.js"></script>
-        <script src="../../../engines/cap_1/engineExam.js"></script>
-        <!--<script src="../../../definitions/cap_0/pagE_P1.js"></script>-->
-        
-        <script src="../../../definitions/cap_1/examen.js"></script>
+    <div id="resultadoPagina" style="display:none;">
+        <h2>Resultados del Examen</h2>
+        <table id="resultadoTabla" border="1">
+            <thead>
+                <tr id="headerRow">
+                    <th>Pregunta</th>
+                    <!-- Las cabeceras de items se añadirán dinámicamente -->
+                </tr>
+            </thead>
+            <tbody id="resultadoBody">
+                <!-- Aquí se insertarán los resultados -->
+            </tbody>
+        </table>
+        <h3>Total: <span id="resultadoTotal"></span></h3>
+    </div>
+
+    <!--Scripts-->
+    <script src="../../../dist/engines/genericEngines/mod_G.min.js"></script>
+    <script src="../../../dist/engines/genericEngines/progressEngine.min.js"></script>
+
+    <script src="../../../dist/engines/genericEngines/engineOwner.min.js"></script>
+    <script src="../../../dist/engines/cap_1/boardDefault.min.js"></script>
+    <script src="../../../dist/engines/genericEngines/mathKeyboard.min.js"></script>
+    <script src="../../../engines/cap_1/engineExam.js"></script>
+    <!--<script src="../../../definitions/cap_0/pagE_P1.js"></script>-->
+
+    <script src="../../../definitions/cap_1/examen.js"></script>
 </body>
 
 </html>
