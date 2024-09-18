@@ -1306,10 +1306,6 @@ let position = localStorageSeleccionados("P1", 1, 2, 1);
 console.log(position);
 [def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1');
 
-
-
-
-
 defBoardDefault();
 generator(def);
 
