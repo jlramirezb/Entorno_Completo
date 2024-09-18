@@ -203,37 +203,32 @@
         </div>
     </div>
     <template id="templateSelect">
-    <div class='row flex-wrap mt-2 ' id="selectq">
-      <div class=" col-lg-12 col-md-12 col-sm-12">
-        <label for="opciones"></label>
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-12  d-flex justify-content-start" id="content">
-        <select class="form-select form-control" name="opciones" id="opciones" style="width:100%;max-width:90%;">
-      </div>
-      </select>
-    </div>
-  </template>
-
-
-
-
-  <template id="template">
-    <div class="content_1">
-      <div class="content_2">
-      </div>
-    </div>
-  </template>
+        <div class='row flex-wrap mt-2 ' id="selectq">
+            <div class=" col-lg-12 col-md-12 col-sm-12">
+                <label for="opciones"></label>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12  d-flex justify-content-start" id="content">
+                <select class="form-select form-control" name="opciones" id="opciones" style="width:100%;max-width:90%;">
+            </div>
+            </select>
+        </div>
+    </template>
+    <template id="template">
+        <div class="content_1">
+            <div class="content_2">
+            </div>
+        </div>
+    </template>
     <!--Pregunta 2-->
-    <div id="mainOwner" class="containerNormal background-gray">
-        <h1>Plano Cartesiano</h1>
+    <div id="mainOwner" class="containerNormal background-gray">        
+        <h3>Examen Capítulo 1</h3>                
         <hr>
-        <p>Sitúe, como puntos, los pares ordenados y escriba al lado de cada punto el par correspondiente. Debe
-            hacerlo respetando las escalas</p>
-        <div class="note">
-            <p>Las entradas de cada punto se ocultan cuando pulsas o desplazas los puntos si vuelves a presionar
-                el punto aparecera de nuevo </p>
-            <div class="d-flex justify-content-center">
-                <img src="../../../assets/cap_0/notaInput.svg" alt="hello" style="width:3rem;">
+        <p class="infoText">
+            Complete con una curva que cumpla las especificaciones.
+        </p>
+        <!--Pinta los artefactos-->
+        <div id="container" style="max-width: 1050px;">
+            <div class="d-flex flex-wrap">    
             </div>
         </div>
     </div>
@@ -315,6 +310,10 @@
     <script src="../../../dist/engines/genericEngines/engineOwner.min.js"></script>
     <script src="../../../dist/engines/cap_1/boardDefault.min.js"></script>
     <script src="../../../dist/engines/genericEngines/mathKeyboard.min.js"></script>
+
+    <script src="../../../engines/cap_1/boardDefault.js"></script>
+    <script src="../../../engines/cap_1/validationCurves.js"></script>
+    
     <script src="../../../engines/cap_1/engineExam.js"></script>
     <!--<script src="../../../definitions/cap_0/pagE_P1.js"></script>-->
 

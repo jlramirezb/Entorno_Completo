@@ -114,7 +114,7 @@ function PintaSeleccionP1(position, def, defBoard, Pregunta){
     console.log(artefact)
     console.log(def)
 
-    def.artefact_1.datadefault = def.artefact_1.datadefault.slice((position-1)*4,(position-1)*4+5);
+    def.artefact_1.datadefault = def.artefact_1.datadefault.slice((position-1)*4,(position-1)*4+4);
     
     let div = document.querySelectorAll('#artifact_1');
     div.id = artefact[0];
