@@ -1,10 +1,9 @@
 "use strict";
-var def = 
+var def1 = 
 {
   artefact_1: 
   {
     datadefault: [
-
       //EXAMEN 1
       {
         customKeyboard: 7,
@@ -19,7 +18,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -196,7 +196,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -344,7 +345,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [              
@@ -494,7 +496,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [                
@@ -577,7 +580,6 @@ var def =
           }
         }
       },
-
       //EXAMEN 2
       {
         customKeyboard: 7,
@@ -592,7 +594,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -736,7 +739,8 @@ var def =
               dataInteraction: {
                 incorrect: 0,
                 correct: 0,
-                forAnswer: 0
+                forAnswer: 0,
+                intentos: 0
               },
               cells: [
                 [
@@ -884,7 +888,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -1039,7 +1044,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -1123,7 +1129,6 @@ var def =
           }
         }
       },
-
       //EXAMEN 3
       {
         customKeyboard: 7,
@@ -1138,7 +1143,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -1283,7 +1289,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -1416,7 +1423,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -1428,7 +1434,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -1577,7 +1584,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -1589,7 +1595,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -1675,7 +1682,6 @@ var def =
           }
         }
       },
-
       //EXAMEN 4
       {
         customKeyboard: 7,
@@ -1690,7 +1696,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -1835,7 +1842,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -1970,7 +1978,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -1982,7 +1989,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -2129,7 +2137,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -2141,7 +2148,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -2225,11 +2233,9 @@ var def =
           }
         }
       },
-
       //EXAMEN 5
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -2241,7 +2247,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -2390,7 +2397,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -2402,7 +2408,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -2545,7 +2552,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -2557,7 +2563,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -2733,7 +2740,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -2822,11 +2830,9 @@ var def =
           }
         }
       },
-
       //EXAMEN 6
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -2838,7 +2844,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -2987,7 +2994,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -2999,7 +3005,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -3148,7 +3155,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -3310,7 +3318,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -3322,7 +3329,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -3408,11 +3416,9 @@ var def =
           }
         }
       },
-
       //EXAMEN 7
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -3424,7 +3430,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -3574,7 +3581,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -3586,7 +3592,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [ // 2do board - Características #1, de examen 7
@@ -3732,7 +3739,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -3744,7 +3750,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -3885,7 +3892,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -3897,7 +3903,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -3994,11 +4001,9 @@ var def =
           }
         }
       },
-
       //EXAMEN 8
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -4010,7 +4015,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -4161,7 +4167,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -4173,7 +4178,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -4311,7 +4317,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -4323,7 +4328,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -4461,7 +4467,6 @@ var def =
       },
       {
         customKeyboard: 7,
-
         type: 13,
         interactive: true,
         classGlobal: 'QA',
@@ -4473,7 +4478,8 @@ var def =
             dataInteraction: {
               incorrect: 0,
               correct: 0,
-              forAnswer: 0
+              forAnswer: 0,
+              intentos: 0
             },
             cells: [
               [
@@ -4757,12 +4763,12 @@ var defBoards = {
 
 let position = localStorageSeleccionados("P1", 1, 8, 1);
 console.log(position);
-[def, defBoards] = PintaSeleccionP1(position, def, defBoards,'P1');
+[def1, defBoards] = PintaSeleccionP1(position, def1, defBoards,'P1');
 
 defBoardDefault();
-generator(def);
+generator(def1);
 
-/*defBoards = {
+defBoards = {
   board_0: {
     style: {
       boundingbox:[-4,4,4,-4],
@@ -4784,11 +4790,11 @@ generator(def);
       maxWidth: 300,
     },
   },
-};*/
+};
   
 //si se va a agregar algo al objeto tiene que declararce la propiedad por defecto en el mod.js
   
-/*const def = {
+const def = {
   //No valida algunos ejemplos de funciones (problema hablado con el equipo de ALcaravan. Sus motores no son capaces de hacerlo).
   artifact_1: {
     board: 'board_1',
@@ -5150,12 +5156,12 @@ conditions: {
     },
   },
   //Fin artefactos Manuel 
-};*/
+};
 
-/*position = localStorageSeleccionados("P2",1,24,3);
+position = localStorageSeleccionados("P2",1,24,3);
 PintaSeleccionP2(position);
 
-window.onload = main();*/
+window.onload = main();
 
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -85,13 +85,13 @@ function PintaSeleccionP2(seleccionados){
         //console.log(divfather);
     });
 
-    let btnBack = document.createElement("button");
+    /*let btnBack = document.createElement("button");
     btnBack.textContent = "Regresar";
     divfather.parentNode.appendChild(btnBack);
 
     btnBack.addEventListener('click',()=>{
         window.location.href = "Pag_Ex.html";
-    })
+    })*/
 }
 
 function PintaSeleccionP1(position, def, defBoard, Pregunta){
