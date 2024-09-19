@@ -4765,8 +4765,10 @@ var defBoards = {
       [[[3,-3,true],[4,-1.5],[5,-1.2]]]
     ],
 
-    points: [[5.30,-1.2, true,null, null, '#2196f3'],[5.8,-1.21, true, null, null, '#2196f3'], [6.3 ,-1.22, true, null, null, '#2196f3'], [-3.75,-3.2, true, null, null, '#2196f3'], [-3.79,-3.45, true, null, null, '#2196f3'], [-3.83,-3.7, true, null, null, '#2196f3'],
-    [-2.29,-3.2, true, null, null, '#2196f3'], [-2.25,-3.45, true, null, null, '#2196f3'], [-2.21,-3.7, true, null, null, '#2196f3'], [-1.6, 2, true, null, null, '#2196f3'], [-1.68, 2.3, true, null, null, '#2196f3'], [1.72, 2.3, true, null, null, '#2196f3'], [1.66, 2, true, null, null, '#2196f3'],[-1.76, 2.6, true, null, null, '#2196f3'], [1.78, 2.6, true, null, null, '#2196f3']]
+    points: [[5.30,-1.2, true,null, null, '#2196f3'],[5.8,-1.21, true, null, null, '#2196f3'], [6.3 ,-1.22, true, null, null, '#2196f3'], 
+    [-3.75,-3.2, true, null, null, '#2196f3'], [-3.79,-3.5, true, null, null, '#2196f3'], [-3.83,-3.8, true, null, null, '#2196f3'],
+    [-2.29,-3.2, true, null, null, '#2196f3'], [-2.25,-3.5, true, null, null, '#2196f3'], [-2.21,-3.8, true, null, null, '#2196f3'], 
+    [-1.6, 2, true, null, null, '#2196f3'], [-1.68, 2.3, true, null, null, '#2196f3'], [1.72, 2.3, true, null, null, '#2196f3'], [1.66, 2, true, null, null, '#2196f3'],[-1.76, 2.6, true, null, null, '#2196f3'], [1.78, 2.6, true, null, null, '#2196f3']]
   },
 };
 
