@@ -107,7 +107,7 @@
 }*/
 
 /*Boton Finalizar Examen*/
-.finalizar{
+.finalizar {
     background-color: #076382;
     color: #fff;
     border: none;
@@ -313,11 +313,12 @@
     min-height: calc(100vh - 80px); /* Ajusta esto según tu diseño /
 }*/
 
-.container {    
-    max-width: 1200px;    
+.container {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
+
 /*.slider-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -497,7 +498,7 @@ th {
 }*/
 
 /*Stylo para las reglas*/
-#rules{
+#rules {
     margin-top: 100px;
 }
 
@@ -507,11 +508,14 @@ th {
     align-items: center;
     font-family: 'Raleway';
 }
+
 ul {
-    list-style-type: disc; /* Estilo de viñetas */
+    list-style-type: disc;
+    /* Estilo de viñetas */
     margin: 0;
     padding: 0;
 }
+
 #buttonRule {
     /*margin-left: 80%; /* Espacio entre la lista y el botón */
     display: block;
@@ -521,9 +525,12 @@ ul {
     margin-bottom: 10px;
     padding: 10px;
 }
+
 h2 {
-    text-align: center; /* Centrar el título */
-    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    text-align: center;
+    /* Centrar el título */
+    width: 100%;
+    /* Asegura que el título ocupe todo el ancho */
     font-weight: bold;
 }
 
@@ -532,166 +539,179 @@ h2 {
 }
 
 .contenedor-botones {
-    overflow: hidden; /* Evitar que los botones se superpongan al contenedor */
-  }
-  
-  .boton-izquierda {
-    float: left; /* Colocar el botón a la izquierda */
-  }
-  
-  .boton-derecha {
-    float: right; /* Colocar el botón a la derecha */
-  }
-      .formElement {
-        margin-top: 10px;
-        border: 3px solid #e7e6e6;
-        background-color: #fefefe;
-  
-      }
-  
-      .boardElement {
-        width: 500px;
-  
-        display: block;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-      }
-  
-      .containerCard {
-        display: flex;
-        padding: 0;
-  
-        margin-bottom: 50px;
-        width: 45%;
-  
-      }
-  
-      .card {
-        border: 1px solid var(--azulMedio);
-        height: max-content;
-        width: 100%;
-        box-sizing: border-box;
-        border-radius: 10px;
-      }
-  
-      .card-body {
-        padding-bottom: 0;
-        margin-bottom: 0;
-  
-      }
-  
-      .card-footer {
-        margin: 0;
-        border: 1px solid var(--azulMedio);
-        border-radius: 9px;
-      }
-  
-      td div {
-        font-weight: 700;
-      }
-  
-      #artifact-container {
-        width: 90%;
-        background-color: #fefefe;
-        border-radius: 10px;
-        letter-spacing: 1px;
-      }
-  
-      .artifact-container {
-        width: 100%;
-        border: 1px solid var(--azulMedio);
-        border-radius: 9px;
-        letter-spacing: 1px;
-      }
-  
-      @media only screen and (max-width: 900px) {
-        .boardElement {
-          width: 300px;
-        }
-  
-        .containerCard {
-          width: 90%;
-          font-size: 16px;
-        }
-  
-        .containerNormal {
-          justify-content: center;
-        }
-  
-        .toValidate {
-          margin: 0;
-        }
-      }
-  
-      @media only screen and (max-width: 400px) {
-        label {
-          font-size: 10px;
-        }
-  
-        .boardElement {
-          width: 200px;
-        }
-  
-        .containerCard {
-          width: 100%;
-          padding: 0;
-          margin: 0;
-          margin-bottom: 50px;
-          text-align: left;
-        }
-  
-        td {
-          width: fit-content;
-          text-align: left;
-  
-        }
-  
-        /*tr {}*/
-  
-  
-      }
-  
-      @media only screen and (max-width: 310px) {
-        .card {
-          overflow: hidden;
-          box-sizing: border-box;
-          padding: 10px;
-        }
-  
-        tr {
-          opacity: 1;
-        }
-  
-        #content {
-          width: 250px !important;
-          overflow-x: scroll;
-          font-size: 10px;
-  
-        }
-  
-        #artifact-container {
-  
-          background-color: #fff;
-          letter-spacing: normal;
-        }
-      }
+    overflow: hidden;
+    /* Evitar que los botones se superpongan al contenedor */
+}
 
-      .radio-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.boton-izquierda {
+    float: left;
+    /* Colocar el botón a la izquierda */
+}
+
+.boton-derecha {
+    float: right;
+    /* Colocar el botón a la derecha */
+}
+
+.formElement {
+    margin-top: 10px;
+    border: 3px solid #e7e6e6;
+    background-color: #fefefe;
+
+}
+
+.boardElement {
+    width: 500px;
+
+    display: block;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.containerCard {
+    display: flex;
+    padding: 0;
+
+    margin-bottom: 50px;
+    width: 45%;
+
+}
+
+.card {
+    border: 1px solid var(--azulMedio);
+    height: max-content;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+}
+
+.card-footer {
+    margin: 0;
+    border: 1px solid var(--azulMedio);
+    border-radius: 9px;
+}
+
+td div {
+    font-weight: 700;
+}
+
+#artifact-container {
+    width: 90%;
+    background-color: #fefefe;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.artifact-container {
+    width: 100%;
+    border: 1px solid var(--azulMedio);
+    border-radius: 9px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 900px) {
+    .boardElement {
+        width: 300px;
+    }
+
+    .containerCard {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .containerNormal {
+        justify-content: center;
+    }
+
+    .toValidate {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    label {
+        font-size: 10px;
+    }
+
+    .boardElement {
+        width: 200px;
+    }
+
+    .containerCard {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 50px;
+        text-align: left;
+    }
+
+    td {
+        width: fit-content;
+        text-align: left;
+
+    }
+
+    /*tr {}*/
+
+
+}
+
+@media only screen and (max-width: 310px) {
+    .card {
+        overflow: hidden;
+        box-sizing: border-box;
         padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      
-      .radio-label {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-      }
-      
-      .radio-label input[type="radio"] {
-        margin-right: 5px;
-      }
+    }
+
+    tr {
+        opacity: 1;
+    }
+
+    #content {
+        width: 250px !important;
+        overflow-x: scroll;
+        font-size: 10px;
+
+    }
+
+    #artifact-container {
+
+        background-color: #fff;
+        letter-spacing: normal;
+    }
+}
+
+/*Estilos del contenedor*/
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //height: 10vh; /* Esto hace que el contenedor ocupe toda la altura de la ventana */
+}
+
+.radio-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 5px;
+}
