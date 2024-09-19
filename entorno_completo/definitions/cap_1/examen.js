@@ -5158,6 +5158,8 @@ conditions: {
   //Fin artefactos Manuel 
 };
 
+let objs = {};
+
 position = localStorageSeleccionados("P2",1,24,3);
 PintaSeleccionP2(position);
 

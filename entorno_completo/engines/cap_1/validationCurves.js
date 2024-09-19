@@ -3412,7 +3412,7 @@ function defValidation(def, board, refArtifact) {
         ) {
           def.dataInteraction.incorrect = 1;
           def.dataInteraction.correct = 0;
-          let objs = {};//nuevo
+          objs = {};//nuevo
           if (!respneTwentySeven) {
             listError +=
               conditions.oneTwentySeven.text ??
@@ -3466,17 +3466,16 @@ function defValidation(def, board, refArtifact) {
             listError += ' ' + (conditions.cotes.text ?? ' Cota,');
           }
           if (!domResp) {
-            listError += ' ' + (conditions.dom.text ?? ' Dominio,');
-            //console.log(def);
-            def.dataInteraction.incorrect = def.dataInteraction.incorrect - 1;
-            //console.log(def);
+            listError += ' ' + (conditions.dom.text ?? ' Dominio,');            
             objs.dom = false;
           }
           if (!maxResp) {
             listError += ' ' + (conditions.max.text ?? ' Máximo,');
+            objs.max = false;
           }
           if (!minResp) {
             listError += ' ' + (conditions.min.text ?? ' Mínimo,');
+            objs.min = false;
           }
           listError =
             listError[listError.length - 1] == ','
