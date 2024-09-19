@@ -1937,7 +1937,7 @@ function defButtonToggle(button, classButton, option = true) {
 // fin funsiones  basicas
 
 function curvesCleanData(def, artifact, points, yellow) {
-  console.log(def, artifact, points, yellow);
+  //console.log(def, artifact, points, yellow);
   const cleanPoints = points.map((p1) =>
     p1.map((p2) => [defExtractCoordsXY(p2[0]), p2[1]])
   );
@@ -3412,6 +3412,7 @@ function defValidation(def, board, refArtifact) {
         ) {
           def.dataInteraction.incorrect = 1;
           def.dataInteraction.correct = 0;
+          let objs = {};//nuevo
           if (!respneTwentySeven) {
             listError +=
               conditions.oneTwentySeven.text ??
@@ -3436,10 +3437,12 @@ function defValidation(def, board, refArtifact) {
           if (!positiveNegative) {
             listError +=
               ' ' + (conditions.positiveNegative.text ?? 'Positivo o Negativo,');
+              objs.positivoNegativo = false;
           }
           if (!respAscendent) {
             listError +=
               ' ' + (conditions.upDown.text ?? ' Ascendente o Descendente,');
+              objs.ascendente = false;
           }
           if (!respXCote) {
             listError +=
@@ -3451,6 +3454,7 @@ function defValidation(def, board, refArtifact) {
           }
           if (!rangeResp) {
             listError += ' ' + (conditions.rang.text ?? ' Rango,');
+            objs.rang = false;
           }
           if (!respParallels) {
             listError += ' ' + (conditions.parallels.text ?? ' Paralelo al eje,');
@@ -3463,6 +3467,10 @@ function defValidation(def, board, refArtifact) {
           }
           if (!domResp) {
             listError += ' ' + (conditions.dom.text ?? ' Dominio,');
+            //console.log(def);
+            def.dataInteraction.incorrect = def.dataInteraction.incorrect - 1;
+            //console.log(def);
+            objs.dom = false;
           }
           if (!maxResp) {
             listError += ' ' + (conditions.max.text ?? ' Máximo,');
@@ -3474,6 +3482,7 @@ function defValidation(def, board, refArtifact) {
             listError[listError.length - 1] == ','
               ? listError.substring(0, listError.length - 1) + '.'
               : listError;
+              console.log(objs);
 
           defAlerts({ def, id: refArtifact, text: listError, type: 2 });
         } else {

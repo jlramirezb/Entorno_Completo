@@ -96,13 +96,13 @@ function PintaSeleccionP2(seleccionados){
 
 function PintaSeleccionP1(position, def, defBoard, Pregunta){
     const newPropertyName = `board_${position}`;
-    console.log(newPropertyName);
+    //console.log(newPropertyName);
     const desiredBoard = {};
 
-    console.log(defBoards);
+    //console.log(defBoards);
     desiredBoard[newPropertyName]=defBoards[newPropertyName];
     defBoards = desiredBoard;
-    console.log(defBoards);
+    //console.log(defBoards);
     
     let artefact = [];
     let kk = 4*(position-1)
@@ -110,9 +110,9 @@ function PintaSeleccionP1(position, def, defBoard, Pregunta){
     artefact[1] = 'artifact_'+ (kk+2);
     artefact[2] = 'artifact_'+ (kk+3);
     artefact[3] = 'artifact_'+ (kk+4);
-    console.log(position)
-    console.log(artefact)
-    console.log(def)
+    //console.log(position)
+    //console.log(artefact)
+    //console.log(def)
 
     def.artefact_1.datadefault = def.artefact_1.datadefault.slice((position-1)*4,(position-1)*4+4);
     
