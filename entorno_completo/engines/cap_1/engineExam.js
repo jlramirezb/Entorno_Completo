@@ -60,27 +60,28 @@ function PintaSeleccionP2(seleccionados){
         let divbefore1 = document.createElement("div");
         divbefore1.className = 'question-container';
         let divbefore2 = document.createElement("div");
-        divbefore2.className = 'question-box';
+        divbefore2.className = 'containerInfo';
         let span1 = document.createElement("span");
-        span1.className = 'question-text';
-        span1.textContent = 'P'+(i+4).toString();
+        span1.className = 'question-header';
+        span1.textContent = 'Artef. '+(i+4).toString();
         i++;
         let div = document.createElement("div");
         div.className = 'defBoard';
         let att = 'artifact_'+element.toString();
         //console.log(att)
         div.setAttribute('data-artifact',att);
-        let divbottom = document.createElement("div");
-        divbottom.className = 'oval-container';
+        /*let divbottom = document.createElement("div");
+        divbottom.className = 'oval-container';*/
         let span2 = document.createElement("span");
-        span2.className = 'oval-number';
+        span2.className = 'oval-container';
         span2.textContent = '3pts';
         divbefore2.appendChild(span1);
+        divbefore2.appendChild(span2);
         divbefore1.appendChild(divbefore2);
         divbefore1.appendChild(div);
         divfather.appendChild(divbefore1);
-        divbottom.appendChild(span2);
-        divbefore1.appendChild(divbottom);
+        
+        //divbefore1.appendChild(divbottom);
     
         //console.log(divfather);
     });
