@@ -62,7 +62,7 @@ function PintaSeleccionP2(seleccionados){
         let divbefore2 = document.createElement("div");
         divbefore2.className = 'containerInfo';
         let span1 = document.createElement("span");
-        span1.className = 'question-header';
+        span1.className = 'question-header2';
         span1.textContent = 'Artef. '+(i+4).toString();
         i++;
         let div = document.createElement("div");
@@ -73,8 +73,8 @@ function PintaSeleccionP2(seleccionados){
         /*let divbottom = document.createElement("div");
         divbottom.className = 'oval-container';*/
         let span2 = document.createElement("span");
-        span2.className = 'oval-container';
-        span2.textContent = '3pts';
+        span2.className = 'oval-container2';
+        span2.textContent = '3 pts';
         divbefore2.appendChild(span1);
         divbefore2.appendChild(span2);
         divbefore1.appendChild(divbefore2);
