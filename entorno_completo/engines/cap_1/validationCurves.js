@@ -76,7 +76,8 @@ function defCreateHtml() {
       dataInteraction: {
         incorrect: 0,
         correct: 0,
-        forAnswer: 0
+        forAnswer: 0,
+        intentos: 0
       },
 
       buttonsActive: {
@@ -3345,7 +3346,7 @@ function defValidation(def, board, refArtifact) {
             axieY: def.axieY,
             rangFilter,
           });
-          objs.Range = true;
+          objs.Rango = true;
         }
         //valida cota
         if (conditions.cotes.top || conditions.cotes.bottom) {

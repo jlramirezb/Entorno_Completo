@@ -5165,6 +5165,9 @@ artifact_13: {
 let objs = [];
 
 position = localStorageSeleccionados("P2",1,24,3);
+console.log('aquiiiii',position);
+let artefacts = ['artifact_'+position[0],'artifact_'+position[1],'artifact_'+position[2]];
+console.log(artefacts);
 PintaSeleccionP2(position);
 
 window.onload = main();
@@ -5177,6 +5180,11 @@ let check=Array.from(document.querySelectorAll('.check'));
 check.shift();
 Evaluacion(check);
 console.log('aquiiii',evaluacion);
+
+let resets=Array.from(document.querySelectorAll('.reset'));
+//elimina la primera posicion del matriz resets
+resets.shift();
+cleanEval(resets);
 
 document.addEventListener("DOMContentLoaded", function () {
     const paginaExamen = document.getElementById("paginaExamen");

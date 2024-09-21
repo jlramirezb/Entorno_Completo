@@ -161,11 +161,12 @@ function sendData(data) {
     console.log('>>', data)
 }
 
-function Evaluacion(check, Resultado){
+function Evaluacion(check){
     for (let i = 0; i < check.length; i++) {
         check[i].addEventListener('click', function() {
-            switch (this) {
+            switch (this) {                
                 case check[0]:
+                    def1.artefact_1.datadefault[0].contents.artifact_1.dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 1');
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[0].contents.artifact_1.allinputs.length; j++) {
@@ -182,6 +183,7 @@ function Evaluacion(check, Resultado){
                     }, 10);
                     break;
                 case check[1]:
+                    def1.artefact_1.datadefault[1].contents.artifact_2.dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 2')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[1].contents.artifact_2.allinputs.length; j++) {
@@ -198,6 +200,7 @@ function Evaluacion(check, Resultado){
                     }, 10);
                     break;
                 case check[2]:
+                    def1.artefact_1.datadefault[2].contents.artifact_3.dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 3')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[2].contents.artifact_3.allinputs.length; j++) {
@@ -214,6 +217,7 @@ function Evaluacion(check, Resultado){
                     }, 10);
                     break;
                 case check[3]:
+                    def1.artefact_1.datadefault[3].contents.artifact_4.dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 4')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[3].contents.artifact_4.allinputs.length; j++) {
@@ -230,6 +234,7 @@ function Evaluacion(check, Resultado){
                     }, 10);
                     break;
                 case check[4]:
+                    def[artefacts[0]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 5')
                     setTimeout(function(){
                         let kk = 0;             
@@ -247,10 +252,12 @@ function Evaluacion(check, Resultado){
                     })
                     break;
                 case check[5]:
+                    def[artefacts[1]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 6')
                     setTimeout(function(){
                         let kk = 0;             
                         for (var prop in objs) {
+                            console.log(prop)
                             evaluacion['Artefacto 6'][kk].prop1 = prop;
                             if(objs[prop] === true){                                
                                 evaluacion['Artefacto 6'][kk].prop2 = 1;                                
@@ -264,6 +271,7 @@ function Evaluacion(check, Resultado){
                     })
                     break;
                 case check[6]:
+                    def[artefacts[2]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 7')
                     setTimeout(function(){
                         let kk = 0;             
@@ -418,5 +426,55 @@ function inicializarExamen(key) {
             localStorage.setItem(key, JSON.stringify(colorsBorders));
             return colorsBorders;
         }        
+    }
+}
+
+function cleanEval(reset)
+{
+    for (let i = 0; i < reset.length; i++) {
+        reset[i].addEventListener('click', function() {
+            switch (this) {                
+                case reset[0]:
+                    for (let j = 0; j < evaluacion['Artefacto 1'].length; j++) {
+                        evaluacion['Artefacto 1'][j].prop2 = 0;
+                    }                    
+                    break;
+                case reset[1]:
+                    for (let j = 0; j < evaluacion['Artefacto 2'].length; j++) {
+                        evaluacion['Artefacto 2'][j].prop2 = 0;
+                    }
+                    break;
+                case reset[2]:
+                    for (let j = 0; j < evaluacion['Artefacto 3'].length; j++) {
+                        evaluacion['Artefacto 3'][j].prop2 = 0;
+                    }
+                    break;
+                case reset[3]:
+                    for (let j = 0; j < evaluacion['Artefacto 4'].length; j++) {
+                        evaluacion['Artefacto 4'][j].prop2 = 0;
+                    }
+                    break;
+                case reset[4]:
+                    for (let j = 0; j < evaluacion['Artefacto 5'].length; j++) {
+                        evaluacion['Artefacto 5'][j].prop2 = 0;
+                    }
+                    break;
+                case reset[5]:
+                    for (let j = 0; j < evaluacion['Artefacto 6'].length; j++) {
+                        evaluacion['Artefacto 6'][j].prop2 = 0;
+                    }
+                    break;
+                case reset[6]:
+                    for (let j = 0; j < evaluacion['Artefacto 7'].length; j++) {
+                        evaluacion['Artefacto 7'][j].prop2 = 0;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            setTimeout(() => {
+                guardarResultados(evaluacion);
+            }, 0);
+        });
     }
 }
