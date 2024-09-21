@@ -313,10 +313,11 @@
     min-height: calc(100vh - 80px); /* Ajusta esto según tu diseño /
 }*/
 
-.container {
+#container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 50px;
+    /*border: 2px solid #04c263;*/
 }
 
 /*.slider-wrapper {
@@ -693,7 +694,7 @@ td div {
     display: flex;
     justify-content: center;
     align-items: center;
-    //height: 10vh; /* Esto hace que el contenedor ocupe toda la altura de la ventana */
+    height: 10vh; /* Esto hace que el contenedor ocupe toda la altura de la ventana */
 }
 
 .radio-container {
@@ -821,3 +822,17 @@ td div {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.question-container{
+    border: 1px solid var(--azulMedio);
+    margin: 10px;
+    height: max-content;
+    width: 320px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    min-width: 320px; /* Ancho mínimo establecido */
+}
+
+/*#ejemplo1 #ejemplo2 #ejemplo3 #ejemplo4{
+    width: 100%;
+}**/
