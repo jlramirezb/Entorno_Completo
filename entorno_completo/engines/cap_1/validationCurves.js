@@ -2688,6 +2688,7 @@ function infinityDrawing(
 
 // validation general de los ejercicios.
 function defValidation(def, board, refArtifact) {
+  objs = {};//nuevo
   const conditions = def.conditions,
     allPoints = def.points,
     curves = def.curves,
@@ -3185,6 +3186,7 @@ function defValidation(def, board, refArtifact) {
               }
             }
           }
+          objs.Signo = true;
         }
         //ascendente desendente
         if (conditions.upDown) {
@@ -3205,6 +3207,7 @@ function defValidation(def, board, refArtifact) {
               break;
             }
           }
+          objs.Crec = true;
         }
         //validacion conexa
         if (conditions.conexa != undefined) {
@@ -3247,11 +3250,14 @@ function defValidation(def, board, refArtifact) {
           if (respAuxDom == 2 || !respAuxDom) {
             domResp = false;
           }
+          objs.Dom =true;
         }
         //valida todos los maximos minimos locales y globales del ejercicio.
         if (conditions.min || conditions.max) {
           if (minResp && maxMin) {
+            
             if (conditions.min) {
+              
               if (conditions.min.minTotal) {
                 let y = defModsXY(
                   def,
@@ -3262,6 +3268,7 @@ function defValidation(def, board, refArtifact) {
                 minResp = maxMin[1] && defInterPoint(y, maxMin[1][1]);
               }
               if (minResp && conditions.min.global) {
+                objs.Min = true;
                 minResp = defValMaxMinGlobal(
                   def,
                   conditions.min,
@@ -3285,7 +3292,7 @@ function defValidation(def, board, refArtifact) {
             }
 
             if (conditions.max != undefined) {
-
+              objs.Max = true;
               if (conditions.max.maxTotal != undefined) {
                 let y = defModsXY(
                   def,
@@ -3338,6 +3345,7 @@ function defValidation(def, board, refArtifact) {
             axieY: def.axieY,
             rangFilter,
           });
+          objs.Range = true;
         }
         //valida cota
         if (conditions.cotes.top || conditions.cotes.bottom) {
@@ -3411,8 +3419,7 @@ function defValidation(def, board, refArtifact) {
           ].includes(false)
         ) {
           def.dataInteraction.incorrect = 1;
-          def.dataInteraction.correct = 0;
-          objs = {};//nuevo
+          def.dataInteraction.correct = 0;          
           if (!respneTwentySeven) {
             listError +=
               conditions.oneTwentySeven.text ??
@@ -3437,12 +3444,12 @@ function defValidation(def, board, refArtifact) {
           if (!positiveNegative) {
             listError +=
               ' ' + (conditions.positiveNegative.text ?? 'Positivo o Negativo,');
-              objs.positivoNegativo = false;
-          }
+              objs.Signo = false;
+          }          
           if (!respAscendent) {
             listError +=
               ' ' + (conditions.upDown.text ?? ' Ascendente o Descendente,');
-              objs.ascendente = false;
+              objs.Crec = false;
           }
           if (!respXCote) {
             listError +=
@@ -3454,8 +3461,8 @@ function defValidation(def, board, refArtifact) {
           }
           if (!rangeResp) {
             listError += ' ' + (conditions.rang.text ?? ' Rango,');
-            objs.rang = false;
-          }
+            objs.Rango = false;
+          }          
           if (!respParallels) {
             listError += ' ' + (conditions.parallels.text ?? ' Paralelo al eje,');
           }
@@ -3467,16 +3474,16 @@ function defValidation(def, board, refArtifact) {
           }
           if (!domResp) {
             listError += ' ' + (conditions.dom.text ?? ' Dominio,');            
-            objs.dom = false;
-          }
+            objs.Dom = false;
+          }          
           if (!maxResp) {
             listError += ' ' + (conditions.max.text ?? ' Máximo,');
-            objs.max = false;
-          }
+            objs.Max = false;
+          }          
           if (!minResp) {
             listError += ' ' + (conditions.min.text ?? ' Mínimo,');
-            objs.min = false;
-          }
+            objs.Min = false;
+          }          
           listError =
             listError[listError.length - 1] == ','
               ? listError.substring(0, listError.length - 1) + '.'

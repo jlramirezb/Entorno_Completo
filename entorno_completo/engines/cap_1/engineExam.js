@@ -231,12 +231,54 @@ function Evaluacion(check, Resultado){
                     break;
                 case check[4]:
                     console.log('Pulsado Artefacto 5')
+                    setTimeout(function(){
+                        let kk = 0;             
+                        for (var prop in objs) {
+                            evaluacion['Artefacto 5'][kk].prop1 = prop;
+                            if(objs[prop] === true){                                
+                                evaluacion['Artefacto 5'][kk].prop2 = 1;                                
+                            }
+                            else{
+                                evaluacion['Artefacto 5'][kk].prop2 = 0;
+                            }
+                            kk++;
+                        }
+                        guardarResultados(evaluacion)
+                    })
                     break;
                 case check[5]:
                     console.log('Pulsado Artefacto 6')
+                    setTimeout(function(){
+                        let kk = 0;             
+                        for (var prop in objs) {
+                            evaluacion['Artefacto 6'][kk].prop1 = prop;
+                            if(objs[prop] === true){                                
+                                evaluacion['Artefacto 6'][kk].prop2 = 1;                                
+                            }
+                            else{
+                                evaluacion['Artefacto 6'][kk].prop2 = 0;
+                            }
+                            kk++;
+                        }
+                        guardarResultados(evaluacion)
+                    })
                     break;
                 case check[6]:
                     console.log('Pulsado Artefacto 7')
+                    setTimeout(function(){
+                        let kk = 0;             
+                        for (var prop in objs) {
+                            evaluacion['Artefacto 7'][kk].prop1 = prop;
+                            if(objs[prop] === true){                                
+                                evaluacion['Artefacto 7'][kk].prop2 = 1;                                
+                            }
+                            else{
+                                evaluacion['Artefacto 7'][kk].prop2 = 0;
+                            }
+                            kk++;
+                        }
+                        guardarResultados(evaluacion)
+                    })
                     break;
             }
         });
@@ -278,7 +320,10 @@ function inicializarExamen(key) {
                 'Artefacto 1': Array.from({ length: 8 }, () => ({ prop1: null, prop2: null })),
                 'Artefacto 2': Array.from({ length: 8 }, () => ({ prop1: null, prop2: null })),
                 'Artefacto 3': Array.from({ length: 6 }, () => ({ prop1: null, prop2: null })),
-                'Artefacto 4': Array.from({ length: 5 }, () => ({ prop1: null, prop2: null }))
+                'Artefacto 4': Array.from({ length: 5 }, () => ({ prop1: null, prop2: null })),
+                'Artefacto 5': Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })),
+                'Artefacto 6': Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })),
+                'Artefacto 7': Array.from({ length: 3 }, () => ({ prop1: null, prop2: null }))
             };;
             resultadosGuardados["Artefacto 1"][0].prop1 = 'Dom';
             resultadosGuardados["Artefacto 1"][0].prop2 = '0';
@@ -334,6 +379,24 @@ function inicializarExamen(key) {
             resultadosGuardados["Artefacto 4"][3].prop2 = '0';
             resultadosGuardados["Artefacto 4"][4].prop1 = 'Item 5';
             resultadosGuardados["Artefacto 4"][4].prop2 = '0';
+            resultadosGuardados["Artefacto 5"][0].prop1 = null;
+            resultadosGuardados["Artefacto 5"][0].prop2 = 0;
+            resultadosGuardados["Artefacto 5"][1].prop1 = null;
+            resultadosGuardados["Artefacto 5"][1].prop2 = 0;
+            resultadosGuardados["Artefacto 5"][2].prop1 = null;
+            resultadosGuardados["Artefacto 5"][2].prop2 = 0;
+            resultadosGuardados["Artefacto 6"][0].prop1 = null;
+            resultadosGuardados["Artefacto 6"][0].prop2 = 0;
+            resultadosGuardados["Artefacto 6"][1].prop1 = null;
+            resultadosGuardados["Artefacto 6"][1].prop2 = 0;
+            resultadosGuardados["Artefacto 6"][2].prop1 = null;
+            resultadosGuardados["Artefacto 6"][2].prop2 = 0;
+            resultadosGuardados["Artefacto 7"][0].prop1 = null;
+            resultadosGuardados["Artefacto 7"][0].prop2 = 0;
+            resultadosGuardados["Artefacto 7"][1].prop1 = null;
+            resultadosGuardados["Artefacto 7"][1].prop2 = 0;
+            resultadosGuardados["Artefacto 7"][2].prop1 = null;
+            resultadosGuardados["Artefacto 7"][2].prop2 = 0;            
             
             localStorage.setItem(key, JSON.stringify(resultadosGuardados));            
             return resultadosGuardados; // Devolver el nuevo objeto inicializado
