@@ -5162,13 +5162,21 @@ artifact_13: {
   //Fin artefactos Manuel 
 };
 
-let objs = {};
+let objs = [];
 
 position = localStorageSeleccionados("P2",1,24,3);
 PintaSeleccionP2(position);
 
 window.onload = main();
 
+let evaluacion = {};
+evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
+
+let check=Array.from(document.querySelectorAll('.check'));
+//elimina la primera posicion del arreglo check
+check.shift();
+Evaluacion(check);
+console.log('aquiiii',evaluacion);
 
 document.addEventListener("DOMContentLoaded", function () {
     const paginaExamen = document.getElementById("paginaExamen");

@@ -1,3 +1,5 @@
+const LOCAL_STORAGE_KEY = 'resultadoExamen';
+
 function seleccionarAleatorios(min, max,totalale) {
     // Crear un array con los números consecutivos
     const numeros = [];
@@ -157,4 +159,201 @@ function PintaSeleccionP1(position, def, defBoard, Pregunta){
 
 function sendData(data) {
     console.log('>>', data)
+}
+
+function Evaluacion(check, Resultado){
+    for (let i = 0; i < check.length; i++) {
+        check[i].addEventListener('click', function() {
+            switch (this) {
+                case check[0]:
+                    console.log('Pulsado Artefacto 1');
+                    setTimeout(function(){
+                        for (let j = 0; j < def1.artefact_1.datadefault[0].contents.artifact_1.allinputs.length; j++) {
+                            if (def1.artefact_1.datadefault[0].contents.artifact_1.allinputs[j][0].classList.contains('pass')) {
+                                console.log(j,1);
+                                evaluacion['Artefacto 1'][j].prop2 = 1;                        
+                            }
+                            else{
+                                console.log(j,0);
+                                evaluacion['Artefacto 1'][j].prop2 = 0;
+                            }
+                        }
+                        guardarResultados(evaluacion);
+                    }, 10);
+                    break;
+                case check[1]:
+                    console.log('Pulsado Artefacto 2')
+                    setTimeout(function(){
+                        for (let j = 0; j < def1.artefact_1.datadefault[1].contents.artifact_2.allinputs.length; j++) {
+                            if (def1.artefact_1.datadefault[1].contents.artifact_2.allinputs[j][0].classList.contains('pass')) {
+                                console.log(j,1);  
+                                evaluacion['Artefacto 2'][j].prop2 = 0.5;
+                            }
+                            else{
+                                console.log(j,0);
+                                evaluacion['Artefacto 2'][j].prop2 = 0;
+                            }
+                        }
+                        guardarResultados(evaluacion); 
+                    }, 10);
+                    break;
+                case check[2]:
+                    console.log('Pulsado Artefacto 3')
+                    setTimeout(function(){
+                        for (let j = 0; j < def1.artefact_1.datadefault[2].contents.artifact_3.allinputs.length; j++) {
+                            if (def1.artefact_1.datadefault[2].contents.artifact_3.allinputs[j][0].classList.contains('pass')) {
+                                console.log(j,1);
+                                evaluacion['Artefacto 3'][j].prop2 = 1;
+                            }
+                            else{
+                                console.log(j,0);
+                                evaluacion['Artefacto 3'][j].prop2 = 0;
+                            }
+                        }
+                        guardarResultados(evaluacion);
+                    }, 10);
+                    break;
+                case check[3]:
+                    console.log('Pulsado Artefacto 4')
+                    setTimeout(function(){
+                        for (let j = 0; j < def1.artefact_1.datadefault[3].contents.artifact_4.allinputs.length; j++) {
+                            if (def1.artefact_1.datadefault[3].contents.artifact_4.allinputs[j][0].classList.contains('pass')) {
+                                console.log(j,1);
+                                evaluacion['Artefacto 4'][j].prop2 = 1;    
+                            }
+                            else{
+                                console.log(j,0);
+                                evaluacion['Artefacto 4'][j].prop2 = 0;
+                            }
+                        }
+                        guardarResultados(evaluacion);
+                    }, 10);
+                    break;
+                case check[4]:
+                    console.log('Pulsado Artefacto 5')
+                    break;
+                case check[5]:
+                    console.log('Pulsado Artefacto 6')
+                    break;
+                case check[6]:
+                    console.log('Pulsado Artefacto 7')
+                    break;
+            }
+        });
+    }   
+}
+
+async function guardarResultados(resultados) {
+    await new Promise((resolve, reject) => {
+        try {
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(resultados));
+            resolve();
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+
+function cargarResultados(key) {
+    let resultadosGuardados = localStorage.getItem(key);    
+    if (resultadosGuardados) {
+        return resultadosGuardados = JSON.parse(resultadosGuardados);
+    }    
+    return null; // Si no hay datos guardados
+}
+
+
+function inicializarExamen(key) {
+    let resultadosGuardados, colorsBorders;
+    if (key===LOCAL_STORAGE_KEY) {
+        resultadosGuardados = cargarResultados(key);
+        if (resultadosGuardados) {
+            return resultadosGuardados; // Usar los datos cargados para continuar
+        } 
+        else {
+            console.log("No se encontraron puntuaciones previas. Iniciando nuevo examen.");      
+            // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas
+            resultadosGuardados = {
+                'Artefacto 1': Array.from({ length: 8 }, () => ({ prop1: null, prop2: null })),
+                'Artefacto 2': Array.from({ length: 8 }, () => ({ prop1: null, prop2: null })),
+                'Artefacto 3': Array.from({ length: 6 }, () => ({ prop1: null, prop2: null })),
+                'Artefacto 4': Array.from({ length: 5 }, () => ({ prop1: null, prop2: null }))
+            };;
+            resultadosGuardados["Artefacto 1"][0].prop1 = 'Dom';
+            resultadosGuardados["Artefacto 1"][0].prop2 = '0';
+            resultadosGuardados["Artefacto 1"][1].prop1 = 'Rango';
+            resultadosGuardados["Artefacto 1"][1].prop2 = '0';
+            resultadosGuardados["Artefacto 1"][2].prop1 = 'C. X';
+            resultadosGuardados["Artefacto 1"][2].prop2 = '0';
+            resultadosGuardados["Artefacto 1"][3].prop1 = 'C. Y';
+            resultadosGuardados["Artefacto 1"][3].prop2 = '0';
+            resultadosGuardados["Artefacto 1"][4].prop1 = 'P. +';
+            resultadosGuardados["Artefacto 1"][4].prop2 = '0';
+            resultadosGuardados["Artefacto 1"][5].prop1 = 'P. -';
+            resultadosGuardados["Artefacto 1"][5].prop2 = '0';
+            resultadosGuardados["Artefacto 1"][6].prop1 = 'P. C.';
+            resultadosGuardados["Artefacto 1"][6].prop2 = '0';
+            resultadosGuardados["Artefacto 1"][7].prop1 = 'P. D.';
+            resultadosGuardados["Artefacto 1"][7].prop2 = '0';
+            resultadosGuardados["Artefacto 2"][0].prop1 = 'Max. Abs.';
+            resultadosGuardados["Artefacto 2"][0].prop2 = '0';
+            resultadosGuardados["Artefacto 2"][1].prop1 = 'Alcanzados';
+            resultadosGuardados["Artefacto 2"][1].prop2 = '0';
+            resultadosGuardados["Artefacto 2"][2].prop1 = 'Max. No Abs.';
+            resultadosGuardados["Artefacto 2"][2].prop2 = '0';
+            resultadosGuardados["Artefacto 2"][3].prop1 = 'Alcanzados';
+            resultadosGuardados["Artefacto 2"][3].prop2 = '0';
+            resultadosGuardados["Artefacto 2"][4].prop1 = 'Min. Abs.';
+            resultadosGuardados["Artefacto 2"][4].prop2 = '0';
+            resultadosGuardados["Artefacto 2"][5].prop1 = 'Alcanzados';
+            resultadosGuardados["Artefacto 2"][5].prop2 = '0';
+            resultadosGuardados["Artefacto 2"][6].prop1 = 'Min. No Abs.';
+            resultadosGuardados["Artefacto 2"][6].prop2 = '0';
+            resultadosGuardados["Artefacto 2"][7].prop1 = 'Alcanzados';
+            resultadosGuardados["Artefacto 2"][7].prop2 = '0';
+            resultadosGuardados["Artefacto 3"][0].prop1 = 'Cot. Sup. 1';
+            resultadosGuardados["Artefacto 3"][0].prop2 = '0';
+            resultadosGuardados["Artefacto 3"][1].prop1 = 'Cot. Sup. 2';
+            resultadosGuardados["Artefacto 3"][1].prop2 = '0';
+            resultadosGuardados["Artefacto 3"][2].prop1 = 'Cot. Sup. 3';
+            resultadosGuardados["Artefacto 3"][2].prop2 = '0';
+            resultadosGuardados["Artefacto 3"][3].prop1 = 'Cot. Inf. 1';
+            resultadosGuardados["Artefacto 3"][3].prop2 = '0';
+            resultadosGuardados["Artefacto 3"][4].prop1 = 'Cot. Inf. 2';
+            resultadosGuardados["Artefacto 3"][4].prop2 = '0';
+            resultadosGuardados["Artefacto 3"][5].prop1 = 'Cot. Inf. 3';
+            resultadosGuardados["Artefacto 3"][5].prop2 = '0';
+            resultadosGuardados["Artefacto 4"][0].prop1 = 'Item 1';
+            resultadosGuardados["Artefacto 4"][0].prop2 = '0';
+            resultadosGuardados["Artefacto 4"][1].prop1 = 'Item 2';
+            resultadosGuardados["Artefacto 4"][1].prop2 = '0';
+            resultadosGuardados["Artefacto 4"][2].prop1 = 'Item 3';
+            resultadosGuardados["Artefacto 4"][2].prop2 = '0';
+            resultadosGuardados["Artefacto 4"][3].prop1 = 'Item 4';
+            resultadosGuardados["Artefacto 4"][3].prop2 = '0';
+            resultadosGuardados["Artefacto 4"][4].prop1 = 'Item 5';
+            resultadosGuardados["Artefacto 4"][4].prop2 = '0';
+            
+            localStorage.setItem(key, JSON.stringify(resultadosGuardados));            
+            return resultadosGuardados; // Devolver el nuevo objeto inicializado
+        }
+    }
+    else if(key===LOCAL_COLORS_KEY)
+    {
+        colorsBorders = cargarResultados(key);
+        if (colorsBorders) {
+            return colorsBorders; // Usar los datos cargados para continuar      
+        }   
+        else {
+            console.log("No se encontraron colores previos. Iniciando nuevo examen.");
+            // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas  
+            const colorsBorders = {};            
+            for (let i = 0; i <= 6; i++) {
+                    colorsBorders[i] = "#217E9D";
+            }
+            localStorage.setItem(key, JSON.stringify(colorsBorders));
+            return colorsBorders;
+        }        
+    }
 }

@@ -703,8 +703,11 @@ td div {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--azulMedio);
+    background-color: var(--azulMedio);
     border-radius: 5px;
+    font-family: 'Raleway';
+    color: var(--white);
 }
 
 .radio-label {
@@ -738,7 +741,7 @@ td div {
     background-color: #0AA1DD; 
     border-radius: 7px;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 1%;
     font-family: Raleway;
     font-weight: bold;
@@ -763,7 +766,7 @@ td div {
     background-color: #0AA1DD; 
     border-radius: 7px;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 1%;
     font-family: Raleway;
     font-weight: bold;
@@ -781,7 +784,7 @@ td div {
     align-items: center;
     justify-content: center;
     font-weight: bold; /* Texto en negrita */
-    font-size: 18px;
+    font-size: 15px;
     background-color: #0AA1DD;
     color: white; /* Texto 白 */
     width: 66px;
@@ -804,7 +807,7 @@ td div {
     align-items: center;
     justify-content: center;
     font-weight: bold; /* Texto en negrita */
-    font-size: 18px;
+    font-size: 15px;
     background-color: #0AA1DD;
     color: white; /* Texto 白 */
     width: 80px;
