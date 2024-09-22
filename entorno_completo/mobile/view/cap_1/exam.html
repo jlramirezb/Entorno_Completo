@@ -294,19 +294,17 @@
     </section>
     </div>
 
-    <div id="resultadoPagina" style="display:none;">
+    <div id="resultadoPagina" style="display:block;">
         <h2>Resultados del Examen</h2>
-        <table id="resultadoTabla" border="1">
-            <thead>
-                <tr id="headerRow">
-                    <th>Pregunta</th>
-                    <!-- Las cabeceras de items se añadirán dinámicamente -->
-                </tr>
-            </thead>
-            <tbody id="resultadoBody">
-                <!-- Aquí se insertarán los resultados -->
-            </tbody>
-        </table>
+        <div class="slider-container">            
+            <div id="slider" class="slider">
+                <!-- Aquí se generarán los artefactos dinámicamente -->
+            </div>            
+        </div>
+        <div class="button-container">
+            <button id="prevBtn">&lt;</button>
+            <button id="nextBtn">&gt;</button>
+        </div>
         <h3>Total: <span id="resultadoTotal"></span></h3>
     </div>
 

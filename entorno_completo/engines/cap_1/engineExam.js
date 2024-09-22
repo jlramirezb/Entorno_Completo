@@ -166,11 +166,11 @@ function Evaluacion(check){
         check[i].addEventListener('click', function() {
             switch (this) {                
                 case check[0]:
-                    def1.artefact_1.datadefault[0].contents.artifact_1.dataInteraction.intentos++;
+                    def1.artefact_1.datadefault[0].contents[artifact[0]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 1');
                     setTimeout(function(){
-                        for (let j = 0; j < def1.artefact_1.datadefault[0].contents.artifact_1.allinputs.length; j++) {
-                            if (def1.artefact_1.datadefault[0].contents.artifact_1.allinputs[j][0].classList.contains('pass')) {
+                        for (let j = 0; j < def1.artefact_1.datadefault[0].contents[artifact[0]].allinputs.length; j++) {
+                            if (def1.artefact_1.datadefault[0].contents[artifact[0]].allinputs[j][0].classList.contains('pass')) {
                                 console.log(j,1);
                                 evaluacion['Artefacto 1'][j].prop2 = 1;                        
                             }
@@ -183,11 +183,11 @@ function Evaluacion(check){
                     }, 10);
                     break;
                 case check[1]:
-                    def1.artefact_1.datadefault[1].contents.artifact_2.dataInteraction.intentos++;
+                    def1.artefact_1.datadefault[1].contents[artifact[1]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 2')
                     setTimeout(function(){
-                        for (let j = 0; j < def1.artefact_1.datadefault[1].contents.artifact_2.allinputs.length; j++) {
-                            if (def1.artefact_1.datadefault[1].contents.artifact_2.allinputs[j][0].classList.contains('pass')) {
+                        for (let j = 0; j < def1.artefact_1.datadefault[1].contents[artifact[1]].allinputs.length; j++) {
+                            if (def1.artefact_1.datadefault[1].contents[artifact[1]].allinputs[j][0].classList.contains('pass')) {
                                 console.log(j,1);  
                                 evaluacion['Artefacto 2'][j].prop2 = 0.5;
                             }
@@ -200,11 +200,11 @@ function Evaluacion(check){
                     }, 10);
                     break;
                 case check[2]:
-                    def1.artefact_1.datadefault[2].contents.artifact_3.dataInteraction.intentos++;
+                    def1.artefact_1.datadefault[2].contents[artifact[2]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 3')
                     setTimeout(function(){
-                        for (let j = 0; j < def1.artefact_1.datadefault[2].contents.artifact_3.allinputs.length; j++) {
-                            if (def1.artefact_1.datadefault[2].contents.artifact_3.allinputs[j][0].classList.contains('pass')) {
+                        for (let j = 0; j < def1.artefact_1.datadefault[2].contents[artifact[2]].allinputs.length; j++) {
+                            if (def1.artefact_1.datadefault[2].contents[artifact[2]].allinputs[j][0].classList.contains('pass')) {
                                 console.log(j,1);
                                 evaluacion['Artefacto 3'][j].prop2 = 1;
                             }
@@ -217,11 +217,11 @@ function Evaluacion(check){
                     }, 10);
                     break;
                 case check[3]:
-                    def1.artefact_1.datadefault[3].contents.artifact_4.dataInteraction.intentos++;
+                    def1.artefact_1.datadefault[3].contents[artifact[3]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 4')
                     setTimeout(function(){
-                        for (let j = 0; j < def1.artefact_1.datadefault[3].contents.artifact_4.allinputs.length; j++) {
-                            if (def1.artefact_1.datadefault[3].contents.artifact_4.allinputs[j][0].classList.contains('pass')) {
+                        for (let j = 0; j < def1.artefact_1.datadefault[3].contents[artifact[3]].allinputs.length; j++) {
+                            if (def1.artefact_1.datadefault[3].contents[artifact[3]].allinputs[j][0].classList.contains('pass')) {
                                 console.log(j,1);
                                 evaluacion['Artefacto 4'][j].prop2 = 1;    
                             }
@@ -478,3 +478,87 @@ function cleanEval(reset)
         });
     }
 }
+
+// Importar la función cargarResultados desde el módulo correspondiente
+//import { cargarResultados } from 'ruta/al/modulo/cargarResultados';
+
+function cargarResultados(key) {
+    let resultadosGuardados = localStorage.getItem(key);
+    
+    if (resultadosGuardados) {
+        return resultadosGuardados = JSON.parse(resultadosGuardados);
+    }
+    
+    return null; // Si no hay datos guardados
+}
+
+// Definir una función para mostrar los puntajes de la evaluación por artefactos
+let currentIndex = 0;
+let visibleArtefactos = 1;
+
+function createArtefactoElement(artefacto, index) {
+    const element = document.createElement('div');
+    element.className = 'artefacto';
+
+    let itemsHtml = artefacto.map((item, idx) => `
+        <tr>
+            <td>${item.prop1}</td>
+            <td>${item.prop2}</td>
+        </tr>
+    `).join('');
+
+    element.innerHTML = `
+        <h2>Artefacto ${index + 1}</h2>
+        <table>
+            <tr>
+                <th>Items</th>
+                <th>Puntos</th>
+            </tr>
+            ${itemsHtml}
+        </table>
+        <div class="info">
+            <strong>Total puntos: </strong>${artefacto.reduce((a, b) => a + parseInt(b.prop2), 0)}<br>
+        </div>
+    `;
+    return element;
+}
+
+function updateSlider(resultadosGuardados) {
+    console.log(resultadosGuardados)
+    const slider = document.getElementById('slider');
+    slider.innerHTML = '';
+    
+    Object.keys(resultadosGuardados).forEach((key, index) => {
+        slider.appendChild(createArtefactoElement(resultadosGuardados[key], index));
+    });
+
+    updateVisibleArtefactos(resultadosGuardados);
+}
+
+function updateVisibleArtefactos(resultadosGuardados) {
+    const containerWidth = document.querySelector('.slider-container').offsetWidth;
+    let artefactoWidth = 250; // Puedes ajustar el ancho de los artefactos
+    visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));
+    document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
+
+    // Actualizar estado de los botones
+    document.getElementById('prevBtn').disabled = currentIndex === 0;
+    document.getElementById('nextBtn').disabled = currentIndex >= Object.keys(resultadosGuardados).length - visibleArtefactos;
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateVisibleArtefactos();
+    }
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentIndex < Object.keys(evaluacion).length - visibleArtefactos) {
+        currentIndex++;
+        updateVisibleArtefactos();
+    }
+});
+
+window.addEventListener('resize', updateVisibleArtefactos);
+

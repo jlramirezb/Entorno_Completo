@@ -839,3 +839,41 @@ td div {
 /*#ejemplo1 #ejemplo2 #ejemplo3 #ejemplo4{
     width: 100%;
 }**/
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70%;
+    overflow: hidden;
+}
+
+#slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.artefacto {
+    flex: 0 0 250px; /* Ancho del artefacto */
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f0cdcd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#nextBtn, #prevBtn {
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #076382;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+#nextBtn:disabled, #prevBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

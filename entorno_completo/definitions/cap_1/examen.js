@@ -4774,6 +4774,9 @@ var defBoards = {
 
 let position = localStorageSeleccionados("P1", 1, 8, 1);
 console.log(position);
+let kk = 4*(position-1)
+let artifact = ['artifact_' + (kk+1), 'artifact_' + (kk+2), 'artifact_' + (kk+3), 'artifact_' + (kk+4)];
+console.log(artifact);
 [def1, defBoards] = PintaSeleccionP1(position, def1, defBoards,'P1');
 
 defBoardDefault();
@@ -5228,8 +5231,8 @@ document.addEventListener("DOMContentLoaded", function () {
         rules.style.display = "block";
         let rulesBtn = document.getElementById("buttonRule");
         rulesBtn.addEventListener("click", () => {
-          (rules.style.display = "none"),
-            (fechaInicioEst = localStorage.getItem("fechaInicioEst"));
+          rules.style.display = "none";
+          let fechaInicioEst = localStorage.getItem("fechaInicioEst");
           PintaBordes(colorBorders);
           if (fechaInicioEst === null) {
             fechaInicioEst = currentDate;
@@ -5308,4 +5311,9 @@ function ocultarDivPorRadio() {
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM cargado, ejecutando ocultarDivPorRadio');
   ocultarDivPorRadio();
+});
+
+// Ejecutar el código cuando se presiona el botón "finalizar"
+document.querySelector('.finalizar').addEventListener('click', () => {
+  updateSlider(evaluacion);
 });
