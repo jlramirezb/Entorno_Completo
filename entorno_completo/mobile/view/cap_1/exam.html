@@ -59,7 +59,7 @@
 
         <div id="rules" class="note" style="display:none">
             <h2>Consideraciones del Examen</h2>
-            <div class="container">
+            <div class="container-rules">
                 <ul>
                     <li>Leer las siguientes consideraciones antes de iniciar el examen.</li>
                     <li>Al responder una pregunta con el boton <button id="btn-validation" class="buttonPrimary check"
@@ -295,17 +295,18 @@
     </div>
 
     <div id="resultadoPagina" style="display:block;">
-        <h2>Resultados del Examen</h2>
-        <div class="slider-container">            
-            <div id="slider" class="slider">
-                <!-- Aquí se generarán los artefactos dinámicamente -->
-            </div>            
+        <div class="container">
+            <div class="slider-wrapper">
+                <div class="slider-container">
+                <div class="slider" id="slider">
+                    <!-- Artefactos -->
+                </div>
+            </div>
+            <div class="button-container">
+                <button id="prevBtn">&lt;</button>
+                <button id="nextBtn">&gt;</button>
+            </div>
         </div>
-        <div class="button-container">
-            <button id="prevBtn">&lt;</button>
-            <button id="nextBtn">&gt;</button>
-        </div>
-        <h3>Total: <span id="resultadoTotal"></span></h3>
     </div>
 
     <!--Scripts-->

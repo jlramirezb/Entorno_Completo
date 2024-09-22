@@ -162,89 +162,101 @@ function sendData(data) {
 }
 
 function Evaluacion(check){
+    card = document.querySelectorAll('.card');
+    question = document.querySelectorAll('.question-container');
     for (let i = 0; i < check.length; i++) {
         check[i].addEventListener('click', function() {
             switch (this) {                
                 case check[0]:
+                    card[0].style.borderColor = 'yellow';
+                    evaluacion['Artefacto 1'].intentos++ ;
                     def1.artefact_1.datadefault[0].contents[artifact[0]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 1');
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[0].contents[artifact[0]].allinputs.length; j++) {
                             if (def1.artefact_1.datadefault[0].contents[artifact[0]].allinputs[j][0].classList.contains('pass')) {
                                 console.log(j,1);
-                                evaluacion['Artefacto 1'][j].prop2 = 1;                        
+                                evaluacion['Artefacto 1'].datos[j].prop2 = 1;                        
                             }
                             else{
                                 console.log(j,0);
-                                evaluacion['Artefacto 1'][j].prop2 = 0;
+                                evaluacion['Artefacto 1'].datos[j].prop2 = 0;
                             }
                         }
                         guardarResultados(evaluacion);
                     }, 10);
                     break;
                 case check[1]:
+                    card[1].style.borderColor = 'yellow';
+                    evaluacion['Artefacto 2'].intentos++ ;
                     def1.artefact_1.datadefault[1].contents[artifact[1]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 2')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[1].contents[artifact[1]].allinputs.length; j++) {
                             if (def1.artefact_1.datadefault[1].contents[artifact[1]].allinputs[j][0].classList.contains('pass')) {
                                 console.log(j,1);  
-                                evaluacion['Artefacto 2'][j].prop2 = 0.5;
+                                evaluacion['Artefacto 2'].datos[j].prop2 = 0.5;
                             }
                             else{
                                 console.log(j,0);
-                                evaluacion['Artefacto 2'][j].prop2 = 0;
+                                evaluacion['Artefacto 2'].datos[j].prop2 = 0;
                             }
                         }
                         guardarResultados(evaluacion); 
                     }, 10);
                     break;
                 case check[2]:
+                    card[2].style.borderColor = 'yellow';
+                    evaluacion['Artefacto 3'].intentos++ ;
                     def1.artefact_1.datadefault[2].contents[artifact[2]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 3')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[2].contents[artifact[2]].allinputs.length; j++) {
                             if (def1.artefact_1.datadefault[2].contents[artifact[2]].allinputs[j][0].classList.contains('pass')) {
                                 console.log(j,1);
-                                evaluacion['Artefacto 3'][j].prop2 = 1;
+                                evaluacion['Artefacto 3'].datos[j].prop2 = 1;
                             }
                             else{
                                 console.log(j,0);
-                                evaluacion['Artefacto 3'][j].prop2 = 0;
+                                evaluacion['Artefacto 3'].datos[j].prop2 = 0;
                             }
                         }
                         guardarResultados(evaluacion);
                     }, 10);
                     break;
                 case check[3]:
+                    card[3].style.borderColor = 'yellow';
+                    evaluacion['Artefacto 4'].intentos++ ;
                     def1.artefact_1.datadefault[3].contents[artifact[3]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 4')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[3].contents[artifact[3]].allinputs.length; j++) {
                             if (def1.artefact_1.datadefault[3].contents[artifact[3]].allinputs[j][0].classList.contains('pass')) {
                                 console.log(j,1);
-                                evaluacion['Artefacto 4'][j].prop2 = 1;    
+                                evaluacion['Artefacto 4'].datos[j].prop2 = 1;    
                             }
                             else{
                                 console.log(j,0);
-                                evaluacion['Artefacto 4'][j].prop2 = 0;
+                                evaluacion['Artefacto 4'].datos[j].prop2 = 0;
                             }
                         }
                         guardarResultados(evaluacion);
                     }, 10);
                     break;
                 case check[4]:
+                    question[0].style.borderColor = 'yellow';
+                    evaluacion['Artefacto 5'].intentos++ ;
                     def[artefacts[0]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 5')
                     setTimeout(function(){
                         let kk = 0;             
                         for (var prop in objs) {
-                            evaluacion['Artefacto 5'][kk].prop1 = prop;
+                            evaluacion['Artefacto 5'].datos[kk].prop1 = prop;
                             if(objs[prop] === true){                                
-                                evaluacion['Artefacto 5'][kk].prop2 = 1;                                
+                                evaluacion['Artefacto 5'].datos[kk].prop2 = 1;                                
                             }
                             else{
-                                evaluacion['Artefacto 5'][kk].prop2 = 0;
+                                evaluacion['Artefacto 5'].datos[kk].prop2 = 0;
                             }
                             kk++;
                         }
@@ -252,18 +264,20 @@ function Evaluacion(check){
                     })
                     break;
                 case check[5]:
+                    question[1].style.borderColor = 'yellow';
+                    evaluacion['Artefacto 6'].intentos++ ;
                     def[artefacts[1]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 6')
                     setTimeout(function(){
                         let kk = 0;             
                         for (var prop in objs) {
                             console.log(prop)
-                            evaluacion['Artefacto 6'][kk].prop1 = prop;
+                            evaluacion['Artefacto 6'].datos[kk].prop1 = prop;
                             if(objs[prop] === true){                                
-                                evaluacion['Artefacto 6'][kk].prop2 = 1;                                
+                                evaluacion['Artefacto 6'].datos[kk].prop2 = 1;                                
                             }
                             else{
-                                evaluacion['Artefacto 6'][kk].prop2 = 0;
+                                evaluacion['Artefacto 6'].datos[kk].prop2 = 0;
                             }
                             kk++;
                         }
@@ -271,17 +285,19 @@ function Evaluacion(check){
                     })
                     break;
                 case check[6]:
+                    question[2].style.borderColor = 'yellow';
+                    evaluacion['Artefacto 7'].intentos++ ;
                     def[artefacts[2]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 7')
                     setTimeout(function(){
                         let kk = 0;             
                         for (var prop in objs) {
-                            evaluacion['Artefacto 7'][kk].prop1 = prop;
+                            evaluacion['Artefacto 7'].datos[kk].prop1 = prop;
                             if(objs[prop] === true){                                
-                                evaluacion['Artefacto 7'][kk].prop2 = 1;                                
+                                evaluacion['Artefacto 7'].datos[kk].prop2 = 1;                                
                             }
                             else{
-                                evaluacion['Artefacto 7'][kk].prop2 = 0;
+                                evaluacion['Artefacto 7'].datos[kk].prop2 = 0;
                             }
                             kk++;
                         }
@@ -325,88 +341,90 @@ function inicializarExamen(key) {
             console.log("No se encontraron puntuaciones previas. Iniciando nuevo examen.");      
             // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas
             resultadosGuardados = {
-                'Artefacto 1': Array.from({ length: 8 }, () => ({ prop1: null, prop2: null })),
-                'Artefacto 2': Array.from({ length: 8 }, () => ({ prop1: null, prop2: null })),
-                'Artefacto 3': Array.from({ length: 6 }, () => ({ prop1: null, prop2: null })),
-                'Artefacto 4': Array.from({ length: 5 }, () => ({ prop1: null, prop2: null })),
-                'Artefacto 5': Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })),
-                'Artefacto 6': Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })),
-                'Artefacto 7': Array.from({ length: 3 }, () => ({ prop1: null, prop2: null }))
-            };;
-            resultadosGuardados["Artefacto 1"][0].prop1 = 'Dom';
-            resultadosGuardados["Artefacto 1"][0].prop2 = '0';
-            resultadosGuardados["Artefacto 1"][1].prop1 = 'Rango';
-            resultadosGuardados["Artefacto 1"][1].prop2 = '0';
-            resultadosGuardados["Artefacto 1"][2].prop1 = 'C. X';
-            resultadosGuardados["Artefacto 1"][2].prop2 = '0';
-            resultadosGuardados["Artefacto 1"][3].prop1 = 'C. Y';
-            resultadosGuardados["Artefacto 1"][3].prop2 = '0';
-            resultadosGuardados["Artefacto 1"][4].prop1 = 'P. +';
-            resultadosGuardados["Artefacto 1"][4].prop2 = '0';
-            resultadosGuardados["Artefacto 1"][5].prop1 = 'P. -';
-            resultadosGuardados["Artefacto 1"][5].prop2 = '0';
-            resultadosGuardados["Artefacto 1"][6].prop1 = 'P. C.';
-            resultadosGuardados["Artefacto 1"][6].prop2 = '0';
-            resultadosGuardados["Artefacto 1"][7].prop1 = 'P. D.';
-            resultadosGuardados["Artefacto 1"][7].prop2 = '0';
-            resultadosGuardados["Artefacto 2"][0].prop1 = 'Max. Abs.';
-            resultadosGuardados["Artefacto 2"][0].prop2 = '0';
-            resultadosGuardados["Artefacto 2"][1].prop1 = 'Alcanzados';
-            resultadosGuardados["Artefacto 2"][1].prop2 = '0';
-            resultadosGuardados["Artefacto 2"][2].prop1 = 'Max. No Abs.';
-            resultadosGuardados["Artefacto 2"][2].prop2 = '0';
-            resultadosGuardados["Artefacto 2"][3].prop1 = 'Alcanzados';
-            resultadosGuardados["Artefacto 2"][3].prop2 = '0';
-            resultadosGuardados["Artefacto 2"][4].prop1 = 'Min. Abs.';
-            resultadosGuardados["Artefacto 2"][4].prop2 = '0';
-            resultadosGuardados["Artefacto 2"][5].prop1 = 'Alcanzados';
-            resultadosGuardados["Artefacto 2"][5].prop2 = '0';
-            resultadosGuardados["Artefacto 2"][6].prop1 = 'Min. No Abs.';
-            resultadosGuardados["Artefacto 2"][6].prop2 = '0';
-            resultadosGuardados["Artefacto 2"][7].prop1 = 'Alcanzados';
-            resultadosGuardados["Artefacto 2"][7].prop2 = '0';
-            resultadosGuardados["Artefacto 3"][0].prop1 = 'Cot. Sup. 1';
-            resultadosGuardados["Artefacto 3"][0].prop2 = '0';
-            resultadosGuardados["Artefacto 3"][1].prop1 = 'Cot. Sup. 2';
-            resultadosGuardados["Artefacto 3"][1].prop2 = '0';
-            resultadosGuardados["Artefacto 3"][2].prop1 = 'Cot. Sup. 3';
-            resultadosGuardados["Artefacto 3"][2].prop2 = '0';
-            resultadosGuardados["Artefacto 3"][3].prop1 = 'Cot. Inf. 1';
-            resultadosGuardados["Artefacto 3"][3].prop2 = '0';
-            resultadosGuardados["Artefacto 3"][4].prop1 = 'Cot. Inf. 2';
-            resultadosGuardados["Artefacto 3"][4].prop2 = '0';
-            resultadosGuardados["Artefacto 3"][5].prop1 = 'Cot. Inf. 3';
-            resultadosGuardados["Artefacto 3"][5].prop2 = '0';
-            resultadosGuardados["Artefacto 4"][0].prop1 = 'Item 1';
-            resultadosGuardados["Artefacto 4"][0].prop2 = '0';
-            resultadosGuardados["Artefacto 4"][1].prop1 = 'Item 2';
-            resultadosGuardados["Artefacto 4"][1].prop2 = '0';
-            resultadosGuardados["Artefacto 4"][2].prop1 = 'Item 3';
-            resultadosGuardados["Artefacto 4"][2].prop2 = '0';
-            resultadosGuardados["Artefacto 4"][3].prop1 = 'Item 4';
-            resultadosGuardados["Artefacto 4"][3].prop2 = '0';
-            resultadosGuardados["Artefacto 4"][4].prop1 = 'Item 5';
-            resultadosGuardados["Artefacto 4"][4].prop2 = '0';
-            resultadosGuardados["Artefacto 5"][0].prop1 = null;
-            resultadosGuardados["Artefacto 5"][0].prop2 = 0;
-            resultadosGuardados["Artefacto 5"][1].prop1 = null;
-            resultadosGuardados["Artefacto 5"][1].prop2 = 0;
-            resultadosGuardados["Artefacto 5"][2].prop1 = null;
-            resultadosGuardados["Artefacto 5"][2].prop2 = 0;
-            resultadosGuardados["Artefacto 6"][0].prop1 = null;
-            resultadosGuardados["Artefacto 6"][0].prop2 = 0;
-            resultadosGuardados["Artefacto 6"][1].prop1 = null;
-            resultadosGuardados["Artefacto 6"][1].prop2 = 0;
-            resultadosGuardados["Artefacto 6"][2].prop1 = null;
-            resultadosGuardados["Artefacto 6"][2].prop2 = 0;
-            resultadosGuardados["Artefacto 7"][0].prop1 = null;
-            resultadosGuardados["Artefacto 7"][0].prop2 = 0;
-            resultadosGuardados["Artefacto 7"][1].prop1 = null;
-            resultadosGuardados["Artefacto 7"][1].prop2 = 0;
-            resultadosGuardados["Artefacto 7"][2].prop1 = null;
-            resultadosGuardados["Artefacto 7"][2].prop2 = 0;            
-            
-            localStorage.setItem(key, JSON.stringify(resultadosGuardados));            
+                'Artefacto 1': { datos: Array.from({ length: 8 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 },
+                'Artefacto 2': { datos: Array.from({ length: 8 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 },
+                'Artefacto 3': { datos: Array.from({ length: 6 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 },
+                'Artefacto 4': { datos: Array.from({ length: 5 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 },
+                'Artefacto 5': { datos: Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 },
+                'Artefacto 6': { datos: Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 },
+                'Artefacto 7': { datos: Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 }
+            };
+            resultadosGuardados["Artefacto 1"].datos[0].prop1 = 'Dom';
+            resultadosGuardados["Artefacto 1"].datos[0].prop2 = '0';
+            resultadosGuardados["Artefacto 1"].datos[1].prop1 = 'Rango';
+            resultadosGuardados["Artefacto 1"].datos[1].prop1 = 'Rango';
+            resultadosGuardados["Artefacto 1"].datos[1].prop2 = '0';
+            resultadosGuardados["Artefacto 1"].datos[2].prop1 = 'C. X';
+            resultadosGuardados["Artefacto 1"].datos[2].prop2 = '0';
+            resultadosGuardados["Artefacto 1"].datos[3].prop1 = 'C. Y';
+            resultadosGuardados["Artefacto 1"].datos[3].prop2 = '0';
+            resultadosGuardados["Artefacto 1"].datos[4].prop1 = 'P. +';
+            resultadosGuardados["Artefacto 1"].datos[4].prop2 = '0';
+            resultadosGuardados["Artefacto 1"].datos[5].prop1 = 'P. -';
+            resultadosGuardados["Artefacto 1"].datos[5].prop2 = '0';
+            resultadosGuardados["Artefacto 1"].datos[6].prop1 = 'P. C.';
+            resultadosGuardados["Artefacto 1"].datos[6].prop2 = '0';
+            resultadosGuardados["Artefacto 1"].datos[7].prop1 = 'P. D.';
+            resultadosGuardados["Artefacto 1"].datos[7].prop2 = '0';
+            resultadosGuardados["Artefacto 2"].datos[0].prop1 = 'Max. Abs.';
+            resultadosGuardados["Artefacto 2"].datos[0].prop2 = '0';
+            resultadosGuardados["Artefacto 2"].datos[1].prop1 = 'Alcanzados';
+            resultadosGuardados["Artefacto 2"].datos[1].prop2 = '0';
+            resultadosGuardados["Artefacto 2"].datos[2].prop1 = 'Max. No Abs.';
+            resultadosGuardados["Artefacto 2"].datos[2].prop2 = '0';
+            resultadosGuardados["Artefacto 2"].datos[3].prop1 = 'Alcanzados';
+            resultadosGuardados["Artefacto 2"].datos[3].prop2 = '0';
+            resultadosGuardados["Artefacto 2"].datos[4].prop1 = 'Min. Abs.';
+            resultadosGuardados["Artefacto 2"].datos[4].prop2 = '0';
+            resultadosGuardados["Artefacto 2"].datos[5].prop1 = 'Alcanzados';
+            resultadosGuardados["Artefacto 2"].datos[5].prop2 = '0';
+            resultadosGuardados["Artefacto 2"].datos[6].prop1 = 'Min. No Abs.';
+            resultadosGuardados["Artefacto 2"].datos[6].prop2 = '0';
+            resultadosGuardados["Artefacto 2"].datos[7].prop1 = 'Alcanzados';
+            resultadosGuardados["Artefacto 2"].datos[7].prop2 = '0';
+            resultadosGuardados["Artefacto 3"].datos[0].prop1 = 'Cot. Sup. 1';
+            resultadosGuardados["Artefacto 3"].datos[0].prop2 = '0';
+            resultadosGuardados["Artefacto 3"].datos[1].prop1 = 'Cot. Sup. 2';
+            resultadosGuardados["Artefacto 3"].datos[1].prop2 = '0';
+            resultadosGuardados["Artefacto 3"].datos[2].prop1 = 'Cot. Sup. 3';
+            resultadosGuardados["Artefacto 3"].datos[2].prop2 = '0';
+            resultadosGuardados["Artefacto 3"].datos[3].prop1 = 'Cot. Inf. 1';
+            resultadosGuardados["Artefacto 3"].datos[3].prop2 = '0';
+            resultadosGuardados["Artefacto 3"].datos[4].prop1 = 'Cot. Inf. 2';
+            resultadosGuardados["Artefacto 3"].datos[4].prop2 = '0';
+            resultadosGuardados["Artefacto 3"].datos[5].prop1 = 'Cot. Inf. 3';
+            resultadosGuardados["Artefacto 3"].datos[5].prop2 = '0';
+            resultadosGuardados["Artefacto 4"].datos[0].prop1 = 'Item 1';
+            resultadosGuardados["Artefacto 4"].datos[0].prop2 = '0';
+            resultadosGuardados["Artefacto 4"].datos[1].prop1 = 'Item 2';
+            resultadosGuardados["Artefacto 4"].datos[1].prop2 = '0';
+            resultadosGuardados["Artefacto 4"].datos[2].prop1 = 'Item 3';
+            resultadosGuardados["Artefacto 4"].datos[2].prop2 = '0';
+            resultadosGuardados["Artefacto 4"].datos[3].prop1 = 'Item 4';
+            resultadosGuardados["Artefacto 4"].datos[3].prop2 = '0';
+            resultadosGuardados["Artefacto 4"].datos[4].prop1 = 'Item 5';
+            resultadosGuardados["Artefacto 4"].datos[4].prop2 = '0';
+            resultadosGuardados["Artefacto 5"].datos[0].prop1 = null;
+            resultadosGuardados["Artefacto 5"].datos[0].prop2 = 0;
+            resultadosGuardados["Artefacto 5"].datos[1].prop1 = null;
+            resultadosGuardados["Artefacto 5"].datos[1].prop2 = 0;
+            resultadosGuardados["Artefacto 5"].datos[2].prop1 = null;
+            resultadosGuardados["Artefacto 5"].datos[2].prop2 = 0;
+            resultadosGuardados["Artefacto 6"].datos[0].prop1 = null;
+            resultadosGuardados["Artefacto 6"].datos[0].prop2 = 0;
+            resultadosGuardados["Artefacto 6"].datos[1].prop1 = null;
+            resultadosGuardados["Artefacto 6"].datos[1].prop2 = 0;
+            resultadosGuardados["Artefacto 6"].datos[2].prop1 = null;
+            resultadosGuardados["Artefacto 6"].datos[2].prop2 = 0;
+            resultadosGuardados["Artefacto 7"].datos[0].prop1 = null;
+            resultadosGuardados["Artefacto 7"].datos[0].prop2 = 0;
+            resultadosGuardados["Artefacto 7"].datos[1].prop1 = null;
+            resultadosGuardados["Artefacto 7"].datos[1].prop2 = 0;
+            resultadosGuardados["Artefacto 7"].datos[2].prop1 = null;
+            resultadosGuardados["Artefacto 7"].datos[2].prop2 = 0;
+                        
+            const resultadosGuardadosString = JSON.stringify(resultadosGuardados);            
+            localStorage.setItem(key, resultadosGuardadosString);            
             return resultadosGuardados; // Devolver el nuevo objeto inicializado
         }
     }
@@ -431,40 +449,49 @@ function inicializarExamen(key) {
 
 function cleanEval(reset)
 {
-    for (let i = 0; i < reset.length; i++) {
+    for (let i = 0; i < reset.length; i++) {        
+        card = document.querySelectorAll('.card');
+        question = document.querySelectorAll('.question-container');
         reset[i].addEventListener('click', function() {
             switch (this) {                
                 case reset[0]:
+                    card[0].style.borderColor = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 1'].length; j++) {
                         evaluacion['Artefacto 1'][j].prop2 = 0;
                     }                    
                     break;
                 case reset[1]:
+                    card[1].style.borderColor = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 2'].length; j++) {
                         evaluacion['Artefacto 2'][j].prop2 = 0;
                     }
                     break;
                 case reset[2]:
+                    card[2].style.borderColor = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 3'].length; j++) {
                         evaluacion['Artefacto 3'][j].prop2 = 0;
                     }
                     break;
                 case reset[3]:
+                    card[3].style.borderColor = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 4'].length; j++) {
                         evaluacion['Artefacto 4'][j].prop2 = 0;
                     }
                     break;
                 case reset[4]:
+                    question[0].style.borderColor = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 5'].length; j++) {
                         evaluacion['Artefacto 5'][j].prop2 = 0;
                     }
                     break;
                 case reset[5]:
+                    question[1].style.borderColor = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 6'].length; j++) {
                         evaluacion['Artefacto 6'][j].prop2 = 0;
                     }
                     break;
                 case reset[6]:
+                    question[2].style.borderColor = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 7'].length; j++) {
                         evaluacion['Artefacto 7'][j].prop2 = 0;
                     }
@@ -482,7 +509,7 @@ function cleanEval(reset)
 // Importar la función cargarResultados desde el módulo correspondiente
 //import { cargarResultados } from 'ruta/al/modulo/cargarResultados';
 
-function cargarResultados(key) {
+/*function cargarResultados(key) {
     let resultadosGuardados = localStorage.getItem(key);
     
     if (resultadosGuardados) {
@@ -490,7 +517,7 @@ function cargarResultados(key) {
     }
     
     return null; // Si no hay datos guardados
-}
+}*/
 
 // Definir una función para mostrar los puntajes de la evaluación por artefactos
 let currentIndex = 0;
@@ -500,7 +527,7 @@ function createArtefactoElement(artefacto, index) {
     const element = document.createElement('div');
     element.className = 'artefacto';
 
-    let itemsHtml = artefacto.map((item, idx) => `
+    let itemsHtml = artefacto.datos.map((item, idx) => `
         <tr>
             <td>${item.prop1}</td>
             <td>${item.prop2}</td>
@@ -517,7 +544,8 @@ function createArtefactoElement(artefacto, index) {
             ${itemsHtml}
         </table>
         <div class="info">
-            <strong>Total puntos: </strong>${artefacto.reduce((a, b) => a + parseInt(b.prop2), 0)}<br>
+            <strong>Total puntos: </strong>${artefacto.datos.reduce((a, b) => a + parseFloat(b.prop2), 0)}<br>
+            <strong>Intentos: </strong>${artefacto.intentos}<br>
         </div>
     `;
     return element;
@@ -536,29 +564,34 @@ function updateSlider(resultadosGuardados) {
 }
 
 function updateVisibleArtefactos(resultadosGuardados) {
-    const containerWidth = document.querySelector('.slider-container').offsetWidth;
+    const containerWidth = document.querySelector('.slider-wrapper').offsetWidth;
     let artefactoWidth = 250; // Puedes ajustar el ancho de los artefactos
-    visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));
+    visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));    
+    
     document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
 
     // Actualizar estado de los botones
-    document.getElementById('prevBtn').disabled = currentIndex === 0;
-    document.getElementById('nextBtn').disabled = currentIndex >= Object.keys(resultadosGuardados).length - visibleArtefactos;
+    document.getElementById('prevBtn').disabled = currentIndex === 0;        
+    document.getElementById('nextBtn').disabled = currentIndex > Object.keys(resultadosGuardados).length - visibleArtefactos-1;
 }
 
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
-        updateVisibleArtefactos();
+        updateVisibleArtefactos(resultadosGuardados);
     }
 });
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-    if (currentIndex < Object.keys(evaluacion).length - visibleArtefactos) {
+    resultadosGuardados = cargarResultados(LOCAL_STORAGE_KEY);
+    if (currentIndex < Object.keys(evaluacion).length - visibleArtefactos+1) {
         currentIndex++;
-        updateVisibleArtefactos();
+        updateVisibleArtefactos(resultadosGuardados);
     }
 });
 
-window.addEventListener('resize', updateVisibleArtefactos);
+window.addEventListener('resize', () =>{ 
+    currentIndex = 0; // Restablece el índice al primero
+    updateVisibleArtefactos(resultadosGuardados)
+});
 
