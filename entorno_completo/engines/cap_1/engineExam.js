@@ -1,4 +1,6 @@
 const LOCAL_STORAGE_KEY = 'resultadoExamen';
+const LOCAL_COLORS_KEY = 'colorsExamen';
+
 
 function seleccionarAleatorios(min, max,totalale) {
     // Crear un array con los números consecutivos
@@ -169,6 +171,7 @@ function Evaluacion(check){
             switch (this) {                
                 case check[0]:
                     card[0].style.borderColor = 'yellow';
+                    colorBorders[0] = 'yellow';
                     evaluacion['Artefacto 1'].intentos++ ;
                     def1.artefact_1.datadefault[0].contents[artifact[0]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 1');
@@ -184,10 +187,12 @@ function Evaluacion(check){
                             }
                         }
                         guardarResultados(evaluacion);
+                        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(colorBorders));
                     }, 10);
                     break;
                 case check[1]:
                     card[1].style.borderColor = 'yellow';
+                    colorBorders[1] = 'yellow';
                     evaluacion['Artefacto 2'].intentos++ ;
                     def1.artefact_1.datadefault[1].contents[artifact[1]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 2')
@@ -203,10 +208,12 @@ function Evaluacion(check){
                             }
                         }
                         guardarResultados(evaluacion); 
+                        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(colorBorders));
                     }, 10);
                     break;
                 case check[2]:
                     card[2].style.borderColor = 'yellow';
+                    colorBorders[2] = 'yellow';
                     evaluacion['Artefacto 3'].intentos++ ;
                     def1.artefact_1.datadefault[2].contents[artifact[2]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 3')
@@ -222,10 +229,12 @@ function Evaluacion(check){
                             }
                         }
                         guardarResultados(evaluacion);
+                        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(colorBorders));
                     }, 10);
                     break;
                 case check[3]:
                     card[3].style.borderColor = 'yellow';
+                    colorBorders[3] = 'yellow';
                     evaluacion['Artefacto 4'].intentos++ ;
                     def1.artefact_1.datadefault[3].contents[artifact[3]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 4')
@@ -241,10 +250,12 @@ function Evaluacion(check){
                             }
                         }
                         guardarResultados(evaluacion);
+                        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(colorBorders));
                     }, 10);
                     break;
                 case check[4]:
                     question[0].style.borderColor = 'yellow';
+                    colorBorders[4] = 'yellow';
                     evaluacion['Artefacto 5'].intentos++ ;
                     def[artefacts[0]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 5')
@@ -261,10 +272,12 @@ function Evaluacion(check){
                             kk++;
                         }
                         guardarResultados(evaluacion)
+                        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(colorBorders));
                     })
                     break;
                 case check[5]:
                     question[1].style.borderColor = 'yellow';
+                    colorBorders[5] = 'yellow';
                     evaluacion['Artefacto 6'].intentos++ ;
                     def[artefacts[1]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 6')
@@ -282,10 +295,12 @@ function Evaluacion(check){
                             kk++;
                         }
                         guardarResultados(evaluacion)
+                        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(colorBorders));
                     })
                     break;
                 case check[6]:
                     question[2].style.borderColor = 'yellow';
+                    colorBorders[6] = 'yellow';
                     evaluacion['Artefacto 7'].intentos++ ;
                     def[artefacts[2]].dataInteraction.intentos++;
                     console.log('Pulsado Artefacto 7')
@@ -302,6 +317,7 @@ function Evaluacion(check){
                             kk++;
                         }
                         guardarResultados(evaluacion)
+                        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(colorBorders));
                     })
                     break;
             }
@@ -432,6 +448,14 @@ function inicializarExamen(key) {
     {
         colorsBorders = cargarResultados(key);
         if (colorsBorders) {
+            const card = document.querySelectorAll('.card');
+            for (let i = 0; i < card.length; i++) {
+                card[i].style.borderColor = colorsBorders[i];
+            }
+            const question = document.querySelectorAll('.question-container');
+            for (let i = 0; i < question.length; i++) {
+                question[i].style.borderColor = colorsBorders[i+4];
+            }
             return colorsBorders; // Usar los datos cargados para continuar      
         }   
         else {
@@ -456,42 +480,49 @@ function cleanEval(reset)
             switch (this) {                
                 case reset[0]:
                     card[0].style.borderColor = '#217e9d';
+                    colorBorders[0] = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 1'].length; j++) {
                         evaluacion['Artefacto 1'][j].prop2 = 0;
                     }                    
                     break;
                 case reset[1]:
                     card[1].style.borderColor = '#217e9d';
+                    colorBorders[1] = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 2'].length; j++) {
                         evaluacion['Artefacto 2'][j].prop2 = 0;
                     }
                     break;
                 case reset[2]:
                     card[2].style.borderColor = '#217e9d';
+                    colorBorders[2] = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 3'].length; j++) {
                         evaluacion['Artefacto 3'][j].prop2 = 0;
                     }
                     break;
                 case reset[3]:
                     card[3].style.borderColor = '#217e9d';
+                    colorBorders[3] = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 4'].length; j++) {
                         evaluacion['Artefacto 4'][j].prop2 = 0;
                     }
                     break;
                 case reset[4]:
                     question[0].style.borderColor = '#217e9d';
+                    colorBorders[4] = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 5'].length; j++) {
                         evaluacion['Artefacto 5'][j].prop2 = 0;
                     }
                     break;
                 case reset[5]:
                     question[1].style.borderColor = '#217e9d';
+                    colorBorders[5] = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 6'].length; j++) {
                         evaluacion['Artefacto 6'][j].prop2 = 0;
                     }
                     break;
                 case reset[6]:
                     question[2].style.borderColor = '#217e9d';
+                    colorBorders[6] = '#217e9d';
                     for (let j = 0; j < evaluacion['Artefacto 7'].length; j++) {
                         evaluacion['Artefacto 7'][j].prop2 = 0;
                     }
@@ -501,6 +532,7 @@ function cleanEval(reset)
             }
             setTimeout(() => {
                 guardarResultados(evaluacion);
+                localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(colorBorders));
             }, 0);
         });
     }

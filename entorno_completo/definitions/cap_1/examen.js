@@ -5176,7 +5176,10 @@ PintaSeleccionP2(position);
 window.onload = main();
 
 let evaluacion = {};
+let colorBorders = {};
 evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
+colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
+console.log(colorBorders);
 
 let check=Array.from(document.querySelectorAll('.check'));
 //elimina la primera posicion del arreglo check
