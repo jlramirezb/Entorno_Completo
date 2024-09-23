@@ -5225,10 +5225,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("La evaluación aún no ha comenzado.");
         paginaExamen.style.display = "none";
         notaprevia.style.display = "block";
-      } else if (
-        fechaHoraInicioDate <= currentDate &&
-        currentDate <= fechaHoraCierreDate
-      ) {
+      } else if (fechaHoraInicioDate <= currentDate && currentDate <= fechaHoraCierreDate) {
         console.log("La evaluación ya ha comenzado o debería haber comenzado.");
         let rules = document.getElementById("rules");
         rules.style.display = "block";
@@ -5241,13 +5238,10 @@ document.addEventListener("DOMContentLoaded", function () {
             fechaInicioEst = currentDate;
             localStorage.setItem("fechaInicioEst", fechaInicioEst);
           }
-
           paginaExamen.style.display = "block";
         });
       } else {
-        console.log(
-          "La evaluación ya ha finalizado o debería haber finalizado."
-        );
+        console.log("La evaluación ya ha finalizado o debería haber finalizado.");
         paginaExamen.style.display = "none";
         notaafter.style.display = "block";
       }

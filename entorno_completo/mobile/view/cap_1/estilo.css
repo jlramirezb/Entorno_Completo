@@ -107,7 +107,7 @@
 }*/
 
 /*Boton Finalizar Examen*/
-.finalizar {
+.finalizar {    
     background-color: #076382;
     color: #fff;
     border: none;
@@ -514,6 +514,7 @@ ul {
     list-style-type: disc;
     /* Estilo de viñetas */
     margin: 0;
+    margin-left: 15px;
     padding: 0;
 }
 
@@ -627,8 +628,8 @@ td div {
         font-size: 16px;
     }
 
-    .containerNormal {
-        justify-content: center;
+    .containerNormal {        
+        justify-content: center;                
     }
 
     .toValidate {
@@ -1029,4 +1030,8 @@ th {
     /*align-items: center;*/
     justify-content:center;
     margin-top: 80px;
+}
+
+#paginaExamen {
+    margin-top: 100px;
 }

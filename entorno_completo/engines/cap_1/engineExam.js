@@ -55,6 +55,17 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
     return seleccionados;
 }
 
+function PintaBordes (borderColor){
+    let cards = document.querySelectorAll('.card');    
+    let question = document.querySelectorAll('.question-container');
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.borderColor = borderColor[i];
+    }
+    for (let i = 0; i < question.length; i++) {
+        question[i].style.borderColor = borderColor[i+4];
+    }
+}
+
 function PintaSeleccionP2(seleccionados){
     let i=1;
 
@@ -624,6 +635,7 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 
 window.addEventListener('resize', () =>{ 
     currentIndex = 0; // Restablece el índice al primero
+    resultadosGuardados = cargarResultados(LOCAL_STORAGE_KEY);
     updateVisibleArtefactos(resultadosGuardados)
 });
 
