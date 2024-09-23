@@ -5312,6 +5312,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Ejecutar el código cuando se presiona el botón "finalizar"
 document.querySelector('.finalizar').addEventListener('click', () => {
-  const resultadosGuardados = evaluacion;
+  //const resultadosGuardados = evaluacion;
   updateSlider(evaluacion);
 });
+
+mostrarModal()
