@@ -2,6 +2,7 @@ const LOCAL_STORAGE_KEY = 'resultadoExamen';
 const LOCAL_COLORS_KEY = 'colorsExamen';
 
 
+
 function seleccionarAleatorios(min, max,totalale) {
     // Crear un array con los números consecutivos
     const numeros = [];
@@ -376,22 +377,21 @@ function inicializarExamen(key) {
                 'Artefacto 6': { datos: Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 },
                 'Artefacto 7': { datos: Array.from({ length: 3 }, () => ({ prop1: null, prop2: null })), intentos: 0, tiempo: 0 }
             };
-            resultadosGuardados["Artefacto 1"].datos[0].prop1 = 'Dom';
+            resultadosGuardados["Artefacto 1"].datos[0].prop1 = 'Dominio';
             resultadosGuardados["Artefacto 1"].datos[0].prop2 = '0';
-            resultadosGuardados["Artefacto 1"].datos[1].prop1 = 'Rango';
-            resultadosGuardados["Artefacto 1"].datos[1].prop1 = 'Rango';
+            resultadosGuardados["Artefacto 1"].datos[1].prop1 = 'Rango';            
             resultadosGuardados["Artefacto 1"].datos[1].prop2 = '0';
-            resultadosGuardados["Artefacto 1"].datos[2].prop1 = 'C. X';
+            resultadosGuardados["Artefacto 1"].datos[2].prop1 = 'Corte. X';
             resultadosGuardados["Artefacto 1"].datos[2].prop2 = '0';
-            resultadosGuardados["Artefacto 1"].datos[3].prop1 = 'C. Y';
+            resultadosGuardados["Artefacto 1"].datos[3].prop1 = 'Corte. Y';
             resultadosGuardados["Artefacto 1"].datos[3].prop2 = '0';
-            resultadosGuardados["Artefacto 1"].datos[4].prop1 = 'P. +';
+            resultadosGuardados["Artefacto 1"].datos[4].prop1 = 'Parte +';
             resultadosGuardados["Artefacto 1"].datos[4].prop2 = '0';
-            resultadosGuardados["Artefacto 1"].datos[5].prop1 = 'P. -';
+            resultadosGuardados["Artefacto 1"].datos[5].prop1 = 'Parte -';
             resultadosGuardados["Artefacto 1"].datos[5].prop2 = '0';
-            resultadosGuardados["Artefacto 1"].datos[6].prop1 = 'P. C.';
+            resultadosGuardados["Artefacto 1"].datos[6].prop1 = 'Parte Crec.';
             resultadosGuardados["Artefacto 1"].datos[6].prop2 = '0';
-            resultadosGuardados["Artefacto 1"].datos[7].prop1 = 'P. D.';
+            resultadosGuardados["Artefacto 1"].datos[7].prop1 = 'Parte Dec.';
             resultadosGuardados["Artefacto 1"].datos[7].prop2 = '0';
             resultadosGuardados["Artefacto 2"].datos[0].prop1 = 'Max. Abs.';
             resultadosGuardados["Artefacto 2"].datos[0].prop2 = '0';
@@ -614,8 +614,9 @@ function updateVisibleArtefactos(resultadosGuardados) {
     document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
 
     // Actualizar estado de los botones
-    document.getElementById('prevBtn').disabled = currentIndex === 0;        
-    document.getElementById('nextBtn').disabled = currentIndex > Object.keys(resultadosGuardados).length - visibleArtefactos-1;
+    document.getElementById('prevBtn').disabled = currentIndex === 0;    
+    //console.log(check.length)    
+    document.getElementById('nextBtn').disabled = currentIndex > check.length - visibleArtefactos-1;
 }
 
 document.getElementById('prevBtn').addEventListener('click', () => {
@@ -656,8 +657,8 @@ function mostrarModal(){
         modal.style.display = "none";
         document.getElementById("paginaExamen").style.display = "none";
         document.getElementById("resultadoPagina").style.display = "block";
-        //const resultadosGuardados = evaluacion;
-        updateSlider(evaluacion);
+        resultadosGuardados = cargarResultados(LOCAL_STORAGE_KEY);
+        updateSlider(resultadosGuardados);
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -675,4 +676,62 @@ function mostrarModal(){
             modal.style.display = "none";
         }
     }
+}
+
+function finalizarExamen(){
+    
+    
+   
+
+    document.querySelector('#confirmBtn').addEventListener('click', () => {
+        let sumaTotal = 0;
+        let notamaxima = 0;
+
+    // Iterar sobre cada artefacto
+    for (let artefacto in evaluacion) {
+        //console.log(artefacto);
+        let datos = evaluacion[artefacto].datos;
+        //console.log(datos);
+        // Iterar sobre cada dato de cada artefacto
+        for (let i = 0; i < datos.length; i++) {
+            // Sumar el valor de prop2, asegurarse de convertirlo a número
+            //console.log(parseFloat(datos[i].prop2));
+            sumaTotal += parseFloat(datos[i].prop2);
+            if (artefacto !== 'Artefacto 2') {
+                notamaxima += 1;
+            }
+            else {
+                notamaxima += 0.5;
+            }
+        }
+    }
+    console.log("La suma total de prop2 es:", sumaTotal);
+    console.log("Nota maxima es:", notamaxima);
+    /*const notaFinal = Object.values(evaluacion).reduce((acumulado, artefacto) => {
+        return acumulado + artefacto[0].prop2;
+      }, 0);
+      
+      console.log(notaFinal); // Output: 350*/
+      notafinal.style.display = 'block';
+    const spannota=document.getElementById("nota");
+    spannota.textContent = (sumaTotal/notamaxima)*20.0;
+
+        //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
+        //let examData = inicializarExamen('resultadoExamen');
+        const spanTime = document.getElementById('tiempo');
+        const startDate = new Date(localStorage.getItem('fechaInicioEst'));
+        const endDate = new Date();
+        let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
+        timeElapsed = timeElapsed.toFixed(2);
+        spanTime.textContent = timeElapsed + ' min';
+        console.log(startDate);
+        console.log(endDate);
+        console.log(timeElapsed);
+        //mostrarResultados(examData);
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
+        localStorage.removeItem(LOCAL_COLORS_KEY);
+        localStorage.removeItem('SeleccionadosP1');
+        localStorage.removeItem('SeleccionadosP2');
+        localStorage.removeItem('fechaInicioEst');    
+    });    
 }
