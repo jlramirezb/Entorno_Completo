@@ -5318,6 +5318,8 @@ document.querySelector('.finalizar').addEventListener('click', () => {
 
 mostrarModal();
 
-        // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
-        finalizarExamen();
+// 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
+finalizarExamen();
+
+mideTimeCards(evaluacion)
 

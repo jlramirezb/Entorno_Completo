@@ -740,71 +740,74 @@ function finalizarExamen(){
 // Objeto para almacenar los tiempos de cada tarjeta
 
 
+function mideTimeCards(evaluacion)
+{
+    const cardTimes = {};
 
+    function startTimer(cardId) {
+        if (!cardTimes[cardId]) {
+            cardTimes[cardId] = {
+            startTime: Date.now(),
+            totalTime: 0,
+            isActive: true,
+            hasFocus: false
+            };
+        } else if (!cardTimes[cardId].isActive) {
+            cardTimes[cardId].startTime = Date.now();
+            cardTimes[cardId].isActive = true;
+        }
+    }
 
-const cardTimes = {};
+    function stopTimer(cardId) {
+        if (cardTimes[cardId] && cardTimes[cardId].isActive) {
+            const endTime = Date.now();
+            const elapsedTime = endTime - cardTimes[cardId].startTime;
+            const indice = parseInt(cardId.replace(/\D+/g, ''));
+            evaluacion['Artefacto '+(indice+1)].tiempo += elapsedTime;
+            cardTimes[cardId].totalTime += elapsedTime;
+            cardTimes[cardId].isActive = false;
+            console.log(`Tiempo total sobre la tarjeta ${cardId}: ${cardTimes[cardId].totalTime / 1000} segundos`);
+        }
+    }
 
-function startTimer(cardId) {
-  if (!cardTimes[cardId]) {
-    cardTimes[cardId] = {
-      startTime: Date.now(),
-      totalTime: 0,
-      isActive: true,
-      hasFocus: false
-    };
-  } else if (!cardTimes[cardId].isActive) {
-    cardTimes[cardId].startTime = Date.now();
-    cardTimes[cardId].isActive = true;
-  }
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card, index) => {
+        const cardId = `card-${index}`;
+        
+        card.addEventListener('mouseenter', () => {
+            startTimer(cardId);
+        });
+
+        card.addEventListener('mouseleave', () => {
+            if (!cardTimes[cardId].hasFocus) {
+                stopTimer(cardId);
+            }
+        });
+
+        // Manejar el foco en todos los elementos dentro de la tarjeta
+        card.addEventListener('focusin', () => {
+            cardTimes[cardId].hasFocus = true;
+            startTimer(cardId);
+        });
+
+        card.addEventListener('focusout', (event) => {
+            // Verificar si el nuevo elemento enfocado está fuera de la tarjeta
+            if (!card.contains(event.relatedTarget)) {
+                cardTimes[cardId].hasFocus = false;
+                if (!card.matches(':hover')) {
+                    stopTimer(cardId);
+                }
+            }
+        });
+    });
+
+    // Detener todos los temporizadores cuando el ratón sale del documento
+    document.addEventListener('mouseleave', () => {
+        Object.keys(cardTimes).forEach(cardId => {
+            if (!cardTimes[cardId].hasFocus) {
+                stopTimer(cardId);
+            }
+        });
+    });
 }
-
-function stopTimer(cardId) {
-  if (cardTimes[cardId] && cardTimes[cardId].isActive) {
-    const endTime = Date.now();
-    const elapsedTime = endTime - cardTimes[cardId].startTime;
-    cardTimes[cardId].totalTime += elapsedTime;
-    cardTimes[cardId].isActive = false;
-    console.log(`Tiempo total sobre la tarjeta ${cardId}: ${cardTimes[cardId].totalTime / 1000} segundos`);
-  }
-}
-
-const cards = document.querySelectorAll('.card');
-
-cards.forEach((card, index) => {
-  const cardId = `card-${index}`;
-  
-  card.addEventListener('mouseenter', () => {
-    startTimer(cardId);
-  });
-
-  card.addEventListener('mouseleave', () => {
-    if (!cardTimes[cardId].hasFocus) {
-      stopTimer(cardId);
-    }
-  });
-
-  // Manejar el foco en todos los elementos dentro de la tarjeta
-  card.addEventListener('focusin', () => {
-    cardTimes[cardId].hasFocus = true;
-    startTimer(cardId);
-  });
-
-  card.addEventListener('focusout', (event) => {
-    // Verificar si el nuevo elemento enfocado está fuera de la tarjeta
-    if (!card.contains(event.relatedTarget)) {
-      cardTimes[cardId].hasFocus = false;
-      if (!card.matches(':hover')) {
-        stopTimer(cardId);
-      }
-    }
-  });
-});
-
-// Detener todos los temporizadores cuando el ratón sale del documento
-document.addEventListener('mouseleave', () => {
-  Object.keys(cardTimes).forEach(cardId => {
-    if (!cardTimes[cardId].hasFocus) {
-      stopTimer(cardId);
-    }
-  });
-});
