@@ -811,3 +811,27 @@ function mideTimeCards(evaluacion)
         });
     });
 }
+
+function mideTimeQuestions(evaluacion)
+{
+    let questionContainers = document.querySelectorAll('.question-container');
+    let totalTime = 0;
+
+    questionContainers.forEach((container, index) => {
+        // Inicializa el tiempo acumulado para cada container        
+        container.totalTime = 0;
+        container.addEventListener('mouseenter', () => {
+            container.startTime = Date.now();
+        });
+
+        container.addEventListener('mouseleave', () => {
+            if (container.startTime) {
+                let elapsedTime = Date.now() - container.startTime;
+                evaluacion['Artefacto '+(index+5)].tiempo += elapsedTime;
+                container.totalTime += elapsedTime;
+                console.log(`Tiempo acumulado en este contenedor: ${container.totalTime} ms`);
+                container.startTime = null;
+            }
+        });
+    });
+}
