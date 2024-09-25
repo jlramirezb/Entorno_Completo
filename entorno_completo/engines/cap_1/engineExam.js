@@ -187,15 +187,15 @@ function Evaluacion(check){
                     colorBorders[0] = 'yellow';
                     evaluacion['Artefacto 1'].intentos++ ;
                     def1.artefact_1.datadefault[0].contents[artifact[0]].dataInteraction.intentos++;
-                    console.log('Pulsado Artefacto 1');
+                    //console.log('Pulsado Artefacto 1');
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[0].contents[artifact[0]].allinputs.length; j++) {
                             if (def1.artefact_1.datadefault[0].contents[artifact[0]].allinputs[j][0].classList.contains('pass')) {
-                                console.log(j,1);
+                                //console.log(j,1);
                                 evaluacion['Artefacto 1'].datos[j].prop2 = 1;                        
                             }
                             else{
-                                console.log(j,0);
+                                //console.log(j,0);
                                 evaluacion['Artefacto 1'].datos[j].prop2 = 0;
                             }
                         }
@@ -208,15 +208,15 @@ function Evaluacion(check){
                     colorBorders[1] = 'yellow';
                     evaluacion['Artefacto 2'].intentos++ ;
                     def1.artefact_1.datadefault[1].contents[artifact[1]].dataInteraction.intentos++;
-                    console.log('Pulsado Artefacto 2')
+                    //console.log('Pulsado Artefacto 2')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[1].contents[artifact[1]].allinputs.length; j++) {
                             if (def1.artefact_1.datadefault[1].contents[artifact[1]].allinputs[j][0].classList.contains('pass')) {
-                                console.log(j,1);  
+                                //console.log(j,1);  
                                 evaluacion['Artefacto 2'].datos[j].prop2 = 0.5;
                             }
                             else{
-                                console.log(j,0);
+                                //console.log(j,0);
                                 evaluacion['Artefacto 2'].datos[j].prop2 = 0;
                             }
                         }
@@ -229,15 +229,15 @@ function Evaluacion(check){
                     colorBorders[2] = 'yellow';
                     evaluacion['Artefacto 3'].intentos++ ;
                     def1.artefact_1.datadefault[2].contents[artifact[2]].dataInteraction.intentos++;
-                    console.log('Pulsado Artefacto 3')
+                    //console.log('Pulsado Artefacto 3')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[2].contents[artifact[2]].allinputs.length; j++) {
                             if (def1.artefact_1.datadefault[2].contents[artifact[2]].allinputs[j][0].classList.contains('pass')) {
-                                console.log(j,1);
+                                //console.log(j,1);
                                 evaluacion['Artefacto 3'].datos[j].prop2 = 1;
                             }
                             else{
-                                console.log(j,0);
+                                //console.log(j,0);
                                 evaluacion['Artefacto 3'].datos[j].prop2 = 0;
                             }
                         }
@@ -250,15 +250,15 @@ function Evaluacion(check){
                     colorBorders[3] = 'yellow';
                     evaluacion['Artefacto 4'].intentos++ ;
                     def1.artefact_1.datadefault[3].contents[artifact[3]].dataInteraction.intentos++;
-                    console.log('Pulsado Artefacto 4')
+                    //console.log('Pulsado Artefacto 4')
                     setTimeout(function(){
                         for (let j = 0; j < def1.artefact_1.datadefault[3].contents[artifact[3]].allinputs.length; j++) {
                             if (def1.artefact_1.datadefault[3].contents[artifact[3]].allinputs[j][0].classList.contains('pass')) {
-                                console.log(j,1);
+                                //console.log(j,1);
                                 evaluacion['Artefacto 4'].datos[j].prop2 = 1;    
                             }
                             else{
-                                console.log(j,0);
+                                //console.log(j,0);
                                 evaluacion['Artefacto 4'].datos[j].prop2 = 0;
                             }
                         }
@@ -271,7 +271,7 @@ function Evaluacion(check){
                     colorBorders[4] = 'yellow';
                     evaluacion['Artefacto 5'].intentos++ ;
                     def[artefacts[0]].dataInteraction.intentos++;
-                    console.log('Pulsado Artefacto 5')
+                    //console.log('Pulsado Artefacto 5')
                     setTimeout(function(){
                         let kk = 0;             
                         for (var prop in objs) {
@@ -293,11 +293,11 @@ function Evaluacion(check){
                     colorBorders[5] = 'yellow';
                     evaluacion['Artefacto 6'].intentos++ ;
                     def[artefacts[1]].dataInteraction.intentos++;
-                    console.log('Pulsado Artefacto 6')
+                    //console.log('Pulsado Artefacto 6')
                     setTimeout(function(){
                         let kk = 0;             
                         for (var prop in objs) {
-                            console.log(prop)
+                            //console.log(prop)
                             evaluacion['Artefacto 6'].datos[kk].prop1 = prop;
                             if(objs[prop] === true){                                
                                 evaluacion['Artefacto 6'].datos[kk].prop2 = 1;                                
@@ -316,7 +316,7 @@ function Evaluacion(check){
                     colorBorders[6] = 'yellow';
                     evaluacion['Artefacto 7'].intentos++ ;
                     def[artefacts[2]].dataInteraction.intentos++;
-                    console.log('Pulsado Artefacto 7')
+                    //console.log('Pulsado Artefacto 7')
                     setTimeout(function(){
                         let kk = 0;             
                         for (var prop in objs) {
@@ -578,7 +578,6 @@ function createArtefactoElement(artefacto, index) {
         </tr>
     `).join('');
     
-    console.log('AAAAAAAAAAAAAAAAA',artefacto,artefacto.tiempo)
     element.innerHTML = `
         <h2>Artefacto ${index + 1}</h2>
         <table>
@@ -598,7 +597,7 @@ function createArtefactoElement(artefacto, index) {
 }
 
 function updateSlider(resultadosGuardados) {
-    console.log(resultadosGuardados)
+    //console.log(resultadosGuardados)
     const slider = document.getElementById('slider');
     slider.innerHTML = '';
     
@@ -611,7 +610,15 @@ function updateSlider(resultadosGuardados) {
 
 function updateVisibleArtefactos(resultadosGuardados) {
     const containerWidth = document.querySelector('.slider-wrapper').offsetWidth;
-    let artefactoWidth = 260; // Puedes ajustar el ancho de los artefactos
+    //console.log(containerWidth)
+    let artefactoWidth = 230; // Puedes ajustar el ancho de los artefactos
+    if (window.innerWidth >= 1200) { // Para pantallas grandes
+        artefactoWidth = 250; // Ajusta este valor según tus necesidades
+    } else if (window.innerWidth >= 768) { // Para tablets
+        artefactoWidth = 250; // Ajusta este valor según tus necesidades
+    } else { // Para dispositivos móviles
+        artefactoWidth = 230; // Ajusta este valor según tus necesidades
+    }
     visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));    
     
     document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
@@ -704,8 +711,8 @@ function finalizarExamen(){
             }*/
         }
     }
-    console.log("La suma total de prop2 es:", sumaTotal);
-    console.log("Nota maxima es:", notamaxima);
+    /*console.log("La suma total de prop2 es:", sumaTotal);
+    console.log("Nota maxima es:", notamaxima);*/
     /*const notaFinal = Object.values(evaluacion).reduce((acumulado, artefacto) => {
         return acumulado + artefacto[0].prop2;
     }, 0);
@@ -764,7 +771,7 @@ function mideTimeCards() {
             guardarResultados(evaluacion);
             cardTime.totalTime += elapsedTime;
             cardTime.isActive = false;
-            console.log(`Tiempo total sobre la tarjeta ${cardId}: ${cardTime.totalTime / 1000} segundos`);
+            //console.log(`Tiempo total sobre la tarjeta ${cardId}: ${cardTime.totalTime / 1000} segundos`);
         }
     }
 
@@ -827,7 +834,7 @@ function mideTimeQuestions()
                 evaluacion['Artefacto '+(index+5)].tiempo += elapsedTime/1000;
                 guardarResultados(evaluacion);
                 container.totalTime += elapsedTime;
-                console.log(`Tiempo acumulado en este contenedor: ${container.totalTime} ms`);
+                //console.log(`Tiempo acumulado en este contenedor: ${container.totalTime} ms`);
                 container.startTime = null;
             }
         });

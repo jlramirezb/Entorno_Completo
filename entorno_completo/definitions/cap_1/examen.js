@@ -4773,10 +4773,8 @@ var defBoards = {
 };
 
 let position = localStorageSeleccionados("P1", 1, 8, 1);
-console.log(position);
 let kk = 4*(position-1)
 let artifact = ['artifact_' + (kk+1), 'artifact_' + (kk+2), 'artifact_' + (kk+3), 'artifact_' + (kk+4)];
-console.log(artifact);
 [def1, defBoards] = PintaSeleccionP1(position, def1, defBoards,'P1');
 
 defBoardDefault();
@@ -5168,9 +5166,7 @@ artifact_13: {
 let objs = [];
 
 position = localStorageSeleccionados("P2",1,24,3);
-console.log('aquiiiii',position);
 let artefacts = ['artifact_'+position[0],'artifact_'+position[1],'artifact_'+position[2]];
-console.log(artefacts);
 PintaSeleccionP2(position);
 
 window.onload = main();
@@ -5179,13 +5175,12 @@ let evaluacion = {};
 let colorBorders = {};
 evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
 colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
-console.log(colorBorders);
+//console.log(colorBorders);
 
 let check=Array.from(document.querySelectorAll('.check'));
 //elimina la primera posicion del arreglo check
 check.shift();
 Evaluacion(check);
-console.log('aquiiii',evaluacion);
 
 let resets=Array.from(document.querySelectorAll('.reset'));
 //elimina la primera posicion del matriz resets
@@ -5198,7 +5193,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const notaafter = document.getElementById("after");
     // Recupera los datos almacenados en localStorage
     const Datos = JSON.parse(localStorage.getItem("Datos"));
-    console.log(Datos);
+    //console.log(Datos);
 
     // Pinta los datos en el DOM
     document.getElementById("institucion").innerHTML = Datos.Instituto;
@@ -5259,14 +5254,14 @@ function ocultarDivPorRadio() {
       '4': document.getElementById('optFour')
   };
 
-  console.log('Radios encontrados:', radios.length);
-  console.log('Divs encontrados:', Object.values(divs).filter(div => div !== null).length);
+  /*console.log('Radios encontrados:', radios.length);
+  console.log('Divs encontrados:', Object.values(divs).filter(div => div !== null).length);*/
 
   // Ocultar todos los divs inicialmente
   Object.values(divs).forEach(div => {
       if (div) {
           div.style.display = 'none';
-          console.log(`Ocultando inicialmente: ${div.id}`);
+          //console.log(`Ocultando inicialmente: ${div.id}`);
       }
   });
 
@@ -5276,19 +5271,19 @@ function ocultarDivPorRadio() {
       const selectedDiv = divs[checkedRadio.value];
       if (selectedDiv) {
           selectedDiv.style.display = 'block';
-          console.log(`Mostrando inicialmente: ${selectedDiv.id}`);
+          //console.log(`Mostrando inicialmente: ${selectedDiv.id}`);
       }
   }
 
   radios.forEach(radio => {
       radio.addEventListener('change', function() {
-          console.log(`Radio seleccionado: ${this.value}`);
+          //console.log(`Radio seleccionado: ${this.value}`);
 
           // Ocultar todos los divs
           Object.values(divs).forEach(div => {
               if (div) {
                   div.style.display = 'none';
-                  console.log(`Ocultando: ${div.id}`);
+                  //console.log(`Ocultando: ${div.id}`);
               }
           });
 
@@ -5296,7 +5291,7 @@ function ocultarDivPorRadio() {
           const selectedDiv = divs[this.value];
           if (selectedDiv) {
               selectedDiv.style.display = 'block';
-              console.log(`Mostrando: ${selectedDiv.id}`);
+              //console.log(`Mostrando: ${selectedDiv.id}`);
           } else {
               console.log(`Div no encontrado para el valor: ${this.value}`);
           }
@@ -5306,7 +5301,7 @@ function ocultarDivPorRadio() {
 
 // Llamar a la función cuando se cargue el documento
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM cargado, ejecutando ocultarDivPorRadio');
+  //console.log('DOM cargado, ejecutando ocultarDivPorRadio');
   ocultarDivPorRadio();
 });
 
