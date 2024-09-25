@@ -577,7 +577,8 @@ function createArtefactoElement(artefacto, index) {
             <td>${item.prop2}</td>
         </tr>
     `).join('');
-
+    
+    console.log('AAAAAAAAAAAAAAAAA',artefacto,artefacto.tiempo)
     element.innerHTML = `
         <h2>Artefacto ${index + 1}</h2>
         <table>
@@ -590,6 +591,7 @@ function createArtefactoElement(artefacto, index) {
         <div class="info">
             <strong>Total puntos: </strong>${artefacto.datos.reduce((a, b) => a + parseFloat(b.prop2), 0)}<br>
             <strong>Intentos: </strong>${artefacto.intentos}<br>
+            <strong>Tiempo: </strong>${parseFloat(artefacto.tiempo).toFixed(2)} segundos.<br>
         </div>
     `;
     return element;
@@ -609,7 +611,7 @@ function updateSlider(resultadosGuardados) {
 
 function updateVisibleArtefactos(resultadosGuardados) {
     const containerWidth = document.querySelector('.slider-wrapper').offsetWidth;
-    let artefactoWidth = 250; // Puedes ajustar el ancho de los artefactos
+    let artefactoWidth = 260; // Puedes ajustar el ancho de los artefactos
     visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));    
     
     document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
@@ -680,10 +682,6 @@ function mostrarModal(){
 }
 
 function finalizarExamen(){
-    
-    
-   
-
     document.querySelector('#confirmBtn').addEventListener('click', () => {
         let sumaTotal = 0;
         //let notamaxima = 0;
@@ -740,17 +738,16 @@ function finalizarExamen(){
 // Objeto para almacenar los tiempos de cada tarjeta
 
 
-function mideTimeCards(evaluacion)
-{
+function mideTimeCards() {
     const cardTimes = {};
 
     function startTimer(cardId) {
         if (!cardTimes[cardId]) {
             cardTimes[cardId] = {
-            startTime: Date.now(),
-            totalTime: 0,
-            isActive: true,
-            hasFocus: false
+                startTime: Date.now(),
+                totalTime: 0,
+                isActive: true,
+                hasFocus: false
             };
         } else if (!cardTimes[cardId].isActive) {
             cardTimes[cardId].startTime = Date.now();
@@ -759,23 +756,25 @@ function mideTimeCards(evaluacion)
     }
 
     function stopTimer(cardId) {
-        if (cardTimes[cardId] && cardTimes[cardId].isActive) {
-            const endTime = Date.now();
-            const elapsedTime = endTime - cardTimes[cardId].startTime;
+        const cardTime = cardTimes[cardId];
+        if (cardTime && cardTime.isActive) {
+            const elapsedTime = Date.now() - cardTime.startTime;
             const indice = parseInt(cardId.replace(/\D+/g, ''));
-            evaluacion['Artefacto '+(indice+1)].tiempo += elapsedTime;
-            cardTimes[cardId].totalTime += elapsedTime;
-            cardTimes[cardId].isActive = false;
-            console.log(`Tiempo total sobre la tarjeta ${cardId}: ${cardTimes[cardId].totalTime / 1000} segundos`);
+            evaluacion[`Artefacto ${indice + 1}`].tiempo += elapsedTime / 1000;
+            guardarResultados(evaluacion);
+            cardTime.totalTime += elapsedTime;
+            cardTime.isActive = false;
+            console.log(`Tiempo total sobre la tarjeta ${cardId}: ${cardTime.totalTime / 1000} segundos`);
         }
     }
 
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach((card, index) => {
-        const cardId = `card-${index}`;
-        
+    function handleCardEvents(card, cardId) {
         card.addEventListener('mouseenter', () => {
+            startTimer(cardId);
+        });
+
+        card.addEventListener('focusin', () => {
+            cardTimes[cardId].hasFocus = true;
             startTimer(cardId);
         });
 
@@ -785,14 +784,7 @@ function mideTimeCards(evaluacion)
             }
         });
 
-        // Manejar el foco en todos los elementos dentro de la tarjeta
-        card.addEventListener('focusin', () => {
-            cardTimes[cardId].hasFocus = true;
-            startTimer(cardId);
-        });
-
         card.addEventListener('focusout', (event) => {
-            // Verificar si el nuevo elemento enfocado está fuera de la tarjeta
             if (!card.contains(event.relatedTarget)) {
                 cardTimes[cardId].hasFocus = false;
                 if (!card.matches(':hover')) {
@@ -800,6 +792,13 @@ function mideTimeCards(evaluacion)
                 }
             }
         });
+    }
+
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card, index) => {
+        const cardId = `card-${index}`;
+        handleCardEvents(card, cardId);
     });
 
     // Detener todos los temporizadores cuando el ratón sale del documento
@@ -811,11 +810,9 @@ function mideTimeCards(evaluacion)
         });
     });
 }
-
-function mideTimeQuestions(evaluacion)
+function mideTimeQuestions()
 {
     let questionContainers = document.querySelectorAll('.question-container');
-    let totalTime = 0;
 
     questionContainers.forEach((container, index) => {
         // Inicializa el tiempo acumulado para cada container        
@@ -827,7 +824,8 @@ function mideTimeQuestions(evaluacion)
         container.addEventListener('mouseleave', () => {
             if (container.startTime) {
                 let elapsedTime = Date.now() - container.startTime;
-                evaluacion['Artefacto '+(index+5)].tiempo += elapsedTime;
+                evaluacion['Artefacto '+(index+5)].tiempo += elapsedTime/1000;
+                guardarResultados(evaluacion);
                 container.totalTime += elapsedTime;
                 console.log(`Tiempo acumulado en este contenedor: ${container.totalTime} ms`);
                 container.startTime = null;
