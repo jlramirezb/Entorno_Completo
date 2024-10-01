@@ -159,26 +159,26 @@ function seleccionarAleatorios(Pregunta, min, max,totalale) {
 }
 
 const exams ={
-    exam_1:[[1,9,17],[1,9,17,25]],
-    exam_2:[[2,10,18],[2,10,18,26]],
-    exam_3:[[3,11,19],[3,11,19,27]],
-    exam_4:[[4,12,20],[4,12,20,28]],
-    exam_5:[[5,13,21],[5,13,21,29]],
-    exam_6:[[6,14,22],[6,14,22,30]],
-    exam_7:[[7,15,23],[7,15,23,31]],
-    exam_8:[[8,16,24],[8,16,24,32]],
-    exam_9:[[5,9,21],[7,12,20,31]],
-    exam_10:[[2,12,21],[6,13,24,27]],
-    exam_11:[[5,16,19],[5,14,20,32]],
-    exam_12:[[8,9,24],[6,13,17,29]],
-    exam_13:[[1,12,24],[7,12,22,25]],
-    exam_14:[[7,14,19],[4,10,24,30]],
-    exam_15:[[4,16,18],[8,10,21,28]],
-    exam_16:[[2,9,20],[5,11,23,32]],
-    exam_17:[[4,15,24],[8,16,22,28]],
-    exam_18:[[6,14,17],[5,12,19,29]],
-    exam_19:[[7,11,20],[7,13,18,26]],
-    exam_20:[[6,16,19],[1,10,18,29]]
+    eval_1:[[1,9,17],[1,9,17,25]],
+    eval_2:[[2,10,18],[2,10,18,26]],
+    eval_3:[[3,11,19],[3,11,19,27]],
+    eval_4:[[4,12,20],[4,12,20,28]],
+    eval_5:[[5,13,21],[5,13,21,29]],
+    eval_6:[[6,14,22],[6,14,22,30]],
+    eval_7:[[7,15,23],[7,15,23,31]],
+    eval_8:[[8,16,24],[8,16,24,32]],
+    eval_9:[[5,9,21],[7,12,20,31]],
+    eval_10:[[2,12,21],[6,13,24,27]],
+    eval_11:[[5,16,19],[5,14,20,32]],
+    eval_12:[[8,9,24],[6,13,17,29]],
+    eval_13:[[1,12,24],[7,12,22,25]],
+    eval_14:[[7,14,19],[4,10,24,30]],
+    eval_15:[[4,16,18],[8,10,21,28]],
+    eval_16:[[2,9,20],[5,11,23,32]],
+    eval_17:[[4,15,24],[8,16,22,28]],
+    eval_18:[[6,14,17],[5,12,19,29]],
+    eval_19:[[7,11,20],[7,13,18,26]],
+    eval_20:[[6,16,19],[1,10,18,29]]
 }
 
 
@@ -232,84 +232,84 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
     console.log(examen);
     switch (examen) {
         case 'Modelo 1':
-            position = exams.exam_1[0];
-            position2 = exams.exam_1[1];
+            position = exams.eval_1[0];
+            position2 = exams.eval_1[1];
             break;
         case 'Modelo 2':
-            position = exams.exam_2[0];
-            position2 = exams.exam_2[1];
+            position = exams.eval_2[0];
+            position2 = exams.eval_2[1];
             break;
         case 'Modelo 3':
-            position = exams.exam_3[0];
-            position2 = exams.exam_3[1];
+            position = exams.eval_3[0];
+            position2 = exams.eval_3[1];
             break;
         case 'Modelo 4':
-            position = exams.exam_4[0];
-            position2 = exams.exam_4[1];
+            position = exams.eval_4[0];
+            position2 = exams.eval_4[1];
             break;
         case 'Modelo 5':
-            position = exams.exam_5[0];
-            position2 = exams.exam_5[1];
+            position = exams.eval_5[0];
+            position2 = exams.eval_5[1];
             break;
         case 'Modelo 6':
-            position = exams.exam_6[0];
-            position2 = exams.exam_6[1];
+            position = exams.eval_6[0];
+            position2 = exams.eval_6[1];
             break;
         case 'Modelo 7':
-            position = exams.exam_7[0];
-            position2 = exams.exam_7[1];
+            position = exams.eval_7[0];
+            position2 = exams.eval_7[1];
             break;
         case 'Modelo 8':
-            position = exams.exam_8[0];
-            position2 = exams.exam_8[1];
+            position = exams.eval_8[0];
+            position2 = exams.eval_8[1];
             break;
         case 'Modelo 9':
-            position = exams.exam_9[0];
-            position2 = exams.exam_9[1];
+            position = exams.eval_9[0];
+            position2 = exams.eval_9[1];
             break;
         case 'Modelo 10':
-            position = exams.exam_10[0];
-            position2 = exams.exam_10[1];
+            position = exams.eval_10[0];
+            position2 = exams.eval_10[1];
             break;
         case 'Modelo 11':
-            position = exams.exam_11[0];
-            position2 = exams.exam_11[1];
+            position = exams.eval_11[0];
+            position2 = exams.eval_11[1];
             break;
         case 'Modelo 12':
-            position = exams.exam_12[0];
-            position2 = exams.exam_12[1];
+            position = exams.eval_12[0];
+            position2 = exams.eval_12[1];
             break;
         case 'Modelo 13':
-            position = exams.exam_13[0];
-            position2 = exams.exam_13[1];
+            position = exams.eval_13[0];
+            position2 = exams.eval_13[1];
             break;
         case 'Modelo 14':
-            position = exams.exam_14[0];
-            position2 = exams.exam_14[1];
+            position = exams.eval_14[0];
+            position2 = exams.eval_14[1];
             break;
         case 'Modelo 15':
-            position = exams.exam_15[0];
-            position2 = exams.exam_15[1];
+            position = exams.eval_15[0];
+            position2 = exams.eval_15[1];
             break;
         case 'Modelo 16':
-            position = exams.exam_16[0];
-            position2 = exams.exam_16[1];
+            position = exams.eval_16[0];
+            position2 = exams.eval_16[1];
             break;
         case 'Modelo 17':
-            position = exams.exam_17[0];
-            position2 = exams.exam_17[1];
+            position = exams.eval_17[0];
+            position2 = exams.eval_17[1];
             break;
         case 'Modelo 18':
-            position = exams.exam_18[0];
-            position2 = exams.exam_18[1];
+            position = exams.eval_18[0];
+            position2 = exams.eval_18[1];
             break;
         case 'Modelo 19':
-            position = exams.exam_19[0];
-            position2 = exams.exam_19[1];
+            position = exams.eval_19[0];
+            position2 = exams.eval_19[1];
             break;
         case 'Modelo 20':
-            position = exams.exam_20[0];
-            position2 = exams.exam_20[1];
+            position = exams.eval_20[0];
+            position2 = exams.eval_20[1];
             break;
         default:
             alert('Modelo no encontrado');

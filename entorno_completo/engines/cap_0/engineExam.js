@@ -807,3 +807,50 @@ function mostrarModal(){
     }
 }
 
+function DataValidation(Datos){ 
+    //console.log(Datos);
+    let longDatos = Object.keys(Datos).length;
+    let result;
+    console.log(longDatos);
+    if(Datos.hasOwnProperty('Estudiante')){
+        if (Datos.Estudiante.hasOwnProperty('Nombre') && Datos.Estudiante.hasOwnProperty('Correo')) {
+            result = true;
+        }
+        else
+        {
+            result = false;
+        }
+    }
+    if(result)
+    {
+        if(Datos.hasOwnProperty('Capitulo') && Datos.hasOwnProperty('CodExam') && Datos.hasOwnProperty('Seccion') && Datos.hasOwnProperty('Curso') && Datos.hasOwnProperty('Categoria') && Datos.hasOwnProperty('Instituto')){
+            result = true;
+        }
+        else
+        {
+            result = false;
+        }
+    }
+    return result;
+}
+
+function DataInteraction(def){
+    console.log('Datos recibidos de la interaccion');
+    let results = cleanData(def, 'artifact_1');
+    console.log(results);
+}
+
+function GetResults(Datos, Evaluacion){
+    let result = {
+        "Nombre": Datos.Estudiante.Nombre,
+        "Correo": Datos.Estudiante.Correo,
+        "Capitulo": Datos.Capitulo,
+        "CodExam": Datos.CodExam,
+        "Seccion": Datos.Seccion,
+        "Curso": Datos.Curso,
+        "Categoria": Datos.Categoria,
+        "Instituto": Datos.Instituto,
+        "results": Evaluacion
+    };
+    return result;
+}

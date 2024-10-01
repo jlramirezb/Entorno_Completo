@@ -1796,58 +1796,65 @@ document.addEventListener('DOMContentLoaded', function() {
     const notaafter = document.getElementById('after');
     // Recupera los datos almacenados en localStorage
     const Datos = JSON.parse(localStorage.getItem('Datos'));
-    console.log(Datos);
+    let validation = DataValidation(Datos);
+    console.log(validation);
 
-    // Pinta los datos en el DOM
-    document.getElementById('institucion').innerHTML = Datos.Instituto;
-    document.getElementById('Categoria').innerHTML = Datos.Categoria;
-    document.getElementById('materia').innerHTML = Datos.Curso;
-    document.getElementById('seccion').innerHTML = Datos.Seccion;
-    document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
-    document.getElementById('correoEstudiante').innerHTML = Datos.Estudiante.Correo;
-    document.getElementById('capExam').innerHTML = Datos.Capitulo;
-    document.getElementById('codExam').innerHTML = Datos.CodExam;
+    if(validation){
+        // Pinta los datos en el DOM
+        document.getElementById('institucion').innerHTML = Datos.Instituto;
+        document.getElementById('Categoria').innerHTML = Datos.Categoria;
+        document.getElementById('materia').innerHTML = Datos.Curso;
+        document.getElementById('seccion').innerHTML = Datos.Seccion;
+        document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
+        document.getElementById('correoEstudiante').innerHTML = Datos.Estudiante.Correo;
+        document.getElementById('capExam').innerHTML = Datos.Capitulo;
+        document.getElementById('codExam').innerHTML = Datos.CodExam;
+    
 
-    // Verifica y compara fechas
-    let fechaHoraInicio = Datos.fechaHoraInicio;
-    let fechaHoraCierre = Datos.fechaHoraCierre;
+        // Verifica y compara fechas
+        let fechaHoraInicio = Datos.fechaHoraInicio;
+        let fechaHoraCierre = Datos.fechaHoraCierre;
 
-    if (fechaHoraInicio && fechaHoraCierre) {
-        const fechaHoraInicioDate = new Date(fechaHoraInicio);
-        const fechaHoraCierreDate = new Date(fechaHoraCierre);
-        const currentDate = new Date();
-        
-        if (fechaHoraInicioDate > currentDate) {
-            console.log("La evaluación aún no ha comenzado.");
-            paginaExamen.style.display = 'none';
-            notaprevia.style.display = 'block';
-        } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
-            console.log("La evaluación ya ha comenzado o debería haber comenzado.");
-            let rules=document.getElementById('rules');
-            rules.style.display='block';
-            let rulesBtn = document.getElementById('buttonRule');
-            rulesBtn.addEventListener('click',()=>{
-                rules.style.display = 'none',
-                fechaInicioEst = localStorage.getItem('fechaInicioEst');
-                PintaBordes(colorBorders);
-                if(fechaInicioEst === null)
-                {
-                    fechaInicioEst = currentDate;
-                    localStorage.setItem('fechaInicioEst',fechaInicioEst);
+        if (fechaHoraInicio && fechaHoraCierre) {
+            const fechaHoraInicioDate = new Date(fechaHoraInicio);
+            const fechaHoraCierreDate = new Date(fechaHoraCierre);
+            const currentDate = new Date();
+            
+            if (fechaHoraInicioDate > currentDate) {
+                console.log("La evaluación aún no ha comenzado.");
+                paginaExamen.style.display = 'none';
+                notaprevia.style.display = 'block';
+            } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
+                console.log("La evaluación ya ha comenzado o debería haber comenzado.");
+                let rules=document.getElementById('rules');
+                rules.style.display='block';
+                let rulesBtn = document.getElementById('buttonRule');
+                rulesBtn.addEventListener('click',()=>{
+                    rules.style.display = 'none',
+                    fechaInicioEst = localStorage.getItem('fechaInicioEst');
+                    PintaBordes(colorBorders);
+                    if(fechaInicioEst === null)
+                    {
+                        fechaInicioEst = currentDate;
+                        localStorage.setItem('fechaInicioEst',fechaInicioEst);
+                        
+                    }
                     
-                }
+                    paginaExamen.style.display = 'block';
+                })
                 
-                paginaExamen.style.display = 'block';
-            })
-            
-            
+                
+            } else {
+                console.log("La evaluación ya ha finalizado o debería haber finalizado.");
+                paginaExamen.style.display = 'none';
+                notaafter.style.display = 'block';
+            }
         } else {
-            console.log("La evaluación ya ha finalizado o debería haber finalizado.");
-            paginaExamen.style.display = 'none';
-            notaafter.style.display = 'block';
+            console.log("No hay una fecha de inicio almacenada.");
         }
-    } else {
-        console.log("No hay una fecha de inicio almacenada.");
+    }
+    else{
+        console.log("No hay datos almacenados.");
     }
 });
 
@@ -1906,3 +1913,8 @@ imprimirExamen('Est');
 
 // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
 finalizarExamen();
+
+let result = GetResults(Datos, evaluacion);
+console.log(result);
+
+DataInteraction(def);
