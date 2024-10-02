@@ -326,7 +326,7 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
     console.log(resultString); // Output: "01210900121523"
 
     const Datos = {
-        Instituto: "Universidad de Carabobo",
+        /*Instituto: "Universidad de Carabobo",
         Categoria: "Educación Superior",
         Curso: "Fragata",
         Seccion: "02",
@@ -339,7 +339,23 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
         fechaHoraCierre: `${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
         SeleccionadosP1: position,
         SeleccionadosP2: position2,
-        CodExam : resultString
+        CodExam : resultString*/
+        idUser:'66faf9aceda8f36d30f920e5',
+        idExam:'66e1f3c8ab116faa26c493ca',
+        firstName:'estudiante',
+        secondName:'estudiante',
+        surname:'estudiante',
+        secondSurname:'estudiante',
+        gender:'Masculino',
+        email:'app.6@gmail.com',	
+        codExam: resultString,
+        curso: 'Fragata',
+        category: 'Educación Superior',
+        liceo: 'Unidad Educacional de Fragata',
+        universidad: 'Universidad de Carabobo',
+        fechaHoraInicio: `${fechaInicio} ${horaInicio}`, // Combina fecha y hora de inicio
+        fechaHoraCierre: `${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
+        result: null
     }
 
     // Almacenar el objeto en localStorage

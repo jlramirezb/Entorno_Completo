@@ -593,23 +593,30 @@ function PintaBordes (borderColor){
 function finalizarExamen(){
     let examData = [];
     document.querySelector('#confirmBtn').addEventListener('click', () => {
+        let Datos = JSON.parse(localStorage.getItem('Datos'));
         //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
         let examData = inicializarExamen('resultadoExamen');
         const spanTime = document.getElementById('tiempo');
         const startDate = new Date(localStorage.getItem('fechaInicioEst'));
+        Datos.userStartTime = startDate;
         const endDate = new Date();
+        Datos.userEndTime = endDate;
+        localStorage.setItem('Datos', JSON.stringify(Datos));
         let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
         timeElapsed = timeElapsed.toFixed(2);
         spanTime.textContent = timeElapsed + ' min';
         console.log(startDate);
         console.log(endDate);
         console.log(timeElapsed);
-        mostrarResultados(examData);
-        localStorage.removeItem(LOCAL_STORAGE_KEY);
-        localStorage.removeItem(LOCAL_COLORS_KEY);
-        localStorage.removeItem('SeleccionadosP1');
-        localStorage.removeItem('SeleccionadosP2');
-        localStorage.removeItem('fechaInicioEst');    
+        let result = GetResults(Datos, examData);
+        if (result.results != null) {
+            mostrarResultados(examData); 
+            localStorage.removeItem(LOCAL_STORAGE_KEY);
+            localStorage.removeItem(LOCAL_COLORS_KEY);
+            localStorage.removeItem('SeleccionadosP1');
+            localStorage.removeItem('SeleccionadosP2');
+            localStorage.removeItem('fechaInicioEst'); 
+        }  
     });    
 }
 
@@ -842,15 +849,17 @@ function DataInteraction(def){
 
 function GetResults(Datos, Evaluacion){
     let result = {
-        "Nombre": Datos.Estudiante.Nombre,
-        "Correo": Datos.Estudiante.Correo,
-        "Capitulo": Datos.Capitulo,
-        "CodExam": Datos.CodExam,
-        "Seccion": Datos.Seccion,
-        "Curso": Datos.Curso,
-        "Categoria": Datos.Categoria,
-        "Instituto": Datos.Instituto,
-        "results": Evaluacion
+        idUser:Datos.idUser,
+        idExam:Datos.idExam,
+        firstName:Datos.firstName,
+        secondName:Datos.secondName,
+        surname:Datos.surname,
+        secondSurname:Datos.secondSurname,
+        gender:Datos.gender,
+        email:Datos.email,	
+        userStartTime: Datos.userStartTime,
+        userEndTime: Datos.userEndTime,        
+        results: Evaluacion
     };
     return result;
 }

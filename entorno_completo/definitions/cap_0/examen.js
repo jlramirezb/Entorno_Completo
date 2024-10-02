@@ -1,6 +1,7 @@
 let def = {
     //Inicio Artefactos Annelys: 1 --  9
     artifact_1: {
+        typeArtifact:'Evalaution',
         interval: '[−2,1]',
         conditions: {
             valRepre: ['−2≤x≤1', '1≥x≥−2'],
@@ -13,6 +14,7 @@ let def = {
         },
     },
     artifact_2: {
+        typeArtifact:'Evalaution',
         interval: '(−1,1]',
         conditions: {
             valRepre: ['−1<x≤1', '1≥x>−1'],
@@ -25,6 +27,7 @@ let def = {
         },
     },
     artifact_3: {
+        typeArtifact:'Evalaution',
         interval: '[3,5)',
         conditions: {
             valRepre: ['3≤x<5', '5>x≥3'],
@@ -37,6 +40,7 @@ let def = {
         },
     },
     artifact_4: {
+        typeArtifact:'Evalaution',
         interval: '(−3,−1]',
         conditions: {
             valRepre: ['−3<x≤−1', '−1≥x>−3'],
@@ -49,6 +53,7 @@ let def = {
         },
     },
     artifact_5: {
+        typeArtifact:'Evalaution',
         interval: '[1,3)',
         conditions: {
             valRepre: ['1≤x<3', '3>x≥1'],
@@ -61,6 +66,7 @@ let def = {
         },
     },
     artifact_6: {
+        typeArtifact:'Evalaution',
         interval: '(2,6)',
         conditions: {
             valRepre: ['2<x<6', '6>x>2'],
@@ -76,6 +82,7 @@ let def = {
         },
     },
     artifact_7: {
+        typeArtifact:'Evalaution',
         interval: '[−1,2]',
         conditions: {
             valRepre: ['−1≤x≤2', '2≥x≥−1'],
@@ -88,6 +95,7 @@ let def = {
         },
     },
     artifact_8: {
+        typeArtifact:'Evalaution',
         interval: '[−7,−5)',
         conditions: {
             valRepre: ['−7≤x<−5', '−5>x≥−7'],
@@ -101,6 +109,7 @@ let def = {
     },
     //Fin tipo 1
     artifact_9: {
+        typeArtifact:'Evalaution',
         interval: '(−∞,3]',
         conditions: {
             valRepre: ['−∞<x≤3', '3≥x>−∞', 'x≤3', '3≥x'],
@@ -113,6 +122,7 @@ let def = {
         },
     },
     artifact_10: {
+        typeArtifact:'Evalaution',
         interval: '(3,∞)',
         conditions: {
             valRepre: ['3<x<∞', '∞>x>3','x>3','3<x'],
@@ -125,6 +135,7 @@ let def = {
         },
     },
     artifact_11: {
+        typeArtifact:'Evalaution',
         interval: '(−∞,−1)',
         conditions: {
             valRepre: ['−∞<x<−1', '−1>x>−∞', 'x<−1', '−1>x'],
@@ -137,6 +148,7 @@ let def = {
         },
     },
     artifact_12: {
+        typeArtifact:'Evalaution',
         interval: '[5,∞)',
         conditions: {
             valRepre: ['∞>x≥5', '5≤x<∞', '5≤x', 'x≥5'],
@@ -149,6 +161,7 @@ let def = {
         },
     },
     artifact_13: {
+        typeArtifact:'Evalaution',
         interval: '(−∞,4]',
         conditions: {
             valRepre: ['4≥x>−∞', '−∞<x≤4', 'x≤4', '4≥x'],
@@ -161,6 +174,7 @@ let def = {
         },
     },
     artifact_14: {
+        typeArtifact:'Evalaution',
         interval: '(−3,∞)',
         conditions: {
             valRepre: ['−3<x<∞', '∞>x>−3', '−3<x', 'x>−3'],
@@ -173,6 +187,7 @@ let def = {
         },
     },
     artifact_15: {
+        typeArtifact:'Evalaution',
         interval: '(−∞,−4]',
         conditions: {
             valRepre: ['−∞<x≤−4', '−4≥x>−∞', 'x≤−4', '−4≥x'],
@@ -185,6 +200,7 @@ let def = {
         },
     },
     artifact_16: {
+        typeArtifact:'Evalaution',
         interval: '[−1,∞)',
         conditions: {
             valRepre: ['−1≤x<∞', '∞>x≥−1','x≥−1','−1≤x'],
@@ -198,6 +214,7 @@ let def = {
     },
     //Fin tipo 2
     artifact_17: {
+        typeArtifact:'Evalaution',        
         representation: 'x≥−2',
         conditions: {
             valInterval: ['[−2,∞)'],
@@ -210,6 +227,7 @@ let def = {
         },
     },
     artifact_18: {
+        typeArtifact:'Evalaution',
         representation: 'x≤3',
         conditions: {
             valInterval: ['(−∞,3]'],
@@ -222,6 +240,7 @@ let def = {
         },
     },
     artifact_19: {
+        typeArtifact:'Evalaution',
         representation: 'x≥4',
         conditions: {
             valInterval: ['[4,∞)'],
@@ -234,6 +253,7 @@ let def = {
         },
     },   
     artifact_20: {
+        typeArtifact:'Evalaution',
         representation: 'x≤−1',
         conditions: {
             valInterval: ['(−∞,−1]'],
@@ -246,6 +266,7 @@ let def = {
         },
     },
     artifact_21: {
+        typeArtifact:'Evalaution',
         representation: 'x≥3',
         conditions: {
             valInterval: ['[3,∞)'],
@@ -258,6 +279,7 @@ let def = {
         },
     },
     artifact_22: {
+        typeArtifact:'Evalaution',
         representation: 'x≤4',
         conditions: {
             valInterval: ['(−∞,4]'],
@@ -270,6 +292,7 @@ let def = {
         },
     },
     artifact_23: {
+        typeArtifact:'Evalaution',
         representation: 'x≥−6',
         conditions: {
             valInterval: ['[−6,∞)'],
@@ -282,6 +305,7 @@ let def = {
         },
     },
     artifact_24: {
+        typeArtifact:'Evalaution',
         representation: 'x≤−2',
         conditions: {
             valInterval: ['(−∞,−2]'],
@@ -1000,6 +1024,7 @@ let rDef={
         ]
     },
     artifact_1: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_0',
         textBottom: '(x, -y),(-x, y),(y, x)',        
         defaultInputs: [
@@ -1020,6 +1045,7 @@ let rDef={
         },
     },
     artifact_2: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_4',
         textBottom: '(-x,-y),(x,-y),(y,x)',
         defaultInputs: [
@@ -1040,6 +1066,7 @@ let rDef={
         },
     },
     artifact_3: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_8',
         textBottom: '(-x,y),(x,-y),(y,x)',
         defaultInputs: [
@@ -1060,6 +1087,7 @@ let rDef={
         },
     },
     artifact_4: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_12',
         textBottom: '(x, -y),(-x, y),(y, x)',    
         defaultInputs: [
@@ -1080,6 +1108,7 @@ let rDef={
         },
     },
     artifact_5: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_16',
         textBottom: '(-x, -y),(-x, y),(2y, x)',
         //cambie esta pregunta se superponian dos puntos
@@ -1101,6 +1130,7 @@ let rDef={
         },
     },
     artifact_6: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_20',
         textBottom: '(x, -y),(-x, y),(y, x)',    
         defaultInputs: [
@@ -1121,6 +1151,7 @@ let rDef={
         },
     },
     artifact_7: {
+        typeArtifact:'Evalaution',
         // textTop: "Este es el de arriba",
         defBoard: 'board_24',
         textBottom: '(x, -y),(-x, y),(y, x)',
@@ -1142,6 +1173,7 @@ let rDef={
         },
     },
     artifact_8: {
+        typeArtifact:'Evalaution',
       // textTop: "Este es el de arriba",
         defBoard: 'board_28',
         textBottom: '(-x, y),(x, -y),(y, x)',  
@@ -1164,6 +1196,7 @@ let rDef={
     },
     //Fin tipo 1
     artifact_9: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_1',
         textBottom: '(b,0),(a, a),(-a, -b),(a, -a)',        
         defaultInputs: [
@@ -1189,6 +1222,7 @@ let rDef={
         },
     },
     artifact_10: {
+        typeArtifact:'Evalaution',
         //La pregunta (a,-a) fue modificada por coincidencia con el punto (b,b) [Pregunta original (-a,-a)]
         defBoard: 'board_5',
         textBottom: '(b,0),(b, b),(-a, -b),(a, -a)',
@@ -1215,6 +1249,7 @@ let rDef={
         },
     },  
     artifact_11: {
+        typeArtifact:'Evalaution',
         textBottom: '(-a,0),(a,b),(-a,b),(b,-b)',
         defBoard: 'board_9',
         defaultInputs: [
@@ -1240,6 +1275,7 @@ let rDef={
         },
     },
     artifact_12: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_13',
         textBottom: '(-b,0),(-a, -b),(a, -a),(b, -a)',
         defaultInputs: [
@@ -1265,6 +1301,7 @@ let rDef={
         },  
     },
     artifact_13: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_17',
         textBottom: '(b,0),(a,a),(-a, -b),(-a, a)',
         defaultInputs: [
@@ -1290,6 +1327,7 @@ let rDef={
         },
     },
     artifact_14: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_21',
         textBottom: '(0,a),(a,-a),(a, -b),(-a, b)',
         defaultInputs: [
@@ -1315,6 +1353,7 @@ let rDef={
         },
     },
     artifact_15: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_25',
         textBottom: '(b,0),(a, a),(-a, -b),(b, -b)',
         defaultInputs: [
@@ -1340,6 +1379,7 @@ let rDef={
         },
     },
     artifact_16: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_29',
         textBottom: '(0,a),(b, b),(-a, -b),(a, -a)',
         defaultInputs: [
@@ -1366,6 +1406,7 @@ let rDef={
     },
     //Fin tipo 2
     artifact_17: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_2',
         textBottom: '(x-1,y),(x,y+2),(x,y-2)',
         conditions: {
@@ -1386,6 +1427,7 @@ let rDef={
         ],
     },
     artifact_18: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_6',
         textBottom: '(x-1.5,y),(x+1.5,y),(x,y-1)',
         conditions: {
@@ -1406,6 +1448,7 @@ let rDef={
         ],
     },
     artifact_19: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_10',
         textBottom: '(x+2,y),(x,y+1),(x,y-1)',
         conditions: {
@@ -1426,6 +1469,7 @@ let rDef={
         ],
     },
     artifact_20: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_14',
         textBottom: '(x-2.5, y),(x+2.5, y),(x, y-1)',
         defaultInputs: [
@@ -1434,8 +1478,7 @@ let rDef={
                 value: '(x,y)',
             },
     
-        ],
-    
+        ],    
         conditions: {
             texterror: {
                 time: 4,
@@ -1448,6 +1491,7 @@ let rDef={
         },
     },
     artifact_21: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_18',
         textBottom: '(x-1, y),(x+1, y),(x, y-2)',    
         defaultInputs: [
@@ -1468,6 +1512,7 @@ let rDef={
         },
     },
     artifact_22: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_22',
         textBottom: '(x-2, y),(x+2, y),(x, y-2.5)',    
         defaultInputs: [
@@ -1488,6 +1533,7 @@ let rDef={
         },
     },
     artifact_23: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_26',
         textBottom: '(x-2, y),(x+2, y),(x, y-0.75)',
         defaultInputs: [
@@ -1508,6 +1554,7 @@ let rDef={
         },
     },
     artifact_24: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_30',
         textBottom: '(x-2, y),(x, y+1),(x, y-1)',
         defaultInputs: [
@@ -1529,6 +1576,7 @@ let rDef={
     },
     //Fin tipo 3
     artifact_25: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_3',
         textBottom: '(-2x,y),(x,2y),(2x,-y),(x/2,y/2)',
         conditions: {
@@ -1550,6 +1598,7 @@ let rDef={
         ],
     }, 
     artifact_26: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_7',
         textBottom: '(x,3y),(x,-3y),(-2x,y),(x/2,y/2)',
         conditions: {
@@ -1571,6 +1620,7 @@ let rDef={
         ],
     },
     artifact_27: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_11',
         textBottom: '(-x,y),(x,2y),(x,-2y),(x/2,y/2)',
         conditions: {
@@ -1592,6 +1642,7 @@ let rDef={
         ],
     }, 
     artifact_28: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_15',
         textBottom: '(2x, -y),(-x, y),(-2x, y),(x/2, y/2)',
         defaultInputs: [
@@ -1613,6 +1664,7 @@ let rDef={
         },
     },
     artifact_29: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_19',
         textBottom: '(-2x, y),(x, -2y),(-x, -y),(x/2, y/2)',    
         defaultInputs: [
@@ -1634,6 +1686,7 @@ let rDef={
         },
     },
     artifact_30: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_23',
         textBottom: '(3x, y),(x, 2y),(-3x, -y),(x/2, y/2)',
         defaultInputs: [
@@ -1655,6 +1708,7 @@ let rDef={
         },
     },
     artifact_31: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_27',
         textBottom: '(-x, -y),(x, 2y),(2x, y),(x/2, y/2)',
         defaultInputs: [
@@ -1676,6 +1730,7 @@ let rDef={
         },
     },
     artifact_32: {
+        typeArtifact:'Evalaution',
         defBoard: 'board_31',
         textBottom: '(-2x, -y),(x, 3y),(2x, y),(x/2, y/2)',
         defaultInputs: [
@@ -1710,7 +1765,7 @@ console.log(position);
 console.log(position2);
 [def,artefact] = PintaSeleccionP1(position, def, 'P1');
 
-// Obtener las claves, ordenarlas y luego renombrarlas
+// Obtener las claves, ordenarlas +y luego renombrarlas
 let keys = Object.keys(def).sort((a, b) => {
     return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]);
 });
@@ -1801,12 +1856,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if(validation){
         // Pinta los datos en el DOM
-        document.getElementById('institucion').innerHTML = Datos.Instituto;
-        document.getElementById('Categoria').innerHTML = Datos.Categoria;
-        document.getElementById('materia').innerHTML = Datos.Curso;
-        document.getElementById('seccion').innerHTML = Datos.Seccion;
-        document.getElementById('nombreEstudiante').innerHTML = Datos.Estudiante.Nombre;
-        document.getElementById('correoEstudiante').innerHTML = Datos.Estudiante.Correo;
+        document.getElementById('institucion').innerHTML = Datos.liceo;
+        document.getElementById('Categoria').innerHTML = Datos.category;
+        document.getElementById('materia').innerHTML = Datos.curso;
+        document.getElementById('seccion').innerHTML = Datos.liceo;
+        document.getElementById('nombreEstudiante').innerHTML = Datos.firstName + ' ' + datos.lastName;
+        document.getElementById('correoEstudiante').innerHTML = Datos.email;
         document.getElementById('capExam').innerHTML = Datos.Capitulo;
         document.getElementById('codExam').innerHTML = Datos.CodExam;
     
@@ -1839,8 +1894,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         localStorage.setItem('fechaInicioEst',fechaInicioEst);
                         
                     }
-                    
-                    paginaExamen.style.display = 'block';
+                    if(Datos.result === null)
+                        paginaExamen.style.display = 'block';
                 })
                 
                 
