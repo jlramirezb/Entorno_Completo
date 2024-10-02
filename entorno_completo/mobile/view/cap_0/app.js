@@ -348,7 +348,7 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
         secondSurname:'estudiante',
         gender:'Masculino',
         email:'app.6@gmail.com',	
-        codExam: resultString,
+        codExam: 'Modelo 1',
         curso: 'Fragata',
         category: 'Educación Superior',
         liceo: 'Unidad Educacional de Fragata',

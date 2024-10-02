@@ -1972,4 +1972,4 @@ finalizarExamen();
 let result = GetResults(Datos, evaluacion);
 console.log(result);
 
-DataInteraction(def);
+//DataInteraction(def);
