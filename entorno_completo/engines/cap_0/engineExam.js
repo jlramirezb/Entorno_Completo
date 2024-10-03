@@ -97,7 +97,6 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
 }
 
 function localStoragePreguntasExamen(){
-    Datos = JSON.parse(localStorage.getItem('Datos'));
     let position = []; //= Datos.SeleccionadosP1;
     let position2 = []; //= Datos.SeleccionadosP2;
     [position, position2] = getPosition(Datos.codExam);
@@ -923,19 +922,108 @@ function VerificaDatos(Datos){
                 console.log("No hay una fecha de inicio almacenada.");
             }
         });
+
+        let artefact = [];
+    [position, position2] = localStoragePreguntasExamen();
+    [def,artefact] = PintaSeleccionP1(position, def, 'P1');
+
+    // Obtener las claves, ordenarlas +y luego renombrarlas
+    let keys = Object.keys(def).sort((a, b) => {
+        return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]);
+    });
+
+    let newObj = {};
+    keys.forEach((key, index) => {
+        let newKey = `artifact_${index + 1}`;
+        newObj[newKey] = def[key];
+    });
+    def= newObj;
+
+    //console.log(defaux);
+    let artefactaux=['artifact_1','artifact_2','artifact_3'];
+
+
+    //let position2 = localStorageSeleccionados("P2", 0, 31, 4);
+    position2 = position2.map(x => x - 1);
+    let nuevoRdef = filtrarContents(rDef, position2);
+    nuevoRdef = filtrarRdef(nuevoRdef, position2);
+    rDef = nuevoRdef;
+
+    let evaluacion = [];
+    let colorBorders = {};
+
+    //Funcion para iniciarlo cuando se cargue la pagina
+    window.onload = initMain();
+    let i = 0;
+    artefactaux.forEach((element) => {
+        i++;
+        let div = document.getElementById(artefactaux[0]);
+
+        // Obtenemos el div con id "artifact_1"
+        let artifactDiv = document.getElementById(element);
+
+        // Creamos un nuevo div contenedor
+        let newDiv = document.createElement("div");
+        newDiv.id = "newDiv"; // Asignamos el ID
+
+        // Creamos un div para los encabezados
+        let headersDiv = document.createElement("div");
+        headersDiv.style.display = "flex"; // Usamos flexbox para alinear los elementos horizontalmente
+        headersDiv.style.justifyContent = "space-between"; // Alineamos elementos a los extremos
+
+        // Creamos el encabezado "Pregunta"
+        let questionHeader = document.createElement("div");
+        questionHeader.className = "question-header"; // Asignamos la clase
+        questionHeader.textContent = "Artef. " + i.toString();
+        headersDiv.appendChild(questionHeader);
+
+        let scoreHeader = document.createElement("div");
+        scoreHeader.className = "oval-container"; // Asignamos la clase
+
+        scoreHeader.textContent = "2 Pts";
+        headersDiv.appendChild(scoreHeader);
+
+        // Agregamos el div de encabezados al nuevo contenedor
+        newDiv.appendChild(headersDiv);
+
+        // Agregamos el div original al nuevo contenedor
+        newDiv.appendChild(artifactDiv);
+
+        // Obtenemos el div con id "container-all"
+        let containerAll = document.getElementById("container-all-artifact");
+        containerAll.appendChild(newDiv);
+    });
+
+    // Selecciona todos los elementos div con la clase 'boardfault'
+    const divs = document.querySelectorAll('.borderDefault');
+
+    // Itera sobre cada div y agrega el texto "Pregunta" después de cada uno
+    i = 4;
+    //Itera a partir del cuarto div 
+    for (let i = 3; i < divs.length; i++) {
+        //Itera a partir del cuarto div con la clase 'boardfault' para agregar el texto "Pregunta"  
+        const divPregunta = document.createElement('div');
+        divPregunta.style.display = 'flex';
+        //divPregunta.style.alignItems = 'center';
+        const spanPregunta = document.createElement('span');
+        spanPregunta.style.float = 'left';
+        const spanPuntaje = document.createElement('span');
+        spanPuntaje.style.float = 'right';
+        spanPregunta.textContent =  "Artef. "+(i+1).toString(); 
+        let puntaje = (i===4 || i===6) ? '4 Pts' : '3 Pts'; 
+        spanPuntaje.textContent = puntaje;    
+        spanPregunta.classList.add('question-header');
+        spanPuntaje.classList.add("oval-container");  
+        divPregunta.appendChild(spanPregunta);
+        divPregunta.appendChild(spanPuntaje);
+        divs[i].insertBefore(divPregunta, divs[i].firstChild); 
+    };
+
         result = true;
     } else {
         console.log('Falta al menos una propiedad requerida');
         result = false;
     }
-    
-    /*if(Datos.hasOwnProperty('Capitulo') && Datos.hasOwnProperty('CodExam') && Datos.hasOwnProperty('Seccion') && Datos.hasOwnProperty('Curso') && Datos.hasOwnProperty('Categoria') && Datos.hasOwnProperty('Instituto')){
-        result = true;
-    }
-    else
-    {
-        result = false;
-    } */   
     return result;
 }
 
@@ -961,3 +1049,13 @@ function GetResults(Datos, Evaluacion){
     };
     return result;
 }
+//Funcion que inicializa los elementos del DOM con el template y el Fragmento
+function initMain() {
+    generation(def);
+    generator(rDef);
+    mainCartesian(defBoards, rDef);
+    evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
+    console.log(evaluacion);
+    colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
+    console.log(colorBorders);
+};

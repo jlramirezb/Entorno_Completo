@@ -1,7 +1,7 @@
 let def = {
     //Inicio Artefactos Annelys: 1 --  9
     artifact_1: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '[−2,1]',
         conditions: {
             valRepre: ['−2≤x≤1', '1≥x≥−2'],
@@ -14,7 +14,7 @@ let def = {
         },
     },
     artifact_2: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(−1,1]',
         conditions: {
             valRepre: ['−1<x≤1', '1≥x>−1'],
@@ -27,7 +27,7 @@ let def = {
         },
     },
     artifact_3: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '[3,5)',
         conditions: {
             valRepre: ['3≤x<5', '5>x≥3'],
@@ -40,7 +40,7 @@ let def = {
         },
     },
     artifact_4: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(−3,−1]',
         conditions: {
             valRepre: ['−3<x≤−1', '−1≥x>−3'],
@@ -53,7 +53,7 @@ let def = {
         },
     },
     artifact_5: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '[1,3)',
         conditions: {
             valRepre: ['1≤x<3', '3>x≥1'],
@@ -66,7 +66,7 @@ let def = {
         },
     },
     artifact_6: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(2,6)',
         conditions: {
             valRepre: ['2<x<6', '6>x>2'],
@@ -82,7 +82,7 @@ let def = {
         },
     },
     artifact_7: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '[−1,2]',
         conditions: {
             valRepre: ['−1≤x≤2', '2≥x≥−1'],
@@ -95,7 +95,7 @@ let def = {
         },
     },
     artifact_8: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '[−7,−5)',
         conditions: {
             valRepre: ['−7≤x<−5', '−5>x≥−7'],
@@ -109,7 +109,7 @@ let def = {
     },
     //Fin tipo 1
     artifact_9: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(−∞,3]',
         conditions: {
             valRepre: ['−∞<x≤3', '3≥x>−∞', 'x≤3', '3≥x'],
@@ -122,7 +122,7 @@ let def = {
         },
     },
     artifact_10: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(3,∞)',
         conditions: {
             valRepre: ['3<x<∞', '∞>x>3','x>3','3<x'],
@@ -135,7 +135,7 @@ let def = {
         },
     },
     artifact_11: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(−∞,−1)',
         conditions: {
             valRepre: ['−∞<x<−1', '−1>x>−∞', 'x<−1', '−1>x'],
@@ -148,7 +148,7 @@ let def = {
         },
     },
     artifact_12: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '[5,∞)',
         conditions: {
             valRepre: ['∞>x≥5', '5≤x<∞', '5≤x', 'x≥5'],
@@ -161,7 +161,7 @@ let def = {
         },
     },
     artifact_13: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(−∞,4]',
         conditions: {
             valRepre: ['4≥x>−∞', '−∞<x≤4', 'x≤4', '4≥x'],
@@ -174,7 +174,7 @@ let def = {
         },
     },
     artifact_14: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(−3,∞)',
         conditions: {
             valRepre: ['−3<x<∞', '∞>x>−3', '−3<x', 'x>−3'],
@@ -187,7 +187,7 @@ let def = {
         },
     },
     artifact_15: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '(−∞,−4]',
         conditions: {
             valRepre: ['−∞<x≤−4', '−4≥x>−∞', 'x≤−4', '−4≥x'],
@@ -200,7 +200,7 @@ let def = {
         },
     },
     artifact_16: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         interval: '[−1,∞)',
         conditions: {
             valRepre: ['−1≤x<∞', '∞>x≥−1','x≥−1','−1≤x'],
@@ -214,7 +214,7 @@ let def = {
     },
     //Fin tipo 2
     artifact_17: {
-        typeArtifact:'Evalaution',        
+        typeArtifact:'Evaluation',        
         representation: 'x≥−2',
         conditions: {
             valInterval: ['[−2,∞)'],
@@ -227,7 +227,7 @@ let def = {
         },
     },
     artifact_18: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         representation: 'x≤3',
         conditions: {
             valInterval: ['(−∞,3]'],
@@ -240,7 +240,7 @@ let def = {
         },
     },
     artifact_19: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         representation: 'x≥4',
         conditions: {
             valInterval: ['[4,∞)'],
@@ -253,7 +253,7 @@ let def = {
         },
     },   
     artifact_20: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         representation: 'x≤−1',
         conditions: {
             valInterval: ['(−∞,−1]'],
@@ -266,7 +266,7 @@ let def = {
         },
     },
     artifact_21: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         representation: 'x≥3',
         conditions: {
             valInterval: ['[3,∞)'],
@@ -279,7 +279,7 @@ let def = {
         },
     },
     artifact_22: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         representation: 'x≤4',
         conditions: {
             valInterval: ['(−∞,4]'],
@@ -292,7 +292,7 @@ let def = {
         },
     },
     artifact_23: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         representation: 'x≥−6',
         conditions: {
             valInterval: ['[−6,∞)'],
@@ -305,7 +305,7 @@ let def = {
         },
     },
     artifact_24: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         representation: 'x≤−2',
         conditions: {
             valInterval: ['(−∞,−2]'],
@@ -1024,7 +1024,7 @@ let rDef={
         ]
     },
     artifact_1: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_0',
         textBottom: '(x, -y),(-x, y),(y, x)',        
         defaultInputs: [
@@ -1045,7 +1045,7 @@ let rDef={
         },
     },
     artifact_2: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_4',
         textBottom: '(-x,-y),(x,-y),(y,x)',
         defaultInputs: [
@@ -1066,7 +1066,7 @@ let rDef={
         },
     },
     artifact_3: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_8',
         textBottom: '(-x,y),(x,-y),(y,x)',
         defaultInputs: [
@@ -1087,7 +1087,7 @@ let rDef={
         },
     },
     artifact_4: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_12',
         textBottom: '(x, -y),(-x, y),(y, x)',    
         defaultInputs: [
@@ -1108,7 +1108,7 @@ let rDef={
         },
     },
     artifact_5: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_16',
         textBottom: '(-x, -y),(-x, y),(2y, x)',
         //cambie esta pregunta se superponian dos puntos
@@ -1130,7 +1130,7 @@ let rDef={
         },
     },
     artifact_6: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_20',
         textBottom: '(x, -y),(-x, y),(y, x)',    
         defaultInputs: [
@@ -1151,7 +1151,7 @@ let rDef={
         },
     },
     artifact_7: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         // textTop: "Este es el de arriba",
         defBoard: 'board_24',
         textBottom: '(x, -y),(-x, y),(y, x)',
@@ -1173,7 +1173,7 @@ let rDef={
         },
     },
     artifact_8: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
       // textTop: "Este es el de arriba",
         defBoard: 'board_28',
         textBottom: '(-x, y),(x, -y),(y, x)',  
@@ -1196,7 +1196,7 @@ let rDef={
     },
     //Fin tipo 1
     artifact_9: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_1',
         textBottom: '(b,0),(a, a),(-a, -b),(a, -a)',        
         defaultInputs: [
@@ -1222,7 +1222,7 @@ let rDef={
         },
     },
     artifact_10: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         //La pregunta (a,-a) fue modificada por coincidencia con el punto (b,b) [Pregunta original (-a,-a)]
         defBoard: 'board_5',
         textBottom: '(b,0),(b, b),(-a, -b),(a, -a)',
@@ -1249,7 +1249,7 @@ let rDef={
         },
     },  
     artifact_11: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         textBottom: '(-a,0),(a,b),(-a,b),(b,-b)',
         defBoard: 'board_9',
         defaultInputs: [
@@ -1275,7 +1275,7 @@ let rDef={
         },
     },
     artifact_12: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_13',
         textBottom: '(-b,0),(-a, -b),(a, -a),(b, -a)',
         defaultInputs: [
@@ -1301,7 +1301,7 @@ let rDef={
         },  
     },
     artifact_13: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_17',
         textBottom: '(b,0),(a,a),(-a, -b),(-a, a)',
         defaultInputs: [
@@ -1327,7 +1327,7 @@ let rDef={
         },
     },
     artifact_14: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_21',
         textBottom: '(0,a),(a,-a),(a, -b),(-a, b)',
         defaultInputs: [
@@ -1353,7 +1353,7 @@ let rDef={
         },
     },
     artifact_15: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_25',
         textBottom: '(b,0),(a, a),(-a, -b),(b, -b)',
         defaultInputs: [
@@ -1379,7 +1379,7 @@ let rDef={
         },
     },
     artifact_16: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_29',
         textBottom: '(0,a),(b, b),(-a, -b),(a, -a)',
         defaultInputs: [
@@ -1406,7 +1406,7 @@ let rDef={
     },
     //Fin tipo 2
     artifact_17: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_2',
         textBottom: '(x-1,y),(x,y+2),(x,y-2)',
         conditions: {
@@ -1427,7 +1427,7 @@ let rDef={
         ],
     },
     artifact_18: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_6',
         textBottom: '(x-1.5,y),(x+1.5,y),(x,y-1)',
         conditions: {
@@ -1448,7 +1448,7 @@ let rDef={
         ],
     },
     artifact_19: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_10',
         textBottom: '(x+2,y),(x,y+1),(x,y-1)',
         conditions: {
@@ -1469,7 +1469,7 @@ let rDef={
         ],
     },
     artifact_20: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_14',
         textBottom: '(x-2.5, y),(x+2.5, y),(x, y-1)',
         defaultInputs: [
@@ -1491,7 +1491,7 @@ let rDef={
         },
     },
     artifact_21: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_18',
         textBottom: '(x-1, y),(x+1, y),(x, y-2)',    
         defaultInputs: [
@@ -1512,7 +1512,7 @@ let rDef={
         },
     },
     artifact_22: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_22',
         textBottom: '(x-2, y),(x+2, y),(x, y-2.5)',    
         defaultInputs: [
@@ -1533,7 +1533,7 @@ let rDef={
         },
     },
     artifact_23: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_26',
         textBottom: '(x-2, y),(x+2, y),(x, y-0.75)',
         defaultInputs: [
@@ -1554,7 +1554,7 @@ let rDef={
         },
     },
     artifact_24: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_30',
         textBottom: '(x-2, y),(x, y+1),(x, y-1)',
         defaultInputs: [
@@ -1576,7 +1576,7 @@ let rDef={
     },
     //Fin tipo 3
     artifact_25: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_3',
         textBottom: '(-2x,y),(x,2y),(2x,-y),(x/2,y/2)',
         conditions: {
@@ -1598,7 +1598,7 @@ let rDef={
         ],
     }, 
     artifact_26: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_7',
         textBottom: '(x,3y),(x,-3y),(-2x,y),(x/2,y/2)',
         conditions: {
@@ -1620,7 +1620,7 @@ let rDef={
         ],
     },
     artifact_27: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_11',
         textBottom: '(-x,y),(x,2y),(x,-2y),(x/2,y/2)',
         conditions: {
@@ -1642,7 +1642,7 @@ let rDef={
         ],
     }, 
     artifact_28: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_15',
         textBottom: '(2x, -y),(-x, y),(-2x, y),(x/2, y/2)',
         defaultInputs: [
@@ -1664,7 +1664,7 @@ let rDef={
         },
     },
     artifact_29: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_19',
         textBottom: '(-2x, y),(x, -2y),(-x, -y),(x/2, y/2)',    
         defaultInputs: [
@@ -1686,7 +1686,7 @@ let rDef={
         },
     },
     artifact_30: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_23',
         textBottom: '(3x, y),(x, 2y),(-3x, -y),(x/2, y/2)',
         defaultInputs: [
@@ -1708,7 +1708,7 @@ let rDef={
         },
     },
     artifact_31: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_27',
         textBottom: '(-x, -y),(x, 2y),(2x, y),(x/2, y/2)',
         defaultInputs: [
@@ -1730,7 +1730,7 @@ let rDef={
         },
     },
     artifact_32: {
-        typeArtifact:'Evalaution',
+        typeArtifact:'Evaluation',
         defBoard: 'board_31',
         textBottom: '(-2x, -y),(x, 3y),(2x, y),(x/2, y/2)',
         defaultInputs: [
@@ -1754,215 +1754,51 @@ let rDef={
     //Fin tipo 4
 }
 
-// Clave en Local Storage
-//const LOCAL_STORAGE_KEY = 'resultadoExamen';
-//const LOCAL_COLORS_KEY = 'colorsExamen';
+let Datos = JSON.parse(localStorage.getItem('Datos'));
+const positive = VerificaDatos(Datos);
 
-let artefact = [];
-//let position = localStorageSeleccionados("P1", 1, 24, 3);
-[position, position2] = localStoragePreguntasExamen();
-console.log(position);
-console.log(position2);
-[def,artefact] = PintaSeleccionP1(position, def, 'P1');
+if (positive)
+{
+    if (Datos.result == null)
+    {
+        let artefactaux=['artifact_1','artifact_2','artifact_3'];
 
-// Obtener las claves, ordenarlas +y luego renombrarlas
-let keys = Object.keys(def).sort((a, b) => {
-    return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]);
-});
+        //crear un arreglo que contenga las propiedades del objeto rDef a partir de la segunda
+        let propiedadesRdef = Object.keys(rDef).slice(1);
 
-let newObj = {};
-keys.forEach((key, index) => {
-    let newKey = `artifact_${index + 1}`;
-    newObj[newKey] = def[key];
-});
-def= newObj;
+        //let evaluacion;
+        let validar = document.querySelectorAll('.check');
+        // Eliminar el primer elemento del NodeList 'validar'
+        validar = Array.from(validar).slice(1);
 
-//console.log(defaux);
-let artefactaux=['artifact_1','artifact_2','artifact_3'];
+        evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders);
 
+        let resets = document.querySelectorAll('.reset');
+        // Eliminar el primer elemento del NodeList 'resets'
+        resets = Array.from(resets).slice(1);
+        evaluacion = cleanArt(resets,evaluacion,colorBorders);
 
-//let position2 = localStorageSeleccionados("P2", 0, 31, 4);
-console.log('Original position2',position2);
-position2 = position2.map(x => x - 1);
-console.log('Nuevo position2',position2);
-let nuevoRdef = filtrarContents(rDef, position2);
-nuevoRdef = filtrarRdef(nuevoRdef, position2);
-rDef = nuevoRdef;
+        // Ejecutar la función y actualizar el resultado
+        calcularResultadoTotal(evaluacion);
 
-let evaluacion = [];
-let colorBorders = {};
+        // Mostrar el arreglo actualizado
+        console.log(evaluacion);
 
-//Funcion que inicializa los elementos del DOM con el template y el Fragmento
-function initMain() {
-    generation(def);
-    generator(rDef);
-    mainCartesian(defBoards, rDef);
-    evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
-    console.log(evaluacion);
-    colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
-    console.log(colorBorders);
-};
+        mostrarModal()
 
-//Funcion para iniciarlo cuando se cargue la pagina
-window.onload = initMain();
-let i = 0;
-artefactaux.forEach((element) => {
-    i++;
-    let div = document.getElementById(artefactaux[0]);
-
-    // Obtenemos el div con id "artifact_1"
-    let artifactDiv = document.getElementById(element);
-
-    // Creamos un nuevo div contenedor
-    let newDiv = document.createElement("div");
-    newDiv.id = "newDiv"; // Asignamos el ID
-
-    // Creamos un div para los encabezados
-    let headersDiv = document.createElement("div");
-    headersDiv.style.display = "flex"; // Usamos flexbox para alinear los elementos horizontalmente
-    headersDiv.style.justifyContent = "space-between"; // Alineamos elementos a los extremos
-
-    // Creamos el encabezado "Pregunta"
-    let questionHeader = document.createElement("div");
-    questionHeader.className = "question-header"; // Asignamos la clase
-    questionHeader.textContent = "Artef. " + i.toString();
-    headersDiv.appendChild(questionHeader);
-
-    let scoreHeader = document.createElement("div");
-    scoreHeader.className = "oval-container"; // Asignamos la clase
-
-    scoreHeader.textContent = "2 Pts";
-    headersDiv.appendChild(scoreHeader);
-
-    // Agregamos el div de encabezados al nuevo contenedor
-    newDiv.appendChild(headersDiv);
-
-    // Agregamos el div original al nuevo contenedor
-    newDiv.appendChild(artifactDiv);
-
-    // Obtenemos el div con id "container-all"
-    let containerAll = document.getElementById("container-all-artifact");
-    containerAll.appendChild(newDiv);
-});
-
-/*document.addEventListener('DOMContentLoaded', function() {
-    const paginaExamen = document.getElementById('paginaExamen');
-    const notaprevia = document.getElementById('previous');
-    const notaafter = document.getElementById('after');
-    // Recupera los datos almacenados en localStorage
-
-
-    // Pinta los datos en el DOM
-    document.getElementById('institucion').innerHTML = Datos.liceo;
-    document.getElementById('Categoria').innerHTML = Datos.category;
-    document.getElementById('materia').innerHTML = Datos.curso;
-    document.getElementById('seccion').innerHTML = Datos.liceo;
-    document.getElementById('nombreEstudiante').innerHTML = Datos.firstName + ' ' + Datos.secondName;
-    document.getElementById('correoEstudiante').innerHTML = Datos.email;
-    document.getElementById('capExam').innerHTML = Datos.Capitulo;
-    document.getElementById('codExam').innerHTML = Datos.CodExam;
-
-
-    // Verifica y compara fechas
-    let fechaHoraInicio = Datos.fechaHoraInicio;
-    let fechaHoraCierre = Datos.fechaHoraCierre;
-
-    if (fechaHoraInicio && fechaHoraCierre) {
-        const fechaHoraInicioDate = new Date(fechaHoraInicio);
-        const fechaHoraCierreDate = new Date(fechaHoraCierre);
-        const currentDate = new Date();
-        
-        if (fechaHoraInicioDate > currentDate) {
-            console.log("La evaluación aún no ha comenzado.");
-            paginaExamen.style.display = 'none';
-            notaprevia.style.display = 'block';
-        } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
-            console.log("La evaluación ya ha comenzado o debería haber comenzado.");
-            let rules=document.getElementById('rules');
-            rules.style.display='block';
-            let rulesBtn = document.getElementById('buttonRule');
-            rulesBtn.addEventListener('click',()=>{
-                rules.style.display = 'none',
-                fechaInicioEst = localStorage.getItem('fechaInicioEst');
-                PintaBordes(colorBorders);
-                if(fechaInicioEst === null)
-                {
-                    fechaInicioEst = currentDate;
-                    localStorage.setItem('fechaInicioEst',fechaInicioEst);
-                    
-                }
-                if(Datos.result === null)
-                    paginaExamen.style.display = 'block';
-            })
-            
-            
-        } else {
-            console.log("La evaluación ya ha finalizado o debería haber finalizado.");
-            paginaExamen.style.display = 'none';
-            notaafter.style.display = 'block';
-        }
-    } else {
-        console.log("No hay una fecha de inicio almacenada.");
+        //Generar PDF para el estudiante
+        imprimirExamen('Est');
     }
-});*/
+    else{
+        // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
+        finalizarExamen();
 
-// Selecciona todos los elementos div con la clase 'boardfault'
-const divs = document.querySelectorAll('.borderDefault');
+        /*let result = GetResults(Datos, evaluacion);
+        console.log(result);*/
 
-// Itera sobre cada div y agrega el texto "Pregunta" después de cada uno
-i = 4;
-//Itera a partir del cuarto div 
-for (let i = 3; i < divs.length; i++) {
-    //Itera a partir del cuarto div con la clase 'boardfault' para agregar el texto "Pregunta"  
-    const divPregunta = document.createElement('div');
-    divPregunta.style.display = 'flex';
-    //divPregunta.style.alignItems = 'center';
-    const spanPregunta = document.createElement('span');
-    spanPregunta.style.float = 'left';
-    const spanPuntaje = document.createElement('span');
-    spanPuntaje.style.float = 'right';
-    spanPregunta.textContent =  "Artef. "+(i+1).toString(); 
-    let puntaje = (i===4 || i===6) ? '4 Pts' : '3 Pts'; 
-    spanPuntaje.textContent = puntaje;    
-    spanPregunta.classList.add('question-header');
-    spanPuntaje.classList.add("oval-container");  
-    divPregunta.appendChild(spanPregunta);
-    divPregunta.appendChild(spanPuntaje);
-    divs[i].insertBefore(divPregunta, divs[i].firstChild); 
-};
-
-//crear un arreglo que contenga las propiedades del objeto rDef a partir de la segunda
-let propiedadesRdef = Object.keys(rDef).slice(1);
-
-//let evaluacion;
-let validar = document.querySelectorAll('.check');
-// Eliminar el primer elemento del NodeList 'validar'
-validar = Array.from(validar).slice(1);
-
-evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders);
-
-let resets = document.querySelectorAll('.reset');
-// Eliminar el primer elemento del NodeList 'resets'
-resets = Array.from(resets).slice(1);
-evaluacion = cleanArt(resets,evaluacion,colorBorders);
-
-// Ejecutar la función y actualizar el resultado
-calcularResultadoTotal(evaluacion);
-
-// Mostrar el arreglo actualizado
-console.log(evaluacion);
-
-mostrarModal()
-
-//Generar PDF para el estudiante
-imprimirExamen('Est');
-
-VerificaDatos(Datos);
-
-// 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
-finalizarExamen();
-
-/*let result = GetResults(Datos, evaluacion);
-console.log(result);*/
-
-//DataInteraction(def);
+        //DataInteraction(def);
+    }    
+}
+else{
+    alert('Faltan Datos');
+}
