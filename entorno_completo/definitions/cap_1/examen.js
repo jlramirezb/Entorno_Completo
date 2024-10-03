@@ -4810,9 +4810,10 @@ const def = {
   //No valida algunos ejemplos de funciones (problema hablado con el equipo de ALcaravan. Sus motores no son capaces de hacerlo).
   artifact_1: {
     board: 'board_1',
-    statementBottom: ['Mínimo absoluto alcanzado en -1.5 y 1.5', 'No tiene máximos'],
+    statementBottom: ['Mínimo absoluto alcanzado en -1.5 y 1.5', 'No tiene máximos','Dominio (-3,3)'],
     conditions: {
-      conexa: { type: 4 },
+      conexa: { type: 3 },
+      dom: { range: [[-3, 3, 3, true, true]] },
       max:
       {global:0,
       localcount:0,},
@@ -4847,16 +4848,20 @@ const def = {
         ],
       },
       upDown:{intervals:[[false,[-2,-1]]]},
-      upDown:{intervals:[[true,[0,2]]]},
     },
   },
   artifact_4: {
     board: 'board_1',
-    statementBottom: ['Máximo absoluto alcanzado en -2.5 y 2.5','Dominio R'],
+    statementBottom: ['Máximo absoluto alcanzado en -2.5 y 2.5','Dominio R','Rango [-4,2]'],
     conditions: {
       conexa: { type: 3 },
       dom: {
         range: [[[1,2,8],[4,5,6], 3, false, false]],
+      },
+      rang: {
+        mulIntervals: [
+          [[2,-4, false, false]]
+        ],
       },
       max:
       {global: [-2.5, 2.5],},
@@ -4890,18 +4895,18 @@ const def = {
           [[3,-4, false, false]]
         ],
       },
-      upDown:{intervals:[[false,[0,2]]]},
       upDown:{intervals:[[true,[-2,0]]]},
     },
   },
   artifact_7: {
     board: 'board_1',
-    statementBottom: ['Mínimo absoluto alcanzado en dos puntos','Dominio [-4,2)'],
+    statementBottom: ['Mínimo absoluto alcanzado en dos puntos','Dominio [-4,2)','f es decreciente en (-1,1)'],
     conditions: {
       conexa: { type: 3 },
       dom: { range: [[-4, 2, 3, false, true]] },
       min: { global: 2},
     },
+    upDown:{intervals:[[false,[-1,1]]]},
   },
   artifact_8: {
     board: 'board_1',
@@ -4931,7 +4936,6 @@ const def = {
           [[2,-2, false, false]]
         ],
       },
-      upDown:{intervals:[[true,[-2,-0.5]]]},
       max:{
         maxTotal: 2,
         global:[-3],    
@@ -4941,9 +4945,10 @@ const def = {
   artifact_10: {
     //Problema: Acepta dos maximos globales.
     board: 'board_1',
-    statementBottom: ['Mínimo absoluto alcanzado en dos puntos','Un máximo absoluto alcanzado en 2.5'],
+    statementBottom: ['Mínimo absoluto alcanzado en dos puntos','Un máximo absoluto alcanzado en 2.5','Dominio (-4,4)'],
     conditions: {
       conexa: { type: 3 },
+      dom: { range: [[-4, 4, 3, true, true]] },
       max:{ global: [2.5],
       },
       min: { global: 2},
@@ -5014,15 +5019,14 @@ artifact_13: {
   },
   artifact_15: {
     board: 'board_2',
-    statementBottom: ["Dominio (-2,∞)","Rango (0,∞)","f es creciente en (-2,0)"],
+    statementBottom: ["Dominio (-2,∞)","Rango (-2,2]","f es creciente en (-2,0)"],
     conditions: {
       conexa: { type: 3 },
-      dom: { range: [[-2, [4], 3, true, false]] },
+      dom: { range: [[-2, [5], 3, true, false]] },
       upDown: { intervals: [[true, [-2, 0]]]},
-      //resolver problema con el rango xd
       rang: {
         mulIntervals: [
-          [[[4], 0, false, true]]
+          [[2,-2, false, true]]
         ],
       },
     },
@@ -5030,9 +5034,9 @@ artifact_13: {
 
   artifact_16: {
     board: 'board_2',
-    statementBottom: ["Un mínimo absoluto alcanzado en -2 y 2","No tiene máximos"],
+    statementBottom: ["Un mínimo absoluto alcanzado en -2 y 2","No tiene máximos","f es decreciente en (0,1)"],
     conditions: {
-      conexa: { type: 3 },
+      conexa: { type: 4 },
       min: {
         noise: 0.15,
         global: [-2, 2],
@@ -5041,6 +5045,7 @@ artifact_13: {
         localcount: 0,
         global: 0,
       },
+      upDown: { intervals: [[false, [1,0]]]},
     },
   },
 
@@ -5068,7 +5073,7 @@ artifact_13: {
     conditions: {
       conexa: { type: 3 },
       dom: { range: [[-3, 3, 3, true, false]] },
-      upDown: { intervals: [[false, [-2, -1]],[true, [0,1]]]},
+      upDown: { intervals: [[true, [0,1]]]},
       //resolver problema con el rango xd
       rang: {
         mulIntervals: [
@@ -5080,9 +5085,10 @@ artifact_13: {
 
   artifact_19: {
     board: 'board_2',
-    statementBottom: ["Un máximo absoluto alcanzado en 0 y 2.5","No tiene mínimos"],
+    statementBottom: ["Un máximo absoluto alcanzado en 0 y 2.5","No tiene mínimos","Dominio (-2,4)"],
     conditions: {
       conexa: { type: 3 },
+      dom: { range: [[-2, 4, 3, true, true]] },
       max: {
         noise: 0.15,
         global: [0, 2.5],
@@ -5112,22 +5118,28 @@ artifact_13: {
 
   artifact_21: {
     board: 'board_2',
-    statementBottom: ["Dominio R","f es creciente en (1,2)","f es decreciente en (-1,0)"],
+    statementBottom: ["Dominio R","f es creciente en (1,2)","Rango (-2,3]"],
     conditions: {
       conexa: { type: 3 },
       dom: { range: [[[1,8,2], [4,5,6], 3, false, true]]},
       upDown: { intervals: [[true, [1, 2]], [false, [-1,0]]]},
+    },
+    rang: {
+      mulIntervals: [
+        [[3, -2, false, true]]
+      ],
     },
   },
 
   //Inicio Artefactos Manuel - examen 8
   artifact_22: {
     board: 'board_0',
-    statementBottom: ["Un mínimo absoluto alcanzado en 3 y -3","No tiene máximos"],
+    statementBottom: ["Un mínimo absoluto alcanzado en 3 y -3","No tiene máximos","Dominio [-3,3]"],
     conditions: {
       max: { global: 0, localcount: 0,},
       min: { global: [-3,3], noise: 0.05  },
-      //conexa: { type: 2 },
+      conexa: { type: 3 },
+      dom: { range: [[-3, 3, 3, false, false]] },
       //dom: { range: [[-1, 2, 1, false, false]] },
       //countsX: { value: 2 },
 },
@@ -5146,7 +5158,7 @@ artifact_13: {
   },
   artifact_24: {
     board: 'board_0',
-    statementBottom: ["Dominio [-3,3]","f es decreciente en [0,2)","f es creciente en (-2,-1)"],
+    statementBottom: ["Dominio [-3,3]","f es decreciente en [0,2)","Rango (-3,2]"],
     conditions: {
       //rang: { mulIntervals:[
         //  [[[2,3,4], -2,false, false]]
@@ -5154,10 +5166,13 @@ artifact_13: {
       //},
       upDown: {intervals: [[false,[0,2]]],
       },
-      upDown: {intervals: [[true,[-2,-1]]],
-      },
       conexa: { type: 3 },
       dom: { range: [[-3, 3, 3, false, false]] },
+      rang: {
+        mulIntervals: [
+          [[2,-3, false, true]]
+        ],
+      },
     },
   },
   //Fin artefactos Manuel 
