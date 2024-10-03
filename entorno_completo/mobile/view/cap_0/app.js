@@ -339,6 +339,7 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
         fechaHoraCierre: `${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
         
         CodExam : resultString*/
+<<<<<<< HEAD
         'idUser':'66faf9aceda8f36d30f920e5',
         'idExam':'66e1f3c8ab116faa26c493ca',
         'firstName':'estudiante',
@@ -359,6 +360,24 @@ document.getElementById('evaluacionForm').addEventListener('submit', function(ev
         'SeleccionadosP2': position2,
         'userStartTime':null,
         'userEndTime':null
+=======
+        idUser:'66faf9aceda8f36d30f920e5',
+        idExam:'66e1f3c8ab116faa26c493ca',
+        firstName:'estudiante',
+        secondName:'estudiante',
+        surname:'estudiante',
+        secondSurname:'estudiante',
+        gender:'Masculino',
+        email:'app.6@gmail.com',	
+        codExam: 'Modelo 1',
+        curso: 'Fragata',
+        category: 'Educación Superior',
+        liceo: 'Unidad Educacional de Fragata',
+        universidad: 'Universidad de Carabobo',
+        fechaHoraInicio: `${fechaInicio} ${horaInicio}`, // Combina fecha y hora de inicio
+        fechaHoraCierre: `${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
+        result: null
+>>>>>>> 1ec2908d4e18f3218ea93cba8272ca129097ca7c
     }
 
     // Almacenar el objeto en localStorage
