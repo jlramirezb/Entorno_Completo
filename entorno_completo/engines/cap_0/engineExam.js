@@ -27,6 +27,7 @@ const exams ={
 
 function getPosition(examen) {
     const modelKey = examen.replace('Modelo ', 'eval_');
+    console.log(modelKey);
     const model = exams[modelKey];
 
     if (model) {
@@ -850,7 +851,7 @@ function mostrarModal(){
     }
 }
 
-function DataValidation(Datos){ 
+function VerificaDatos(Datos){ 
     //console.log(Datos);
     let longDatos = Object.keys(Datos).length;
     let result;
@@ -862,6 +863,66 @@ function DataValidation(Datos){
 
     if (todasExisten) {
         console.log('Todas las propiedades requeridas existen');
+        document.addEventListener('DOMContentLoaded', function() {
+            const paginaExamen = document.getElementById('paginaExamen');
+            const notaprevia = document.getElementById('previous');
+            const notaafter = document.getElementById('after');
+            // Recupera los datos almacenados en localStorage
+        
+        
+            // Pinta los datos en el DOM
+            document.getElementById('institucion').innerHTML = Datos.liceo;
+            document.getElementById('Categoria').innerHTML = Datos.category;
+            document.getElementById('materia').innerHTML = Datos.curso;
+            document.getElementById('seccion').innerHTML = Datos.liceo;
+            document.getElementById('nombreEstudiante').innerHTML = Datos.firstName + ' ' + Datos.secondName;
+            document.getElementById('correoEstudiante').innerHTML = Datos.email;
+            document.getElementById('capExam').innerHTML = Datos.Capitulo;
+            document.getElementById('codExam').innerHTML = Datos.CodExam;
+        
+        
+            // Verifica y compara fechas
+            let fechaHoraInicio = Datos.fechaHoraInicio;
+            let fechaHoraCierre = Datos.fechaHoraCierre;
+        
+            if (fechaHoraInicio && fechaHoraCierre) {
+                const fechaHoraInicioDate = new Date(fechaHoraInicio);
+                const fechaHoraCierreDate = new Date(fechaHoraCierre);
+                const currentDate = new Date();
+                
+                if (fechaHoraInicioDate > currentDate) {
+                    console.log("La evaluación aún no ha comenzado.");
+                    paginaExamen.style.display = 'none';
+                    notaprevia.style.display = 'block';
+                } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
+                    console.log("La evaluación ya ha comenzado o debería haber comenzado.");
+                    let rules=document.getElementById('rules');
+                    rules.style.display='block';
+                    let rulesBtn = document.getElementById('buttonRule');
+                    rulesBtn.addEventListener('click',()=>{
+                        rules.style.display = 'none',
+                        fechaInicioEst = localStorage.getItem('fechaInicioEst');
+                        PintaBordes(colorBorders);
+                        if(fechaInicioEst === null)
+                        {
+                            fechaInicioEst = currentDate;
+                            localStorage.setItem('fechaInicioEst',fechaInicioEst);
+                            
+                        }
+                        if(Datos.result === null)
+                            paginaExamen.style.display = 'block';
+                    })
+                    
+                    
+                } else {
+                    console.log("La evaluación ya ha finalizado o debería haber finalizado.");
+                    paginaExamen.style.display = 'none';
+                    notaafter.style.display = 'block';
+                }
+            } else {
+                console.log("No hay una fecha de inicio almacenada.");
+            }
+        });
         result = true;
     } else {
         console.log('Falta al menos una propiedad requerida');
@@ -878,11 +939,11 @@ function DataValidation(Datos){
     return result;
 }
 
-function DataInteraction(def){
+/*function DataInteraction(def){
     console.log('Datos recibidos de la interaccion');
     let results = cleanData(def, 'artifact_1');
     console.log(results);
-}
+}*/
 
 function GetResults(Datos, Evaluacion){
     let result = {
