@@ -1860,7 +1860,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('Categoria').innerHTML = Datos.category;
         document.getElementById('materia').innerHTML = Datos.curso;
         document.getElementById('seccion').innerHTML = Datos.liceo;
-        document.getElementById('nombreEstudiante').innerHTML = Datos.firstName + ' ' + datos.lastName;
+        document.getElementById('nombreEstudiante').innerHTML = Datos.firstName + ' ' + Datos.secondName;
         document.getElementById('correoEstudiante').innerHTML = Datos.email;
         document.getElementById('capExam').innerHTML = Datos.Capitulo;
         document.getElementById('codExam').innerHTML = Datos.CodExam;
@@ -1972,4 +1972,4 @@ finalizarExamen();
 let result = GetResults(Datos, evaluacion);
 console.log(result);
 
-DataInteraction(def);
+//DataInteraction(def);

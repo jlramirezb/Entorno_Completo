@@ -819,25 +819,26 @@ function DataValidation(Datos){
     let longDatos = Object.keys(Datos).length;
     let result;
     console.log(longDatos);
-    if(Datos.hasOwnProperty('Estudiante')){
-        if (Datos.Estudiante.hasOwnProperty('Nombre') && Datos.Estudiante.hasOwnProperty('Correo')) {
-            result = true;
-        }
-        else
-        {
-            result = false;
-        }
+
+    const propiedadesRequeridas = ['idUser','idExam','firstName','secondName','surname','secondSurname','gender','email','userStartTime','userEndTime','result'];
+
+    const todasExisten = propiedadesRequeridas.every(prop => prop in Datos);
+
+    if (todasExisten) {
+        console.log('Todas las propiedades requeridas existen');
+        result = true;
+    } else {
+        console.log('Falta al menos una propiedad requerida');
+        result = false;
     }
-    if(result)
+    
+    /*if(Datos.hasOwnProperty('Capitulo') && Datos.hasOwnProperty('CodExam') && Datos.hasOwnProperty('Seccion') && Datos.hasOwnProperty('Curso') && Datos.hasOwnProperty('Categoria') && Datos.hasOwnProperty('Instituto')){
+        result = true;
+    }
+    else
     {
-        if(Datos.hasOwnProperty('Capitulo') && Datos.hasOwnProperty('CodExam') && Datos.hasOwnProperty('Seccion') && Datos.hasOwnProperty('Curso') && Datos.hasOwnProperty('Categoria') && Datos.hasOwnProperty('Instituto')){
-            result = true;
-        }
-        else
-        {
-            result = false;
-        }
-    }
+        result = false;
+    } */   
     return result;
 }
 
