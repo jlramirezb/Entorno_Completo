@@ -1771,7 +1771,7 @@ if (positive)
         // Eliminar el primer elemento del NodeList 'validar'
         validar = Array.from(validar).slice(1);
 
-        evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders);
+        evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders,propiedadesRdef);
 
         let resets = document.querySelectorAll('.reset');
         // Eliminar el primer elemento del NodeList 'resets'

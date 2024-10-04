@@ -1,30 +1,10 @@
 // Clave en Local Storage
 const LOCAL_STORAGE_KEY = 'resultadoExamen';
 const LOCAL_COLORS_KEY = 'colorsExamen';
-
-let Datos = {
-    'idUser':'66faf9aceda8f36d30f920e5',
-    'idExam':'66e1f3c8ab116faa26c493ca',
-    'firstName':'estudiante',
-    'secondName':'estudiante',
-    'surname':'estudiante',
-    'secondSurname':'estudiante',
-    'gender':'Masculino',
-    'email':'app.6@gmail.com',	
-    'codExam': 'Modelo 1',
-    'curso':'Fragata',
-    'category':'Educación Superior',
-    'liceo':'Unidad Educacional de Fragata',
-    'universidad':'Universidad de Carabobo',
-    'fechaHoraInicio': '01/01/2022 00:00:00', //'`${fechaInicio} ${horaInicio}`, // Combina fecha y hora de inicio
-    'fechaHoraCierre':'01/01/2025 00:00:00', //'`${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
-    'result': null,        
-    'userStartTime':null,
-    'userEndTime':null
-}
+const LOCAL_DATOS_KEY = 'Datos';
 
 // Almacenar el objeto en localStorage
-localStorage.setItem('Datos', JSON.stringify(Datos));  
+let Datos = inicializarExamen(LOCAL_DATOS_KEY);
 
 const exams ={
     eval_1:[[1,9,17],[1,9,17,25]],
@@ -202,7 +182,7 @@ function cargarResultados(key) {
 
 // Función para cargar o inicializar el objeto de resultados
 function inicializarExamen(key) {
-    let resultadosGuardados, colorsBorders;
+    let resultadosGuardados, colorsBorders, Datos;
     if (key===LOCAL_STORAGE_KEY) {
         resultadosGuardados = cargarResultados(key);
         if (resultadosGuardados) {
@@ -241,9 +221,40 @@ function inicializarExamen(key) {
             return colorsBorders;
         }        
     }
+    else if(key===LOCAL_DATOS_KEY)
+    {
+        Datos = cargarResultados(key);
+        if (Datos) {
+            return Datos; // Usar los datos cargados para continuar
+        }
+        else {
+            Datos = {
+                'idUser':'66faf9aceda8f36d30f920e5',
+                'idExam':'66e1f3c8ab116faa26c493ca',
+                'firstName':'estudiante',
+                'secondName':'estudiante',
+                'surname':'estudiante',
+                'secondSurname':'estudiante',
+                'gender':'Masculino',
+                'email':'app.6@gmail.com',	
+                'codExam': 'Modelo 5',
+                'curso':'Fragata',
+                'category':'Educación Superior',
+                'liceo':'Unidad Educacional de Fragata',
+                'universidad':'Universidad de Carabobo',
+                'fechaHoraInicio': '01/01/2022 00:00:00', //'`${fechaInicio} ${horaInicio}`, // Combina fecha y hora de inicio
+                'fechaHoraCierre':'01/01/2025 00:00:00', //'`${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
+                'result': null,        
+                'userStartTime':null,
+                'userEndTime':null
+            }
+            localStorage.setItem(key, JSON.stringify(Datos));
+            return Datos; // Devolver el nuevo objeto inicializado
+        }
+    }
 }
 
-function valida(validar,resultadoExamen,def,artefact,borderColor) {    
+function valida(validar,resultadoExamen,def,artefact,borderColor,propiedadesRdef) {    
 
     const handleValidation = (index, mathfieldDiv1, mathfieldDiv2, mathfieldDiv3, resultadoExamen,artefact,def, idx) => 
     {
