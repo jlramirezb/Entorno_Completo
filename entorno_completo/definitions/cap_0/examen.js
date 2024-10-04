@@ -1759,7 +1759,7 @@ const positive = VerificaDatos(Datos);
 
 if (positive)
 {
-    if (Datos.result == null)
+    if (Datos.result === null)
     {
         let artefactaux=['artifact_1','artifact_2','artifact_3'];
 
@@ -1788,10 +1788,25 @@ if (positive)
 
         //Generar PDF para el estudiante
         imprimirExamen('Est');
-    }
-    else{
+
         // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
         finalizarExamen();
+    }
+    else{
+
+        document.getElementById('rules').style.display = 'none';
+        document.getElementById('after').style.display = 'none';
+        document.getElementById('resultadoPagina').style.display = 'block';
+        const spanTime = document.getElementById('tiempo');
+        let endDate = new Date(Datos.userEndTime);
+        let startDate = new Date(Datos.userStartTime);
+        let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
+        timeElapsed = timeElapsed.toFixed(2);
+        spanTime.textContent = timeElapsed + ' min';
+        console.log(Datos.result);
+        mostrarResultados(Datos.result);
+        // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
+        //finalizarExamen();
 
         /*let result = GetResults(Datos, evaluacion);
         console.log(result);*/
