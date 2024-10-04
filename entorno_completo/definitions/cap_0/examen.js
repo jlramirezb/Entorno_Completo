@@ -1754,7 +1754,7 @@ let rDef={
     //Fin tipo 4
 }
 
-let Datos = JSON.parse(localStorage.getItem('Datos'));
+Datos = JSON.parse(localStorage.getItem('Datos'));
 const positive = VerificaDatos(Datos);
 
 if (positive)

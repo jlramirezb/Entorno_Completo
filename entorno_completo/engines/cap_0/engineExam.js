@@ -2,6 +2,30 @@
 const LOCAL_STORAGE_KEY = 'resultadoExamen';
 const LOCAL_COLORS_KEY = 'colorsExamen';
 
+let Datos = {
+    'idUser':'66faf9aceda8f36d30f920e5',
+    'idExam':'66e1f3c8ab116faa26c493ca',
+    'firstName':'estudiante',
+    'secondName':'estudiante',
+    'surname':'estudiante',
+    'secondSurname':'estudiante',
+    'gender':'Masculino',
+    'email':'app.6@gmail.com',	
+    'codExam': 'Modelo 1',
+    'curso':'Fragata',
+    'category':'Educación Superior',
+    'liceo':'Unidad Educacional de Fragata',
+    'universidad':'Universidad de Carabobo',
+    'fechaHoraInicio': '01/01/2022 00:00:00', //'`${fechaInicio} ${horaInicio}`, // Combina fecha y hora de inicio
+    'fechaHoraCierre':'01/01/2025 00:00:00', //'`${fechaCierre} ${horaCierre}`, // Combina fecha y hora de cierre
+    'result': null,        
+    'userStartTime':null,
+    'userEndTime':null
+}
+
+// Almacenar el objeto en localStorage
+localStorage.setItem('Datos', JSON.stringify(Datos));  
+
 const exams ={
     eval_1:[[1,9,17],[1,9,17,25]],
     eval_2:[[2,10,18],[2,10,18,26]],
