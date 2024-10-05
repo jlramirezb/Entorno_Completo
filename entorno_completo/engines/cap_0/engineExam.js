@@ -931,7 +931,8 @@ function VerificaDatos(Datos){
     return result;
 }
 
-function PintaArtefactosExamen(Datos){
+/*function PintaArtefactosExamen(Datos){
+
     
     console.log('Todas las propiedades requeridas existen');
     document.addEventListener('DOMContentLoaded', function() {
@@ -1081,7 +1082,169 @@ function PintaArtefactosExamen(Datos){
         divPregunta.appendChild(spanPuntaje);
         divs[i].insertBefore(divPregunta, divs[i].firstChild); 
     };
+}*/
+
+function PintaArtefactosExamen(Datos) {
+    console.log('Todas las propiedades requeridas existen');
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        setupPaginaExamen(Datos);
+    });
+
+    let [position, position2] = localStoragePreguntasExamen();
+    [def, artefact] = PintaSeleccionP1(position, def, 'P1');
+
+    def = renombrarArtefactos(def);
+    let artefactaux = ['artifact_1', 'artifact_2', 'artifact_3'];
+
+    position2 = ajustarPosition(position2);
+    let nuevoRdef = procesarRdef(rDef, position2);
+    rDef = nuevoRdef;
+
+    // Iniciar el contenido principal al cargar la página
+    window.onload = initMain();
+
+    pintarArtefactos(artefactaux);
+    agregarEncabezadosPregunta();
 }
+
+function setupPaginaExamen(Datos) {
+    const paginaExamen = document.getElementById('paginaExamen');
+    const notaprevia = document.getElementById('previous');
+    const notaafter = document.getElementById('after');
+    
+    llenacamposverificados(Datos);
+    verificarFechas(Datos, paginaExamen, notaprevia, notaafter);
+}
+
+function verificarFechas(Datos, paginaExamen, notaprevia, notaafter) {
+    let fechaHoraInicio = Datos.fechaHoraInicio;
+    let fechaHoraCierre = Datos.fechaHoraCierre;
+    const currentDate = new Date();
+
+    if (fechaHoraInicio && fechaHoraCierre) {
+        const fechaHoraInicioDate = new Date(fechaHoraInicio);
+        const fechaHoraCierreDate = new Date(fechaHoraCierre);
+
+        if (fechaHoraInicioDate > currentDate) {
+            ocultarExamenAntesDeInicio(paginaExamen, notaprevia);
+        } else if (fechaHoraInicioDate <= currentDate && currentDate <= fechaHoraCierreDate) {
+            mostrarReglasExamen(paginaExamen);
+        } else {
+            ocultarExamenDespuesDeCierre(paginaExamen, notaafter);
+        }
+    } else {
+        console.log("No hay una fecha de inicio almacenada.");
+    }
+}
+
+function ocultarExamenAntesDeInicio(paginaExamen, notaprevia) {
+    console.log("La evaluación aún no ha comenzado.");
+    paginaExamen.style.display = 'none';
+    notaprevia.style.display = 'block';
+}
+
+function ocultarExamenDespuesDeCierre(paginaExamen, notaafter) {
+    console.log("La evaluación ya ha finalizado.");
+    paginaExamen.style.display = 'none';
+    notaafter.style.display = 'block';
+}
+
+function mostrarReglasExamen(paginaExamen) {
+    console.log("La evaluación ya ha comenzado.");
+    let rules = document.getElementById('rules');
+    let rulesBtn = document.getElementById('buttonRule');
+    
+    rules.style.display = 'block';
+    rulesBtn.addEventListener('click', () => {
+        rules.style.display = 'none';
+        let fechaInicioEst = localStorage.getItem('fechaInicioEst');
+        if (!fechaInicioEst) {
+            fechaInicioEst = new Date();
+            localStorage.setItem('fechaInicioEst', fechaInicioEst);
+        }
+        PintaBordes(colorBorders);
+        paginaExamen.style.display = 'block';
+    });
+}
+
+function renombrarArtefactos(def) {
+    let keys = Object.keys(def).sort((a, b) => parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]));
+    let newObj = {};
+
+    keys.forEach((key, index) => {
+        newObj[`artifact_${index + 1}`] = def[key];
+    });
+
+    return newObj;
+}
+
+function ajustarPosition(position2) {
+    return position2.map(x => x - 1);
+}
+
+function procesarRdef(rDef, position2) {
+    let nuevoRdef = filtrarContents(rDef, position2);
+    return filtrarRdef(nuevoRdef, position2);
+}
+
+function pintarArtefactos(artefactaux) {
+    let containerAll = document.getElementById("container-all-artifact");
+
+    artefactaux.forEach((element, index) => {
+        let artifactDiv = document.getElementById(element);
+        let newDiv = crearDivArtefacto(index + 1, artifactDiv);
+        containerAll.appendChild(newDiv);
+    });
+}
+
+function crearDivArtefacto(i, artifactDiv) {
+    let newDiv = document.createElement("div");
+    newDiv.id = "newDiv";
+
+    let headersDiv = document.createElement("div");
+    headersDiv.style.display = "flex";
+    headersDiv.style.justifyContent = "space-between";
+
+    let questionHeader = document.createElement("div");
+    questionHeader.className = "question-header";
+    questionHeader.textContent = `Artef. ${i}`;
+
+    let scoreHeader = document.createElement("div");
+    scoreHeader.className = "oval-container";
+    scoreHeader.textContent = "2 Pts";
+
+    headersDiv.appendChild(questionHeader);
+    headersDiv.appendChild(scoreHeader);
+    newDiv.appendChild(headersDiv);
+    newDiv.appendChild(artifactDiv);
+
+    return newDiv;
+}
+
+function agregarEncabezadosPregunta() {
+    const divs = document.querySelectorAll('.borderDefault');
+
+    for (let i = 3; i < divs.length; i++) {
+        let divPregunta = document.createElement('div');
+        divPregunta.style.display = 'flex';
+
+        let spanPregunta = document.createElement('span');
+        spanPregunta.style.float = 'left';
+        spanPregunta.textContent = `Artef. ${i + 1}`;
+        spanPregunta.classList.add('question-header');
+
+        let spanPuntaje = document.createElement('span');
+        spanPuntaje.style.float = 'right';
+        spanPuntaje.textContent = (i === 4 || i === 6) ? '4 Pts' : '3 Pts';
+        spanPuntaje.classList.add("oval-container");
+
+        divPregunta.appendChild(spanPregunta);
+        divPregunta.appendChild(spanPuntaje);
+        divs[i].insertBefore(divPregunta, divs[i].firstChild);
+    }
+}
+
 
 function llenacamposverificados(datosVerificados){ 
      // Pinta los datos en el DOM
