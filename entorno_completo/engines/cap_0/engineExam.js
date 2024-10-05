@@ -239,6 +239,7 @@ function inicializarExamen(key) {
                 'email':'app.6@gmail.com',	
                 'codExam': 'Modelo 5',
                 'curso':'Fragata',
+                'chapter':'Capítulo 0',
                 'category':'Educación Superior',
                 'liceo':'Unidad Educacional de Fragata',
                 'universidad':'Universidad de Carabobo',
@@ -898,190 +899,200 @@ function VerificaDatos(Datos){
     let result;
     console.log(longDatos);
 
-    const propiedadesRequeridas = ['idUser','idExam','firstName','secondName','surname','secondSurname','gender','email','userStartTime','userEndTime','result'];
+    const propiedadesRequeridas = ['idUser','idExam','firstName','secondName','surname','secondSurname','gender','email','userStartTime','userEndTime','result','fechaHoraInicio','fechaHoraCierre','chapter'];
 
-    const todasExisten = propiedadesRequeridas.every(prop => prop in Datos);
+    const todasExisten = propiedadesRequeridas.filter(prop => !(prop in Datos));
 
-    if (todasExisten && Datos.result===null) {
-        console.log('Todas las propiedades requeridas existen');
-        document.addEventListener('DOMContentLoaded', function() {
-            const paginaExamen = document.getElementById('paginaExamen');
-            const notaprevia = document.getElementById('previous');
-            const notaafter = document.getElementById('after');
-            // Recupera los datos almacenados en localStorage
-        
-        
-            // Pinta los datos en el DOM
-            document.getElementById('institucion').innerHTML = Datos.liceo;
-            document.getElementById('Categoria').innerHTML = Datos.category;
-            document.getElementById('materia').innerHTML = Datos.curso;
-            document.getElementById('seccion').innerHTML = Datos.liceo;
-            document.getElementById('nombreEstudiante').innerHTML = Datos.firstName + ' ' + Datos.secondName;
-            document.getElementById('correoEstudiante').innerHTML = Datos.email;
-            document.getElementById('capExam').innerHTML = Datos.Capitulo;
-            document.getElementById('codExam').innerHTML = Datos.CodExam;
-        
-        
-            // Verifica y compara fechas
-            let fechaHoraInicio = Datos.fechaHoraInicio;
-            let fechaHoraCierre = Datos.fechaHoraCierre;
-        
-            if (fechaHoraInicio && fechaHoraCierre) {
-                const fechaHoraInicioDate = new Date(fechaHoraInicio);
-                const fechaHoraCierreDate = new Date(fechaHoraCierre);
-                const currentDate = new Date();
-                
-                if (fechaHoraInicioDate > currentDate) {
-                    console.log("La evaluación aún no ha comenzado.");
-                    paginaExamen.style.display = 'none';
-                    notaprevia.style.display = 'block';
-                } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate) & Datos.result === null) {
-                    console.log("La evaluación ya ha comenzado o debería haber comenzado.");
-                    let rules=document.getElementById('rules');
-                    rules.style.display='block';
-                    let rulesBtn = document.getElementById('buttonRule');
-                    rulesBtn.addEventListener('click',()=>{
-                        rules.style.display = 'none',
-                        fechaInicioEst = localStorage.getItem('fechaInicioEst');
-                        PintaBordes(colorBorders);
-                        if(fechaInicioEst === null)
-                        {
-                            fechaInicioEst = currentDate;
-                            localStorage.setItem('fechaInicioEst',fechaInicioEst);
-                            
-                        }
-                        if(Datos.result === null)
-                            paginaExamen.style.display = 'block';
-                    })
-                    
-                    
-                } else {
-                    console.log("La evaluación ya ha finalizado o debería haber finalizado.");
-                    paginaExamen.style.display = 'none';
-                    notaafter.style.display = 'block';
-                }
-            } else {
-                console.log("No hay una fecha de inicio almacenada.");
-            }
-        });
-
-        let artefact = [];
-        [position, position2] = localStoragePreguntasExamen();
-        [def,artefact] = PintaSeleccionP1(position, def, 'P1');
-
-        // Obtener las claves, ordenarlas +y luego renombrarlas
-        let keys = Object.keys(def).sort((a, b) => {
-            return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]);
-        });
-
-        let newObj = {};
-        keys.forEach((key, index) => {
-            let newKey = `artifact_${index + 1}`;
-            newObj[newKey] = def[key];
-        });
-        def= newObj;
-
-        //console.log(defaux);
-        let artefactaux=['artifact_1','artifact_2','artifact_3'];
-
-
-        //let position2 = localStorageSeleccionados("P2", 0, 31, 4);
-        position2 = position2.map(x => x - 1);
-        let nuevoRdef = filtrarContents(rDef, position2);
-        nuevoRdef = filtrarRdef(nuevoRdef, position2);
-        rDef = nuevoRdef;
-
-        let evaluacion = [];
-        let colorBorders = {};
-
-        //Funcion para iniciarlo cuando se cargue la pagina
-        window.onload = initMain();
-        let i = 0;
-        artefactaux.forEach((element) => {
-            i++;
-            let div = document.getElementById(artefactaux[0]);
-
-            // Obtenemos el div con id "artifact_1"
-            let artifactDiv = document.getElementById(element);
-
-            // Creamos un nuevo div contenedor
-            let newDiv = document.createElement("div");
-            newDiv.id = "newDiv"; // Asignamos el ID
-
-            // Creamos un div para los encabezados
-            let headersDiv = document.createElement("div");
-            headersDiv.style.display = "flex"; // Usamos flexbox para alinear los elementos horizontalmente
-            headersDiv.style.justifyContent = "space-between"; // Alineamos elementos a los extremos
-
-            // Creamos el encabezado "Pregunta"
-            let questionHeader = document.createElement("div");
-            questionHeader.className = "question-header"; // Asignamos la clase
-            questionHeader.textContent = "Artef. " + i.toString();
-            headersDiv.appendChild(questionHeader);
-
-            let scoreHeader = document.createElement("div");
-            scoreHeader.className = "oval-container"; // Asignamos la clase
-
-            scoreHeader.textContent = "2 Pts";
-            headersDiv.appendChild(scoreHeader);
-
-            // Agregamos el div de encabezados al nuevo contenedor
-            newDiv.appendChild(headersDiv);
-
-            // Agregamos el div original al nuevo contenedor
-            newDiv.appendChild(artifactDiv);
-
-            // Obtenemos el div con id "container-all"
-            let containerAll = document.getElementById("container-all-artifact");
-            containerAll.appendChild(newDiv);
-        });
-
-        // Selecciona todos los elementos div con la clase 'boardfault'
-        const divs = document.querySelectorAll('.borderDefault');
-
-        // Itera sobre cada div y agrega el texto "Pregunta" después de cada uno
-        i = 4;
-        //Itera a partir del cuarto div 
-        for (let i = 3; i < divs.length; i++) {
-            //Itera a partir del cuarto div con la clase 'boardfault' para agregar el texto "Pregunta"  
-            const divPregunta = document.createElement('div');
-            divPregunta.style.display = 'flex';
-            //divPregunta.style.alignItems = 'center';
-            const spanPregunta = document.createElement('span');
-            spanPregunta.style.float = 'left';
-            const spanPuntaje = document.createElement('span');
-            spanPuntaje.style.float = 'right';
-            spanPregunta.textContent =  "Artef. "+(i+1).toString(); 
-            let puntaje = (i===4 || i===6) ? '4 Pts' : '3 Pts'; 
-            spanPuntaje.textContent = puntaje;    
-            spanPregunta.classList.add('question-header');
-            spanPuntaje.classList.add("oval-container");  
-            divPregunta.appendChild(spanPregunta);
-            divPregunta.appendChild(spanPuntaje);
-            divs[i].insertBefore(divPregunta, divs[i].firstChild); 
-        };
-
-            result = true;
-    } else {
-        if(!todasExisten) {
-            console.log('Falta al menos una propiedad requerida');
-            result = false;
-        }
-        else{
-            // Pinta los datos en el DOM
-            document.getElementById('institucion').innerHTML = Datos.liceo;
-            document.getElementById('Categoria').innerHTML = Datos.category;
-            document.getElementById('materia').innerHTML = Datos.curso;
-            document.getElementById('seccion').innerHTML = Datos.liceo;
-            document.getElementById('nombreEstudiante').innerHTML = Datos.firstName + ' ' + Datos.secondName;
-            document.getElementById('correoEstudiante').innerHTML = Datos.email;
-            document.getElementById('capExam').innerHTML = Datos.Capitulo;
-            document.getElementById('codExam').innerHTML = Datos.CodExam;
-            result = true;
-        }
+    if (todasExisten.length > 0) {
+        console.log('No todas las propiedades requeridas existen: ' + todasExisten.join(', '));
+        return false;
     }
-     
+
+    if (Datos.result!==null) {
+        // Pinta los datos en el 
+        const spanTime = document.getElementById('tiempo');
+        let endDate = new Date(Datos.userEndTime);
+        let startDate = new Date(Datos.userStartTime);
+        let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
+        timeElapsed = timeElapsed.toFixed(2);
+        spanTime.textContent = timeElapsed + ' min';
+        llenacamposverificados(Datos);
+        document.getElementById('rules').style.display = 'none';
+        document.getElementById('after').style.display = 'none';
+        document.getElementById('resultadoPagina').style.display = 'block';
+        result = true;
+        return result;
+    }
+
+    PintaArtefactosExamen(Datos);
+
+    result = true;
+    
     return result;
+}
+
+function PintaArtefactosExamen(Datos){
+    
+    console.log('Todas las propiedades requeridas existen');
+    document.addEventListener('DOMContentLoaded', function() {
+        const paginaExamen = document.getElementById('paginaExamen');
+        const notaprevia = document.getElementById('previous');
+        const notaafter = document.getElementById('after');
+        // Recupera los datos almacenados en localStorage
+
+
+        // Pinta los datos en el DOM
+        llenacamposverificados(Datos);
+        
+        // Verifica y compara fechas
+        let fechaHoraInicio = Datos.fechaHoraInicio;
+        let fechaHoraCierre = Datos.fechaHoraCierre;
+
+        if (fechaHoraInicio && fechaHoraCierre) {
+            const fechaHoraInicioDate = new Date(fechaHoraInicio);
+            const fechaHoraCierreDate = new Date(fechaHoraCierre);
+            const currentDate = new Date();
+            
+            if (fechaHoraInicioDate > currentDate) {
+                console.log("La evaluación aún no ha comenzado.");
+                paginaExamen.style.display = 'none';
+                notaprevia.style.display = 'block';
+            } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
+                console.log("La evaluación ya ha comenzado o debería haber comenzado.");
+                let rules=document.getElementById('rules');
+                rules.style.display='block';
+                let rulesBtn = document.getElementById('buttonRule');
+                rulesBtn.addEventListener('click',()=>{
+                    rules.style.display = 'none',
+                    fechaInicioEst = localStorage.getItem('fechaInicioEst');
+                    PintaBordes(colorBorders);
+                    if(fechaInicioEst === null)
+                    {
+                        fechaInicioEst = currentDate;
+                        localStorage.setItem('fechaInicioEst',fechaInicioEst);
+                        
+                    }
+                    paginaExamen.style.display = 'block';
+                })
+                
+                
+            } else {
+                console.log("La evaluación ya ha finalizado o debería haber finalizado.");
+                paginaExamen.style.display = 'none';
+                notaafter.style.display = 'block';
+            }
+        } else {
+            console.log("No hay una fecha de inicio almacenada.");
+        }
+    });
+
+    let artefact = [];
+    [position, position2] = localStoragePreguntasExamen();
+    [def,artefact] = PintaSeleccionP1(position, def, 'P1');
+
+    // Obtener las claves, ordenarlas +y luego renombrarlas
+    let keys = Object.keys(def).sort((a, b) => {
+        return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]);
+    });
+
+    let newObj = {};
+    keys.forEach((key, index) => {
+        let newKey = `artifact_${index + 1}`;
+        newObj[newKey] = def[key];
+    });
+    def= newObj;
+
+    //console.log(defaux);
+    let artefactaux=['artifact_1','artifact_2','artifact_3'];
+
+
+    //let position2 = localStorageSeleccionados("P2", 0, 31, 4);
+    position2 = position2.map(x => x - 1);
+    let nuevoRdef = filtrarContents(rDef, position2);
+    nuevoRdef = filtrarRdef(nuevoRdef, position2);
+    rDef = nuevoRdef;
+
+    let evaluacion = [];
+    let colorBorders = {};
+
+    //Funcion para iniciarlo cuando se cargue la pagina
+    window.onload = initMain();
+    let i = 0;
+    artefactaux.forEach((element) => {
+        i++;
+        let div = document.getElementById(artefactaux[0]);
+
+        // Obtenemos el div con id "artifact_1"
+        let artifactDiv = document.getElementById(element);
+
+        // Creamos un nuevo div contenedor
+        let newDiv = document.createElement("div");
+        newDiv.id = "newDiv"; // Asignamos el ID
+
+        // Creamos un div para los encabezados
+        let headersDiv = document.createElement("div");
+        headersDiv.style.display = "flex"; // Usamos flexbox para alinear los elementos horizontalmente
+        headersDiv.style.justifyContent = "space-between"; // Alineamos elementos a los extremos
+
+        // Creamos el encabezado "Pregunta"
+        let questionHeader = document.createElement("div");
+        questionHeader.className = "question-header"; // Asignamos la clase
+        questionHeader.textContent = "Artef. " + i.toString();
+        headersDiv.appendChild(questionHeader);
+
+        let scoreHeader = document.createElement("div");
+        scoreHeader.className = "oval-container"; // Asignamos la clase
+
+        scoreHeader.textContent = "2 Pts";
+        headersDiv.appendChild(scoreHeader);
+
+        // Agregamos el div de encabezados al nuevo contenedor
+        newDiv.appendChild(headersDiv);
+
+        // Agregamos el div original al nuevo contenedor
+        newDiv.appendChild(artifactDiv);
+
+        // Obtenemos el div con id "container-all"
+        let containerAll = document.getElementById("container-all-artifact");
+        containerAll.appendChild(newDiv);
+    });
+
+    // Selecciona todos los elementos div con la clase 'boardfault'
+    const divs = document.querySelectorAll('.borderDefault');
+
+    // Itera sobre cada div y agrega el texto "Pregunta" después de cada uno
+    i = 4;
+    //Itera a partir del cuarto div 
+    for (let i = 3; i < divs.length; i++) {
+        //Itera a partir del cuarto div con la clase 'boardfault' para agregar el texto "Pregunta"  
+        const divPregunta = document.createElement('div');
+        divPregunta.style.display = 'flex';
+        //divPregunta.style.alignItems = 'center';
+        const spanPregunta = document.createElement('span');
+        spanPregunta.style.float = 'left';
+        const spanPuntaje = document.createElement('span');
+        spanPuntaje.style.float = 'right';
+        spanPregunta.textContent =  "Artef. "+(i+1).toString(); 
+        let puntaje = (i===4 || i===6) ? '4 Pts' : '3 Pts'; 
+        spanPuntaje.textContent = puntaje;    
+        spanPregunta.classList.add('question-header');
+        spanPuntaje.classList.add("oval-container");  
+        divPregunta.appendChild(spanPregunta);
+        divPregunta.appendChild(spanPuntaje);
+        divs[i].insertBefore(divPregunta, divs[i].firstChild); 
+    };
+}
+
+function llenacamposverificados(datosVerificados){ 
+     // Pinta los datos en el DOM
+    document.getElementById('institucion').innerHTML = datosVerificados.liceo;
+    document.getElementById('Categoria').innerHTML = datosVerificados.category;
+    document.getElementById('materia').innerHTML = datosVerificados.curso;
+    document.getElementById('seccion').innerHTML = datosVerificados.liceo;
+    document.getElementById('nombreEstudiante').innerHTML = datosVerificados.firstName + ' ' + Datos.secondName;
+    document.getElementById('correoEstudiante').innerHTML = datosVerificados.email;
+    document.getElementById('capExam').innerHTML = datosVerificados.chapter;
+    document.getElementById('codExam').innerHTML = datosVerificados.CodExam;
 }
 
 /*function DataInteraction(def){
@@ -1102,6 +1113,8 @@ function GetResults(Datos, Evaluacion){
         email:Datos.email,	
         userStartTime: Datos.userStartTime,
         userEndTime: Datos.userEndTime,        
+        chapter:Datos.chapter,
+        CodExam:Datos.CodExam,
         results: Evaluacion
     };
     return result;

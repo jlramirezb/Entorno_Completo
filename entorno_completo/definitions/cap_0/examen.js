@@ -1793,16 +1793,7 @@ if (positive)
         finalizarExamen();
     }
     else{
-
-        document.getElementById('rules').style.display = 'none';
-        document.getElementById('after').style.display = 'none';
-        document.getElementById('resultadoPagina').style.display = 'block';
-        const spanTime = document.getElementById('tiempo');
-        let endDate = new Date(Datos.userEndTime);
-        let startDate = new Date(Datos.userStartTime);
-        let timeElapsed = (endDate.getTime()-startDate.getTime())/60000;
-        timeElapsed = timeElapsed.toFixed(2);
-        spanTime.textContent = timeElapsed + ' min';
+        
         console.log(Datos.result);
         mostrarResultados(Datos.result);
         // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
