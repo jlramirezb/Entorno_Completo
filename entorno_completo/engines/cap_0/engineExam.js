@@ -1255,7 +1255,7 @@ function llenacamposverificados(datosVerificados){
     document.getElementById('nombreEstudiante').innerHTML = datosVerificados.firstName + ' ' + Datos.secondName;
     document.getElementById('correoEstudiante').innerHTML = datosVerificados.email;
     document.getElementById('capExam').innerHTML = datosVerificados.chapter;
-    document.getElementById('codExam').innerHTML = datosVerificados.CodExam;
+    document.getElementById('codExam').innerHTML = datosVerificados.codExam;
 }
 
 /*function DataInteraction(def){
@@ -1292,3 +1292,61 @@ function initMain() {
     colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
     console.log(colorBorders);
 };
+
+function ejecutaAccion() {
+    Datos = JSON.parse(localStorage.getItem('Datos'));
+    const positive = VerificaDatos(Datos);
+
+    if (positive)
+    {
+        if (Datos.result === null)
+        {
+            let artefactaux=['artifact_1','artifact_2','artifact_3'];
+
+            //crear un arreglo que contenga las propiedades del objeto rDef a partir de la segunda
+            let propiedadesRdef = Object.keys(rDef).slice(1);
+
+            //let evaluacion;
+            let validar = document.querySelectorAll('.check');
+            // Eliminar el primer elemento del NodeList 'validar'
+            validar = Array.from(validar).slice(1);
+
+            evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders,propiedadesRdef);
+
+            let resets = document.querySelectorAll('.reset');
+            // Eliminar el primer elemento del NodeList 'resets'
+            resets = Array.from(resets).slice(1);
+            evaluacion = cleanArt(resets,evaluacion,colorBorders);
+
+            // Ejecutar la función y actualizar el resultado
+            calcularResultadoTotal(evaluacion);
+
+            // Mostrar el arreglo actualizado
+            console.log(evaluacion);
+
+            mostrarModal()
+
+            //Generar PDF para el estudiante
+            imprimirExamen('Est');
+
+            // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
+            finalizarExamen();
+        }
+        else{
+            
+            console.log(Datos.result);
+            mostrarResultados(Datos.result);
+            // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
+            //finalizarExamen();
+
+            /*let result = GetResults(Datos, evaluacion);
+            console.log(result);*/
+
+            //DataInteraction(def);
+        }    
+    }
+    else{
+        document.getElementById('datos').style.display = 'block';
+        alert('Faltan Datos');
+    }
+}

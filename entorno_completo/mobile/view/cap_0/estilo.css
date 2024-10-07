@@ -499,7 +499,7 @@ th {
     z-index: 10;
 }
 
-#previous, #after {
+#previous, #after, #datos {
     /*display: flex;*/
     /*align-items: center;*/
     justify-content:center;
