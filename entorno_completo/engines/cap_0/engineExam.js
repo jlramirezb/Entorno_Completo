@@ -669,7 +669,7 @@ function finalizarExamen(){
     document.querySelector('#confirmBtn').addEventListener('click', () => {
         let Datos = JSON.parse(localStorage.getItem('Datos'));
         //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
-        let examData = Datos.result; // Se obtiene el examen de la variable inicializarExamen(LOCAL_STORAGE_KEY);
+        //let examData = Datos.result; // Se obtiene el examen de la variable inicializarExamen(LOCAL_STORAGE_KEY);
         const spanTime = document.getElementById('tiempo');
         const startDate = new Date(localStorage.getItem('fechaInicioEst'));
         Datos.userStartTime = startDate;
@@ -682,21 +682,28 @@ function finalizarExamen(){
         console.log(startDate);
         console.log(endDate);
         console.log(timeElapsed);
-        let result = GetResults(Datos, examData);
+        let result = GetResults();
         console.log(result);
-        if(result.results === null){
+        if(result.result === null){
             alert('No ha respondido ninguna pregunta');
         }
         else
         {
-            mostrarResultados(examData); 
-            localStorage.removeItem(LOCAL_STORAGE_KEY);
-            localStorage.removeItem(LOCAL_COLORS_KEY);
-            localStorage.removeItem('SeleccionadosP1');
-            localStorage.removeItem('SeleccionadosP2');
-            localStorage.removeItem('fechaInicioEst'); 
+            if(Datos.userEndTime === null){
+                Datos.result = null;
+                localStorage.setItem('Datos', JSON.stringify(Datos));
+            }
+            else
+            {
+                mostrarResultados(examData); 
+                localStorage.removeItem(LOCAL_STORAGE_KEY);
+                localStorage.removeItem(LOCAL_COLORS_KEY);
+                localStorage.removeItem('SeleccionadosP1');
+                localStorage.removeItem('SeleccionadosP2');
+                localStorage.removeItem('fechaInicioEst'); 
+            }            
         }
-    });    
+    });
 }
 
 function imprimirExamen(tipo){
@@ -1163,6 +1170,8 @@ function mostrarReglasExamen(paginaExamen) {
             fechaInicioEst = new Date();
             localStorage.setItem('fechaInicioEst', fechaInicioEst);
         }
+        Datos.userStartTime = fechaInicioEst;
+        localStorage.setItem('Datos', JSON.stringify(Datos));
         PintaBordes(colorBorders);
         paginaExamen.style.display = 'block';
     });
@@ -1264,7 +1273,8 @@ function llenacamposverificados(datosVerificados){
     console.log(results);
 }*/
 
-function GetResults(Datos, Evaluacion){
+function GetResults(){
+    let examData = Datos.result;
     let result = {
         idUser:Datos.idUser,
         idExam:Datos.idExam,
@@ -1278,7 +1288,7 @@ function GetResults(Datos, Evaluacion){
         userEndTime: Datos.userEndTime,        
         chapter:Datos.chapter,
         CodExam:Datos.CodExam,
-        results: Evaluacion
+        results: examData
     };
     return result;
 }
