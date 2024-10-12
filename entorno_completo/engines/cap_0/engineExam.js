@@ -664,12 +664,12 @@ function PintaBordes (borderColor){
     }
 }
 
-function finalizarExamen(){
+/*function finalizarExamen(){
     let examData = [];
     document.querySelector('#confirmBtn').addEventListener('click', () => {
         let Datos = JSON.parse(localStorage.getItem('Datos'));
         //Se obtiene el tiempo de finalizacion del examen (Guardar la hora de inicio de estudiante)
-        //let examData = Datos.result; // Se obtiene el examen de la variable inicializarExamen(LOCAL_STORAGE_KEY);
+        let examData = Datos.result; // Se obtiene el examen de la variable inicializarExamen(LOCAL_STORAGE_KEY);
         const spanTime = document.getElementById('tiempo');
         const startDate = new Date(localStorage.getItem('fechaInicioEst'));
         Datos.userStartTime = startDate;
@@ -684,28 +684,81 @@ function finalizarExamen(){
         console.log(timeElapsed);
         let result = GetResults();
         console.log(result);
-        if(result.result === null){
+        if(result.results === null){
             alert('No ha respondido ninguna pregunta');
         }
         else
-        {
-            if(Datos.userEndTime === null){
-                Datos.result = null;
-                localStorage.setItem('Datos', JSON.stringify(Datos));
-            }
-            else
-            {
-                mostrarResultados(examData); 
-                localStorage.removeItem(LOCAL_STORAGE_KEY);
-                localStorage.removeItem(LOCAL_COLORS_KEY);
-                localStorage.removeItem('SeleccionadosP1');
-                localStorage.removeItem('SeleccionadosP2');
-                localStorage.removeItem('fechaInicioEst'); 
-            }            
+        {            
+            mostrarResultados(examData); 
+            localStorage.removeItem(LOCAL_STORAGE_KEY);
+            localStorage.removeItem(LOCAL_COLORS_KEY);
+            localStorage.removeItem('SeleccionadosP1');
+            localStorage.removeItem('SeleccionadosP2');
+            localStorage.removeItem('fechaInicioEst');                        
         }
     });
+}*/
+// Definir la función finalizarExamen
+function finalizarExamen() {
+    // Obtener los datos almacenados en localStorage
+    const storedData = localStorage.getItem('Datos');
+    if (!storedData) {
+        alert('No se encontraron datos para el examen.');
+        return;
+    }
+
+    let examData = JSON.parse(storedData);
+    const { result } = examData;
+    // Obtener la hora de inicio del examen desde localStorage
+    const startDate = new Date(localStorage.getItem('fechaInicioEst'));
+    const endDate = new Date();
+
+    // Calcular el tiempo transcurrido en minutos
+    let timeElapsed = ((endDate - startDate) / 60000).toFixed(2);
+    const spanTime = document.getElementById('tiempo');
+    spanTime.textContent = `${timeElapsed} min`;
+
+    // Almacenar la hora de inicio y finalización en los datos del examen
+    examData.userStartTime = startDate;
+    examData.userEndTime = endDate;
+    localStorage.setItem('Datos', JSON.stringify(examData));
+
+    console.log(startDate, endDate, timeElapsed);
+
+    // Obtener los resultados del examen
+    let resultData = GetResults();
+    console.log(resultData);
+    if (!resultData.result) {
+        alert('No ha respondido ninguna pregunta.');
+        examData.userEndTime = null;
+        localStorage.setItem('Datos', JSON.stringify(examData));
+    } else {
+        if(Datos.userEndTime !== null){
+            console.log('Fecha de fin examen user asignada: ' + Datos.userEndTime);
+            mostrarResultados(result); // Mostrar los resultados del examen          
+            // Limpiar el almacenamiento local
+            const keysToRemove = [
+                'LOCAL_STORAGE_KEY',
+                'LOCAL_COLORS_KEY',
+                'SeleccionadosP1',
+                'SeleccionadosP2',
+                'fechaInicioEst'
+            ];
+            keysToRemove.forEach(key => localStorage.removeItem(key));
+        }   
+        else{
+            console.log('Fecha de fin examen user no asignada');
+        }     
+    }
 }
 
+// Asignar la función al evento de clic del botón
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#confirmBtn').addEventListener('click', (event)=>{
+        event.preventDefault();
+        finalizarExamen();
+    });
+});
 function imprimirExamen(tipo){
     if(tipo=='Est'){
         document.getElementById('myModal').style.display = 'none';    
@@ -937,160 +990,6 @@ function VerificaDatos(Datos){
     
     return result;
 }
-
-/*function PintaArtefactosExamen(Datos){
-
-    
-    console.log('Todas las propiedades requeridas existen');
-    document.addEventListener('DOMContentLoaded', function() {
-        const paginaExamen = document.getElementById('paginaExamen');
-        const notaprevia = document.getElementById('previous');
-        const notaafter = document.getElementById('after');
-        // Recupera los datos almacenados en localStorage
-
-
-        // Pinta los datos en el DOM
-        llenacamposverificados(Datos);
-        
-        // Verifica y compara fechas
-        let fechaHoraInicio = Datos.fechaHoraInicio;
-        let fechaHoraCierre = Datos.fechaHoraCierre;
-
-        if (fechaHoraInicio && fechaHoraCierre) {
-            const fechaHoraInicioDate = new Date(fechaHoraInicio);
-            const fechaHoraCierreDate = new Date(fechaHoraCierre);
-            const currentDate = new Date();
-            
-            if (fechaHoraInicioDate > currentDate) {
-                console.log("La evaluación aún no ha comenzado.");
-                paginaExamen.style.display = 'none';
-                notaprevia.style.display = 'block';
-            } else if ((fechaHoraInicioDate <= currentDate) && (currentDate <= fechaHoraCierreDate)) {
-                console.log("La evaluación ya ha comenzado o debería haber comenzado.");
-                let rules=document.getElementById('rules');
-                rules.style.display='block';
-                let rulesBtn = document.getElementById('buttonRule');
-                rulesBtn.addEventListener('click',()=>{
-                    rules.style.display = 'none',
-                    fechaInicioEst = localStorage.getItem('fechaInicioEst');
-                    PintaBordes(colorBorders);
-                    if(fechaInicioEst === null)
-                    {
-                        fechaInicioEst = currentDate;
-                        localStorage.setItem('fechaInicioEst',fechaInicioEst);
-                        
-                    }
-                    paginaExamen.style.display = 'block';
-                })
-                
-                
-            } else {
-                console.log("La evaluación ya ha finalizado o debería haber finalizado.");
-                paginaExamen.style.display = 'none';
-                notaafter.style.display = 'block';
-            }
-        } else {
-            console.log("No hay una fecha de inicio almacenada.");
-        }
-    });
-
-    let artefact = [];
-    [position, position2] = localStoragePreguntasExamen();
-    [def,artefact] = PintaSeleccionP1(position, def, 'P1');
-
-    // Obtener las claves, ordenarlas +y luego renombrarlas
-    let keys = Object.keys(def).sort((a, b) => {
-        return parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]);
-    });
-
-    let newObj = {};
-    keys.forEach((key, index) => {
-        let newKey = `artifact_${index + 1}`;
-        newObj[newKey] = def[key];
-    });
-    def= newObj;
-
-    //console.log(defaux);
-    let artefactaux=['artifact_1','artifact_2','artifact_3'];
-
-
-    //let position2 = localStorageSeleccionados("P2", 0, 31, 4);
-    position2 = position2.map(x => x - 1);
-    let nuevoRdef = filtrarContents(rDef, position2);
-    nuevoRdef = filtrarRdef(nuevoRdef, position2);
-    rDef = nuevoRdef;
-
-    let evaluacion = [];
-    let colorBorders = {};
-
-    //Funcion para iniciarlo cuando se cargue la pagina
-    window.onload = initMain();
-    let i = 0;
-    artefactaux.forEach((element) => {
-        i++;
-        let div = document.getElementById(artefactaux[0]);
-
-        // Obtenemos el div con id "artifact_1"
-        let artifactDiv = document.getElementById(element);
-
-        // Creamos un nuevo div contenedor
-        let newDiv = document.createElement("div");
-        newDiv.id = "newDiv"; // Asignamos el ID
-
-        // Creamos un div para los encabezados
-        let headersDiv = document.createElement("div");
-        headersDiv.style.display = "flex"; // Usamos flexbox para alinear los elementos horizontalmente
-        headersDiv.style.justifyContent = "space-between"; // Alineamos elementos a los extremos
-
-        // Creamos el encabezado "Pregunta"
-        let questionHeader = document.createElement("div");
-        questionHeader.className = "question-header"; // Asignamos la clase
-        questionHeader.textContent = "Artef. " + i.toString();
-        headersDiv.appendChild(questionHeader);
-
-        let scoreHeader = document.createElement("div");
-        scoreHeader.className = "oval-container"; // Asignamos la clase
-
-        scoreHeader.textContent = "2 Pts";
-        headersDiv.appendChild(scoreHeader);
-
-        // Agregamos el div de encabezados al nuevo contenedor
-        newDiv.appendChild(headersDiv);
-
-        // Agregamos el div original al nuevo contenedor
-        newDiv.appendChild(artifactDiv);
-
-        // Obtenemos el div con id "container-all"
-        let containerAll = document.getElementById("container-all-artifact");
-        containerAll.appendChild(newDiv);
-    });
-
-    // Selecciona todos los elementos div con la clase 'boardfault'
-    const divs = document.querySelectorAll('.borderDefault');
-
-    // Itera sobre cada div y agrega el texto "Pregunta" después de cada uno
-    i = 4;
-    //Itera a partir del cuarto div 
-    for (let i = 3; i < divs.length; i++) {
-        //Itera a partir del cuarto div con la clase 'boardfault' para agregar el texto "Pregunta"  
-        const divPregunta = document.createElement('div');
-        divPregunta.style.display = 'flex';
-        //divPregunta.style.alignItems = 'center';
-        const spanPregunta = document.createElement('span');
-        spanPregunta.style.float = 'left';
-        const spanPuntaje = document.createElement('span');
-        spanPuntaje.style.float = 'right';
-        spanPregunta.textContent =  "Artef. "+(i+1).toString(); 
-        let puntaje = (i===4 || i===6) ? '4 Pts' : '3 Pts'; 
-        spanPuntaje.textContent = puntaje;    
-        spanPregunta.classList.add('question-header');
-        spanPuntaje.classList.add("oval-container");  
-        divPregunta.appendChild(spanPregunta);
-        divPregunta.appendChild(spanPuntaje);
-        divs[i].insertBefore(divPregunta, divs[i].firstChild); 
-    };
-}*/
-
 function PintaArtefactosExamen(Datos) {
     console.log('Todas las propiedades requeridas existen');
     
@@ -1274,8 +1173,9 @@ function llenacamposverificados(datosVerificados){
 }*/
 
 function GetResults(){
+    Datos = JSON.parse(localStorage.getItem('Datos'));
     let examData = Datos.result;
-    let result = {
+    let data = {
         idUser:Datos.idUser,
         idExam:Datos.idExam,
         firstName:Datos.firstName,
@@ -1288,9 +1188,9 @@ function GetResults(){
         userEndTime: Datos.userEndTime,        
         chapter:Datos.chapter,
         CodExam:Datos.CodExam,
-        results: examData
+        result: examData
     };
-    return result;
+    return data;
 }
 //Funcion que inicializa los elementos del DOM con el template y el Fragmento
 function initMain() {
@@ -1337,10 +1237,10 @@ function ejecutaAccion() {
             mostrarModal()
 
             //Generar PDF para el estudiante
-            imprimirExamen('Est');
+            //imprimirExamen('Est');
 
             // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
-            finalizarExamen();
+            //finalizarExamen();
         }
         else{
             
@@ -1360,3 +1260,16 @@ function ejecutaAccion() {
         alert('Faltan Datos');
     }
 }
+
+window.addEventListener('beforeunload', function (event) {
+    // Este evento captura cuando la página está a punto de recargarse o cerrarse
+    event.preventDefault();
+    Datos.result = null;
+    localStorage.removeItem(LOCAL_COLORS_KEY);
+    //colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
+    //localStorage.setItem(LOCAL_COLORS_KEY, JSON.stringify(colorBorders));
+    localStorage.setItem('Datos', JSON.stringify(Datos));
+    alert('OJOOO')
+    console.log("La página está siendo recargada.");
+    // Aquí puedes ejecutar acciones específicas cuando se detecta la recarga de la página
+});
