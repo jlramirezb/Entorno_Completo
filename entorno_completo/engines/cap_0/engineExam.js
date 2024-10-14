@@ -1260,16 +1260,35 @@ function ejecutaAccion() {
         alert('Faltan Datos');
     }
 }
-
+let isLeaving = false;
 window.addEventListener('beforeunload', function (event) {
     // Este evento captura cuando la página está a punto de recargarse o cerrarse
-    event.preventDefault();
-    Datos.result = null;
+    const confirmationMessage = '¿Estás seguro de que deseas salir?';
+    event.returnValue = confirmationMessage; 
+    event.preventDefault();    
+    //Datos.result = null;
+    //localStorage.removeItem(LOCAL_COLORS_KEY);    
+    //localStorage.setItem('Datos', JSON.stringify(Datos));
+    alert('OJOOO')
+    console.log("La página está siendo recargada.");
+    // Aquí puedes ejecutar acciones específicas cuando se detecta la recarga de la página
+});
+window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && isLeaving) {
+        // El usuario ha decidido no salir (ha vuelto a la página)
+        console.log('El usuario ha decidido no recargar la página. Ejecutando acciones...');
+        // Aquí puedes ejecutar las acciones que desees
+        // Por ejemplo, restaurar datos o mostrar un mensaje
+    }else{
+        Datos.result = null;
     localStorage.removeItem(LOCAL_COLORS_KEY);
     //colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
     //localStorage.setItem(LOCAL_COLORS_KEY, JSON.stringify(colorBorders));
     localStorage.setItem('Datos', JSON.stringify(Datos));
-    alert('OJOOO')
-    console.log("La página está siendo recargada.");
-    // Aquí puedes ejecutar acciones específicas cuando se detecta la recarga de la página
+    }
+});
+
+// Restablecer la variable cuando la página se carga
+window.addEventListener('load', () => {
+    isLeaving = false; // Restablecer el estado
 });
