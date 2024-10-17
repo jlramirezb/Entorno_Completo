@@ -1,10 +1,10 @@
 // Clave en Local Storage
 const LOCAL_STORAGE_KEY = 'resultadoExamen';
 const LOCAL_COLORS_KEY = 'colorsExamen';
-const LOCAL_DATOS_KEY = 'Datos';
+const LOCAL_DATOS_KEY = 'DatosX';
 
 // Almacenar el objeto en localStorage
-let Datos = inicializarExamen(LOCAL_DATOS_KEY);
+let DatosX = inicializarExamen(LOCAL_DATOS_KEY);
 
 const exams ={
     eval_1:[[1,9,17],[1,9,17,25]],
@@ -182,7 +182,7 @@ function cargarResultados(key) {
 
 // Función para cargar o inicializar el objeto de resultados
 function inicializarExamen(key) {
-    let resultadosGuardados, colorsBorders, Datos;
+    let resultadosGuardados, colorsBorders, DatosX;
     if (key===LOCAL_STORAGE_KEY) {
         resultadosGuardados = cargarResultados(key);
         if (resultadosGuardados) {
@@ -224,11 +224,13 @@ function inicializarExamen(key) {
     else if(key===LOCAL_DATOS_KEY)
     {
         Datos = cargarResultados(key);
+        console.log(Datos); 
         if (Datos) {
+            //delete Datos;
             return Datos; // Usar los datos cargados para continuar
         }
         else {
-            Datos = {
+            DatosX = {
                 'idUser':'66faf9aceda8f36d30f920e5',
                 'idExam':'66e1f3c8ab116faa26c493ca',
                 'firstName':'estudiante',
@@ -237,7 +239,7 @@ function inicializarExamen(key) {
                 'secondSurname':'estudiante',
                 'gender':'Masculino',
                 'email':'app.6@gmail.com',	
-                'codExam': 'Modelo 5',
+                'codExam': 'Modelo 2',
                 'curso':'Fragata',
                 'chapter':'Capítulo 0',
                 'category':'Educación Superior',
@@ -249,8 +251,8 @@ function inicializarExamen(key) {
                 'userStartTime':null,
                 'userEndTime':null
             }
-            localStorage.setItem(key, JSON.stringify(Datos));
-            return Datos; // Devolver el nuevo objeto inicializado
+            localStorage.setItem(key, JSON.stringify(DatosX));
+            return DatosX; // Devolver el nuevo objeto inicializado
         }
     }
 }
@@ -516,9 +518,9 @@ function cleanArt(resets,resultadoExamen,borderColor){
 async function guardarResultados(resultados) {
     await new Promise((resolve, reject) => {
         try {
-            let Datos = JSON.parse(localStorage.getItem('Datos'));
+            let Datos = JSON.parse(localStorage.getItem(LOCAL_DATOS_KEY));
             Datos.result = resultados;
-            localStorage.setItem('Datos', JSON.stringify(Datos));
+            localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(Datos));
             resolve();
         } catch (error) {
             reject(error);
@@ -701,7 +703,7 @@ function PintaBordes (borderColor){
 // Definir la función finalizarExamen
 function finalizarExamen() {
     // Obtener los datos almacenados en localStorage
-    const storedData = localStorage.getItem('Datos');
+    const storedData = localStorage.getItem(LOCAL_DATOS_KEY);
     if (!storedData) {
         alert('No se encontraron datos para el examen.');
         return;
@@ -721,7 +723,7 @@ function finalizarExamen() {
     // Almacenar la hora de inicio y finalización en los datos del examen
     examData.userStartTime = startDate;
     examData.userEndTime = endDate;
-    localStorage.setItem('Datos', JSON.stringify(examData));
+    localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(examData));
 
     console.log(startDate, endDate, timeElapsed);
 
@@ -731,10 +733,10 @@ function finalizarExamen() {
     if (!resultData.result) {
         alert('No ha respondido ninguna pregunta.');
         examData.userEndTime = null;
-        localStorage.setItem('Datos', JSON.stringify(examData));
+        localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(examData));
     } else {
-        if(Datos.userEndTime !== null){
-            console.log('Fecha de fin examen user asignada: ' + Datos.userEndTime);
+        if(DatosX.userEndTime !== null){
+            console.log('Fecha de fin examen user asignada: ' + DatosX.userEndTime);
             mostrarResultados(result); // Mostrar los resultados del examen          
             // Limpiar el almacenamiento local
             const keysToRemove = [
@@ -1070,7 +1072,7 @@ function mostrarReglasExamen(paginaExamen) {
             localStorage.setItem('fechaInicioEst', fechaInicioEst);
         }
         Datos.userStartTime = fechaInicioEst;
-        localStorage.setItem('Datos', JSON.stringify(Datos));
+        localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(Datos));
         PintaBordes(colorBorders);
         paginaExamen.style.display = 'block';
     });
@@ -1160,7 +1162,7 @@ function llenacamposverificados(datosVerificados){
     document.getElementById('Categoria').innerHTML = datosVerificados.category;
     document.getElementById('materia').innerHTML = datosVerificados.curso;
     document.getElementById('seccion').innerHTML = datosVerificados.liceo;
-    document.getElementById('nombreEstudiante').innerHTML = datosVerificados.firstName + ' ' + Datos.secondName;
+    document.getElementById('nombreEstudiante').innerHTML = datosVerificados.firstName + ' ' + datosVerificados.secondName;
     document.getElementById('correoEstudiante').innerHTML = datosVerificados.email;
     document.getElementById('capExam').innerHTML = datosVerificados.chapter;
     document.getElementById('codExam').innerHTML = datosVerificados.codExam;
@@ -1173,7 +1175,7 @@ function llenacamposverificados(datosVerificados){
 }*/
 
 function GetResults(){
-    Datos = JSON.parse(localStorage.getItem('Datos'));
+    let Datos = JSON.parse(localStorage.getItem(LOCAL_DATOS_KEY));
     let examData = Datos.result;
     let data = {
         idUser:Datos.idUser,
@@ -1204,7 +1206,7 @@ function initMain() {
 };
 
 function ejecutaAccion() {
-    Datos = JSON.parse(localStorage.getItem('Datos'));
+    let Datos = JSON.parse(localStorage.getItem(LOCAL_DATOS_KEY));
     const positive = VerificaDatos(Datos);
 
     if (positive)
@@ -1280,11 +1282,14 @@ window.addEventListener('visibilitychange', () => {
         // Aquí puedes ejecutar las acciones que desees
         // Por ejemplo, restaurar datos o mostrar un mensaje
     }else{
-        Datos.result = null;
-    localStorage.removeItem(LOCAL_COLORS_KEY);
+        //DatosX.result = null;
+        
+        DatosX = cargarResultados(LOCAL_DATOS_KEY);
+        DatosX.result = null;
+        localStorage.removeItem(LOCAL_COLORS_KEY);
     //colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
     //localStorage.setItem(LOCAL_COLORS_KEY, JSON.stringify(colorBorders));
-    localStorage.setItem('Datos', JSON.stringify(Datos));
+    localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(DatosX));
     }
 });
 
