@@ -1292,3 +1292,4 @@ window.addEventListener('visibilitychange', () => {
 window.addEventListener('load', () => {
     isLeaving = false; // Restablecer el estado
 });
+//FIN
