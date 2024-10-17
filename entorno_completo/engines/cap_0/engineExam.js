@@ -103,7 +103,7 @@ function localStorageSeleccionados(Pregunta,min,max,totalale){
 function localStoragePreguntasExamen(){
     let position = []; //= Datos.SeleccionadosP1;
     let position2 = []; //= Datos.SeleccionadosP2;
-    [position, position2] = getPosition(Datos.codExam);
+    [position, position2] = getPosition(DatosX.codExam);
     return [position,position2];
 }    
 
@@ -223,11 +223,11 @@ function inicializarExamen(key) {
     }
     else if(key===LOCAL_DATOS_KEY)
     {
-        Datos = cargarResultados(key);
-        console.log(Datos); 
-        if (Datos) {
+        DatosX = cargarResultados(key);
+        console.log(DatosX); 
+        if (DatosX) {
             //delete Datos;
-            return Datos; // Usar los datos cargados para continuar
+            return DatosX; // Usar los datos cargados para continuar
         }
         else {
             DatosX = {
@@ -735,12 +735,13 @@ function finalizarExamen() {
         examData.userEndTime = null;
         localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(examData));
     } else {
-        if(DatosX.userEndTime !== null){
-            console.log('Fecha de fin examen user asignada: ' + DatosX.userEndTime);
+        if(resultData.userEndTime !== null){
+            console.log('Fecha de fin examen user asignada: ' + resultData.userEndTime);
             mostrarResultados(result); // Mostrar los resultados del examen          
             // Limpiar el almacenamiento local
             const keysToRemove = [
                 'LOCAL_STORAGE_KEY',
+                'LOCAL_DATOS_KEY',
                 'LOCAL_COLORS_KEY',
                 'SeleccionadosP1',
                 'SeleccionadosP2',
@@ -1071,8 +1072,8 @@ function mostrarReglasExamen(paginaExamen) {
             fechaInicioEst = new Date();
             localStorage.setItem('fechaInicioEst', fechaInicioEst);
         }
-        Datos.userStartTime = fechaInicioEst;
-        localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(Datos));
+        DatosX.userStartTime = fechaInicioEst;
+        localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(DatosX));
         PintaBordes(colorBorders);
         paginaExamen.style.display = 'block';
     });
@@ -1263,6 +1264,7 @@ function ejecutaAccion() {
     }
 }
 let isLeaving = false;
+let userStartTime = null;
 window.addEventListener('beforeunload', function (event) {
     // Este evento captura cuando la página está a punto de recargarse o cerrarse
     const confirmationMessage = '¿Estás seguro de que deseas salir?';
@@ -1271,8 +1273,9 @@ window.addEventListener('beforeunload', function (event) {
     //Datos.result = null;
     //localStorage.removeItem(LOCAL_COLORS_KEY);    
     //localStorage.setItem('Datos', JSON.stringify(Datos));
-    alert('OJOOO')
     console.log("La página está siendo recargada.");
+    userStartTime = DatosX.userStartTime;
+    console.log(DatosX);
     // Aquí puedes ejecutar acciones específicas cuando se detecta la recarga de la página
 });
 window.addEventListener('visibilitychange', () => {
@@ -1282,14 +1285,14 @@ window.addEventListener('visibilitychange', () => {
         // Aquí puedes ejecutar las acciones que desees
         // Por ejemplo, restaurar datos o mostrar un mensaje
     }else{
-        //DatosX.result = null;
-        
+        //DatosX.result = null;        
         DatosX = cargarResultados(LOCAL_DATOS_KEY);
         DatosX.result = null;
+        DatosX.userStartTime = userStartTime;
         localStorage.removeItem(LOCAL_COLORS_KEY);
-    //colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
-    //localStorage.setItem(LOCAL_COLORS_KEY, JSON.stringify(colorBorders));
-    localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(DatosX));
+        //colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
+        //localStorage.setItem(LOCAL_COLORS_KEY, JSON.stringify(colorBorders));
+        localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(DatosX));
     }
 });
 
