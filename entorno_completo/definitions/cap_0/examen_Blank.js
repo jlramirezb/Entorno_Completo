@@ -1061,7 +1061,7 @@ let rDef={
                 position: [c[1].x, c[1].y],
                 value: '(x,y)',
             },
-            {
+            /*{
                 position: [c[1].x, -c[1].y],
                 value: '(x,-y)',
             },
@@ -1072,7 +1072,7 @@ let rDef={
             {
                 position: [c[1].y, c[1].x],
                 value: '(y,x)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1093,7 +1093,7 @@ let rDef={
                 position: [c[5].x, c[5].y],
                 value: '(x,y)', 
             },
-            {
+            /*{
                 position: [-c[5].x, -c[5].y],
                 value: '(-x,-y)',
             },
@@ -1104,7 +1104,7 @@ let rDef={
             {
                 position: [c[5].y, c[5].x],
                 value: '(y,x)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1125,7 +1125,7 @@ let rDef={
                 position: [c[9].x, c[9].y],
                 value: '(x,y)', 
             },
-            {
+            /*{
                 position: [-c[9].x, -c[9].y],
                 value: '(-x,y)',
             },
@@ -1136,7 +1136,7 @@ let rDef={
             {
                 position: [c[9].y, c[9].x],
                 value: '(y,x)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1157,7 +1157,7 @@ let rDef={
                 position: [c[13].x, c[13].y],
                 value: '(x,y)',
             },
-            {
+            /*{
                 position: [c[13].x, -c[13].y],
                 value: '(x,-y)',
             },
@@ -1168,7 +1168,7 @@ let rDef={
             {
                 position: [c[13].y, c[13].x],
                 value: '(y,x)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1190,7 +1190,7 @@ let rDef={
                 position: [c[17].x, c[17].y],
                 value: '(x,y)',
             },
-            {
+            /*{
                 position: [-c[17].x, -c[17].y],
                 value: '(-x,-y)',
             },
@@ -1201,7 +1201,7 @@ let rDef={
             {
                 position: [2*c[17].y, c[17].x],
                 value: '(2y,x)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1222,7 +1222,7 @@ let rDef={
                 position: [c[21].x, c[21].y],
                 value: '(x,y)',
             },
-            {
+            /*{
                 position: [c[21].x, -c[21].y],
                 value: '(x,-y)',
             },
@@ -1233,7 +1233,7 @@ let rDef={
             {
                 position: [c[21].y, c[21].x],
                 value: '(y,x)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1255,7 +1255,7 @@ let rDef={
                 position: [c[25].x, c[25].y],
                 value: '(x,y)',
             },
-            {
+            /*{
                 position: [c[25].x, -c[25].y],
                 value: '(x,-y)',
             },
@@ -1266,7 +1266,7 @@ let rDef={
             {
                 position: [c[25].y, c[25].x],
                 value: '(y,x)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1288,7 +1288,7 @@ let rDef={
                 position: [c[29].x, c[29].y],
                 value: '(x,y)',
             },
-            {
+            /*{
                 position: [c[29].x, -c[29].y],
                 value: '(x,-y)',
             },
@@ -1299,7 +1299,7 @@ let rDef={
             {
                 position: [c[29].y, c[29].x],
                 value: '(y,x)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1321,7 +1321,7 @@ let rDef={
                 position: [0, c[2].y],
                 value: '(0,b)',
             },
-            {
+            /*{
                 position: [c[2].x, 0],
                 value: '(a,0)',
             },
@@ -1340,7 +1340,7 @@ let rDef={
             {
                 position: [c[2].x, c[2].x],
                 value: '(a,a)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1363,7 +1363,7 @@ let rDef={
                 position: [0, c[6].y],
                 value: '(0,b)',
             },
-            {
+            /*{
                 position: [c[6].x, 0],
                 value: '(a,0)',
             },
@@ -1382,7 +1382,7 @@ let rDef={
             {
                 position: [c[6].y, c[6].y],
                 value: '(b,b)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1404,7 +1404,7 @@ let rDef={
                 position: [0, c[10].y],
                 value: '(0,b)',
             },
-            {
+            /*{
                 position: [c[10].x, 0],
                 value: '(a,0)',
             },
@@ -1423,7 +1423,7 @@ let rDef={
             {
                 position: [c[10].y, -c[10].y],
                 value: '(b,-b)',
-            },
+            },*/
         ],
         /*conditions: {
             texterror: {
@@ -1445,7 +1445,7 @@ let rDef={
                 position: [0, c[14].y],
                 value: '(0,b)',
             },
-            {
+            /*{
                 position: [c[14].x, 0],
                 value: '(a,0)',
             },
@@ -1464,7 +1464,7 @@ let rDef={
             {
                 position: [c[14].y, -c[14].x],
                 value: '(b,-a)',
-            },
+            },*/
         ],
         conditions: {
             texterror: {
