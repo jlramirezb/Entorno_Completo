@@ -737,7 +737,7 @@ function finalizarExamen() {
     } else {
         if(resultData.userEndTime !== null){
             console.log('Fecha de fin examen user asignada: ' + resultData.userEndTime);
-            mostrarResultados(result); // Mostrar los resultados del examen          
+            mostrarResultados(resultData.result); // Mostrar los resultados del examen          
             // Limpiar el almacenamiento local
             const keysToRemove = [
                 'LOCAL_STORAGE_KEY',
