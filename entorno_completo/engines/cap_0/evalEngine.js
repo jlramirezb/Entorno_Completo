@@ -23,11 +23,11 @@ function userDatevalidation(userObject){
         if(state) {
             setHeaderData(userObject)
             document.getElementById('rules').style.display = 'block';
-            document.getElementById('buttonRule').addEventListener('click', ()=>
+            document.getElementById('buttonRule').addEventListener('click', ()=>{
+                document.getElementById('rules').style.display = 'none';
+                document.getElementById('paginaExamen').style.display = 'block';
                 generateEvaluationArtifacts(userObject)
-            )
-
-            
+            })            
         }
 
                 // aqui puedes decidir no mostrar el examen 
@@ -117,6 +117,73 @@ function generateEvaluationArtifacts(userObject){
     agregarEncabezadosPregunta();
 
 }
+
+function agregarEncabezadosPregunta() {
+    const divs = document.querySelectorAll('.borderDefault');
+
+    for (let i = 3; i < divs.length; i++) {
+        let divPregunta = document.createElement('div');
+        divPregunta.style.display = 'flex';
+
+        let spanPregunta = document.createElement('span');
+        spanPregunta.style.float = 'left';
+        spanPregunta.textContent = `Artef. ${i + 1}`;
+        spanPregunta.classList.add('question-header');
+
+        let spanPuntaje = document.createElement('span');
+        spanPuntaje.style.float = 'right';
+        spanPuntaje.textContent = (i === 4 || i === 6) ? '4 Pts' : '3 Pts';
+        spanPuntaje.classList.add("oval-container");
+
+        divPregunta.appendChild(spanPregunta);
+        divPregunta.appendChild(spanPuntaje);
+        divs[i].insertBefore(divPregunta, divs[i].firstChild);
+    }
+}
+
+function pintarArtefactos(artefactaux) {
+    let containerAll = document.getElementById("container-all-artifact");
+
+    artefactaux.forEach((element, index) => {
+        let artifactDiv = document.getElementById(element);
+        let newDiv = crearDivArtefacto(index + 1, artifactDiv);
+        containerAll.appendChild(newDiv);
+    });
+}
+
+function crearDivArtefacto(i, artifactDiv) {
+    let newDiv = document.createElement("div");
+    newDiv.id = "newDiv";
+
+    let headersDiv = document.createElement("div");
+    headersDiv.style.display = "flex";
+    headersDiv.style.justifyContent = "space-between";
+
+    let questionHeader = document.createElement("div");
+    questionHeader.className = "question-header";
+    questionHeader.textContent = `Artef. ${i}`;
+
+    let scoreHeader = document.createElement("div");
+    scoreHeader.className = "oval-container";
+    scoreHeader.textContent = "2 Pts";
+
+    headersDiv.appendChild(questionHeader);
+    headersDiv.appendChild(scoreHeader);
+    newDiv.appendChild(headersDiv);
+    newDiv.appendChild(artifactDiv);
+
+    return newDiv;
+}
+
+function initMain() {
+    generation(def);
+    generator(rDef);
+    mainCartesian(defBoards, rDef);
+    //evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
+    //console.log(evaluacion);
+    //colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
+    //console.log(colorBorders);
+};
 
 function renombrarArtefactos(def) {
     let keys = Object.keys(def).sort((a, b) => parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]));
