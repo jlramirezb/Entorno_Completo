@@ -1321,10 +1321,11 @@ let rDef={
                 position: [0, c[2].y],
                 value: '(0,b)',
             },
-            /*{
+            {
                 position: [c[2].x, 0],
                 value: '(a,0)',
             },
+            /*
             {
                 position: [c[2].y, 0],
                 value: '(b,0)',
@@ -1363,10 +1364,11 @@ let rDef={
                 position: [0, c[6].y],
                 value: '(0,b)',
             },
-            /*{
+            {
                 position: [c[6].x, 0],
                 value: '(a,0)',
             },
+            /*
             {
                 position: [c[6].y, 0],
                 value: '(b,0)',
@@ -1404,10 +1406,11 @@ let rDef={
                 position: [0, c[10].y],
                 value: '(0,b)',
             },
-            /*{
+            {
                 position: [c[10].x, 0],
                 value: '(a,0)',
             },
+            /*
             {
                 position: [-c[10].x, 0],
                 value: '(-a,0)',
@@ -1445,10 +1448,11 @@ let rDef={
                 position: [0, c[14].y],
                 value: '(0,b)',
             },
-            /*{
+            {
                 position: [c[14].x, 0],
                 value: '(a,0)',
             },
+            /*
             {
                 position: [-c[14].y, 0],
                 value: '(-b,0)',
@@ -1466,6 +1470,7 @@ let rDef={
                 value: '(b,-a)',
             },*/
         ],
+        /*
         conditions: {
             texterror: {
                 time: 6,
@@ -1477,6 +1482,7 @@ let rDef={
                 { p: [c[14].y, -c[14].x], text: 'b,-a' },
             ],
         },  
+        */
     },
     artifact_13: {
         defBoard: 'board_17',
@@ -1490,6 +1496,7 @@ let rDef={
                 position: [c[18].x, 0],
                 value: '(a,0)',
             },
+            /*
             {
                 position: [c[18].y, 0],
                 value: '(b,0)',
@@ -1506,6 +1513,7 @@ let rDef={
                 position: [c[18].x, c[18].x],
                 value: '(a,a)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1531,6 +1539,7 @@ let rDef={
                 position: [c[22].x, 0],
                 value: '(a,0)',
             },
+            /*
             {
                 position: [0, c[22].x],
                 value: '(0,a)',
@@ -1547,6 +1556,7 @@ let rDef={
                 position: [-c[22].x, c[22].y],
                 value: '(-a,b)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1572,6 +1582,7 @@ let rDef={
                 position: [c[26].x, 0],
                 value: '(a,0)',
             },
+            /*
             {
                 position: [c[26].y, 0],
                 value: '(b,0)',
@@ -1588,6 +1599,7 @@ let rDef={
                 position: [c[26].y, -c[26].y],
                 value: '(b,-b)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1613,6 +1625,7 @@ let rDef={
                 position: [c[30].x, 0],
                 value: '(a,0)',
             },
+            /*
             {
                 position: [0,c[30].x],
                 value: '(0,a)',
@@ -1629,6 +1642,7 @@ let rDef={
                 position: [c[30].y, c[30].y],
                 value: '(b,b)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1651,6 +1665,7 @@ let rDef={
                 position: [c[3].x , c[3].y ],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[3].x-1, c[3].y],
                 value: '(x-1,y)',
@@ -1663,6 +1678,7 @@ let rDef={
                 position: [c[3].x, c[3].y-2 ],
                 value: '(x,y-2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1683,6 +1699,7 @@ let rDef={
                 position: [c[7].x , c[7].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[7].x-1.5, c[7].y],
                 value: '(x-1.5,y)',
@@ -1695,6 +1712,7 @@ let rDef={
                 position: [c[7].x, c[7].y-1],
                 value: '(x,y-1)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1715,6 +1733,7 @@ let rDef={
                 position: [c[11].x , c[11].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[11].x+2, c[11].y],
                 value: '(x+2,y)',
@@ -1727,6 +1746,7 @@ let rDef={
                 position: [c[11].x, c[11].y-1 ],
                 value: '(x,y-1)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1747,6 +1767,7 @@ let rDef={
                 position: [c[15].x, c[15].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[15].x-2.5, c[15].y],
                 value: '(x-2.5,y)',
@@ -1759,6 +1780,7 @@ let rDef={
                 position: [c[15].x, c[15].y-1],
                 value: '(x,y-1)',
             },
+            */
         ],    
         /*conditions: {
             texterror: {
@@ -1779,6 +1801,7 @@ let rDef={
                 position: [c[19].x, c[19].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[19].x-1, c[19].y],
                 value: '(x-1,y)',
@@ -1791,6 +1814,7 @@ let rDef={
                 position: [c[19].x, c[19].y-2],
                 value: '(x,y-2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1811,6 +1835,7 @@ let rDef={
                 position: [c[23].x, c[23].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[23].x-2, c[23].y],
                 value: '(x-2,y)',
@@ -1823,6 +1848,7 @@ let rDef={
                 position: [c[23].x, c[23].y-2.5],
                 value: '(x,y-2.5)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1843,6 +1869,7 @@ let rDef={
                 position: [c[27].x, c[27].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[27].x-2, c[27].y],
                 value: '(x-2,y)',
@@ -1855,6 +1882,7 @@ let rDef={
                 position: [c[27].x, c[27].y-0.75],
                 value: '(x,y-0.75)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1875,6 +1903,7 @@ let rDef={
                 position: [c[31].x, c[31].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[31].x-2, c[31].y],
                 value: '(x-2,y)',
@@ -1887,6 +1916,7 @@ let rDef={
                 position: [c[31].x, c[31].y-1],
                 value: '(x,y-1)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1908,6 +1938,7 @@ let rDef={
                 position: [c[4].x , c[4].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[4].x * -2, c[4].y],
                 value: '(-2x,y)',
@@ -1924,6 +1955,7 @@ let rDef={
                 position: [c[4].x / 2.0, c[4].y /2.0],
                 value: '(x/2,y/2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1945,6 +1977,7 @@ let rDef={
                 position: [c[8].x , c[8].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[8].x, c[8].y * 3],
                 value: '(x,3y)',
@@ -1961,6 +1994,7 @@ let rDef={
                 position: [c[8].x / 2.0, c[8].y /2.0],
                 value: '(x/2,y/2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -1982,6 +2016,7 @@ let rDef={
                 position: [c[12].x , c[12].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[12].x * -1, c[12].y],
                 value: '(-x,y)',
@@ -1998,6 +2033,7 @@ let rDef={
                 position: [c[12].x / 2.0, c[12].y /2.0],
                 value: '(x/2,y/2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -2019,6 +2055,7 @@ let rDef={
                 position: [c[16].x, c[16].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[16].x * 2, c[16].y * -1],
                 value: '(2x,-y)',
@@ -2035,6 +2072,7 @@ let rDef={
                 position: [c[16].x / 2.0, c[16].y / 2.0],
                 value: '(x/2, y/2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -2056,6 +2094,7 @@ let rDef={
                 position: [c[20].x, c[20].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[20].x * -2, c[20].y],
                 value: '(-2x, y)',
@@ -2072,6 +2111,7 @@ let rDef={
                 position: [c[20].x / 2.0, c[20].y / 2.0],
                 value: '(x/2, y/2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -2093,6 +2133,7 @@ let rDef={
                 position: [c[24].x, c[24].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[24].x * 3, c[24].y],
                 value: '(3x, y)',
@@ -2109,6 +2150,7 @@ let rDef={
                 position: [c[24].x / 2.0, c[24].y / 2.0],
                 value: '(x/2, y/2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -2130,6 +2172,7 @@ let rDef={
                 position: [c[28].x, c[28].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[28].x * -1, c[28].y * -1],
                 value: '(-x, -y)',
@@ -2146,6 +2189,7 @@ let rDef={
                 position: [c[28].x / 2.0, c[28].y / 2.0],
                 value: '(x/2, y/2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
@@ -2167,6 +2211,7 @@ let rDef={
                 position: [c[32].x, c[32].y],
                 value: '(x,y)',
             },
+            /*
             {
                 position: [c[32].x * -2, c[32].y * -1],
                 value: '(-2x, -y)',
@@ -2183,6 +2228,7 @@ let rDef={
                 position: [c[32].x / 2.0, c[32].y / 2.0],
                 value: '(x/2, y/2)',
             },
+            */
         ],
         /*conditions: {
             texterror: {
