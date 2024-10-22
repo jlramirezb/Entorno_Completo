@@ -117,6 +117,58 @@ function generateEvaluationArtifacts(userObject){
     agregarEncabezadosPregunta();
 
 }
+
+function renombrarArtefactos(def) {
+    let keys = Object.keys(def).sort((a, b) => parseInt(a.split('_')[1]) - parseInt(b.split('_')[1]));
+    let newObj = {};
+
+    keys.forEach((key, index) => {
+        newObj[`artifact_${index + 1}`] = def[key];
+    });
+
+    return newObj;
+}
+
+function ajustarPosition(position2) {
+    return position2.map(x => x - 1);
+}
+function procesarRdef(rDef, position2) {
+    let nuevoRdef = filtrarContents(rDef, position2);
+    return filtrarRdef(nuevoRdef, position2);
+}
+function filtrarRdef(rdef, indices) {
+    for(let i=0;i<indices.length;i++ )
+    {
+        indices[i]=indices[i]+1;
+    }  
+    
+    const nuevoRdef = {};
+    
+    // Copiar la propiedad artifactHtml
+    nuevoRdef.artifactHtml = rdef.artifactHtml;  
+    // Iterar sobre las propiedades de rdef
+    for (const propiedad in rdef) {
+      // Verificar si la propiedad comienza con "artifact_"
+        if (propiedad.startsWith("artifact_")) {
+            // Extraer el índice de la propiedad
+            const indice = parseInt(propiedad.split("_")[1]);
+        
+            // Si el índice no está en el arreglo de índices a eliminar, copiar la propiedad
+            if (indices.includes(indice)) {
+                nuevoRdef[propiedad] = rdef[propiedad];
+            }
+        }
+    }
+    return nuevoRdef;
+}
+function filtrarContents(rdef, indices) {
+    // Verificar si las propiedades existen antes de acceder a ellas
+    if (rdef.artifactHtml && rdef.artifactHtml.datadefault && rdef.artifactHtml.datadefault[0] && rdef.artifactHtml.datadefault[0].contents) {
+        const nuevoContents = rdef.artifactHtml.datadefault[0].contents.filter((_, index) => indices.includes(index));
+        rdef.artifactHtml.datadefault[0].contents = nuevoContents;
+    }
+    return rdef;
+}
 function getPosition(configData) {
     const modelKey = configData.Datos.codExam.replace('Modelo ', 'eval_');
     console.log(modelKey);
@@ -135,7 +187,17 @@ function localStoragePreguntasExamen(){
     [position, position2] = getPosition(configData);
     return [position,position2];
 }
+function filtrarObjeto(objetoDef, arregloPropiedades) {
+    const nuevoObjeto = {};
 
+    for (const propiedad of arregloPropiedades) {
+        console.log(propiedad);
+        if (objetoDef.hasOwnProperty(propiedad)) {
+            nuevoObjeto[propiedad] = objetoDef[propiedad];
+        }
+    }
+    return nuevoObjeto;
+}
 
 //acciones
 //finalizarExamen
