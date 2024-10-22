@@ -54,45 +54,32 @@ var def1 =
               ],
               [
                 {
-                  type: 2,
-                  answers_values: [
-                    "",
-                    "(-3,∞)",
-                    "R-{0,4}",
-                    "(-∞,0)∪(0,4)∪(4,∞)",
-                    "(-∞,∞)"
-                  ],
+                  type: 0,
+                  text: ["(-∞,∞)", null],
                   conditions: {
-                    valueInputs: ["(-∞,∞)"]
-                  }
+                    correctIndex: null
+                  },
                 },
                 {
-                  type: 2,
-                  answers_values: [
-                    "",
-                    "(-∞,4)",
-                    "(-∞,∞)",
-                    "(-∞,1.8)∪(3,∞)",
-                    "R-{0,1.8,3}"
-                  ],
+                  type: 0,
+                  text: ["(-∞,∞)", null],
                   conditions: {
-                    valueInputs: ["(-∞,∞)"]
-                  }
+                    correctIndex: null
+                  },
                 },
                 {
-                  type: 3,
-                  inputsDefault: [["", false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ["0, 1, 3", null],
                   conditions: {
-                    valueInputs: [0, 1, 3]
-                  }
+                    correctIndex: null
+                  },
                 },
                 {
-                  type: 3,
-                  inputsDefault: [["", false]],
+                  type: 0,
+                  text: ["0", null],
                   conditions: {
-                    valueInputs: [0]
-                  }
+                    correctIndex: null
+                  },
                 }
               ],
               [
@@ -127,56 +114,32 @@ var def1 =
               ],
               [
                 {
-                  type: 2,
-                  answers_values: [
-                    "",
-                    "(-∞,0)∪(1,3)∪[4,∞)",
-                    "(-∞,0]∪[1,3]∪[4,∞)",
-                    "(-3,0)∪(1,3)∪[4,∞)",
-                    "(-3,0]∪[1,3]∪[4,∞)"
-                  ],
+                  type: 0,
+                    text: ["(-∞,0) ∪ (1,3) ∪ [4,∞)", null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                },
+                {
+                  type: 0,
+                  text: ["(0,1) ∪ (3,4)", null],
                   conditions: {
-                    valueInputs: ["(-∞,0)∪(1,3)∪[4,∞)"]
+                    correctIndex: null
                   }
                 },
                 {
-                  type: 2,
-                  answers_values: [
-                    "",
-                    "(0,1]∪[3,4)",
-                    "[0,1]∪[3,4]",
-                    "(0,1)∪(3,4)",
-                    "[0,1)∪(3,4]"
-                  ],
+                  type: 0,
+                  text: ["(0,2) ∪ (4,5)", null],
                   conditions: {
-                    valueInputs: ["(0,1)∪(3,4)"]
+                    correctIndex: null
                   }
                 },
                 {
-                  type: 2,
-                  answers_values: [
-                    "",
-                    "(0,2]∪(4,5)",
-                    "[0,2]∪[4,5]",
-                    "(0,2]∪[4,5]",
-                    "(0,2)∪(4,5)"
-                  ],
+                  type: 0,
+                  text: ["(-∞,0) ∪ (2,4) ∪ (5,∞)", null],
                   conditions: {
-                    valueInputs: ["(0,2)∪(4,5)"]
+                    correctIndex: null
                   }
-                },
-                {
-                  type: 2,
-                  answers_values: [
-                    "",
-                    "(-3,0]∪(2,4)∪[5,∞)",
-                    "(-∞,0]∪(2,4)∪[5,∞)",
-                    "(-∞,0)∪(2,4)∪(5,∞)",
-                    "(-3,0)∪(2,4)∪(5,∞)"
-                  ],
-                  conditions: {
-                    valueInputs: ["(-∞,0)∪(2,4)∪(5,∞)"]
-                  },
                 },
               ],
             ],
@@ -234,33 +197,31 @@ var def1 =
               //Validacion terceras caracteristicas, Examen 1
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['1.8, 4', null],
                   conditions: {
-                    valueInputs: [1.8,4]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['2, 5', null],
                   conditions: {
-                    valueInputs: [2,5]
+                    correctIndex: null
                   }
                 }
               ],
@@ -298,34 +259,32 @@ var def1 =
               //Validacion cuartas caracteristicas
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['0, 3', null],
                   conditions: {
-                    valueInputs: [0,3]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['0, 4', null],
                   conditions: {
-                    valueInputs: [0,4]
-                  },
+                    correctIndex: null
+                  }
                 },
               ],
             ],
@@ -389,30 +348,24 @@ var def1 =
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault:[["4",false]],
+                  type: 0,
+                  text: ['4', null],
                   conditions: {
-                    valueInputs: ['\\geq4','4'],
-                    evaluateCote:{
-                      top: 4
-                    }
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault:[["1.8",false]],
+                  type: 0,
+                  text: ['1.8', null],
                   conditions: {
-                    valueInputs: ['\\geq1.8','1,8'],
-                    evaluateCote:{
-                      top: 1.8
-                    }
+                    correctIndex: null
                   }
                 },
               ],
@@ -455,27 +408,24 @@ var def1 =
                     }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 },
                 {
-                  type: 3,
-                  inputsDefault:[["0",false]],
+                  type: 0,
+                  text: ['0', null],
                   conditions: {
-                    valueInputs: ['\\leq0','0'],
-                    evaluateCote:{
-                      bottom: 0
-                    }
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 },
               ],
@@ -539,40 +489,38 @@ var def1 =
               ],              
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['0.2', null],
                   conditions: {
-                    valueInputs: [0.2]
+                    correctIndex: null
                   }
                 },
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['-1.8', null],
                   conditions: {
-                    valueInputs: [-1.8]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['3', null],
                   conditions: {
-                    valueInputs: [3]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['0.7, 3.3', null],
                   conditions: {
-                    valueInputs: [0.7,3.3]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['2, -2.2', null],
                   conditions: {
-                    valueInputs: [2,-2.2]
+                    correctIndex: null
                   }
                 }
               ],
@@ -632,31 +580,31 @@ var def1 =
               [
                 {
                   //Validacion primeras caracteristicas, Examen 2
-                  type: 2,
-                  answers_values:["","(-∞,-1)∪(0,3.5)∪(3.5,∞)","(-∞,∞)","(-∞,-1]∪(0,∞)","(-∞,-1)∪(0,∞)"],
+                  type: 0,
+                  text: ['(-∞,-1] ∪ (0,∞)', null],
                   conditions: {
-                    valueInputs:["(-∞,-1]∪(0,∞)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","(-∞,-0.5)∪(0,∞)","(-∞,0)∪(1,∞)","(-∞,-0.5)∪(0,3]","(-∞,-0.5)∪(1,∞)"],
+                  type: 0,
+                  text: ['(-∞,-0.5) ∪ (0,∞)', null],
                   conditions: {
-                    valueInputs: ['(-∞,-0.5)∪(0,∞)']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 },
               ],
@@ -694,32 +642,32 @@ var def1 =
               //Validacion segundas caracteristicas, Examen 2
               [
                 {
-                  type: 2,       
-                  answers_values:["","(-∞,-1)∪(3.5,∞)","(-∞,-1]∪[3,∞)","(-∞,-1)∪(3,∞)","(-∞,-1]∪[3.5,∞)"],
+                  type: 0,     
+                    text: ['(-∞,-1] ∪ [3.5,∞)', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                }, 
+                {
+                  type: 0,
+                  text: ['(0, 3.5)', null],
                   conditions: {
-                    valueInputs: ["(-∞,-1]∪[3.5,∞)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","(0,3.5]","(0,3.5)","(-1,3.5]","[-1,3.5)"],
+                  type: 0,
+                  text: ['(-∞,-2) ∪ (0,3.5) ∪ (3.5,∞)', null],
                   conditions: {
-                    valueInputs: ["(0,3.5)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","(-∞,-2)∪(0,∞)","(-∞,-2]∪(0,∞)","(-∞,-2)∪(0,3.5)∪(3.5,∞)","(0,3.5)∪(3.5,∞)"],
+                  type: 0,
+                  text: ['(-2, -1)', null],
                   conditions: {
-                    valueInputs: ["(-∞,-2)∪(0,3.5)∪(3.5,∞)"]
+                    correctIndex: null
                   }
-                }, 
-                {
-                  type: 2,
-                  answers_values:["","[-2,-1]","(-2,-1)","(-2,-1]","[-2,-1)"],
-                  conditions: {
-                    valueInputs: ["(-2,-1)"]
-                  },
                 },
               ],
             ],
@@ -777,33 +725,31 @@ var def1 =
                 //Validacion terceras caracteristicas, Examen 2
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['3', null],
                   conditions: {
-                    valueInputs: [3]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['-2', null],
                   conditions: {
-                    valueInputs: [-2]
+                    correctIndex: null
                   }
                 }
               ],
@@ -841,34 +787,32 @@ var def1 =
               //Validacion cuartas caracteristicas Examen 2
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['1, 1.5', null],
                   conditions: {
-                    valueInputs: [1,1.5]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['-1, 3.5', null],
                   conditions: {
-                    valueInputs: [-1,3.5]
-                  },
+                    correctIndex: null
+                  }
                 },
               ],
             ],
@@ -934,31 +878,25 @@ var def1 =
                 }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                inputsDefault:[["3",false]],
-                conditions: {
-                  valueInputs: ['\\geq3','3'],
-                  evaluateCote:{
-                    top: 3
+                type: 0,
+                  text: ['3', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               },
               {
-                type: 3,
-                inputsDefault:[["1.5",false]],
-                conditions: {
-                  valueInputs: ['\\geq1.5','1.5'],
-                  evaluateCote:{
-                    top: 1.5
+                type: 0,
+                  text: ['1.5', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               }, ],
 
               //Segundas caracteristicas, Examen 2
@@ -1003,27 +941,24 @@ var def1 =
                     }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 },
                 {
-                  type: 3,
-                  inputsDefault:[["1",false]],
+                  type: 0,
+                  text: ['1', null],
                   conditions: {
-                    valueInputs: ['\\leq1','1'],
-                    evaluateCote:{
-                      bottom: 1
-                    }
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 },
               ],
@@ -1089,39 +1024,38 @@ var def1 =
               //Validacion terceras caracteristicas, Examen 2
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['3', null],
                   conditions: {
-                    valueInputs: [3]
+                    correctIndex: null
                   }
                 },
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['-2', null],
                   conditions: {
-                    valueInputs: [-2]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['1.5', null],
                   conditions: {
-                    valueInputs: [1.5]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['-1, -3', null],
                   conditions: {
-                    valueInputs: [-1,-3]
+                    correctIndex: null
                   }
                 }
               ],
@@ -1181,32 +1115,31 @@ var def1 =
               [
                 {
                   //Validacion primeras caracteristicas Examen 3
-                  type: 2,
-                  answers_values:["","R-{3}","R-{-2,3}","(-∞,-2)∪(-2,2)∪(3,∞)","(-∞,2)∪(3,∞)"],
+                  type: 0,
+                  text: ['(-∞,2) ∪ (3,∞)', null],
                   conditions: {
-                    valueInputs:["(-∞,2)∪(3,∞)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","(-∞,1.3)∪(1.3,2.3)","(-∞,-3)∪(-3,2.3)","(-∞,-3)∪(-3,1.3)∪(1.3,2.3)","(-∞,2.3]"],
+                  type: 0,
+                    text: ['(-∞,2.3]', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                }, 
+                {
+                  type: 0,
+                  text: ['0, 3.8', null],
                   conditions: {
-                    valueInputs: ['(-∞,2.3]']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['0', null],
                   conditions: {
-                    valueInputs: [0,3.8]
-                  }
-                }, 
-                {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  conditions: {
-                    valueInputs: [0]
+                    correctIndex: null
                   }
                 }
               ],
@@ -1244,31 +1177,31 @@ var def1 =
               //Validacion segundas caracteristicas, Examen 3
               [
                 {
-                  type: 2,       
-                  answers_values:["","(-2,0)∪(3.8,∞)","[-2,0)∪(3.8,∞)","(-2,0)∪[3.8,∞)","[-2,0)∪[3.8,∞)"],
+                  type: 0,     
+                    text: ['[-2,0) ∪ (3.8,∞)  ', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                }, 
+                {
+                  type: 0,
+                  text: ['(-∞,-2) ∪ (0,2) ∪ (3,3.8)', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                }, 
+                {
+                  type: 0,
+                  text: ['(-∞,-2.5) ∪ (3,∞)', null],
                   conditions: {
-                    valueInputs: ["[-2,0)∪(3.8,∞)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","(-∞,-2)∪(0,2)∪(3,3.8)","(-∞,-2)∪(0,2)∪(3,∞)","(-∞,-2)∪[0,2)∪(3,3.8]","(-∞,-2)∪[0,2)∪(3,∞)"],
+                  type: 0,
+                  text: ['(-2.5,-2) ∪ (-2,2)', null],
                   conditions: {
-                    valueInputs: ["(-∞,-2)∪(0,2)∪(3,3.8)"]
-                  }
-                }, 
-                {
-                  type: 2,
-                  answers_values:["","(-∞,-2.5]∪(3,∞)","(-∞,-2.5)∪(3,∞)","(-∞,-2.5)∪(2,∞)","(-∞,-2.5]∪(2,∞)"],
-                  conditions: {
-                    valueInputs: ["(-∞,-2.5)∪(3,∞)"]
-                  }
-                }, 
-                {
-                  type: 2,
-                  answers_values:["","(-2.5,-2)∪(-2,2)","(-2.5,-2)∪(-2,3)","(-2.5,3)","(-2.5,2)"],
-                  conditions: {
-                    valueInputs: ["(-2.5,-2)∪(-2,2)"]
+                    correctIndex: null
                   },
                 },
               ],
@@ -1327,31 +1260,31 @@ var def1 =
               //Validacion terceras caracteristicas, Examen 3
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['2.3', null],
                   conditions: {
-                    valueInputs: [2.3]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['-2', null],
                   conditions: {
-                    valueInputs: [-2]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['-1', null],
                   conditions: {
-                    valueInputs: [-1]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['-2.5', null],
                   conditions: {
-                    valueInputs: [-2.5]
+                    correctIndex: null
                   }
                 }
               ],
@@ -1389,31 +1322,31 @@ var def1 =
               //Validacion cuartas caracteristicas examen 3
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   },
                 },
               ],
@@ -1480,35 +1413,26 @@ var def1 =
                 }
               }, 
               {
-                type: 3,
-                inputsDefault:[["2.3",false]],
-                conditions: {
-                  valueInputs: ['\\geq2.3','2.3'],
-                  evaluateCote:{
-                    top: 2.3
+                type: 0,
+                text: ['2.3', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               }, 
               {
                 //La misma que la anterior, cierto?
-                type: 3,
-                inputsDefault:[["2.3",false]],
-                conditions: {
-                  valueInputs: ['\\geq2.3','2.3'],
-                  evaluateCote:{
-                    top: 2.3
+                type: 0,
+                text: ['2.3', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               }, 
               {
-                type: 3,
-                inputsDefault:[["1.3",false]],
-                conditions: {
-                  valueInputs: ['\\geq1.3','1,3'],
-                  evaluateCote:{
-                    top: 1.3
+                type: 0,
+                text: ['1.3', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               }, ],
 
               //Segundas caracteristicas, Examen 1
@@ -1554,28 +1478,25 @@ var def1 =
                   }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },
               {
                 //Confirmar con el profe.
-                type: 3,
-                inputsDefault:[["-3",false]],
-                conditions: {
-                  valueInputs: ['\\leq-3','-3'],
-                  evaluateCote:{
-                    bottom: -3
+                type: 0,
+                text: ['-3', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               } ,],
             ]
@@ -1641,42 +1562,39 @@ var def1 =
 
               //Validacion terceras caracteristicas, Examen 3
               [{
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [2.3]
-                }
+                type: 0,
+                text: ['2.3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1]
-                }
+                type: 0,
+                text: ['-1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [0,3.8]
-                }
+                type: 0,
+                text: ['0, 3.8', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-1.3,3.7]
-                }
+                type: 0,
+                text: ['-1.3, 3.9', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-3.2,1.8,3.4]
-                }
+                type: 0,
+                text: ['-3.2, 1.8, 3.4', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }],
             ]
           }
@@ -1734,32 +1652,31 @@ var def1 =
               [
                 {
                   //Validacion primeras caracteristicas Examen 4
-                  type: 2,
-                  answers_values:["","(-∞,-2)∪(-2,1)∪(2,∞)","(-∞,-2)∪(-2,1)∪[2,∞)","(-∞,1)∪[2,∞)","(-∞,1)∪(2,∞)"],
+                  type: 0,
+                    text: ['(-∞,1) ∪ [2,∞)', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                }, 
+                {
+                  type: 0,
+                    text: ['[-3.3,∞)', null],
+                    conditions: {
+                      correctIndex: null
+                    }
+                }, 
+                {
+                  type: 0,
+                  text: ['0, 2.5, 3.5', null],
                   conditions: {
-                    valueInputs:["(-∞,1)∪[2,∞)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","[-3.3,∞)","(-∞,∞)","(-∞,-3)∪(-2,∞)","(-3.3,-3)∪(-2,∞)"],
+                  type: 0,
+                  text: ['0', null],
                   conditions: {
-                    valueInputs: ['[-3.3,∞)']
-                  }
-                }, 
-                {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
-                  conditions: {
-                    valueInputs: [0,2.5,3.5]
-                  }
-                }, 
-                {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  conditions: {
-                    valueInputs: [0]
+                    correctIndex: null
                   }
                 }
               ],
@@ -1797,31 +1714,31 @@ var def1 =
               //Validacion segundas caracteristicas, Examen 4
               [
                 {
-                  type: 2,       
-                  answers_values:["","(0,2)∪(2.5,3.5)","(0,1)∪(2.5,3.5)","[0,1)∪[2.5,3.5]","[0,2)∪[2.5,3.5]"],
+                  type: 0,    
+                  text: ['(0,1) ∪ (2.5,3.5)', null],
                   conditions: {
-                    valueInputs: ["(0,1)∪(2.5,3.5)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","(-2,0)∪(2,2.5)∪(3.5,∞)","[-2,0]∪[2,2.5]∪[3.5,∞)","(-∞,0]∪[2,2.5]∪[3.5,∞)","(-∞,0)∪(2,2.5)∪(3.5,∞)"],
+                  type: 0,
+                  text: ['(-∞,0) ∪ (2,2.5) ∪ (3.5,∞)', null],
                   conditions: {
-                    valueInputs: ["(-∞,0)∪(2,2.5)∪(3.5,∞)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","(-2,1)∪(2,3)∪(4.7,∞)","(-∞,-2)∪(-2,1)∪(2,3)","(-∞,1)∪(2,3)∪(4.7,∞)","(-2,1)∪(2,3)"],
+                  type: 0,
+                  text: ['(-2,1) ∪ (2,3) ∪ (4.7,∞)', null],
                   conditions: {
-                    valueInputs: ["(-2,1)∪(2,3)∪(4.7,∞)"]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 2,
-                  answers_values:["","(-∞,-2)∪[3,4.7]","(-∞,-2)∪(3,4.7)","[3,4.7]","(3,4.7)"],
+                  type: 0,
+                  text: ['(3, 4.7)', null],
                   conditions: {
-                    valueInputs: ["(3,4.7)"]
+                    correctIndex: null
                   },
                 },
               ],
@@ -1880,32 +1797,31 @@ var def1 =
               //Validacion terceras caracteristicas, Examen 4
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['∄', null],
                   conditions: {
-                    valueInputs: ['\\nexists']
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['1, -3', null],
                   conditions: {
-                    valueInputs: [1,-3]
+                    correctIndex: null
                   }
                 },
                 {
-                  type: 2,
-                  answers_values:["","∄","(-∞,-2),3","(-∞,-2)","3"],
+                  type: 0,
+                  text: ['(-∞,-2), 3', null],
                   conditions: {
-                    valueInputs: ["(-∞,-2),3"]
+                    correctIndex: null
                   }
                 }
               ],
@@ -1943,32 +1859,31 @@ var def1 =
               //Validacion cuartas caracteristicas Examen 4
               [
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['-3.3', null],
                   conditions: {
-                    valueInputs: [-3.3]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
+                  type: 0,
+                  text: ['4.7', null],
                   conditions: {
-                    valueInputs: [4.7]
+                    correctIndex: null
                   }
                 }, 
                 {
-                  type: 3,
-                  inputsDefault: [['', false]],
-                  oneToManyInput: true,
+                  type: 0,
+                  text: ['-1, -2, -3', null],
                   conditions: {
-                    valueInputs: [-1,-2,-3]
+                    correctIndex: null
                   }
                 },
                 {
-                  type: 2,
-                  answers_values:["","-2","2,-2","(-∞,-2),2,-2","(-∞,-2),-2"],
+                  type: 0,
+                  text: ['(-∞,-2), 2, -2', null],
                   conditions: {
-                    valueInputs: ["(-∞,-2),2,-2"]
+                    correctIndex: null
                   },
                 },
               ],
@@ -2035,28 +1950,25 @@ var def1 =
                 }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
-              }, 
-              {
-                type: 3,
-                inputsDefault:[["1",false]],
-                conditions: {
-                  valueInputs: ['\\geq1','1'],
-                  evaluateCote:{
-                    top: 1
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+              }, 
+              {
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, ],
 
               //Segundas caracteristicas, Examen 4
@@ -2102,33 +2014,24 @@ var def1 =
                   }
               }, 
               {
-                type: 3,
-                inputsDefault:[["-3",false]],
-                conditions: {
-                  valueInputs: ['\\leq-3','-3'],
-                  evaluateCote:{
-                    bottom: -3
+                type: 0,
+                text: ['-3', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               }, 
               {
-                type: 3,
-                inputsDefault:[["-3",false]],
-                conditions: {
-                  valueInputs: ['\\leq-3','-3'],
-                  evaluateCote:{
-                    bottom: -3
+                type: 0,
+                text: ['-3', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               },  
               {
-                type: 3,
-                inputsDefault:[["-3.3",false]],
+                type: 0,
+                text: ['-3.3', null],
                 conditions: {
-                  valueInputs: ['\\leq-3.3','-3.3'],
-                  evaluateCote:{
-                    bottom: -3.3
-                  }
+                  correctIndex: null
                 }
               } ,],
             ]
@@ -2194,40 +2097,39 @@ var def1 =
 
               //Validacion terceras caracteristicas, Examen 4
               [{
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1]
-                }
+                type: 0,
+                text: ['-1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-3]
-                }
+                type: 0,
+                text: ['-3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [1]
-                }
+                type: 0,
+                text: ['1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-0.4,2.3,3.7]
-                }
+                type: 0,
+                text: ['-0.4, 2.3, 3.7', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },],
             ]
           }
@@ -2291,36 +2193,36 @@ var def1 =
 
               [
                 {
-                  type: 2,
-                  answers_values: ['', '(-∞, ∞)', '(-∞, 0) ∪ (0, ∞)', '(-∞, 0) ∪ (0, 2.5) ∪ (2.5, ∞)'],
+                  type: 0,
+                  text: ['(-∞,∞)', null],
                   conditions: {
-                    correctIndex: 1
+                    correctIndex: null
                   }
                 ,
               }, 
               {
-                type: 2,
-                answers_values: ['', '(-3, -1] ∪ [0, 2.5) ∪ (3, 3)', '(-3, -1] ∪ [0, 2.5) ∪ [3, 3]', '[-3, -1] ∪ (0, 3]', '(-3, -1] ∪ [0, 3]'],
-                conditions: {
-                  correctIndex: 2
-                }
+                type: 0,
+                text: ['(-3,-1] ∪ [0,2.5) ∪ [3,3]', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },  
               {
-                type: 2,
-                answers_values: ['', '(-∞, -1) ∪ [0, 2.5)', '(-∞, -1) ∪ (0, 2.5)', '(-∞, -1] ∪ [0, 2.5)'],
-                conditions: {
-                  correctIndex: 2
-                }
+                type: 0,
+                text: ['(-∞,-1) ∪ (0,2.5)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               
               {
-                type: 2,
-                answers_values: ['', '(-1, 0) ∪ [2.5, ∞)', '(-1, 0) ∪ (2.5, ∞)', '(-1, 0)'],
-                conditions: {
-                  correctIndex: 3
-                }
+                type: 0,
+                text: ['(-1,0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               ],
@@ -2361,35 +2263,35 @@ var def1 =
               ],
 
               [{
-                type: 2,
-                answers_values: ['', '(-∞, 0)', '(-∞, 0]', '(-∞, -1)'],
-                conditions: {
-                  correctIndex: 1
-                }
+                type: 0,
+                text: ['(-∞,0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               {
-                type: 2,
-                answers_values: ['', '(0, ∞)', '[0, ∞)', '(0, 2.5) ∪ [3, ∞)'],
-                conditions: {
-                  correctIndex: 1
-                }
+                type: 0,
+                text: ['(0,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [0]
-                }
+                text: ['0', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [0]
-                }
+                text: ['0', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },],
             ]
           }
@@ -2449,35 +2351,35 @@ var def1 =
 
               [
               {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [3]
-                }
+                text: ['3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },
               {
-                type: 2,
-                answers_values: ['', '(2.5, ∞)', '[2.5, ∞)', '[0, 0] ∪ (2.5, ∞)'],
-                conditions: {
-                  correctIndex: 2
-                }
+                type: 0,
+                  text: ['[2.5,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1]
-                }
+                text: ['-1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1]
-                }
+                text: ['-1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }],
 
               [
@@ -2514,34 +2416,33 @@ var def1 =
               ],
 
               [{
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [0,  3]
-                }
+                text: ['0,3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 2,
-                answers_values: ['', '[0, 0] ∪ [2.5, ∞)', '[0, ∞)', '[0, 2.5) ∪ (2.5, ∞)'],
-                conditions: {
-                  correctIndex: 1
-                }
+                type: 0,
+                  text: ['[0,0] ∪ [2.5,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
             ]
@@ -2580,7 +2481,7 @@ var def1 =
                 {
                   type: 0,
                   //text: ['Max.Abs', null],
-                  text: ['(-∞, 0)',null],
+                  text: ['(-∞,0)',null],
                   conditions: {
                     correctIndex: null
                   }
@@ -2615,37 +2516,28 @@ var def1 =
                 ,
               }, 
               {
-                type: 3,
-                inputsDefault: [["-1", false]],
-                conditions: {
-                  valueInputs: ['\\geq-1', '-1'],
-                  evaluateCote:{
-                    top: -1,
+                type: 0,
+                text: ['-1', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               ,
               },  
               {
-                type: 3,
-                inputsDefault: [["1", false]],
-                conditions: {
-                  valueInputs: ['\\geq1', '1'],
-                  evaluateCote:{
-                    top: 1,
+                type: 0,
+                text: ['1', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               ,
               },
               
               {
-                type: 3,
-                inputsDefault: [["3", false]],
-                conditions: {
-                  valueInputs: ['\\geq3', '3'],
-                  evaluateCote:{
-                    top: 3,
+                type: 0,
+                text: ['3', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               ,
               },
               ],
@@ -2670,7 +2562,7 @@ var def1 =
 
                 {
                   type: 0,
-                  text: ['(0, ∞)', null],
+                  text: ['(0,∞)', null],
                   conditions: {
                     correctIndex: null
                   }
@@ -2694,34 +2586,25 @@ var def1 =
               ,
               },
               {
-                  type: 3,
-                  inputsDefault: [["2", false]],
+                  type: 0,
+                  text: ['2', null],
                   conditions: {
-                    valueInputs: ['\\leq2', '2'],
-                    evaluateCote:{
-                      bottom: 2,
-                    }
+                    correctIndex: null
                   }
               ,
               },
               {
-                type: 3,
-                  inputsDefault: [["0", false]],
-                  conditions: {
-                    valueInputs: ['\\leq0', '0'],
-                    evaluateCote:{
-                      bottom: 0,
-                    }
-                  }
+                type: 0,
+                text: ['0', null],
+                conditions: {
+                  correctIndex: null
+                }
               }, {
-                type: 3,
-                  inputsDefault: [["-3", false]],
-                  conditions: {
-                    valueInputs: ['\\leq-3', '-3'],
-                    evaluateCote:{
-                      bottom: -3,
-                    }
-                  }
+                type: 0,
+                text: ['-3', null],
+                conditions: {
+                  correctIndex: null
+                }
               },],
             ]
           }
@@ -2788,41 +2671,40 @@ var def1 =
 
               [
               {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                text: ['3', null],
                 conditions: {
-                  valueInputs: [3]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                text: ['-2', null],
                 conditions: {
-                  valueInputs: [-2]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                text: ['0', null],
                 conditions: {
-                  valueInputs: [0]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['-4', false]],
-                onetoManyInputs: true,
+                text: ['-3.2, -3, -3.1, -3.5', null],
                 conditions: {
-                  valueInputs: [-3.2, -3, -3.1, -3.5],
+                  correctIndex: null
                 }
               },
               {
-                type: 3,
+                type: 0,
                 // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                text: ['-1', null],
                 conditions: {
-                  valueInputs: [-1]
+                  correctIndex: null
                 }
               },]
 
@@ -2888,35 +2770,35 @@ var def1 =
 
               [
                 {
-                  type: 2,
-                  answers_values: ['', '(-∞, ∞)', '(-∞, -1) ∪ (-1, ∞)', '(-∞, -1) ∪ (-1, 0.5) ∪ (0.5, ∞)'],
+                  type: 0,
+                  text: ['(-∞, ∞)', null],
                   conditions: {
-                    correctIndex: 1
+                    correctIndex: null
                   }
                 ,
               }, 
               {
-                type: 2,
-                answers_values: ['', '(-4, -1.5] ∪ [-1, 0.5) ∪ (1.5, 3]', '(-4, -1.5) ∪ [-1, 0.5) ∪ [1.5, 3]', '[-4, -1.5] U (-1, 3]', '(-4, -1.5) ∪ [-1, 0.5) ∪ (1, 3]'],
-                conditions: {
-                  correctIndex: 4 
-                }
+                type: 0,
+                  text: ['(-4,-1.5) ∪ [-1,0.5) ∪ (1,3]', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },  
               {
-                type: 2,
-                answers_values: ['', '(-∞, 2)', '(-∞, -1) ∪ (-1, 0.5) ∪ (0.5, 2)', '(-∞, 2]'],
-                conditions: {
-                  correctIndex: 2
-                }
+                type: 0,
+                text: ['(-∞,-1) ∪ (-1,0.5) ∪ (0.5,2)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               
               {
-                type: 2,
-                answers_values: ['', '(2, ∞)', '[2, ∞)', '(0.5, ∞)'],
+                type: 0,
+                text: ['(2,∞)', null],
                 conditions: {
-                  correctIndex: 1
+                  correctIndex: null
                 }
               ,
               },
@@ -2958,34 +2840,32 @@ var def1 =
               ],
 
               [{
-                type: 2,
-                answers_values: ['', '(-∞, 0)', '(-∞, 0]', '(-∞, -1) ∪ (-1, 0)'],
-                conditions: {
-                  correctIndex: 1
-                }
+                type: 0,
+                text: ['(-∞, 0)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               {
-                type: 2,
-                answers_values: ['', '(0, ∞)', '[0, ∞)', '(0, 0.5) U (0.5, ∞)'],
-                conditions: {
-                  correctIndex: 1
-                }
+                type: 0,
+                text: ['(0, ∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['0', null],
                 conditions: {
-                  valueInputs: [0]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['0', null],
                 conditions: {
-                  valueInputs: [0]
+                  correctIndex: null
                 }
               },],
             ]
@@ -3045,33 +2925,29 @@ var def1 =
 
 
               [{
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['3', null],
                 conditions: {
-                  valueInputs: [3]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['2', null],
                 conditions: {
-                  valueInputs: [2]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }],
 
               [ {
@@ -3107,35 +2983,29 @@ var def1 =
               ],
 
               [{
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-1, 1.5]
-                }
+                type: 0,
+                text: ['-1, 1.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-1, 0.5]
-                }
+                type: 0,
+                text: ['-1, 0.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }],
 
             ]
@@ -3207,35 +3077,26 @@ var def1 =
                 ,
               }, 
               {
-                type: 3,
-                  inputsDefault: [["3", false]],
-                  conditions: {
-                    valueInputs: ['\\geq3', '3'],
-                    evaluateCote:{
-                      top: 3,
-                    }
-                  }
+                type: 0,
+                text: ['3', null],
+                conditions: {
+                  correctIndex: null
+                }
               }, 
               {
-                type: 3,
-                  inputsDefault: [["3", false]],
-                  conditions: {
-                    valueInputs: ['\\geq3', '3'],
-                    evaluateCote:{
-                      top: 3,
-                    }
-                  }
+                type: 0,
+                text: ['3', null],
+                conditions: {
+                  correctIndex: null
+                }
               }, 
               
               {
-                type: 3,
-                  inputsDefault: [["1.5", false]],
-                  conditions: {
-                    valueInputs: ['\\geq3', '1.5'],
-                    evaluateCote:{
-                      top: 1.5,
-                    }
-                  }
+                type: 0,
+                text: ['1.5', null],
+                conditions: {
+                  correctIndex: null
+                }
               }, 
               ],
 
@@ -3283,34 +3144,25 @@ var def1 =
               ,
               },
               {
-                type: 3,
-                  inputsDefault: [["-1", false]],
-                  conditions: {
-                    valueInputs: ['\\leq-1', '-1'],
-                    evaluateCote:{
-                      bottom: -1,
-                    }
-                  }
+                type: 0,
+                text: ['-1', null],
+                conditions: {
+                  correctIndex: null
+                }
               },
               {
-                type: 3,
-                  inputsDefault: [["-4", false]],
-                  conditions: {
-                    valueInputs: ['\\leq-4', '-4'],
-                    evaluateCote:{
-                      bottom: -4,
-                    }
-                  }
+                type: 0,
+                text: ['-4', null],
+                conditions: {
+                  correctIndex: null
+                }
               },
               {
-                type: 3,
-                  inputsDefault: [["-4", false]],
-                  conditions: {
-                    valueInputs: ['\\leq-4', '-4'],
-                    evaluateCote:{
-                      bottom: -4,
-                    }
-                  }
+                type: 0,
+                text: ['-4', null],
+                conditions: {
+                  correctIndex: null
+                }
               },],
             ]
           }
@@ -3374,42 +3226,36 @@ var def1 =
               ],
               [
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['1.5', null],
                 conditions: {
-                  valueInputs: [1.5]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1]
-                }
+                type: 0,
+                text: ['-1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [3]
-                }
+                type: 0,
+                text: ['3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: [-1.5]
-                }
+                type: 0,
+                text: ['-1.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [0.5, 3]
-                }
+                type: 0,
+                text: ['0.5, 3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },]
 
             ]
@@ -3474,35 +3320,37 @@ var def1 =
               // 1er board - Validaciones de Características #1, de examen 7
               [
                 {
-                  type: 2,
-                  answers_values: ['', '(-∞, ∞)', '(-∞, 3) ∪ (3, ∞)', '(-∞, 0) ∪ (0, 3) ∪ (3, ∞)'],
-                  conditions: {
-                    correctIndex: 1
-                  }
+                  type: 0,
+                  text: ['(-∞,∞)', null],
+                conditions: {
+                  correctIndex: null
+                }
                 ,
               }, 
               {
-                type: 2,
-                answers_values: ['', '(-∞, -2) ∪ [-0.66, ∞)', '(-∞, -2] ∪ [-1, ∞)', '(-∞, -2] ∪ (-0.66, ∞)', '(-∞, -2] ∪ [-1, -0.66) ∪ (-0.66,∞)'],
+                type: 0,
+                text: ['(-∞,-2] ∪ [-1,∞)', null],
                 conditions: {
-                  correctIndex: 2
+                  correctIndex: null
                 }
+                
               ,
               },  
               {
-                type: 2,
-                answers_values: ['', '(-∞, -1.3) ∪ [3, ∞)', '(-∞, -3)', '(-1.3, 1.3)' , '[-1.3, 1.3]'],
+                type: 0,
+                text: ['[-1.3, 1.3]', null],
                 conditions: {
-                  correctIndex: 3
+                  correctIndex: null
                 }
+                
               ,
               },
               
               {
-                type: 2,
-                answers_values: ['', '(-∞, -1.3] ∪ [1.3, 3) ∪ [3, ∞)', '(-∞, -1.3) ∪ (1.3, 3) ∪ (3, ∞)', '(-∞, -1.3) ∪ (1.3, ∞)'],
+                type: 0, 
+                text: ['(-∞,-1.3) ∪ (1.3,3) ∪ (3,∞)', null],
                 conditions: {
-                  correctIndex: 2
+                  correctIndex: null
                 }
               ,
               },
@@ -3544,35 +3392,32 @@ var def1 =
               ],
                 // 1er board - Validaciones de Características #2, de examen 7
               [{
-                type: 2,
-                answers_values: ['', '(-2.5, 0) ∪ (2.5, ∞)', '(-2.5, 0) ∪ (2.5, 3) ∪ (3, ∞)', '[3, ∞)'],
-                conditions: {
-                  correctIndex: 1
-                }
+                type: 0,
+                text: ['(-2.5,0) ∪ (2.5,∞)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               {
-                type: 2,
-                answers_values: ['', '[3, ∞)', '(-∞, -2.5) ∪ (0, 2.5)', '(0, 2.5)'],
-                conditions: {
-                  correctIndex: 2
-                }
+                type: 0,
+                text: ['(-∞,-2.5) ∪ (0,2.5)', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-2.5, 0, 2.5],
-                }
+                type: 0,
+                text: ['-2.5, 0, 2.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['0', null],
                 conditions: {
-                  valueInputs: [0]
+                  correctIndex: null
                 }
               },],
             ]
@@ -3633,37 +3478,32 @@ var def1 =
 
               [
               {// 2do board - Validaciones de Características #1, de examen 7
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },
               {
-                type: 2,
-                answers_values: ['', '-∞', '1.3', 'No Existe'],
-                conditions: {
-                  correctIndex: 3
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [1,-2],
-                }
+                type: 0,
+                text: ['1, -2', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [1.3,3],
-                }
+                type: 0,
+                text: ['1.3, 3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               },],
 
               [ // 2do board - Características #2, de examen 7
@@ -3701,34 +3541,30 @@ var def1 =
 
               [// 2do board - Validaciones de Características #2, de examen 7
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                conditions: {
-                  valueInputs: ['\\nexists']
-                }
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
-                conditions: {
-                  valueInputs: [-1]
-                }
+                type: 0,
+                text: ['-1', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               }, 
               {
-                type: 2,
-                answers_values: ['', '3', '-1.3', '-1.3, 3'],
-                conditions: {
-                  correctIndex: 2
-                }
+                type: 0,
+                text: ['-1.3', null],
+                  conditions: {
+                    correctIndex: null
+                  }
               ,
               },
             ]
@@ -3779,7 +3615,7 @@ var def1 =
                 },
                 {
                   type: 0,
-                  text: ['(-∞, ∞)', null],
+                  text: ['R', null],
                   conditions: {
                     correctIndex: null
                   }
@@ -3796,27 +3632,24 @@ var def1 =
                 }
               }, 
               {
-                type: 3,
-                inputsDefault:[['',false]],
-                conditions: {
-                  valueInputs: ['\\nexists'],
-                }
-              }, 
-              {
-                type: 3,
-                inputsDefault:[["0.5",false]],
-                conditions: {
-                  valueInputs: ['\\geq0.5','0.5'],
-                  evaluateCote:{
-                    top: 0.5
+                type: 0,
+                text: ['∄', null],
+                  conditions: {
+                    correctIndex: null
                   }
-                }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['0.5', null],
+                  conditions: {
+                    correctIndex: null
+                  }
+              }, 
+              {
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               },  ],
 
@@ -3863,27 +3696,24 @@ var def1 =
                   }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               },
               {
-                type: 3,
-                inputsDefault:[["-1",false]],
+                type: 0,
+                text: ['-1', null],
                 conditions: {
-                  valueInputs: ['\\leq-1','-1'],
-                  evaluateCote:{
-                    bottom: -1
-                  }
+                  correctIndex: null
                 }
               },],
             ]
@@ -3953,48 +3783,38 @@ var def1 =
 
               //Validacion terceras caracteristicas, Examen 7
               [{
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['1', null],
                 conditions: {
-                  valueInputs: [1],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['0.5', null],
                 conditions: {
-                  valueInputs: [0.5],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['-2', null],
                 conditions: {
-                  valueInputs: [-2],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['3', null],
                 conditions: {
-                  valueInputs: [3],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['4', null],
                 conditions: {
-                  valueInputs: [4],
+                  correctIndex: null
                 }
               },],
             ]
@@ -4059,35 +3879,35 @@ var def1 =
 
               [ //1do board - Validaciones de Características #1, de examen 8
                 {
-                  type: 2,
-                  answers_values: ['', '(-∞, ∞)', '(-4, 2) ∪ [3, ∞)', '(-4, -2) ∪ (-2, 2) ∪ [3, ∞)'],
-                  conditions: {
-                    correctIndex: 3
-                  }
+                  type: 0,
+                    text: ['(-4,-2) ∪ (-2,2) ∪ [3,∞)', null],
+                    conditions: {
+                      correctIndex: null
+                    }
                 ,
               }, 
               {
-                type: 2,
-                answers_values: ['', '(-∞, -1.5] ∪ [-1.5, -1) ∪ (-1, ∞)', '(-∞, -1.5) ∪ (-1.5, ∞)', '[-3, ∞]', '(-∞, ∞)'],
-                conditions: {
-                  correctIndex: 4 
-                }
+                type: 0,
+                text: ['(-∞,∞)', null],
+                    conditions: {
+                      correctIndex: null
+                    }
               ,
               },  
               {
-                type: 2,
-                answers_values: ['', '(-4, -2) ∪ (-2, 2) ∪ [3, ∞)', '[-3, ∞]', '(-4, -3) ∪ (0,2) ∪ (3, ∞)', '(-4, ∞)'],
-                conditions: {
-                  correctIndex: 3
-                }
+                type: 0,
+                text: ['(-4,-3) ∪ (0,2) ∪ (3,∞)', null],
+                    conditions: {
+                      correctIndex: null
+                    }
               ,
               },
               
               {
-                type: 2,
-                answers_values: ['', '(-4, -2) ∪ [3,∞)', '(-3, -2) ∪ (-2,0)', '(-3, 0)', '[-3,0]'],
+                type: 0,
+                text: ['(-3,-2) ∪ (-2,0)', null],
                 conditions: {
-                  correctIndex: 2
+                  correctIndex: null
                 }
               ,
               },
@@ -4129,36 +3949,32 @@ var def1 =
               ],
 
               [{//1do board - Validaciones Características #2, de examen 8
-                type: 2,
-                answers_values: ['', '(-3, -2) ∪ (-2,0)', '(-4, -3) ∪ (0,2) ∪ (3, ∞)', '(-4,-2) ∪ (-1,1) ∪ (3, ∞)', '(-∞, -1) ∪ (-1, 0)', '(-4,-2) ∪ (-1,1) ∪ [3, ∞)'],
+                type: 0,
+                text: ['(-4,-2) ∪ (-1,1) ∪ (3, ∞)', null],
                 conditions: {
-                  correctIndex: 3
+                  correctIndex: null
                 }
               ,
               },
               {
-                type: 2,
-                answers_values: ['', '(-2, -1) ∪ (1, 2)', '(-2, 2)', '[-2, 2]', '(-2, -1) ∪ (1, 2) ∪ (3, ∞)' ],
+                type: 0,
+                text: ['(-2, -1) ∪ (1, 2)', null],
                 conditions: {
-                  correctIndex: 1
+                  correctIndex: null
                 }
               ,
               },
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['-1, 1', null],
                 conditions: {
-                  valueInputs: [-1, 1],
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['-1', null],
                 conditions: {
-                  valueInputs: [-1],
+                  correctIndex: null
                 },
               },],
             ]
@@ -4218,32 +4034,28 @@ var def1 =
 
                 //2do board - Validaciones de Características #1, de examen 8
               [{
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['-1.5', null],
                 conditions: {
-                  valueInputs: [-1.5]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['-3', null],
                 conditions: {
-                  valueInputs: [-3]
+                  correctIndex: null
                 }
               }],
                 //2do board - Características #2, de examen 8
@@ -4280,34 +4092,28 @@ var def1 =
               ],
                 //2do board - Validaciones de Características #2, de examen 8
               [{
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['-1, -3', null],
                 conditions: {
-                  valueInputs: [-1, -3]
+                  correctIndex: null
                 }
               }, {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['0, 3', null],
                 conditions: {
-                  valueInputs: [0, 3]
+                  correctIndex: null
                 }
               }],
 
@@ -4374,24 +4180,24 @@ var def1 =
                 }
               }, 
               {
-                type: 3,
-                inputsDefault:[['',false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists'],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               },
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               },  ],
 
@@ -4438,27 +4244,24 @@ var def1 =
                   }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists']
+                  correctIndex: null
                 }
               },
               {
-                type: 3,
-                inputsDefault:[["-1",false]],
+                type: 0,
+                text: ['-1', null],
                 conditions: {
-                  valueInputs: ['\\leq-1','-1'],
-                  evaluateCote:{
-                    bottom: -1
-                  }
+                  correctIndex: null
                 }
               },],
             ]
@@ -4530,47 +4333,38 @@ var def1 =
               //Validacion terceras caracteristicas, Examen 8
               [
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['1', null],
                 conditions: {
-                  valueInputs: [1],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
+                type: 0,
+                text: ['∄', null],
                 conditions: {
-                  valueInputs: ['\\nexists'],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['0', null],
                 conditions: {
-                  valueInputs: [0],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['-3.5, -2.5, 3', null],
                 conditions: {
-                  valueInputs: [-3.5,-2.5,3],
+                  correctIndex: null
                 }
               }, 
               {
-                type: 3,
-                // una pregunta. Varios inputs
-                inputsDefault: [['', false]],
-                oneToManyInput: true,
+                type: 0,
+                text: ['-3, 4', null],
                 conditions: {
-                  valueInputs: [-3,4],
+                  correctIndex: null
                 }
               },
               ],
@@ -5326,6 +5120,27 @@ document.querySelector('.finalizar').addEventListener('click', () => {
   updateSlider(evaluacion);
 });
 
+function ocultaButtons()
+{
+    let check = document.querySelectorAll('.check');
+    let reset = document.querySelectorAll('.reset');
+    let pointClose = document.querySelectorAll('.pointClose');
+    let pointOpen = document.querySelectorAll('.pointOpen');
+    let curve = document.querySelectorAll('.curve');
+    let infinite = document.querySelectorAll('.infinite');
+
+    for (let i = 0; i < check.length; i++) {
+        check[i].style.display = 'none';
+        reset[i].style.display = 'none';
+    }
+    for (let i = 0; i < pointClose.length; i++) {
+        pointClose[i].style.display = 'none';
+        pointOpen[i].style.display = 'none';
+        curve[i].style.display = 'none';
+        infinite[i].style.display = 'none';
+    }
+}
+
 mostrarModal();
 
 // 'Finalizar' para obtener el tiempo de finalizacion del examen y limpiar el localStorage
@@ -5334,3 +5149,5 @@ finalizarExamen();
 mideTimeCards();
 
 mideTimeQuestions();
+
+ocultaButtons();
