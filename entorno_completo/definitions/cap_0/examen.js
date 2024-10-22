@@ -1754,4 +1754,52 @@ let rDef={
     //Fin tipo 4
 }
 
-ejecutaAccion();
+let configData = {
+    exams : {
+        eval_1:[[1,9,17],[1,9,17,25]],
+        eval_2:[[2,10,18],[2,10,18,26]],
+        eval_3:[[3,11,19],[3,11,19,27]],
+        eval_4:[[4,12,20],[4,12,20,28]],
+        eval_5:[[5,13,21],[5,13,21,29]],
+        eval_6:[[6,14,22],[6,14,22,30]],
+        eval_7:[[7,15,23],[7,15,23,31]],
+        eval_8:[[8,16,24],[8,16,24,32]],
+        eval_9:[[5,9,21],[7,12,20,31]],
+        eval_10:[[2,12,21],[6,13,24,27]],
+        eval_11:[[5,16,19],[5,14,20,32]],
+        eval_12:[[8,9,24],[6,13,17,29]],
+        eval_13:[[1,12,24],[7,12,22,25]],
+        eval_14:[[7,14,19],[4,10,24,30]],
+        eval_15:[[4,16,18],[8,10,21,28]],
+        eval_16:[[2,9,20],[5,11,23,32]],
+        eval_17:[[4,15,24],[8,16,22,28]],
+        eval_18:[[6,14,17],[5,12,19,29]],
+        eval_19:[[7,11,20],[7,13,18,26]],
+        eval_20:[[6,16,19],[1,10,18,29]]
+    },
+    Datos : {
+        'idUser':'66faf9aceda8f36d30f920e5',
+        'idExam':'66e1f3c8ab116faa26c493ca',
+        'firstName':'estudiante',
+        'secondName':'estudiante',
+        'surname':'estudiante',
+        'secondSurname':'estudiante',
+        'gender':'Masculino',
+        'email':'app.6@gmail.com',	
+        'codExam': 'Modelo 2',
+        'curso':'Fragata',
+        'chapter':'Capítulo 0',
+        'category':'Educación Superior',
+        'liceo':'Unidad Educacional de Fragata',
+        'universidad':'Universidad de Carabobo',
+        'startDate': '01/01/2022 00:00:00', 
+        'endDate':'01/01/2025 00:00:00',
+        'result': null,        
+        'userStartTime':null,
+        'userEndTime':null
+    }
+}
+
+userDatevalidation(configData.Datos)
+
+//ejecutaAccion();
