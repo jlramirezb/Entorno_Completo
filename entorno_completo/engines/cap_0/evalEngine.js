@@ -3,7 +3,125 @@
 //validar los campos
 
 //___________Primera Funcion a utilizar por web y Movil______________//
-function userDatevalidation(userObject){
+
+const LOCAL_STORAGE_KEY = 'resultadoExamen';
+const LOCAL_COLORS_KEY = 'colorsExamen';
+const LOCAL_DATOS_KEY = 'ConfigData';
+const exams ={
+    eval_1:[[1,9,17],[1,9,17,25]],
+    eval_2:[[2,10,18],[2,10,18,26]],
+    eval_3:[[3,11,19],[3,11,19,27]],
+    eval_4:[[4,12,20],[4,12,20,28]],
+    eval_5:[[5,13,21],[5,13,21,29]],
+    eval_6:[[6,14,22],[6,14,22,30]],
+    eval_7:[[7,15,23],[7,15,23,31]],
+    eval_8:[[8,16,24],[8,16,24,32]],
+    eval_9:[[5,9,21],[7,12,20,31]],
+    eval_10:[[2,12,21],[6,13,24,27]],
+    eval_11:[[5,16,19],[5,14,20,32]],
+    eval_12:[[8,9,24],[6,13,17,29]],
+    eval_13:[[1,12,24],[7,12,22,25]],
+    eval_14:[[7,14,19],[4,10,24,30]],
+    eval_15:[[4,16,18],[8,10,21,28]],
+    eval_16:[[2,9,20],[5,11,23,32]],
+    eval_17:[[4,15,24],[8,16,22,28]],
+    eval_18:[[6,14,17],[5,12,19,29]],
+    eval_19:[[7,11,20],[7,13,18,26]],
+    eval_20:[[6,16,19],[1,10,18,29]]
+}
+
+let ConfigData = inicializarExamen(LOCAL_DATOS_KEY);
+let evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
+let colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
+
+function inicializarExamen(key) {
+    let resultadosGuardados, colorsBorders, Datos;
+    if (key===LOCAL_STORAGE_KEY) {
+        resultadosGuardados = cargarResultados(key);
+        if (resultadosGuardados) {
+            return resultadosGuardados; // Usar los datos cargados para continuar
+        } 
+        else {
+            console.log("No se encontraron puntuaciones previas. Iniciando nuevo examen.");      
+            // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas
+            resultadosGuardados = [];
+            resultadosGuardados.push({id:'P1',items:[0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P2',items:[0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P3',items:[0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P4',items:[0,0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P5',items:[0,0,0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P6',items:[0,0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'P7',items:[0,0,0,0],tiempo:0,intentos:0});
+            resultadosGuardados.push({id:'NF',resultado:0});
+            localStorage.setItem(key, JSON.stringify(resultadosGuardados));            
+            return resultadosGuardados; // Devolver el nuevo objeto inicializado
+        }
+    }
+    else if(key===LOCAL_COLORS_KEY)
+    {
+        colorsBorders = cargarResultados(key);
+        if (colorsBorders) {
+            return colorsBorders; // Usar los datos cargados para continuar      
+        }   
+        else {
+            console.log("No se encontraron colores previos. Iniciando nuevo examen.");
+            // Inicializar un nuevo objeto de resultados con puntuaciones en 0 para las preguntas  
+            const colorsBorders = {};            
+            for (let i = 0; i <= 6; i++) {
+                    colorsBorders[i] = "#217E9D";
+            }
+            localStorage.setItem(key, JSON.stringify(colorsBorders));
+            return colorsBorders;
+        }        
+    }
+    else if(key===LOCAL_DATOS_KEY)
+    {
+        Datos = cargarResultados(key);
+        console.log(Datos); 
+        if (Datos) {
+            //delete Datos;
+            return Datos; // Usar los datos cargados para continuar
+        }
+        else {
+            Datos = {
+                'idUser':'66faf9aceda8f36d30f920e5',
+                'idExam':'66e1f3c8ab116faa26c493ca',
+                'firstName':'estudiante',
+                'secondName':'estudiante',
+                'surname':'estudiante',
+                'secondSurname':'estudiante',
+                'gender':'Masculino',
+                'email':'app.6@gmail.com',	
+                'codExam': 'Modelo 2',
+                'curso':'Fragata',
+                'chapter':'Capítulo 0',
+                'category':'Educación Superior',
+                'liceo':'Unidad Educacional de Fragata',
+                'universidad':'Universidad de Carabobo',
+                'startDate': '01/01/2022 00:00:00',
+                'endDate':'01/01/2025 00:00:00',
+                'result': null,        
+                'userStartTime':null,
+                'userEndTime':null
+            }
+            localStorage.setItem(key, JSON.stringify(Datos));
+            return Datos; // Devolver el nuevo objeto inicializado
+        }
+    }
+}
+
+function cargarResultados(key) {
+    let resultadosGuardados = localStorage.getItem(key);
+    
+    if (resultadosGuardados) {
+        return resultadosGuardados = JSON.parse(resultadosGuardados);
+    }
+    
+    return null; // Si no hay datos guardados
+}
+
+function userDatevalidation(){
+    let userObject = inicializarExamen(LOCAL_DATOS_KEY);
     const requiredProperties = ['idUser','idExam','firstName','secondName','surname','secondSurname','gender','email','userStartTime','userEndTime','result','startDate','endDate','chapter'];
     const allExist = requiredProperties.filter(prop => !(prop in userObject));
 
@@ -26,7 +144,11 @@ function userDatevalidation(userObject){
             document.getElementById('buttonRule').addEventListener('click', ()=>{
                 document.getElementById('rules').style.display = 'none';
                 document.getElementById('paginaExamen').style.display = 'block';
-                generateEvaluationArtifacts(userObject)
+                generateEvaluationArtifacts(userObject);
+                let validar = document.querySelectorAll('.check');
+                // Eliminar el primer elemento del NodeList 'validar'
+                validar = Array.from(validar).slice(1);                
+                evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders,propiedadesRdef);
             })            
         }
 
@@ -98,7 +220,7 @@ function PintaSeleccionP1(position, def, Pregunta){
 }
 function generateEvaluationArtifacts(userObject){
 
-    let [position, position2] = localStoragePreguntasExamen();
+    let [position, position2] = localStoragePreguntasExamen(userObject);
     console.log(position,position2);
     let artefact = [];
     [def, artefact] = PintaSeleccionP1(position, def, 'P1');
@@ -236,10 +358,10 @@ function filtrarContents(rdef, indices) {
     }
     return rdef;
 }
-function getPosition(configData) {
-    const modelKey = configData.Datos.codExam.replace('Modelo ', 'eval_');
+function getPosition(configData,exams) {
+    const modelKey = configData.codExam.replace('Modelo ', 'eval_');
     console.log(modelKey);
-    const model = configData.exams[modelKey];
+    const model = exams[modelKey];
 
     if (model) {
         return [model[0], model[1]];
@@ -248,10 +370,10 @@ function getPosition(configData) {
         return [null, null]; // O cualquier valor por defecto que necesites
     }
 }
-function localStoragePreguntasExamen(){
+function localStoragePreguntasExamen(userObject){
     let position = []; //= Datos.SeleccionadosP1;
     let position2 = []; //= Datos.SeleccionadosP2;
-    [position, position2] = getPosition(configData);
+    [position, position2] = getPosition(userObject,exams);
     return [position,position2];
 }
 function filtrarObjeto(objetoDef, arregloPropiedades) {

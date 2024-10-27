@@ -1754,7 +1754,7 @@ let rDef={
     //Fin tipo 4
 }
 
-let configData = {
+/*let configData = {
     exams : {
         eval_1:[[1,9,17],[1,9,17,25]],
         eval_2:[[2,10,18],[2,10,18,26]],
@@ -1798,8 +1798,8 @@ let configData = {
         'userStartTime':null,
         'userEndTime':null
     }
-}
+}*/
 
-userDatevalidation(configData.Datos)
+userDatevalidation()
 
 //ejecutaAccion();
