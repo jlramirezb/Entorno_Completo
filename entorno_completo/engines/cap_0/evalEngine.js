@@ -81,7 +81,6 @@ function inicializarExamen(key) {
     else if(key===LOCAL_DATOS_KEY)
     {
         Datos = cargarResultados(key);
-        console.log(Datos); 
         if (Datos) {
             //delete Datos;
             return Datos; // Usar los datos cargados para continuar
@@ -138,6 +137,7 @@ function userDatevalidation(){
         const spanTime = document.getElementById('tiempo');
         document.getElementById('rules').style.display = 'none';
         document.getElementById('after').style.display = 'none';
+        mostrarResultados(userObject);
         return true
     }
     
@@ -161,13 +161,158 @@ function userDatevalidation(){
                 // Ejecutar la función y actualizar el resultado
                 evaluacion = calcularResultadoTotal(evaluacion);
                 console.log(evaluacion);
+                // Mostrar el arreglo actualizado
+                console.log(evaluacion);
+
+                mostrarModal()
+                
             })            
         }
-
+mostrarResultados(userObject);
                 // aqui puedes decidir no mostrar el examen 
 
         console.log(message)
         return false;
+}
+
+function mostrarModal(){
+    // Obtener elementos
+    const modal = document.getElementById("myModal");
+    const openModalBtn = document.getElementById("openModalBtn");
+    const confirmBtn = document.getElementById("confirmBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+
+    // Cuando el usuario haga clic en el botón "Enviar Evaluación", abrir el modal
+    openModalBtn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Cuando el usuario haga clic en "Sí", se puede manejar la lógica para enviar la evaluación
+    confirmBtn.onclick = function() {    
+        modal.style.display = "none";
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Cuando el usuario haga clic en "No", cerrar el modal
+    cancelBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Cuando el usuario haga clic fuera del modal, cerrarlo
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+function mostrarResultados(data) {
+    setHeaderData(data);
+    const paginaExamen = document.getElementById('paginaExamen');
+    const resultadoPagina = document.getElementById('resultadoPagina');
+    const notafinal = document.getElementById('notafinal');
+
+    const cantidadItems = data.result.reduce((count, current) => {
+        if (current.items && Array.isArray(current.items)) {
+            return count + current.items.length;
+        }
+        return count;
+    }, 0);
+    console.log('Items:', cantidadItems);
+    const sumaItems = data.result.reduce((sum, current) => {
+        if (current.items && Array.isArray(current.items)) {
+            return sum + current.items.reduce((sum2, current2) => sum2 + current2, 0);
+        }
+        return sum;
+    }, 0);
+    
+    paginaExamen.style.display = 'none';       // Oculta la página original
+    resultadoPagina.style.display = 'block';   // Muestra la página de resultados
+    notafinal.style.display = 'block';
+    const spannota=document.getElementById("nota");
+    spannota.textContent = (sumaItems/cantidadItems)*20.0;
+    
+    let currentIndex = 0;
+        let visibleArtefactos = 1;
+
+        function createArtefactoElement(artefacto, index) {
+            const element = document.createElement('div');
+            element.className = 'artefacto';
+            
+            if (artefacto.id === "NF") {
+                element.innerHTML = `
+                    <h2>Artefacto ${index + 1}</h2>
+                    <div class="info">Resultado: ${artefacto.resultado}</div>
+                `;
+            } else {
+                let itemsHtml = artefacto.items.map((item, idx) => `
+                    <tr>
+                        <td>${idx + 1}</td>
+                        <td>${item}</td>
+                    </tr>
+                `).join('');
+
+                element.innerHTML = `
+                    <h2>Artefacto ${index + 1}</h2>
+                    <table>
+                        <tr>
+                            <th>Items</th>
+                            <th>Puntos</th>
+                        </tr>
+                        ${itemsHtml}
+                    </table>
+                    <div class="info">
+                        <strong>Total puntos: </strong>${artefacto.items.reduce((a, b) => a + b, 0)}<br>
+                        <strong>Intentos: </strong>${artefacto.intentos}<br>
+                        <strong>Tiempo/Seg: </strong>${artefacto.tiempo}
+                    </div>
+                `;
+            }
+            return element;
+        }
+
+        function updateSlider() {
+            const slider = document.getElementById('slider');
+            slider.innerHTML = '';
+            for (let i = 0; i < data.length-1; i++) {
+                slider.appendChild(createArtefactoElement(data[i], i));
+            }
+            updateVisibleArtefactos();
+        }
+
+        function updateVisibleArtefactos() {
+            const containerWidth = document.querySelector('.slider-container').offsetWidth;            
+            let artefactoWidth = 250; // 250px width + 20px margin
+            //artefactoWidth = window.innerWidth < 768 ? 250 : 250; //si se ve desde un telefono ancho de 150px, de lo contrario 250px
+            visibleArtefactos = Math.max(1, Math.floor(containerWidth / artefactoWidth));
+            document.getElementById('slider').style.transform = `translateX(-${currentIndex * artefactoWidth}px)`;
+            
+            // Actualizar estado de los botones
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex >= data.length - visibleArtefactos;
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateVisibleArtefactos();
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentIndex < data.length - visibleArtefactos) {
+                currentIndex++;
+                updateVisibleArtefactos();
+            }
+        });
+
+        window.addEventListener('resize', updateVisibleArtefactos);
+
+        // Inicializar el slider
+        updateSlider();
 }
 
 function calcularResultadoTotal(data) {
@@ -197,7 +342,6 @@ function cleanArt(resets,resultadoExamen,borderColor){
                 case resets[0]:
                     newDiv[i].style.borderColor = '#217E9D';
                     borderColor[i] = '#217E9D';
-                    console.log(borderColor);
                     localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
                     resultadoExamen[i].items = [0,0];
                     break;
@@ -262,7 +406,6 @@ function valida(validar,resultadoExamen,def,artefact,borderColor,propiedadesRdef
         const newDiv = document.querySelectorAll('#newDiv');
         newDiv[idx].style.borderColor = 'yellow';
         borderColor[idx] = 'yellow';
-        console.log(borderColor);
         localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
 
         /*console.log(def[artefact[0]].timeInteraction);
