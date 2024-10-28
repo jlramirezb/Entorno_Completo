@@ -30,6 +30,8 @@ const exams ={
     eval_20:[[6,16,19],[1,10,18,29]]
 }
 
+const artefactaux=['artifact_1','artifact_2','artifact_3'];
+
 let ConfigData = inicializarExamen(LOCAL_DATOS_KEY);
 let evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
 let colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
@@ -147,7 +149,8 @@ function userDatevalidation(){
                 generateEvaluationArtifacts(userObject);
                 let validar = document.querySelectorAll('.check');
                 // Eliminar el primer elemento del NodeList 'validar'
-                validar = Array.from(validar).slice(1);                
+                validar = Array.from(validar).slice(1);       
+                const propiedadesRdef = Object.keys(rDef).slice(1);         
                 evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders,propiedadesRdef);
             })            
         }
@@ -156,6 +159,212 @@ function userDatevalidation(){
 
         console.log(message)
         return false;
+}
+
+function valida(validar,resultadoExamen,def,artefact,borderColor,propiedadesRdef) {    
+
+    const handleValidation = (index, mathfieldDiv1, mathfieldDiv2, mathfieldDiv3, resultadoExamen,artefact,def, idx) => 
+    {
+        const mm1 = mathfieldDiv1[index].querySelectorAll('math-field');
+        const mm3 = mathfieldDiv3[index].querySelectorAll('math-field');
+        //console.log(mm1, mm3);
+        const newDiv = document.querySelectorAll('#newDiv');
+        newDiv[idx].style.borderColor = 'yellow';
+        borderColor[idx] = 'yellow';
+        console.log(borderColor);
+        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+
+        /*console.log(def[artefact[0]].timeInteraction);
+        console.log(def[artefact[1]].timeInteraction);
+        console.log(def[artefact[2]].timeInteraction);*/
+        console.log(resultadoExamen);
+        resultadoExamen[idx].tiempo = def[artefact[idx]].timeInteraction
+        resultadoExamen[idx].intentos += 1;
+        //console.log(resultadoExamen[idx].tiempo)
+
+        // Validating Notacion Intervalo
+        if (mm1[0]._internals.willValidate) 
+        {   
+            setTimeout(() => 
+            {
+                clases = Array.from(mm1[0].classList);    
+                //console.log(clases);          
+                if(clases.includes('failed'))
+                {
+                    console.log('Intervalo ',idx+1,' fallo');
+                    resultadoExamen[idx].items[0] = 0;
+                    mm1[0].classList.remove('failed');
+                }
+                else if(clases.includes('pass'))
+                {
+                    console.log('Intervalo ',idx+1,' paso');
+                    resultadoExamen[idx].items[0] = 1;                    
+                    mm1[0].classList.remove('pass');
+                }
+                else
+                {
+                    console.log('Intervalo ',idx+1,' no respondio');
+                    resultadoExamen[idx].items[0] = 0;                     
+                }
+                guardarResultados(resultadoExamen);                    
+            }, 0);
+        }
+        else
+        {
+            console.log('Intervalo ',idx+1,' deshabilitado');
+        }
+
+        // Validating Recta Real
+        setTimeout(() => {
+            clases = Array.from(mathfieldDiv2[index].classList);     
+            //console.log(clases);       
+            if(clases.includes('pass'))
+            {
+                console.log('Recta Real ',idx+1,' paso');
+                resultadoExamen[idx].items[1] = 1;
+                mathfieldDiv2[index].classList.remove('pass');                
+            }
+            else if(clases.includes('failed'))
+            {
+                console.log('Recta Real ',idx+1,' fallo');
+                resultadoExamen[idx].items[1] = 0;
+                mathfieldDiv2[index].classList.remove('failed');                
+            }
+            else
+            {
+                console.log('Recta Real ',idx+1,' no respondio');
+                resultadoExamen[idx].items[1] = 0;
+            }
+            guardarResultados(resultadoExamen);               
+        }, 0);
+
+        // Validating Notacion Algebraica
+        if (mm3[0]._internals.willValidate) {
+            // Validation logic            
+            setTimeout(() => {
+                clases = Array.from(mm3[0].classList);
+                //console.log(clases);
+                if(clases.includes('failed'))
+                {
+                    console.log('Algebraico ',idx+1,' fallo');
+                    resultadoExamen[idx].items[0] = 0;                
+                    mm3[0].classList.remove('failed');
+                }
+                else if(clases.includes('pass'))
+                {
+                    console.log('Algebraico ',idx+1,' paso');
+                    resultadoExamen[idx].items[0] = 1;                    
+                    mm3[0].classList.remove('pass');
+                }
+                else{
+                    console.log('Algebraico ',idx+1,' no respondio');
+                    resultadoExamen[idx].items[0] = 0;                    
+                }
+                guardarResultados(resultadoExamen);
+            }, 0);
+        }
+        else
+        {
+            console.log('Algebraico ',idx+1,' deshabilitado');
+        }         
+    };
+
+    const handleColorInputs = (startIndex, endIndex, propiedadesRdef, resultadoExamen,idx) => {
+        const colorInputs = document.querySelectorAll('math-field.colorInput');
+        const Previousmathfield = document.querySelectorAll('.BoardEngInt math-field.colorInput').length; 
+
+        borderDefault = document.querySelectorAll('.borderDefault');
+        borderDefault[idx].style.borderColor = 'yellow';
+        borderColor[idx] = 'yellow';
+        console.log(borderColor);
+        localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));        
+
+        resultadoExamen[idx].tiempo+=rDef[propiedadesRdef].timeInteraction;
+        resultadoExamen[idx].intentos += 1;
+
+        console.log(idx ,'===', resultadoExamen[idx].tiempo);        
+        
+        indx = 0;
+        let kk = startIndex + Previousmathfield;
+        let aux = Array(rDef[propiedadesRdef].textBottom)[0];
+        aux = aux.split('),(');
+        aux = aux.map((elem, index) => {
+            if (index === 0) {
+                return elem + ")";
+            } else if (index === aux.length - 1) {
+                return "(" + elem;
+            } else {
+                return "(" + elem + ")";
+            }
+        });
+        let numpunts = aux.length;
+        setTimeout(() => {        
+            if(endIndex > numpunts)
+            {
+                console.log('Hay mas respuestas que puntos');
+                endIndex = numpunts;
+                console.log('Puntos:', endIndex);
+            }
+            for(i=0;i<endIndex;i++){              
+                const classList = colorInputs[i+kk].classList;            
+                if(classList.contains('passInLibrary'))
+                {
+                    console.log('Punto '+ (i+1) +' acertado');
+                    resultadoExamen[idx].items[indx] = 1;
+                    indx++;                
+                }
+                else if(classList.contains('failedInLibrary'))
+                {
+                    console.log('Punto '+ (i+1) +' fallado');
+                    resultadoExamen[idx].items[indx] = 0;
+                    indx++;                
+                }            
+            }
+            guardarResultados(resultadoExamen);
+        }, 10);
+    };
+
+    for (let i = 0; i < validar.length; i++) {
+        validar[i].addEventListener('click', function() {
+            switch (this) {
+                case validar[0]:
+                    handleValidation(1, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen, artefact,def,0);                    
+                    break;
+                case validar[1]:
+                    handleValidation(2, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,artefact,def,1);                    
+                    break;
+                case validar[2]:
+                    handleValidation(3, document.querySelectorAll('.divEngInt1'), document.querySelectorAll('.BoardEngInt'), document.querySelectorAll('.divEngInt2'), resultadoExamen,artefact,def,2);                    
+                    break;
+                case validar[3]:
+                    handleColorInputs(1, rDef[propiedadesRdef[0]].points.length, propiedadesRdef[0], resultadoExamen,3);                    
+                    break;
+                case validar[4]:
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + 3, rDef[propiedadesRdef[1]].points.length, propiedadesRdef[1], resultadoExamen,4);
+                    break;
+                case validar[5]:
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + 4, rDef[propiedadesRdef[2]].points.length, propiedadesRdef[2], resultadoExamen,5);
+                    break;
+                case validar[6]:
+                    handleColorInputs(rDef[propiedadesRdef[0]].points.length + rDef[propiedadesRdef[1]].points.length + rDef[propiedadesRdef[2]].points.length + 5, rDef[propiedadesRdef[3]].points.length, propiedadesRdef[3], resultadoExamen,6);
+                    break;
+            }
+        });
+    }    
+    return resultadoExamen;
+}
+
+async function guardarResultados(resultados) {
+    await new Promise((resolve, reject) => {
+        try {
+            let Datos = JSON.parse(localStorage.getItem(LOCAL_DATOS_KEY));
+            Datos.result = resultados;
+            localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(Datos));
+            resolve();
+        } catch (error) {
+            reject(error);
+        }
+    });
 }
 
 
