@@ -1232,7 +1232,7 @@ function ejecutaAccion() {
             evaluacion = cleanArt(resets,evaluacion,colorBorders);
 
             // Ejecutar la función y actualizar el resultado
-            calcularResultadoTotal(evaluacion);
+            evaluacion = calcularResultadoTotal(evaluacion);
 
             // Mostrar el arreglo actualizado
             console.log(evaluacion);

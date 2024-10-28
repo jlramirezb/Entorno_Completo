@@ -36,6 +36,8 @@ let ConfigData = inicializarExamen(LOCAL_DATOS_KEY);
 let evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
 let colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
 
+
+
 function inicializarExamen(key) {
     let resultadosGuardados, colorsBorders, Datos;
     if (key===LOCAL_STORAGE_KEY) {
@@ -152,6 +154,13 @@ function userDatevalidation(){
                 validar = Array.from(validar).slice(1);       
                 const propiedadesRdef = Object.keys(rDef).slice(1);         
                 evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders,propiedadesRdef);
+                let resets = document.querySelectorAll('.reset');
+                // Eliminar el primer elemento del NodeList 'resets'
+                resets = Array.from(resets).slice(1);
+                evaluacion = cleanArt(resets,evaluacion,colorBorders);
+                // Ejecutar la función y actualizar el resultado
+                evaluacion = calcularResultadoTotal(evaluacion);
+                console.log(evaluacion);
             })            
         }
 
@@ -159,6 +168,88 @@ function userDatevalidation(){
 
         console.log(message)
         return false;
+}
+
+function calcularResultadoTotal(data) {
+    let total = 0;
+    // Iterar sobre el arreglo de objetos
+    data.forEach(obj => {
+        if (obj.items && Array.isArray(obj.items)) {
+            // Sumar los valores de items
+            const sumaItems = obj.items.reduce((sum, current) => sum + current, 0);
+            total += sumaItems;
+        }
+    });
+    // Encontrar el objeto con id 'NF' y actualizar su resultado
+    const nfObject = data.find(obj => obj.id === 'NF');
+    if (nfObject) {
+        nfObject.resultado = total;
+    }
+    return data; // Devolver el arreglo actualizado (opcional)
+}
+
+function cleanArt(resets,resultadoExamen,borderColor){
+    const newDiv = document.querySelectorAll('#newDiv');
+    borderDefault = document.querySelectorAll('.borderDefault');
+    for (let i = 0; i < resets.length; i++) {
+        resets[i].addEventListener('click', function() {
+            switch (this) {
+                case resets[0]:
+                    newDiv[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+                    resultadoExamen[i].items = [0,0];
+                    break;
+                case resets[1]:                    
+                    newDiv[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+                    resultadoExamen[i].items = [0,0];
+                    break;
+                case resets[2]:
+                    newDiv[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+                    resultadoExamen[i].items = [0,0];
+                    break;
+                case resets[3]:
+                    borderDefault[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+                    resultadoExamen[i].items = [0,0,0];
+                    break;
+                case resets[4]:
+                    borderDefault[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+                    resultadoExamen[i].items = [0,0,0,0];
+                    break;
+                case resets[5]:
+                    borderDefault[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+                    resultadoExamen[i].items = [0,0,0];
+                    break;
+                case resets[6]:
+                    borderDefault[i].style.borderColor = '#217E9D';
+                    borderColor[i] = '#217E9D';
+                    console.log(borderColor);
+                    localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));
+                    resultadoExamen[i].items = [0,0,0,0];
+                    break;
+            }
+            setTimeout(() => {
+                guardarResultados(resultadoExamen);
+            }, 0);
+        });
+    }    
+    return resultadoExamen;
 }
 
 function valida(validar,resultadoExamen,def,artefact,borderColor,propiedadesRdef) {    
@@ -276,7 +367,6 @@ function valida(validar,resultadoExamen,def,artefact,borderColor,propiedadesRdef
         borderDefault = document.querySelectorAll('.borderDefault');
         borderDefault[idx].style.borderColor = 'yellow';
         borderColor[idx] = 'yellow';
-        console.log(borderColor);
         localStorage.setItem(LOCAL_COLORS_KEY,JSON.stringify(borderColor));        
 
         resultadoExamen[idx].tiempo+=rDef[propiedadesRdef].timeInteraction;
