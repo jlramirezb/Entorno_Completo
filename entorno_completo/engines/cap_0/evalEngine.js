@@ -32,7 +32,7 @@ const exams ={
 
 const artefactaux=['artifact_1','artifact_2','artifact_3'];
 
-let ConfigData = inicializarExamen(LOCAL_DATOS_KEY);
+let userObject = inicializarExamen(LOCAL_DATOS_KEY);
 let evaluacion = inicializarExamen(LOCAL_STORAGE_KEY);
 let colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
 
@@ -124,7 +124,7 @@ function cargarResultados(key) {
 }
 
 function userDatevalidation(){
-    let userObject = inicializarExamen(LOCAL_DATOS_KEY);
+    //let userObject = inicializarExamen(LOCAL_DATOS_KEY);
     const requiredProperties = ['idUser','idExam','firstName','secondName','surname','secondSurname','gender','email','userStartTime','userEndTime','result','startDate','endDate','chapter'];
     const allExist = requiredProperties.filter(prop => !(prop in userObject));
 
@@ -133,11 +133,13 @@ function userDatevalidation(){
         return false;
     }
 
+    console.log('result ',userObject.result)
     if (userObject.result!==null) {
         const spanTime = document.getElementById('tiempo');
         document.getElementById('rules').style.display = 'none';
         document.getElementById('after').style.display = 'none';
-        mostrarResultados(userObject);
+        document.getElementById('paginaExamen').style.display = 'none';
+        mostrarResultados(userObject,userObject.result);
         return true
     }
     
@@ -147,6 +149,7 @@ function userDatevalidation(){
             document.getElementById('rules').style.display = 'block';
             document.getElementById('buttonRule').addEventListener('click', ()=>{
                 document.getElementById('rules').style.display = 'none';
+                document.getElementById('resultadoPagina').style.display = 'none';
                 document.getElementById('paginaExamen').style.display = 'block';
                 generateEvaluationArtifacts(userObject);
                 let validar = document.querySelectorAll('.check');
@@ -154,28 +157,26 @@ function userDatevalidation(){
                 validar = Array.from(validar).slice(1);       
                 const propiedadesRdef = Object.keys(rDef).slice(1);         
                 evaluacion = valida(validar,evaluacion,def,artefactaux,colorBorders,propiedadesRdef);
+                
                 let resets = document.querySelectorAll('.reset');
                 // Eliminar el primer elemento del NodeList 'resets'
                 resets = Array.from(resets).slice(1);
                 evaluacion = cleanArt(resets,evaluacion,colorBorders);
                 // Ejecutar la función y actualizar el resultado
                 evaluacion = calcularResultadoTotal(evaluacion);
-                console.log(evaluacion);
-                // Mostrar el arreglo actualizado
-                console.log(evaluacion);
-
-                mostrarModal()
+                //mostrarResultados(userObject,evaluacion);
+                mostrarModal(userObject)
                 
             })            
         }
-mostrarResultados(userObject);
+        
                 // aqui puedes decidir no mostrar el examen 
 
         console.log(message)
         return false;
 }
 
-function mostrarModal(){
+function mostrarModal(userObject){
     // Obtener elementos
     const modal = document.getElementById("myModal");
     const openModalBtn = document.getElementById("openModalBtn");
@@ -189,6 +190,10 @@ function mostrarModal(){
 
     // Cuando el usuario haga clic en "Sí", se puede manejar la lógica para enviar la evaluación
     confirmBtn.onclick = function() {    
+        document.getElementById('paginaExamen').style.display = 'none';
+        document.getElementById('resultadoPagina').style.display = 'block';
+        mostrarResultados(userObject,evaluacion);
+        console.log('Evaluacion', evaluacion);
         modal.style.display = "none";
         window.scrollTo({
             top: 0,
@@ -209,30 +214,31 @@ function mostrarModal(){
     }
 }
 
-function mostrarResultados(data) {
+function mostrarResultados(data, eval) {
     setHeaderData(data);
     const paginaExamen = document.getElementById('paginaExamen');
     const resultadoPagina = document.getElementById('resultadoPagina');
     const notafinal = document.getElementById('notafinal');
 
-    const cantidadItems = data.result.reduce((count, current) => {
+    const cantidadItems = eval.reduce((count, current) => {
         if (current.items && Array.isArray(current.items)) {
             return count + current.items.length;
         }
         return count;
     }, 0);
-    console.log('Items:', cantidadItems);
-    const sumaItems = data.result.reduce((sum, current) => {
+    console.log('Items:', eval);
+    const sumaItems = eval.reduce((sum, current) => {
         if (current.items && Array.isArray(current.items)) {
             return sum + current.items.reduce((sum2, current2) => sum2 + current2, 0);
         }
         return sum;
     }, 0);
+    console.log('Suma:', sumaItems);
     
     paginaExamen.style.display = 'none';       // Oculta la página original
     resultadoPagina.style.display = 'block';   // Muestra la página de resultados
     notafinal.style.display = 'block';
-    const spannota=document.getElementById("nota");
+    const spannota = document.getElementById("nota");
     spannota.textContent = (sumaItems/cantidadItems)*20.0;
     
     let currentIndex = 0;
@@ -277,8 +283,8 @@ function mostrarResultados(data) {
         function updateSlider() {
             const slider = document.getElementById('slider');
             slider.innerHTML = '';
-            for (let i = 0; i < data.length-1; i++) {
-                slider.appendChild(createArtefactoElement(data[i], i));
+            for (let i = 0; i < eval.length-1; i++) {
+                slider.appendChild(createArtefactoElement(eval[i], i));
             }
             updateVisibleArtefactos();
         }
@@ -303,7 +309,7 @@ function mostrarResultados(data) {
         });
 
         document.getElementById('nextBtn').addEventListener('click', () => {
-            if (currentIndex < data.length - visibleArtefactos) {
+            if (currentIndex < eval.length - visibleArtefactos) {
                 currentIndex++;
                 updateVisibleArtefactos();
             }
