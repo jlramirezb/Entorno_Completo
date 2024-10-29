@@ -139,7 +139,7 @@ function userDatevalidation(){
         document.getElementById('rules').style.display = 'none';
         document.getElementById('after').style.display = 'none';
         document.getElementById('paginaExamen').style.display = 'none';
-        mostrarResultados(userObject,userObject.result);
+        showResuls(userObject,userObject.result);
         return true
     }
     
@@ -151,6 +151,12 @@ function userDatevalidation(){
                 document.getElementById('rules').style.display = 'none';
                 document.getElementById('resultadoPagina').style.display = 'none';
                 document.getElementById('paginaExamen').style.display = 'block';
+                const now = new Date();
+                console.log(now)
+                const nowUTC = now.getTime() - (-240 * 60 * 1000); // Convertir a UTC
+                console
+                userObject.userStartTime = nowUTC;
+                localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(userObject));
                 generateEvaluationArtifacts(userObject);
                 let validar = document.querySelectorAll('.check');
                 // Eliminar el primer elemento del NodeList 'validar'
@@ -164,7 +170,6 @@ function userDatevalidation(){
                 evaluacion = cleanArt(resets,evaluacion,colorBorders);
                 // Ejecutar la función y actualizar el resultado
                 evaluacion = calcularResultadoTotal(evaluacion);
-                //mostrarResultados(userObject,evaluacion);
                 mostrarModal(userObject)
                 
             })            
@@ -192,7 +197,7 @@ function mostrarModal(userObject){
     confirmBtn.onclick = function() {    
         document.getElementById('paginaExamen').style.display = 'none';
         document.getElementById('resultadoPagina').style.display = 'block';
-        mostrarResultados(userObject,evaluacion);
+        showResuls(userObject,evaluacion);
         console.log('Evaluacion', evaluacion);
         modal.style.display = "none";
         window.scrollTo({
@@ -214,7 +219,7 @@ function mostrarModal(userObject){
     }
 }
 
-function mostrarResultados(data, eval) {
+function showResuls(data, eval) {
     setHeaderData(data);
     const paginaExamen = document.getElementById('paginaExamen');
     const resultadoPagina = document.getElementById('resultadoPagina');
@@ -849,11 +854,6 @@ function sendEvaluation(){
 
 //soltar el pdf de la evaluacion
 function printEvaluation(){
-
-}
-
-//mostrarResultados
-function showResults(){
 
 }
 
