@@ -135,7 +135,7 @@ function userDatevalidation(){
 
     console.log('result ',userObject.result)
     if (userObject.result!==null) {
-        const spanTime = document.getElementById('tiempo');
+        
         document.getElementById('rules').style.display = 'none';
         document.getElementById('after').style.display = 'none';
         document.getElementById('paginaExamen').style.display = 'none';
@@ -154,7 +154,7 @@ function userDatevalidation(){
                 const now = new Date();
                 console.log(now)
                 const nowUTC = now.getTime() - (-240 * 60 * 1000); // Convertir a UTC
-                console
+                console.log(nowUTC)
                 userObject.userStartTime = nowUTC;
                 localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(userObject));
                 generateEvaluationArtifacts(userObject);
@@ -197,6 +197,17 @@ function mostrarModal(userObject){
     confirmBtn.onclick = function() {    
         document.getElementById('paginaExamen').style.display = 'none';
         document.getElementById('resultadoPagina').style.display = 'block';
+        const now = new Date();
+        console.log(now)
+        const nowUTC = now.getTime() - (-240 * 60 * 1000); // Convertir a UTC
+        console.log(nowUTC)
+        userObject.userEndTime = nowUTC;
+        userObject.result = evaluacion;
+        localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(userObject));
+        let timeElapsed = userObject.userEndTime - userObject.userStartTime;
+        console.log('elapsed time ',timeElapsed);
+        const spanTime = document.getElementById('tiempo');
+        spanTime.textContent = `${timeElapsed} min`;
         showResuls(userObject,evaluacion);
         console.log('Evaluacion', evaluacion);
         modal.style.display = "none";
@@ -616,6 +627,7 @@ async function guardarResultados(resultados) {
 function validateDates(availabilityStartDate, availabilityEndDate, offset = -240) {
     const now = new Date();
     const nowUTC = now.getTime() - (offset * 60 * 1000); // Convertir a UTC
+    console.log(nowUTC);
 
     const availabilityStartDateUTC = new Date(availabilityStartDate).getTime() - (offset * 60 * 1000);
     const availabilityEndDateUTC = new Date(availabilityEndDate).getTime() - (offset * 60 * 1000);
@@ -862,3 +874,42 @@ function markBorders (){
 }
 
 //cualquier funcion adicional que complemente o haga un tarea especifica
+
+let isLeaving = false;
+let userStartTime = null;
+window.addEventListener('beforeunload', function (event) {
+    // Este evento captura cuando la página está a punto de recargarse o cerrarse
+    const confirmationMessage = '¿Estás seguro de que deseas salir?';
+    event.returnValue = confirmationMessage; 
+    event.preventDefault();    
+    //Datos.result = null;
+    //localStorage.removeItem(LOCAL_COLORS_KEY);    
+    //localStorage.setItem('Datos', JSON.stringify(Datos));
+    console.log("La página está siendo recargada.");
+    userStartTime = DatosX.userStartTime;
+    console.log(DatosX);
+    // Aquí puedes ejecutar acciones específicas cuando se detecta la recarga de la página
+});
+window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && isLeaving) {
+        // El usuario ha decidido no salir (ha vuelto a la página)
+        console.log('El usuario ha decidido no recargar la página. Ejecutando acciones...');
+        // Aquí puedes ejecutar las acciones que desees
+        // Por ejemplo, restaurar datos o mostrar un mensaje
+    }else{
+        //DatosX.result = null;        
+        DatosX = cargarResultados(LOCAL_DATOS_KEY);
+        DatosX.result = null;
+        DatosX.userStartTime = userStartTime;
+        localStorage.removeItem(LOCAL_COLORS_KEY);
+        //colorBorders = inicializarExamen(LOCAL_COLORS_KEY);
+        //localStorage.setItem(LOCAL_COLORS_KEY, JSON.stringify(colorBorders));
+        localStorage.setItem(LOCAL_DATOS_KEY, JSON.stringify(DatosX));
+    }
+});
+
+// Restablecer la variable cuando la página se carga
+window.addEventListener('load', () => {
+    isLeaving = false; // Restablecer el estado
+});
+//FIN
