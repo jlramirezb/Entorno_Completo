@@ -5283,10 +5283,10 @@ function ocultarDivPorRadio() {
 }
 
 // Llamar a la función cuando se cargue el documento
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   //console.log('DOM cargado, ejecutando ocultarDivPorRadio');
   ocultarDivPorRadio();
-});
+});*/
 
 // Ejecutar el código cuando se presiona el botón "finalizar"
 document.querySelector('.finalizar').addEventListener('click', () => {
