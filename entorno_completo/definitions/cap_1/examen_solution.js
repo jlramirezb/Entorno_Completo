@@ -4588,13 +4588,119 @@ defBoards = {
       maxHeight: 300,
       maxWidth: 300,
     },
+    curves: [
+      [[[-2.95,0.9],[-2, -2.5], [-1.62, -2.98]]],
+      [[[-1.38, -2.98], [-1, -2.7],[1.43, 2.93]]],
+      [[[1.56, -2.9], [2.96, 0.9]]],
+    ],
+
+    points: [
+      [-1.5,-3, true,null, null, '#f1604d'], [1.5,-3, true,null, null, '#f1604d'],
+      [-3, 1, true, null, 2, '#f1604d'],[-3, 1, true, null, 0.1, 'white'],
+      [1.5, 3, true, null, 2, '#f1604d'],[1.5, 3, true, null, 0.1, 'white'],
+      [3, 1, true, null, 2, '#f1604d'],[3, 1, true, null, 0.1, 'white'],
+    ]
   },
   board_2: {
     style: {
-      boundingbox: [-5, 4, 6, -4],
+      boundingbox:[-5,5,5,-5],
       maxHeight: 300,
       maxWidth: 300,
     },
+
+    curves: [
+      [[[-1.38, -4], [-0.9,-3.8], [-0, -3.1],[0.4, -2.98]]],
+      [[[0.62, -3], [0.88, -3.28], [1.14, -3.72], [1.4, -3.96]]],
+      [[[-3.5,1.9],[-2,-3.8],[-1.6, -3.98]]],
+      [[[1.62, -3.96],[3, -1],[3.48, 1.9]]]
+    ],
+
+    points: [
+      [-1.5,-4, true,null, null, '#f1604d'], [1.5,-4, true,null, null, '#f1604d'], [0.5,-3, true,null, null, '#f1604d'], 
+      [-3.5,2, true,null, null, '#2196f3'], [-3.6,2.5, true,null, null, '#2196f3'], [-3.7,3, true,null, null, '#2196f3'],
+      [3.5,2, true,null, null, '#2196f3'], [3.6,2.5, true,null, null, '#2196f3'], [3.7,3, true,null, null, '#2196f3'],
+    ]
+    
+  },
+  board_3: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_4: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_5: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_6: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_7: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_8: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_9: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_10: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_11: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_12: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
   },
   board_13: {
     style: {
@@ -4795,7 +4901,7 @@ const def = {
     },
   },
   artifact_2: {
-    board: 'board_1',
+    board: 'board_2',
     statementBottom: ['Mínimo absoluto alcanzado en -1.5 y 1.5','Máximo de f es -3 alcanzado en 0.5','Dominio R'],
     conditions: {
       conexa: { type: 3 },
@@ -4810,7 +4916,7 @@ const def = {
     },
   },
   artifact_3: {
-    board: 'board_1',
+    board: 'board_3',
     //Pregunta borrada: f es creciente en ( 0,2 )
     statementBottom: ['Dominio (-4,4]','Rango (-3,2]','f es decreciente en (-2,-1)'],
     conditions: {
@@ -4825,7 +4931,7 @@ const def = {
     },
   },
   artifact_4: {
-    board: 'board_1',
+    board: 'board_4',
     statementBottom: ['Máximo absoluto alcanzado en -2.5 y 2.5','Dominio R','Rango [-4,2]'],
     conditions: {
       conexa: { type: 3 },
@@ -4843,7 +4949,7 @@ const def = {
   },
   artifact_5: {
     //Igual que artefacto 2.
-    board: 'board_1',
+    board: 'board_5',
     statementBottom: ['Mínimo absoluto alcanzado en -2.5 y 2.5','Máximo de f es 2 alcanzado en 0','Dominio R'],
     conditions: {
       conexa: { type: 3 },
@@ -4858,7 +4964,7 @@ const def = {
     },
   },
   artifact_6: {
-    board: 'board_1',
+    board: 'board_6',
     //Pregunta borrada: f es decreciente en ( 0,2 )
     statementBottom: ['Dominio [-3,∞)','Rango [-4,3]','f es creciente en (-2,0)'],
     conditions: {
@@ -4873,7 +4979,7 @@ const def = {
     },
   },
   artifact_7: {
-    board: 'board_1',
+    board: 'board_7',
     statementBottom: ['Mínimo absoluto alcanzado en dos puntos','Dominio [-4,2)','f es decreciente en (-1,1)'],
     conditions: {
       conexa: { type: 3 },
@@ -4883,7 +4989,7 @@ const def = {
     upDown:{intervals:[[false,[-1,1]]]},
   },
   artifact_8: {
-    board: 'board_1',
+    board: 'board_8',
     //Igual que artefacto 2 y 5.
     statementBottom: ['Mínimo absoluto alcanzado en -1 y 3.5','Máximo de f es 2 alcanzado en 0','Dominio R'],
     conditions: {
@@ -4899,7 +5005,7 @@ const def = {
     },
   },
   artifact_9: {
-    board: 'board_1',
+    board: 'board_9',
     //Pregunta borrada: 'f es creciente en ( -2,-0.5)'
     statementBottom: ['Dominio (-4,0)','Rango [-2,2]','Máximo de f es 2 alcanzado en -3'],
     conditions: {
@@ -4918,7 +5024,7 @@ const def = {
   },
   artifact_10: {
     //Problema: Acepta dos maximos globales.
-    board: 'board_1',
+    board: 'board_10',
     statementBottom: ['Mínimo absoluto alcanzado en dos puntos','Un máximo absoluto alcanzado en 2.5','Dominio (-4,4)'],
     conditions: {
       conexa: { type: 3 },
@@ -4930,7 +5036,7 @@ const def = {
   },
   artifact_11: {
     //Igual que artefacto 2,5 y 8.
-    board: 'board_1',
+    board: 'board_11',
     statementBottom: ['Máximo absoluto alcanzado en 0 y 3','Mínimo de f es -1.5 alcanzado en 1', 'Dominio R'],
     conditions: {
       conexa: { type: 3 },
