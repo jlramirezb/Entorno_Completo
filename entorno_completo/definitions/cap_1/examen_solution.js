@@ -4588,13 +4588,299 @@ defBoards = {
       maxHeight: 300,
       maxWidth: 300,
     },
+    curves: [
+      [[[-2.95,0.9],[-2, -2.5], [-1.62, -2.98]]],
+      [[[-1.38, -2.98], [-1, -2.7],[1.43, 2.93]]],
+      [[[1.56, -2.9], [2.96, 0.9]]],
+    ],
+
+    points: [
+      [-1.5,-3, true,null, null, '#f1604d'], [1.5,-3, true,null, null, '#f1604d'],
+      [-3, 1, true, null, 2, '#f1604d'],[-3, 1, true, null, 0.1, 'white'],
+      [1.5, 3, true, null, 2, '#f1604d'],[1.5, 3, true, null, 0.1, 'white'],
+      [3, 1, true, null, 2, '#f1604d'],[3, 1, true, null, 0.1, 'white'],
+    ]
   },
   board_2: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+
+    curves: [
+      [[[-1.38, -4], [-0.9,-3.8], [-0, -3.1],[0.4, -2.98]]],
+      [[[0.62, -3], [0.88, -3.28], [1.14, -3.72], [1.4, -3.96]]],
+      [[[-3.5,1.9],[-2,-3.8],[-1.6, -3.98]]],
+      [[[1.62, -3.96],[3, -1],[3.48, 1.9]]]
+    ],
+
+    points: [
+      [-1.5,-4, true,null, null, '#f1604d'], [1.5,-4, true,null, null, '#f1604d'], [0.5,-3, true,null, null, '#f1604d'], 
+      [-3.5,2, true,null, null, '#2196f3'], [-3.6,2.5, true,null, null, '#2196f3'], [-3.7,3, true,null, null, '#2196f3'],
+      [3.5,2, true,null, null, '#2196f3'], [3.6,2.5, true,null, null, '#2196f3'], [3.7,3, true,null, null, '#2196f3'],
+    ]
+    
+  },
+  board_3: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_4: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_5: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_6: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_7: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_8: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_9: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_10: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_11: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_12: {
+    style: {
+      boundingbox:[-5,5,5,-5],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    
+  },
+  board_13: {
     style: {
       boundingbox: [-5, 4, 6, -4],
       maxHeight: 300,
       maxWidth: 300,
     },
+    curves: [
+      [[[ -2.95,-2.9], [-0.05,1.9]]],
+      [[[ 0.05, -2.9],[2.5,2], [4.95,-2.9]]],
+    ],
+    points:[
+      [ 0,2,true,'',2,'#f1604d'],
+      [-3, -3,true,'',2,'#f1604d'],[-3, -3,true,'',0.1,'white' ],
+      [ 0, -3,true,'',2,'#f1604d'],[ 0, -3,true,'',0.1,'white'],
+      [ 5, -3,true,'',2,'#f1604d'],[ 5, -3,true,'',0.1,'white'],
+    ],
+  },
+  board_14: {
+    style: {
+      boundingbox: [-6, 4, 6, -4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-5,0],[-3.5,-3],[0,3.5], [3.5,-3],[5,0]]],
+    ],
+    points: [
+    [-5.05,0.15, true, null, null, '#2196f3'], [-5.29,0.39, true, null, null, '#2196f3'], [-5.7,0.45, true, null, null, '#2196f3'],
+    [5.05,0.15, true, null, null, '#2196f3'], [5.29,0.39, true, null, null, '#2196f3'], [5.7,0.45, true, null, null, '#2196f3'], 
+    ],
+  },
+  board_15: {
+    style: {
+      boundingbox: [-5, 4, 6, -4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-1.95,-1.9],[0,1.98],[2.5,-0.5],[4,-0.5]]],
+    ],
+    points:[
+      [ -2,-2,true,'',2,'#f1604d'],[ -2,-2,true,'',0.1,'white'],
+      [4.2,-0.39, true, null, null, '#2196f3'], [4.5,-0.25, true, null, null, '#2196f3'], [4.85,-0.2, true, null, null, '#2196f3'],
+    ]
+  },
+  board_16: {
+    style: {
+      boundingbox: [-5, 4, 5, -4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-1.95,-2.9],[-0.05,1.9]]],[[[0.1,-0.1],[1.93,-2.9]]]
+    ],
+    points:[
+      [ -2,-3,true,'',2,'#f1604d'],[ 2,-3,true,'',2,'#f1604d'],
+      [ 0,2,true,'',2,'#f1604d'],[ 0,2,true,'',0.1,'white'],
+      [ 0,0,true,'',2,'#f1604d'],[ 0,0,true,'',0.1,'white'],
+    ]
+  },
+  board_17: {
+    style: {
+      boundingbox: [-5, 4, 5, -4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-2.95,-1.1],[-2,-3],[-0.05,1.9]]],
+      [[[0.05,-2.9], [1.95,1.9]]],
+    ],
+    points:[[ 0,-3,true,'',2,'#f1604d'],
+      [ -3,-1,true,'',2,'#f1604d'],[ -3,-1,true,'',0.1,'white'],
+      [ 0,2,true,'',2,'#f1604d'],[0,2,true,'',0.1,'white'],
+      [ 2,2,true,'',2,'#f1604d'],[ 2,2,true,'',0.1,'white'],
+    ]
+  },
+  board_18: {
+    style: {
+      boundingbox: [-5, 4, 5, -4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-2.9,-1.9],[2.9,2.9]]],
+    ],
+    points:[[ 3,3,true,'',2,'#f1604d'],
+      [ -3,-2,true,'',2,'#f1604d'],[ -3,-2,true,'',0.1,'white'],
+    ]
+  },
+  board_19: {
+    style: {
+      boundingbox: [-5, 4, 6, -4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-1.96,-2.9],[-1.2,0],[-0.3,1.9],[0,2]]],
+      [[[0,2],[1.5,0],[0.3,1.9],[2.46,-2.9]]],
+      [[[2.54,1.9],[3.96,-2.9]]],
+    ],
+    points:[[2.5,2,true,'',2,'#f1604d'],
+      [-2,-3,true,'',2,'#f1604d'],[-2,-3,true,'',0.1,'white'],
+      [2.5,-3,true,'',2,'#f1604d'],[2.5,-3,true,'',0.1,'white'],
+      [4,-3,true,'',2,'#f1604d'],[4,-3,true,'',0.1,'white'],
+    ]
+  },
+  board_20: {
+    style: {
+      boundingbox: [-5.5, 4, 5.5, -4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-4,0.9],[-3,0],[-2,-3],[0,3],[2,-3],[3,0],[4,0.9]]],
+    ],
+    points: [
+      [-4.25,0.87, true, null, null, '#2196f3'], [-4.65,0.87, true, null, null, '#2196f3'], [-5.05,0.87, true, null, null, '#2196f3'],
+      [4.25,0.87, true, null, null, '#2196f3'], [4.65,0.87, true, null, null, '#2196f3'], [5.05,0.87, true, null, null, '#2196f3'], 
+      ],
+  },
+  board_21: {
+    style: {
+      boundingbox: [-5, 4, 7, -4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-3.2,1.5],[-1.5,1.2],[0,0]]],
+      [[[0,-2],[2.94,2.94],[4.5,0.4]]],
+      [[[4.5,0.4],[4.6,0.3],[5.2,0.1]]],
+    ],
+    points: [[0,0,true,'',2,'#f1604d'],
+      [0,-2,true,'',2,'#f1604d'],[0,-2,true,'',0.1,'white'],
+      [-3.5,1.5, true, null, null, '#2196f3'], [-3.9,1.5, true, null, null, '#2196f3'], [-4.3,1.5, true, null, null, '#2196f3'],
+      [5.5,0.15, true, null, null, '#2196f3'], [5.9,0.15, true, null, null, '#2196f3'], [6.3,0.15, true, null, null, '#2196f3'], 
+      ],
+  },
+  board_22: {
+    style: {
+      boundingbox:[-4,4,4,-4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-2.93,-2.9],[0.93,1.4]]],[[[1.05,0.4],[2.93,-2.9]]]
+    ],
+    points:[
+      [ -3,-3,true,'',2,'#f1604d'],[ 3,-3,true,'',2,'#f1604d'],
+      [ 1,1.5,true,'',2,'#f1604d'],[ 1,1.5,true,'',0.1,'white'],
+      [ 1,0.5,true,'',2,'#f1604d'],[ 1,0.5,true,'',0.1,'white'],
+    ],
+  },
+  board_23: {
+    style: {
+      boundingbox:[-4,4,5,-4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-2.3,0.5],[-0.3,2.4],[1.7,-2.4],[3.7,0.5]]],
+    ],
+    points: [
+      [-2.42,0.3, true, null, null, '#2196f3'], [-2.65,0, true, null, null, '#2196f3'], [-3.05,-0.15, true, null, null, '#2196f3'],
+      [3.8,0.75, true, null, null, '#2196f3'], [4.1,1, true, null, null, '#2196f3'], [4.45,1.1, true, null, null, '#2196f3'], 
+      ],
+  },
+  board_24: {
+    style: {
+      boundingbox:[-4,4,4,-4],
+      maxHeight: 300,
+      maxWidth: 300,
+    },
+    curves: [
+      [[[-2.92,1.9],[1.92,-2.9]]],[[[2.05,-0.9],[2.94,0.9]]]
+    ],
+    points:[
+      [ -3,2,true,'',2,'#f1604d'],[ 2,-1,true,'',2,'#f1604d'],[ 3,1,true,'',2,'#f1604d'],
+      [ 2,-3,true,'',2,'#f1604d'],[ 2,-3,true,'',0.1,'white'],
+    ],
   },
 };
   
@@ -4615,7 +4901,7 @@ const def = {
     },
   },
   artifact_2: {
-    board: 'board_1',
+    board: 'board_2',
     statementBottom: ['Mínimo absoluto alcanzado en -1.5 y 1.5','Máximo de f es -3 alcanzado en 0.5','Dominio R'],
     conditions: {
       conexa: { type: 3 },
@@ -4630,7 +4916,7 @@ const def = {
     },
   },
   artifact_3: {
-    board: 'board_1',
+    board: 'board_3',
     //Pregunta borrada: f es creciente en ( 0,2 )
     statementBottom: ['Dominio (-4,4]','Rango (-3,2]','f es decreciente en (-2,-1)'],
     conditions: {
@@ -4645,7 +4931,7 @@ const def = {
     },
   },
   artifact_4: {
-    board: 'board_1',
+    board: 'board_4',
     statementBottom: ['Máximo absoluto alcanzado en -2.5 y 2.5','Dominio R','Rango [-4,2]'],
     conditions: {
       conexa: { type: 3 },
@@ -4663,7 +4949,7 @@ const def = {
   },
   artifact_5: {
     //Igual que artefacto 2.
-    board: 'board_1',
+    board: 'board_5',
     statementBottom: ['Mínimo absoluto alcanzado en -2.5 y 2.5','Máximo de f es 2 alcanzado en 0','Dominio R'],
     conditions: {
       conexa: { type: 3 },
@@ -4678,7 +4964,7 @@ const def = {
     },
   },
   artifact_6: {
-    board: 'board_1',
+    board: 'board_6',
     //Pregunta borrada: f es decreciente en ( 0,2 )
     statementBottom: ['Dominio [-3,∞)','Rango [-4,3]','f es creciente en (-2,0)'],
     conditions: {
@@ -4693,7 +4979,7 @@ const def = {
     },
   },
   artifact_7: {
-    board: 'board_1',
+    board: 'board_7',
     statementBottom: ['Mínimo absoluto alcanzado en dos puntos','Dominio [-4,2)','f es decreciente en (-1,1)'],
     conditions: {
       conexa: { type: 3 },
@@ -4703,7 +4989,7 @@ const def = {
     upDown:{intervals:[[false,[-1,1]]]},
   },
   artifact_8: {
-    board: 'board_1',
+    board: 'board_8',
     //Igual que artefacto 2 y 5.
     statementBottom: ['Mínimo absoluto alcanzado en -1 y 3.5','Máximo de f es 2 alcanzado en 0','Dominio R'],
     conditions: {
@@ -4719,7 +5005,7 @@ const def = {
     },
   },
   artifact_9: {
-    board: 'board_1',
+    board: 'board_9',
     //Pregunta borrada: 'f es creciente en ( -2,-0.5)'
     statementBottom: ['Dominio (-4,0)','Rango [-2,2]','Máximo de f es 2 alcanzado en -3'],
     conditions: {
@@ -4738,7 +5024,7 @@ const def = {
   },
   artifact_10: {
     //Problema: Acepta dos maximos globales.
-    board: 'board_1',
+    board: 'board_10',
     statementBottom: ['Mínimo absoluto alcanzado en dos puntos','Un máximo absoluto alcanzado en 2.5','Dominio (-4,4)'],
     conditions: {
       conexa: { type: 3 },
@@ -4750,7 +5036,7 @@ const def = {
   },
   artifact_11: {
     //Igual que artefacto 2,5 y 8.
-    board: 'board_1',
+    board: 'board_11',
     statementBottom: ['Máximo absoluto alcanzado en 0 y 3','Mínimo de f es -1.5 alcanzado en 1', 'Dominio R'],
     conditions: {
       conexa: { type: 3 },
@@ -4765,7 +5051,7 @@ const def = {
     },
   },
   artifact_12: {
-    board: 'board_1',
+    board: 'board_12',
     statementBottom: ['Dominio [-3,4]','Rango (-2,2]','f es decreciente en (2,4)'],
     conditions: {
       conexa: { type: 3 },
@@ -4781,7 +5067,7 @@ const def = {
 
 //Artefactos elaboradoos por luis
 artifact_13: {
-    board: 'board_2',
+    board: 'board_13',
     statementBottom: ["Dominio (-3,5)","No tiene mínimos","Un máximo absoluto alcanzado en dos puntos"],
     conditions: {
       conexa: { type: 3 },
@@ -4798,7 +5084,7 @@ artifact_13: {
     },
   },
   artifact_14: {
-    board: 'board_2',
+    board: 'board_14',
     statementBottom: ["Mínimo absoluto alcanzado en -3.5 y 3.5","Máximo de f es 3.5 alcanzado en 0","Dominio R"],
     conditions: {
       conexa: { type: 3 },
@@ -4812,7 +5098,7 @@ artifact_13: {
     },
   },
   artifact_15: {
-    board: 'board_2',
+    board: 'board_15',
     statementBottom: ["Dominio (-2,∞)","Rango (-2,2]","f es creciente en (-2,0)"],
     conditions: {
       conexa: { type: 3 },
@@ -4827,7 +5113,7 @@ artifact_13: {
   },
 
   artifact_16: {
-    board: 'board_2',
+    board: 'board_16',
     statementBottom: ["Un mínimo absoluto alcanzado en -2 y 2","No tiene máximos","f es decreciente en (0,1)"],
     conditions: {
       conexa: { type: 4 },
@@ -4844,7 +5130,7 @@ artifact_13: {
   },
 
   artifact_17: {
-    board: 'board_2',
+    board: 'board_17',
     statementBottom: ["Un mínimo absoluto alcanzado en dos puntos","No tiene máximos","Dominio (-3,2)"],
     conditions: {
       conexa: { type: 3 },
@@ -4861,7 +5147,7 @@ artifact_13: {
   },
 
   artifact_18: {
-    board: 'board_2',
+    board: 'board_18',
     //Pregunta borrada: "f es decreciente en (-2,-1)"
     statementBottom: ["Dominio (-3,3]","Rango (-2,3]","f es creciente en (0,1)"],
     conditions: {
@@ -4878,7 +5164,7 @@ artifact_13: {
   },
 
   artifact_19: {
-    board: 'board_2',
+    board: 'board_19',
     statementBottom: ["Un máximo absoluto alcanzado en 0 y 2.5","No tiene mínimos","Dominio (-2,4)"],
     conditions: {
       conexa: { type: 3 },
@@ -4895,7 +5181,7 @@ artifact_13: {
   },
 
   artifact_20: {
-    board: 'board_2',
+    board: 'board_20',
     statementBottom: ["Mínimo absoluto alcanzado en dos puntos","Máximo de f es 3 alcanzado en 0","Dominio R"],
     conditions: {
       conexa: { type: 3 },
@@ -4911,7 +5197,7 @@ artifact_13: {
   },
 
   artifact_21: {
-    board: 'board_2',
+    board: 'board_21',
     statementBottom: ["Dominio R","f es creciente en (1,2)","Rango (-2,3]"],
     conditions: {
       conexa: { type: 3 },
@@ -4927,19 +5213,17 @@ artifact_13: {
 
   //Inicio Artefactos Manuel - examen 8
   artifact_22: {
-    board: 'board_0',
-    statementBottom: ["Un mínimo absoluto alcanzado en 3 y -3","No tiene máximos","Dominio [-3,3]"],
+    board: 'board_22',
+    statementBottom: ["Un mínimo absoluto alcanzado en 3 y -3","No tiene máximos","f es creciente en (-1,-1)"],
     conditions: {
       max: { global: 0, localcount: 0,},
       min: { global: [-3,3], noise: 0.05  },
       conexa: { type: 3 },
-      dom: { range: [[-3, 3, 3, false, false]] },
-      //dom: { range: [[-1, 2, 1, false, false]] },
-      //countsX: { value: 2 },
+      upDown: {intervals: [[true,[-1,1]]],},
 },
   },
   artifact_23: { //tiene problemas al limitarlo para reconocer maximo y dominio a la vez, por ejemplo que el maximo venga luego de un salto finito y luego la funcion baje
-    board: 'board_0',
+    board: 'board_23',
     statementBottom: ["Máximo absoluto alcanzado en un punto","Mínimo absoluto de f es -2.5 alcanzado en 2","Dominio R"],
     conditions: {
       max: { global: 1, noise: 0.05},
@@ -4951,13 +5235,9 @@ artifact_13: {
     },
   },
   artifact_24: {
-    board: 'board_0',
+    board: 'board_24',
     statementBottom: ["Dominio [-3,3]","f es decreciente en [0,2)","Rango (-3,2]"],
     conditions: {
-      //rang: { mulIntervals:[
-        //  [[[2,3,4], -2,false, false]]
-       // ],
-      //},
       upDown: {intervals: [[false,[0,2]]],
       },
       conexa: { type: 3 },
@@ -5109,10 +5389,10 @@ function ocultarDivPorRadio() {
 }
 
 // Llamar a la función cuando se cargue el documento
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   //console.log('DOM cargado, ejecutando ocultarDivPorRadio');
   ocultarDivPorRadio();
-});
+});*/
 
 // Ejecutar el código cuando se presiona el botón "finalizar"
 document.querySelector('.finalizar').addEventListener('click', () => {

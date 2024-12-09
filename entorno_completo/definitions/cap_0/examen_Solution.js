@@ -161,7 +161,7 @@ let def = {
         representation: 'x≤3',
         preDefPar: [
             [
-                [-10, 0, false, ''],//sale fuera del board
+                [0, 2, false, ''],//sale fuera del board
                 [5, 0, true, '3'],
             ],
         ]
@@ -181,7 +181,7 @@ let def = {
         preDefPar: [
             [
                 [4, 0, false, '3'],
-                [10, 0, false, ''],//sale fuera del board
+                [7, 2, false, ''],//sale fuera del board
             ],
         ]
         /*conditions: {
@@ -199,7 +199,7 @@ let def = {
         representation: 'x<−1',
         preDefPar: [
             [
-                [-2, 0, false, ''],//sale fuera del board
+                [0, 2, false, ''],//sale fuera del board
                 [3, 0, false, '−1'],
             ],
         ]
@@ -219,7 +219,7 @@ let def = {
         preDefPar: [
             [
                 [4, 0, true, '5'],
-                [10, 0, false, ''],//sale fuera del board
+                [7, 2, false, ''],//sale fuera del board
             ],
         ]
         /*conditions: {
@@ -237,7 +237,7 @@ let def = {
         representation: 'x≤4',
         preDefPar: [
             [
-                [-2,0,false,''],//Sale fuero del board
+                [0,2,false,''],//Sale fuero del board
                 [4,0,true,'4'],
             ],
         ]
@@ -257,7 +257,7 @@ let def = {
         preDefPar: [
             [
                 [3, 0, false, '-3'],
-                [10, 0, false, ''],//sale fuera del board
+                [7, 2, false, ''],//sale fuera del board
             ],
         ]
         /*conditions: {
@@ -275,7 +275,7 @@ let def = {
         representation: 'x≤−4',
         preDefPar: [
             [
-                [-2,0,false,''],//Sale fuero del board
+                [0,2,false,''],//Sale fuero del board
                 [3,0,true,'−4'],
             ],
         ]
@@ -295,7 +295,7 @@ let def = {
         preDefPar: [
             [
                 [3, 0, true, '−1'],
-                [10, 0, false, ''],//sale fuera del board
+                [7, 2, false, ''],//sale fuera del board
             ],
         ]
         /*conditions: {
@@ -315,7 +315,7 @@ let def = {
         preDefPar: [
             [
                 [3, 0, true, '-2'],
-                [10, 0, false, ''],//sale fuera del board
+                [7, 2, false, ''],//sale fuera del board
             ],
         ]
         /*conditions: {
@@ -333,7 +333,7 @@ let def = {
         interval: '(−∞,3]',
         preDefPar: [
             [
-                [-10, 0, false, ''],//sale fuera del board
+                [0, 2, false, ''],//sale fuera del board
                 [4, 0, true, '3'],
             ],
         ]
@@ -353,7 +353,7 @@ let def = {
         preDefPar: [
             [
                 [4, 0, true, '4'],
-                [10, 0, false, ''],//sale fuera del board
+                [7, 2, false, ''],//sale fuera del board
             ],
         ]
         /*conditions: {
@@ -371,7 +371,7 @@ let def = {
         interval: '(-∞,−1]',
         preDefPar: [
             [
-                [-2, 0, false, ''],
+                [0, 2, false, ''],
                 [3, 0, true, '-1'],//sale fuera del board
             ],
         ]
@@ -391,7 +391,7 @@ let def = {
         preDefPar: [
             [
                 [4, 0, true, '3'],
-                [10, 0, false, ''],//sale fuera del board
+                [7, 2, false, ''],//sale fuera del board
             ],
         ]
           //preDefPoint: [[5, 0, 0, '']]
@@ -410,7 +410,7 @@ let def = {
         interval: '(−∞,4]',
         preDefPar: [
             [
-                [-2,0,false,''],//Sale fuero del board
+                [0,2,false,''],//Sale fuero del board
                 [4,0,true,'4'],
             ],
         ]
@@ -430,7 +430,7 @@ let def = {
         preDefPar: [
             [
                 [3, 0, true, '−6'],
-                [10, 0, false, ''],//sale fuera del board
+                [7, 2, false, ''],//sale fuera del board
             ],
         ]
         /*conditions: {
@@ -448,7 +448,7 @@ let def = {
         interval: '(−∞,−2]',
         preDefPar: [
             [
-                [-2,0,false,''],//Sale fuero del board
+                [0,2,false,''],//Sale fuero del board
                 [3,0,true,'−2'],
             ],
         ]

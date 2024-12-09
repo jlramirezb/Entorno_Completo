@@ -5134,12 +5134,12 @@ artifact_13: {
   //Inicio Artefactos Manuel - examen 8
   artifact_22: {
     board: 'board_0',
-    statementBottom: ["Un mínimo absoluto alcanzado en 3 y -3","No tiene máximos","Dominio [-3,3]"],
+    statementBottom: ["Un mínimo absoluto alcanzado en 3 y -3","No tiene máximos","f es creciente en (-1,-1)"],
     conditions: {
       max: { global: 0, localcount: 0,},
       min: { global: [-3,3], noise: 0.05  },
-      conexa: { type: 3 },
-      dom: { range: [[-3, 3, 3, false, false]] },
+      conexa: { type: 4 },
+      upDown: {intervals: [[true,[-1,1]]],},
       //dom: { range: [[-1, 2, 1, false, false]] },
       //countsX: { value: 2 },
 },
