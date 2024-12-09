@@ -562,16 +562,19 @@ function valida(validar,resultadoExamen,def,artefact,borderColor,propiedadesRdef
             }
             for(i=0;i<endIndex;i++){              
                 const classList = colorInputs[i+kk].classList;            
+                //console.log(classList);
                 if(classList.contains('passInLibrary'))
                 {
                     console.log('Punto '+ (i+1) +' acertado');
                     resultadoExamen[idx].items[indx] = 1;
-                    indx++;                
+                    indx++;       
+                    classList.remove('passInLibrary');
                 }
                 else if(classList.contains('failedInLibrary'))
                 {
                     console.log('Punto '+ (i+1) +' fallado');
                     resultadoExamen[idx].items[indx] = 0;
+                    classList.remove('failedInLibrary');
                     indx++;                
                 }            
             }
